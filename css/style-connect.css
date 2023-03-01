@@ -18,7 +18,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: "Montserrat", sans-serif;
   height: 100vh;
   font-family: "Hind Madurai", sans-serif;
 }
@@ -30,6 +29,7 @@ h1 {
 
 h2 {
   text-align: center;
+  font-family: "Nova Slim", cursive;
 }
 
 p {
@@ -38,10 +38,6 @@ p {
   line-height: 20px;
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
-}
-
-span {
-  font-size: 12px;
 }
 
 a {
@@ -96,49 +92,51 @@ input {
   width: 100%;
 }
 
-.container {
+main {
+  height: 100%;
+}
+main #section-authentication {
+  width: 1440px;
+  height: 100%;
+}
+main #section-authentication .container {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  max-width: 100%;
+  min-height: 480px;
+  top: 10%;
+  overflow: hidden;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  position: relative;
-  overflow: hidden;
-  width: 1440px;
-  height: 900px;
-  max-width: 100%;
-  min-height: 480px;
 }
-
-.form-container {
+main #section-authentication .form-container {
   position: absolute;
   top: 0;
   height: 100%;
   transition: all 0.6s ease-in-out;
 }
-
-.sign-in-container {
+main #section-authentication .sign-in-container {
   left: 0;
   width: 50%;
   z-index: 2;
 }
-
-.container.right-panel-active .sign-in-container {
+main #section-authentication .container.right-panel-active .sign-in-container {
   transform: translateX(100%);
 }
-
-.sign-up-container {
+main #section-authentication .sign-up-container {
   left: 0;
   width: 50%;
   opacity: 0;
   z-index: 1;
 }
-
-.container.right-panel-active .sign-up-container {
+main #section-authentication .container.right-panel-active .sign-up-container {
   transform: translateX(100%);
   opacity: 1;
   z-index: 5;
   animation: show 0.6s;
 }
-
 @keyframes show {
   0%, 49.99% {
     opacity: 0;
@@ -149,7 +147,7 @@ input {
     z-index: 5;
   }
 }
-.overlay-container {
+main #section-authentication .overlay-container {
   position: absolute;
   top: 0;
   left: 50%;
@@ -159,12 +157,10 @@ input {
   transition: transform 0.6s ease-in-out;
   z-index: 100;
 }
-
-.container.right-panel-active .overlay-container {
+main #section-authentication .container.right-panel-active .overlay-container {
   transform: translateX(-100%);
 }
-
-.overlay {
+main #section-authentication .overlay {
   background: #ff416c;
   background: linear-gradient(to right, #ff4b2b, #ff416c);
   background-repeat: no-repeat;
@@ -178,12 +174,10 @@ input {
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
 }
-
-.container.right-panel-active .overlay {
+main #section-authentication .container.right-panel-active .overlay {
   transform: translateX(50%);
 }
-
-.overlay-panel {
+main #section-authentication .overlay-panel {
   position: absolute;
   display: flex;
   align-items: center;
@@ -197,20 +191,16 @@ input {
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
 }
-
-.overlay-left {
+main #section-authentication .overlay-left {
   transform: translateX(-20%);
 }
-
-.container.right-panel-active .overlay-left {
+main #section-authentication .container.right-panel-active .overlay-left {
   transform: translateX(0);
 }
-
-.overlay-right {
+main #section-authentication .overlay-right {
   right: 0;
   transform: translateX(0);
 }
-
-.container.right-panel-active .overlay-right {
+main #section-authentication .container.right-panel-active .overlay-right {
   transform: translateX(20%);
 }/*# sourceMappingURL=style-connect.css.map */

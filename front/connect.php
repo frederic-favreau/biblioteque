@@ -18,7 +18,7 @@
             <div class="container" id="container">
                 <div class="form-container sign-up-container">
                     <form action="#">
-                        <h1>S'enregistrer</h1>
+                        <h1>S'enregistrer sur Biblook</h1>
                         <input type="email" placeholder="Email" />
                         <input type="password" placeholder="Password" />
                         <button>Sign Up</button>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-container sign-in-container">
                     <form action="#">
-                        <h1>Connexion</h1>
+                        <h1>Connexion à Biblook</h1>
                         <div class="social-container">
                             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
