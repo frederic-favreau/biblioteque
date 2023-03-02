@@ -27,21 +27,16 @@
                 <div class="form-container sign-in-container">
 
                     <?php
-                        if (isset($_GET['err'])) {
-                        ?>
-                        
-                            <p style="color: red;"> Ehhh Mec! Pseudo ou mot de passe incorect </p>
-
-
-                        <?php
-                        }
+                    if (isset($_GET['err'])) {
+                    ?>
+                        <p style="color: red;"> Ehhh Mec! Pseudo ou mot de passe incorect </p>
+                    <?php
+                    }
                     ?>
 
                     <form action="../admin/auth.php" method="POST">
                         <h1>Connexion à Biblook</h1>
-
-
-                        <input type="email" name="mail" id= "mail" placeholder="Email" />
+                        <input type="email" name="mail" id="mail" placeholder="Email" />
                         <input type="password" name="password" placeholder="Password" />
                         <a href="#">Mot de passe oublié?</a>
                         <button type="submit">Se connecter</button>
@@ -67,9 +62,6 @@
         </section>
     </main>
     <script src="../connect.js"></script>
-</body>
-
-</html>
 </body>
 
 </html>

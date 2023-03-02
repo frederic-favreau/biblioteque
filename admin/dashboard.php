@@ -1,14 +1,11 @@
-<?php 
+<?php
 include_once '../admin/header-main.php';
-        include_once '../connexion.php';
-        //$id = $_GET['id_user'];
-        $req = $db->prepare("SELECT `firstname` FROM `user`");
-        $req->bindParam('id_user', $id, PDO::PARAM_INT);
-        $req->execute();
-        while($name = $req->fetch(PDO::FETCH_ASSOC)){
+include_once '../connexion.php';
 ?>
-    <h1>Bienvenue <?= $_SESSION['firstname']?></h1>
-    <?php } ?>
-    </main>
+
+<h1>Bon retour parmis nous, <?= $_SESSION['id-user'] ?></h1>
+
+</main>
 </body>
+
 </html>
