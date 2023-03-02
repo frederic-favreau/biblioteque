@@ -25,17 +25,26 @@
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
-                    <form action="#">
+
+                    <?php
+                        if (isset($_GET['err'])) {
+                        ?>
+                        
+                            <p style="color: red;"> Ehhh Mec! Pseudo ou mot de passe incorect </p>
+
+
+                        <?php
+                        }
+                    ?>
+
+                    <form action="../admin/auth.php" method="POST">
                         <h1>Connexion à Biblook</h1>
-                        <div class="social-container">
-                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
+
+
+                        <input type="email" name="mail" id= "mail" placeholder="Email" />
+                        <input type="password" name="password" placeholder="Password" />
                         <a href="#">Mot de passe oublié?</a>
-                        <button>Se connecter</button>
+                        <button type="submit">Se connecter</button>
                     </form>
                 </div>
                 <div class="overlay-container">
