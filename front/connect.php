@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/style-connect.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Hind+Madurai&family=Nova+Slim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Nova+Slim&family=Risque&display=swap" rel="stylesheet">
 </head>
 
 <body>
