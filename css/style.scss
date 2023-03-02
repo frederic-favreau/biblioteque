@@ -1,5 +1,7 @@
-$btn-red : #ff5e38;
-$main-blue : #0868AE;
+$btn-red: #ff5e38;
+$main-blue: #0868ae;
+$white: #fff;
+$black: #070606;
 
 *,
 ::after,
@@ -16,48 +18,94 @@ $main-blue : #0868AE;
 }
 
 body {
-  font-family: 'Hind Madurai', sans-serif;
+  font-family: "Hind Madurai", sans-serif;
+  background-color: #fafafb;
 }
 
 a {
   text-decoration: none;
+  font-weight: bold;
 }
+
+h1,
+h2 {
+  font-family: "Nova Slim";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: $main-blue;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: "Nova Slim";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 38px;
+  letter-spacing: 0.04em;
+  color: $main-blue;
+}
+
+p {
+  font-size: 16px;
+  text-align: start;
+  margin: 30px auto;
+  font-weight: 400;
+  line-height: 24px;
+  color: $black;
+  display: block;
+}
+
+ul {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  list-style-type: none;
+}
+
+// ---------- HEADER - NAV - TOP ----------
 
 #main-header {
   width: 100%;
+
   #main-nav-bar {
     width: 100%;
-    height: 70px;
+    height: 72px;
+    padding: 10px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background: $main-blue;
 
     #container-group-logo {
-        margin-right: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-right: auto;
 
-        img {
-            width: 80px;
-        }
+      img {
+        width: 70px;
+      }
+
+      #nav-logo-text {
+        font-family: "Risque", cursive, sans-serif;
+        font-size: 36px;
+        color: #fff;
+      }
     }
 
     #container-group-search-nav-top {
       #input-search-nav-top {
         display: none;
-        width: 50px;
-        height: 50px;
-        border-radius: 15px;
-        padding-left: 30px;
-        border: none;
       }
 
       #btn-search-nav-top {
         display: none;
-        padding: 15px;
-        background-color: #f9b017;
-        color: #fff;
-        border-radius: 10px;
       }
     }
 
@@ -66,55 +114,166 @@ a {
 
       #btn-log-in {
         display: none;
-        padding: 13px;
-        background-color: transparent;
-        border: 3px solid #e94a34 ;
-        color: #e94a34;
-        border-radius: 10px;
-        font-weight: bolder;
-        font-size: 16px;
-        font-family: 'Hind Madurai', sans-serif;margin-right: 10px;
       }
 
       #btn-sign-up {
-        padding: 15px;
-        color: #fff;
-        border-radius: 10px;
-
         #menu-burger {
           width: 50px;
           height: 50px;
-          background-color: $btn-red ;
+          color: $white;
+          border-radius: 10px;
           display: flex;
           flex-direction: column;
           justify-content: space-evenly;
           align-content: center;
           border-radius: 5px;
 
-          #menu-burger-pipe-top {
+          .menu-burger-pipe {
             width: 80%;
             height: 10%;
-            background-color: #fff;
+            background-color: $white;
+            margin: 0 auto;
           }
-
-          #menu-burger-pipe-middle{
-            width: 80%;
-            height: 10%;
-            background-color: #fff;
-          }
-
-          #menu-burger-pipe-bottom {
-            width: 80%;
-            height: 10%;
-            background-color: #fff;
-          }
-
         }
-
         span {
           display: none;
         }
       }
     }
   }
+}
+
+// ---------- SECTION - NEWS ----------
+
+#section-news {
+  width: 100%;
+  padding-top: 60px;
+
+  #container-section-news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #item-section-news-left {
+      h1 {
+        white-space: nowrap;
+      }
+    }
+
+    #item-section-news-right {
+      width: 100%;
+      text-align: center;
+
+      #item-news-right-top {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+
+        img:first-of-type {
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+// ---------- SECTION - HEART ----------
+
+#section-heart {
+  width: 100%;
+  padding-top: 80px;
+
+  p {
+    text-align: center;
+  }
+
+  #btn-show-heart {
+    display: block;
+    width: 343px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    background: $btn-red;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    color: $white;
+  }
+}
+
+// ---------- SECTION - SOON AVAILABLE ----------
+
+#section-soon-available {
+  width: 100%;
+  padding-top: 80px;
+
+  #h3-tag {
+    width: 40%;
+    font-family: "Nova Slim";
+    margin: 20px auto;
+    padding: 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: $main-blue;
+    background-color: #f9f5ff;
+    border-radius: 50px;
+  }
+
+  #container-cards {
+    width: 343px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 30px auto;
+    
+    background: $white;
+    
+
+    .card {
+      width: 100%;
+      height: 460px;
+      margin-bottom: 50px;
+      padding: 24px 24px 32px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      .bottom-item-card {
+        h4 {
+          margin: 10px 0;
+        }
+
+        .description-card {
+          margin: 8px 0 8px;
+        }
+      }
+    }
+  }
+}
+
+// ---------- SECTION - CTA - AVAILABLE ----------
+
+
+#section-cta-available {
+  width: 100%;
+  padding: 80px;
+  background-color: $main-blue;
+  text-align: center;
+
+  h2, p {
+    color: $white;
+    text-align: center;
+  }
+
+  a {
+    background-color: $white;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
 }

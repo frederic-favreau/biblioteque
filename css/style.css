@@ -14,10 +14,52 @@
 
 body {
   font-family: "Hind Madurai", sans-serif;
+  background-color: #fafafb;
 }
 
 a {
   text-decoration: none;
+  font-weight: bold;
+}
+
+h1,
+h2 {
+  font-family: "Nova Slim";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #0868ae;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: "Nova Slim";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 38px;
+  letter-spacing: 0.04em;
+  color: #0868ae;
+}
+
+p {
+  font-size: 16px;
+  text-align: start;
+  margin: 30px auto;
+  font-weight: 400;
+  line-height: 24px;
+  color: #070606;
+  display: block;
+}
+
+ul {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  list-style-type: none;
 }
 
 #main-header {
@@ -25,79 +67,162 @@ a {
 }
 #main-header #main-nav-bar {
   width: 100%;
-  height: 70px;
+  height: 72px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0868ae;
+}
+#main-header #main-nav-bar #container-group-logo {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #0868AE;
-}
-#main-header #main-nav-bar #container-group-logo {
   margin-right: auto;
 }
 #main-header #main-nav-bar #container-group-logo img {
-  width: 80px;
+  width: 70px;
+}
+#main-header #main-nav-bar #container-group-logo #nav-logo-text {
+  font-family: "Risque", cursive, sans-serif;
+  font-size: 36px;
+  color: #fff;
 }
 #main-header #main-nav-bar #container-group-search-nav-top #input-search-nav-top {
   display: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 15px;
-  padding-left: 30px;
-  border: none;
 }
 #main-header #main-nav-bar #container-group-search-nav-top #btn-search-nav-top {
   display: none;
-  padding: 15px;
-  background-color: #f9b017;
-  color: #fff;
-  border-radius: 10px;
 }
 #main-header #main-nav-bar #container-group-btn-connexion {
   margin-left: auto;
 }
 #main-header #main-nav-bar #container-group-btn-connexion #btn-log-in {
   display: none;
-  padding: 13px;
-  background-color: transparent;
-  border: 3px solid #e94a34;
-  color: #e94a34;
-  border-radius: 10px;
-  font-weight: bolder;
-  font-size: 16px;
-  font-family: "Hind Madurai", sans-serif;
-  margin-right: 10px;
-}
-#main-header #main-nav-bar #container-group-btn-connexion #btn-sign-up {
-  padding: 15px;
-  color: #fff;
-  border-radius: 10px;
 }
 #main-header #main-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger {
   width: 50px;
   height: 50px;
-  background-color: #ff5e38;
+  color: #fff;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-content: center;
   border-radius: 5px;
 }
-#main-header #main-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger #menu-burger-pipe-top {
+#main-header #main-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger .menu-burger-pipe {
   width: 80%;
   height: 10%;
   background-color: #fff;
-}
-#main-header #main-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger #menu-burger-pipe-middle {
-  width: 80%;
-  height: 10%;
-  background-color: #fff;
-}
-#main-header #main-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger #menu-burger-pipe-bottom {
-  width: 80%;
-  height: 10%;
-  background-color: #fff;
+  margin: 0 auto;
 }
 #main-header #main-nav-bar #container-group-btn-connexion #btn-sign-up span {
   display: none;
+}
+
+#section-news {
+  width: 100%;
+  padding-top: 60px;
+}
+#section-news #container-section-news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#section-news #container-section-news #item-section-news-left h1 {
+  white-space: nowrap;
+}
+#section-news #container-section-news #item-section-news-right {
+  width: 100%;
+  text-align: center;
+}
+#section-news #container-section-news #item-section-news-right #item-news-right-top {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+#section-news #container-section-news #item-section-news-right #item-news-right-top img:first-of-type {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#section-heart {
+  width: 100%;
+  padding-top: 80px;
+}
+#section-heart p {
+  text-align: center;
+}
+#section-heart #btn-show-heart {
+  display: block;
+  width: 343px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  background: #ff5e38;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  color: #fff;
+}
+
+#section-soon-available {
+  width: 100%;
+  padding-top: 80px;
+}
+#section-soon-available #h3-tag {
+  width: 40%;
+  font-family: "Nova Slim";
+  margin: 20px auto;
+  padding: 5px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #0868ae;
+  background-color: #f9f5ff;
+  border-radius: 50px;
+}
+#section-soon-available #container-cards {
+  width: 343px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 30px auto;
+  background: #fff;
+}
+#section-soon-available #container-cards .card {
+  width: 100%;
+  height: 460px;
+  margin-bottom: 50px;
+  padding: 24px 24px 32px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#section-soon-available #container-cards .card .bottom-item-card h4 {
+  margin: 10px 0;
+}
+#section-soon-available #container-cards .card .bottom-item-card .description-card {
+  margin: 8px 0 8px;
+}
+
+#section-cta-available {
+  width: 100%;
+  padding: 80px;
+  background-color: #0868ae;
+  text-align: center;
+}
+#section-cta-available h2, #section-cta-available p {
+  color: #fff;
+  text-align: center;
+}
+#section-cta-available a {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */
