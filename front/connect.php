@@ -17,10 +17,12 @@
         <section id="section-authentication" class="row-limit-size">
             <div class="container" id="container">
                 <div class="form-container sign-up-container">
-                    <form action="#">
+                    <form action="../admin/singup.php" method="POST">
                         <h1>S'enregistrer sur Biblook</h1>
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
+                        <input type="email" name="mail" placeholder="Email" />
+                        <input type="password" name="password" placeholder="Password" />
+                        <input type="firstname" name="firstname" placeholder="Your firstname" />
+                        <input type="lastname" name="lastname" placeholder="Your lastname" />
                         <button>Sign Up</button>
                     </form>
                 </div>
