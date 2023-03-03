@@ -98,7 +98,7 @@
         </div>
     </section>
 
-<!-- ---------- SECTION - SOON AVAILABLE ---------- -->
+<!-- ---------- SECTION - CTA AVAILABLE ---------- -->
 
 
 <section id="section-cta-available">
