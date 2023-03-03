@@ -88,14 +88,13 @@ test
         <div id="container-cards">
             <div class="card">
                 <div class="top-item-card">
-                    <img src="./img/top-img-card.png" alt="">
+                    <img src="./img/top-img-card.png" alt="titre du livre">
                 </div>
                 <div class="bottom-item-card">
-                    <h4>Design</h4>
-                    <h3>UX review presentations</h4>
-                        <p class="description-card">How do you create compelling presentations that wow your colleagues and impress your managers?</p>
-                        <h5>Olivia Rhye</h5>
-                        <div><span>20 Jan 22</span></div>
+                    <h4>Categorie</h4>
+                    <h3>Titre du livre</h4>
+                        <p class="description-card">Résumé...</p>
+                        <h5>Auteur</h5>
                 </div>
             </div>
             <div class="card">
