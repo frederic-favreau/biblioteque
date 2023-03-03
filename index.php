@@ -13,8 +13,6 @@
 </head>
 
 <body>
-    
-test
 
     <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
 
@@ -93,70 +91,10 @@ test
                 <div class="bottom-item-card">
                     <h4>Categorie</h4>
                     <h3>Titre du livre</h4>
-                        <p class="description-card">Résumé...</p>
+                        <p class="description-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, atque. Tempora id molestiae nesciunt quos iusto reprehenderit itaque, sit quisquam? Sapiente consectetur sint ab neque maxime nihil unde rerum aliquid itaque voluptatem, repellat ratione maiores provident vitae fugiat aspernatur ex nobis sunt quae esse? Cumque tenetur error nobis quidem ab!</p>
                         <h5>Auteur</h5>
                 </div>
-            </div>
-            <div class="card">
-                <div class="top-item-card">
-                    <img src="./img/top-img-card.png" alt="">
-                </div>
-                <div class="bottom-item-card">
-                    <h4>Design</h4>
-                    <h3>UX review presentations</h4>
-                        <p class="description-card">How do you create compelling presentations that wow your colleagues and impress your managers?</p>
-                        <h5>Olivia Rhye</h5>
-                        <div><span>20 Jan 22</span></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="top-item-card">
-                    <img src="./img/top-img-card.png" alt="">
-                </div>
-                <div class="bottom-item-card">
-                    <h4>Design</h4>
-                    <h3>UX review presentations</h4>
-                        <p class="description-card">How do you create compelling presentations that wow your colleagues and impress your managers?</p>
-                        <h5>Olivia Rhye</h5>
-                        <div><span>20 Jan 22</span></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="top-item-card">
-                    <img src="./img/top-img-card.png" alt="">
-                </div>
-                <div class="bottom-item-card">
-                    <h4>Design</h4>
-                    <h3>UX review presentations</h4>
-                        <p class="description-card">How do you create compelling presentations that wow your colleagues and impress your managers?</p>
-                        <h5>Olivia Rhye</h5>
-                        <div><span>20 Jan 22</span></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="top-item-card">
-                    <img src="./img/top-img-card.png" alt="">
-                </div>
-                <div class="bottom-item-card">
-                    <h4>Design</h4>
-                    <h3>UX review presentations</h4>
-                        <p class="description-card">How do you create compelling presentations that wow your colleagues and impress your managers?</p>
-                        <h5>Olivia Rhye</h5>
-                        <div><span>20 Jan 22</span></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="top-item-card">
-                    <img src="./img/top-img-card.png" alt="">
-                </div>
-                <div class="bottom-item-card">
-                    <h4>Design</h4>
-                    <h3>UX review presentations</h4>
-                        <p class="description-card">How do you create compelling presentations that wow your colleagues and impress your managers?</p>
-                        <h5>Olivia Rhye</h5>
-                        <div><span>20 Jan 22</span></div>
-                </div>
-            </div>
+            </div>          
         </div>
     </section>
 
@@ -168,6 +106,15 @@ test
     <p>Faites votre demande dès maintenant auprès de Biblioo</p>
     <a href="#">Demander un livre</a>
 </section>
+
+
+<!-- ---------- SECTION - TOP COMMENTS---------- -->
+
+
+<section id="section-top-comments" class="row-limit-size">
+    
+</section>
+
 </body>
 
 </html>
