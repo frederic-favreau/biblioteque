@@ -1,5 +1,8 @@
-<?php include_once '../admin/header-main.php'; ?>
-    <h1>Bienvenue Toi</h1>
+<?php
+session_start()
+?>
+    <h1>Bienvenue  <?= $_SESSION['firstname']?></h1>
     </main>
 </body>
+
 </html>
