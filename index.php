@@ -81,20 +81,38 @@
 
 
     <section id="section-soon-available" class="row-limit-size">
+
+  
         <h3 id="h3-tag">Nos ouvrages</h3>
         <h2>Bientôt disponible</h2>
         <div id="container-cards">
+
+
+    <!-- find last 6 books in our librarerie -->
+
+
+        <?php
+        require_once './connexion.php';
+        $sql = "SELECT `id_work`,`title`,`pict`,`extract`, `genre`.`name` FROM `work` ORDER BY `id_work` DESC LIMIT 6";
+        $req = $db->query($sql);
+        while($card = $req->fetch(PDO::FETCH_ASSOC)){
+
+        ?>
+
+
+
             <div class="card">
                 <div class="top-item-card">
-                    <img src="./img/top-img-card.png" alt="titre du livre">
+                    <img src="" alt="<?= $card['title']?>">
                 </div>
                 <div class="bottom-item-card">
                     <h4>Categorie</h4>
-                    <h3>Titre du livre</h4>
-                        <p class="description-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, atque. Tempora id molestiae nesciunt quos iusto reprehenderit itaque, sit quisquam? Sapiente consectetur sint ab neque maxime nihil unde rerum aliquid itaque voluptatem, repellat ratione maiores provident vitae fugiat aspernatur ex nobis sunt quae esse? Cumque tenetur error nobis quidem ab!</p>
+                    <h3><?= $card['title']?></h3>
+                        <p class="description-card"></p>
                         <h5>Auteur</h5>
                 </div>
-            </div>          
+            </div> 
+            <?php } ?>         
         </div>
     </section>
 
