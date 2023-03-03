@@ -17,3 +17,6 @@ $req->bindParam('lastname', $lastname, PDO::PARAM_STR);
 $req->bindParam('password', $passwordHashed, PDO::PARAM_STR);
 $req->execute();
 
+
+$_SESSION['firstname'] = $firstname;
+header('Location: ./dashboard.php');
