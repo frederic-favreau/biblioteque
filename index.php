@@ -18,24 +18,26 @@
 
 
     <header id="main-header">
-        <nav id="main-nav-bar" class="row-limit-size">
-            <div id="container-group-logo">
-                <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
-                <span id="nav-logo-text">Biblook</span>
-            </div>
-            <div id="container-group-search-nav-top">
-                <input type="text" id="input-search-nav-top" placeholder="Taper votre recherche">
-                <a href="#" id="btn-search-nav-top">Rechercher</a>
-            </div>
-            <div id="container-group-btn-connexion">
-                <a href="./front/connect.php" id="btn-log-in">Log in</a>
-                <a href="./front/connect.php" id="btn-sign-up"><span>Sign up</span>
-                    <div id="menu-burger">
-                        <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
-                        <div class="menu-burger-pipe" id="menu-burger-pipe-middle"></div>
-                        <div class="menu-burger-pipe" id="menu-burger-pipe-bottom"></div>
-                    </div>
-                </a>
+        <nav id="main-nav-bar">
+            <div id="container-nav-bar" class="row-limit-size">
+                <div id="container-group-logo">
+                    <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+                    <span id="nav-logo-text">Biblook</span>
+                </div>
+                <div id="container-group-search-nav-top">
+                    <input type="text" id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
+                    <a href="#" id="btn-search-nav-top">Rechercher</a>
+                </div>
+                <div id="container-group-btn-connexion">
+                    <a href="./front/connect.php" id="btn-log-in">Connexion</a>
+                    <a href="./front/connect.php" id="btn-sign-up"><span>S'enregistrer</span>
+                        <div id="menu-burger">
+                            <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
+                            <div class="menu-burger-pipe" id="menu-burger-pipe-middle"></div>
+                            <div class="menu-burger-pipe" id="menu-burger-pipe-bottom"></div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </nav>
     </header>

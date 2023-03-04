@@ -80,42 +80,105 @@ ul {
   width: 100%;
 }
 #main-header #main-nav-bar {
+  background: #0868ae;
+}
+@media screen and (min-width: 950px) {
+  #main-header #main-nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+  }
+}
+#main-header #main-nav-bar #container-nav-bar {
   width: 100%;
   height: 72px;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0868ae;
 }
-#main-header #main-nav-bar #container-group-logo {
+#main-header #main-nav-bar #container-nav-bar #container-group-logo {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-right: auto;
 }
-#main-header #main-nav-bar #container-group-logo img {
-  width: 70px;
+#main-header #main-nav-bar #container-nav-bar #container-group-logo img {
+  width: 85px;
 }
-#main-header #main-nav-bar #container-group-logo #nav-logo-text {
+#main-header #main-nav-bar #container-nav-bar #container-group-logo #nav-logo-text {
   font-family: "Risque", cursive, sans-serif;
   font-size: 36px;
   color: #fff;
 }
-#main-header #main-nav-bar #container-group-search-nav-top #input-search-nav-top {
+#main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top {
+  position: relative;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
   display: none;
 }
-#main-header #main-nav-bar #container-group-search-nav-top #btn-search-nav-top {
+@media screen and (min-width: 950px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
+    display: block;
+    position: relative;
+    width: 600px;
+    height: 50px;
+    border-radius: 15px;
+    padding-left: 30px;
+    border: none;
+  }
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #btn-search-nav-top {
   display: none;
 }
-#main-header #main-nav-bar #container-group-btn-connexion {
+@media screen and (min-width: 950px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #btn-search-nav-top {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 150px;
+    padding: 14px;
+    background-color: #ff5e38;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+  }
+  #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #btn-search-nav-top:hover {
+    background-color: #b53928;
+  }
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion {
   margin-left: auto;
 }
-#main-header #main-nav-bar #container-group-btn-connexion #btn-log-in {
+@media screen and (min-width: 950px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-log-in {
   display: none;
 }
-#main-header #main-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger {
+@media screen and (min-width: 950px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-log-in {
+    display: block;
+    padding: 12px;
+    background-color: transparent;
+    border: 3px solid #ff5e38;
+    color: #ff5e38;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 16px;
+    font-family: "Hind Madurai", sans-serif;
+    margin-right: 10px;
+  }
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger {
   width: 50px;
   height: 50px;
   color: #fff;
@@ -126,19 +189,43 @@ ul {
   align-content: center;
   border-radius: 5px;
 }
-#main-header #main-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger .menu-burger-pipe {
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger .menu-burger-pipe {
   width: 80%;
   height: 10%;
   background-color: #fff;
   margin: 0 auto;
 }
-#main-header #main-nav-bar #container-group-btn-connexion #btn-sign-up span {
+@media screen and (min-width: 950px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger {
+    display: none;
+  }
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span {
   display: none;
+}
+@media screen and (min-width: 950px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span {
+    display: block;
+  }
+}
+@media screen and (min-width: 950px) and (min-width: 950px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span {
+    display: block;
+    padding: 12px;
+    padding: 14px;
+    background-color: #ff5e38;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+  }
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span:hover {
+    background-color: #b53928;
+  }
 }
 
 #section-news {
   width: 100%;
-  padding-top: 60px;
+  padding-top: 120px;
 }
 #section-news .flip {
   position: relative;
@@ -373,6 +460,10 @@ ul {
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   color: #fff;
+}
+#section-heart #btn-show-heart:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
 }
 
 #section-soon-available {
