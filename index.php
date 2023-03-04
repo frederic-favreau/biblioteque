@@ -93,7 +93,16 @@
 
         <?php
         require_once './connexion.php';
-        $sql = "SELECT `id_work`,`title`,`pict`,`extract`, `genre`.`name` FROM `work` ORDER BY `id_work` DESC LIMIT 6";
+        
+
+
+        $sql = 
+        "SELECT `title`,`pict`,`extract`, `genre`.`name` FROM `work`
+        INNER JOIN `work_genre` 
+        ON `work`.`id_work` = `work_genre`.`work_id`
+        INNER JOIN `genre`
+        ON `work_genre`.`genre_id` =`genre`.`id_genre`
+        GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 6";
         $req = $db->query($sql);
         while($card = $req->fetch(PDO::FETCH_ASSOC)){
 
@@ -106,9 +115,9 @@
                     <img src="" alt="<?= $card['title']?>">
                 </div>
                 <div class="bottom-item-card">
-                    <h4>Categorie</h4>
+                    <h4><?= $card['name'][1]?></h4>
                     <h3><?= $card['title']?></h3>
-                        <p class="description-card"></p>
+                        <p class="description-card"><?= $card['extract']?></p>
                         <h5>Auteur</h5>
                 </div>
             </div> 
