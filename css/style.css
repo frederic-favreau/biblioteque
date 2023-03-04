@@ -557,7 +557,9 @@ ul {
 #section-cta-available {
   width: 100%;
   padding: 80px;
-  background-color: #0868ae;
+  background-image: radial-gradient(circle at 19% 90%, rgba(190, 190, 190, 0.04) 0%, rgba(190, 190, 190, 0.04) 17%, transparent 17%, transparent 100%), radial-gradient(circle at 73% 2%, rgba(78, 78, 78, 0.04) 0%, rgba(78, 78, 78, 0.04) 94%, transparent 94%, transparent 100%), radial-gradient(circle at 45% 2%, rgba(18, 18, 18, 0.04) 0%, rgba(18, 18, 18, 0.04) 55%, transparent 55%, transparent 100%), radial-gradient(circle at 76% 60%, rgba(110, 110, 110, 0.04) 0%, rgba(110, 110, 110, 0.04) 34%, transparent 34%, transparent 100%), radial-gradient(circle at 68% 56%, rgba(246, 246, 246, 0.04) 0%, rgba(246, 246, 246, 0.04) 16%, transparent 16%, transparent 100%), radial-gradient(circle at 71% 42%, rgba(156, 156, 156, 0.04) 0%, rgba(156, 156, 156, 0.04) 47%, transparent 47%, transparent 100%), radial-gradient(circle at 46% 82%, rgba(247, 247, 247, 0.04) 0%, rgba(247, 247, 247, 0.04) 39%, transparent 39%, transparent 100%), radial-gradient(circle at 50% 47%, rgba(209, 209, 209, 0.04) 0%, rgba(209, 209, 209, 0.04) 45%, transparent 45%, transparent 100%), linear-gradient(90deg, rgb(8, 104, 174), rgb(5, 73, 123));
+  background-position: center;
+  background-size: cover;
   text-align: center;
 }
 #section-cta-available h2,
@@ -655,4 +657,63 @@ ul {
 }
 #section-blog #container-section-blog .card-blog:hover {
   transform: scale(1.05);
+}
+
+#section-faq {
+  padding: 80px;
+  position: relative;
+}
+#section-faq h3 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+#section-faq #container-faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+#section-faq #container-faq hr {
+  width: 58%;
+  margin-top: 5px;
+  border: 1px solid grey;
+}
+#section-faq #container-faq .item-faq {
+  position: relative;
+  width: 90%;
+  max-width: 770px;
+  min-height: 80px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+}
+#section-faq #container-faq .item-faq .toggle-symbol {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#section-faq #container-faq .item-faq .toggle-symbol:before {
+  content: "+";
+}
+#section-faq #container-faq .item-faq .question {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+#section-faq #container-faq .item-faq .faq-answer {
+  display: none;
+}
+#section-faq #container-faq .item-faq.active .faq-answer {
+  display: block;
+}
+#section-faq #container-faq .item-faq.active .toggle-symbol:before {
+  content: "-";
+}
+#section-faq #container-faq .item-faq p:first-child {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

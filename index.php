@@ -261,6 +261,53 @@
       </div>
     </div>
   </section>
+
+
+  <!-- ---------- SECTION - FAQ ---------- -->
+
+  <section id="section-faq" class="row-limit-size">
+  <h2>Foire aux questions</h2>
+  <h3>Toutes les choses que vous devez savoir sont ici.</h3>
+  <div id="container-faq">
+    <div class="item-faq">
+      <p class="question">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur ?</p>
+      <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non debitis quasi qui porro temporibus numquam ?</p>
+      <div class="toggle-symbol"></div>
+    </div>
+    <hr>
+    <div class="item-faq">
+      <p class="question">Lorem ipsum dolor sit amet consectetur ?</p>
+      <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non debitis quasi qui porro temporibus numquam ?</p>
+      <div class="toggle-symbol"></div>
+    </div>
+    <hr>
+    <div class="item-faq">
+      <p class="question">Lorem ipsum dolor sit amet consectetur Lorem, ipsum. ?</p>
+      <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non debitis quasi qui porro temporibus numquam ?</p>
+      <div class="toggle-symbol"></div>
+    </div>
+    <hr>
+    <div class="item-faq">
+      <p class="question">Lorem ipsum dolor sit amet consectetur Lorem, ipsum dolor. ?</p>
+      <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non debitis quasi qui porro temporibus numquam ?</p>
+      <div class="toggle-symbol"></div>
+    </div>
+    <hr>
+    <div class="item-faq">
+      <p class="question">Lorem ipsum dolor sit amet consectetur ?</p>
+      <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non debitis quasi qui porro temporibus numquam ?</p>
+      <div class="toggle-symbol"></div>
+    </div>
+    <hr>
+    <div class="item-faq">
+      <p class="question">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. ?</p>
+      <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non qui porro temporibus numquam ?</p>
+      <div class="toggle-symbol"></div>
+    </div>
+  </div>
+</section>
+
+
   <script src="./main.js"></script>
 </body>
 
