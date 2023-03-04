@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 03 mars 2023 à 10:18
--- Version du serveur : 8.0.31
--- Version de PHP : 8.0.26
+-- Généré le : sam. 04 mars 2023 à 14:22
+-- Version du serveur : 8.0.27
+-- Version de PHP : 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `author`;
 CREATE TABLE IF NOT EXISTS `author` (
   `id_author` int NOT NULL AUTO_INCREMENT,
-  `lastname` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `firstname` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `lastname` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `firstname` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_author`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
@@ -57,7 +57,7 @@ INSERT INTO `author` (`id_author`, `lastname`, `firstname`) VALUES
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `id_category` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
@@ -71,7 +71,7 @@ DROP TABLE IF EXISTS `copy`;
 CREATE TABLE IF NOT EXISTS `copy` (
   `id_copy` int NOT NULL AUTO_INCREMENT,
   `id_editor` int DEFAULT NULL,
-  `location` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `location` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `id_work` int NOT NULL,
   `stock` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_copy`) USING BTREE,
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `copy` (
 DROP TABLE IF EXISTS `editor`;
 CREATE TABLE IF NOT EXISTS `editor` (
   `id_editor` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `name` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `number` int DEFAULT NULL,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`id_editor`)
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `editor` (
 DROP TABLE IF EXISTS `genre`;
 CREATE TABLE IF NOT EXISTS `genre` (
   `id_genre` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_genre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 
@@ -151,15 +151,15 @@ CREATE TABLE IF NOT EXISTS `loan` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id_user` int NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `lastname` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `mail` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `password` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `adress` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `avatar` varchar(1) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `firstname` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `lastname` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `mail` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `password` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `adress` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `avatar` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `role` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `user`
@@ -170,7 +170,9 @@ INSERT INTO `user` (`id_user`, `firstname`, `lastname`, `mail`, `password`, `adr
 (2, 'demo', 'demo', 'demo@gmail.com', '12345', 'Rue de Prague, Lyon', NULL, 0),
 (3, 'admin', 'admin', 'admin@gmail.com', '12345', 'Place de la Bière, Dijon', NULL, 1),
 (7, 'Maya', 'Abeille', 'maya@gmail.com', '$2y$10$HEkwsfLRAs3jJzh4k06jfuPpeKHqNusucEjACwz3AR/sNG/ZZp4iS', NULL, NULL, NULL),
-(9, 'Elisa', 'Elisa', 'elisa@google.com', '$2y$10$odqpKdrFFQbyV//dBckZBeOL5kd0jZ3TG2DD8ROjb5cSYiCvQNlS.', NULL, NULL, NULL);
+(9, 'Elisa', 'Elisa', 'elisa@google.com', '$2y$10$odqpKdrFFQbyV//dBckZBeOL5kd0jZ3TG2DD8ROjb5cSYiCvQNlS.', NULL, NULL, NULL),
+(10, 'Papa Schtroumpf', 'Papa Schtroumpf', 'papaSchtroumpf@gmail.com', '$2y$10$YU4A1C80dqo1GqSi9muzcun6qVWiIRqAqtXaoYu5a05ivdHN.RFgK', NULL, NULL, NULL),
+(11, 'Schtroumpfette', 'Schtroumpfette', 'Schtroumpfette@gmail.com', '$2y$10$jJIAm2UDCCQpVLa7SCgan.ltw3LqW9ICG/gAMG3sSZIbIAuYny/ZS', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -181,12 +183,12 @@ INSERT INTO `user` (`id_user`, `firstname`, `lastname`, `mail`, `password`, `adr
 DROP TABLE IF EXISTS `work`;
 CREATE TABLE IF NOT EXISTS `work` (
   `id_work` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `pict` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `extract` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci,
+  `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `pict` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `extract` text CHARACTER SET utf8 COLLATE utf8_general_ci,
   `new` tinyint(1) DEFAULT NULL,
   `published_at` date DEFAULT NULL,
-  `ISBN` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `ISBN` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_work`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
@@ -211,11 +213,25 @@ INSERT INTO `work` (`id_work`, `title`, `pict`, `extract`, `new`, `published_at`
 
 DROP TABLE IF EXISTS `work_author`;
 CREATE TABLE IF NOT EXISTS `work_author` (
-  `id_author` int DEFAULT NULL,
-  `id_work` int DEFAULT NULL,
-  KEY `id_author` (`id_author`),
-  KEY `id_work` (`id_work`)
+  `author_id` int DEFAULT NULL,
+  `work_id` int DEFAULT NULL,
+  KEY `id_author` (`author_id`),
+  KEY `id_work` (`work_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `work_author`
+--
+
+INSERT INTO `work_author` (`author_id`, `work_id`) VALUES
+(3, 1),
+(4, 2),
+(1, 3),
+(5, 4),
+(6, 5),
+(2, 6),
+(7, 7),
+(2, 4);
 
 -- --------------------------------------------------------
 
@@ -239,11 +255,27 @@ CREATE TABLE IF NOT EXISTS `work_category` (
 
 DROP TABLE IF EXISTS `work_genre`;
 CREATE TABLE IF NOT EXISTS `work_genre` (
-  `id_genre` int DEFAULT NULL,
-  `id_work` int DEFAULT NULL,
-  KEY `id_genre` (`id_genre`),
-  KEY `id_work` (`id_work`)
+  `genre_id` int DEFAULT NULL,
+  `work_id` int DEFAULT NULL,
+  KEY `id_genre` (`genre_id`),
+  KEY `id_work` (`work_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `work_genre`
+--
+
+INSERT INTO `work_genre` (`genre_id`, `work_id`) VALUES
+(6, 1),
+(4, 2),
+(3, 3),
+(1, 3),
+(7, 3),
+(5, 4),
+(4, 5),
+(1, 6),
+(9, 6),
+(2, 7);
 
 --
 -- Contraintes pour les tables déchargées
@@ -267,8 +299,8 @@ ALTER TABLE `loan`
 -- Contraintes pour la table `work_author`
 --
 ALTER TABLE `work_author`
-  ADD CONSTRAINT `work_author_ibfk_2` FOREIGN KEY (`id_author`) REFERENCES `author` (`id_author`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `work_author_ibfk_3` FOREIGN KEY (`id_work`) REFERENCES `work` (`id_work`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `work_author_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `author` (`id_author`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `work_author_ibfk_3` FOREIGN KEY (`work_id`) REFERENCES `work` (`id_work`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `work_category`
@@ -281,8 +313,8 @@ ALTER TABLE `work_category`
 -- Contraintes pour la table `work_genre`
 --
 ALTER TABLE `work_genre`
-  ADD CONSTRAINT `work_genre_ibfk_3` FOREIGN KEY (`id_genre`) REFERENCES `genre` (`id_genre`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `work_genre_ibfk_4` FOREIGN KEY (`id_work`) REFERENCES `work` (`id_work`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `work_genre_ibfk_3` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`id_genre`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `work_genre_ibfk_4` FOREIGN KEY (`work_id`) REFERENCES `work` (`id_work`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

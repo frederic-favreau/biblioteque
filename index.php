@@ -115,20 +115,52 @@
 
 
   <section id="section-soon-available" class="row-limit-size">
+
+
     <h3 id="h3-tag">Nos ouvrages</h3>
     <h2>Bientôt disponible</h2>
     <div id="container-cards">
-      <div class="card">
-        <div class="top-item-card">
-          <img src="./img/top-img-card.png" alt="titre du livre">
+
+      <!-- find last 6 books in our librarerie -->
+
+
+      <?php
+      require_once './connexion.php';
+
+
+      $sql =
+        "SELECT DISTINCT `title`,`pict`,`extract`, 
+        GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
+        GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
+        FROM `work`
+        INNER JOIN `work_genre` 
+        ON `work`.`id_work` = `work_genre`.`work_id`
+        INNER JOIN `genre`
+        ON `work_genre`.`genre_id` =`genre`.`id_genre`
+        INNER JOIN `work_author`
+        ON `work_author`.`work_id` = `work`.`id_work`
+        INNER JOIN `author`
+        ON `work_author`.`author_id` = `author`.`id_author`
+        GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 6";
+      $req = $db->query($sql);
+      while ($card = $req->fetch(PDO::FETCH_ASSOC)) {
+
+      ?>
+
+
+        <div class="card">
+          <div class="top-item-card">
+            <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
+          </div>
+          <div class="bottom-item-card">
+            <h4><?= implode(' ', explode(',', $card['genres'])) ?></h4>
+            <h3><?= $card['title'] ?></h3>
+            <p class="description-card"><?= $card['extract'] ?></p>
+            <h5><?= str_replace(',', ', ', preg_replace('/,([^,]*)$/', ', $1', $card['authors'])) ?></h5>
+
+          </div>
         </div>
-        <div class="bottom-item-card">
-          <h4>Categorie</h4>
-          <h3>Titre du livre</h4>
-            <p class="description-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, atque. Tempora id molestiae nesciunt quos iusto reprehenderit itaque, sit quisquam? Sapiente consectetur sint ab neque maxime nihil unde rerum aliquid itaque voluptatem, repellat ratione maiores provident vitae fugiat aspernatur ex nobis sunt quae esse? Cumque tenetur error nobis quidem ab!</p>
-            <h5>Auteur</h5>
-        </div>
-      </div>
+      <?php } ?>
     </div>
   </section>
 
@@ -146,90 +178,90 @@
 
 
   <section id="section-blog" class="row-limit-size">
-  <h3 id="h3-tag">En manque d'infos ?</h3>
-  <h2>Notre blog</h2>
-  <div id="container-section-blog">
-    <div class="card-blog">
-      <div class="card-blog-top">
-        <div class="article-infos">
-          <div>Lorem ipsum <br> Mars 2023</div>
-          <div class="category">Nouveautés</div>
+    <h3 id="h3-tag">En manque d'infos ?</h3>
+    <h2>Notre blog</h2>
+    <div id="container-section-blog">
+      <div class="card-blog">
+        <div class="card-blog-top">
+          <div class="article-infos">
+            <div>Lorem ipsum <br> Mars 2023</div>
+            <div class="category">Nouveautés</div>
+          </div>
+        </div>
+        <div class="card-blog-bottom">
+          <h4>Lorem, ipsum dolor.</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <a href="">Lire l'article ↗</a>
         </div>
       </div>
-      <div class="card-blog-bottom">
-        <h4>Lorem, ipsum dolor.</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
-        <a href="">Lire l'article ↗</a>
-      </div>
-    </div>
-    <div class="card-blog">
-      <div class="card-blog-top">
-        <div class="article-infos">
-          <div>Lorem ipsum <br> Mars 2023</div>
-          <div class="category">Nouveautés</div>
+      <div class="card-blog">
+        <div class="card-blog-top">
+          <div class="article-infos">
+            <div>Lorem ipsum <br> Mars 2023</div>
+            <div class="category">Nouveautés</div>
+          </div>
+        </div>
+        <div class="card-blog-bottom">
+          <h4>Lorem, ipsum dolor.</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <a href="">Lire l'article ↗</a>
         </div>
       </div>
-      <div class="card-blog-bottom">
-        <h4>Lorem, ipsum dolor.</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
-        <a href="">Lire l'article ↗</a>
-      </div>
-    </div>
-    <div class="card-blog">
-      <div class="card-blog-top">
-        <div class="article-infos">
-          <div>Lorem ipsum <br> Mars 2023</div>
-          <div class="category">Nouveautés</div>
+      <div class="card-blog">
+        <div class="card-blog-top">
+          <div class="article-infos">
+            <div>Lorem ipsum <br> Mars 2023</div>
+            <div class="category">Nouveautés</div>
+          </div>
+        </div>
+        <div class="card-blog-bottom">
+          <h4>Lorem, ipsum dolor.</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <a href="">Lire l'article ↗</a>
         </div>
       </div>
-      <div class="card-blog-bottom">
-        <h4>Lorem, ipsum dolor.</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
-        <a href="">Lire l'article ↗</a>
-      </div>
-    </div>
-    <div class="card-blog">
-      <div class="card-blog-top">
-        <div class="article-infos">
-          <div>Lorem ipsum <br> Mars 2023</div>
-          <div class="category">Nouveautés</div>
+      <div class="card-blog">
+        <div class="card-blog-top">
+          <div class="article-infos">
+            <div>Lorem ipsum <br> Mars 2023</div>
+            <div class="category">Nouveautés</div>
+          </div>
+        </div>
+        <div class="card-blog-bottom">
+          <h4>Lorem, ipsum dolor.</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <a href="">Lire l'article ↗</a>
         </div>
       </div>
-      <div class="card-blog-bottom">
-        <h4>Lorem, ipsum dolor.</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
-        <a href="">Lire l'article ↗</a>
-      </div>
-    </div>
-    <div class="card-blog">
-      <div class="card-blog-top">
-        <div class="article-infos">
-          <div>Lorem ipsum <br> Mars 2023</div>
-          <div class="category">Nouveautés</div>
+      <div class="card-blog">
+        <div class="card-blog-top">
+          <div class="article-infos">
+            <div>Lorem ipsum <br> Mars 2023</div>
+            <div class="category">Nouveautés</div>
+          </div>
+        </div>
+        <div class="card-blog-bottom">
+          <h4>Lorem, ipsum dolor.</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <a href="">Lire l'article ↗</a>
         </div>
       </div>
-      <div class="card-blog-bottom">
-        <h4>Lorem, ipsum dolor.</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
-        <a href="">Lire l'article ↗</a>
-      </div>
-    </div>
-    <div class="card-blog">
-      <div class="card-blog-top">
-        <div class="article-infos">
-          <div>Lorem ipsum <br> Mars 2023</div>
-          <div class="category">Nouveautés</div>
+      <div class="card-blog">
+        <div class="card-blog-top">
+          <div class="article-infos">
+            <div>Lorem ipsum <br> Mars 2023</div>
+            <div class="category">Nouveautés</div>
+          </div>
+        </div>
+        <div class="card-blog-bottom">
+          <h4>Lorem, ipsum dolor.</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <a href="">Lire l'article ↗</a>
         </div>
       </div>
-      <div class="card-blog-bottom">
-        <h4>Lorem, ipsum dolor.</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
-        <a href="">Lire l'article ↗</a>
-      </div>
     </div>
-  </div>
   </section>
-<script src="./main.js"></script>
+  <script src="./main.js"></script>
 </body>
 
 </html>
