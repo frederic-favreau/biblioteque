@@ -48,16 +48,48 @@
         <div id="container-section-news">
             <div id="item-section-news-left">
                 <h1>Les nouveautés chez <br> Biblook</h1>
-                <p>Des supers volontaires viennent rejoindre <br> nos rangs pour offrir des moments <br> de lecture ignoubliable !</p>
+                <p>Des supers volontaires viennent rejoindre nos rangs <br> pour offrir des moments de lecture ignoubliable !</p>
             </div>
             <div id="item-section-news-right">
                 <div id="item-news-right-top">
-                    <img src="./img/news-2.png" alt="">
-                    <img src="./img/news-3.png" alt="">
+                    <div class="flip">
+                        <div class="front front-item-1" style="background-image: url(./img/news-3.png)">
+                        </div>
+                        <div class="back front-item-1">
+                            <p><span>Lorem</span> ipsum dolor sit amet consectetur adipisicing elit. Voluptas nulla minima perferendis ipsum ab...</p>
+                        </div>
+                    </div>
+                    <div class="flip">
+                        <div class="front front-item-2" style="background-image: url(./img/news-2.png)">
+                        </div>
+                        <div class="back front-item-2">
+                            <p><span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis..</p>
+                        </div>
+                    </div>
                 </div>
-                <img src="./img/news-1.png" alt="">
-            </div>
-        </div>
+                <div id="item-news-right-bottom">
+                    <div class="flip">
+                        <div class="front front-item-4" style="background-image: url(./img/news-1.png)">
+                        </div>
+                        <div class="back front-item-4">
+                            <p><span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis..</p>
+                        </div>
+                    </div>
+                    <div class="flip">
+                        <div class="front front-item-3" style="background-image: url(./img/news-1.png)">
+                        </div>
+                        <div class="back front-item-3">
+                            <p><span>Lorem</span> tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                        </div>
+                    </div>
+                    <div class="flip">
+                        <div class="front front-item-5" style="background-image: url(./img/news-1.png)">
+                        </div>
+                        <div class="back front-item-5">
+                            <p><span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis..</p>
+                        </div>
+                    </div>
+                </div>
     </section>
 
 
@@ -94,26 +126,26 @@
                         <p class="description-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, atque. Tempora id molestiae nesciunt quos iusto reprehenderit itaque, sit quisquam? Sapiente consectetur sint ab neque maxime nihil unde rerum aliquid itaque voluptatem, repellat ratione maiores provident vitae fugiat aspernatur ex nobis sunt quae esse? Cumque tenetur error nobis quidem ab!</p>
                         <h5>Auteur</h5>
                 </div>
-            </div>          
+            </div>
         </div>
     </section>
 
-<!-- ---------- SECTION - CTA AVAILABLE ---------- -->
+    <!-- ---------- SECTION - CTA AVAILABLE ---------- -->
 
 
-<section id="section-cta-available">
-    <h2>Vous recherchez un livre en particulier ?</h2>
-    <p>Faites votre demande dès maintenant auprès de Biblioo</p>
-    <a href="#">Demander un livre</a>
-</section>
+    <section id="section-cta-available">
+        <h2>Vous recherchez un livre en particulier ?</h2>
+        <p>Faites votre demande dès maintenant auprès de Biblioo</p>
+        <a href="#">Demander un livre</a>
+    </section>
 
 
-<!-- ---------- SECTION - TOP COMMENTS---------- -->
+    <!-- ---------- SECTION - TOP COMMENTS---------- -->
 
 
-<section id="section-top-comments" class="row-limit-size">
-    
-</section>
+    <section id="section-top-comments" class="row-limit-size">
+
+    </section>
 
 </body>
 

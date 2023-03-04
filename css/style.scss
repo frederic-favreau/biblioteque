@@ -38,6 +38,10 @@ h2 {
   letter-spacing: 0.04em;
   color: $main-blue;
   font-weight: bold;
+  @media screen and (min-width: 950px) {
+    font-size: 50px;
+    line-height: 70px;
+  }
 }
 
 h3 {
@@ -52,13 +56,17 @@ h3 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 14px;
   text-align: start;
   margin: 30px auto;
   font-weight: 400;
   line-height: 24px;
   color: $black;
   display: block;
+  @media screen and (min-width: 950px) {
+    font-size: 18px;
+    line-height: 30px;
+  }
 }
 
 ul {
@@ -150,20 +158,143 @@ ul {
   width: 100%;
   padding-top: 60px;
 
+  .flip {
+    position: relative;
+    > .front,
+    > .back {
+      display: block;
+      transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition-duration: 2.5s;
+      transition-property: transform, opacity;
+    }
+    > .front {
+      transform: rotateY(0deg);
+    }
+    > .back {
+      position: absolute;
+      opacity: 0;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      transform: rotateY(-180deg);
+    }
+    &:hover {
+      > .front {
+        transform: rotateY(180deg);
+      }
+      > .back {
+        opacity: 1;
+        transform: rotateY(0deg);
+      }
+    }
+    &.flip-vertical {
+      > .back {
+        transform: rotateX(-180deg);
+      }
+      &:hover {
+        > .front {
+          transform: rotateX(180deg);
+        }
+        > .back {
+          transform: rotateX(0deg);
+        }
+      }
+    }
+  }
+
+  // custom
+  .flip {
+    position: relative;
+    display: inline-block;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    width: 200px;
+    > .front,
+    > .back {
+      display: block;
+      color: $white;
+      width: inherit;
+      background-size: cover !important;
+      background-position: center !important;
+      padding: 1em 2em;
+      background: $main-blue;
+      border-radius: 10px;
+      p {
+        font-size: 0.9125rem;
+        line-height: 160%;
+        color: $white;
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+
+    > .front-item-1 {
+      height: 240px;
+    }
+    > .front-item-2 {
+      height: 180px;
+    }
+    > .front-item-3 {
+      height: 240px;
+    }
+    > .front-item-4 {
+      height: 180px;
+      display: none;
+      @media screen and (min-width: 950px) {
+        display: block;
+      }
+    }
+    > .front-item-5 {
+      height: 180px;
+      display: none;
+      @media screen and (min-width: 950px) {
+        display: block;
+      }
+    }
+  }
+
+  .text-shadow {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04),
+      3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04),
+      0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04),
+      7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04),
+      9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04),
+      11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04),
+      13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04),
+      0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04),
+      17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04),
+      19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+  }
+
   #container-section-news {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media screen and (min-width: 950px) {
+      flex-wrap: nowrap;
+    }
 
     #item-section-news-left {
       h1 {
         white-space: nowrap;
+      }
+      p {
+        text-align: center;
+      }
+      @media screen and (min-width: 950px) {
+        width: 50%;
       }
     }
 
     #item-section-news-right {
       width: 100%;
       text-align: center;
+      @media screen and (min-width: 950px) {
+        width: 50%;
+      }
 
       #item-news-right-top {
         display: flex;
@@ -171,9 +302,14 @@ ul {
         align-items: baseline;
 
         img:first-of-type {
-          margin-right: 10px;
+          margin-right: 15px;
           margin-bottom: 10px;
         }
+      }
+
+      #item-news-right-bottom {
+        display: flex;
+        justify-content: center;
       }
     }
   }
