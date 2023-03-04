@@ -50,7 +50,7 @@
         <div id="container-section-news">
             <div id="item-section-news-left">
                 <h1>Les nouveautés chez <br> Biblook</h1>
-                <p>Des supers volontaires viennent rejoindre nos rangs <br> pour offrir des moments de lecture ignoubliable !</p>
+                <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs <br> pour offrir des moments de lecture ignoubliable !</p>
             </div>
             <div id="item-section-news-right">
                 <div id="item-news-right-top">
@@ -100,7 +100,7 @@
 
     <section id="section-heart" class="row-limit-size">
         <h2>Coups de coeur</h1>
-            <p>Nos lecteurs partagent leur coups de coeurs</p>
+            <p id="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
             <ul>
                 <li><a href="#">1<img src="./img/top-img-card.png" alt=""></a></li>
                 <li><a href="#">2<img src="./img/top-img-card.png" alt=""></a></li>
@@ -137,7 +137,7 @@
 
     <section id="section-cta-available">
         <h2>Vous recherchez un livre en particulier ?</h2>
-        <p>Faites votre demande dès maintenant auprès de Biblioo</p>
+        <p id="sub-title">Faites votre demande dès maintenant auprès de Biblioo</p>
         <a href="#">Demander un livre</a>
     </section>
 

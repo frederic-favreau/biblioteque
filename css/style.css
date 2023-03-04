@@ -53,7 +53,7 @@ h3 {
   text-overflow: ellipsis;
 }
 
-p {
+#sub-title {
   font-size: 14px;
   text-align: start;
   margin: 30px auto;
@@ -63,7 +63,7 @@ p {
   display: block;
 }
 @media screen and (min-width: 950px) {
-  p {
+  #sub-title {
     font-size: 18px;
     line-height: 30px;
   }
@@ -146,6 +146,7 @@ ul {
     color: #fff;
     border-radius: 10px;
     text-align: center;
+    transition: background-color 0.3s ease;
   }
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #btn-search-nav-top:hover {
     background-color: #b53928;
@@ -217,6 +218,7 @@ ul {
     color: #fff;
     border-radius: 10px;
     text-align: center;
+    transition: background-color 0.3s ease;
   }
   #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span:hover {
     background-color: #b53928;
@@ -288,6 +290,7 @@ ul {
   font-size: 0.9125rem;
   line-height: 160%;
   color: #fff;
+  text-align: start;
 }
 #section-news .flip > .front p span,
 #section-news .flip > .back p span {
@@ -396,6 +399,7 @@ ul {
     margin-right: -100px;
     margin-left: -30px;
     padding: 0;
+    transition: transform 0.5s ease;
   }
   #section-heart ul li:hover {
     transform: translateY(-50px);
@@ -460,6 +464,7 @@ ul {
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   color: #fff;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 #section-heart #btn-show-heart:hover {
   opacity: 0.9;
@@ -511,6 +516,10 @@ ul {
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: transform 0.5s ease;
+}
+#section-soon-available #container-cards .card img:hover {
+  transform: translateY(-15px);
 }
 #section-soon-available #container-cards .card .bottom-item-card h4 {
   margin: 5px 0;
