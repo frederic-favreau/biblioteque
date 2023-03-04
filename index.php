@@ -100,10 +100,10 @@
         <h2>Coups de coeur</h1>
             <p>Nos lecteurs partagent leur coups de coeurs</p>
             <ul>
-                <li><a href="#"><img src="./img/fake-livre1.png" alt=""></a></li>
-                <li><a href="#"><img src="./img/fake-livre2.png" alt=""></a></li>
-                <li><a href="#"><img src="./img/fake-livre3.png" alt=""></a></li>
-                <li><a href="#"><img src="./img/fake-livre4.png" alt=""></a></li>
+                <li><a href="#">1<img src="./img/top-img-card.png" alt=""></a></li>
+                <li><a href="#">2<img src="./img/top-img-card.png" alt=""></a></li>
+                <li><a href="#">3<img src="./img/top-img-card.png" alt=""></a></li>
+                <li><a href="#">4<img src="./img/top-img-card.png" alt=""></a></li>
             </ul>
             <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
     </section>

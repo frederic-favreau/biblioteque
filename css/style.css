@@ -57,7 +57,7 @@ p {
   font-size: 14px;
   text-align: start;
   margin: 30px auto;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 24px;
   color: #070606;
   display: block;
@@ -286,6 +286,78 @@ ul {
 }
 #section-heart p {
   text-align: center;
+  margin-bottom: 160px;
+}
+@media screen and (min-width: 950px) {
+  #section-heart p {
+    margin-bottom: 120px;
+  }
+}
+@media screen and (min-width: 950px) {
+  #section-heart ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 25px;
+  }
+}
+#section-heart ul li {
+  margin-bottom: 80px;
+}
+@media screen and (min-width: 950px) {
+  #section-heart ul li {
+    width: 33%;
+    margin-right: -100px;
+    margin-left: -30px;
+    padding: 0;
+  }
+  #section-heart ul li:hover {
+    transform: translateY(-50px);
+  }
+}
+#section-heart ul li a {
+  font-weight: bolder;
+  line-height: 155px;
+  font-size: 300px;
+  font-family: "Risque", cursive, sans-serif;
+}
+#section-heart ul li a img {
+  width: 180px;
+  height: 280px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  margin-left: -50px;
+}
+#section-heart ul li:nth-child(1) a {
+  color: #ff6b38;
+  position: relative;
+  left: -10%;
+  top: 0;
+}
+@media screen and (min-width: 950px) {
+  #section-heart ul li:nth-child(1) a {
+    left: -120px;
+    top: 100px;
+    margin-right: -100px;
+  }
+}
+#section-heart ul li:nth-child(1) a img {
+  position: absolute;
+  transform-origin: bottom left;
+  transform: rotate(-5deg);
+  width: 200px;
+  height: 300px;
+  margin-left: -30px;
+  top: 0px;
+}
+#section-heart ul li:nth-child(2) a {
+  color: #28e2d9;
+}
+#section-heart ul li:nth-child(3) a {
+  color: #ffd317;
+}
+#section-heart ul li:nth-child(4) a {
+  color: #0b95fa;
 }
 #section-heart #btn-show-heart {
   display: block;
