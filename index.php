@@ -190,7 +190,7 @@
         </div>
         <div class="card-blog-bottom">
           <h4>Lorem, ipsum dolor.</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
           <a href="">Lire l'article ↗</a>
         </div>
       </div>
@@ -203,7 +203,7 @@
         </div>
         <div class="card-blog-bottom">
           <h4>Lorem, ipsum dolor.</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
           <a href="">Lire l'article ↗</a>
         </div>
       </div>
@@ -216,7 +216,7 @@
         </div>
         <div class="card-blog-bottom">
           <h4>Lorem, ipsum dolor.</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
           <a href="">Lire l'article ↗</a>
         </div>
       </div>
@@ -229,7 +229,7 @@
         </div>
         <div class="card-blog-bottom">
           <h4>Lorem, ipsum dolor.</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
           <a href="">Lire l'article ↗</a>
         </div>
       </div>
@@ -242,7 +242,7 @@
         </div>
         <div class="card-blog-bottom">
           <h4>Lorem, ipsum dolor.</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
           <a href="">Lire l'article ↗</a>
         </div>
       </div>
@@ -255,7 +255,7 @@
         </div>
         <div class="card-blog-bottom">
           <h4>Lorem, ipsum dolor.</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
           <a href="">Lire l'article ↗</a>
         </div>
       </div>
