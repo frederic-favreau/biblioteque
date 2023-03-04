@@ -97,11 +97,18 @@
 
 
         $sql = 
-        "SELECT `title`,`pict`,`extract`, `genre`.`name` FROM `work`
+        "SELECT DISTINCT `title`,`pict`,`extract`, 
+        GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
+        GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
+        FROM `work`
         INNER JOIN `work_genre` 
         ON `work`.`id_work` = `work_genre`.`work_id`
         INNER JOIN `genre`
         ON `work_genre`.`genre_id` =`genre`.`id_genre`
+        INNER JOIN `work_author`
+        ON `work_author`.`work_id` = `work`.`id_work`
+        INNER JOIN `author`
+        ON `work_author`.`author_id` = `author`.`id_author`
         GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 6";
         $req = $db->query($sql);
         while($card = $req->fetch(PDO::FETCH_ASSOC)){
@@ -112,13 +119,14 @@
 
             <div class="card">
                 <div class="top-item-card">
-                    <img src="" alt="<?= $card['title']?>">
+                    <img src="./img/books/<?= $card['pict']?>" alt="<?= $card['title']?>">
                 </div>
                 <div class="bottom-item-card">
-                    <h4><?= $card['name'][1]?></h4>
+                    <h4><?= implode(' ', explode(',', $card['genres']))?></h4>
                     <h3><?= $card['title']?></h3>
                         <p class="description-card"><?= $card['extract']?></p>
-                        <h5>Auteur</h5>
+                        <h5><?= str_replace(',', ', ', preg_replace('/,([^,]*)$/', ', $1', $card['authors'])) ?></h5>
+                        
                 </div>
             </div> 
             <?php } ?>         
