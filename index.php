@@ -26,7 +26,7 @@
         </div>
         <div id="container-group-search-nav-top">
           <input type="text" id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
-          <a href="#" id="btn-search-nav-top">Rechercher</a>
+          <a href="./front/catalog.php" id="btn-search-nav-top">Rechercher</a>
         </div>
         <div id="container-group-btn-connexion">
           <a href="./front/connect.php" id="btn-log-in">Connexion</a>
