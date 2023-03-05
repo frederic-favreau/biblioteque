@@ -51,7 +51,7 @@
       <div id="container-section-news">
         <div id="item-section-news-left">
           <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
-          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs <br> pour offrir des moments de lecture ignoubliable !</p>
+          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs <br> pour offrir des moments de lecture inoubliable !</p>
         </div>
         <div id="item-section-news-right">
           <div id="item-news-right-top">
@@ -183,7 +183,7 @@
       <h2>Notre blog</h2>
       <div id="container-section-blog">
         <div class="card-blog">
-          <div class="card-blog-top">
+          <div class="card-blog-top" id="pict-aticle-1">
             <div class="article-infos">
               <div>Lorem ipsum <br> Mars 2023</div>
               <div class="category">Nouveautés</div>
@@ -196,7 +196,7 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top">
+          <div class="card-blog-top" id="pict-aticle-2">
             <div class="article-infos">
               <div>Lorem ipsum <br> Mars 2023</div>
               <div class="category">Nouveautés</div>
@@ -209,7 +209,7 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top">
+          <div class="card-blog-top" id="pict-aticle-3">
             <div class="article-infos">
               <div>Lorem ipsum <br> Mars 2023</div>
               <div class="category">Nouveautés</div>
@@ -222,7 +222,7 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top">
+          <div class="card-blog-top" id="pict-aticle-4">
             <div class="article-infos">
               <div>Lorem ipsum <br> Mars 2023</div>
               <div class="category">Nouveautés</div>
@@ -235,7 +235,7 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top">
+          <div class="card-blog-top" id="pict-aticle-5">
             <div class="article-infos">
               <div>Lorem ipsum <br> Mars 2023</div>
               <div class="category">Nouveautés</div>
@@ -248,7 +248,7 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top">
+          <div class="card-blog-top" id="pict-aticle-6">
             <div class="article-infos">
               <div>Lorem ipsum <br> Mars 2023</div>
               <div class="category">Nouveautés</div>
@@ -313,7 +313,7 @@
           <img src="./img/profil-round/Avatar (2).png" alt="avatar2">
         </div>
         <h4>Vous avez une ou des questions ?</h4>
-        <p>Et vous n'avez pas toruvé sur notre site ? Alors n'hésitez pas une seconde, contacter nos super administrateurs.</p>
+        <p>Et vous n'avez pas toruvé sur notre site ? Alors n'hésitez pas une seconde, contacter nos supers administrateurs.</p>
         <a href="#">Nous contacter</a>
       </div>
     </section>
@@ -337,7 +337,7 @@
           <li>☏ 04 28 36 06 93</li>
         </ul>
         <ul>
-          <li><span>Nos horraires</span></li>
+          <li><span>Nos horraires :</span></li>
           <li>Du lundi au vendredi 08:30-12:00</li>
           <li>Du lundi au vendredi 13:30-17:00</li>
           <li>Du samedi au dimanche fermé</li>
@@ -351,8 +351,44 @@
 
 
   <footer id="footer">
-    <div id="container-footer"></div>
+    <div id="container-footer-top">
+      <div id="item-footer-left">
+        <div id="group-logo">
+          <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+          <span id="font-logo">Biblook</span>
+        </div>
+        <ul>
+          <div id="list-left">
+            <li><a href="#main-header">Nouveautés</a></li>
+            <li><a href="#section-heart">Coups de coeur</a></li>
+            <li><a href="#section-soon-available">Bientôt disponible</a></li>
+          </div>
+          <div id="list-right">
+            <li><a href="#section-blog">Blog</a></li>
+            <li><a href="#section-faq">FAQ</a></li>
+            <li><a href="#section-location">Contact</a></li>
+          </div>
+        </ul>
+      </div>
+      <div id="item-footer-right">
+        <p>Newsletter</p>
+        <form action="#">
+          <input type="mail">
+          <button type="submit">Souscrire</button>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div id="container-footer-bottom" class="row-limit-size">
+      <ul>
+        <li><a href="#">Conditions</a></li>
+        <li><a href="#">Copyright</a></li>
+        <li><a href="#">Cokkies</a></li>
+      </ul>
+      <p>©2023 <span id="font-logo">Biblook</span>. Tous droits réservés.</p>
+    </div>
   </footer>
+
   <script src="./main.js"></script>
 </body>
 
