@@ -173,19 +173,22 @@ h3 {
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-log-in {
   display: none;
+  font-weight: bold;
 }
 @media screen and (min-width: 950px) {
   #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-log-in {
     display: block;
     padding: 10px;
     background-color: transparent;
-    border: 3px solid #ff5e38;
     color: #ff5e38;
-    border-radius: 10px;
-    font-weight: bolder;
     font-size: 16px;
     font-family: "Hind Madurai", sans-serif;
     margin-right: 10px;
+  }
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-log-in:hover {
+    border: 3px solid #ff5e38;
+    border-radius: 10px;
+    margin-left: -6px;
   }
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger {
@@ -839,12 +842,12 @@ h3 {
 }
 #section-location #container-info-location {
   max-width: 1200px;
+  height: 250px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  height: 200px;
   margin-top: 500px;
   border-radius: 0 0 50px 50px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;

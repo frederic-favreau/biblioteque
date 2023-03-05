@@ -1,0 +1,162 @@
+$btn-red: #ff5e38;
+$btn-red-hover: #b53928;
+$main-blue: #0868ae;
+$white: #fff;
+$black: #070606;
+$footer: #043a61;
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+
+    @media screen and (min-width: 950px) {
+        padding-top: 100px;
+    }
+
+    #Breadcrumb {
+        display: none;
+
+        @media screen and (min-width: 950px) {
+            display: flex;
+        }
+
+        li {
+            margin-right: 10px;
+
+            a {
+                color: $main-blue;
+            }
+        }
+    }
+
+    #section-catalog {
+        padding-top: 60px;
+        padding-bottom: 100px;
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+
+        #container-catalog {
+            @media screen and (min-width: 950px) {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            #container-filter {
+                width: 100%;
+                height: fit-content;
+                background-color: $white;
+                border-radius: 20px;
+                padding: 30px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+                @media screen and (min-width: 950px) {
+                    width: 20%;
+                }
+
+                #filter-title {
+                    font-size: 17px;
+                    font-weight: 600;
+                    color: $main-blue;
+                    text-decoration: underline;
+                    margin-bottom: 20px;
+                }
+
+                .item-filter {
+                    p {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: $main-blue;
+                        margin-bottom: 10px;
+                    }
+
+                    ul {
+                        margin-left: 15px;
+
+                        li {
+                            margin-bottom: 3px;
+
+                            a {
+                                color: $main-blue;
+                                font-weight: normal;
+                            }
+                        }
+                    }
+                }
+
+                hr {
+                    margin: 10px 0;
+                    border: none;
+                    border: 1px solid gray;
+                    opacity: 0.1;
+                }
+            }
+
+
+            #container-cards {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                margin-top: 30px;
+
+                @media screen and (min-width: 950px) {
+                    width: 79%;
+                }
+
+                .card {
+                    position: relative;
+                    max-width: 450px;
+                    min-width: 450px;
+                    width: 33%;
+                    margin: 100px auto 100px auto;
+                    height: 230px;
+                    margin-bottom: 40px;
+                    padding: 15px 5px 15px 200px;
+                    border-radius: 5px;
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+                    img {
+                        position: absolute;
+                        top: -40px;
+                        left: 25px;
+                        width: 150px;
+                        height: 230px;
+                        object-fit: cover;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        transition: transform 0.5s ease;
+
+                        &:hover {
+                            transform: translateY(-15px);
+                        }
+                    }
+
+                    .bottom-item-card {
+                        h4 {
+                            margin: 5px 0;
+                        }
+
+                        .title-card {
+                            font-size: 10px;
+                        }
+
+                        .description-card {
+                            height: 60px;
+                            margin: 8px 0 8px;
+                            font-size: 14px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
