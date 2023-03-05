@@ -52,6 +52,7 @@
         <div id="item-section-news-left">
           <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
           <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs <br> pour offrir des moments de lecture inoubliable !</p>
+          <a href="#" id="btn-join-reader">Rejoins-nous dans l'aventure</a>
         </div>
         <div id="item-section-news-right">
           <div id="item-news-right-top">
@@ -112,14 +113,14 @@
     </section>
 
 
-    <!-- ---------- SECTION - SOON AVAILABLE ---------- -->
+    <!-- ---------- SECTION - lAST ARRIVAL ---------- -->
 
 
     <section id="section-soon-available" class="row-limit-size">
 
 
-    <h3 id="h3-tag">Nos ouvrages</h3>
-    <h2>Bientôt disponible</h2>
+    <h3 id="h3-tag">#tout juste disponible</h3>
+    <h2>Derniers arrivages</h2>
     <div id="container-cards">
 
       <!-- find last 6 books in our librarerie -->
@@ -404,8 +405,6 @@
       <p>©2023 <span id="font-logo">Biblook</span>. Tous droits réservés.</p>
     </div>
   </footer>
-
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo unde temporibus dolorem dolor voluptatem praesentium iste accusamus ex mollitia, quos perspiciatis perferendis pariatur nisi. Numquam excepturi atque tempore facere dicta.
 
   <script src="./main.js"></script>
 </body>
