@@ -118,52 +118,68 @@
     <section id="section-soon-available" class="row-limit-size">
 
 
-      <h3 id="h3-tag">Nos ouvrages</h3>
-      <h2>Bientôt disponible</h2>
-      <div id="container-cards">
+    <h3 id="h3-tag">Nos ouvrages</h3>
+    <h2>Bientôt disponible</h2>
+    <div id="container-cards">
 
-        <!-- find last 6 books in our librarerie -->
-
-
-        <?php
-        require_once './connexion.php';
+      <!-- find last 6 books in our librarerie -->
 
 
-        $sql =
-          "SELECT DISTINCT `title`,`pict`,`extract`, 
+      <?php
+      require_once './connexion.php';
+
+
+      $sql =
+
+        // DISTINCT prevent duplication of results, GROUP_CONCAT gathers results on same line 
+        //CONCAT(...,SPACE(1),...) gathers result of two colones in one and insert one space between 
+        //theese results
+
+        "SELECT DISTINCT `title`,`pict`,`extract`, 
         GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
         GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
         FROM `work`
+
         INNER JOIN `work_genre` 
         ON `work`.`id_work` = `work_genre`.`work_id`
+
         INNER JOIN `genre`
         ON `work_genre`.`genre_id` =`genre`.`id_genre`
+
         INNER JOIN `work_author`
         ON `work_author`.`work_id` = `work`.`id_work`
+
         INNER JOIN `author`
         ON `work_author`.`author_id` = `author`.`id_author`
+
         GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 6";
-        $req = $db->query($sql);
-        while ($card = $req->fetch(PDO::FETCH_ASSOC)) {
-
-        ?>
 
 
-          <div class="card">
-            <div class="top-item-card">
-              <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
-            </div>
-            <div class="bottom-item-card">
-              <h4><?= implode(' ', explode(',', $card['genres'])) ?></h4>
-              <h3><?= $card['title'] ?></h3>
-              <p class="description-card"><?= $card['extract'] ?></p>
-              <h5><?= str_replace(',', ', ', preg_replace('/,([^,]*)$/', ', $1', $card['authors'])) ?></h5>
+      $req = $db->query($sql);
+      while ($card = $req->fetch(PDO::FETCH_ASSOC)) {
 
-            </div>
+      ?>
+
+
+        <div class="card">
+          <div class="top-item-card">
+            <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
           </div>
-        <?php } ?>
-      </div>
-    </section>
+          <div class="bottom-item-card">
+
+            <!-- str_replace takes three arguments, first element to replace, 
+            seconde element to insert, third target of function -->
+
+            <h4><?= str_replace(',' , ', ',$card['genres']) ?></h4>
+            <h3><?= $card['title'] ?></h3>
+            <p class="description-card"><?= $card['extract'] ?></p>
+            <h5><?= str_replace(',' , ', ',$card['authors']) ?></h5>
+
+          </div>
+        </div>
+      <?php } ?>
+    </div>
+  </section>
 
     <!-- ---------- SECTION - CTA AVAILABLE ---------- -->
 
