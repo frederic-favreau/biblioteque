@@ -405,6 +405,8 @@
     </div>
   </footer>
 
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo unde temporibus dolorem dolor voluptatem praesentium iste accusamus ex mollitia, quos perspiciatis perferendis pariatur nisi. Numquam excepturi atque tempore facere dicta.
+
   <script src="./main.js"></script>
 </body>
 
