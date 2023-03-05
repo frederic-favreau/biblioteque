@@ -961,6 +961,8 @@ h3 {
   width: 250px;
   height: 34px;
   margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
   background-color: #ff5e38;
   color: #fff;
   border-radius: 10px;
@@ -972,7 +974,6 @@ h3 {
   #footer #container-footer-top #item-footer-right form button {
     width: 110px;
     height: 48px;
-    font-size: 16px;
     margin-left: 10px;
   }
 }
