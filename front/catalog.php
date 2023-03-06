@@ -18,11 +18,27 @@
                 <div class="item-filter" id="item-filter-category">
                     <p>Categorie</p>
                     <ul>
-                        <li><a href="#">Lorem (22)</a></li>
-                        <li><a href="#">Lorem (22)</a></li>
-                        <li><a href="#">Lorem (22)</a></li>
-                        <li><a href="#">Lorem (22)</a></li>
+                        <?php
+                        $sql_genre =
+                        "SELECT `title`,`pict`,`extract`, `genre`.`name`, COUNT(*) AS `nblivre`  
+                        FROM `work`
 
+                        INNER JOIN `work_genre`
+                        ON `work`.`id_work` = `work_genre`.`work_id`
+
+                        INNER JOIN `genre`
+                        ON `work_genre`.`genre_id` =`genre`.`id_genre`
+
+						GROUP BY `genre`.`name`
+                        ORDER BY `genre`.`name` ASC;";
+                        $req_genre = $db->query($sql_genre);
+                        while($genre = $req_genre->fetch(PDO::FETCH_ASSOC)){
+
+                        ?>
+                        <li><a href="#"><?=$genre['name'] . ' '?>(<?=$genre['nblivre']?>)</a></li>
+                        
+
+                        <?php }?>
                     </ul>
                     <div class="toggle-symbol"></div>
                 </div>
