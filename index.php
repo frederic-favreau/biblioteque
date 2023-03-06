@@ -13,6 +13,9 @@
 </head>
 
 <body>
+  <?php
+  require_once './connexion.php';
+  ?>
 
   <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
 
@@ -98,16 +101,24 @@
 
 
     <!-- ---------- SECTION - HEART ---------- -->
-
+    
 
     <section id="section-heart" class="row-limit-size">
       <h2>Coups de coeur</h1>
         <p id="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
         <ul>
-          <li><a href="#">1<img src="./img/top-img-card.png" alt=""></a></li>
-          <li><a href="#">2<img src="./img/top-img-card.png" alt=""></a></li>
-          <li><a href="#">3<img src="./img/top-img-card.png" alt=""></a></li>
-          <li><a href="#">4<img src="./img/top-img-card.png" alt=""></a></li>
+        <?php
+          $sql_haerd = "SELECT `pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 6";
+          $req_heard=  $db->query($sql_haerd);
+          $i=1;
+          while ($heard = $req_heard->fetch(PDO::FETCH_ASSOC)){
+            
+    ?>
+          <li><a href="#"><?=$i?><img src="./img/books/<?= $heard['pict']?>"alt="<?=$heard['title']?>"></a></li>
+          
+          <?php 
+        $i++;
+        } ?>
         </ul>
         <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
     </section>
@@ -127,7 +138,7 @@
 
 
       <?php
-      require_once './connexion.php';
+      
 
 
       $sql =
