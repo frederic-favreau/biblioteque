@@ -10,14 +10,14 @@
         </div>
         <ul>
           <div id="list-left">
-            <li><a href="#main-header">Nouveautés</a></li>
-            <li><a href="#section-heart">Coups de coeur</a></li>
-            <li><a href="#section-soon-available">Bientôt disponible</a></li>
+            <li><a href="../index.php#main-header">Nouveautés</a></li>
+            <li><a href="../index.php#section-heart">Coups de coeur</a></li>
+            <li><a href="../index.php#section-soon-available">Bientôt disponible</a></li>
           </div>
           <div id="list-right">
-            <li><a href="#section-blog">Blog</a></li>
-            <li><a href="#section-faq">FAQ</a></li>
-            <li><a href="#section-location">Contact</a></li>
+            <li><a href="../index.php#section-blog">Blog</a></li>
+            <li><a href="../index.php#section-faq">FAQ</a></li>
+            <li><a href="../index.php#section-location">Contact</a></li>
           </div>
         </ul>
       </div>
