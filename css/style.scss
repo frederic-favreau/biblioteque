@@ -293,7 +293,7 @@ h3 {
         margin: 0 auto;
         width: 250px;
         padding: 12px;
-        background-color: $btn-red;
+        background-color: $main-blue;
         color: $white;
         border-radius: 10px;
         text-align: center;
@@ -301,7 +301,8 @@ h3 {
         margin-bottom: 50px;
 
         &:hover {
-          background-color: $btn-red-hover;
+          opacity: 0.9;
+          transform: scale(1.1);
         }
       }
 
@@ -481,15 +482,15 @@ h3 {
   #group-btn {
     width: fit-content;
     margin: 0 auto 200px;
-    border: 1px solid $black;
+    border: 1px solid $main-blue;
     border-radius: 20px;
     padding: 5px;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
     @media screen and (min-width: 950px) {
       margin: 0 auto 130px;
     }
-
-
 
     ul {
       display: flex;
@@ -499,6 +500,10 @@ h3 {
           padding: 20px;
           font-size: 16px;
           color: $main-blue;
+
+          &:hover {
+            color: $btn-red;
+          }
         }
       }
     }
@@ -602,7 +607,7 @@ h3 {
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
-    background: $btn-red;
+    background: $main-blue;
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
     border-radius: 8px;
     color: $white;
@@ -624,12 +629,12 @@ h3 {
   margin: 0 auto;
 
   #h3-tag {
-    width: 40%;
+    width: fit-content;
     font-family: "Nova Slim";
     margin: 20px auto;
-    padding: 5px;
+    padding: 10px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 14px;
     line-height: 20px;
     text-align: center;
@@ -674,10 +679,12 @@ h3 {
       .bottom-item-card {
         h4 {
           margin: 5px 0;
+          text-transform: capitalize;
         }
 
         .title-card {
           font-size: 10px;
+          text-transform: capitalize;
         }
 
         .description-card {
@@ -690,6 +697,14 @@ h3 {
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 3;
         }
+
+        a.link-page {
+          font-size: 14px;
+          float: right;
+          color: $main-blue;
+          margin-right: 10px;
+          margin-top: 20px;
+      }
       }
     }
   }
@@ -770,9 +785,19 @@ h3 {
   }
 
   a {
-    background-color: $white;
-    padding: 10px;
-    border-radius: 10px;
+    display: block;
+        margin: 0 auto;
+        width: 250px;
+        padding: 12px;
+        background-color: $btn-red;
+        color: $white;
+        border-radius: 10px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $btn-red-hover;
+        }
   }
 }
 

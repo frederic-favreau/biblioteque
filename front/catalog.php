@@ -20,7 +20,7 @@ include_once '../connexion.php';
                     <ul>
                         <?php
                         $sql_genre =
-                        "SELECT `genre`.`id_genre`,`title`,`pict`,`extract`, `genre`.`name`, COUNT(*) AS `nblivre`  
+                            "SELECT `genre`.`id_genre`,`title`,`pict`,`extract`, `genre`.`name`, COUNT(*) AS `nblivre`  
                         FROM `work`
 
                         INNER JOIN `work_genre`
@@ -32,15 +32,14 @@ include_once '../connexion.php';
 						GROUP BY `genre`.`name`
                         ORDER BY `genre`.`name` ASC;";
                         $req_genre = $db->query($sql_genre);
-                        while($genre = $req_genre->fetch(PDO::FETCH_ASSOC)){
+                        while ($genre = $req_genre->fetch(PDO::FETCH_ASSOC)) {
 
                         ?>
-                        <li><a href="./catalog.php?id=<?=$genre['id_genre']?>"><?=$genre['name'] . ' '?>(<?=$genre['nblivre']?>)</a></li>
-                        
+                            <li><a href="./catalog.php?id=<?= $genre['id_genre'] ?>"><?= $genre['name'] . ' ' ?>(<?= $genre['nblivre'] ?>)</a></li>
 
-                        <?php }?>
+
+                        <?php } ?>
                     </ul>
-                    <div class="toggle-symbol"></div>
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-avalaibility">
@@ -63,7 +62,6 @@ include_once '../connexion.php';
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
                     </ul>
-                    <div class="toggle-symbol"></div>
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-editor">
@@ -74,11 +72,10 @@ include_once '../connexion.php';
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
                     </ul>
-                    <div class="toggle-symbol"></div>
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-autor">
-                    <p>Autheur</p>
+                    <p>Auteur</p>
                     <ul>
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
@@ -86,10 +83,18 @@ include_once '../connexion.php';
                         <li><a href="#">Lorem (22)</a></li>
 
                     </ul>
-                    <div class="toggle-symbol"></div>
                 </div>
             </div>
             <div id="container-cards">
+                <div class="container-sort">
+                    <a href="#" id="help-choise">🔎 Me laisser guider </a>
+                    <select name="sort" id="sort">
+                        <option value="">-- Choisissez un trie --</option>
+                        <option value="alphabetical">Alphabétique</option>
+                        <option value="date">Date de parution</option>
+                        <option value="relevance">Par pertinence</option>
+                    </select>
+                </div>
                 <?php
                 $sql_catalog =
                     "SELECT DISTINCT `title`,`pict`,`extract`, 
@@ -114,8 +119,6 @@ include_once '../connexion.php';
                 while ($card = $req_catalog->fetch(PDO::FETCH_ASSOC)) {
                 ?>
 
-
-
                     <div class="card">
                         <div class="top-item-card">
                             <img src="../img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
@@ -125,6 +128,7 @@ include_once '../connexion.php';
                             <h3><?= $card['title'] ?></h3>
                             <p class="description-card"><?= $card['extract'] ?></p>
                             <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
+                            <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
                         </div>
                     </div>
 

@@ -191,7 +191,7 @@
               <h3><?= $card['title'] ?></h3>
               <p class="description-card"><?= $card['extract'] ?></p>
               <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
-
+              <a href="./front/book-detail.php" class="link-page">En savoir plus ...</a>
             </div>
           </div>
         <?php } ?>
@@ -357,7 +357,7 @@
 
     <section id="section-location" class="row-limit-size">
       <h3>Où nous trouver ?</h3>
-      <h2>Direction <span id="font-logo">Biblook</span> à Saint-Denis-les-Bourgs</h2>
+      <h2>Direction <span id="font-logo">Biblook</span> à Saint-Denis-les-Bourg</h2>
       <p>On vous attend avec de nombreuses histoires à vous racontrer</p>
       <div id="iframe-google">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

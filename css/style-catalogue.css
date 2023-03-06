@@ -27,7 +27,7 @@ main #section-catalog {
   padding-bottom: 100px;
 }
 main #section-catalog h1 {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 50px;
 }
 @media screen and (min-width: 950px) {
@@ -73,6 +73,7 @@ main #section-catalog #container-catalog #container-filter .item-filter ul li {
 main #section-catalog #container-catalog #container-filter .item-filter ul li a {
   color: #0868ae;
   font-weight: normal;
+  text-transform: capitalize;
 }
 main #section-catalog #container-catalog #container-filter hr {
   margin: 10px 0;
@@ -92,10 +93,34 @@ main #section-catalog #container-catalog #container-cards {
     width: 79%;
   }
 }
+main #section-catalog #container-catalog #container-cards .container-sort {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  color: #0868ae;
+  margin-top: 30px;
+}
+main #section-catalog #container-catalog #container-cards .container-sort #help-choise {
+  width: 46%;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+main #section-catalog #container-catalog #container-cards .container-sort #sort {
+  width: 500px;
+  min-height: 40px;
+  font-size: 16px;
+  text-align: center;
+  color: #0868ae;
+  background-color: #fff;
+  border-radius: 10px;
+  font-weight: bold;
+}
 main #section-catalog #container-catalog #container-cards .card {
   position: relative;
-  max-width: 450px;
-  min-width: 450px;
+  max-width: 500px;
+  min-width: 500px;
   width: 33%;
   margin: 100px auto 100px auto;
   height: 230px;
@@ -120,6 +145,7 @@ main #section-catalog #container-catalog #container-cards .card img:hover {
 }
 main #section-catalog #container-catalog #container-cards .card .bottom-item-card h4 {
   margin: 5px 0;
+  text-transform: capitalize;
 }
 main #section-catalog #container-catalog #container-cards .card .bottom-item-card .title-card {
   font-size: 10px;
@@ -133,4 +159,11 @@ main #section-catalog #container-catalog #container-cards .card .bottom-item-car
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+}
+main #section-catalog #container-catalog #container-cards .card .bottom-item-card a.link-page {
+  font-size: 14px;
+  float: right;
+  color: #0868ae;
+  margin-right: 10px;
+  margin-top: 20px;
 }/*# sourceMappingURL=style-catalogue.css.map */
