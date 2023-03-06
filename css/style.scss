@@ -78,7 +78,7 @@ h3 {
 }
 
 #font-logo {
-  font-family: 'Risque', cursive, sans-serif;
+  font-family: "Risque", cursive, sans-serif;
   letter-spacing: 2px;
 }
 
@@ -195,7 +195,6 @@ h3 {
               border: 3px solid $btn-red;
               border-radius: 10px;
               margin-left: -6px;
-
             }
           }
         }
@@ -340,19 +339,19 @@ h3 {
   .flip {
     position: relative;
 
-    >.front,
-    >.back {
+    > .front,
+    > .back {
       display: block;
       transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
       transition-duration: 2.5s;
       transition-property: transform, opacity;
     }
 
-    >.front {
+    > .front {
       transform: rotateY(0deg);
     }
 
-    >.back {
+    > .back {
       position: absolute;
       opacity: 0;
       top: 0px;
@@ -363,27 +362,27 @@ h3 {
     }
 
     &:hover {
-      >.front {
+      > .front {
         transform: rotateY(180deg);
       }
 
-      >.back {
+      > .back {
         opacity: 1;
         transform: rotateY(0deg);
       }
     }
 
     &.flip-vertical {
-      >.back {
+      > .back {
         transform: rotateX(-180deg);
       }
 
       &:hover {
-        >.front {
+        > .front {
           transform: rotateX(180deg);
         }
 
-        >.back {
+        > .back {
           transform: rotateX(0deg);
         }
       }
@@ -397,8 +396,8 @@ h3 {
     margin-bottom: 1em;
     width: 200px;
 
-    >.front,
-    >.back {
+    > .front,
+    > .back {
       display: block;
       color: $white;
       width: inherit;
@@ -420,19 +419,19 @@ h3 {
       }
     }
 
-    >.front-item-1 {
+    > .front-item-1 {
       height: 240px;
     }
 
-    >.front-item-2 {
+    > .front-item-2 {
       height: 180px;
     }
 
-    >.front-item-3 {
+    > .front-item-3 {
       height: 240px;
     }
 
-    >.front-item-4 {
+    > .front-item-4 {
       height: 180px;
       display: none;
 
@@ -441,7 +440,7 @@ h3 {
       }
     }
 
-    >.front-item-5 {
+    > .front-item-5 {
       height: 180px;
       display: none;
 
@@ -478,6 +477,26 @@ h3 {
 
     @media screen and (min-width: 950px) {
       margin-bottom: 120px;
+    }
+  }
+
+  #group-btn {
+    width: 100%;
+    ul {
+      width: fit-content;
+      height: fit-content;
+      border: 1px solid $black;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        padding: 15px;
+        margin: 0;
+        a {
+          font-size: 16px;
+          color: $main-blue
+        }
+      }
     }
   }
 
@@ -677,7 +696,63 @@ h3 {
   width: 100%;
   height: 400px;
   padding: 80px;
-  background-image: radial-gradient(circle at 19% 90%, rgba(190, 190, 190, 0.04) 0%, rgba(190, 190, 190, 0.04) 17%, transparent 17%, transparent 100%), radial-gradient(circle at 73% 2%, rgba(78, 78, 78, 0.04) 0%, rgba(78, 78, 78, 0.04) 94%, transparent 94%, transparent 100%), radial-gradient(circle at 45% 2%, rgba(18, 18, 18, 0.04) 0%, rgba(18, 18, 18, 0.04) 55%, transparent 55%, transparent 100%), radial-gradient(circle at 76% 60%, rgba(110, 110, 110, 0.04) 0%, rgba(110, 110, 110, 0.04) 34%, transparent 34%, transparent 100%), radial-gradient(circle at 68% 56%, rgba(246, 246, 246, 0.04) 0%, rgba(246, 246, 246, 0.04) 16%, transparent 16%, transparent 100%), radial-gradient(circle at 71% 42%, rgba(156, 156, 156, 0.04) 0%, rgba(156, 156, 156, 0.04) 47%, transparent 47%, transparent 100%), radial-gradient(circle at 46% 82%, rgba(247, 247, 247, 0.04) 0%, rgba(247, 247, 247, 0.04) 39%, transparent 39%, transparent 100%), radial-gradient(circle at 50% 47%, rgba(209, 209, 209, 0.04) 0%, rgba(209, 209, 209, 0.04) 45%, transparent 45%, transparent 100%), linear-gradient(90deg, rgb(8, 104, 174), rgb(5, 73, 123));
+  background-image: radial-gradient(
+      circle at 19% 90%,
+      rgba(190, 190, 190, 0.04) 0%,
+      rgba(190, 190, 190, 0.04) 17%,
+      transparent 17%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 73% 2%,
+      rgba(78, 78, 78, 0.04) 0%,
+      rgba(78, 78, 78, 0.04) 94%,
+      transparent 94%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 45% 2%,
+      rgba(18, 18, 18, 0.04) 0%,
+      rgba(18, 18, 18, 0.04) 55%,
+      transparent 55%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 76% 60%,
+      rgba(110, 110, 110, 0.04) 0%,
+      rgba(110, 110, 110, 0.04) 34%,
+      transparent 34%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 68% 56%,
+      rgba(246, 246, 246, 0.04) 0%,
+      rgba(246, 246, 246, 0.04) 16%,
+      transparent 16%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 71% 42%,
+      rgba(156, 156, 156, 0.04) 0%,
+      rgba(156, 156, 156, 0.04) 47%,
+      transparent 47%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 46% 82%,
+      rgba(247, 247, 247, 0.04) 0%,
+      rgba(247, 247, 247, 0.04) 39%,
+      transparent 39%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 50% 47%,
+      rgba(209, 209, 209, 0.04) 0%,
+      rgba(209, 209, 209, 0.04) 45%,
+      transparent 45%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgb(8, 104, 174), rgb(5, 73, 123));
   background-position: center;
   background-size: cover;
   text-align: center;
@@ -718,14 +793,14 @@ h3 {
     align-items: center;
     margin: 0 auto;
 
-
     .card-blog {
       width: 320px;
       height: 380px;
       background-color: $white;
       border-radius: 20px 20px 0 0;
       overflow: hidden;
-      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
       margin: 0 5px 40px 5px;
       transition: all 0.5s ease;
 
@@ -795,7 +870,7 @@ h3 {
         padding: 20px 24px;
 
         h4 {
-          font-family: 'Nova Slim', cursive, sans-serif;
+          font-family: "Nova Slim", cursive, sans-serif;
         }
 
         p {
@@ -819,9 +894,7 @@ h3 {
   }
 }
 
-
 // ---------- SECTION - FAQ ----------
-
 
 #section-faq {
   position: relative;
@@ -945,9 +1018,7 @@ h3 {
   }
 }
 
-
 // ---------- SECTION - LOCATION ----------
-
 
 #section-location {
   position: relative;
@@ -974,11 +1045,10 @@ h3 {
     top: 475px;
     left: 50%;
     transform: translate(-50%, -50%);
-
   }
 
   #container-info-location {
-    max-width: 1200px;
+    max-width: 400px;
     height: 250px;
     margin: 0 auto;
     display: flex;
@@ -987,7 +1057,8 @@ h3 {
     align-items: center;
     margin-top: 500px;
     border-radius: 0 0 50px 50px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
     ul {
       li {
@@ -999,12 +1070,10 @@ h3 {
         }
       }
     }
-
   }
 }
 
 // ---------- SECTION - FOOTER ----------
-
 
 #footer {
   width: 100%;
@@ -1197,7 +1266,7 @@ h3 {
 
     p {
       text-align: center;
-      color: #D0D5DD;
+      color: #d0d5dd;
 
       @media screen and (min-width: 950px) {
         margin: 20px;

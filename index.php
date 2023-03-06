@@ -106,6 +106,13 @@
     <section id="section-heart" class="row-limit-size">
       <h2>Coups de coeur</h1>
         <p id="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
+        <div id="group-btn">
+            <ul>
+                <li><a href="#">Top 4</a></li>
+                <li><a href="#">Top 8</a></li>
+                <li><a href="#">Top 16</a></li>
+            </ul>
+        </div>
         <ul>
         <?php
           $sql_haerd = "SELECT `pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 6";
@@ -355,7 +362,7 @@
       <h2>Direction <span id="font-logo">Biblook</span> à Saint-Denis-les-Bourgs</h2>
       <p>On vous attend avec de nombreuses histoires à vous racontrer</p>
       <div id="iframe-google">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div id="container-info-location">
         <ul>
