@@ -32,8 +32,7 @@
           <a href="./front/catalog.php" id="btn-search-nav-top">Rechercher</a>
         </div>
         <div id="container-group-btn-connexion">
-          <a href="./front/connect.php" id="btn-log-in">Connexion</a>
-          <a href="./front/connect.php" id="btn-sign-up"><span>S'enregistrer</span>
+          <a href="./front/connect.php" id="btn-sign-up"><span>Connexion</span>
             <div id="menu-burger">
               <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
               <div class="menu-burger-pipe" id="menu-burger-pipe-middle"></div>
@@ -361,7 +360,7 @@
       <h2>Direction <span id="font-logo">Biblook</span> à Saint-Denis-les-Bourgs</h2>
       <p>On vous attend avec de nombreuses histoires à vous racontrer</p>
       <div id="iframe-google">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div id="container-info-location">
         <ul>
