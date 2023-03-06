@@ -110,6 +110,9 @@ h3 {
   align-items: center;
   margin-right: auto;
 }
+#main-header #main-nav-bar #container-nav-bar #container-group-logo:hover {
+  cursor: pointer;
+}
 #main-header #main-nav-bar #container-nav-bar #container-group-logo img {
   width: 85px;
 }
@@ -942,6 +945,9 @@ h3 {
   text-align: center;
   width: 100%;
   margin-left: -25px;
+}
+#footer #container-footer-top #item-footer-left #group-logo:hover {
+  cursor: pointer;
 }
 @media screen and (min-width: 950px) {
   #footer #container-footer-top #item-footer-left #group-logo {

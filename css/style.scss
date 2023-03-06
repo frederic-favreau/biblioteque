@@ -114,6 +114,10 @@ h3 {
         align-items: center;
         margin-right: auto;
 
+        &:hover {
+          cursor: pointer;
+        }
+
         img {
           width: 85px;
         }
@@ -1140,6 +1144,10 @@ h3 {
         text-align: center;
         width: 100%;
         margin-left: -25px;
+
+        &:hover {
+          cursor: pointer;
+        }
 
         @media screen and (min-width: 950px) {
           justify-content: flex-start;

@@ -10,14 +10,14 @@ include_once '../connexion.php';
 
 
     <section id="section-catalog" class="row-limit-size">
-        <h1>"Saisie de la recherche"</h1>
+        <h1 id="value-search">"Saisie de la recherche"</h1>
         <div id="container-catalog">
             <div id="container-filter">
                 <p id="filter-title">Filtres</p>
                 <hr>
                 <div class="item-filter" id="item-filter-category">
-                    <p>Categorie</p>
-                    <ul>
+                    <p class="show-filter">Categorie <span class="toggle-symbol">+</span></p>
+                    <ul class="list-filter">
                         <?php
                         $sql_genre =
                             "SELECT `genre`.`id_genre`,`title`,`pict`,`extract`, `genre`.`name`, COUNT(*) AS `nblivre`  
@@ -43,20 +43,19 @@ include_once '../connexion.php';
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-avalaibility">
-                    <p>Disponibilité</p>
-                    <ul>
+                    <p class="show-filter">Disponibilité <span class="toggle-symbol">+</span></p>
+                    <ul class="list-filter">
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
-
                     </ul>
                     <div class="toggle-symbol"></div>
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-opinion">
-                    <p>Avis</p>
-                    <ul>
+                    <p class="show-filter">Avis <span class="toggle-symbol">+</span></p>
+                    <ul class="list-filter">
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
@@ -65,8 +64,8 @@ include_once '../connexion.php';
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-editor">
-                    <p>Editeur</p>
-                    <ul>
+                    <p class="show-filter">Editeur <span class="toggle-symbol">+</span></p>
+                    <ul class="list-filter">
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
@@ -75,8 +74,8 @@ include_once '../connexion.php';
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-autor">
-                    <p>Auteur</p>
-                    <ul>
+                    <p class="show-filter">Auteur <span class="toggle-symbol">+</span></p>
+                    <ul class="list-filter">
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
@@ -87,13 +86,13 @@ include_once '../connexion.php';
             </div>
             <div id="container-cards">
                 <div class="container-sort">
-                    <a href="#" id="help-choise">🔎 Me laisser guider </a>
                     <select name="sort" id="sort">
                         <option value="">-- Choisissez un trie --</option>
                         <option value="alphabetical">Alphabétique</option>
                         <option value="date">Date de parution</option>
                         <option value="relevance">Par pertinence</option>
                     </select>
+                    <a href="#" id="help-choise">🔎 Me laisser guider </a>
                 </div>
                 <?php
                 $sql_catalog =

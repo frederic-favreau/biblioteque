@@ -38,12 +38,13 @@ main #section-catalog h1 {
   }
 }
 main #section-catalog #container-catalog #container-filter {
+  position: sticky;
+  top: 120px;
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
   background-color: #fff;
   border-radius: 20px;
-  padding: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 @media screen and (min-width: 950px) {
@@ -51,32 +52,57 @@ main #section-catalog #container-catalog #container-filter {
     width: 20%;
   }
 }
-main #section-catalog #container-catalog #container-filter #filter-title {
+main #section-catalog #container-catalog #container-filter p#filter-title {
   font-size: 17px;
   font-weight: 600;
   color: #0868ae;
-  text-decoration: underline;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 main #section-catalog #container-catalog #container-filter .item-filter p {
   font-size: 16px;
+  line-height: 24px;
   font-weight: 700;
   color: #0868ae;
+  padding: 10px 0 10px 0;
+  margin-left: 30px;
+}
+main #section-catalog #container-catalog #container-filter .item-filter p:hover {
+  cursor: pointer;
+}
+main #section-catalog #container-catalog #container-filter .item-filter span.toggle-symbol {
+  float: right;
+  margin-right: 30px;
+  font-size: 20px;
+}
+main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter {
+  margin-left: 40px;
+}
+main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter:last-child {
   margin-bottom: 10px;
 }
-main #section-catalog #container-catalog #container-filter .item-filter ul {
-  margin-left: 15px;
-}
-main #section-catalog #container-catalog #container-filter .item-filter ul li {
+main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter li {
   margin-bottom: 3px;
 }
-main #section-catalog #container-catalog #container-filter .item-filter ul li a {
+main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter li a {
   color: #0868ae;
   font-weight: normal;
   text-transform: capitalize;
 }
+main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter li a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter {
+  display: none;
+}
+main #section-catalog #container-catalog #container-filter .item-filter.active .list-filter {
+  display: block;
+}
 main #section-catalog #container-catalog #container-filter hr {
-  margin: 10px 0;
+  width: 90%;
+  margin: 0 auto;
   border: none;
   border: 1px solid gray;
   opacity: 0.1;
