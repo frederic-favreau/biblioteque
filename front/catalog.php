@@ -20,7 +20,7 @@ include_once '../connexion.php';
                     <ul>
                         <?php
                         $sql_genre =
-                        "SELECT `title`,`pict`,`extract`, `genre`.`name`, COUNT(*) AS `nblivre`  
+                        "SELECT `genre`.`id_genre`,`title`,`pict`,`extract`, `genre`.`name`, COUNT(*) AS `nblivre`  
                         FROM `work`
 
                         INNER JOIN `work_genre`
@@ -35,7 +35,7 @@ include_once '../connexion.php';
                         while($genre = $req_genre->fetch(PDO::FETCH_ASSOC)){
 
                         ?>
-                        <li><a href="#"><?=$genre['name'] . ' '?>(<?=$genre['nblivre']?>)</a></li>
+                        <li><a href="./catalog.php?id=<?=$genre['id_genre']?>"><?=$genre['name'] . ' '?>(<?=$genre['nblivre']?>)</a></li>
                         
 
                         <?php }?>
