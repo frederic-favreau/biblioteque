@@ -418,71 +418,70 @@ h3 {
   padding-top: 80px;
   padding-top: 60px;
 }
-#section-heart p {
+#section-heart p.sub-title {
   text-align: center;
-  margin-bottom: 160px;
+  font-weight: bold;
 }
 @media screen and (min-width: 950px) {
-  #section-heart p {
-    margin-bottom: 120px;
+  #section-heart p.sub-title {
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
 }
 #section-heart #group-btn {
-  width: 100%;
-}
-#section-heart #group-btn ul {
   width: -moz-fit-content;
   width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  border: 1px solid #070606;
   margin: 0 auto;
+  margin-bottom: 100px;
+  border: 1px solid #070606;
+  border-radius: 20px;
+  padding: 5px;
+}
+#section-heart #group-btn ul {
   display: flex;
   flex-wrap: wrap;
 }
-#section-heart #group-btn ul li {
-  padding: 15px;
-  margin: 0;
-}
 #section-heart #group-btn ul li a {
+  padding: 20px;
   font-size: 16px;
   color: #0868ae;
 }
-#section-heart ul {
+#section-heart ul.top {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
   list-style-type: none;
 }
 @media screen and (min-width: 950px) {
-  #section-heart ul {
+  #section-heart ul.top {
     display: flex;
     flex-wrap: wrap;
     padding-right: 25px;
   }
 }
-#section-heart ul li {
+#section-heart ul.top li {
   margin-bottom: 80px;
 }
 @media screen and (min-width: 950px) {
-  #section-heart ul li {
+  #section-heart ul.top li {
     width: 33%;
     margin-right: -100px;
     margin-left: -30px;
     padding: 0;
     transition: transform 0.5s ease;
   }
-  #section-heart ul li:hover {
+  #section-heart ul.top li:hover {
     transform: translateY(-50px);
   }
 }
-#section-heart ul li a {
+#section-heart ul.top li a {
   font-weight: bolder;
   line-height: 155px;
   font-size: 300px;
   font-family: "Risque", cursive, sans-serif;
+  margin-bottom: 20px;
 }
-#section-heart ul li a img {
+#section-heart ul.top li a img {
   width: 180px;
   height: 280px;
   -o-object-fit: cover;
@@ -490,20 +489,20 @@ h3 {
   border-radius: 20px;
   margin-left: -50px;
 }
-#section-heart ul li:nth-child(1) a {
+#section-heart ul.top li:nth-child(1) a {
   color: #ff6b38;
   position: relative;
   left: -10%;
   top: 0;
 }
 @media screen and (min-width: 950px) {
-  #section-heart ul li:nth-child(1) a {
+  #section-heart ul.top li:nth-child(1) a {
     left: -120px;
     top: 100px;
     margin-right: -100px;
   }
 }
-#section-heart ul li:nth-child(1) a img {
+#section-heart ul.top li:nth-child(1) a img {
   position: absolute;
   transform-origin: bottom left;
   transform: rotate(-5deg);
@@ -512,13 +511,13 @@ h3 {
   margin-left: -30px;
   top: 0px;
 }
-#section-heart ul li:nth-child(2) a {
+#section-heart ul.top li:nth-child(2) a {
   color: #28e2d9;
 }
-#section-heart ul li:nth-child(3) a {
+#section-heart ul.top li:nth-child(3) a {
   color: #ffd317;
 }
-#section-heart ul li:nth-child(4) a {
+#section-heart ul.top li:nth-child(4) a {
   color: #0b95fa;
 }
 #section-heart #btn-show-heart {

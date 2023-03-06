@@ -1,5 +1,5 @@
 <?php include_once '../front/header-default.php';
-        include_once '../connexion.php';
+include_once '../connexion.php';
 ?>
 <main>
     <ul id="Breadcrumb" class="row-limit-size">
@@ -13,7 +13,7 @@
         <h1>"Saisie de la recherche"</h1>
         <div id="container-catalog">
             <div id="container-filter">
-                <p id="filter-title">Filtres  </p>
+                <p id="filter-title">Filtres</p>
                 <hr>
                 <div class="item-filter" id="item-filter-category">
                     <p>Categorie</p>
@@ -74,9 +74,9 @@
                 </div>
             </div>
             <div id="container-cards">
-                    <?php
-                $sql_catalog = 
-                "SELECT DISTINCT `title`,`pict`,`extract`, 
+                <?php
+                $sql_catalog =
+                    "SELECT DISTINCT `title`,`pict`,`extract`, 
                     GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
                     GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
                     FROM `work`
@@ -95,25 +95,25 @@
 
                     GROUP BY `id_work` ORDER BY `id_work` DESC";
                 $req_catalog = $db->query($sql_catalog);
-                while($card = $req_catalog->fetch(PDO::FETCH_ASSOC)){
+                while ($card = $req_catalog->fetch(PDO::FETCH_ASSOC)) {
                 ?>
 
 
 
-                <div class="card">
-                    <div class="top-item-card">
-                        <img src="../img/books/<?=$card['pict']?>" alt="<?=$card['title']?>>
+                    <div class="card">
+                        <div class="top-item-card">
+                            <img src="../img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
+                        </div>
+                        <div class="bottom-item-card">
+                            <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
+                            <h3><?= $card['title'] ?></h3>
+                            <p class="description-card"><?= $card['extract'] ?></p>
+                            <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
+                        </div>
                     </div>
-                    <div class="bottom-item-card">
-                        <h4><?=str_replace(',' , ', ',$card['genres'])?></h4>
-                        <h3><?=$card['title']?></h3>
-                        <p class="description-card"><?=$card['extract']?></p>
-                        <h5><?=str_replace(',' , ', ' , $card['authors'])?></h5>
-                    </div>
-                </div>
 
-                <?php }?>
-                
+                <?php } ?>
+
             </div>
         </div>
     </section>

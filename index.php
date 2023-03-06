@@ -101,31 +101,33 @@
 
 
     <!-- ---------- SECTION - HEART ---------- -->
-    
+
 
     <section id="section-heart" class="row-limit-size">
       <h2>Coups de coeur</h1>
-        <p id="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
+        <p class="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
         <div id="group-btn">
-            <ul>
-                <li><a href="#">Top 4</a></li>
-                <li><a href="#">Top 8</a></li>
-                <li><a href="#">Top 16</a></li>
-            </ul>
+          <ul>
+            <li><a href="#">Top 4</a></li>
+            <li>|</li>
+            <li><a href="#">Top 8</a></li>
+            <li>|</li>
+            <li><a href="#">Top 16</a></li>
+          </ul>
         </div>
-        <ul>
-        <?php
+        <ul class="top">
+          <?php
           $sql_haerd = "SELECT `pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 6";
-          $req_heard=  $db->query($sql_haerd);
-          $i=1;
-          while ($heard = $req_heard->fetch(PDO::FETCH_ASSOC)){
-            
-    ?>
-          <li><a href="#"><?=$i?><img src="./img/books/<?= $heard['pict']?>"alt="<?=$heard['title']?>"></a></li>
-          
-          <?php 
-        $i++;
-        } ?>
+          $req_heard =  $db->query($sql_haerd);
+          $i = 1;
+          while ($heard = $req_heard->fetch(PDO::FETCH_ASSOC)) {
+
+          ?>
+            <li><a href="#"><?= $i ?><img src="./img/books/<?= $heard['pict'] ?>" alt="<?= $heard['title'] ?>"></a></li>
+
+          <?php
+            $i++;
+          } ?>
         </ul>
         <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
     </section>
@@ -136,25 +138,22 @@
 
     <section id="section-soon-available" class="row-limit-size">
 
+      <h2>Derniers arrivages</h2>
+      <h3 id="h3-tag">#tout juste disponible</h3>
+      <div id="container-cards">
 
-    <h3 id="h3-tag">#tout juste disponible</h3>
-    <h2>Derniers arrivages</h2>
-    <div id="container-cards">
-
-      <!-- find last 6 books in our librarerie -->
-
-
-      <?php
-      
+        <!-- find last 6 books in our librarerie -->
 
 
-      $sql =
+        <?php
 
-        // DISTINCT prevent duplication of results, GROUP_CONCAT gathers results on same line 
-        //CONCAT(...,SPACE(1),...) gathers result of two colones in one and insert one space between 
-        //theese results
+        $sql =
 
-        "SELECT DISTINCT `title`,`pict`,`extract`, 
+          // DISTINCT prevent duplication of results, GROUP_CONCAT gathers results on same line 
+          //CONCAT(...,SPACE(1),...) gathers result of two colones in one and insert one space between 
+          //theese results
+
+          "SELECT DISTINCT `title`,`pict`,`extract`, 
         GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
         GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
         FROM `work`
@@ -174,31 +173,31 @@
         GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 6";
 
 
-      $req = $db->query($sql);
-      while ($card = $req->fetch(PDO::FETCH_ASSOC)) {
+        $req = $db->query($sql);
+        while ($card = $req->fetch(PDO::FETCH_ASSOC)) {
 
-      ?>
+        ?>
 
 
-        <div class="card">
-          <div class="top-item-card">
-            <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
-          </div>
-          <div class="bottom-item-card">
+          <div class="card">
+            <div class="top-item-card">
+              <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
+            </div>
+            <div class="bottom-item-card">
 
-            <!-- str_replace takes three arguments, first element to replace, 
+              <!-- str_replace takes three arguments, first element to replace, 
             seconde element to insert, third target of function -->
 
-            <h4><?= str_replace(',' , ', ',$card['genres']) ?></h4>
-            <h3><?= $card['title'] ?></h3>
-            <p class="description-card"><?= $card['extract'] ?></p>
-            <h5><?= str_replace(',' , ', ',$card['authors']) ?></h5>
+              <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
+              <h3><?= $card['title'] ?></h3>
+              <p class="description-card"><?= $card['extract'] ?></p>
+              <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
 
+            </div>
           </div>
-        </div>
-      <?php } ?>
-    </div>
-  </section>
+        <?php } ?>
+      </div>
+    </section>
 
     <!-- ---------- SECTION - CTA AVAILABLE ---------- -->
 

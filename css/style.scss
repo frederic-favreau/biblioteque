@@ -471,36 +471,37 @@ h3 {
   padding-top: 80px;
   padding-top: 60px;
 
-  p {
+  p.sub-title {
     text-align: center;
-    margin-bottom: 160px;
-
+    font-weight: bold;
     @media screen and (min-width: 950px) {
-      margin-bottom: 120px;
+      margin-top: 20px;
+      margin-bottom: 40px;
     }
   }
 
   #group-btn {
-    width: 100%;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    border: 1px solid $black;
+    border-radius: 20px;
+    padding: 5px;
+
     ul {
-      width: fit-content;
-      height: fit-content;
-      border: 1px solid $black;
-      margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       li {
-        padding: 15px;
-        margin: 0;
         a {
+          padding: 20px;
           font-size: 16px;
-          color: $main-blue
+          color: $main-blue;
         }
       }
     }
   }
 
-  ul {
+  ul.top {
     text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -532,6 +533,7 @@ h3 {
         line-height: 155px;
         font-size: 300px;
         font-family: "Risque", cursive, sans-serif;
+        margin-bottom: 20px;
 
         img {
           width: 180px;
