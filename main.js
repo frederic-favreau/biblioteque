@@ -38,4 +38,6 @@ document.getElementById("group-logo").addEventListener("click", function() {
   window.location.href = "#section-news";
 });
 
-
+window.onload = function() {
+  document.querySelector('input[name="top4"]').
+}

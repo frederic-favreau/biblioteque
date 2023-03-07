@@ -10,11 +10,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Nova+Slim&family=Risque&display=swap" rel="stylesheet">
+  
 </head>
 
 <body>
   <?php
   require_once './connexion.php';
+  
   ?>
 
   <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
@@ -106,17 +108,20 @@
       <h2>Coups de coeur</h1>
         <p class="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
         <div id="group-btn">
-          <ul>
-            <li><button id="top4" name="top4">Top 4</button></li>
-            <li>|</li>
-            <li><a href="#">Top 8</a></li>
-            <li>|</li>
-            <li><a href="#">Top 16</a></li>
-          </ul>
+          <form method="post">
+            <input type="submit" name="top4" value="Top 4">
+            <input type="submit" name="top8" value="Top 8">
+            <input type="submit" name="top12" value="Top 12">
+          </form>
+            
+          
         </div>
         <ul class="top">
           <?php
-          $sql_haerd = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
+            
+
+          if(isset($_POST['top4'])){
+            $sql_haerd = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
           $req_heard =  $db->query($sql_haerd);
           $i = 1;
           while ($heard = $req_heard->fetch(PDO::FETCH_ASSOC)) {
@@ -126,7 +131,36 @@
 
           <?php
             $i++;
-          } ?>
+          }}
+
+          else if(isset($_POST['top8'])){
+            $sql_haerd = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 8";
+          $req_heard =  $db->query($sql_haerd);
+          $i = 1;
+          while ($heard = $req_heard->fetch(PDO::FETCH_ASSOC)) {
+
+          ?>
+            <li><a href="./front/book-detail.php?id=<?=$heard['id_work']?>"><?= $i ?><img src="./img/books/<?= $heard['pict'] ?>" alt="<?= $heard['title'] ?>"></a></li>
+
+          <?php
+            $i++;
+          }}
+
+          else if(isset($_POST['top12'])){
+            $sql_haerd = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 12";
+          $req_heard =  $db->query($sql_haerd);
+          $i = 1;
+          while ($heard = $req_heard->fetch(PDO::FETCH_ASSOC)) {
+
+          ?>
+            <li><a href="./front/book-detail.php?id=<?=$heard['id_work']?>"><?= $i ?><img src="./img/books/<?= $heard['pict'] ?>" alt="<?= $heard['title'] ?>"></a></li>
+
+          <?php
+            $i++;
+          }}
+          
+            
+           ?>
         </ul>
         <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
     </section>
