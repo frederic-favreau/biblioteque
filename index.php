@@ -107,7 +107,7 @@
         <p class="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
         <div id="group-btn">
           <ul>
-            <li><a href="#">Top 4</a></li>
+            <li><button id="top4" name="top4">Top 4</button></li>
             <li>|</li>
             <li><a href="#">Top 8</a></li>
             <li>|</li>
@@ -116,13 +116,13 @@
         </div>
         <ul class="top">
           <?php
-          $sql_haerd = "SELECT `pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 6";
+          $sql_haerd = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
           $req_heard =  $db->query($sql_haerd);
           $i = 1;
           while ($heard = $req_heard->fetch(PDO::FETCH_ASSOC)) {
 
           ?>
-            <li><a href="#"><?= $i ?><img src="./img/books/<?= $heard['pict'] ?>" alt="<?= $heard['title'] ?>"></a></li>
+            <li><a href="./front/book-detail.php?id=<?=$heard['id_work']?>"><?= $i ?><img src="./img/books/<?= $heard['pict'] ?>" alt="<?= $heard['title'] ?>"></a></li>
 
           <?php
             $i++;
@@ -152,7 +152,7 @@
           //CONCAT(...,SPACE(1),...) gathers result of two colones in one and insert one space between 
           //theese results
 
-          "SELECT DISTINCT `title`,`pict`,`extract`, 
+          "SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
         GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
         GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
         FROM `work`
@@ -191,7 +191,7 @@
               <h3><?= $card['title'] ?></h3>
               <p class="description-card"><?= $card['extract'] ?></p>
               <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
-              <a href="./front/book-detail.php" class="link-page">En savoir plus ...</a>
+              <a href="./front/book-detail.php?id=<?=$card['id_work']?>" class="link-page">En savoir plus ...</a>
             </div>
           </div>
         <?php } ?>
