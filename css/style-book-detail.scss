@@ -5,207 +5,354 @@ $white: #fff;
 $black: #070606;
 $footer: #043a61;
 
-section#section-detail-book {
-  padding-top: 60px;
-  padding-bottom: 80px;
-  div#container-detail-book {
-    @media screen and (min-width: 950px) {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    div.item-detail-book-left {
-      width: 100%;
+main {
+  section#section-detail-book {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    div#container-detail-book {
       @media screen and (min-width: 950px) {
-        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
       }
-
-      div.book-new {
-        width: fit-content;
-        margin-bottom: 4px;
-        font-size: 10px;
-        font-weight: bold;
-        color: $white;
-        background-color: $main-blue;
-        padding: 3px 50px;
-        border-radius: 20px 0 20px 0;
+      div.item-detail-book-left {
+        width: 100%;
         @media screen and (min-width: 950px) {
-          font-size: 12px;
-          padding: 6px 50px;
-          margin-bottom: -10px;
+          width: 60%;
         }
-      }
 
-      h1.title-work {
-        margin-bottom: 8px;
-        font-size: 20px;
-        text-align: inherit;
-        @media screen and (min-width: 950px) {
-          margin-bottom: -6px;
-          font-size: 28px;
+        div.book-new {
+          width: fit-content;
+          margin-bottom: 4px;
+          font-size: 10px;
+          font-weight: bold;
+          color: $white;
+          background-color: $main-blue;
+          padding: 3px 50px;
+          border-radius: 20px 0 20px 0;
+          @media screen and (min-width: 950px) {
+            font-size: 12px;
+            padding: 6px 50px;
+            margin-bottom: -10px;
+          }
         }
-      }
 
-      p.author {
-        margin-bottom: 15px;
-        font-size: 16px;
-        color: gray;
-        @media screen and (min-width: 950px) {
-          font-size: 18px;
+        h1.title-work {
+          margin-bottom: 8px;
+          font-size: 20px;
+          text-align: inherit;
+          @media screen and (min-width: 950px) {
+            margin-bottom: -6px;
+            font-size: 28px;
+          }
         }
-      }
 
-      img {
-        margin: 0 auto 40px;
-        display: block;
-        background-color: gray;
-      }
-
-      h2 {
-        font-size: 20px;
-        text-align: inherit;
-        color: $main-blue;
-        margin-bottom: 6px;
-        @media screen and (min-width: 950px) {
-          font-size: 30px;
-        }
-      }
-
-      p.extract-work {
-        font-size: 14px;
-        margin-bottom: 16px;
-        @media screen and (min-width: 950px) {
-          font-size: 18px;
-          margin-bottom: 26px;
-        }
-      }
-
-      h3 {
-        font-size: 20px;
-        color: $main-blue;
-        margin-bottom: 6px;
-        @media screen and (min-width: 950px) {
-          font-size: 30px;
-        }
-      }
-
-      ul.all-info-book {
-        li {
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: column;
+        p.author {
+          margin-bottom: 15px;
           font-size: 16px;
           color: gray;
+          @media screen and (min-width: 950px) {
+            font-size: 18px;
+          }
+        }
+
+        // figure {
+        //   position: relative;
+        //   // background-color: $white;
+        //   width: 80%;
+        //   margin: 0 auto;
+        // }
+
+        img {
+          margin: 0 auto 40px;
+          display: block;
+          background-color: gray;
+        }
+
+        h2 {
+          font-size: 20px;
+          text-align: inherit;
+          color: $main-blue;
           margin-bottom: 6px;
           @media screen and (min-width: 950px) {
-            width: 80%;
-            font-size: 18px;
-            flex-direction: row;
-            justify-content: space-between;
+            font-size: 30px;
           }
+        }
 
-          span.bdd-var {
+        p.extract-work {
+          font-size: 14px;
+          margin-bottom: 16px;
+          @media screen and (min-width: 950px) {
+            font-size: 18px;
+            margin-bottom: 26px;
+          }
+        }
+
+        h3 {
+          font-size: 20px;
+          color: $main-blue;
+          margin-bottom: 6px;
+          @media screen and (min-width: 950px) {
+            font-size: 30px;
+          }
+        }
+
+        ul.all-info-book {
+          li {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
             font-size: 16px;
-            color: $main-blue;
+            color: gray;
+            margin-bottom: 6px;
             @media screen and (min-width: 950px) {
+              width: 80%;
               font-size: 18px;
+              flex-direction: row;
+              justify-content: space-between;
+            }
+
+            span.bdd-var {
+              font-size: 16px;
+              color: $main-blue;
+              @media screen and (min-width: 950px) {
+                font-size: 18px;
+              }
             }
           }
         }
       }
-    }
 
-    #item-detail-book-right {
-      width: 100%;
-      @media screen and (min-width: 950px) {
-        width: 30%;
-      }
+      #item-detail-book-right {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 120px;
+        width: 100%;
+        height: fit-content;
+        @media screen and (min-width: 950px) {
+          width: 30%;
+        }
 
-      h4.title-work-description {
-        font-size: 20px;
-        text-align: inherit;
-        color: $main-blue;
-        border: 1px solid $main-blue;
-        border-radius: 5px;
-        margin-bottom: 4px;
-      }
+        h4.title-work-description {
+          font-size: 20px;
+          text-align: inherit;
+          color: $main-blue;
+          border: 1px solid $main-blue;
+          border-radius: 5px;
+          margin-bottom: 4px;
+        }
 
-      ul.info-work-description {
-        li {
-          font-size: 16px;
-          color: gray;
-          @media screen and (min-width: 950px) {
-            font-size: 18px;
-          }
-
-          span {
+        ul.info-work-description {
+          li {
             font-size: 16px;
-            color: $main-blue;
+            color: gray;
             @media screen and (min-width: 950px) {
               font-size: 18px;
+            }
+
+            span {
+              font-size: 16px;
+              color: $main-blue;
+              @media screen and (min-width: 950px) {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+
+        hr {
+          margin: 16px 0 30px;
+          border: 1px solid gray;
+        }
+
+        ul.list-info-revervation {
+          li {
+            font-size: 16px;
+            color: $btn-red-hover;
+            @media screen and (min-width: 950px) {
+              font-size: 18px;
+            }
+
+            &:last-child {
+              color: gray;
             }
           }
         }
       }
 
-      hr {
-        margin: 16px 0 20px;
-        border: 1px solid gray;
-      }
+      div#item-detail-book-right {
+        h4.title-work-description {
+          font-size: 20px;
+          color: $main-blue;
+          margin-top: 16px;
+          margin-bottom: 6px;
+          padding: 10px;
+        }
 
-      ul.list-info-revervation {
-        li {
-          font-size: 16px;
-          color: $btn-red-hover;
-          @media screen and (min-width: 950px) {
-            font-size: 18px;
+        ul.info-work-description {
+          li {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin-bottom: 6px;
+
+            @media screen and (min-width: 950px) {
+              flex-direction: row;
+              justify-content: space-between;
+            }
           }
+        }
 
-          &:last-child {
+        ul.list-info-revervation {
+          li {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin-bottom: 6px;
+          }
+        }
+        a#btn-reservation {
+          display: block;
+          padding: 12px;
+          background-color: $main-blue;
+          color: $white;
+          border-radius: 10px;
+          text-align: center;
+          transition: background-color 0.3s ease;
+          margin-top: 20px;
+          margin-bottom: 20px;
+
+          &:hover {
+            opacity: 0.9;
+            transform: scale(1.01);
+          }
+        }
+
+        ul.list-advantage {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: 33%;
+            text-align: center;
+            font-size: 14px;
             color: gray;
           }
         }
       }
     }
+  }
 
-    div#item-detail-book-right {
-      h4.title-work-description {
-        font-size: 20px;
-        color: $main-blue;
-        margin-top: 16px;
-        margin-bottom: 6px;
+  #section-recommandation {
+    padding-bottom: 60px;
+    h3.standard-title-section {
+      font-size: 30px;
+      color: $main-blue;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      @media screen and (min-width: 950px) {
+        font-size: 40px;
+        text-decoration: underline;
       }
+    }
 
-      ul.info-work-description {
-        li {
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: column;
-          margin-bottom: 6px;
+    #container-cards {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin-top: 30px;
 
-          @media screen and (min-width: 950px) {
-            flex-direction: row;
-            justify-content: space-between;
+      .card {
+        position: relative;
+        max-width: 450px;
+        min-width: 450px;
+        width: 33%;
+        margin: 100px auto 40px auto;
+        height: 230px;
+        padding: 15px 5px 15px 200px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        img {
+          position: absolute;
+          top: -40px;
+          left: 25px;
+          width: 150px;
+          height: 230px;
+          object-fit: cover;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          transition: transform 0.5s ease;
+
+          &:hover {
+            transform: translateY(-15px);
+          }
+        }
+
+        .bottom-item-card {
+          h4 {
+            margin: 5px 0;
+            text-transform: capitalize;
+          }
+
+          .title-card {
+            font-size: 10px;
+            text-transform: capitalize;
+          }
+
+          .description-card {
+            height: 60px;
+            margin: 8px 0 8px;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+          }
+
+          a.link-page {
+            font-size: 14px;
+            float: right;
+            color: $main-blue;
+            margin-right: 10px;
+            margin-top: 20px;
           }
         }
       }
+    }
+  }
 
-      ul.list-info-revervation {
-        li {
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: column;
-          margin-bottom: 6px;
-        }
-      }
-      a#btn-reservation {
-        display: block;
-        padding: 12px;
-        background-color: $btn-red;
-        color: $white;
-        border-radius: 10px;
-        text-align: center;
-        transition: background-color 0.3s ease;
-        margin-top: 20px;
+  hr {
+    margin: 20px 0 80px;
+  }
+}
+
+section#section-tag-recommandation {
+  padding-bottom: 120px;
+  h3.standard-title-section {
+    font-size: 30px;
+    color: $main-blue;
+    margin-top: 16px;
+    margin-bottom: 60px;
+    @media screen and (min-width: 950px) {
+      font-size: 40px;
+      text-decoration: underline;
+    }
+  }
+  div#container-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    div.tag-reco {
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 40px;
+      color: $main-blue;
+      border: 1px solid $main-blue;
+      border-radius: 30px;
+
+      &:hover {
+        cursor: pointer;
       }
     }
   }

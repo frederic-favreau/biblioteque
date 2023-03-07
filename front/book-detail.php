@@ -16,7 +16,7 @@
                 <div class="book-new">['new']</div>
                 <h1 class="title-work">['title work']</h1>
                 <p class="author">['author']</p>
-                <img src="../img/books/ça.jpg" alt="Titre du livre ici">
+                <figure><img src="../img/books/ça.jpg" alt="['Titre du livre ici']"></figure>
                 <h2>Extrait du livre</h2>
                 <p class="extract-work">['extract']</p>
                 <h3>Fiche technique</h3>
@@ -44,16 +44,105 @@
                 </ul>
                 <a href="#" id="btn-reservation">Réserver ce livre</a>
                 <hr>
-                <div id="service">
-                    <div id="item-service-left">
-                        <img src="" alt="">
-                    </div>
-                </div>
+                <ul class="list-advantage">
+                    <li>Réservez en ligne & retirer sous 3h</li>
+                    <li>Demande gratuite de nouveau livre</li>
+                    <li>Redonnez votre livre sous 30 jours</li>
+                </ul>
             </div>
-
         </div>
 
+        </div>
     </section>
+    <hr>
+    <section id="section-recommandation" class="row-limit-size">
+        <h3 class="standard-title-section">Biblook vous recommande</h3>
+        <div id="container-cards">
+            <div class="card">
+                <div class="top-item-card">
+                    <img src="../img/books/ça.jpg" alt="['title']">
+                </div>
+                <div class="bottom-item-card">
+                    <h4>['genres']</h4>
+                    <h3>['title']</h3>
+                    <p class="description-card">['extract']</p>
+                    <h5>['authors']</h5>
+                    <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="top-item-card">
+                    <img src="../img/books/ça.jpg" alt="['title']">
+                </div>
+                <div class="bottom-item-card">
+                    <h4>['genres']</h4>
+                    <h3>['title']</h3>
+                    <p class="description-card">['extract']</p>
+                    <h5>['authors']</h5>
+                    <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="top-item-card">
+                    <img src="../img/books/ça.jpg" alt="['title']">
+                </div>
+                <div class="bottom-item-card">
+                    <h4>['genres']</h4>
+                    <h3>['title']</h3>
+                    <p class="description-card">['extract']</p>
+                    <h5>['authors']</h5>
+                    <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="top-item-card">
+                    <img src="../img/books/ça.jpg" alt="['title']">
+                </div>
+                <div class="bottom-item-card">
+                    <h4>['genres']</h4>
+                    <h3>['title']</h3>
+                    <p class="description-card">['extract']</p>
+                    <h5>['authors']</h5>
+                    <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="top-item-card">
+                    <img src="../img/books/ça.jpg" alt="['title']">
+                </div>
+                <div class="bottom-item-card">
+                    <h4>['genres']</h4>
+                    <h3>['title']</h3>
+                    <p class="description-card">['extract']</p>
+                    <h5>['authors']</h5>
+                    <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="top-item-card">
+                    <img src="../img/books/ça.jpg" alt="['title']">
+                </div>
+                <div class="bottom-item-card">
+                    <h4>['genres']</h4>
+                    <h3>['title']</h3>
+                    <p class="description-card">['extract']</p>
+                    <h5>['authors']</h5>
+                    <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="section-tag-recommandation" class="row-limit-size">
+        <h3 class="standard-title-section">Découvrez aussi</h3>
+        <div id="container-tags">
+            <div id="tag-a" class="tag-reco">#les cheveaux</div>
+            <div id="tag-b" class="tag-reco">#La bière</div>
+            <div id="tag-c" class="tag-reco">#Devenir dev</div>
+            <div id="tag-d" class="tag-reco">#MotoGP2023</div>
+        </div>
+    </section>
+
 </main>
 <script src="../main.js"></script>
 </body>
