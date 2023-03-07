@@ -1,4 +1,212 @@
-section#detail-book {
-    padding-top: 120px;
-    padding-bottom: 80px;
+$btn-red: #ff5e38;
+$btn-red-hover: #b53928;
+$main-blue: #0868ae;
+$white: #fff;
+$black: #070606;
+$footer: #043a61;
+
+section#section-detail-book {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  div#container-detail-book {
+    @media screen and (min-width: 950px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    div.item-detail-book-left {
+      width: 100%;
+      @media screen and (min-width: 950px) {
+        width: 60%;
+      }
+
+      div.book-new {
+        width: fit-content;
+        margin-bottom: 4px;
+        font-size: 10px;
+        font-weight: bold;
+        color: $white;
+        background-color: $main-blue;
+        padding: 3px 50px;
+        border-radius: 20px 0 20px 0;
+        @media screen and (min-width: 950px) {
+          font-size: 12px;
+          padding: 6px 50px;
+          margin-bottom: -10px;
+        }
+      }
+
+      h1.title-work {
+        margin-bottom: 8px;
+        font-size: 20px;
+        text-align: inherit;
+        @media screen and (min-width: 950px) {
+          margin-bottom: -6px;
+          font-size: 28px;
+        }
+      }
+
+      p.author {
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: gray;
+        @media screen and (min-width: 950px) {
+          font-size: 18px;
+        }
+      }
+
+      img {
+        margin: 0 auto 40px;
+        display: block;
+        background-color: gray;
+      }
+
+      h2 {
+        font-size: 20px;
+        text-align: inherit;
+        color: $main-blue;
+        margin-bottom: 6px;
+        @media screen and (min-width: 950px) {
+          font-size: 30px;
+        }
+      }
+
+      p.extract-work {
+        font-size: 14px;
+        margin-bottom: 16px;
+        @media screen and (min-width: 950px) {
+          font-size: 18px;
+          margin-bottom: 26px;
+        }
+      }
+
+      h3 {
+        font-size: 20px;
+        color: $main-blue;
+        margin-bottom: 6px;
+        @media screen and (min-width: 950px) {
+          font-size: 30px;
+        }
+      }
+
+      ul.all-info-book {
+        li {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          font-size: 16px;
+          color: gray;
+          margin-bottom: 6px;
+          @media screen and (min-width: 950px) {
+            width: 80%;
+            font-size: 18px;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+
+          span.bdd-var {
+            font-size: 16px;
+            color: $main-blue;
+            @media screen and (min-width: 950px) {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    #item-detail-book-right {
+      width: 100%;
+      @media screen and (min-width: 950px) {
+        width: 30%;
+      }
+
+      h4.title-work-description {
+        font-size: 20px;
+        text-align: inherit;
+        color: $main-blue;
+        border: 1px solid $main-blue;
+        border-radius: 5px;
+        margin-bottom: 4px;
+      }
+
+      ul.info-work-description {
+        li {
+          font-size: 16px;
+          color: gray;
+          @media screen and (min-width: 950px) {
+            font-size: 18px;
+          }
+
+          span {
+            font-size: 16px;
+            color: $main-blue;
+            @media screen and (min-width: 950px) {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+
+      hr {
+        margin: 16px 0 20px;
+        border: 1px solid gray;
+      }
+
+      ul.list-info-revervation {
+        li {
+          font-size: 16px;
+          color: $btn-red-hover;
+          @media screen and (min-width: 950px) {
+            font-size: 18px;
+          }
+
+          &:last-child {
+            color: gray;
+          }
+        }
+      }
+    }
+
+    div#item-detail-book-right {
+      h4.title-work-description {
+        font-size: 20px;
+        color: $main-blue;
+        margin-top: 16px;
+        margin-bottom: 6px;
+      }
+
+      ul.info-work-description {
+        li {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          margin-bottom: 6px;
+
+          @media screen and (min-width: 950px) {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        }
+      }
+
+      ul.list-info-revervation {
+        li {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          margin-bottom: 6px;
+        }
+      }
+      a#btn-reservation {
+        display: block;
+        padding: 12px;
+        background-color: $btn-red;
+        color: $white;
+        border-radius: 10px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+      }
+    }
+  }
 }
