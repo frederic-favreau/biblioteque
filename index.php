@@ -107,13 +107,13 @@
         <p class="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
         <ul class="top">
           <?php
-          $sql_haerd = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
-          $req_heard =  $db->query($sql_haerd);
+          $sql_heart = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
+          $req_heart =  $db->query($sql_heart);
           $i = 1;
-          while ($heard = $req_heard->fetch(PDO::FETCH_ASSOC)) {
+          while ($heart = $req_heart->fetch(PDO::FETCH_ASSOC)) {
 
           ?>
-            <li><a href="./front/book-detail.php?id=<?= $heard['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heard['pict'] ?>" alt="<?= $heard['title'] ?>"></a></li>
+            <li><a href="./front/book-detail.php?id=<?= $heart['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt="<?= $heart['title'] ?>"></a></li>
 
           <?php
             $i++;

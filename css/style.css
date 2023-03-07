@@ -241,7 +241,7 @@ h3 {
 
 #section-news {
   width: 100%;
-  padding-top: 60px;
+  padding-top: 100px;
   padding-bottom: 60px;
 }
 @media screen and (min-width: 950px) {
@@ -300,6 +300,7 @@ h3 {
 #section-news #container-section-news #item-section-news-right {
   width: 100%;
   text-align: center;
+  padding-top: 50px;
 }
 @media screen and (min-width: 950px) {
   #section-news #container-section-news #item-section-news-right {
