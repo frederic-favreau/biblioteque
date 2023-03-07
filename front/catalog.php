@@ -16,8 +16,8 @@ include_once '../connexion.php';
                 <p id="filter-title">Filtres</p>
                 <hr>
                 <div class="item-filter" id="item-filter-category">
-                    <p>Categorie</p>
-                    <ul>
+                    <p class="show-filter">Categorie <span class="toggle-symbol">+</span></p>
+                    <ul class="list-filter">
                         <?php
                         $sql_genre =
                         "SELECT `genre`.`id_genre`,`genre`.`name`, COUNT(*) AS `nblivre`  
@@ -44,8 +44,8 @@ include_once '../connexion.php';
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-avalaibility">
-                    <p>Disponibilité</p>
-                    <ul>
+                    <p class="show-filter">Disponibilité<span class="toggle-symbol">+</span></p>
+                    <ul class="list-filter">
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
@@ -56,8 +56,8 @@ include_once '../connexion.php';
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-opinion">
-                    <p>Avis</p>
-                    <ul>
+                    <p class="show-filter">Avis <span class="toggle-symbol">+</span></p>
+                    <ul class="list-filter">
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
@@ -67,8 +67,8 @@ include_once '../connexion.php';
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-editor">
-                    <p>Editeur</p>
-                    <ul>
+                    <p class="show-filter">Editeur <span class="toggle-symbol">+</span></p>
+                    <ul class="list-filter">
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
@@ -78,8 +78,8 @@ include_once '../connexion.php';
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-autor">
-                    <p>Autheur</p>
-                    <ul>
+                    <p class="show-filter">Autheur <span class="toggle-symbol">+</span></p>
+                    <ul class="list-filter">
 
 
                     <?php
@@ -100,8 +100,6 @@ include_once '../connexion.php';
                         while($author = $req_author->fetch(PDO::FETCH_ASSOC)){
 
                         ?>
-
-
 
                         <li><a href="#"><?=$author['authors'] . ' '?>(<?=$author['nbpublications']?>)</a></li>
                         <?php } ?>
@@ -146,6 +144,7 @@ include_once '../connexion.php';
                             <h3><?= $card['title'] ?></h3>
                             <p class="description-card"><?= $card['extract'] ?></p>
                             <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
+                            <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
                         </div>
                     </div>
 
