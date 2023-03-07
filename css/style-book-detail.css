@@ -55,6 +55,13 @@ main section#section-detail-book div#container-detail-book div.item-detail-book-
     font-size: 18px;
   }
 }
+main section#section-detail-book div#container-detail-book div.item-detail-book-left figure {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 main section#section-detail-book div#container-detail-book div.item-detail-book-left img {
   margin: 0 auto 40px;
   display: block;
@@ -122,6 +129,10 @@ main section#section-detail-book div#container-detail-book #item-detail-book-rig
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 @media screen and (min-width: 950px) {
   main section#section-detail-book div#container-detail-book #item-detail-book-right {

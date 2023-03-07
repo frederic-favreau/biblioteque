@@ -24,8 +24,8 @@
     <nav id="main-nav-bar">
       <div id="container-nav-bar" class="row-limit-size">
         <div id="container-group-logo">
-            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
-            <span id="nav-logo-text">Biblook</span>
+          <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+          <span id="nav-logo-text">Biblook</span>
         </div>
         <div id="container-group-search-nav-top">
           <input type="text" id="input-search-nav-top" placeholder="🔎 Taper votre recherche" value="">
@@ -105,15 +105,6 @@
     <section id="section-heart" class="row-limit-size">
       <h2>Coups de coeur</h1>
         <p class="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
-        <div id="group-btn">
-          <ul>
-            <li><button id="top4" name="top4">Top 4</button></li>
-            <li>|</li>
-            <li><a href="#">Top 8</a></li>
-            <li>|</li>
-            <li><a href="#">Top 16</a></li>
-          </ul>
-        </div>
         <ul class="top">
           <?php
           $sql_haerd = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
@@ -122,7 +113,7 @@
           while ($heard = $req_heard->fetch(PDO::FETCH_ASSOC)) {
 
           ?>
-            <li><a href="./front/book-detail.php?id=<?=$heard['id_work']?>"><?= $i ?><img src="./img/books/<?= $heard['pict'] ?>" alt="<?= $heard['title'] ?>"></a></li>
+            <li><a href="./front/book-detail.php?id=<?= $heard['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heard['pict'] ?>" alt="<?= $heard['title'] ?>"></a></li>
 
           <?php
             $i++;
@@ -191,7 +182,7 @@
               <h3><?= $card['title'] ?></h3>
               <p class="description-card"><?= $card['extract'] ?></p>
               <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
-              <a href="./front/book-detail.php?id=<?=$card['id_work']?>" class="link-page">En savoir plus ...</a>
+              <a href="./front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
             </div>
           </div>
         <?php } ?>
