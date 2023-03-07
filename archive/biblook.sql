@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 07 mars 2023 à 19:01
--- Version du serveur : 8.0.31
--- Version de PHP : 8.0.26
+-- Généré le : sam. 04 mars 2023 à 14:22
+-- Version du serveur : 8.0.27
+-- Version de PHP : 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `author`;
 CREATE TABLE IF NOT EXISTS `author` (
   `id_author` int NOT NULL AUTO_INCREMENT,
-  `lastname` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `firstname` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `lastname` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `firstname` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_author`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
@@ -57,7 +57,7 @@ INSERT INTO `author` (`id_author`, `lastname`, `firstname`) VALUES
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `id_category` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
@@ -71,7 +71,7 @@ DROP TABLE IF EXISTS `copy`;
 CREATE TABLE IF NOT EXISTS `copy` (
   `id_copy` int NOT NULL AUTO_INCREMENT,
   `id_editor` int DEFAULT NULL,
-  `location` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `location` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `id_work` int NOT NULL,
   `stock` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_copy`) USING BTREE,
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `copy` (
 DROP TABLE IF EXISTS `editor`;
 CREATE TABLE IF NOT EXISTS `editor` (
   `id_editor` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `name` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `number` int DEFAULT NULL,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`id_editor`)
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `editor` (
 DROP TABLE IF EXISTS `genre`;
 CREATE TABLE IF NOT EXISTS `genre` (
   `id_genre` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_genre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 
@@ -151,12 +151,12 @@ CREATE TABLE IF NOT EXISTS `loan` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id_user` int NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `lastname` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `mail` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `password` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `adress` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `avatar` varchar(1) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `firstname` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `lastname` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `mail` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `password` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `adress` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `avatar` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `role` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
@@ -183,14 +183,14 @@ INSERT INTO `user` (`id_user`, `firstname`, `lastname`, `mail`, `password`, `adr
 DROP TABLE IF EXISTS `work`;
 CREATE TABLE IF NOT EXISTS `work` (
   `id_work` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `pict` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `extract` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci,
+  `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `pict` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `extract` text CHARACTER SET utf8 COLLATE utf8_general_ci,
   `new` tinyint(1) DEFAULT NULL,
   `published_at` date DEFAULT NULL,
-  `ISBN` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `ISBN` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_work`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `work`
@@ -203,12 +203,7 @@ INSERT INTO `work` (`id_work`, `title`, `pict`, `extract`, `new`, `published_at`
 (4, 'Star Wars - Thrawn', 'star_wars_trawn.jpg', 'Sauvé de l\'exil par des soldats impériaux, Thrawn parvient rapidement à capter l\'attention de l\'Empereur Palpatine par son intelligence impitoyable et son génie tactique qui n\'ont d\'égal que son ambition. Et si ses méthodes anticonformistes exaspèrent ses supérieurs, elles lui assurent nombre de succès retentissants et une fulgurante ascension. Toutefois, bien que Thrawn domine le champ de bataille, il lui reste beaucoup à apprendre dans l\'arène politique où les visages sont doubles et les alliances, fragiles. Devenu amiral, Thrawn devra faire face à une insurrection qui menace non seulement des vies innocentes, mais également la suprématie de l\'Empire sur la galaxie... sans oublier son plan de carrière.', 0, '2014-06-18', 'ISBN 13 :798-7-4814-9642-7'),
 (5, 'Gargamel Le Généreux', 'gargamel_le_genereux.jpg', 'Depuis le temps que nous voyons les plans de Gargamel échouer, on se doute bien que sa vie n\'est pas drôle tous les jours ! Si vous saviez ! Ca n\'est probablement que la partie émergée de l\'iceberg. Les histoires courtes, totalement inédites en album, rassemblées dans ce recueil vous permettront de découvrir tous les petits tracas qui composent le quotidien de Gargamel : des ogres un peu trop gourmands au cousin sorcier qui choisit de prendre la défense des Schtroumpfs. Ce « Méchant » qu\'on adore haïr devient une star de l\'écran en 3D cet été.', 0, '2021-02-24', 'ISBN 13 :579-7-4574-9142-7'),
 (6, 'Voyage au centre de la Terre', 'voyage_au_centre_de_la_terre.jpg', 'Dans la petite maison du vieux quartier de Hambourg où Axel, jeune homme assez timoré, travaille avec son oncle, l’irascible professeur Lidenbrock, géologue et minéralogiste, dont il aime la pupille, la charmante Graüben, l’ordre des choses est soudain bouleversé.\r\nDans un vieux manuscrit, Lidenbrock trouve un cryptogramme. Arne Saknussemm, célèbre savant islandais du xvie siècle, y révèle que par la cheminée du cratère du Sneffels, volcan éteint d’Islande, il a pénétré jusqu’au centre de la Terre !\r\nLidenbrock s’enflamme aussitôt et part avec Axel pour l’Islande où, accompagnés du guide Hans, aussi flegmatique que son maître est bouillant, ils s’engouffrent dans les mystérieuses profondeurs du volcan…\r\nEn décrivant les prodigieuses aventures qui s’ensuivront, Jules Verne a peut-être atteint le sommet de son talent. La vigueur du récit, la parfaite maîtrise d’un art accordé à la\r\npuissance de l’imagination placent cet ouvrage au tout premier plan dans l’œuvre exceptionnelle du romancier.\r\n\r\nIllustrations de l’édition originale Hetzel.', 0, '1864-11-25', 'ISBN 13 :579-7-5274-1265-7'),
-(7, 'Ça', 'ça.jpg', 'Tout avait commencé juste avant les vacances d\'été quand le petit Browers avait gravé ses initiales au couteau sur le ventre de son copain Ben Hascom. Tout s\'était terminé deux mois plus tard dans les égouts par la poursuite infernale d\'une créature étrange, incarnation même du mal. Mais aujourd\'hui tout recommence. Les enfants terrorisés sont devenus des adultes. Le présent retrouve le passé, le destin reprend ses droits, l\'horreur ressurgit. Chacun retrouvera dans ce roman à la construction saisissante ses propres souvenirs, ses angoisses et ses terreurs d\'enfant, la peur de grandir dans un monde de violence.', 0, '1988-11-09', 'ISBN 13 :989-7-5744-1245-7'),
-(8, 'Vingt mille lieues sous les Mers', 'vingt_mille_lieus_sous_les_mers.jpg', 'Un monstre marin, « une chose énorme », ayant été signalé par plusieurs navires à travers le monde, une expédition est organisée sur l’Abraham Lincoln, frégate américaine, pour purger les mers de ce monstre inquiétant. A bord se trouvent le Français Pierre Aronnax, professeur au Muséum de Paris, et Conseil, son fidèle domestique.Une fois parvenus en vue du monstre, deux immenses trombes d’eau s’abattent sur le pont de la frégate, précipitant Aronnax, Conseil et le harponneur canadien Ned Land sur le dos du monstre… qui se révèle être un fabuleux sous-marin, le Nautilus, conçu et commandé par un étrange personnage, le capitaine Nemo, qui paraît farouchement hostile à toute l’humanité !Condamnés à ne plus jamais revoir leur patrie, leurs parents, leurs amis, la plus extraordinaire aventure commence pourtant pour les trois hommes...La mer était une passion pour Jules Verne ; c’est elle l’héroïne de Vingt mille lieues sous les mers, l’un de ses meilleurs et plus célèbres romans.', 0, '1964-04-02', 'ISBN 13 :454-7-3544-1224-4'),
-(9, 'L\'île mystérieuse', 'L\'ile_mystérieuse.jpg', 'Au cours de la guerre de Sécession, cinq Nordistes : l\'ingénieur Cyrus Smith et son chien Top, le reporter Gédéon Spilett, le Noir Nab, le marin Pencroff et le jeune Harbert, prisonniers des troupes séparatistes, se sont enfuis en balIon. Pris dans la tempête, ils échouent sur une île déserte, en plein océan Pacifique.Ingénieux, persévérants, les cinq compagnons, pourtant privés de tout, ne tardent pas à s\'organiser, à vivre presque normalement. D\'ailleurs, l\'île, qu\'ils baptisent du nom de Lincoln, offre des ressources admirables et tout à fait inattendues. Mais une série de faits inexplicables, des coïncidences troublantes les obligent à croire à la présence d\'une puissance mystérieuse qui les épie sans cesse et conduit leur destinée, leur imposant sa volonté par des voies détournées, intervenant pour les sauver aux moments critiques...L\'Ile mystérieuse, un des très grands romans de Jules Verne, cet enchanteur aux charmes inépuisables.', 0, '1875-04-02', 'ISBN 13 :245-7-3571-1298-3'),
-(10, 'Le chien des Baskerville', 'Le_chien_des_Baskerville.jpg', 'Une malédiction pèse sur les Baskerville, qui habitent le vieux manoir de leurs ancêtres, perdu au milieu d\'une lande sauvage : quand un chien-démon, une bête immonde, gigantesque, surgit, c\'est la mort. Le décès subit et tragique de Sir Charles Baskerville et les hurlements lugubres que l\'on entend parfois venant du marais, le grand bourbier de Grimpen, accréditent la sinistre légende. Dès son arrivée à Londres, venant du Canada, Sir Henry Baskerville, seul héritier de Sir Charles, reçoit une lettre anonyme : \" Si vous tenez à votre vie et à votre raison, éloignez-vous de la lande. \" Malgré ces menaces, Sir Henry décide de se rendre à Baskerville Hall, accompagné de Sherlock Holmes et de son fidèle Watson.', 0, '1935-11-12', 'ISBN 13 :245-7-4447-2654-6'),
-(11, 'Son dernier coup d\'archet', 'Son_dernier_coup_d\'archet.jpg', 'Chacun sait que lorsque Sir Arthur Conan Doyle voulut faire mourir son héros, de désarroi et la colère de ses admirateurs furent tels qu\'il dut s\'arranger pour le ressusciter... Qu\'on se rassure : le \" drenier coup d\'archet \" que donne ici le plus célèbre violoniste de la littérature Policière - également opiomane, botaniste, criminologue le laisse en parfaite condition pour de nouvelles enquêtes. Dans les huit nouvelles de ce volume, son extraordinaire aptitude à la déduction imprévisible et raisonnée lui permet de faire la lumière - entre autres - sur les menées d\'un dictateur sud-américain, en fuite ou les agissements de la mafia napolitaine à New York, aussi bien que de donner un sérieux coup de main, à la veille de la Première Guerre mondiale, au contre-espionnage britannique. Comme il se doit, la brume londonienne enveloppe ces affaires ténébreuses, contées par l\'indispensable Dr Watson avec l\'art de la mise en scène et le sens du suspense qu\'ils ont fait du Signe des Quatre ou du chien des Baskerville des classiques de la littérature mondiale.', 0, '1938-08-31', 'ISBN 13 :874-6-2457-6478-8'),
-(12, 'Les chevaux ne mentent jamais: Le secret des chuchoteurs', 'Les_chevaux_ne_mentent_jamais.jpg', 'Quand nous cherchons à communiquer avec eux, les chevaux nous révèlent des choses sur nous-mêmes. Mêlant réflexions sur la relation humain-cheval, commentaires morphologiques, analyse du langage corporel et explications techniques simples sur le dressage sans résistance, Chris Irwin montre combien assurance intérieure, conscience de soi, honnêteté et confiance sont indispensables dans l\'établissement d\'une bonne relation avec le cheval.\r\n\r\nChris Irwin a sillonné l\'Amérique du Nord et l\'Europe pour porter la parole du dressage sans résistance, une pratique développée en trente années. Ses cours lui ont valu la réputation de meilleur dresseur du Canada et ses livres sont traduits dans le monde entier.', 1, '2022-05-26', 'ISBN 13 :654-4-24752485-1');
+(7, 'Ça', 'ça.jpg', 'Tout avait commencé juste avant les vacances d\'été quand le petit Browers avait gravé ses initiales au couteau sur le ventre de son copain Ben Hascom. Tout s\'était terminé deux mois plus tard dans les égouts par la poursuite infernale d\'une créature étrange, incarnation même du mal. Mais aujourd\'hui tout recommence. Les enfants terrorisés sont devenus des adultes. Le présent retrouve le passé, le destin reprend ses droits, l\'horreur ressurgit. Chacun retrouvera dans ce roman à la construction saisissante ses propres souvenirs, ses angoisses et ses terreurs d\'enfant, la peur de grandir dans un monde de violence.', 0, '1988-11-09', 'ISBN 13 :989-7-5744-1245-7');
 
 -- --------------------------------------------------------
 
