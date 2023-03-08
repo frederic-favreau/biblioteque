@@ -2,8 +2,7 @@
 
 include_once '../connexion.php';
 $id = $_GET['id'];
-var_dump($id);
-$sql_book = "SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `ISBN`,
+$req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `ISBN`,
 GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
 GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
 FROM `work`
@@ -20,10 +19,9 @@ ON `work_author`.`work_id` = `work`.`id_work`
 INNER JOIN `author`
 ON `work_author`.`author_id` = `author`.`id_author`
 
-WHERE `id_work` = $id";
-//$req_book->bindParam('id_work', $id, PDO::PARAM_INT);
-//$req_book->execute();
-$req_book = $db->query($sql_book);
+WHERE `id_work` = :id");
+$req_book->bindParam('id', $id, PDO::PARAM_INT);
+$req_book->execute();
 while($book = $req_book->fetch(PDO::FETCH_ASSOC)){
 
 ?>
