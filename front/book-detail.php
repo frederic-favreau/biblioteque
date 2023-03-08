@@ -1,4 +1,30 @@
-<?php include_once '../front/header-default.php'; ?>
+<?php include_once '../front/header-default.php';
+
+include_once '../connexion.php';
+$id = $_GET['id'];
+$req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `ISBN`,
+GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
+GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
+FROM `work`
+
+INNER JOIN `work_genre` 
+ON `work`.`id_work` = `work_genre`.`work_id`
+
+INNER JOIN `genre`
+ON `work_genre`.`genre_id` =`genre`.`id_genre`
+
+INNER JOIN `work_author`
+ON `work_author`.`work_id` = `work`.`id_work`
+
+INNER JOIN `author`
+ON `work_author`.`author_id` = `author`.`id_author`
+
+WHERE `id_work` = :id");
+$req_book->bindParam('id', $id, PDO::PARAM_INT);
+$req_book->execute();
+while($book = $req_book->fetch(PDO::FETCH_ASSOC)){
+
+?>
 
 <main>
     <ul id="Breadcrumb" class="row-limit-size">
@@ -6,7 +32,7 @@
         <li>></li>
         <li><a href="./catalog.php#section-catalog">Catalogue</a></li>
         <li>></li>
-        <li><a href="#">livre de ma recherche</a></li>
+        <li><a href="#"><?=$book['title']?></a></li>
     </ul>
 
 
@@ -14,28 +40,29 @@
         <div id="container-detail-book">
             <div class="item-detail-book-left">
                 <div class="book-new">['new']</div>
-                <h1 class="title-work">['title work']</h1>
-                <p class="author">['author']</p>
-                <figure><img src="../img/books/ça.jpg" alt="['Titre du livre ici']"></figure>
+                <h1 class="title-work"><?=$book['title']?></h1>
+                <p class="author"><?=$book['authors']?></p>
+                <figure><img src="../img/books/<?=$book['pict']?>" alt="<?=$book['title']?>"></figure>
                 <h2>Extrait du livre</h2>
-                <p class="extract-work">['extract']</p>
+                <p class="extract-work"><?=$book['extract']?></p>
                 <h3>Fiche technique</h3>
                 <ul class="all-info-book">
-                    <li>Auteur <span class="bdd-var">['author']</span></li>
-                    <li>Genre <span class="bdd-var">['genre']</span></li>
+                    <li>Auteur <span class="bdd-var"><?=$book['authors']?></span></li>
+                    <li>Genre <span class="bdd-var"><?=$book['genres']?></span></li>
                     <li>Catégorie <span class="bdd-var">['category']</span></li>
-                    <li>Date de publication <span class="bdd-var">['publish_at']</span></li>
+                    <li>Date de publication <span class="bdd-var"><?=$book['published_at']?></span></li>
+                    
                     <li> Nom de l'éditeur<span class="bdd-var">['editor name']</span></li>
                     <li>Date de l'édition<span class="bdd-var">['editor date']</span></li>
-                    <li>ISBN<span class="bdd-var">['isbn']</span></li>
+                    <li>ISBN<span class="bdd-var"><?=$book['ISBN']?></span></li>
                 </ul>
             </div>
             <div id="item-detail-book-right">
-                <h4 class="title-work-description">['title work']</h4>
+                <h4 class="title-work-description"><?=$book['title']?></h4>
                 <ul class="info-work-description">
-                    <li>Auteur <span>['author']</span></li>
-                    <li>Catégorie <span>['genre']</span></li>
-                    <li>Date de publication <span>['publish_at']</span></li>
+                    <li>Auteur <span><?=$book['authors']?></span></li>
+                    <li>Genre <span><?=$book['genres']?></span></li>
+                    <li>Date de publication <span><?=$book['published_at']?></span></li>
                 </ul>
                 <hr>
                 <ul class="list-info-revervation">
@@ -146,6 +173,7 @@
 </main>
 <script src="../main.js"></script>
 </body>
-<?php include_once '../front/footer-default.php'; ?>
+<?php include_once '../front/footer-default.php';
+}; ?>
 
 </html>
