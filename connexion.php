@@ -1,6 +1,6 @@
 <?php
 try{
-    $db = new PDO('mysql:host=localhost; dbname=biblook_archive; charset=utf8','root');
+    $db = new PDO('mysql:host=localhost; dbname=biblook; charset=utf8','root');
 }
 
 catch(PDOException $e){
