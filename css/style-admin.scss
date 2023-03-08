@@ -24,6 +24,38 @@ body {
   font-family: "Hind Madurai", sans-serif;
 }
 
+h1.h1-dashboard {
+  font-size: 20px;
+  text-align: inherit;
+  color: $main-blue;
+  margin-bottom: 6px;
+  @media screen and (min-width: 950px) {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+h2.h2-dashboard {
+  font-size: 14px;
+  text-align: inherit;
+  color: $main-blue;
+  margin-bottom: 6px;
+  @media screen and (min-width: 950px) {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+}
+
+h3.h3-dashboard {
+  font-size: 12px;
+  text-align: inherit;
+  color: $btn-red;
+  margin-bottom: 6px;
+  @media screen and (min-width: 950px) {
+    font-size: 16px;
+  }
+}
+
 ul {
   list-style: none;
 }
@@ -46,7 +78,7 @@ header#side-bar-log {
     display: flex;
     transition: width 0.5s;
     overflow: hidden;
-    white-space:nowrap ;
+    white-space: nowrap;
 
     &.active {
       width: 250px;
@@ -73,7 +105,7 @@ header#side-bar-log {
           margin-bottom: 40px;
           width: 120px;
           position: relative;
-          white-space:nowrap ;
+          white-space: nowrap;
 
           img#logo-big-sidebar {
             width: 80px;
@@ -165,13 +197,13 @@ header#side-bar-log {
             color: #fff;
             padding: 20px;
             margin-bottom: 5px;
-            white-space:nowrap ;
+            white-space: nowrap;
           }
 
           a#profil {
             color: $white;
-            margin-left: 50px;
-            white-space:nowrap ;
+            margin-left: 55px;
+            white-space: nowrap;
 
             img#profil-pict {
               position: absolute;
@@ -187,4 +219,59 @@ header#side-bar-log {
 
 section#dashboard-page-default {
   padding-top: 40px;
+  padding-left: 50px;
+
+  div#container-dashboard-base {
+    .box-dashboard {
+      width: 70%;
+      height: fit-content;
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      hr {
+        width: 100%;
+        margin: 10px auto;
+      }
+
+      ul {
+        padding: 10px;
+        background-color: #f0f7ff;
+        border-radius: 5px;
+      }
+    }
+    #container-home-tabs {
+      height: fit-content;
+      
+    }
+
+    div#container-profil-tabs {
+      display: none;
+      div#box-personal-info {
+        form#form-personal-info {
+          text-align: center;
+          #container-fullname {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            margin: 10px auto;
+            width: fit-content;
+            #firstname {
+              display: flex;
+              flex-direction: column;
+              margin-right: 20px;
+            }
+            #lastname {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+
+
+  }
 }

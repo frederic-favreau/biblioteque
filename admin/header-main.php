@@ -21,12 +21,12 @@ if (!isset($_SESSION['id-user'])) {
 </head>
 
 <body>
-    <header id="side-bar-log">
+    <header id="side-bar-log" class="row-limit-size">
         <nav id="main-sidebar">
             <div id="sidebar-wrapper">
                 <nav id="main-sidebar">
                     <div id="container-top-navigation">
-                        <a href="#" id="logo-sidebar"><img src="../img/logo-seul-biblook-noir.svg" alt="Bliblook" id="logo-big-sidebar"/><span id="dashbord-title"></span> Dashboard</a>
+                        <a href="../index.php" id="logo-sidebar"><img src="../img/logo-seul-biblook-noir.svg" alt="Bliblook" id="logo-big-sidebar"/><span id="dashbord-title"></span> Dashboard</a>
                         <ul class="list-btn-side-bar">
                             <li><a href="#"><img src="../img/side-bar/picto-home.svg" alt="accueil">Mon accueil</a></li>
                             <li><a href="#"><img src="../img/side-bar/picto-users.svg" alt="utilisateur">Gérer les utilisateurs</a></li>
@@ -44,5 +44,3 @@ if (!isset($_SESSION['id-user'])) {
         </nav>
     </header>
     <main>
-
-        <script src="./main-admin.js"></script>
