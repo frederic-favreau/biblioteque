@@ -361,7 +361,7 @@
           <li>☏ 04 28 36 06 93</li>
         </ul>
         <ul>
-          <li><span>Nos horraires :</span></li>
+          <li><span>Nos horaires :</span></li>
           <li>Du lundi au vendredi 08:30-12:00</li>
           <li>Du lundi au vendredi 13:30-17:00</li>
           <li>Du samedi au dimanche fermé</li>

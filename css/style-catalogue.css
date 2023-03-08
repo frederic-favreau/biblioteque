@@ -89,7 +89,7 @@ main #section-catalog #container-catalog #container-filter .item-filter ul.list-
 }
 main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter li a {
   color: #0868ae;
-  font-weight: normal;
+  font-weight: inherit;
   text-transform: capitalize;
 }
 main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter li a:hover {

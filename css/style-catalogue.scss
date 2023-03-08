@@ -104,7 +104,7 @@ main {
 
               a {
                 color: $main-blue;
-                font-weight: normal;
+                font-weight: inherit;
                 text-transform: capitalize;
 
                 &:hover {

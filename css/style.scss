@@ -517,7 +517,6 @@ h3 {
   ul.top {
     text-align: center;
     margin-top: 40px;
-    margin-bottom: 40px;
     list-style-type: none;
 
     @media screen and (min-width: 950px) {
@@ -882,7 +881,7 @@ h3 {
           padding: 16px;
           background: rgba(255, 255, 255, 0.3);
           border-top: 1px solid rgba(255, 255, 255, 0.5);
-          backdrop-filter: blur(12px);
+          backdrop-filter: blur(0px);
           color: $white;
           font-weight: bold;
           font-size: 14px;
@@ -948,8 +947,8 @@ h3 {
     margin-top: 10px;
 
     hr {
-      width: 58%;
-      margin-top: 5px;
+      width: 55%;
+      margin-top: 15px;
       margin-bottom: 5px;
       border: 1px solid lightgray;
     }
@@ -958,14 +957,14 @@ h3 {
       position: relative;
       width: 90%;
       max-width: 770px;
-      min-height: 80px;
+      height: fit-content;
       padding-left: 15px;
       padding-right: 30px;
       cursor: pointer;
 
       .toggle-symbol {
         position: absolute;
-        top: 15px;
+        top: 8px;
         right: 20px;
         font-size: 28px;
         font-weight: bold;
@@ -977,7 +976,7 @@ h3 {
       }
 
       .question {
-        margin-bottom: 5px;
+        margin: 10px 0 10px;
         font-size: 18px;
         font-weight: bold;
       }
@@ -1091,7 +1090,7 @@ h3 {
     justify-content: space-evenly;
     align-items: center;
     margin-top: 500px;
-    border-radius: 0 0 50px 50px;
+    border-radius: 0 0 20px 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
       rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
