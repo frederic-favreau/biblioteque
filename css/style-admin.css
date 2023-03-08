@@ -21,45 +21,139 @@ ul {
   list-style: none;
 }
 
-li {
-  margin-top: 50px;
-}
-
 a {
-  font-size: 14px;
   text-decoration: none;
-  color: #fff;
-  padding: 50px;
-  margin-top: 50px;
-}
-
-header {
-  height: 100vh;
-  position: fixed;
-}
-header #main-sidebar {
-  height: 100%;
-  width: 120px;
-  background-color: blue;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 40px;
-}
-header #main-sidebar #container-top-navigation {
-  width: 100%;
-  text-align: center;
-}
-header #main-sidebar #container-top-navigation #logo-sidebar {
-  width: 90%;
-}
-header #main-sidebar #container-group-profil {
-  width: 100%;
-  margin-top: auto;
-  text-align: center;
 }
 
 main {
   padding-left: 200px;
-  padding-top: 20px;
   z-index: -1;
+}
+
+header#side-bar-log #sidebar-wrapper {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 70px;
+  display: flex;
+  transition: width 0.5s;
+  overflow: hidden;
+  white-space: nowrap;
+}
+header#side-bar-log #sidebar-wrapper.active {
+  width: 250px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar {
+  width: 100%;
+  height: 100%;
+  background-color: #0868ae;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 3px;
+  padding-bottom: 40px;
+  transition: all 0.5s;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation a#logo-sidebar {
+  margin-bottom: 40px;
+  width: 120px;
+  position: relative;
+  white-space: nowrap;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation a#logo-sidebar img#logo-big-sidebar {
+  width: 80px;
+  position: absolute;
+  left: -7px;
+  top: 10px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation a#logo-sidebar #dashbord-title {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Nova Slim", cursive;
+  margin-left: 150px;
+  margin-top: 50px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation ul.list-btn-side-bar {
+  position: relative;
+  list-style: none;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 10px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation li:hover {
+  background-color: #05497b;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation li img {
+  margin-right: 30px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 5px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 10px;
+  position: relative;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul li:hover {
+  background-color: #05497b;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul li img {
+  margin-right: 30px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul a#profil {
+  color: #fff;
+  margin-left: 50px;
+  white-space: nowrap;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul a#profil img#profil-pict {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+}
+
+section#dashboard-page-default {
+  padding-top: 40px;
 }/*# sourceMappingURL=style-admin.css.map */

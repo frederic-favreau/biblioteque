@@ -15,28 +15,34 @@ if (!isset($_SESSION['id-user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon espace</title>
     <link rel="stylesheet" href="../css/style-admin.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Nova+Slim&family=Risque&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
+    <header id="side-bar-log">
         <nav id="main-sidebar">
-            <div id="container-top-navigation">
-                <img src="../img/logo-biblook (3).svg" alt="Bliblook" id="logo-sidebar">
-                <ul>
-                    <li><a href="#">A</a></li>
-                    <li><a href="#">B</a></li>
-                    <li><a href="#">C</a></li>
-                    <li><a href="#">D</a></li>
-                    <li><a href="#">E</a></li>
-                </ul>
-            </div>
-            <div id="container-group-profil">
-                <ul>
-                    <li><a href="#" id="settings">S</a></li>
-                    <li><a href="#" id="profil">P</a></li>
-                </ul>
+            <div id="sidebar-wrapper">
+                <nav id="main-sidebar">
+                    <div id="container-top-navigation">
+                        <a href="#" id="logo-sidebar"><img src="../img/logo-seul-biblook-noir.svg" alt="Bliblook" id="logo-big-sidebar"/><span id="dashbord-title"></span> Dashboard</a>
+                        <ul class="list-btn-side-bar">
+                            <li><a href="#"><img src="../img/side-bar/picto-home.svg" alt="accueil">Mon accueil</a></li>
+                            <li><a href="#"><img src="../img/side-bar/picto-users.svg" alt="utilisateur">Gérer les utilisateurs</a></li>
+                            <li><a href="#"><img src="../img/side-bar/picto-CRUD.svg" alt="crud">Gérer les livres</a></li>
+                        </ul>
+                    </div>
+                    <div id="container-group-profil">
+                        <ul>
+                            <li><a href="#" id="settings"><img src="../img/side-bar/picto-settings.svg" alt="Options">Options</a></li>
+                            <li><a href="#" id="profil"><img src="../img/side-bar/Avatar.svg" alt="prenom" id="profil-pict">Mon profil</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </nav>
     </header>
     <main>
+
+        <script src="./main-admin.js"></script>
