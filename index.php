@@ -15,6 +15,11 @@
 <body>
   <?php
   require_once './connexion.php';
+  $sql = $db->query("SELECT * FROM `work` ORDER BY `id_work` DESC");
+  if(isset($_GET['search']) AND !empty($_GET['search'])){
+    $recheche = htmlspecialchars($_GET['search']);
+    $sql = $db->query('SELECT * FROM `work` WHERE `title` LIKE "%'.$recheche.'%" ORDER BY `id`');
+  }
   ?>
 
   <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
@@ -28,8 +33,13 @@
           <span id="nav-logo-text">Biblook</span>
         </div>
         <div id="container-group-search-nav-top">
-          <input type="text" id="input-search-nav-top" placeholder="🔎 Taper votre recherche" value="">
-          <a href="./front/catalog.php" id="btn-search-nav-top">Rechercher</a>
+        <form action="./front/catalog.php" method="GET">
+
+              <input type="search" name="search"id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
+              <input type="submit" name ="rechercher" value="rechercher">
+
+
+        </form>
         </div>
         <div id="container-group-btn-connexion">
           <a href="./front/connect.php" id="btn-sign-up"><span>Connexion</span>
@@ -113,7 +123,7 @@
           while ($heart = $req_heart->fetch(PDO::FETCH_ASSOC)) {
 
           ?>
-            <li><a href="./front/book-detail.php?id=<?= $heart['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt="<?= $heart['title'] ?>"></a></li>
+            <li><a href="./front/book-detail.php?id=<?= $heart['id_work']?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt="<?= $heart['title'] ?>"></a></li>
 
           <?php
             $i++;
@@ -182,7 +192,7 @@
               <h3><?= $card['title'] ?></h3>
               <p class="description-card"><?= $card['extract'] ?></p>
               <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
-              <a href="./front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
+              <a href="./front/book-detail.php?id=<?= $card['id_work']?>" class="link-page">En savoir plus ...</a>
             </div>
           </div>
         <?php } ?>

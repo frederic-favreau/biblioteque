@@ -1,5 +1,4 @@
 <?php include_once '../front/header-default.php';
-
 include_once '../connexion.php';
 $id = $_GET['id'];
 $req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `ISBN`,

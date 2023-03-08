@@ -107,8 +107,27 @@ include_once '../connexion.php';
                     <a href="#" id="help-choise">🔎 Me laisser guider </a>
                 </div>
                 <?php
-                $sql_catalog =
-                    "SELECT DISTINCT `title`,`pict`,`extract`, 
+
+
+                if($sql->rowCount()>0){}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                /*$sql_catalog =
+                    "SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
                     GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
                     GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
                     FROM `work`
@@ -141,11 +160,11 @@ include_once '../connexion.php';
                             <h3><?= $card['title'] ?></h3>
                             <p class="description-card"><?= $card['extract'] ?></p>
                             <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
-                            <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
+                            <a href="./book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
                         </div>
                     </div>
 
-                <?php } ?>
+                <?php } */?>
 
             </div>
         </div>
