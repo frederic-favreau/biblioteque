@@ -17,49 +17,235 @@ body {
   font-family: "Hind Madurai", sans-serif;
 }
 
+h1.h1-dashboard {
+  font-size: 20px;
+  text-align: inherit;
+  color: #0868ae;
+  margin-bottom: 6px;
+}
+@media screen and (min-width: 950px) {
+  h1.h1-dashboard {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+h2.h2-dashboard {
+  font-size: 14px;
+  text-align: inherit;
+  color: #0868ae;
+  margin-bottom: 6px;
+}
+@media screen and (min-width: 950px) {
+  h2.h2-dashboard {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+}
+
+h3.h3-dashboard {
+  font-size: 12px;
+  text-align: inherit;
+  color: #ff5e38;
+  margin-bottom: 6px;
+}
+@media screen and (min-width: 950px) {
+  h3.h3-dashboard {
+    font-size: 16px;
+  }
+}
+
 ul {
   list-style: none;
 }
 
-li {
-  margin-top: 50px;
-}
-
 a {
-  font-size: 14px;
   text-decoration: none;
-  color: #fff;
-  padding: 50px;
-  margin-top: 50px;
-}
-
-header {
-  height: 100vh;
-  position: fixed;
-}
-header #main-sidebar {
-  height: 100%;
-  width: 120px;
-  background-color: blue;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 40px;
-}
-header #main-sidebar #container-top-navigation {
-  width: 100%;
-  text-align: center;
-}
-header #main-sidebar #container-top-navigation #logo-sidebar {
-  width: 90%;
-}
-header #main-sidebar #container-group-profil {
-  width: 100%;
-  margin-top: auto;
-  text-align: center;
 }
 
 main {
-  padding-left: 200px;
-  padding-top: 20px;
+  width: 100vw;
+  padding-left: 100px;
   z-index: -1;
+}
+
+header#side-bar-log #sidebar-wrapper {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  display: flex;
+  transition: width 0.5s;
+  overflow: hidden;
+  white-space: nowrap;
+}
+header#side-bar-log #sidebar-wrapper.active {
+  width: 250px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar {
+  width: 100%;
+  height: 100%;
+  background-color: #0868ae;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 3px;
+  padding-bottom: 40px;
+  transition: all 0.5s;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation a#logo-sidebar {
+  margin-bottom: 40px;
+  width: 120px;
+  position: relative;
+  white-space: nowrap;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation a#logo-sidebar img#logo-big-sidebar {
+  width: 80px;
+  position: absolute;
+  left: -7px;
+  top: 10px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation a#logo-sidebar #dashbord-title {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Nova Slim", cursive;
+  margin-left: 150px;
+  margin-top: 50px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation ul.list-btn-side-bar {
+  position: relative;
+  list-style: none;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 10px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation li:hover {
+  background-color: #05497b;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation li img {
+  margin-right: 30px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 5px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 10px;
+  position: relative;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul li:hover {
+  background-color: #05497b;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul li img {
+  margin-right: 30px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul a#profil {
+  color: #fff;
+  margin-left: 55px;
+  white-space: nowrap;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul a#profil img#profil-pict {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+}
+
+section#dashboard-page-default {
+  padding-top: 40px;
+  padding-left: 50px;
+}
+section#dashboard-page-default div#container-dashboard-base .box-dashboard {
+  width: 70%;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+section#dashboard-page-default div#container-dashboard-base .box-dashboard hr {
+  width: 100%;
+  margin: 10px auto;
+}
+section#dashboard-page-default div#container-dashboard-base .box-dashboard ul {
+  padding: 10px;
+  background-color: #f0f7ff;
+  border-radius: 5px;
+}
+section#dashboard-page-default div#container-dashboard-base #container-home-tabs {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs {
+  display: block;
+}
+section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  margin: 10px auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #firstname {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #lastname {
+  display: flex;
+  flex-direction: column;
+}
+section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #email {
+  display: flex;
+  flex-direction: column;
+}
+section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #location {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style-admin.css.map */
