@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 09 mars 2023 à 11:04
+-- Généré le : mar. 07 mars 2023 à 19:01
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `author` (
   `lastname` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `firstname` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_author`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `author`
@@ -46,11 +46,7 @@ INSERT INTO `author` (`id_author`, `lastname`, `firstname`) VALUES
 (4, 'Exuperie', 'Antoine'),
 (5, 'Zahn', 'Thimoty'),
 (6, 'Schtroumpfs', 'Papa'),
-(7, 'King', 'Stephan'),
-(8, 'Arthur Conan', 'Doyle'),
-(9, 'Doyle', 'Arthur Conan'),
-(10, 'Irwin', 'Chris'),
-(11, 'Weber', 'Bob');
+(7, 'King', 'Stephan');
 
 -- --------------------------------------------------------
 
@@ -163,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `avatar` varchar(1) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `role` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `user`
@@ -176,10 +172,7 @@ INSERT INTO `user` (`id_user`, `firstname`, `lastname`, `mail`, `password`, `adr
 (7, 'Maya', 'Abeille', 'maya@gmail.com', '$2y$10$HEkwsfLRAs3jJzh4k06jfuPpeKHqNusucEjACwz3AR/sNG/ZZp4iS', NULL, NULL, NULL),
 (9, 'Elisa', 'Elisa', 'elisa@google.com', '$2y$10$odqpKdrFFQbyV//dBckZBeOL5kd0jZ3TG2DD8ROjb5cSYiCvQNlS.', NULL, NULL, NULL),
 (10, 'Papa Schtroumpf', 'Papa Schtroumpf', 'papaSchtroumpf@gmail.com', '$2y$10$YU4A1C80dqo1GqSi9muzcun6qVWiIRqAqtXaoYu5a05ivdHN.RFgK', NULL, NULL, NULL),
-(11, 'Schtroumpfette', 'Schtroumpfette', 'Schtroumpfette@gmail.com', '$2y$10$jJIAm2UDCCQpVLa7SCgan.ltw3LqW9ICG/gAMG3sSZIbIAuYny/ZS', NULL, NULL, NULL),
-(15, 'dfsq', 'fsdqf', 'bnkhhdihuio@jikjgdjf.fr', '$2y$10$mRViPKvPUbs/kYzROkoHluEVUeevmTR/ufZIS5mZ7vE7cQwNhuLgm', NULL, NULL, NULL),
-(16, 'dfsq', 'fsdqf', 'bnkhhdihuio@jikjgdjf.fr', '$2y$10$tEyjyWP/OE0jLxru4HuNL.j/OMSqdd.8gWYyRsVgMGDLuuQVM60sq', NULL, NULL, NULL),
-(17, 'fsdqf', 'sqdfsq<', 'jhiofzs@kjfdsdo.fr', '$2y$10$A5PyWVZF96SflNEDGbttoO1LUN9BpU1R.bbfRpQwGUP9DVJg6R1JC', NULL, NULL, NULL);
+(11, 'Schtroumpfette', 'Schtroumpfette', 'Schtroumpfette@gmail.com', '$2y$10$jJIAm2UDCCQpVLa7SCgan.ltw3LqW9ICG/gAMG3sSZIbIAuYny/ZS', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -243,13 +236,7 @@ INSERT INTO `work_author` (`author_id`, `work_id`) VALUES
 (6, 5),
 (2, 6),
 (7, 7),
-(2, 4),
-(2, 9),
-(2, 8),
-(9, 10),
-(9, 11),
-(10, 12),
-(11, 12);
+(2, 4);
 
 -- --------------------------------------------------------
 
@@ -293,14 +280,7 @@ INSERT INTO `work_genre` (`genre_id`, `work_id`) VALUES
 (4, 5),
 (1, 6),
 (9, 6),
-(2, 7),
-(1, 8),
-(9, 8),
-(9, 9),
-(1, 9),
-(8, 10),
-(8, 11),
-(6, 12);
+(2, 7);
 
 --
 -- Contraintes pour les tables déchargées
