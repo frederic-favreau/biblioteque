@@ -1,3 +1,46 @@
-h1 {
-  color: blue;
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nova Slim", sans-serif;
+}
+
+.row-limit-size {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+section#section-article {
+  padding-top: 60px;
+}
+section#section-article h1 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 60px;
+  letter-spacing: -0.02em;
+  color: #1B9690;
+}
+section#section-article img {
+  width: 350px;
+  height: auto;
+}
+section#section-article div#containerpub {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section#section-article div#containerpub p {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  color: #E94A34;
 }/*# sourceMappingURL=style-blog.css.map */
