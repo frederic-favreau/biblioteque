@@ -2,7 +2,7 @@
     include_once '../admin/header-main.php';
     ?>
 
- <section id="dashboard-page-default" class="row-limit-size">
+ <section id="dashboard-page-default">
      <div id="container-dashboard-base">
          <h1 class="h1-dashboard">Bienvenue ['prenom'] dans votre tableau de board</h1>
 
@@ -47,11 +47,33 @@
                              <input type="text" name="lastname" id="lastname" placeholder="Votre nom" />
                          </div>
                      </div>
+                     <div id="email">
+                     <label for="mail">Email</label>
                      <input type="email" name="mail" id="mail" placeholder="Email" />
+                     </div>
+                     <div id="location">
+                        <label for="location">Adresse de votre résidence</label>
+                        <input type="text" id="location">
+                     </div>
                      <input type="password" name="password" placeholder="Password" />
                      <button type="submit">Se connecter</button>
                  </form>
              </div>
+             <div id="box-personal-profil-theme" class="box-dashboard">
+             <h3 class="h3-dashboard">Mes préférences de profil</h3>
+                 <hr>
+                 <select name="sort-pict-profil" id="sort-pict-profil">
+                        <option value="">-- Choisissez une image de profil--</option>
+                        <option value="alphabetical">['Choix A']</option>
+                        <option value="date">['Choix B']</option>
+                        <option value="Disponibility">['Choix C']</option>
+                    </select>
+                 <select name="sort-theme-profil" id="sort-theme-profil">
+                        <option value="">-- Choisissez une image de profil--</option>
+                        <option value="alphabetical">['Choix A']</option>
+                        <option value="date">['Choix B']</option>
+                        <option value="Disponibility">['Choix C']</option>
+                    </select>
          </div>
      </div>
 

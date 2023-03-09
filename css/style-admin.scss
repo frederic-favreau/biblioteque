@@ -65,7 +65,8 @@ a {
 }
 
 main {
-  padding-left: 200px;
+  width: 100vw;
+  padding-left: 100px;
   z-index: -1;
 }
 
@@ -74,6 +75,7 @@ header#side-bar-log {
     height: 100vh;
     position: fixed;
     top: 0;
+    left: 0;
     width: 70px;
     display: flex;
     transition: width 0.5s;
@@ -248,10 +250,9 @@ section#dashboard-page-default {
     }
 
     div#container-profil-tabs {
-      display: none;
+      display: block;
       div#box-personal-info {
         form#form-personal-info {
-          text-align: center;
           #container-fullname {
             display: flex;
             flex-wrap: wrap;
@@ -264,6 +265,15 @@ section#dashboard-page-default {
               margin-right: 20px;
             }
             #lastname {
+              display: flex;
+              flex-direction: column;
+            }
+
+            #email {
+              display: flex;
+              flex-direction: column;
+            }
+            #location {
               display: flex;
               flex-direction: column;
             }

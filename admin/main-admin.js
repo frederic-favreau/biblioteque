@@ -1,5 +1,7 @@
 const boxFormPersonal = document.getElementById('container-profil-tabs');
+const boxHome = document.getElementById('container-home-tabs');
 const btnProfil = document.getElementById('profil-pict');
+const btnHome = document.getElementById('btn-home');
 
 let isBoxVisible = false;
 
@@ -9,6 +11,19 @@ btnProfil.addEventListener('click', function(){
         isBoxVisible = false;
     } else {
         boxFormPersonal.style.display = "block";
+        boxHome.style.display = "none";
+        isBoxVisible = true;
+    }
+});
+
+btnHome.addEventListener('click', function(){
+    if (isBoxVisible) {
+        boxFormPersonal.style.display = "none";
+        boxHome.style.display = "none";
+        isBoxVisible = false;
+    } else {
+        boxFormPersonal.style.display = "none";
+        boxHome.style.display = "block";
         isBoxVisible = true;
     }
 });

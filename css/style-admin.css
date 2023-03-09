@@ -64,7 +64,8 @@ a {
 }
 
 main {
-  padding-left: 200px;
+  width: 100vw;
+  padding-left: 100px;
   z-index: -1;
 }
 
@@ -72,6 +73,7 @@ header#side-bar-log #sidebar-wrapper {
   height: 100vh;
   position: fixed;
   top: 0;
+  left: 0;
   width: 70px;
   display: flex;
   transition: width 0.5s;
@@ -220,10 +222,7 @@ section#dashboard-page-default div#container-dashboard-base #container-home-tabs
   height: fit-content;
 }
 section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs {
-  display: none;
-}
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info {
-  text-align: center;
+  display: block;
 }
 section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname {
   display: flex;
@@ -239,6 +238,14 @@ section#dashboard-page-default div#container-dashboard-base div#container-profil
   margin-right: 20px;
 }
 section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #lastname {
+  display: flex;
+  flex-direction: column;
+}
+section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #email {
+  display: flex;
+  flex-direction: column;
+}
+section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #location {
   display: flex;
   flex-direction: column;
 }/*# sourceMappingURL=style-admin.css.map */

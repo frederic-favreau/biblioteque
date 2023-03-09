@@ -28,7 +28,7 @@ if (!isset($_SESSION['id-user'])) {
                     <div id="container-top-navigation">
                         <a href="../index.php" id="logo-sidebar"><img src="../img/logo-seul-biblook-noir.svg" alt="Bliblook" id="logo-big-sidebar"/><span id="dashbord-title"></span> Dashboard</a>
                         <ul class="list-btn-side-bar">
-                            <li><a href="#"><img src="../img/side-bar/picto-home.svg" alt="accueil">Mon accueil</a></li>
+                            <li><a href="#"><img src="../img/side-bar/picto-home.svg" alt="accueil" id="btn-home">Mon accueil</a></li>
                             <li><a href="#"><img src="../img/side-bar/picto-users.svg" alt="utilisateur">Gérer les utilisateurs</a></li>
                             <li><a href="#"><img src="../img/side-bar/picto-CRUD.svg" alt="crud">Gérer les livres</a></li>
                         </ul>
