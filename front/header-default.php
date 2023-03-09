@@ -31,7 +31,7 @@
           <a href="./front/catalog.php" " id="btn-search-nav-top">Rechercher</a>
         </div>
         <div id="container-group-btn-connexion">
-          <a href="./front/connect.php" id="btn-sign-up"><span>Connexion</span>
+          <a href="../front/connect.php" id="btn-sign-up"><span>Connexion</span>
             <div id="menu-burger">
               <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
               <div class="menu-burger-pipe" id="menu-burger-pipe-middle"></div>

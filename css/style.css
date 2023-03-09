@@ -47,17 +47,6 @@ h2 {
   }
 }
 
-h3 {
-  font-family: "Nova Slim";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 38px;
-  letter-spacing: 0.04em;
-  color: #0868ae;
-  text-overflow: ellipsis;
-}
-
 #sub-title {
   font-size: 14px;
   text-align: start;
@@ -587,7 +576,17 @@ h3 {
   height: 230px;
   padding: 15px 5px 15px 200px;
   border-radius: 5px;
+  background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#section-soon-available #container-cards .card span.tag-new-index {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  padding: 5px;
+  border-radius: 15px 0 15px 0;
+  background-color: #ff5e38;
+  color: #fff;
 }
 #section-soon-available #container-cards .card img {
   position: absolute;
@@ -604,26 +603,29 @@ h3 {
   transform: translateY(-15px);
 }
 #section-soon-available #container-cards .card .bottom-item-card h4 {
-  margin: 5px 0;
+  margin: 15px 0;
   text-transform: capitalize;
+}
+#section-soon-available #container-cards .card .bottom-item-card h3.title-card-index {
+  font-family: "Nova Slim";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0.04em;
+  color: #0868ae;
+  text-overflow: ellipsis;
+  margin-bottom: 12px;
 }
 #section-soon-available #container-cards .card .bottom-item-card .title-card {
   font-size: 10px;
   text-transform: capitalize;
 }
-#section-soon-available #container-cards .card .bottom-item-card .description-card {
-  height: 60px;
-  margin: 8px 0 8px;
-  font-size: 14px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
 #section-soon-available #container-cards .card .bottom-item-card a.link-page {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
   font-size: 14px;
-  float: right;
   color: #0868ae;
   margin-right: 10px;
   margin-top: 20px;
@@ -663,7 +665,7 @@ h3 {
   padding-top: 120px;
   position: relative;
 }
-#section-blog h3 {
+#section-blog h3#h3-tag {
   text-align: center;
 }
 #section-blog h2 {
@@ -767,7 +769,7 @@ h3 {
   padding-top: 120px;
   padding-bottom: 60px;
 }
-#section-faq h3 {
+#section-faq h3.h3-faq {
   text-align: center;
   margin-bottom: 80px;
 }
@@ -869,7 +871,7 @@ h3 {
   position: relative;
   padding-bottom: 150px;
 }
-#section-location h3 {
+#section-location h3.h3-location {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -899,6 +901,7 @@ h3 {
   align-items: center;
   margin-top: 500px;
   border-radius: 0 0 20px 20px;
+  background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 #section-location #container-info-location ul li {

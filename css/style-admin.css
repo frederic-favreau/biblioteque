@@ -6,10 +6,10 @@
   padding: 0;
 }
 
-.row-limit-size {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+.row-limit-size-db {
+  padding-top: 40px;
+  padding-left: 100px;
+  padding: 40px 100px;
 }
 
 body {
@@ -64,9 +64,13 @@ a {
 }
 
 main {
-  width: 100vw;
+  width: 100%;
   padding-left: 100px;
   z-index: -1;
+}
+
+.active {
+  display: block;
 }
 
 header#side-bar-log #sidebar-wrapper {
@@ -194,12 +198,8 @@ header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil
   left: 8px;
 }
 
-section#dashboard-page-default {
-  padding-top: 40px;
-  padding-left: 100px;
-}
-section#dashboard-page-default div#container-dashboard-base .box-dashboard {
-  width: 70%;
+div.container-dashboard-base .box-dashboard {
+  width: 100%;
   height: -moz-fit-content;
   height: fit-content;
   background-color: #fff;
@@ -208,53 +208,57 @@ section#dashboard-page-default div#container-dashboard-base .box-dashboard {
   margin-bottom: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-section#dashboard-page-default div#container-dashboard-base .box-dashboard hr {
+div.container-dashboard-base .box-dashboard hr {
   width: 100%;
   margin: 10px auto;
 }
-section#dashboard-page-default div#container-dashboard-base .box-dashboard ul {
+div.container-dashboard-base .box-dashboard ul {
   padding: 10px;
   background-color: #f0f7ff;
   border-radius: 5px;
 }
-section#dashboard-page-default div#container-dashboard-base #container-home-tabs {
+
+section#dashboard-page-default .container-home-tabs {
   height: -moz-fit-content;
   height: fit-content;
 }
-section#dashboard-page-default div#container-dashboard-base #container-home-tabs ul.list-book-box li.list-book {
+section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book {
   display: flex;
   width: 100%;
+  margin-bottom: 50px;
 }
-section#dashboard-page-default div#container-dashboard-base #container-home-tabs ul.list-book-box li.list-book div.wish-list-book {
+section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.wish-list-book {
   display: flex;
   flex-wrap: wrap;
   width: 40%;
 }
-section#dashboard-page-default div#container-dashboard-base #container-home-tabs ul.list-book-box li.list-book div.wish-list-book img.pict-book-wish {
+section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.wish-list-book img.pict-book-wish {
   height: 100px;
   width: auto;
 }
-section#dashboard-page-default div#container-dashboard-base #container-home-tabs ul.list-book-box li.list-book div.wish-list-book ul.container-description-wish li.list-title {
+section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.wish-list-book ul.container-description-wish li.list-title {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #0868ae;
 }
-section#dashboard-page-default div#container-dashboard-base #container-home-tabs ul.list-book-box li.list-book div.wish-list-book ul.container-description-wish li.list-author {
+section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.wish-list-book ul.container-description-wish li.list-author {
   font-size: 16px;
   color: gray;
 }
-section#dashboard-page-default div#container-dashboard-base #container-home-tabs ul.list-book-box li.list-book div.container-loan-wish {
+section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.container-loan-wish {
   width: 60%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-evenly;
 }
-section#dashboard-page-default div#container-dashboard-base #container-home-tabs ul.list-book-box li.list-book div.container-loan-wish p.info-disponibility-wish {
+section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.container-loan-wish p.info-disponibility-wish {
   color: #ff5e38;
   font-weight: bold;
   margin-right: 70px;
 }
-section#dashboard-page-default div#container-dashboard-base #container-home-tabs ul.list-book-box li.list-book div.container-loan-wish a.btn-loan-wish {
+section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.container-loan-wish a.btn-loan-wish {
   padding: 15px;
   font-weight: bold;
   border: none;
@@ -265,19 +269,20 @@ section#dashboard-page-default div#container-dashboard-base #container-home-tabs
   text-align: center;
   transition: background-color 0.3s ease;
 }
-section#dashboard-page-default div#container-dashboard-base #container-home-tabs ul.list-book-box li.list-book div.container-loan-wish a.btn-loan-wish:hover {
+section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.container-loan-wish a.btn-loan-wish:hover {
   background-color: #05497b;
   cursor: pointer;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs {
+
+section#dashboard-page-profil div#container-profil-tabs {
   display: block;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -285,75 +290,79 @@ section#dashboard-page-default div#container-dashboard-base div#container-profil
   width: -moz-fit-content;
   width: fit-content;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname .input-fullname {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname .input-fullname {
   width: 400px;
   height: 44px;
   border-radius: 5px;
   padding-left: 10px;
+  border: 1px solid gray;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname .label-fullname {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname .label-fullname {
   font-size: 14px;
   color: #070606;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #firstname {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #firstname {
   display: flex;
   flex-direction: column;
   margin-right: 20px;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #lastname {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #lastname {
   display: flex;
   flex-direction: column;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info div#email {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info div#email {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info div#email #label-email {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info div#email #label-email {
   font-size: 14px;
   color: #070606;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info div#email #input-mail {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info div#email #input-mail {
   width: 400px;
   height: 44px;
   border-radius: 5px;
   padding-left: 10px;
+  border: 1px solid gray;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #location {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #location {
   display: flex;
   flex-direction: column;
   margin-bottom: 8px;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #location #label-location {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #location #label-location {
   font-size: 14px;
   color: #070606;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #location input {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #location input {
   width: 840px;
   height: 44px;
   border-radius: 5px;
   padding-left: 10px;
+  border: 1px solid gray;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #password {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #password {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #password #label-password {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #password #label-password {
   font-size: 14px;
   color: #070606;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #password #input-password {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #password #input-password {
   width: 400px;
   height: 44px;
   border-radius: 5px;
   padding-left: 10px;
+  border: 1px solid gray;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form {
   display: flex;
   flex-wrap: wrap;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-reset {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-reset {
   width: 80px;
   height: 40px;
   border-radius: 5px;
@@ -365,12 +374,12 @@ section#dashboard-page-default div#container-dashboard-base div#container-profil
   text-align: center;
   transition: background-color 0.3s ease;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-reset:hover {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-reset:hover {
   background-color: #0868ae;
   color: #fff;
   cursor: pointer;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-submit {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-submit {
   width: 80px;
   height: 40px;
   border: none;
@@ -381,7 +390,87 @@ section#dashboard-page-default div#container-dashboard-base div#container-profil
   text-align: center;
   transition: background-color 0.3s ease;
 }
-section#dashboard-page-default div#container-dashboard-base div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-submit:hover {
+section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-submit:hover {
+  background-color: #05497b;
+  cursor: pointer;
+}
+
+section#dashboard-page-crud-book .container-crud-book-tabs {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs div.info-crud-book {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs input {
+  width: 30%;
+  height: 40px;
+  border-radius: 5px;
+  margin: 10px;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs button {
+  height: 40px;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs ul#info-top-crud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book {
+  display: flex;
+  width: 100%;
+  margin-bottom: 50px;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.wish-list-book {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.wish-list-book img.pict-book-wish {
+  height: 100px;
+  width: auto;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.wish-list-book ul.container-description-wish li.list-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #0868ae;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.wish-list-book ul.container-description-wish li.list-author {
+  font-size: 16px;
+  color: gray;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.container-loan-wish {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.container-loan-wish p.info-disponibility-wish {
+  color: #ff5e38;
+  font-weight: bold;
+  margin-right: 70px;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.container-loan-wish a.btn-loan-wish {
+  padding: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #0868ae;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.container-loan-wish a.btn-loan-wish:hover {
   background-color: #05497b;
   cursor: pointer;
 }/*# sourceMappingURL=style-admin.css.map */

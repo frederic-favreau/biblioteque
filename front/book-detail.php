@@ -39,7 +39,7 @@ while($book = $req_book->fetch(PDO::FETCH_ASSOC)){
     <section id="section-detail-book" class="row-limit-size">
         <div id="container-detail-book">
             <div class="item-detail-book-left">
-                <div class="book-new">['new']</div>
+                <div class="book-new">Nouveau</div>
                 <h1 class="title-work"><?=$book['title']?></h1>
                 <p class="author"><?=$book['authors']?></p>
                 <figure><img src="../img/books/<?=$book['pict']?>" alt="<?=$book['title']?>"></figure>
@@ -92,7 +92,6 @@ while($book = $req_book->fetch(PDO::FETCH_ASSOC)){
                 <div class="bottom-item-card">
                     <h4>['genres']</h4>
                     <h3>['title']</h3>
-                    <p class="description-card">['extract']</p>
                     <h5>['authors']</h5>
                     <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
                 </div>
@@ -104,7 +103,6 @@ while($book = $req_book->fetch(PDO::FETCH_ASSOC)){
                 <div class="bottom-item-card">
                     <h4>['genres']</h4>
                     <h3>['title']</h3>
-                    <p class="description-card">['extract']</p>
                     <h5>['authors']</h5>
                     <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
                 </div>
@@ -116,7 +114,6 @@ while($book = $req_book->fetch(PDO::FETCH_ASSOC)){
                 <div class="bottom-item-card">
                     <h4>['genres']</h4>
                     <h3>['title']</h3>
-                    <p class="description-card">['extract']</p>
                     <h5>['authors']</h5>
                     <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
                 </div>
@@ -128,7 +125,6 @@ while($book = $req_book->fetch(PDO::FETCH_ASSOC)){
                 <div class="bottom-item-card">
                     <h4>['genres']</h4>
                     <h3>['title']</h3>
-                    <p class="description-card">['extract']</p>
                     <h5>['authors']</h5>
                     <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
                 </div>
@@ -140,7 +136,6 @@ while($book = $req_book->fetch(PDO::FETCH_ASSOC)){
                 <div class="bottom-item-card">
                     <h4>['genres']</h4>
                     <h3>['title']</h3>
-                    <p class="description-card">['extract']</p>
                     <h5>['authors']</h5>
                     <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
                 </div>
@@ -152,7 +147,6 @@ while($book = $req_book->fetch(PDO::FETCH_ASSOC)){
                 <div class="bottom-item-card">
                     <h4>['genres']</h4>
                     <h3>['title']</h3>
-                    <p class="description-card">['extract']</p>
                     <h5>['authors']</h5>
                     <a href="../front/book-detail.php" class="link-page">En savoir plus ...</a>
                 </div>

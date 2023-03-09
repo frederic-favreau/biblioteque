@@ -171,16 +171,18 @@
 
           <div class="card">
             <div class="top-item-card">
+            <span class="tag-new-index">Nouveau</span>
               <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
             </div>
             <div class="bottom-item-card">
+              
 
               <!-- str_replace takes three arguments, first element to replace, 
             seconde element to insert, third target of function -->
 
               <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
-              <h3><?= $card['title'] ?></h3>
-              <p class="description-card"><?= $card['extract'] ?></p>
+              <h3 class="title-card-index"><?= $card['title'] ?></h3>
+              <!-- <p class="description-card"><?= $card['extract'] ?></p> -->
               <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
               <a href="./front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
             </div>
@@ -292,7 +294,7 @@
 
     <section id="section-faq" class="row-limit-size">
       <h2>Foire aux questions</h2>
-      <h3>Toutes les choses que vous devez savoir sont ici.</h3>
+      <h3 class="h3-faq">Toutes les choses que vous devez savoir sont ici.</h3>
       <div id="container-faq">
         <div class="item-faq">
           <p class="question">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur ?</p>
@@ -347,7 +349,7 @@
 
 
     <section id="section-location" class="row-limit-size">
-      <h3>Où nous trouver ?</h3>
+      <h3 class="h3-location">Où nous trouver ?</h3>
       <h2>Direction <span id="font-logo">Biblook</span> à Saint-Denis-les-Bourg</h2>
       <p>On vous attend avec de nombreuses histoires à vous racontrer</p>
       <div id="iframe-google">
