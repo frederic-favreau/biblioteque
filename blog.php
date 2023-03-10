@@ -13,21 +13,31 @@
 
     <main>
         <section id="section-article" class="row-limit-size">
-            <h1>Journée Portes Ouvertes</h1>
             <img src="./img/photosblog/ballons-removebg-preview 1.png" alt="bouquet de ballons">
+            <h1>Journée Portes Ouvertes</h1>
 
-            <h2>Bibliothèque Biblook Saint-Denis-les-Bourg</h2>
+
+            <h2>Bibliothèque Biblook
+                <br>Saint-Denis-les-Bourg
+            </h2></br>
             <h3> Mercredi 21 Juin 2023 de 10h à 17h</h3>
 
             <div id="containerpub">
                 <p>Entrée gratuite</p>
                 <p>Ouvert à tous</p>
             </div>
-            <img src="./img/photosblog/cotillons-removebg-preview 1.png">
+
+
             <div id="descriptif">
-                <div>Visite guidée</div>
-                <div>Vente de livres</div>
-                <div>Atelier lecture pour les enfants</div>
+            <ul>
+                    <li>Visite guidée</li>
+                    <li>Vente de livres</li>
+                    <li>Atelier lecture pour les enfants</li>
+
+                </ul>
+                <img src="./img/photosblog/cotillons-removebg-preview 1.png" class="cotillons" alt="cotillons colorés">
+                
+                
             </div>
             <hr>
             <h4>Venez troquer des boutures!</h4>
