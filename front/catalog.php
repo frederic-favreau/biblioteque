@@ -10,7 +10,10 @@ include_once '../connexion.php';
 
 
     <section id="section-catalog" class="row-limit-size">
-        <h1 id="value-search">"<?= $_GET['search'] ?>"</h1>
+    <?php
+    if(isset($_GET['search'])){?>
+        <h1 id="value-search">"<?=$_GET['search']?>"</h1>
+        <?php } ?>
         <div id="container-catalog">
             <div id="container-filter">
                 <p id="filter-title">Filtres</p>
