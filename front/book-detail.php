@@ -24,9 +24,9 @@ $req_book->bindParam('id', $id, PDO::PARAM_INT);
 $req_book->execute();
 
 while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
-    $genre = str_replace(",", "', '", $book['genres']); 
-    $title = str_replace("'","\'",$book['title']);
-    
+    $genre = str_replace(",", "', '", $book['genres']);
+    $title = str_replace("'", "\'", $book['title']);
+
 ?>
 
 
@@ -42,6 +42,10 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
 
         <section id="section-detail-book" class="row-limit-size">
             <div id="container-detail-book">
+                <div class="bloc-modale"></div>
+
+                <!-- MODALE D EMPRUNT DE LIVRE EN js -->
+
                 <div class="item-detail-book-left">
                     <div class="book-new">['new']</div>
                     <h1 class="title-work"><?= $book['title'] ?></h1>
@@ -73,7 +77,23 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                         <li>['Livre disponible en bibliothèque']</li>
                         <li>A retirer à Biblook sous 3 heures</li>
                     </ul>
-                    <a href="#" id="btn-reservation">Réserver ce livre</a>
+
+
+                    <?php
+                    $raq_loan = ("SELECT `id_work`, `title`, `pict`, FROM `work` ORDER BY `id`");
+                    $req_book_loan = $db->query($raq_loan);
+                    while ($loan = $req_book_loan->fetch(PDO::FETCH_ASSOC)) {
+                    ?>
+
+
+
+                        <a href="#" id="btn-loan" data-idWork="<?= $loan['id_work'] ?>" data-idCopy="['id_copy']" data-title="<?= $loan['title'] ?>" data-pict="<?= $loan['pict'] ?>" data-location="['location']">Emprunter ce livre</a>
+
+                    <?php
+                    }
+                    ?>
+
+
                     <hr>
                     <ul class="list-advantage">
                         <li>Réservez en ligne & retirer sous 3h</li>
@@ -150,7 +170,8 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
         </section>
 
     </main>
-    <script src="../main.js"></script>
+    <script src="../js/main-front.js"></script>
+    <!-- <script src="../main.js"></script> -->
     </body>
 <?php include_once '../front/footer-default.php';
 }; ?>

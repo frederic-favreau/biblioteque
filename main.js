@@ -28,14 +28,3 @@ showFilters.forEach((filter) => {
 });
 
 
-// Return home with group-logo
-
-document.getElementById("container-group-logo").addEventListener("click", function() {
-  window.location.href = "#section-news";
-});
-
-document.getElementById("group-logo").addEventListener("click", function() {
-  window.location.href = "#section-news";
-});
-
-
