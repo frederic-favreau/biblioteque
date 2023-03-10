@@ -31,7 +31,7 @@
                     <?php
                     if (isset($_GET['err'])) {
                     ?>
-                        <p style="color: red;"> Ehhh Mec! Pseudo ou mot de passe incorect </p>
+                        <p style="color: red;"> Ehhh Mec! Pseudo ou mot de passe incorrect </p>
                     <?php
                     }
                     ?>

@@ -47,9 +47,9 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <h1 class="title-work"><?= $book['title'] ?></h1>
                     <p class="author"><?= str_replace(',', ', ', $book['authors']) ?></p>
                     <figure><img src="../img/books/<?= $book['pict'] ?>" alt="<?= $book['title'] ?>"></figure>
-                    <h2>Extrait du livre</h2>
+                    <h2 id="title-extract">Extrait du livre</h2>
                     <p class="extract-work"><?= $book['extract'] ?></p>
-                    <h3>Fiche technique</h3>
+                    <h3 id="info-technical">Fiche technique</h3>
                     <ul class="all-info-book">
                         <li>Auteur <span class="bdd-var"><?= str_replace(',', ', ', $book['authors']) ?></span></li>
                         <li>Genre <span class="bdd-var"><?= str_replace(',', ', ',$book['genres']) ?></span></li>
@@ -132,7 +132,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                         </div>
                         <div class="bottom-item-card">
                             <h4><?= $card['genres'] ?></h4>
-                            <h3><?= $card['title'] ?></h3>
+                            <h3 id="title-book-card"><?= $card['title'] ?></h3>
                             <p class="description-card"><?= $card['extract'] ?></p>
                             <h5><?= $card['authors'] ?></h5>
                             <a href="../front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>

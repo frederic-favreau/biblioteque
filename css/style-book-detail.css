@@ -20,7 +20,7 @@ main div#box-loan {
   transform: translate(-50%, -50%);
   padding: 30px;
   box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
-  border-radius: 2px;
+  border-radius: 10px;
 }
 main div#box-loan p#loan-confimation {
   font-size: 1.1rem;
@@ -35,7 +35,7 @@ main div#box-loan p#loan-confimation {
 }
 main div#box-loan p#book-title-box {
   color: #0868ae;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   font-family: "Nova Slim", cursive, sans-serif;
   margin-bottom: 10px;
@@ -56,7 +56,7 @@ main div#box-loan a#btn-confirmed {
   bottom: 20px;
   border: 1px solid #0868ae;
   color: #0868ae;
-  padding: 10px;
+  padding: 10px 40px;
   border-radius: 10px;
 }
 main div#box-loan a#btn-confirmed:hover {
@@ -145,14 +145,14 @@ section#section-detail-book div#container-detail-book div.item-detail-book-left 
   display: block;
   background-color: gray;
 }
-section#section-detail-book div#container-detail-book div.item-detail-book-left h2 {
+section#section-detail-book div#container-detail-book div.item-detail-book-left h2#title-extract {
   font-size: 20px;
   text-align: inherit;
+  margin-bottom: -5px;
   color: #0868ae;
-  margin-bottom: 6px;
 }
 @media screen and (min-width: 950px) {
-  section#section-detail-book div#container-detail-book div.item-detail-book-left h2 {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left h2#title-extract {
     font-size: 30px;
   }
 }
@@ -167,13 +167,14 @@ section#section-detail-book div#container-detail-book div.item-detail-book-left 
     margin-bottom: 26px;
   }
 }
-section#section-detail-book div#container-detail-book div.item-detail-book-left h3 {
+section#section-detail-book div#container-detail-book div.item-detail-book-left h3#info-technical {
   font-size: 20px;
+  font-family: "Nova Slim", cursive, sans-serif;
   color: #0868ae;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 @media screen and (min-width: 950px) {
-  section#section-detail-book div#container-detail-book div.item-detail-book-left h3 {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left h3#info-technical {
     font-size: 30px;
   }
 }
@@ -322,6 +323,7 @@ section#section-detail-book div#container-detail-book div#item-detail-book-right
 }
 #section-recommandation h3.standard-title-section {
   font-size: 30px;
+  font-family: "Nova Slim", cursive, sans-serif;
   color: #0868ae;
   margin-top: 16px;
   margin-bottom: 6px;
@@ -368,6 +370,10 @@ section#section-detail-book div#container-detail-book div#item-detail-book-right
   margin: 5px 0;
   text-transform: capitalize;
 }
+#section-recommandation #container-cards .card .bottom-item-card h3#title-book-card {
+  font-family: "Nova Slim", cursive, sans-serif;
+  color: #0868ae;
+}
 #section-recommandation #container-cards .card .bottom-item-card .title-card {
   font-size: 10px;
   text-transform: capitalize;
@@ -399,6 +405,7 @@ section#section-tag-recommandation {
 }
 section#section-tag-recommandation h3.standard-title-section {
   font-size: 30px;
+  font-family: "Nova Slim", cursive, sans-serif;
   color: #0868ae;
   margin-top: 16px;
   margin-bottom: 60px;
@@ -424,4 +431,6 @@ section#section-tag-recommandation div#container-tags div.tag-reco {
 }
 section#section-tag-recommandation div#container-tags div.tag-reco:hover {
   cursor: pointer;
+  background-color: #0868ae;
+  color: #fff;
 }/*# sourceMappingURL=style-book-detail.css.map */

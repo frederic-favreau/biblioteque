@@ -1,3 +1,10 @@
+$btn-red: #ff5e38;
+$btn-red-hover: #b53928;
+$main-blue: #0868ae;
+$white: $white;
+$black: #070606;
+$footer: #043a61;
+
 *,
 ::after,
 ::before {
@@ -47,18 +54,6 @@ a {
   margin: 15px 0;
 }
 
-button {
-  border-radius: 20px;
-  border: 1px solid #ff4b2b;
-  background-color: #ff4b2b;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 12px 45px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: transform 80ms ease-in;
-}
 
 button:active {
   transform: scale(0.95);
@@ -70,11 +65,11 @@ button:focus {
 
 button.ghost {
   background-color: transparent;
-  border-color: #ffffff;
+  border-color: $white;
 }
 
 form {
-  background-color: #ffffff;
+  background-color: $white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,6 +77,23 @@ form {
   padding: 0 50px;
   height: 100%;
   text-align: center;
+
+  button {
+    border-radius: 5px;
+    border: 1px solid $main-blue;
+    background-color: $main-blue;
+    color: $white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+  
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 input {
@@ -107,7 +119,7 @@ main {
       min-height: 480px;
       top: 10%;
       overflow: hidden;
-      background-color: #fff;
+      background-color: $white;
       border-radius: 10px;
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
@@ -174,13 +186,11 @@ main {
     }
 
     .overlay {
-      background: #ff416c;
-      background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-      background: linear-gradient(to right, #ff4b2b, #ff416c);
+      background: $main-blue;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: 0 0;
-      color: #ffffff;
+      color: $white;
       position: relative;
       left: -100%;
       height: 100%;
