@@ -16,7 +16,7 @@
   <?php
   require_once './connexion.php';
 
-  
+
 
   ?>
 
@@ -31,13 +31,13 @@
           <span id="nav-logo-text">Biblook</span>
         </div>
         <div id="container-group-search-nav-top">
-        <form action="./front/catalog.php?placeholde" method="GET">
+          <form action="./front/catalog.php?placeholde" method="GET">
 
-              <input type="search" name="search"id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
-              <input type="submit" name ="rechercher" value="recherche">
+            <input type="search" name="search" id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
+            <input type="submit" name="rechercher" value="recherche" id="btn-search-nav-top">
 
 
-        </form>
+          </form>
         </div>
         <div id="container-group-btn-connexion">
           <a href="./front/connect.php" id="btn-sign-up"><span>Connexion</span>
@@ -179,11 +179,11 @@
 
           <div class="card">
             <div class="top-item-card">
-            <span class="tag-new-index">Nouveau</span>
+              <span class="tag-new-index">Nouveau</span>
               <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
             </div>
             <div class="bottom-item-card">
-              
+
 
               <!-- str_replace takes three arguments, first element to replace, 
             seconde element to insert, third target of function -->
@@ -305,38 +305,40 @@
       <h3 class="h3-faq">Toutes les choses que vous devez savoir sont ici.</h3>
       <div id="container-faq">
         <div class="item-faq">
-          <p class="question">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur ?</p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non debitis quasi qui porro temporibus numquam ?</p>
+          <p class="question">Que faire si j'ai perdu ma carte lecteur ?</p>
+          <p class="faq-answer">Vous pouvez quand même emprunter des documents. Nous referons votre carte quand vous serez certain de ne pas la retrouver, la carte étant gratuite pour vous mais représentant un coût pour la collectivité.
+          </p>
           <div class="toggle-symbol"></div>
         </div>
         <hr>
         <div class="item-faq">
-          <p class="question">Lorem ipsum dolor sit amet consectetur ?</p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non debitis quasi qui porro temporibus numquam ?</p>
+          <p class="question">Puis-je emprunter des documents du secteur jeunesse avec un abonnement adulte ?</p>
+          <p class="faq-answer">Oui, si vous êtes enseignant.</p>
           <div class="toggle-symbol"></div>
         </div>
         <hr>
         <div class="item-faq">
-          <p class="question">Lorem ipsum dolor sit amet consectetur Lorem, ipsum. ?</p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non debitis quasi qui porro temporibus numquam ?</p>
+          <p class="question">Internet est-il gratuit au sein de la bibliothèque ?</p>
+          <p class="faq-answer"> Dans les locaux de la bibliothèque les enfants sont sous la responsabilité de leurs parents ; le personnel de la bibliothèque les accueille, les conseille mais ne peut en aucun cas les garder.
+</p>
           <div class="toggle-symbol"></div>
         </div>
         <hr>
         <div class="item-faq">
-          <p class="question">Lorem ipsum dolor sit amet consectetur Lorem, ipsum dolor. ?</p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non debitis quasi qui porro temporibus numquam ?</p>
+          <p class="question">Puis-je prolonger le prêt de mes  livres ?</p>
+          <p class="faq-answer">Les livres peuvent être prolongés, depuis votre espace client.</p>
           <div class="toggle-symbol"></div>
         </div>
         <hr>
         <div class="item-faq">
-          <p class="question">Lorem ipsum dolor sit amet consectetur ?</p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non debitis quasi qui porro temporibus numquam ?</p>
+          <p class="question">Que puis-je faire si je ne suis pas inscrit à la bibliothèque ?</p>
+          <p class="faq-answer">Vous pouvez consulter sur place, participer aux animations.</p>
           <div class="toggle-symbol"></div>
         </div>
         <hr>
         <div class="item-faq">
-          <p class="question">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. ?</p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non qui porro temporibus numquam ?</p>
+          <p class="question">Je suis enseignant, puis-je emprunter plus de documents ?</p>
+          <p class="faq-answer">Oui, si vous enseignez sur la commune.</p>
           <div class="toggle-symbol"></div>
         </div>
       </div>

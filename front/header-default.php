@@ -30,7 +30,7 @@
         <form action="../front/catalog.php?placeholde" method="GET">
 
               <input type="search" name="search"id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
-              <input type="submit" name ="rechercher" value="recherche">
+              <input type="submit" name ="rechercher" value="recherche" id="btn-search-nav-top">
 
 
         </form>

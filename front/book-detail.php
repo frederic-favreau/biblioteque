@@ -111,7 +111,6 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     ON `work_author`.`author_id` = `author`.`id_author`
                     WHERE `genre`.`name` IN ('$genre') 
                     AND `title` <> ('$title')
-                    https://github.com/frederic-favreau/biblioteque/pull/19/conflict?name=front%252Fbook-detail.php&ancestor_oid=b530648ce32df285fa9b575e6e1132bf30094fcf&base_oid=cdad86851e686f9599c7b7788ff4fb5dbb65fe28&head_oid=cf58d7d16e931f4d501fa33dacb2e530b9ca1278
 
                     GROUP BY `id_work` ORDER BY `id_work` DESC";
                 $req_catalog = $db->query($sql);

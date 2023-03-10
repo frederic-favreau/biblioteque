@@ -99,7 +99,7 @@ include_once '../connexion.php';
             <div id="container-cards">
                 <div class="container-sort">
                     <select name="sort" id="sort">
-                        <option value="">-- Choisissez un trie --</option>
+                        <option value="">Choisir un tri</option>
                         <option value="alphabetical">Alphabétique</option>
                         <option value="date">Date de parution</option>
                         <option value="Disponibility">Disponibilité</option>
@@ -108,13 +108,13 @@ include_once '../connexion.php';
                 </div>
                 <?php
 
-               
+
                 if (isset($_GET['search']) and !empty($_GET['search'])) {
                     $recheche = htmlspecialchars($_GET['search']);
 
 
                     $sql =
-                    'SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
+                        'SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
                     GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
                     GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
                     FROM `work`
@@ -133,41 +133,36 @@ include_once '../connexion.php';
                     WHERE `title` LIKE "%' . $recheche . '%" OR  `author`.`lastname` LIKE "%' . $recheche . '%"  OR  `author`.`firstname` LIKE "%' . $recheche . '%" OR `genre`.`name` LIKE "%' . $recheche . '%"
                     GROUP BY `id_work` ORDER BY `id_work` DESC';
                     $req_catalog = $db->query($sql);
-                    if ($req_catalog->rowCount()>0){
-                        while ($card= $req_catalog ->fetch(PDO::FETCH_ASSOC)) {
-                            ?>
-            
-            
-            
-                                <div class="card">
-                                    <div class="top-item-card">
-                                        <img src="../img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
-                                    </div>
-                                    <div class="bottom-item-card">
-                                        <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
-                                        <h3><?= $card['title'] ?></h3>
-                                        <p class="description-card"><?= $card['extract'] ?></p>
-                                        <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
-                                        <a href="./book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
-                                    </div>
+                    if ($req_catalog->rowCount() > 0) {
+                        while ($card = $req_catalog->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+
+
+                            <div class="card">
+                                <div class="top-item-card">
+                                    <img src="../img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
                                 </div>
-                                <?php }    
-                    }else{
+                                <div class="bottom-item-card">
+                                    <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
+                                    <h3><?= $card['title'] ?></h3>
+                                    <p class="description-card"><?= $card['extract'] ?></p>
+                                    <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
+                                    <a href="./book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
+                                </div>
+                            </div>
+                        <?php }
+                    } else {
+
                         ?>
-                            <p> Aucan livre trouvé</p>
-    
-                        <?php
+                        <p> Aucun livre trouvé</p>
+                    <?php
                     }
 
-                }else{
                     ?>
-                    <p> Saisisez une recherche</p>
 
                 <?php
-
-
-
-?>
+                }
+                ?>
 
             </div>
         </div>
