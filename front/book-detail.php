@@ -42,10 +42,6 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
 
         <section id="section-detail-book" class="row-limit-size">
             <div id="container-detail-book">
-                <div class="bloc-modale"></div>
-
-                <!-- MODALE D EMPRUNT DE LIVRE EN js -->
-
                 <div class="item-detail-book-left">
                     <div class="book-new">['new']</div>
                     <h1 class="title-work"><?= $book['title'] ?></h1>
@@ -56,7 +52,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <h3>Fiche technique</h3>
                     <ul class="all-info-book">
                         <li>Auteur <span class="bdd-var"><?= str_replace(',', ', ', $book['authors']) ?></span></li>
-                        <li>Genre <span class="bdd-var"><?= $book['genres'] ?></span></li>
+                        <li>Genre <span class="bdd-var"><?= str_replace(',', ', ',$book['genres']) ?></span></li>
                         <li>Catégorie <span class="bdd-var">['category']</span></li>
                         <li>Date de publication <span class="bdd-var"><?= $book['published_at'] ?></span></li>
 
@@ -69,7 +65,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <h4 class="title-work-description"><?= $book['title'] ?></h4>
                     <ul class="info-work-description">
                         <li>Auteur <span><?= str_replace(',', ', ', $book['authors']) ?></span></li>
-                        <li>Genre <span><?= $book['genres'] ?></span></li>
+                        <li>Genre <span><?= str_replace(',', ', ',$book['genres']) ?></span></li>
                         <li>Date de publication <span><?= $book['published_at'] ?></span></li>
                     </ul>
                     <hr>
@@ -78,21 +74,14 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                         <li>A retirer à Biblook sous 3 heures</li>
                     </ul>
 
-
                     <?php
-                    $raq_loan = ("SELECT `id_work`, `title`, `pict`, FROM `work` ORDER BY `id`");
-                    $req_book_loan = $db->query($raq_loan);
-                    while ($loan = $req_book_loan->fetch(PDO::FETCH_ASSOC)) {
+                    $req_loan = $db->prepare("SELECT `id_work`, `title`, `pict` FROM `work` WHERE `id_work` = :id");
+                    $req_loan->bindParam('id', $id, PDO::PARAM_INT);
+                    $req_loan->execute();
+                    $req_book_loan = $req_loan->fetch(PDO::FETCH_ASSOC);
+
                     ?>
-
-
-
-                        <a href="#" id="btn-loan" data-idWork="<?= $loan['id_work'] ?>" data-idCopy="['id_copy']" data-title="<?= $loan['title'] ?>" data-pict="<?= $loan['pict'] ?>" data-location="['location']">Emprunter ce livre</a>
-
-                    <?php
-                    }
-                    ?>
-
+                    <a href="#" id="btn-loan" data-idWork="<?= $req_book_loan['id_work'] ?>" data-title="<?= $req_book_loan['title'] ?>" data-pict="<?= $req_book_loan['pict'] ?>">Emprunter ce livre</a>
 
                     <hr>
                     <ul class="list-advantage">
@@ -137,8 +126,6 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                 while ($card = $req_catalog->fetch(PDO::FETCH_ASSOC)) {
                 ?>
 
-
-
                     <div class="card">
                         <div class="top-item-card">
                             <img src="../img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
@@ -171,7 +158,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
 
     </main>
     <script src="../js/main-front.js"></script>
-    <!-- <script src="../main.js"></script> -->
+    <script src="../main.js"></script>
     </body>
 <?php include_once '../front/footer-default.php';
 }; ?>
