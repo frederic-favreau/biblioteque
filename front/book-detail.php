@@ -24,11 +24,9 @@ $req_book->bindParam('id', $id, PDO::PARAM_INT);
 $req_book->execute();
 
 while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
-    $genre = $book['genres'];
-    $genres = explode(',', $genre);
-    $genres_string = implode("', '", $genres);
-    $title = $book['title'];
-    var_dump($title)
+    $genre = str_replace(",", "', '", $book['genres']); 
+    $title = str_replace("'","\'",$book['title']);
+    
 ?>
 
     <main>
@@ -46,13 +44,13 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                 <div class="item-detail-book-left">
                     <div class="book-new">['new']</div>
                     <h1 class="title-work"><?= $book['title'] ?></h1>
-                    <p class="author"><?= $book['authors'] ?></p>
+                    <p class="author"><?= str_replace(',', ', ', $book['authors']) ?></p>
                     <figure><img src="../img/books/<?= $book['pict'] ?>" alt="<?= $book['title'] ?>"></figure>
                     <h2>Extrait du livre</h2>
                     <p class="extract-work"><?= $book['extract'] ?></p>
                     <h3>Fiche technique</h3>
                     <ul class="all-info-book">
-                        <li>Auteur <span class="bdd-var"><?= $book['authors'] ?></span></li>
+                        <li>Auteur <span class="bdd-var"><?= str_replace(',', ', ', $book['authors']) ?></span></li>
                         <li>Genre <span class="bdd-var"><?= $book['genres'] ?></span></li>
                         <li>Catégorie <span class="bdd-var">['category']</span></li>
                         <li>Date de publication <span class="bdd-var"><?= $book['published_at'] ?></span></li>
@@ -65,7 +63,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                 <div id="item-detail-book-right">
                     <h4 class="title-work-description"><?= $book['title'] ?></h4>
                     <ul class="info-work-description">
-                        <li>Auteur <span><?= $book['authors'] ?></span></li>
+                        <li>Auteur <span><?= str_replace(',', ', ', $book['authors']) ?></span></li>
                         <li>Genre <span><?= $book['genres'] ?></span></li>
                         <li>Date de publication <span><?= $book['published_at'] ?></span></li>
                     </ul>
@@ -110,7 +108,8 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
 
                     INNER JOIN `author`
                     ON `work_author`.`author_id` = `author`.`id_author`
-                    WHERE `genre`.`name` IN ('$genres_string') 
+                    WHERE `genre`.`name` IN ('$genre') 
+                    AND `title` <> ('$title')
                     
 
                     GROUP BY `id_work` ORDER BY `id_work` DESC";

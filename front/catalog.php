@@ -133,89 +133,41 @@ include_once '../connexion.php';
                     WHERE `title` LIKE "%' . $recheche . '%" OR  `author`.`lastname` LIKE "%' . $recheche . '%"  OR  `author`.`firstname` LIKE "%' . $recheche . '%" OR `genre`.`name` LIKE "%' . $recheche . '%"
                     GROUP BY `id_work` ORDER BY `id_work` DESC';
                     $req_catalog = $db->query($sql);
-
-                }
-                if ($req_catalog->rowCount()>0){
-                    while ($card= $req_catalog ->fetch(PDO::FETCH_ASSOC)) {
+                    if ($req_catalog->rowCount()>0){
+                        while ($card= $req_catalog ->fetch(PDO::FETCH_ASSOC)) {
+                            ?>
+            
+            
+            
+                                <div class="card">
+                                    <div class="top-item-card">
+                                        <img src="../img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
+                                    </div>
+                                    <div class="bottom-item-card">
+                                        <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
+                                        <h3><?= $card['title'] ?></h3>
+                                        <p class="description-card"><?= $card['extract'] ?></p>
+                                        <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
+                                        <a href="./book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
+                                    </div>
+                                </div>
+                                <?php }    
+                    }else{
                         ?>
-        
-        
-        
-                            <div class="card">
-                                <div class="top-item-card">
-                                    <img src="../img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
-                                </div>
-                                <div class="bottom-item-card">
-                                    <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
-                                    <h3><?= $card['title'] ?></h3>
-                                    <p class="description-card"><?= $card['extract'] ?></p>
-                                    <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
-                                    <a href="./book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
-                                </div>
-                            </div>
-                            <?php }    
+                            <p> Aucan livre trouvé</p>
+    
+                        <?php
+                    }
+
                 }else{
                     ?>
-                        <p> Aucan livre trouvé</p>
+                    <p> Saisisez une recherche</p>
 
-                    <?php
+                <?php
+
                 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                /*$sql =
-                    "SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
-                    GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
-                    GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
-                    FROM `work`
-
-                    INNER JOIN `work_genre` 
-                    ON `work`.`id_work` = `work_genre`.`work_id`
-
-                    INNER JOIN `genre`
-                    ON `work_genre`.`genre_id` =`genre`.`id_genre`
-
-                    INNER JOIN `work_author`
-                    ON `work_author`.`work_id` = `work`.`id_work`
-
-                    INNER JOIN `author`
-                    ON `work_author`.`author_id` = `author`.`id_author`
-
-                    GROUP BY `id_work` ORDER BY `id_work` DESC";
-                $req_catalog = $db->query($sql_catalog);
-                while ($card = $req_catalog->fetch(PDO::FETCH_ASSOC)) {
-                ?>
-
-
-
-                    <div class="card">
-                        <div class="top-item-card">
-                            <img src="../img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
-                        </div>
-                        <div class="bottom-item-card">
-                            <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
-                            <h3><?= $card['title'] ?></h3>
-                            <p class="description-card"><?= $card['extract'] ?></p>
-                            <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
-                            <a href="./book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
-                        </div>
-                    </div>
-
-                <?php } */ ?>
+?>
 
             </div>
         </div>
