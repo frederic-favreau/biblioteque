@@ -15,6 +15,9 @@
 <body>
   <?php
   require_once './connexion.php';
+
+  
+
   ?>
 
   <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
@@ -28,8 +31,13 @@
           <span id="nav-logo-text">Biblook</span>
         </div>
         <div id="container-group-search-nav-top">
-          <input type="text" id="input-search-nav-top" placeholder="🔎 Taper votre recherche" value="">
-          <a href="./front/catalog.php" id="btn-search-nav-top">Rechercher</a>
+        <form action="./front/catalog.php?placeholde" method="GET">
+
+              <input type="search" name="search"id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
+              <input type="submit" name ="rechercher" value="recherche">
+
+
+        </form>
         </div>
         <div id="container-group-btn-connexion">
           <a href="./front/connect.php" id="btn-sign-up"><span>Connexion</span>
