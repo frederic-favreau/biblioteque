@@ -31,7 +31,7 @@ main section#section-detail-book div#container-detail-book div.item-detail-book-
   main section#section-detail-book div#container-detail-book div.item-detail-book-left div.book-new {
     font-size: 12px;
     padding: 6px 50px;
-    margin-bottom: -10px;
+    margin-bottom: 10px;
   }
 }
 main section#section-detail-book div#container-detail-book div.item-detail-book-left h1.title-work {
@@ -41,7 +41,9 @@ main section#section-detail-book div#container-detail-book div.item-detail-book-
 }
 @media screen and (min-width: 950px) {
   main section#section-detail-book div#container-detail-book div.item-detail-book-left h1.title-work {
-    margin-bottom: -6px;
+    width: 90%;
+    line-height: 32px;
+    margin-bottom: 6px;
     font-size: 28px;
   }
 }
@@ -84,6 +86,7 @@ main section#section-detail-book div#container-detail-book div.item-detail-book-
 }
 @media screen and (min-width: 950px) {
   main section#section-detail-book div#container-detail-book div.item-detail-book-left p.extract-work {
+    width: 90%;
     font-size: 18px;
     margin-bottom: 26px;
   }
@@ -91,7 +94,7 @@ main section#section-detail-book div#container-detail-book div.item-detail-book-
 main section#section-detail-book div#container-detail-book div.item-detail-book-left h3 {
   font-size: 20px;
   color: #0868ae;
-  margin-bottom: 6px;
+  margin-bottom: 14px;
 }
 @media screen and (min-width: 950px) {
   main section#section-detail-book div#container-detail-book div.item-detail-book-left h3 {
@@ -147,6 +150,9 @@ main section#section-detail-book div#container-detail-book #item-detail-book-rig
   border-radius: 5px;
   margin-bottom: 4px;
 }
+main section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description {
+  margin-top: 12px;
+}
 main section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li {
   font-size: 16px;
   color: gray;
@@ -166,7 +172,7 @@ main section#section-detail-book div#container-detail-book #item-detail-book-rig
   }
 }
 main section#section-detail-book div#container-detail-book #item-detail-book-right hr {
-  margin: 16px 0 30px;
+  margin: 16px 0 16px;
   border: 1px solid gray;
 }
 main section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li {
@@ -297,11 +303,11 @@ main #section-recommandation #container-cards .card .bottom-item-card .descripti
   -webkit-line-clamp: 3;
 }
 main #section-recommandation #container-cards .card .bottom-item-card a.link-page {
+  position: absolute;
   font-size: 14px;
-  float: right;
+  bottom: 10px;
+  right: 10px;
   color: #0868ae;
-  margin-right: 10px;
-  margin-top: 20px;
 }
 main hr {
   margin: 20px 0 80px;

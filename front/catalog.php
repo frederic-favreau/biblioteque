@@ -165,7 +165,7 @@ include_once '../connexion.php';
 
                 <?php
 
-                }
+
 
 ?>
 

@@ -2,18 +2,59 @@
     include_once '../admin/header-main.php';
     ?>
 
- <section id="dashboard-page-default">
-     <div id="container-dashboard-base">
-         <h1 class="h1-dashboard">Bienvenue ['prenom'] dans votre tableau de board</h1>
+ <!-- ---------- SECTION DASHBOARD - PAGE DEFAULT ---------- -->
+
+
+ <section id="dashboard-page-default" class="row-limit-size-db">
+     <div class="container-dashboard-base">
+         <h1 class="h1-dashboard">Bienvenue ['prenom'] dans votre tableau de bord</h1>
 
          <h2 class="h2-dashboard">Voici le suivi de vos activités</h2>
 
-         <div id="container-home-tabs">
-             <div id="box-emprunt" class="box-dashboard">
+         <div class="container-home-tabs">
+             <div id="box-loan" class="box-dashboard">
                  <h3 class="h3-dashboard">Mes livres en cours d'emprunt</h3>
                  <hr>
-                 <ul>
-                     <li><a href="#"></a>Vous n'avez pas encore emprunté de livre</li>
+                 <ul class="list-book-box">
+                     <li class="list-book">
+                         <div class="wish-list-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
+                             <ul class="container-description-wish">
+                                 <li class="list-title">['title']</li>
+                                 <li class="list-author">['author']</li>
+                             </ul>
+                         </div>
+                         <div class="container-loan-wish">
+                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         </div>
+                     </li>
+                     <li class="list-book">
+                         <div class="wish-list-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
+                             <ul class="container-description-wish">
+                                 <li class="list-title">['title']</li>
+                                 <li class="list-author">['author']</li>
+                             </ul>
+                         </div>
+                         <div class="container-loan-wish">
+                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         </div>
+                     </li>
+                     <li class="list-book">
+                         <div class="wish-list-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
+                             <ul class="container-description-wish">
+                                 <li class="list-title">['title']</li>
+                                 <li class="list-author">['author']</li>
+                             </ul>
+                         </div>
+                         <div class="container-loan-wish">
+                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         </div>
+                     </li>
                  </ul>
              </div>
              <div id="box-whish-list" class="box-dashboard">
@@ -80,6 +121,72 @@
                      </li>
                  </ul>
              </div>
+             <div id="box-reco-list" class="box-dashboard">
+                 <h3 class="h3-dashboard">Les livres recommandés par Biblook</h3>
+                 <hr>
+                 <ul class="list-book-box">
+                     <li class="list-book">
+                         <div class="wish-list-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
+                             <ul class="container-description-wish">
+                                 <li class="list-title">['title']</li>
+                                 <li class="list-author">['author']</li>
+                             </ul>
+                         </div>
+                         <div class="container-loan-wish">
+                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         </div>
+                     </li>
+                 </ul>
+                 <ul class="list-book-box">
+                     <li class="list-book">
+                         <div class="wish-list-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
+                             <ul class="container-description-wish">
+                                 <li class="list-title">['title']</li>
+                                 <li class="list-author">['author']</li>
+                             </ul>
+                         </div>
+                         <div class="container-loan-wish">
+                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         </div>
+                     </li>
+                 </ul>
+                 <ul class="list-book-box">
+                     <li class="list-book">
+                         <div class="wish-list-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
+                             <ul class="container-description-wish">
+                                 <li class="list-title">['title']</li>
+                                 <li class="list-author">['author']</li>
+                             </ul>
+                         </div>
+                         <div class="container-loan-wish">
+                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         </div>
+                     </li>
+                 </ul>
+                 <ul class="list-book-box">
+                     <li class="list-book">
+                         <div class="wish-list-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
+                             <ul class="container-description-wish">
+                                 <li class="list-title">['title']</li>
+                                 <li class="list-author">['author']</li>
+                             </ul>
+                         </div>
+                         <div class="container-loan-wish">
+                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         </div>
+                     </li>
+                 </ul>
+             </div>
+
+
              <div id="box-history" class="box-dashboard">
                  <h3 class="h3-dashboard">Historique de mes emprunts</h3>
                  <hr>
@@ -88,6 +195,18 @@
                  </ul>
              </div>
          </div>
+     </div>
+ </section>
+
+
+ <!-- ---------- SECTION DASHBOARD - PAGE PROFIL ---------- -->
+
+
+ <section id="dashboard-page-profil" class="row-limit-size-db">
+     <div class="container-dashboard-base">
+         <h1 class="h1-dashboard">Bienvenue ['prenom'] dans votre profil</h1>
+
+         <h2 class="h2-dashboard">Vous pouvez modifier l'ensemble de vos données</h2>
 
          <div id="container-profil-tabs">
              <div id="box-personal-info" class="box-dashboard">
@@ -140,11 +259,55 @@
                  </select>
              </div>
          </div>
-
      </div>
  </section>
- </main>
- <script src="./main-admin.js"></script>
- </body>
 
- </html>
+
+ <!-- ---------- SECTION DASHBOARD - PAGE CRUD BOOK ---------- -->
+
+
+ <section id="dashboard-page-crud-book" class="row-limit-size-db">
+     <div class="container-dashboard-base" id="container-dashboard-modified">
+         <h1 class="h1-dashboard">Bienvenue ['prenom'] dans votre gestion des livres</h1>
+
+         <h2 class="h2-dashboard">Vous pouvez ajouter, supprimer et modifier l'ensemble des livres de la bibliothèque</h2>
+
+         <div class="container-crud-book-tabs">
+             <div id="box-crud-book" class="box-dashboard">
+                 <h3 class="h3-dashboard">Les livres de la bibliothèque Biblook</h3>
+                 <hr>
+                 <div class="info-crud-book">
+                     <input type="text">
+                     <button type="submit">Rechercher</button>
+                 </div>
+                 <ul id="info-top-crud">
+                     <li>Titre du livre</li>
+                     <li>Auteur</li>
+                     <li>Edition</li>
+                     <li>Status</li>
+                     <li>Nb d'exemplaire</li>
+                 </ul>
+
+
+                 <ul class="list-book-box">
+                     <li class="list-book">
+                         <div class="wish-list-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
+                             <ul class="container-description-wish">
+                                 <li class="list-title">['title']</li>
+                                 <li class="list-author">['author']</li>
+                             </ul>
+                         </div>
+                         <div class="container-loan-wish">
+                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         </div>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+         </main>
+         <script src="./main-admin.js"></script>
+         </body>
+
+         </html>
