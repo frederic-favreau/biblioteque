@@ -53,7 +53,7 @@ h3.h3-dashboard {
   color: $btn-red;
   margin-bottom: 6px;
   @media screen and (min-width: 950px) {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -242,83 +242,87 @@ div.container-dashboard-base {
       width: 100%;
       margin: 10px auto;
     }
-
-    ul {
-      padding: 10px;
-      background-color: #f0f7ff;
-      border-radius: 5px;
-    }
   }
 }
 
-// ----------  SECTION DASHBOARD - PAGE DEFAULT ----------
+.container-home-tabs {
+  height: fit-content;
+  ul.list-book-box {
+    li.item-list-book {
+      display: flex;
+      width: 100%;
+      padding: 10px 0 10px 20px;
 
-section#dashboard-page-default {
-  .container-home-tabs {
-    height: fit-content;
-    ul.list-book-box {
-      li.list-book {
+      &:nth-child(odd) {
+        background-color: #f0f7ff;
+        border-radius: 5px;
+      }
+
+      div.format-pict-book {
         display: flex;
-        width: 100%;
-        margin-bottom: 50px;
+        flex-wrap: wrap;
+        width: 40%;
 
-        div.wish-list-book {
-          display: flex;
-          flex-wrap: wrap;
-          width: 40%;
+        img.pict-book-standard {
+          height: 100px;
+          width: auto;
+          margin-right: 20px;
+        }
 
-          img.pict-book-wish {
-            height: 100px;
-            width: auto;
+        ul.container-description {
+          li.list-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: $main-blue;
+            font-family: "Nova Slim", cursive, sans-serif;
           }
 
-          ul.container-description-wish {
-            li.list-title {
-              font-size: 16px;
-              font-weight: bold;
-              margin-bottom: 10px;
-              color: $main-blue;
-            }
-
-            li.list-author {
-              font-size: 16px;
-              color: gray;
-            }
+          li.list-author {
+            font-size: 16px;
+            color: gray;
           }
         }
-        div.container-loan-wish {
-          width: 60%;
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: space-evenly;
-          p.info-disponibility-wish {
-            color: $btn-red;
-            font-weight: bold;
-            margin-right: 70px;
-          }
+      }
+      div.container-info-loan {
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        p.info-disponibility {
+          color: $btn-red;
+          font-weight: bold;
+          margin-right: 70px;
+        }
 
-          a.btn-loan-wish {
-            padding: 15px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            background-color: $main-blue;
-            color: $white;
-            border-radius: 10px;
-            text-align: center;
-            transition: background-color 0.3s ease;
+        a.btn-format-standard {
+          padding: 15px;
+          font-weight: bold;
+          border: none;
+          border-radius: 5px;
+          background-color: $main-blue;
+          color: $white;
+          border-radius: 10px;
+          text-align: center;
+          transition: background-color 0.3s ease;
 
-            &:hover {
-              background-color: #05497b;
-              cursor: pointer;
-            }
+          &:hover {
+            background-color: #05497b;
+            cursor: pointer;
           }
         }
       }
     }
   }
 }
+
+.empty {
+  background-color: #f0f7ff;
+  padding: 10px 0 10px 20px;
+}
+
+// ----------  SECTION DASHBOARD - PAGE PROFIL ----------
 
 section#dashboard-page-profil {
   div#container-profil-tabs {
@@ -467,92 +471,66 @@ section#dashboard-page-profil {
 section#dashboard-page-crud-book {
   .container-crud-book-tabs {
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     div.info-crud-book {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    input {
+    input#input-seach-book {
       width: 30%;
       height: 40px;
       border-radius: 5px;
       margin: 10px;
     }
 
-    button {
+    button#btn-search-book {
+      width: 100px;
       height: 40px;
+      border-radius: 10px;
+      background-color: $main-blue;
+      border: $main-blue;
+      color: $white;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $btn-main-blue-over;
+      }
     }
 
-    ul#info-top-crud {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
+    div#container-list-book-crud {
+      ul.list-book-crud {
+        li.item-book-crud {
+          padding-top: 10px;
+          padding-bottom: 5px;
 
-    ul.list-book-box {
-      li.list-book {
-        display: flex;
-        width: 100%;
-        margin-bottom: 50px;
-
-        div.wish-list-book {
-          display: flex;
-          flex-wrap: wrap;
-          width: 40%;
-
-          img.pict-book-wish {
-            height: 100px;
-            width: auto;
-          }
-
-          ul.container-description-wish {
-            li.list-title {
-              font-size: 16px;
-              font-weight: bold;
-              margin-bottom: 10px;
-              color: $main-blue;
-            }
-
-            li.list-author {
-              font-size: 16px;
-              color: gray;
-            }
-          }
-        }
-        div.container-loan-wish {
-          width: 60%;
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: space-evenly;
-          p.info-disponibility-wish {
-            color: $btn-red;
-            font-weight: bold;
-            margin-right: 70px;
-          }
-
-          a.btn-loan-wish {
-            padding: 15px;
-            font-weight: bold;
-            border: none;
+          &:nth-child(odd) {
+            background-color: #f0f7ff;
             border-radius: 5px;
-            background-color: $main-blue;
-            color: $white;
-            border-radius: 10px;
-            text-align: center;
-            transition: background-color 0.3s ease;
+          }
 
-            &:hover {
-              background-color: #05497b;
-              cursor: pointer;
+          ul.detail-item-book-crud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            li {
+              img {
+                height: 100px;
+                width: auto;
+              }
+            }
+            li.item-title-crud {
+              color: $main-blue;
+              font-family: "Nova Slim", cursive, sans-serif;
             }
           }
         }

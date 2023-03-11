@@ -51,7 +51,7 @@ h3.h3-dashboard {
 }
 @media screen and (min-width: 950px) {
   h3.h3-dashboard {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -212,53 +212,54 @@ div.container-dashboard-base .box-dashboard hr {
   width: 100%;
   margin: 10px auto;
 }
-div.container-dashboard-base .box-dashboard ul {
-  padding: 10px;
-  background-color: #f0f7ff;
-  border-radius: 5px;
-}
 
-section#dashboard-page-default .container-home-tabs {
+.container-home-tabs {
   height: -moz-fit-content;
   height: fit-content;
 }
-section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book {
+.container-home-tabs ul.list-book-box li.item-list-book {
   display: flex;
   width: 100%;
-  margin-bottom: 50px;
+  padding: 10px 0 10px 20px;
 }
-section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.wish-list-book {
+.container-home-tabs ul.list-book-box li.item-list-book:nth-child(odd) {
+  background-color: #f0f7ff;
+  border-radius: 5px;
+}
+.container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book {
   display: flex;
   flex-wrap: wrap;
   width: 40%;
 }
-section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.wish-list-book img.pict-book-wish {
+.container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book img.pict-book-standard {
   height: 100px;
   width: auto;
+  margin-right: 20px;
 }
-section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.wish-list-book ul.container-description-wish li.list-title {
+.container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book ul.container-description li.list-title {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #0868ae;
+  font-family: "Nova Slim", cursive, sans-serif;
 }
-section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.wish-list-book ul.container-description-wish li.list-author {
+.container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book ul.container-description li.list-author {
   font-size: 16px;
   color: gray;
 }
-section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.container-loan-wish {
+.container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan {
   width: 60%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
 }
-section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.container-loan-wish p.info-disponibility-wish {
+.container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan p.info-disponibility {
   color: #ff5e38;
   font-weight: bold;
   margin-right: 70px;
 }
-section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.container-loan-wish a.btn-loan-wish {
+.container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan a.btn-format-standard {
   padding: 15px;
   font-weight: bold;
   border: none;
@@ -269,9 +270,14 @@ section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-boo
   text-align: center;
   transition: background-color 0.3s ease;
 }
-section#dashboard-page-default .container-home-tabs ul.list-book-box li.list-book div.container-loan-wish a.btn-loan-wish:hover {
+.container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan a.btn-format-standard:hover {
   background-color: #05497b;
   cursor: pointer;
+}
+
+.empty {
+  background-color: #f0f7ff;
+  padding: 10px 0 10px 20px;
 }
 
 section#dashboard-page-profil div#container-profil-tabs {
@@ -408,69 +414,46 @@ section#dashboard-page-crud-book .container-crud-book-tabs div.info-crud-book {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs input {
+section#dashboard-page-crud-book .container-crud-book-tabs input#input-seach-book {
   width: 30%;
   height: 40px;
   border-radius: 5px;
   margin: 10px;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs button {
+section#dashboard-page-crud-book .container-crud-book-tabs button#btn-search-book {
+  width: 100px;
   height: 40px;
+  border-radius: 10px;
+  background-color: #0868ae;
+  border: #0868ae;
+  color: #fff;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs ul#info-top-crud {
+section#dashboard-page-crud-book .container-crud-book-tabs button#btn-search-book:hover {
+  cursor: pointer;
+  background-color: #05497b;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud:nth-child(odd) {
+  background-color: #f0f7ff;
+  border-radius: 5px;
+}
+section#dashboard-page-crud-book .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book {
-  display: flex;
-  width: 100%;
-  margin-bottom: 50px;
-}
-section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.wish-list-book {
-  display: flex;
-  flex-wrap: wrap;
-  width: 40%;
-}
-section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.wish-list-book img.pict-book-wish {
+section#dashboard-page-crud-book .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img {
   height: 100px;
   width: auto;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.wish-list-book ul.container-description-wish li.list-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
+section#dashboard-page-crud-book .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-title-crud {
   color: #0868ae;
-}
-section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.wish-list-book ul.container-description-wish li.list-author {
-  font-size: 16px;
-  color: gray;
-}
-section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.container-loan-wish {
-  width: 60%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-}
-section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.container-loan-wish p.info-disponibility-wish {
-  color: #ff5e38;
-  font-weight: bold;
-  margin-right: 70px;
-}
-section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.container-loan-wish a.btn-loan-wish {
-  padding: 15px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  background-color: #0868ae;
-  color: #fff;
-  border-radius: 10px;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-section#dashboard-page-crud-book .container-crud-book-tabs ul.list-book-box li.list-book div.container-loan-wish a.btn-loan-wish:hover {
-  background-color: #05497b;
-  cursor: pointer;
+  font-family: "Nova Slim", cursive, sans-serif;
 }/*# sourceMappingURL=style-admin.css.map */

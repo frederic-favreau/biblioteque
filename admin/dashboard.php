@@ -1,6 +1,6 @@
  <?php
     include_once '../admin/header-main.php';
-    
+
     ?>
 
  <!-- ---------- SECTION DASHBOARD - PAGE DEFAULT ---------- -->
@@ -13,186 +13,192 @@
          <h2 class="h2-dashboard">Voici le suivi de vos activités</h2>
 
          <div class="container-home-tabs">
+
+
+             <!-- ---------- BOX LOAN---------- -->
+
+
              <div id="box-loan" class="box-dashboard">
                  <h3 class="h3-dashboard">Mes livres en cours d'emprunt</h3>
                  <hr>
                  <ul class="list-book-box">
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['Il vous reste x jours']</p>
+                             <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
                          </div>
                      </li>
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['Il vous reste x jours']</p>
+                             <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
                          </div>
                      </li>
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['Il vous reste x jours']</p>
+                             <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
                          </div>
                      </li>
                  </ul>
              </div>
+
+
+             <!-- ---------- BOX WISH LIST ---------- -->
+
+
              <div id="box-whish-list" class="box-dashboard">
                  <h3 class="h3-dashboard">Mes livres en favoris</h3>
                  <hr>
                  <ul class="list-book-box">
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
                          </div>
                      </li>
-                 </ul>
-                 <ul class="list-book-box">
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
                          </div>
                      </li>
-                 </ul>
-                 <ul class="list-book-box">
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
                          </div>
                      </li>
-                 </ul>
-                 <ul class="list-book-box">
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
                          </div>
                      </li>
                  </ul>
              </div>
+
+
+             <!-- ---------- BOX RECO ---------- -->
+
+
              <div id="box-reco-list" class="box-dashboard">
                  <h3 class="h3-dashboard">Les livres recommandés par Biblook</h3>
                  <hr>
                  <ul class="list-book-box">
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book ">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
                          </div>
                      </li>
-                 </ul>
-                 <ul class="list-book-box">
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book ">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
                          </div>
                      </li>
-                 </ul>
-                 <ul class="list-book-box">
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book ">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
                          </div>
                      </li>
-                 </ul>
-                 <ul class="list-book-box">
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
+                     <li class="item-list-book">
+                         <div class="format-pict-book ">
+                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <ul class="container-description">
                                  <li class="list-title">['title']</li>
                                  <li class="list-author">['author']</li>
                              </ul>
                          </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility">['disponible sous 3 heures']</p>
+                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
                          </div>
                      </li>
                  </ul>
              </div>
+
+
+             <!-- ---------- BOX HISTORY---------- -->
 
 
              <div id="box-history" class="box-dashboard">
                  <h3 class="h3-dashboard">Historique de mes emprunts</h3>
                  <hr>
                  <ul>
-                     <li><a href="#"></a>Vous n'avez pas encore emprunté de livre</li>
+                     <li class="empty"><a href="#"></a>Vous n'avez pas encore emprunté de livre</li>
                  </ul>
              </div>
          </div>
@@ -278,33 +284,156 @@
                  <h3 class="h3-dashboard">Les livres de la bibliothèque Biblook</h3>
                  <hr>
                  <div class="info-crud-book">
-                     <input type="text">
-                     <button type="submit">Rechercher</button>
+                     <input type="text" id="input-seach-book">
+                     <button type="submit" id="btn-search-book">Rechercher</button>
                  </div>
-                 <ul id="info-top-crud">
-                     <li>Titre du livre</li>
-                     <li>Auteur</li>
-                     <li>Edition</li>
-                     <li>Status</li>
-                     <li>Nb d'exemplaire</li>
-                 </ul>
-
-
-                 <ul class="list-book-box">
-                     <li class="list-book">
-                         <div class="wish-list-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-wish" alt="['titre']">
-                             <ul class="container-description-wish">
-                                 <li class="list-title">['title']</li>
-                                 <li class="list-author">['author']</li>
+                 <div id="container-list-book-crud">
+                     <ul class="list-book-crud">
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
                              </ul>
-                         </div>
-                         <div class="container-loan-wish">
-                             <p class="info-disponibility-wish">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-loan-wish">Emprunter maintenant</a>
-                         </div>
-                     </li>
-                 </ul>
+                         </li>
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
+                             </ul>
+                         </li>
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
+                             </ul>
+                         </li>
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
+                             </ul>
+                         </li>
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
+                             </ul>
+                         </li>
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
+                             </ul>
+                         </li>
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
+                             </ul>
+                         </li>
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
+                             </ul>
+                         </li>
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
+                             </ul>
+                         </li>
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
+                             </ul>
+                         </li>
+                         <li class="item-book-crud">
+                             <ul class="detail-item-book-crud">
+                                 <li class="item-pict-crud">
+                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
+                                 </li>
+                                 <li class="item-title-crud">['title']</li>
+                                 <li class="item-author-crud">['author']</li>
+                                 <li class="item-editor-crud">['editor']</li>
+                                 <li class="item-status-crud">['status']</li>
+                                 <li class="item-copy-crud">['nb copy']</li>
+                                 <li class="item-check-crud">⚙️</li>
+                             </ul>
+                         </li>
+                     </ul>
+                 </div>
              </div>
          </div>
          </main>

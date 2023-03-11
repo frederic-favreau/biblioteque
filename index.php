@@ -168,7 +168,7 @@
         INNER JOIN `author`
         ON `work_author`.`author_id` = `author`.`id_author`
 
-        GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 6";
+        GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 9";
 
 
         $req = $db->query($sql);

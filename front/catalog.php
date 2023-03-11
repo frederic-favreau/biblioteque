@@ -147,7 +147,7 @@ include_once '../connexion.php';
                                 </div>
                                 <div class="bottom-item-card">
                                     <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
-                                    <h3><?= $card['title'] ?></h3>
+                                    <h3 class="title-book-catalog"><?= $card['title'] ?></h3>
                                     <p class="description-card"><?= $card['extract'] ?></p>
                                     <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
                                     <a href="./book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
