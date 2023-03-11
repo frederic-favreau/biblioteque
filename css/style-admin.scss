@@ -91,6 +91,7 @@ header#side-bar-log {
 
     &.active {
       width: 250px;
+      z-index: 999;
     }
 
     nav#main-sidebar {
@@ -468,7 +469,7 @@ section#dashboard-page-profil {
 
 // ----------  SECTION DASHBOARD - PAGE CRUD----------
 
-section#dashboard-page-crud-book {
+section#dashboard-page-book-crud {
   .container-crud-book-tabs {
     height: fit-content;
     display: flex;
@@ -476,33 +477,55 @@ section#dashboard-page-crud-book {
     justify-content: center;
     align-items: center;
 
-    div.info-crud-book {
+    div.search-add-crud-book {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       margin-top: 10px;
       margin-bottom: 20px;
-    }
 
-    input#input-seach-book {
-      width: 30%;
-      height: 40px;
-      border-radius: 5px;
-      margin: 10px;
-    }
+      div.search-crud-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1; /* permet au conteneur de remplir l'espace disponible */
 
-    button#btn-search-book {
-      width: 100px;
-      height: 40px;
-      border-radius: 10px;
-      background-color: $main-blue;
-      border: $main-blue;
-      color: $white;
+        input#input-seach-book {
+          width: 30%;
+          height: 40px;
+          border-radius: 5px;
+          margin: 10px;
+        }
 
-      &:hover {
-        cursor: pointer;
-        background-color: $btn-main-blue-over;
+        button#btn-search-book {
+          width: 100px;
+          height: 40px;
+          border-radius: 10px;
+          background-color: $main-blue;
+          border: $main-blue;
+          color: $white;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $btn-main-blue-over;
+          }
+        }
+      }
+
+      button#btn-add-book {
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: $main-blue;
+        border: $main-blue;
+        color: $white;
+        margin-right: 20px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $btn-main-blue-over;
+        }
       }
     }
 
@@ -518,19 +541,89 @@ section#dashboard-page-crud-book {
           }
 
           ul.detail-item-book-crud {
+            position: relative;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
+            width: 95%;
+            min-height: 120px;
             li {
+              width: 150px;
+              text-align: center;
               img {
                 height: 100px;
                 width: auto;
+                padding-left: 20px;
+                z-index: -1;
+
+                &:hover {
+                  position: absolute;
+                  top: 0;
+                  left: 20px;
+                  transform: scale(2);
+                  z-index: 999;
+                  cursor: zoom-in;
+                }
               }
             }
             li.item-title-crud {
               color: $main-blue;
               font-family: "Nova Slim", cursive, sans-serif;
+              max-width: 200px;
+              &:hover {
+                transform: scale(2);
+                z-index: 999;
+                width: fit-content;
+              }
+            }
+
+            li.btn-option-crud {
+              font-size: 30px;
+              padding: 15px;
+
+              &:hover {
+                cursor: pointer;
+              }
+
+              div#box-option-crud {
+                position: absolute;
+                right: 100px;
+                top: -10px;
+                height: 140px;
+                padding: 16px;
+                background-color: $white;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                border-radius: 5px;
+                z-index: 9;
+                margin-bottom: 50px;
+
+                &::before {
+                  content: "x";
+                  position: absolute;
+                  top: 0;
+                  right: 10px;
+                  font-size: 18px;
+              }
+    
+                h4 {
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: $btn-red;
+                  margin-bottom: 6px;
+                }
+    
+                ul.list-option-crud {
+                  li {
+                    font-size: 14px;
+                    padding: 3px;
+                    &:hover {
+                      font-weight: bold;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
             }
           }
         }

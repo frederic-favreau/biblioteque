@@ -86,6 +86,7 @@ header#side-bar-log #sidebar-wrapper {
 }
 header#side-bar-log #sidebar-wrapper.active {
   width: 250px;
+  z-index: 999;
 }
 header#side-bar-log #sidebar-wrapper nav#main-sidebar {
   width: 100%;
@@ -401,7 +402,7 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   cursor: pointer;
 }
 
-section#dashboard-page-crud-book .container-crud-book-tabs {
+section#dashboard-page-book-crud .container-crud-book-tabs {
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
@@ -409,7 +410,7 @@ section#dashboard-page-crud-book .container-crud-book-tabs {
   justify-content: center;
   align-items: center;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs div.info-crud-book {
+section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -417,13 +418,19 @@ section#dashboard-page-crud-book .container-crud-book-tabs div.info-crud-book {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs input#input-seach-book {
+section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* permet au conteneur de remplir l'espace disponible */
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input input#input-seach-book {
   width: 30%;
   height: 40px;
   border-radius: 5px;
   margin: 10px;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs button#btn-search-book {
+section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-search-book {
   width: 100px;
   height: 40px;
   border-radius: 10px;
@@ -431,29 +438,106 @@ section#dashboard-page-crud-book .container-crud-book-tabs button#btn-search-boo
   border: #0868ae;
   color: #fff;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs button#btn-search-book:hover {
+section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-search-book:hover {
   cursor: pointer;
   background-color: #05497b;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud {
+section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book button#btn-add-book {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #0868ae;
+  border: #0868ae;
+  color: #fff;
+  margin-right: 20px;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book button#btn-add-book:hover {
+  cursor: pointer;
+  background-color: #05497b;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud {
   padding-top: 10px;
   padding-bottom: 5px;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud:nth-child(odd) {
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud:nth-child(odd) {
   background-color: #f0f7ff;
   border-radius: 5px;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud {
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  width: 95%;
+  min-height: 120px;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img {
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li {
+  width: 150px;
+  text-align: center;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img {
   height: 100px;
   width: auto;
+  padding-left: 20px;
+  z-index: -1;
 }
-section#dashboard-page-crud-book .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-title-crud {
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img:hover {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  transform: scale(2);
+  z-index: 999;
+  cursor: zoom-in;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-title-crud {
   color: #0868ae;
   font-family: "Nova Slim", cursive, sans-serif;
+  max-width: 200px;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-title-crud:hover {
+  transform: scale(2);
+  z-index: 999;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
+  font-size: 30px;
+  padding: 15px;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud:hover {
+  cursor: pointer;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud div#box-option-crud {
+  position: absolute;
+  right: 100px;
+  top: -10px;
+  height: 140px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  z-index: 9;
+  margin-bottom: 50px;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud div#box-option-crud::before {
+  content: "x";
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 18px;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud div#box-option-crud h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff5e38;
+  margin-bottom: 6px;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud div#box-option-crud ul.list-option-crud li {
+  font-size: 14px;
+  padding: 3px;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud div#box-option-crud ul.list-option-crud li:hover {
+  font-weight: bold;
+  cursor: pointer;
 }/*# sourceMappingURL=style-admin.css.map */

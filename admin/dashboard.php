@@ -272,8 +272,11 @@
 
  <!-- ---------- SECTION DASHBOARD - PAGE CRUD BOOK ---------- -->
 
+ <?php
+    include_once '../connexion.php';
+    ?>
 
- <section id="dashboard-page-crud-book" class="row-limit-size-db">
+ <section id="dashboard-page-book-crud" class="row-limit-size-db">
      <div class="container-dashboard-base" id="container-dashboard-modified">
          <h1 class="h1-dashboard">Bienvenue ['prenom'] dans votre gestion des livres</h1>
 
@@ -283,155 +286,46 @@
              <div id="box-crud-book" class="box-dashboard">
                  <h3 class="h3-dashboard">Les livres de la bibliothèque Biblook</h3>
                  <hr>
-                 <div class="info-crud-book">
-                     <input type="text" id="input-seach-book">
-                     <button type="submit" id="btn-search-book">Rechercher</button>
+                 <div class="search-add-crud-book">
+                     <div class="search-crud-input">
+                         <input type="text" id="input-seach-book">
+                         <button type="submit" id="btn-search-book">Rechercher</button>
+                     </div>
+                     <button type="button" id="btn-add-book">Ajouter un livre</button>
                  </div>
                  <div id="container-list-book-crud">
                      <ul class="list-book-crud">
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
-                         <li class="item-book-crud">
-                             <ul class="detail-item-book-crud">
-                                 <li class="item-pict-crud">
-                                     <img src="../img/books/ça.jpg" alt="['title']" class="pict-book-crud">
-                                 </li>
-                                 <li class="item-title-crud">['title']</li>
-                                 <li class="item-author-crud">['author']</li>
-                                 <li class="item-editor-crud">['editor']</li>
-                                 <li class="item-status-crud">['status']</li>
-                                 <li class="item-copy-crud">['nb copy']</li>
-                                 <li class="item-check-crud">⚙️</li>
-                             </ul>
-                         </li>
+                         <?php
+                            $reqAskCrud = ("SELECT DISTINCT pict, title, id_work, CONCAT(author.firstname, ' ', author.lastname) as author, id_work FROM work INNER JOIN work_author ON work_author.work_id = work.id_work INNER JOIN author ON work_author.author_id = author.id_author ORDER BY work.title ASC");
+                            $reqCrud = $db->query($reqAskCrud);
+                            while ($crud = $reqCrud->fetch(PDO::FETCH_ASSOC)) {
+                            ?>
+
+                             <li class="item-book-crud">
+                                 <ul class="detail-item-book-crud">
+                                     <li class="item-pict-crud">
+                                         <img src="../img/books/<?= $crud['pict'] ?>" alt=" <?= $crud['title']?>" class="pict-book-crud">
+                                     </li>
+                                     <li class="item-title-crud"> <?= $crud['title'] ?></li>
+                                     <li class="item-author-crud"><?= $crud['author'] ?></li>
+                                     <!-- <li class="item-status-crud">['status']</li> -->
+                                     <!-- <li class="item-copy-crud">['nb copy']</li> -->
+                                     <li class="btn-option-crud" data-idWork="<?= $crud['id_work'] ?>" data-title="<?= $crud['title'] ?>" data-pict="<?= $crud['pict'] ?>">⚙️
+                                         <div id="box-option-crud">
+                                             <h4>Options du livre</h4>
+                                             <ul class="list-option-crud">
+                                                 <li>Voir toutes ses informations</li>
+                                                 <li>Editer ses données</li>
+                                                 <li>Supprimer cet ouvrage</li>
+                                             </ul>
+                                         </div>
+                                     </li>
+                                 </ul>
+
+                             </li>
+                         <?php
+                            }
+                            ?>
                      </ul>
                  </div>
              </div>

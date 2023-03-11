@@ -23,13 +23,13 @@ main div#box-loan {
   border-radius: 10px;
 }
 main div#box-loan p#loan-confimation {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 15px;
   font-family: "Hind Madurai", sans-serif;
-  color: #070606;
+  color: #ff5e38;
   text-align: center;
   margin-bottom: 260px;
 }
