@@ -304,20 +304,23 @@
                              <li class="item-book-crud">
                                  <ul class="detail-item-book-crud">
                                      <li class="item-pict-crud">
-                                         <img src="../img/books/<?= $crud['pict'] ?>" alt=" <?= $crud['title']?>" class="pict-book-crud">
+                                         <img src="../img/books/<?= $crud['pict'] ?>" alt=" <?= $crud['title'] ?>" class="pict-book-crud">
                                      </li>
                                      <li class="item-title-crud"> <?= $crud['title'] ?></li>
                                      <li class="item-author-crud"><?= $crud['author'] ?></li>
                                      <!-- <li class="item-status-crud">['status']</li> -->
                                      <!-- <li class="item-copy-crud">['nb copy']</li> -->
                                      <li class="btn-option-crud" data-idWork="<?= $crud['id_work'] ?>" data-title="<?= $crud['title'] ?>" data-pict="<?= $crud['pict'] ?>">⚙️
-                                         <div id="box-option-crud">
+                                     </li>
+                                     <li class="container-box-option-crud">
+                                         <div class="box-option-crud">
                                              <h4>Options du livre</h4>
                                              <ul class="list-option-crud">
-                                                 <li>Voir toutes ses informations</li>
+                                                 <li id="more-detail-book-crud">Voir toutes ses informations</li>
                                                  <li>Editer ses données</li>
                                                  <li>Supprimer cet ouvrage</li>
                                              </ul>
+                                             <!-- <div id="btn-close-option-box">x</div> -->
                                          </div>
                                      </li>
                                  </ul>
@@ -331,7 +334,7 @@
              </div>
          </div>
          </main>
-         <script src="./main-admin.js"></script>
+         <script src="../js/main-admin.js"></script>
          </body>
 
          </html>

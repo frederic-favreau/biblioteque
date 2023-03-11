@@ -422,7 +422,7 @@ section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-b
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1; /* permet au conteneur de remplir l'espace disponible */
+  flex-grow: 1;
 }
 section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input input#input-seach-book {
   width: 30%;
@@ -493,13 +493,7 @@ section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-bo
 section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-title-crud {
   color: #0868ae;
   font-family: "Nova Slim", cursive, sans-serif;
-  max-width: 200px;
-}
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-title-crud:hover {
-  transform: scale(2);
-  z-index: 999;
-  width: -moz-fit-content;
-  width: fit-content;
+  max-width: 300px;
 }
 section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
   font-size: 30px;
@@ -508,36 +502,55 @@ section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-bo
 section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud:hover {
   cursor: pointer;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud div#box-option-crud {
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud {
+  position: relative;
+  width: 0;
+  height: 0;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud {
   position: absolute;
-  right: 100px;
-  top: -10px;
-  height: 140px;
+  right: 0px;
+  top: -70px;
+  width: 220px;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 16px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
   z-index: 9;
   margin-bottom: 50px;
+  text-align: start;
+  display: none;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud div#box-option-crud::before {
-  content: "x";
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud button.btn-close-option-box {
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 12px;
   font-size: 18px;
+  padding: 6px;
+  border: none;
+  background-color: transparent;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud div#box-option-crud h4 {
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud button.btn-close-option-box:hover {
+  cursor: pointer;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud.active {
+  display: block;
+}
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud h4 {
   font-size: 16px;
   font-weight: bold;
   color: #ff5e38;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud div#box-option-crud ul.list-option-crud li {
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud ul.list-option-crud li {
+  text-align: start;
   font-size: 14px;
   padding: 3px;
+  width: 100%;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud div#box-option-crud ul.list-option-crud li:hover {
+section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud ul.list-option-crud li:hover {
   font-weight: bold;
   cursor: pointer;
 }/*# sourceMappingURL=style-admin.css.map */

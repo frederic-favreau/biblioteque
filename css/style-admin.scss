@@ -489,8 +489,7 @@ section#dashboard-page-book-crud {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-grow: 1; /* permet au conteneur de remplir l'espace disponible */
-
+        flex-grow: 1;
         input#input-seach-book {
           width: 30%;
           height: 40px;
@@ -570,12 +569,7 @@ section#dashboard-page-book-crud {
             li.item-title-crud {
               color: $main-blue;
               font-family: "Nova Slim", cursive, sans-serif;
-              max-width: 200px;
-              &:hover {
-                transform: scale(2);
-                z-index: 999;
-                width: fit-content;
-              }
+              max-width: 300px;
             }
 
             li.btn-option-crud {
@@ -586,37 +580,58 @@ section#dashboard-page-book-crud {
                 cursor: pointer;
               }
 
-              div#box-option-crud {
+            }
+
+            li.container-box-option-crud {
+              position: relative;
+              width: 0;
+              height: 0;
+              div.box-option-crud {
                 position: absolute;
-                right: 100px;
-                top: -10px;
-                height: 140px;
+                right: 0px;
+                top: -70px;
+                width: 220px;
+                height: fit-content;
                 padding: 16px;
                 background-color: $white;
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                 border-radius: 5px;
                 z-index: 9;
                 margin-bottom: 50px;
+                text-align: start;
+                display: none;
 
-                &::before {
-                  content: "x";
+                button.btn-close-option-box {
                   position: absolute;
                   top: 0;
-                  right: 10px;
+                  right: 12px;
                   font-size: 18px;
-              }
-    
+                  padding: 6px;
+                  border: none;
+                  background-color: transparent;
+
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
+        
+                &.active {
+                  display: block;
+                }
+        
                 h4 {
                   font-size: 16px;
                   font-weight: bold;
                   color: $btn-red;
-                  margin-bottom: 6px;
+                  margin-bottom: 2px;
                 }
-    
+        
                 ul.list-option-crud {
                   li {
+                    text-align: start;
                     font-size: 14px;
                     padding: 3px;
+                    width: 100%;
                     &:hover {
                       font-weight: bold;
                       cursor: pointer;
@@ -624,6 +639,7 @@ section#dashboard-page-book-crud {
                   }
                 }
               }
+        
             }
           }
         }
