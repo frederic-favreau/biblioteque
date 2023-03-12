@@ -320,7 +320,7 @@
         <div class="item-faq">
           <p class="question">Internet est-il gratuit au sein de la bibliothèque ?</p>
           <p class="faq-answer"> Dans les locaux de la bibliothèque les enfants sont sous la responsabilité de leurs parents ; le personnel de la bibliothèque les accueille, les conseille mais ne peut en aucun cas les garder.
-</p>
+          </p>
           <div class="toggle-symbol"></div>
         </div>
         <hr>

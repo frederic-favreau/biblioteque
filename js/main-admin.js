@@ -1,3 +1,7 @@
+
+
+
+
 let btnOptionCruds = document.querySelectorAll(".btn-option-crud");
 let boxOptionCruds = document.querySelectorAll(".box-option-crud");
 let linkDetailcrud = document.getElementById("more-detail-book-crud");
@@ -40,10 +44,6 @@ for (const btnOptionCrud of btnOptionCruds) {
 }
 
 
-
-
-
-
 const boxFormPersonal = document.getElementById("container-profil-tabs");
 const boxHome = document.getElementById("container-home-tabs");
 const btnProfil = document.getElementById("profil-pict");
@@ -74,6 +74,12 @@ btnHome.addEventListener("click", function () {
   }
 });
 
+
+
+
+// SIDEBAR LEFT WINDOW
+
+
 const sidebarWrapper = document.getElementById("sidebar-wrapper");
 
 sidebarWrapper.addEventListener("mouseenter", () => {
@@ -83,3 +89,24 @@ sidebarWrapper.addEventListener("mouseenter", () => {
 sidebarWrapper.addEventListener("mouseleave", () => {
   sidebarWrapper.classList.remove("active");
 });
+
+
+// ZOOM PICTURE BOX CRUD
+
+function centrerImage(img) {
+  let imageCentree = document.querySelector("#image-centree");
+  if (imageCentree) {
+    imageCentree.remove();
+    document.body.style.overflow = "auto";
+  }
+  imageCentree = document.createElement("img");
+  imageCentree.src = img.src;
+  imageCentree.alt = img.alt;
+  imageCentree.id = "image-centree";
+  document.body.appendChild(imageCentree);
+  document.body.style.overflow = "hidden";
+  imageCentree.onclick = function() {
+    this.remove();
+    document.body.style.overflow = "auto";
+  };
+}

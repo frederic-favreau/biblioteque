@@ -15,6 +15,8 @@ btnLoan.addEventListener("click", function (e) {
   let pict = this.dataset.pict;
   let idWork = this.dataset.idWork;
 
+  document.body.style.overflow = "hidden";
+
   const modaleBg = document.createElement("div");
   modaleBg.classList.add("bloc-modale");
   body.append(modaleBg);
@@ -53,5 +55,6 @@ btnLoan.addEventListener("click", function (e) {
   btnConfirmed.addEventListener("click", function () {
     boxLoan.remove();
     modaleBg.remove();
+    document.body.style.overflow = "auto";
   });
 });

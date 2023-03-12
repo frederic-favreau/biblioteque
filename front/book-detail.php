@@ -40,6 +40,10 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
         </ul>
 
 
+
+        <!-- ---------- SECTION DETAIL BOOK ---------- -->
+
+
         <section id="section-detail-book" class="row-limit-size">
             <div id="container-detail-book">
                 <div class="item-detail-book-left">
@@ -52,7 +56,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <h3 id="info-technical">Fiche technique</h3>
                     <ul class="all-info-book">
                         <li>Auteur <span class="bdd-var"><?= str_replace(',', ', ', $book['authors']) ?></span></li>
-                        <li>Genre <span class="bdd-var"><?= str_replace(',', ', ',$book['genres']) ?></span></li>
+                        <li>Genre <span class="bdd-var"><?= str_replace(',', ', ', $book['genres']) ?></span></li>
                         <li>Catégorie <span class="bdd-var">['category']</span></li>
                         <li>Date de publication <span class="bdd-var"><?= $book['published_at'] ?></span></li>
 
@@ -65,7 +69,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <h4 class="title-work-description"><?= $book['title'] ?></h4>
                     <ul class="info-work-description">
                         <li>Auteur <span><?= str_replace(',', ', ', $book['authors']) ?></span></li>
-                        <li>Genre <span><?= str_replace(',', ', ',$book['genres']) ?></span></li>
+                        <li>Genre <span><?= str_replace(',', ', ', $book['genres']) ?></span></li>
                         <li>Date de publication <span><?= $book['published_at'] ?></span></li>
                     </ul>
                     <hr>
@@ -95,6 +99,12 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
             </div>
         </section>
         <hr>
+
+
+
+        <!-- ---------- SECTION RECOMMANDATION ---------- -->
+
+
         <section id="section-recommandation" class="row-limit-size">
             <h3 class="standard-title-section">Biblook vous recommande</h3>
             <div id="container-cards">
@@ -145,6 +155,12 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
             </div>
         </section>
         <hr>
+
+
+
+        <!-- ---------- SECTION TAG RECOMMANDATION ---------- -->
+
+
         <section id="section-tag-recommandation" class="row-limit-size">
             <h3 class="standard-title-section">Découvrez aussi</h3>
             <div id="container-tags">
