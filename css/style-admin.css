@@ -414,7 +414,7 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   cursor: pointer;
 }
 
-section#dashboard-page-book-crud .container-crud-book-tabs {
+.container-crud-book-tabs {
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
@@ -422,27 +422,33 @@ section#dashboard-page-book-crud .container-crud-book-tabs {
   justify-content: center;
   align-items: center;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book {
+.container-crud-book-tabs div.search-add-crud-book {
+  position: sticky;
+  top: 0;
+  background-color: #fff; /* couleur de fond pour la div */
+  z-index: 100;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 20px;
+  border-bottom: 1px solid gray;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input input#input-seach-book {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input input#input-seach-book {
   width: 30%;
   height: 40px;
+  padding-left: 10px;
   border-radius: 5px;
   margin: 10px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-search-book {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-search-book {
   width: 100px;
   height: 40px;
   font-weight: bold;
@@ -452,22 +458,22 @@ section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-b
   color: #fff;
   margin-right: 30px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-search-book:hover {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-search-book:hover {
   cursor: pointer;
   background-color: #05497b;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-all-detail {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-all-detail {
   border: none;
   background-color: transparent;
   color: #0868ae;
   font-weight: bold;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-all-detail:hover {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-all-detail:hover {
   cursor: pointer;
   color: #05497b;
   text-decoration: underline;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book button#btn-add-book {
+.container-crud-book-tabs div.search-add-crud-book button#btn-add-book {
   width: 120px;
   height: 40px;
   border-radius: 10px;
@@ -477,19 +483,19 @@ section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-b
   color: #fff;
   margin-right: 20px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div.search-add-crud-book button#btn-add-book:hover {
+.container-crud-book-tabs div.search-add-crud-book button#btn-add-book:hover {
   cursor: pointer;
   background-color: #05497b;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud {
   padding-top: 10px;
   padding-bottom: 5px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud:nth-child(odd) {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud:nth-child(odd) {
   background-color: #f0f7ff;
   border-radius: 5px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -498,41 +504,41 @@ section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-bo
   width: 100%;
   min-height: 120px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li {
   width: 150px;
   text-align: center;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud {
   height: 100px;
   width: auto;
   padding-left: 20px;
   z-index: -1;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud:hover {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud:hover {
   cursor: zoom-in;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-title-crud {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-title-crud {
   color: #0868ae;
   font-weight: bold;
   font-family: "Nova Slim", cursive, sans-serif;
   width: 400px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
+  position: relative;
   font-size: 30px;
   padding: 15px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud:hover {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud:hover {
   cursor: pointer;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud {
-  position: relative;
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud {
   width: 0;
   height: 0;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud {
   position: absolute;
-  right: 0px;
-  top: -70px;
+  right: 120px;
+  top: 0;
   width: 220px;
   height: -moz-fit-content;
   height: fit-content;
@@ -545,7 +551,15 @@ section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-bo
   text-align: start;
   display: none;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud button.btn-close-option-box {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud button.btn-detail-option-box {
+  border: none;
+  background-color: transparent;
+}
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud button.btn-detail-option-box:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud button.btn-close-option-box {
   position: absolute;
   top: 0;
   right: 12px;
@@ -554,35 +568,35 @@ section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-bo
   border: none;
   background-color: transparent;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud button.btn-close-option-box:hover {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud button.btn-close-option-box:hover {
   cursor: pointer;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud.active {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud.active {
   display: block;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud h4 {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud h4 {
   font-size: 16px;
   font-weight: bold;
   color: #ff5e38;
   margin-bottom: 2px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud ul.list-option-crud li {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud ul.list-option-crud li {
   text-align: start;
   font-size: 14px;
   padding: 3px;
   width: 100%;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud ul.list-option-crud li:hover {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud ul.list-option-crud li:hover {
   font-weight: bold;
   cursor: pointer;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book {
   display: none;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book.active {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book.active {
   display: block;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -590,18 +604,18 @@ section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-bo
   padding-top: 30px;
   padding-bottom: 30px;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud h3 {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud h3 {
   margin-bottom: 15px;
   color: #0868ae;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-left {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-left {
   width: 40%;
   color: #0868ae;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right {
   width: 40%;
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -610,7 +624,7 @@ section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-bo
   color: gray;
 }
 @media screen and (min-width: 950px) {
-  section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li {
     width: 100%;
     height: -moz-fit-content;
     height: fit-content;
@@ -618,19 +632,37 @@ section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-bo
     flex-direction: row;
     justify-content: space-between;
   }
-  section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li:nth-child(odd) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li:nth-child(odd) {
     background-color: #fafafa; /* couleur pour les éléments impairs */
   }
-  section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li:nth-child(even) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li:nth-child(even) {
     background-color: #f0f7ff; /* couleur pour les éléments impairs */
   }
 }
-section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li span.bdd-var {
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li span.bdd-var {
   font-size: 16px;
   color: #0868ae;
 }
 @media screen and (min-width: 950px) {
-  section#dashboard-page-book-crud .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li span.bdd-var {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li span.bdd-var {
     font-size: 18px;
   }
+}
+
+section#dashboard-page-book-add form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+section#dashboard-page-book-add form div.form-add-book-left {
+  width: 50%;
+}
+section#dashboard-page-book-add form div.form-add-book-left div.add-form-template-label-input {
+  width: 100%;
+}
+section#dashboard-page-book-add form div.form-add-book-left {
+  width: 50%;
+}
+section#dashboard-page-book-add form div.group-btn-form-add-commun {
+  width: 100%;
 }/*# sourceMappingURL=style-admin.css.map */

@@ -315,10 +315,6 @@
                                      </li>
                                      <div class="container-complete-detail-info-book">
                                          <div class="container-flex-crud">
-                                             <div class="item-complete-left">
-                                                 <h3>Extrait du livre</h3>
-                                                 <p class="extract-work"><?= $crud['extract'] ?></p>
-                                             </div>
                                              <div class="item-complete-right">
                                                  <h3>Fiche technique</h3>
                                                  <ul class="all-info-book">
@@ -331,14 +327,17 @@
                                                      <li>ISBN<span class="bdd-var"><?= $crud['ISBN'] ?></span></li>
                                                  </ul>
                                              </div>
+                                             <div class="item-complete-left">
+                                                 <h3>Extrait du livre</h3>
+                                                 <p class="extract-work"><?= $crud['extract'] ?></p>
+                                             </div>
                                          </div>
                                      </div>
                                      <li class="container-box-option-crud">
                                          <div class="box-option-crud">
                                              <h4>Options du livre</h4>
                                              <ul class="list-option-crud">
-                                                 <li id="more-detail-book-crud"><button type="bu
-                                                 " id="btn-show-more-detail-book-crud">Voir toutes ses informations</button></li>
+                                                 <li id="more-detail-book-crud">
                                                  <li>Editer ses données</li>
                                                  <li>Supprimer cet ouvrage</li>
                                              </ul>
@@ -354,8 +353,70 @@
                  </div>
              </div>
          </div>
-         </main>
-         <script src="../js/main-admin.js"></script>
-         </body>
+     </div>
+ </section>
+ <section id="dashboard-page-book-add" class="row-limit-size-db">
+     <div class="container-dashboard-base">
+         <h1 class="h1-dashboard">Bienvenue dans l'espace d'ajout de livres</h1>
+         <h2 class="h2-dashboard">Vous pouvez ajouter des livres dans la bibliothèque</h2>
+         <div id="box-add-book-info" class="box-dashboard">
+             <h3 class="h3-dashboard">Ajout d'un livre dans la base de données</h3>
+             <hr>
+             <form action="#" id="form-add-book">
+                 <div id="form-add-book-left">
+                     <div class="add-form-template-label-input">
+                         <label for="work-title" class="label-form-add-book">Titre du livre</label>
+                         <input type="text" name="work-title" id="work-title" class="input-form-add-book" />
+                     </div>
+                     <div class="add-form-template-label-input">
+                         <label for="author-firstname" class="label-form-add-book">Prénom de l'autheur</label>
+                         <input type="text" name="author-firstname" id="author-firstname" class="input-form-add-book" />
+                     </div>
+                     <div class="add-form-template-label-input">
+                         <label for="author-lastname" class="label-form-add-book">Nom de l'autheur</label>
+                         <input type="text" name="author-lastname" id="author-lastname" class="input-form-add-book" />
+                     </div>
+                     <div class="add-form-template-label-input">
+                         <label for="work-genre-A" class="label-form-add-book">Genre A du livre</label>
+                         <input type="text" name="work-genre-A" id="work-genre-A" class="input-form-add-book" />
+                     </div>
+                     <div class="add-form-template-label-input">
+                         <label for="work-genre-B" class="label-form-add-book">Genre B du livre</label>
+                         <input type="text" name="work-genre-B" id="work-genre-B" class="input-form-add-book" />
+                     </div>
+                     <div class="add-form-template-label-input">
+                         <label for="work-category" class="label-form-add-book">Category du livre</label>
+                         <input type="text" name="work-category" id="work-category" class="input-form-add-book" />
+                     </div>
+                     <div class="add-form-template-label-input">
+                         <label for="work-publish-date" class="label-form-add-book">Date de publication du livre</label>
+                         <input type="date" name="work-publish-date" id="work-publish-date" class="input-form-add-book" />
+                     </div>
+                     <div class="add-form-template-label-input">
+                         <label for="work-ISBN" class="label-form-add-book">Date de publication du livre</label>
+                         <input type="text" name="work-ISBN" id="work-ISBN" class="input-form-add-book" />
+                     </div>
+                     <div class="add-form-template-label-input">
+                     </div>
+                     <div id="form-add-book-left">
+                         <label for="work-extract">Nom</label>
+                         <textarea name="work-extract" id="work-extract" cols="30" rows="10"></textarea>
 
-         </html>
+                         <label for="work-pict">Nom</label>
+                         <input type="text" name="work-pict" id="work-pict" class="input-form-add-book" />
+                     </div>
+                     <div id="group-btn-form-add-commun">
+                         <button type="reset" id="btn-reset">Reset</button>
+                         <button type="submit" id="btn-submit">Modifier</button>
+                     </div>
+             </form>
+         </div>
+     </div>
+     </div>
+     </div>
+ </section>
+ </main>
+ <script src="../js/main-admin.js"></script>
+ </body>
+
+ </html>

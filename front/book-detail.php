@@ -145,7 +145,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                             <h3 id="title-book-card"><?= $card['title'] ?></h3>
                             <p class="description-card"><?= $card['extract'] ?></p>
                             <h5><?= $card['authors'] ?></h5>
-                            <a href="../front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
+                            <a href="../front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
                         </div>
                     </div>
 

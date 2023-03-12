@@ -1,5 +1,6 @@
 let linkDetailcrud = document.getElementById("more-detail-book-crud");
 let btnAllDetailCb = document.getElementById("btn-all-detail");
+let listOptionCrud = document.querySelector('.list-option-crud')
 
 btnAllDetailCb.addEventListener("click", function () {
   let boxDetailCbs = document.querySelectorAll(
@@ -41,16 +42,23 @@ for (const btnOptionCrud of btnOptionCruds) {
     });
 
     // add "Voir les détails" button to the tool box
-    let btnDetailOptionBox = document.createElement("button");
-    btnDetailOptionBox.classList.add("btn-detail-option-box");
-    btnDetailOptionBox.innerHTML = "Voir les détails";
-    boxOptionCrud.appendChild(btnDetailOptionBox);
+    // let btnDetailOptionBox = boxOptionCrud.querySelector(".btn-detail-option-box");
+    // if (!btnDetailOptionBox) {
+    //   btnDetailOptionBox = document.createElement("button");
+    //   btnDetailOptionBox.classList.add("btn-detail-option-box");
+    //   btnDetailOptionBox.innerHTML = "Voir les détails";
+    //   listOptionCrud.appendChild(btnDetailOptionBox);
+    // }
 
     // add event listener to "Voir les détails" button
-    let boxDetailCbs = document.querySelectorAll(".container-complete-detail-info-book");
+    let boxDetailCbs = document.querySelectorAll(
+      ".container-complete-detail-info-book"
+    );
     btnDetailOptionBox.addEventListener("click", function () {
       let bookItem = this.closest(".item-book-crud"); // find the closest ancestor element with class "item-book-crud"
-      let boxDetailCb = bookItem.querySelector(".container-complete-detail-info-book"); // find the corresponding detail box element
+      let boxDetailCb = bookItem.querySelector(
+        ".container-complete-detail-info-book"
+      ); // find the corresponding detail box element
 
       // remove "active" class from all other detail box elements
       for (const otherBoxDetailCb of boxDetailCbs) {
