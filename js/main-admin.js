@@ -1,10 +1,17 @@
+let linkDetailcrud = document.getElementById("more-detail-book-crud");
+let btnAllDetailCb = document.getElementById("btn-all-detail");
 
-
-
+btnAllDetailCb.addEventListener("click", function () {
+  let boxDetailCbs = document.querySelectorAll(
+    ".container-complete-detail-info-book"
+  );
+  for (const boxDetailCb of boxDetailCbs) {
+    boxDetailCb.classList.toggle("active");
+  }
+});
 
 let btnOptionCruds = document.querySelectorAll(".btn-option-crud");
 let boxOptionCruds = document.querySelectorAll(".box-option-crud");
-let linkDetailcrud = document.getElementById("more-detail-book-crud");
 
 for (const btnOptionCrud of btnOptionCruds) {
   btnOptionCrud.addEventListener("click", function () {
@@ -33,16 +40,37 @@ for (const btnOptionCrud of btnOptionCruds) {
       this.remove(); // remove close button from the tool box
     });
 
-    linkDetailcrud.addEventListener("click", function () {
+    // add "Voir les détails" button to the tool box
+    let btnDetailOptionBox = document.createElement("button");
+    btnDetailOptionBox.classList.add("btn-detail-option-box");
+    btnDetailOptionBox.innerHTML = "Voir les détails";
+    boxOptionCrud.appendChild(btnDetailOptionBox);
 
-      const modaleBg = document.createElement("div");
-      modaleBg.classList.add("bloc-modale");
-      body.append(modaleBg);
-      console.log(modaleBg);
+    // add event listener to "Voir les détails" button
+    let boxDetailCbs = document.querySelectorAll(".container-complete-detail-info-book");
+    btnDetailOptionBox.addEventListener("click", function () {
+      let bookItem = this.closest(".item-book-crud"); // find the closest ancestor element with class "item-book-crud"
+      let boxDetailCb = bookItem.querySelector(".container-complete-detail-info-book"); // find the corresponding detail box element
+
+      // remove "active" class from all other detail box elements
+      for (const otherBoxDetailCb of boxDetailCbs) {
+        if (otherBoxDetailCb !== boxDetailCb) {
+          otherBoxDetailCb.classList.remove("active");
+        }
+      }
+
+      // add "active" class only to the corresponding detail box element
+      boxDetailCb.classList.add("active");
     });
+
+    // remove "active" class from all detail box elements
+    for (const boxDetailCb of boxDetailCbs) {
+      boxDetailCb.classList.remove("active");
+    }
   });
 }
 
+// ACTIVE BOX TEMPORAL
 
 const boxFormPersonal = document.getElementById("container-profil-tabs");
 const boxHome = document.getElementById("container-home-tabs");
@@ -74,11 +102,7 @@ btnHome.addEventListener("click", function () {
   }
 });
 
-
-
-
 // SIDEBAR LEFT WINDOW
-
 
 const sidebarWrapper = document.getElementById("sidebar-wrapper");
 
@@ -89,7 +113,6 @@ sidebarWrapper.addEventListener("mouseenter", () => {
 sidebarWrapper.addEventListener("mouseleave", () => {
   sidebarWrapper.classList.remove("active");
 });
-
 
 // ZOOM PICTURE BOX CRUD
 
@@ -105,7 +128,7 @@ function centrerImage(img) {
   imageCentree.id = "image-centree";
   document.body.appendChild(imageCentree);
   document.body.style.overflow = "hidden";
-  imageCentree.onclick = function() {
+  imageCentree.onclick = function () {
     this.remove();
     document.body.style.overflow = "auto";
   };

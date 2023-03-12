@@ -290,6 +290,7 @@
                      <div class="search-crud-input">
                          <input type="text" id="input-seach-book">
                          <button type="submit" id="btn-search-book">Rechercher</button>
+                         <button type="button" id="btn-all-detail">Vue détails</button>
                      </div>
                      <button type="button" id="btn-add-book">Ajouter un livre</button>
                  </div>
@@ -313,21 +314,23 @@
                                      <li class="btn-option-crud" data-idWork="<?= $crud['id_work'] ?>" data-title="<?= $crud['title'] ?>" data-pict="<?= $crud['pict'] ?>">⚙️
                                      </li>
                                      <div class="container-complete-detail-info-book">
-                                         <div class="item-complete-left">
-                                             <h3>Extrait du livre</h3>
-                                             <p class="extract-work"><?= $crud['extract'] ?></p>
-                                         </div>
-                                         <div class="item-complete-right">
-                                             <h3>Fiche technique</h3>
-                                             <ul class="all-info-book">
-                                                 <li>Auteur <span class="bdd-var"><?= $crud ['author'] ?></span></li>
-                                                 <li>Genre <span class="bdd-var">['genres'] </span></li>
-                                                 <li>Catégorie <span class="bdd-var">['category']</span></li>
-                                                 <li>Date de publication <span class="bdd-var"><?= $crud['published_at'] ?></span></li>
-                                                 <li> Nom de l'éditeur<span class="bdd-var">['editor name']</span></li>
-                                                 <li>Date de l'édition<span class="bdd-var">['editor date']</span></li>
-                                                 <li>ISBN<span class="bdd-var"><?= $crud['ISBN'] ?></span></li>
-                                             </ul>
+                                         <div class="container-flex-crud">
+                                             <div class="item-complete-left">
+                                                 <h3>Extrait du livre</h3>
+                                                 <p class="extract-work"><?= $crud['extract'] ?></p>
+                                             </div>
+                                             <div class="item-complete-right">
+                                                 <h3>Fiche technique</h3>
+                                                 <ul class="all-info-book">
+                                                     <li>Auteur <span class="bdd-var"><?= $crud['author'] ?></span></li>
+                                                     <li>Genre <span class="bdd-var">['genres'] </span></li>
+                                                     <li>Catégorie <span class="bdd-var">['category']</span></li>
+                                                     <li>Date de publication <span class="bdd-var"><?= $crud['published_at'] ?></span></li>
+                                                     <li> Nom de l'éditeur<span class="bdd-var">['editor name']</span></li>
+                                                     <li>Date de l'édition<span class="bdd-var">['editor date']</span></li>
+                                                     <li>ISBN<span class="bdd-var"><?= $crud['ISBN'] ?></span></li>
+                                                 </ul>
+                                             </div>
                                          </div>
                                      </div>
                                      <li class="container-box-option-crud">
@@ -335,7 +338,7 @@
                                              <h4>Options du livre</h4>
                                              <ul class="list-option-crud">
                                                  <li id="more-detail-book-crud"><button type="bu
-                                                 ">Voir toutes ses informations</button></li>
+                                                 " id="btn-show-more-detail-book-crud">Voir toutes ses informations</button></li>
                                                  <li>Editer ses données</li>
                                                  <li>Supprimer cet ouvrage</li>
                                              </ul>

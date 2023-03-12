@@ -513,22 +513,38 @@ section#dashboard-page-book-crud {
         button#btn-search-book {
           width: 100px;
           height: 40px;
+          font-weight: bold;
           border-radius: 10px;
           background-color: $main-blue;
           border: $main-blue;
           color: $white;
+          margin-right: 30px;
 
           &:hover {
             cursor: pointer;
             background-color: $btn-main-blue-over;
           }
         }
+
+        button#btn-all-detail {
+          border: none;
+          background-color: transparent;
+          color: $main-blue;
+          font-weight: bold;
+
+          &:hover {
+            cursor: pointer;
+            color: $btn-main-blue-over;
+            text-decoration: underline;
+          }
+        }
       }
 
       button#btn-add-book {
-        width: 100px;
+        width: 120px;
         height: 40px;
         border-radius: 10px;
+        font-weight: bold;
         background-color: $main-blue;
         border: $main-blue;
         color: $white;
@@ -576,8 +592,9 @@ section#dashboard-page-book-crud {
             }
             li.item-title-crud {
               color: $main-blue;
+              font-weight: bold;
               font-family: "Nova Slim", cursive, sans-serif;
-              max-width: 300px;
+              width: 400px;
             }
 
             li.btn-option-crud {
@@ -649,58 +666,68 @@ section#dashboard-page-book-crud {
             }
 
             div.container-complete-detail-info-book {
-              width: 100%;
-              display: flex;
-              justify-content: space-evenly;
-              padding-top: 30px;
-              padding-bottom: 30px;
+              display: none;
 
-              h3 {
-                margin-bottom: 15px;
-                color: $main-blue;
+              &.active {
+                display: block;
               }
 
-              .item-complete-left {
-                width: 40%;
-                color: $main-blue;
-              }
+              div.container-flex-crud {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                padding-top: 30px;
+                padding-bottom: 30px;
 
-              .item-complete-right {
-                width: 40%;
-                ul.all-info-book {
-                  li {
-                    display: flex;
-                    flex-wrap: wrap;
-                    flex-direction: column;
-                    font-size: 16px;
-                    padding: 6px 0;
-                    color: gray;
-                    @media screen and (min-width: 950px) {
-                      width: 100%;
-                      height: fit-content;
-                      font-size: 18px;
-                      flex-direction: row;
-                      justify-content: space-between;
-
-                      &:nth-child(odd) {
-                        background-color: #fafafa; /* couleur pour les éléments impairs */
-                      }
-
-                      &:nth-child(even) {
-                        background-color: $bgc-dashboard; /* couleur pour les éléments impairs */
-                      }
-                    }
-
-                    span.bdd-var {
+                h3 {
+                  margin-bottom: 15px;
+                  color: $main-blue;
+                }
+  
+                .item-complete-left {
+                  width: 40%;
+                  color: $main-blue;
+                }
+  
+                .item-complete-right {
+                  width: 40%;
+                  ul.all-info-book {
+                    li {
+                      display: flex;
+                      flex-wrap: wrap;
+                      flex-direction: column;
                       font-size: 16px;
-                      color: $main-blue;
+                      padding: 6px 0;
+                      color: gray;
                       @media screen and (min-width: 950px) {
+                        width: 100%;
+                        height: fit-content;
                         font-size: 18px;
+                        flex-direction: row;
+                        justify-content: space-between;
+  
+                        &:nth-child(odd) {
+                          background-color: #fafafa; /* couleur pour les éléments impairs */
+                        }
+  
+                        &:nth-child(even) {
+                          background-color: $bgc-dashboard; /* couleur pour les éléments impairs */
+                        }
+                      }
+  
+                      span.bdd-var {
+                        font-size: 16px;
+                        color: $main-blue;
+                        @media screen and (min-width: 950px) {
+                          font-size: 18px;
+                        }
                       }
                     }
                   }
                 }
               }
+
             }
           }
         }
