@@ -54,7 +54,7 @@ h3.h3-dashboard {
   color: $btn-red;
   margin-bottom: 6px;
   @media screen and (min-width: 950px) {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -348,6 +348,14 @@ section#dashboard-page-profil {
         flex-wrap: nowrap;
         flex-direction: column;
 
+        label.label-form-profil {
+          display: block;
+          font-size: 18px;
+          margin-right: 20px;
+          color: $main-blue;
+          font-weight: bold;
+        }
+
         #container-fullname {
           display: flex;
           flex-wrap: wrap;
@@ -358,6 +366,7 @@ section#dashboard-page-profil {
           .input-fullname {
             width: 400px;
             height: 44px;
+            font-size: 20px;
             border-radius: 5px;
             padding-left: 10px;
             border: 1px solid gray;
@@ -392,6 +401,7 @@ section#dashboard-page-profil {
           #input-mail {
             width: 400px;
             height: 44px;
+            font-size: 20px;
             border-radius: 5px;
             padding-left: 10px;
             border: 1px solid gray;
@@ -410,6 +420,7 @@ section#dashboard-page-profil {
           input {
             width: 840px;
             height: 44px;
+            font-size: 20px;
             border-radius: 5px;
             padding-left: 10px;
             border: 1px solid gray;
@@ -429,9 +440,11 @@ section#dashboard-page-profil {
           #input-password {
             width: 400px;
             height: 44px;
+            font-size: 20px;
             border-radius: 5px;
             padding-left: 10px;
             border: 1px solid gray;
+            margin-bottom: 20px;
           }
         }
 
@@ -440,7 +453,7 @@ section#dashboard-page-profil {
           flex-wrap: wrap;
 
           button#btn-reset {
-            width: 80px;
+            width: 160px;
             height: 40px;
             border-radius: 5px;
             margin-right: 20px;
@@ -459,7 +472,7 @@ section#dashboard-page-profil {
           }
 
           button#btn-submit {
-            width: 80px;
+            width: 160px;
             height: 40px;
             border: none;
             border-radius: 5px;
@@ -546,7 +559,10 @@ section#dashboard-page-profil {
       }
     }
 
-    button#btn-add-book {
+    a#btn-add-book {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 120px;
       height: 40px;
       border-radius: 10px;
@@ -751,26 +767,221 @@ section#dashboard-page-profil {
   }
 }
 
+
+
+// ----------  SECTION DASHBOARD - PAGE ADD BOOK----------
+
+
 section#dashboard-page-book-add {
-  form {
+  form#form-add-book {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
 
-    div.form-add-book-left {
+    .label-form-add-book {
+      display: block;
+      font-size: 18px;
+      margin-right: 20px;
+      color: $main-blue;
+      font-weight: bold;
+    }
+
+    .input-form-add-book {
+      width: 600px;
+      height: 44px;
+      font-size: 20px;
+      border-radius: 5px;
+      padding-left: 10px;
+      border: 1px solid gray;
+      margin-bottom: 30px;
+    }
+
+    div#form-add-book-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       width: 50%;
 
       div.add-form-template-label-input {
-        width: 100%;
+        .label-form-add-book {
+          font-size: 18px;
+          margin-right: 20px;
+        }
       }
     }
 
-    div.form-add-book-left {
+    div#form-add-book-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       width: 50%;
+
+      textarea#work-extract {
+        width: 690px;
+        height: 600px;
+        font-size: 20px;
+        text-align: start;
+        border-radius: 5px;
+        padding-left: 10px;
+        border: 1px solid gray;
+        margin-bottom: 30px;
+      }
     }
 
-    div.group-btn-form-add-commun {
+    div#group-btn-form-add-commun {
       width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      margin-right: 111px;
+
+      #btn-reset-form-add-book {
+        width: 160px;
+        height: 40px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid $main-blue;
+        color: $main-blue;
+        margin-right: 30px;
+        margin-right: 20px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $main-blue;
+          color: $white;
+        }
+      }
+
+      #btn-submit-form-add-book {
+        width: 160px;
+        height: 40px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: $main-blue;
+        border: $main-blue;
+        color: $white;
+        margin-right: 30px;
+        margin-right: 20px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $btn-main-blue-over;
+        }
+      }
+    }
+  }
+}
+
+
+
+// ----------  SECTION DASHBOARD - PAGE EDIT BOOK----------
+
+
+section#dashboard-page-book-edit {
+  form#form-book-edit {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    .label-form-add-book {
+      display: block;
+      font-size: 18px;
+      margin-right: 20px;
+      color: $main-blue;
+      font-weight: bold;
+    }
+
+    .input-form-add-book {
+      width: 600px;
+      height: 44px;
+      font-size: 20px;
+      border-radius: 5px;
+      padding-left: 10px;
+      border: 1px solid gray;
+      margin-bottom: 30px;
+    }
+
+    div#form-book-edit-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+
+      div.add-form-template-label-input {
+        .label-form-add-book {
+          font-size: 18px;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    div#form-book-edit-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+
+      textarea#work-extract {
+        width: 690px;
+        height: 600px;
+        font-size: 20px;
+        text-align: start;
+        border-radius: 5px;
+        padding-left: 10px;
+        border: 1px solid gray;
+        margin-bottom: 30px;
+      }
+    }
+
+    div#group-btn-form-edit-commun {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      margin-right: 111px;
+
+      #btn-reset-form-add-book {
+        width: 160px;
+        height: 40px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid $main-blue;
+        color: $main-blue;
+        margin-right: 30px;
+        margin-right: 20px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $main-blue;
+          color: $white;
+        }
+      }
+
+      #btn-submit-form-add-book {
+        width: 160px;
+        height: 40px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: $main-blue;
+        border: $main-blue;
+        color: $white;
+        margin-right: 30px;
+        margin-right: 20px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $btn-main-blue-over;
+        }
+      }
     }
   }
 }
