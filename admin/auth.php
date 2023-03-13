@@ -14,7 +14,7 @@ $req->execute();
 if ($req->rowCount()==1){
     $user = $req->fetch(PDO::FETCH_ASSOC);
 
-    if($user['password'] === $password){
+    if($user['mail'] === $mail){
         $_SESSION['id-user'] = $user['id_user'];
         $_SESSION['firstname'] = $user['firstname'];
         $_SESSION['lastname'] = $user['lastname'];
