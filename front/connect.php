@@ -23,7 +23,8 @@
                         <input type="password" name="password" placeholder="Password" />
                         <input type="firstname" name="firstname" placeholder="Your firstname" />
                         <input type="lastname" name="lastname" placeholder="Your lastname" />
-                        <button>Sign Up</button>
+                        <br>
+                        <button>s'enregistrer</button>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
