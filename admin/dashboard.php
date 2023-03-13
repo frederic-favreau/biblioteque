@@ -1,6 +1,6 @@
  <?php
     include_once '../admin/header-main.php';
-?>
+    ?>
 
 
 
@@ -403,7 +403,41 @@
          <div id="box-add-book-info" class="box-dashboard">
              <h3 class="h3-dashboard">Ajout d'un livre dans la base de données</h3>
              <hr>
-             <form action="#" id="form-add-book">
+
+             <?php
+                if (isset($_POST['submit'])) {
+                    $title = addslashes($_POST['work-title']);
+
+                    $authorFirstname = addslashes($_POST['author-firstname']);
+                    $authorLastname = addslashes($_POST['author-lastname']);
+
+                    $genreA = addslashes($_POST['work-genre-A']);
+                    $genreB = addslashes($_POST['work-genre-B']);
+
+                    $category = addslashes($_POST['work-category']);
+
+                    $publishDate = addslashes($_POST['work-publish-date']);
+
+                    $isbn = addslashes($_POST['work-ISBN']);
+
+                    $extract = addslashes($_POST['work-extract']);
+
+                    $workPict = addslashes($_POST['work-pict']);
+
+
+
+
+
+
+                    $extract = addslashes($_POST['extract']);
+                    $thumbnail = 'monimage.jpg';
+                    $content = addslashes($_POST['content']);
+                    $author = addslashes($_POST['author']);
+                    $sql = "INSERT INTO post(`title`, `extract`, `thumbnail`, `content`, `author` )VALUES ('$title','$extract','$thumbnail','$content', $author)";
+                    $db->query($sql);
+                }
+                ?>
+             <form action="#" method="POST" id="form-add-book">
                  <div id="form-add-book-left">
                      <div class="add-form-template-label-input">
                          <label for="work-title" class="label-form-add-book">Titre du livre</label>
@@ -434,7 +468,7 @@
                          <input type="date" name="work-publish-date" id="work-publish-date" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
-                         <label for="work-ISBN" class="label-form-add-book">Date de publication du livre</label>
+                         <label for="work-ISBN" class="label-form-add-book">ISBN (ex: ISBN 13 :874-6-2457-6478-8)</label>
                          <input type="text" name="work-ISBN" id="work-ISBN" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
@@ -501,7 +535,7 @@
                          <input type="date" name="work-publish-date" id="work-publish-date-edit" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
-                         <label for="work-ISBN-edit" class="label-form-add-book">Date de publication du livre</label>
+                         <label for="work-ISBN-edit" class="label-form-add-book">ISBN (ex: ISBN 13 :874-6-2457-6478-8) </label>
                          <input type="text" name="work-ISBN" id="work-ISBN-edit" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
