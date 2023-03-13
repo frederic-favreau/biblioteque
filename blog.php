@@ -13,43 +13,40 @@
 
     <main>
         <section id="section-article" class="row-limit-size">
-            <img src="./img/photosblog/ballons-removebg-preview 1.png" alt="bouquet de ballons">
-            <h1>Journée Portes Ouvertes</h1>
+            <div id="containerballons">
+                <h1>Journée Portes Ouvertes</h1>
+            </div>
+            <h2>
+                Bibliothèque Biblook<br>
+                Saint-Denis-les-Bourg
+            </h2>
+            <h3> Mercredi 21 Juin 2023<br> de 10h à 17h</h3>
 
-
-            <h2>Bibliothèque Biblook
-                <br>Saint-Denis-les-Bourg
-            </h2></br>
-            <h3> Mercredi 21 Juin 2023 de 10h à 17h</h3>
-
-            <div id="containerpub">
+            <div id="containerpub1">
                 <p>Entrée gratuite</p>
+            </div>
+            <div id="containerpub2">
                 <p>Ouvert à tous</p>
             </div>
 
 
             <div id="descriptif">
-            <ul>
+                <ul>
                     <li>Visite guidée</li>
                     <li>Vente de livres</li>
                     <li>Atelier lecture pour les enfants</li>
-
                 </ul>
-                <img src="./img/photosblog/cotillons-removebg-preview 1.png" class="cotillons" alt="cotillons colorés">
-                
-                
             </div>
             <hr>
-            <h4>Venez troquer des boutures!</h4>
-            <img src="./img/photosblog/floral-removebg-preview 1" alt="RDV le 24 avril 2023 à 14h">
-            <div>
-                <p>RDV le 24 avril 2023 à 14h</p>
+            <h1>Venez troquer des boutures!</h1>
+            <div id="containerfloral">
+            <p>RDV le 24 avril<br> 2023 à 14h</br></p>
             </div>
             <div id="activités">
-                <div>Partager des conseils de culture</div>
-                <div>Discuter jardinage</div>
-                <div>Se conseiller</div>
-                <div>Echanger des idées</div>
+                <p style="text-align: center;">Partager des conseils de culture</p>
+                <p style="text-align: left;">Discuter jardinage</p>
+                <p style="text-align: right;">Se conseiller</p>
+                <p style="text-align: center;">Echanger des idées</p>
 
             </div>
 
