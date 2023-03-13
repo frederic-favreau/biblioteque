@@ -1,22 +1,98 @@
-main section#section-detail-book {
+@charset "UTF-8";
+body div.bloc-modale {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+main div#box-loan {
+  z-index: 999;
+  width: 400px;
+  height: 500px;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+  border-radius: 10px;
+}
+main div#box-loan p#loan-confimation {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-family: "Hind Madurai", sans-serif;
+  color: #ff5e38;
+  text-align: center;
+  margin-bottom: 260px;
+}
+main div#box-loan p#book-title-box {
+  color: #0868ae;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Nova Slim", cursive, sans-serif;
+  margin-bottom: 10px;
+}
+main div#box-loan img {
+  height: 200px;
+  width: auto;
+  margin: 0 auto;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+}
+main div#box-loan a#btn-confirmed {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid #0868ae;
+  color: #0868ae;
+  padding: 10px 40px;
+  border-radius: 10px;
+}
+main div#box-loan a#btn-confirmed:hover {
+  background-color: #0868ae;
+  color: #fff;
+  cursor: pointer;
+}
+
+#font-logo {
+  font-family: "Risque", cursive, sans-serif;
+  letter-spacing: 2px;
+}
+
+.active-box-delete {
+  display: block;
+}
+
+section#section-detail-book {
   padding-top: 60px;
   padding-bottom: 80px;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book {
+  section#section-detail-book div#container-detail-book {
     display: flex;
     flex-wrap: wrap;
   }
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left {
+section#section-detail-book div#container-detail-book div.item-detail-book-left {
   width: 100%;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book div.item-detail-book-left {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left {
     width: 60%;
   }
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left div.book-new {
+section#section-detail-book div#container-detail-book div.item-detail-book-left div.book-new {
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 4px;
@@ -28,105 +104,109 @@ main section#section-detail-book div#container-detail-book div.item-detail-book-
   border-radius: 20px 0 20px 0;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book div.item-detail-book-left div.book-new {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left div.book-new {
     font-size: 12px;
     padding: 6px 50px;
     margin-bottom: 10px;
   }
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left h1.title-work {
+section#section-detail-book div#container-detail-book div.item-detail-book-left h1.title-work {
   margin-bottom: 8px;
   font-size: 20px;
   text-align: inherit;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book div.item-detail-book-left h1.title-work {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left h1.title-work {
     width: 90%;
     line-height: 32px;
     margin-bottom: 6px;
     font-size: 28px;
   }
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left p.author {
+section#section-detail-book div#container-detail-book div.item-detail-book-left p.author {
   margin-bottom: 15px;
   font-size: 16px;
   color: gray;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book div.item-detail-book-left p.author {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left p.author {
     font-size: 18px;
   }
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left figure {
+section#section-detail-book div#container-detail-book div.item-detail-book-left figure {
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left img {
+section#section-detail-book div#container-detail-book div.item-detail-book-left img {
   margin: 0 auto 40px;
   display: block;
   background-color: gray;
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left h2 {
+section#section-detail-book div#container-detail-book div.item-detail-book-left h2#title-extract {
   font-size: 20px;
   text-align: inherit;
+  margin-bottom: -5px;
   color: #0868ae;
-  margin-bottom: 6px;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book div.item-detail-book-left h2 {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left h2#title-extract {
     font-size: 30px;
   }
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left p.extract-work {
+section#section-detail-book div#container-detail-book div.item-detail-book-left p.extract-work {
   font-size: 14px;
   margin-bottom: 16px;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book div.item-detail-book-left p.extract-work {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left p.extract-work {
     width: 90%;
     font-size: 18px;
     margin-bottom: 26px;
   }
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left h3 {
+section#section-detail-book div#container-detail-book div.item-detail-book-left h3#info-technical {
   font-size: 20px;
+  font-family: "Nova Slim", cursive, sans-serif;
   color: #0868ae;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book div.item-detail-book-left h3 {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left h3#info-technical {
     font-size: 30px;
   }
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li {
+section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   font-size: 16px;
+  padding: 6px 0;
   color: gray;
-  margin-bottom: 6px;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li {
     width: 80%;
     font-size: 18px;
     flex-direction: row;
     justify-content: space-between;
   }
+  section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li:nth-child(odd) {
+    background-color: #f2f2f2; /* couleur pour les éléments impairs */
+  }
 }
-main section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li span.bdd-var {
+section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li span.bdd-var {
   font-size: 16px;
   color: #0868ae;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li span.bdd-var {
+  section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li span.bdd-var {
     font-size: 18px;
   }
 }
-main section#section-detail-book div#container-detail-book #item-detail-book-right {
+section#section-detail-book div#container-detail-book #item-detail-book-right {
   position: sticky;
   top: 120px;
   width: 100%;
@@ -138,11 +218,11 @@ main section#section-detail-book div#container-detail-book #item-detail-book-rig
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book #item-detail-book-right {
+  section#section-detail-book div#container-detail-book #item-detail-book-right {
     width: 30%;
   }
 }
-main section#section-detail-book div#container-detail-book #item-detail-book-right h4.title-work-description {
+section#section-detail-book div#container-detail-book #item-detail-book-right h4.title-work-description {
   font-size: 20px;
   text-align: inherit;
   color: #0868ae;
@@ -150,69 +230,69 @@ main section#section-detail-book div#container-detail-book #item-detail-book-rig
   border-radius: 5px;
   margin-bottom: 4px;
 }
-main section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description {
+section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description {
   margin-top: 12px;
 }
-main section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li {
+section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li {
   font-size: 16px;
   color: gray;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li {
+  section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li {
     font-size: 18px;
   }
 }
-main section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li span {
+section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li span {
   font-size: 16px;
   color: #0868ae;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li span {
+  section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li span {
     font-size: 18px;
   }
 }
-main section#section-detail-book div#container-detail-book #item-detail-book-right hr {
+section#section-detail-book div#container-detail-book #item-detail-book-right hr {
   margin: 16px 0 16px;
   border: 1px solid gray;
 }
-main section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li {
+section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li {
   font-size: 16px;
   color: #b53928;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li {
+  section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li {
     font-size: 18px;
   }
 }
-main section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li:last-child {
+section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li:last-child {
   color: gray;
 }
-main section#section-detail-book div#container-detail-book div#item-detail-book-right h4.title-work-description {
+section#section-detail-book div#container-detail-book div#item-detail-book-right h4.title-work-description {
   font-size: 20px;
   color: #0868ae;
   margin-top: 16px;
   margin-bottom: 6px;
   padding: 10px;
 }
-main section#section-detail-book div#container-detail-book div#item-detail-book-right ul.info-work-description li {
+section#section-detail-book div#container-detail-book div#item-detail-book-right ul.info-work-description li {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   margin-bottom: 6px;
 }
 @media screen and (min-width: 950px) {
-  main section#section-detail-book div#container-detail-book div#item-detail-book-right ul.info-work-description li {
+  section#section-detail-book div#container-detail-book div#item-detail-book-right ul.info-work-description li {
     flex-direction: row;
     justify-content: space-between;
   }
 }
-main section#section-detail-book div#container-detail-book div#item-detail-book-right ul.list-info-revervation li {
+section#section-detail-book div#container-detail-book div#item-detail-book-right ul.list-info-revervation li {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   margin-bottom: 6px;
 }
-main section#section-detail-book div#container-detail-book div#item-detail-book-right a#btn-reservation {
+section#section-detail-book div#container-detail-book div#item-detail-book-right a#btn-loan {
   display: block;
   padding: 12px;
   background-color: #0868ae;
@@ -223,43 +303,45 @@ main section#section-detail-book div#container-detail-book div#item-detail-book-
   margin-top: 20px;
   margin-bottom: 20px;
 }
-main section#section-detail-book div#container-detail-book div#item-detail-book-right a#btn-reservation:hover {
+section#section-detail-book div#container-detail-book div#item-detail-book-right a#btn-loan:hover {
   opacity: 0.9;
   transform: scale(1.01);
 }
-main section#section-detail-book div#container-detail-book div#item-detail-book-right ul.list-advantage {
+section#section-detail-book div#container-detail-book div#item-detail-book-right ul.list-advantage {
   display: flex;
   flex-wrap: wrap;
 }
-main section#section-detail-book div#container-detail-book div#item-detail-book-right ul.list-advantage li {
+section#section-detail-book div#container-detail-book div#item-detail-book-right ul.list-advantage li {
   width: 33%;
   text-align: center;
   font-size: 14px;
   color: gray;
 }
-main #section-recommandation {
+
+#section-recommandation {
   padding-bottom: 60px;
 }
-main #section-recommandation h3.standard-title-section {
+#section-recommandation h3.standard-title-section {
   font-size: 30px;
+  font-family: "Nova Slim", cursive, sans-serif;
   color: #0868ae;
   margin-top: 16px;
   margin-bottom: 6px;
 }
 @media screen and (min-width: 950px) {
-  main #section-recommandation h3.standard-title-section {
+  #section-recommandation h3.standard-title-section {
     font-size: 40px;
     text-decoration: underline;
   }
 }
-main #section-recommandation #container-cards {
+#section-recommandation #container-cards {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 30px;
 }
-main #section-recommandation #container-cards .card {
+#section-recommandation #container-cards .card {
   position: relative;
   max-width: 450px;
   min-width: 450px;
@@ -270,7 +352,7 @@ main #section-recommandation #container-cards .card {
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-main #section-recommandation #container-cards .card img {
+#section-recommandation #container-cards .card img {
   position: absolute;
   top: -40px;
   left: 25px;
@@ -281,18 +363,22 @@ main #section-recommandation #container-cards .card img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: transform 0.5s ease;
 }
-main #section-recommandation #container-cards .card img:hover {
+#section-recommandation #container-cards .card img:hover {
   transform: translateY(-15px);
 }
-main #section-recommandation #container-cards .card .bottom-item-card h4 {
+#section-recommandation #container-cards .card .bottom-item-card h4 {
   margin: 5px 0;
   text-transform: capitalize;
 }
-main #section-recommandation #container-cards .card .bottom-item-card .title-card {
+#section-recommandation #container-cards .card .bottom-item-card h3#title-book-card {
+  font-family: "Nova Slim", cursive, sans-serif;
+  color: #0868ae;
+}
+#section-recommandation #container-cards .card .bottom-item-card .title-card {
   font-size: 10px;
   text-transform: capitalize;
 }
-main #section-recommandation #container-cards .card .bottom-item-card .description-card {
+#section-recommandation #container-cards .card .bottom-item-card .description-card {
   height: 60px;
   margin: 8px 0 8px;
   font-size: 14px;
@@ -302,14 +388,15 @@ main #section-recommandation #container-cards .card .bottom-item-card .descripti
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
-main #section-recommandation #container-cards .card .bottom-item-card a.link-page {
+#section-recommandation #container-cards .card .bottom-item-card a.link-page {
   position: absolute;
   font-size: 14px;
   bottom: 10px;
   right: 10px;
   color: #0868ae;
 }
-main hr {
+
+hr {
   margin: 20px 0 80px;
 }
 
@@ -318,6 +405,7 @@ section#section-tag-recommandation {
 }
 section#section-tag-recommandation h3.standard-title-section {
   font-size: 30px;
+  font-family: "Nova Slim", cursive, sans-serif;
   color: #0868ae;
   margin-top: 16px;
   margin-bottom: 60px;
@@ -343,4 +431,6 @@ section#section-tag-recommandation div#container-tags div.tag-reco {
 }
 section#section-tag-recommandation div#container-tags div.tag-reco:hover {
   cursor: pointer;
+  background-color: #0868ae;
+  color: #fff;
 }/*# sourceMappingURL=style-book-detail.css.map */

@@ -34,7 +34,7 @@
           <form action="./front/catalog.php?placeholde" method="GET">
 
             <input type="search" name="search" id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
-            <input type="submit" name="rechercher" value="recherche" id="btn-search-nav-top">
+            <input type="submit" name="rechercher" value="Rechercher" id="btn-search-nav-top">
 
 
           </form>
@@ -168,7 +168,7 @@
         INNER JOIN `author`
         ON `work_author`.`author_id` = `author`.`id_author`
 
-        GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 6";
+        GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 9";
 
 
         $req = $db->query($sql);
@@ -192,7 +192,7 @@
               <h3 class="title-card-index"><?= $card['title'] ?></h3>
               <!-- <p class="description-card"><?= $card['extract'] ?></p> -->
               <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
-              <a href="./front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus ...</a>
+              <a href="./front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
             </div>
           </div>
         <?php } ?>
@@ -320,7 +320,7 @@
         <div class="item-faq">
           <p class="question">Internet est-il gratuit au sein de la bibliothèque ?</p>
           <p class="faq-answer"> Dans les locaux de la bibliothèque les enfants sont sous la responsabilité de leurs parents ; le personnel de la bibliothèque les accueille, les conseille mais ne peut en aucun cas les garder.
-</p>
+          </p>
           <div class="toggle-symbol"></div>
         </div>
         <hr>

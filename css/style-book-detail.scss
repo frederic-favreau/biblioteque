@@ -5,340 +5,455 @@ $white: #fff;
 $black: #070606;
 $footer: #043a61;
 
+body {
+  div.bloc-modale {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+  }
+}
+
 main {
-  section#section-detail-book {
-    padding-top: 60px;
-    padding-bottom: 80px;
-    div#container-detail-book {
-      @media screen and (min-width: 950px) {
-        display: flex;
-        flex-wrap: wrap;
+
+
+  // ---------- MODALE LOAN CONFIRMATION ----------
+
+
+  div#box-loan {
+    z-index: 999;
+    width: 400px;
+    height: 500px;
+    background-color: $white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px ;
+    box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08),
+      0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+    border-radius: 10px;
+
+    p#loan-confimation {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      font-family: "Hind Madurai", sans-serif;
+      color: $btn-red;
+      text-align: center;
+      margin-bottom: 260px;
+    }
+
+    p#book-title-box {
+      color: $main-blue;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: "Nova Slim", cursive, sans-serif;
+      margin-bottom: 10px;
+    }
+
+    img {
+      height: 200px;
+      width: auto;
+      margin: 0 auto;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08),
+        0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+    }
+
+    a#btn-confirmed {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      border: 1px solid $main-blue;
+      color: $main-blue;
+      padding: 10px 40px;
+      border-radius: 10px;
+
+
+      &:hover {
+        background-color: $main-blue;
+        color: #fff;
+        cursor: pointer;
       }
-      div.item-detail-book-left {
-        width: 100%;
+    }
+  }
+}
+
+#font-logo {
+  font-family: "Risque", cursive, sans-serif;
+  letter-spacing: 2px;
+}
+
+.active-box-delete {
+  display: block;
+}
+
+
+// ---------- SECTION - DETAIL BOOK ----------
+
+
+section#section-detail-book {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  div#container-detail-book {
+    @media screen and (min-width: 950px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    div.item-detail-book-left {
+      width: 100%;
+      @media screen and (min-width: 950px) {
+        width: 60%;
+      }
+
+      div.book-new {
+        width: fit-content;
+        margin-bottom: 4px;
+        font-size: 10px;
+        font-weight: bold;
+        color: $white;
+        background-color: $main-blue;
+        padding: 3px 50px;
+        border-radius: 20px 0 20px 0;
         @media screen and (min-width: 950px) {
-          width: 60%;
+          font-size: 12px;
+          padding: 6px 50px;
+          margin-bottom: 10px;
         }
+      }
 
-        div.book-new {
-          width: fit-content;
-          margin-bottom: 4px;
-          font-size: 10px;
-          font-weight: bold;
-          color: $white;
-          background-color: $main-blue;
-          padding: 3px 50px;
-          border-radius: 20px 0 20px 0;
+      h1.title-work {
+        margin-bottom: 8px;
+        font-size: 20px;
+        text-align: inherit;
+        @media screen and (min-width: 950px) {
+          width: 90%;
+          line-height: 32px;
+          margin-bottom: 6px;
+          font-size: 28px;
+        }
+      }
+
+      p.author {
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: gray;
+        @media screen and (min-width: 950px) {
+          font-size: 18px;
+        }
+      }
+
+      figure {
+        position: relative;
+        width: fit-content;
+        margin: 0 auto;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      img {
+        margin: 0 auto 40px;
+        display: block;
+        background-color: gray;
+      }
+
+      h2#title-extract {
+        font-size: 20px;
+        text-align: inherit;
+        margin-bottom: -5px;
+        color: $main-blue;
+        @media screen and (min-width: 950px) {
+          font-size: 30px;
+        }
+      }
+
+      p.extract-work {
+        font-size: 14px;
+        margin-bottom: 16px;
+        @media screen and (min-width: 950px) {
+          width: 90%;
+          font-size: 18px;
+          margin-bottom: 26px;
+        }
+      }
+
+      h3#info-technical {
+        font-size: 20px;
+        font-family: 'Nova Slim', cursive, sans-serif;
+        color: $main-blue;
+        margin-bottom: 20px;
+        @media screen and (min-width: 950px) {
+          font-size: 30px;
+        }
+      }
+
+      ul.all-info-book {
+        li {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          font-size: 16px;
+          padding: 6px 0;
+          color: gray;
           @media screen and (min-width: 950px) {
-            font-size: 12px;
-            padding: 6px 50px;
-            margin-bottom: 10px;
+            width: 80%;
+            font-size: 18px;
+            flex-direction: row;
+            justify-content: space-between;
+
+            &:nth-child(odd) {
+              background-color: #f2f2f2; /* couleur pour les éléments impairs */
+            }
+          }
+
+          span.bdd-var {
+            font-size: 16px;
+            color: $main-blue;
+            @media screen and (min-width: 950px) {
+              font-size: 18px;
+            }
           }
         }
+      }
+    }
 
-        h1.title-work {
-          margin-bottom: 8px;
-          font-size: 20px;
-          text-align: inherit;
-          @media screen and (min-width: 950px) {
-            width: 90%;
-            line-height: 32px;
-            margin-bottom: 6px;
-            font-size: 28px;
-          }
-        }
+    #item-detail-book-right {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 120px;
+      width: 100%;
+      height: fit-content;
+      padding: 20px;
+      border-radius: 20px;
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      @media screen and (min-width: 950px) {
+        width: 30%;
+      }
 
-        p.author {
-          margin-bottom: 15px;
+      h4.title-work-description {
+        font-size: 20px;
+        text-align: inherit;
+        color: $main-blue;
+        border: 1px solid $main-blue;
+        border-radius: 5px;
+        margin-bottom: 4px;
+      }
+
+      ul.info-work-description {
+        margin-top: 12px;
+        li {
           font-size: 16px;
           color: gray;
           @media screen and (min-width: 950px) {
             font-size: 18px;
           }
-        }
 
-        figure {
-          position: relative;
-          width: fit-content;
-          margin: 0 auto;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        }
-
-        img {
-          margin: 0 auto 40px;
-          display: block;
-          background-color: gray;
-        }
-
-        h2 {
-          font-size: 20px;
-          text-align: inherit;
-          color: $main-blue;
-          margin-bottom: 6px;
-          @media screen and (min-width: 950px) {
-            font-size: 30px;
+          span {
+            font-size: 16px;
+            color: $main-blue;
+            @media screen and (min-width: 950px) {
+              font-size: 18px;
+            }
           }
         }
+      }
 
-        p.extract-work {
-          font-size: 14px;
-          margin-bottom: 16px;
+      hr {
+        margin: 16px 0 16px;
+        border: 1px solid gray;
+      }
+
+      ul.list-info-revervation {
+        li {
+          font-size: 16px;
+          color: $btn-red-hover;
           @media screen and (min-width: 950px) {
-            width: 90%;
             font-size: 18px;
-            margin-bottom: 26px;
           }
-        }
 
-        h3 {
-          font-size: 20px;
-          color: $main-blue;
-          margin-bottom: 14px;
-          @media screen and (min-width: 950px) {
-            font-size: 30px;
-          }
-        }
-
-        ul.all-info-book {
-          li {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            font-size: 16px;
+          &:last-child {
             color: gray;
-            margin-bottom: 6px;
-            @media screen and (min-width: 950px) {
-              width: 80%;
-              font-size: 18px;
-              flex-direction: row;
-              justify-content: space-between;
-            }
-
-            span.bdd-var {
-              font-size: 16px;
-              color: $main-blue;
-              @media screen and (min-width: 950px) {
-                font-size: 18px;
-              }
-            }
           }
         }
       }
+    }
 
-      #item-detail-book-right {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 120px;
-        width: 100%;
-        height: fit-content;
-        padding: 20px;
-        border-radius: 20px;
-        background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        @media screen and (min-width: 950px) {
-          width: 30%;
-        }
-
-        h4.title-work-description {
-          font-size: 20px;
-          text-align: inherit;
-          color: $main-blue;
-          border: 1px solid $main-blue;
-          border-radius: 5px;
-          margin-bottom: 4px;
-        }
-
-        ul.info-work-description {
-          margin-top: 12px;
-          li {
-            font-size: 16px;
-            color: gray;
-            @media screen and (min-width: 950px) {
-              font-size: 18px;
-            }
-
-            span {
-              font-size: 16px;
-              color: $main-blue;
-              @media screen and (min-width: 950px) {
-                font-size: 18px;
-              }
-            }
-          }
-        }
-
-        hr {
-          margin: 16px 0 16px;
-          border: 1px solid gray;
-        }
-
-        ul.list-info-revervation {
-          li {
-            font-size: 16px;
-            color: $btn-red-hover;
-            @media screen and (min-width: 950px) {
-              font-size: 18px;
-            }
-
-            &:last-child {
-              color: gray;
-            }
-          }
-        }
+    div#item-detail-book-right {
+      h4.title-work-description {
+        font-size: 20px;
+        color: $main-blue;
+        margin-top: 16px;
+        margin-bottom: 6px;
+        padding: 10px;
       }
 
-      div#item-detail-book-right {
-        h4.title-work-description {
-          font-size: 20px;
-          color: $main-blue;
-          margin-top: 16px;
-          margin-bottom: 6px;
-          padding: 10px;
-        }
-
-        ul.info-work-description {
-          li {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            margin-bottom: 6px;
-
-            @media screen and (min-width: 950px) {
-              flex-direction: row;
-              justify-content: space-between;
-            }
-          }
-        }
-
-        ul.list-info-revervation {
-          li {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            margin-bottom: 6px;
-          }
-        }
-        a#btn-reservation {
-          display: block;
-          padding: 12px;
-          background-color: $main-blue;
-          color: $white;
-          border-radius: 10px;
-          text-align: center;
-          transition: background-color 0.3s ease;
-          margin-top: 20px;
-          margin-bottom: 20px;
-
-          &:hover {
-            opacity: 0.9;
-            transform: scale(1.01);
-          }
-        }
-
-        ul.list-advantage {
+      ul.info-work-description {
+        li {
           display: flex;
           flex-wrap: wrap;
+          flex-direction: column;
+          margin-bottom: 6px;
 
-          li {
-            width: 33%;
-            text-align: center;
-            font-size: 14px;
-            color: gray;
+          @media screen and (min-width: 950px) {
+            flex-direction: row;
+            justify-content: space-between;
           }
         }
       }
-    }
-  }
 
-  #section-recommandation {
-    padding-bottom: 60px;
-    h3.standard-title-section {
-      font-size: 30px;
-      color: $main-blue;
-      margin-top: 16px;
-      margin-bottom: 6px;
-      @media screen and (min-width: 950px) {
-        font-size: 40px;
-        text-decoration: underline;
-      }
-    }
-
-    #container-cards {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      margin-top: 30px;
-
-      .card {
-        position: relative;
-        max-width: 450px;
-        min-width: 450px;
-        width: 33%;
-        margin: 100px auto 40px auto;
-        height: 230px;
-        padding: 15px 5px 15px 200px;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-        img {
-          position: absolute;
-          top: -40px;
-          left: 25px;
-          width: 150px;
-          height: 230px;
-          object-fit: cover;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          transition: transform 0.5s ease;
-
-          &:hover {
-            transform: translateY(-15px);
-          }
+      ul.list-info-revervation {
+        li {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          margin-bottom: 6px;
         }
+      }
+      a#btn-loan {
+        display: block;
+        padding: 12px;
+        background-color: $main-blue;
+        color: $white;
+        border-radius: 10px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+        margin-bottom: 20px;
 
-        .bottom-item-card {
-          h4 {
-            margin: 5px 0;
-            text-transform: capitalize;
-          }
+        &:hover {
+          opacity: 0.9;
+          transform: scale(1.01);
+        }
+      }
 
-          .title-card {
-            font-size: 10px;
-            text-transform: capitalize;
-          }
+      ul.list-advantage {
+        display: flex;
+        flex-wrap: wrap;
 
-          .description-card {
-            height: 60px;
-            margin: 8px 0 8px;
-            font-size: 14px;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
-          }
-
-          a.link-page {
-            position: absolute;
-            font-size: 14px;
-            bottom: 10px;
-            right: 10px;
-            color: $main-blue;
-          }
+        li {
+          width: 33%;
+          text-align: center;
+          font-size: 14px;
+          color: gray;
         }
       }
     }
-  }
-
-  hr {
-    margin: 20px 0 80px;
   }
 }
+
+
+// ---------- SECTION - RECOMMENDATION ----------
+
+
+#section-recommandation {
+  padding-bottom: 60px;
+  h3.standard-title-section {
+    font-size: 30px;
+    font-family: 'Nova Slim', cursive, sans-serif;
+    color: $main-blue;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    @media screen and (min-width: 950px) {
+      font-size: 40px;
+      text-decoration: underline;
+    }
+  }
+
+  #container-cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 30px;
+
+    .card {
+      position: relative;
+      max-width: 450px;
+      min-width: 450px;
+      width: 33%;
+      margin: 100px auto 40px auto;
+      height: 230px;
+      padding: 15px 5px 15px 200px;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      img {
+        position: absolute;
+        top: -40px;
+        left: 25px;
+        width: 150px;
+        height: 230px;
+        object-fit: cover;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        transition: transform 0.5s ease;
+
+        &:hover {
+          transform: translateY(-15px);
+        }
+      }
+
+      .bottom-item-card {
+        h4 {
+          margin: 5px 0;
+          text-transform: capitalize;
+        }
+
+        h3#title-book-card {
+          font-family: 'Nova Slim', cursive, sans-serif;
+          color: $main-blue;
+        }
+
+
+
+        .title-card {
+          font-size: 10px;
+          text-transform: capitalize;
+        }
+
+        .description-card {
+          height: 60px;
+          margin: 8px 0 8px;
+          font-size: 14px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+        }
+
+        a.link-page {
+          position: absolute;
+          font-size: 14px;
+          bottom: 10px;
+          right: 10px;
+          color: $main-blue;
+        }
+      }
+    }
+  }
+}
+
+hr {
+  margin: 20px 0 80px;
+}
+
+
+// ---------- SECTION - TAG - RECOMMENDATION ----------
 
 section#section-tag-recommandation {
   padding-bottom: 120px;
   h3.standard-title-section {
     font-size: 30px;
+    font-family: 'Nova Slim', cursive, sans-serif;
     color: $main-blue;
     margin-top: 16px;
     margin-bottom: 60px;
@@ -361,6 +476,8 @@ section#section-tag-recommandation {
 
       &:hover {
         cursor: pointer;
+        background-color: $main-blue;
+        color: $white;
       }
     }
   }

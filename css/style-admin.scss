@@ -5,6 +5,7 @@ $btn-main-blue-over: #05497b;
 $white: #fff;
 $black: #070606;
 $footer: #043a61;
+$bgc-dashboard: #f0f7ff;
 
 *,
 ::after,
@@ -53,7 +54,7 @@ h3.h3-dashboard {
   color: $btn-red;
   margin-bottom: 6px;
   @media screen and (min-width: 950px) {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -75,6 +76,18 @@ main {
   display: block;
 }
 
+#image-centree {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 // ----------  HEADER DASHBOARD  ----------
 
 header#side-bar-log {
@@ -91,6 +104,7 @@ header#side-bar-log {
 
     &.active {
       width: 250px;
+      z-index: 999;
     }
 
     nav#main-sidebar {
@@ -242,83 +256,87 @@ div.container-dashboard-base {
       width: 100%;
       margin: 10px auto;
     }
-
-    ul {
-      padding: 10px;
-      background-color: #f0f7ff;
-      border-radius: 5px;
-    }
   }
 }
 
-// ----------  SECTION DASHBOARD - PAGE DEFAULT ----------
+.container-home-tabs {
+  height: fit-content;
+  ul.list-book-box {
+    li.item-list-book {
+      display: flex;
+      width: 100%;
+      padding: 10px 0 10px 20px;
 
-section#dashboard-page-default {
-  .container-home-tabs {
-    height: fit-content;
-    ul.list-book-box {
-      li.list-book {
+      &:nth-child(odd) {
+        background-color: #f0f7ff;
+        border-radius: 5px;
+      }
+
+      div.format-pict-book {
         display: flex;
-        width: 100%;
-        margin-bottom: 50px;
+        flex-wrap: wrap;
+        width: 40%;
 
-        div.wish-list-book {
-          display: flex;
-          flex-wrap: wrap;
-          width: 40%;
+        img.pict-book-standard {
+          height: 100px;
+          width: auto;
+          margin-right: 20px;
+        }
 
-          img.pict-book-wish {
-            height: 100px;
-            width: auto;
+        ul.container-description {
+          li.list-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: $main-blue;
+            font-family: "Nova Slim", cursive, sans-serif;
           }
 
-          ul.container-description-wish {
-            li.list-title {
-              font-size: 16px;
-              font-weight: bold;
-              margin-bottom: 10px;
-              color: $main-blue;
-            }
-
-            li.list-author {
-              font-size: 16px;
-              color: gray;
-            }
+          li.list-author {
+            font-size: 16px;
+            color: gray;
           }
         }
-        div.container-loan-wish {
-          width: 60%;
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: space-evenly;
-          p.info-disponibility-wish {
-            color: $btn-red;
-            font-weight: bold;
-            margin-right: 70px;
-          }
+      }
+      div.container-info-loan {
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        p.info-disponibility {
+          color: $btn-red;
+          font-weight: bold;
+          margin-right: 70px;
+        }
 
-          a.btn-loan-wish {
-            padding: 15px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            background-color: $main-blue;
-            color: $white;
-            border-radius: 10px;
-            text-align: center;
-            transition: background-color 0.3s ease;
+        a.btn-format-standard {
+          padding: 15px;
+          font-weight: bold;
+          border: none;
+          border-radius: 5px;
+          background-color: $main-blue;
+          color: $white;
+          border-radius: 10px;
+          text-align: center;
+          transition: background-color 0.3s ease;
 
-            &:hover {
-              background-color: #05497b;
-              cursor: pointer;
-            }
+          &:hover {
+            background-color: #05497b;
+            cursor: pointer;
           }
         }
       }
     }
   }
 }
+
+.empty {
+  background-color: #f0f7ff;
+  padding: 10px 0 10px 20px;
+}
+
+// ----------  SECTION DASHBOARD - PAGE PROFIL ----------
 
 section#dashboard-page-profil {
   div#container-profil-tabs {
@@ -464,99 +482,295 @@ section#dashboard-page-profil {
 
 // ----------  SECTION DASHBOARD - PAGE CRUD----------
 
-section#dashboard-page-crud-book {
-  .container-crud-book-tabs {
-    height: fit-content;
+.container-crud-book-tabs {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    div.info-crud-book {
+  div.search-add-crud-book {
+    position: sticky;
+    top: 0;
+    background-color: $white; /* couleur de fond pour la div */
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+
+    div.search-crud-input {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-    }
+      flex-grow: 1;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+      input#input-seach-book {
+        width: 30%;
+        height: 40px;
+        padding-left: 10px;
+        border-radius: 5px;
+        margin: 10px;
+      }
 
-    input {
-      width: 30%;
-      height: 40px;
-      border-radius: 5px;
-      margin: 10px;
-    }
+      button#btn-search-book {
+        width: 100px;
+        height: 40px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: $main-blue;
+        border: $main-blue;
+        color: $white;
+        margin-right: 30px;
 
-    button {
-      height: 40px;
-    }
-
-    ul#info-top-crud {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
-
-    ul.list-book-box {
-      li.list-book {
-        display: flex;
-        width: 100%;
-        margin-bottom: 50px;
-
-        div.wish-list-book {
-          display: flex;
-          flex-wrap: wrap;
-          width: 40%;
-
-          img.pict-book-wish {
-            height: 100px;
-            width: auto;
-          }
-
-          ul.container-description-wish {
-            li.list-title {
-              font-size: 16px;
-              font-weight: bold;
-              margin-bottom: 10px;
-              color: $main-blue;
-            }
-
-            li.list-author {
-              font-size: 16px;
-              color: gray;
-            }
-          }
+        &:hover {
+          cursor: pointer;
+          background-color: $btn-main-blue-over;
         }
-        div.container-loan-wish {
-          width: 60%;
+      }
+
+      button#btn-all-detail {
+        border: none;
+        background-color: transparent;
+        color: $main-blue;
+        font-weight: bold;
+
+        &:hover {
+          cursor: pointer;
+          color: $btn-main-blue-over;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    button#btn-add-book {
+      width: 120px;
+      height: 40px;
+      border-radius: 10px;
+      font-weight: bold;
+      background-color: $main-blue;
+      border: $main-blue;
+      color: $white;
+      margin-right: 20px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $btn-main-blue-over;
+      }
+    }
+  }
+
+  div#container-list-book-crud {
+    ul.list-book-crud {
+      li.item-book-crud {
+        padding-top: 10px;
+        padding-bottom: 5px;
+
+        &:nth-child(odd) {
+          background-color: #f0f7ff;
+          border-radius: 5px;
+        }
+
+        ul.detail-item-book-crud {
+          position: relative;
           display: flex;
           flex-wrap: wrap;
+          justify-content: space-between;
           align-items: center;
-          justify-content: space-evenly;
-          p.info-disponibility-wish {
-            color: $btn-red;
+          width: 100%;
+          min-height: 120px;
+          li {
+            width: 150px;
+            text-align: center;
+            img.pict-book-crud {
+              height: 100px;
+              width: auto;
+              padding-left: 20px;
+              z-index: -1;
+
+              &:hover {
+                cursor: zoom-in;
+              }
+            }
+          }
+          li.item-title-crud {
+            color: $main-blue;
             font-weight: bold;
-            margin-right: 70px;
+            font-family: "Nova Slim", cursive, sans-serif;
+            width: 400px;
           }
 
-          a.btn-loan-wish {
+          li.btn-option-crud {
+            position: relative;
+            font-size: 30px;
             padding: 15px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            background-color: $main-blue;
-            color: $white;
-            border-radius: 10px;
-            text-align: center;
-            transition: background-color 0.3s ease;
 
             &:hover {
-              background-color: #05497b;
               cursor: pointer;
+            }
+          }
+
+          li.container-box-option-crud {
+            width: 0;
+            height: 0;
+
+            div.box-option-crud {
+              position: absolute;
+              right: 120px;
+              top: 0;
+              width: 220px;
+              height: fit-content;
+              padding: 16px;
+              background-color: $white;
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+              border-radius: 5px;
+              z-index: 9;
+              margin-bottom: 50px;
+              text-align: start;
+              display: none;
+
+              button.btn-detail-option-box {
+                border: none;
+                background-color: transparent;
+
+                &:hover {
+                  cursor: pointer;
+                  font-weight: bold;
+                }
+              }
+
+              button.btn-close-option-box {
+                position: absolute;
+                top: 0;
+                right: 12px;
+                font-size: 18px;
+                padding: 6px;
+                border: none;
+                background-color: transparent;
+
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+
+              &.active {
+                display: block;
+              }
+
+              h4 {
+                font-size: 16px;
+                font-weight: bold;
+                color: $btn-red;
+                margin-bottom: 2px;
+              }
+
+              ul.list-option-crud {
+                li {
+                  text-align: start;
+                  font-size: 14px;
+                  padding: 3px;
+                  width: 100%;
+                  &:hover {
+                    font-weight: bold;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+
+          div.container-complete-detail-info-book {
+            display: none;
+
+            &.active {
+              display: block;
+            }
+
+            div.container-flex-crud {
+              width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-evenly;
+              padding-top: 30px;
+              padding-bottom: 30px;
+
+              h3 {
+                margin-bottom: 15px;
+                color: $main-blue;
+              }
+
+              .item-complete-left {
+                width: 40%;
+                color: $main-blue;
+              }
+
+              .item-complete-right {
+                width: 40%;
+                ul.all-info-book {
+                  li {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    font-size: 16px;
+                    padding: 6px 0;
+                    color: gray;
+                    @media screen and (min-width: 950px) {
+                      width: 100%;
+                      height: fit-content;
+                      font-size: 18px;
+                      flex-direction: row;
+                      justify-content: space-between;
+
+                      &:nth-child(odd) {
+                        background-color: #fafafa; /* couleur pour les éléments impairs */
+                      }
+
+                      &:nth-child(even) {
+                        background-color: $bgc-dashboard; /* couleur pour les éléments impairs */
+                      }
+                    }
+
+                    span.bdd-var {
+                      font-size: 16px;
+                      color: $main-blue;
+                      @media screen and (min-width: 950px) {
+                        font-size: 18px;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
+    }
+  }
+}
+
+section#dashboard-page-book-add {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    div.form-add-book-left {
+      width: 50%;
+
+      div.add-form-template-label-input {
+        width: 100%;
+      }
+    }
+
+    div.form-add-book-left {
+      width: 50%;
+    }
+
+    div.group-btn-form-add-commun {
+      width: 100%;
     }
   }
 }
