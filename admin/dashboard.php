@@ -407,36 +407,42 @@
              <?php
                 if (isset($_POST['submit'])) {
                     $title = addslashes($_POST['work-title']);
-
                     $authorFirstname = addslashes($_POST['author-firstname']);
                     $authorLastname = addslashes($_POST['author-lastname']);
-
                     $genreA = addslashes($_POST['work-genre-A']);
                     $genreB = addslashes($_POST['work-genre-B']);
-
                     $category = addslashes($_POST['work-category']);
-
                     $publishDate = addslashes($_POST['work-publish-date']);
-
                     $isbn = addslashes($_POST['work-ISBN']);
-
                     $extract = addslashes($_POST['work-extract']);
-
                     $workPict = addslashes($_POST['work-pict']);
 
 
+                    $sqlAdd = "INSERT INTO work(`title`, `pict`, `extract`, `published_at`, `ISBN`)
+                    VALUES ('$title', '$pict', '$extract', '$publishDate', '$isbn')";
+                    "INSERT INTO author(`lastname`, `firstname`)
+                    VALUES ('$authorLastname', '$authorFirstname')";
+                    "INSERT INTO genre(`name`)
+                    VALUES ('$genreA'), ('$genreB')";
+                    "INSERT INTO category(`name`)
+                    VALUES ('$category')";
+                    
+                    "INSERT INTO work_author(`work_id`, `author_id`)
+                    VALUES ((SELECT id_work FROM work WHERE title = '$title'), (SELECT id_author FROM author WHERE lastname = '$authorLastname' AND firstname = '$authorFirstname'))";
 
+                    "INSERT INTO work_genre(`work_id`, `genre_id`)
+                    VALUES ((SELECT id_work FROM work WHERE title = '$title'), (SELECT id_genre FROM genre WHERE name = '$genreA'))";
 
+                    "INSERT INTO work_genre(`work_id, genre_id`)
+                    VALUES ((SELECT id_work FROM work WHERE title = '$title'), (SELECT id_genre FROM genre WHERE name = '$genreB'))";
 
+                    "INSERT INTO work_category(`id_category`, `id_work`)
+                    VALUES ((SELECT id_category FROM category WHERE name = '$category'), (SELECT id_work FROM work WHERE title = '$title'))";
 
-                    $extract = addslashes($_POST['extract']);
-                    $thumbnail = 'monimage.jpg';
-                    $content = addslashes($_POST['content']);
-                    $author = addslashes($_POST['author']);
-                    $sql = "INSERT INTO post(`title`, `extract`, `thumbnail`, `content`, `author` )VALUES ('$title','$extract','$thumbnail','$content', $author)";
-                    $db->query($sql);
+                    $db->query($sqlAdd);
                 }
                 ?>
+
              <form action="#" method="POST" id="form-add-book">
                  <div id="form-add-book-left">
                      <div class="add-form-template-label-input">
@@ -483,7 +489,7 @@
                  </div>
                  <div id="group-btn-form-add-commun">
                      <button type="reset" id="btn-reset-form-add-book">Reset</button>
-                     <button type="submit" id="btn-submit-form-add-book">Modifier</button>
+                     <button type="submit" id="btn-submit-form-add-book">Ajouter</button>
                  </div>
              </form>
          </div>
