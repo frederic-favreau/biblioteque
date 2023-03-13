@@ -1,7 +1,7 @@
 $btn-red: #ff5e38;
 $btn-red-hover: #b53928;
 $main-blue: #0868ae;
-$white: $white;
+$white: #fff;
 $black: #070606;
 $footer: #043a61;
 
@@ -64,8 +64,21 @@ button:focus {
 }
 
 button.ghost {
-  background-color: transparent;
+  background-color: $btn-red;
   border-color: $white;
+  border-radius: 5px;
+  border: 1px solid $main-blue;
+  color: $white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 form {
