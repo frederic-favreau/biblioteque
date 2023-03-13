@@ -285,7 +285,7 @@ div.container-dashboard-base {
 
         ul.container-description {
           li.list-title {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             margin-bottom: 10px;
             color: $main-blue;
@@ -614,6 +614,7 @@ section#dashboard-page-profil {
           }
           li.item-title-crud {
             color: $main-blue;
+            font-size: 18px;
             font-weight: bold;
             font-family: "Nova Slim", cursive, sans-serif;
             width: 400px;
@@ -630,6 +631,7 @@ section#dashboard-page-profil {
           }
 
           li.container-box-option-crud {
+            position: relative;
             width: 0;
             height: 0;
 
@@ -643,10 +645,10 @@ section#dashboard-page-profil {
               background-color: $white;
               box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
               border-radius: 5px;
-              z-index: 9;
+              z-index: 999;
               margin-bottom: 50px;
               text-align: start;
-              display: none;
+              display: block;
 
               button.btn-detail-option-box {
                 border: none;
@@ -907,6 +909,22 @@ section#dashboard-page-book-edit {
       border: 1px solid gray;
       margin-bottom: 30px;
     }
+
+    .select-form-add-book {
+      width: 600px;
+      height: 44px;
+      font-size: 20px;
+      border-radius: 5px;
+      padding-left: 10px;
+      border: 1px solid gray;
+      margin-bottom: 30px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+
 
     div#form-book-edit-left {
       display: flex;

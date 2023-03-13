@@ -40,3 +40,21 @@ $sqlAdd = "INSERT INTO post(`title`, `extract`, `thumbnail`, `content`, `author`
                     VALUES ((SELECT id_category FROM category WHERE name = '$category'), (SELECT id_work FROM work WHERE title = '$title'))";
 
 ?>
+
+
+
+UPDATE work
+JOIN work_author ON work.id_work = work_author.work_id
+JOIN author ON work_author.author_id = author.id_author
+JOIN work_genre ON work.id_work = work_genre.id_work
+JOIN genre ON work_genre.genre_id = genre.id_genre
+SET
+work.title = 'new_title',
+author.lastname = 'new_lastname',
+author.firstname = 'new_firstname',
+genre.name = 'new_genre',
+work.published_at = 'new_published_date',
+work.ISBN = 'new_ISBN',
+work.pict = 'new_pict',
+work.extract = 'new_extract'
+WHERE work.id_work = 'selected_work_id';

@@ -250,7 +250,7 @@ div.container-dashboard-base .box-dashboard hr {
   margin-right: 20px;
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book ul.container-description li.list-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #0868ae;
@@ -534,6 +534,7 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-title-crud {
   color: #0868ae;
+  font-size: 18px;
   font-weight: bold;
   font-family: "Nova Slim", cursive, sans-serif;
   width: 400px;
@@ -547,6 +548,7 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   cursor: pointer;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud {
+  position: relative;
   width: 0;
   height: 0;
 }
@@ -561,10 +563,10 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
-  z-index: 9;
+  z-index: 999;
   margin-bottom: 50px;
   text-align: start;
-  display: none;
+  display: block;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud button.btn-detail-option-box {
   border: none;
@@ -775,6 +777,18 @@ section#dashboard-page-book-edit form#form-book-edit .input-form-add-book {
   padding-left: 10px;
   border: 1px solid gray;
   margin-bottom: 30px;
+}
+section#dashboard-page-book-edit form#form-book-edit .select-form-add-book {
+  width: 600px;
+  height: 44px;
+  font-size: 20px;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid gray;
+  margin-bottom: 30px;
+}
+section#dashboard-page-book-edit form#form-book-edit .select-form-add-book:hover {
+  cursor: pointer;
 }
 section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-left {
   display: flex;

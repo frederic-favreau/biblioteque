@@ -369,15 +369,15 @@
                                          </div>
                                      </div>
                                      <li class="container-box-option-crud">
-                                         <div class="box-option-crud">
+                                         <!-- <div class="box-option-crud">
                                              <h4>Options du livre</h4>
                                              <ul class="list-option-crud">
                                                  <li id="more-detail-book-crud">
-                                                 <li>Editer ses données</li>
+                                                 <li><a href=""></a> Editer ses données</li>
                                                  <li>Supprimer cet ouvrage</li>
                                              </ul>
                                          </div>
-                                     </li>
+                                     </li> -->
                                  </ul>
 
                              </li>
@@ -426,7 +426,7 @@
                     VALUES ('$genreA'), ('$genreB')";
                     "INSERT INTO category(`name`)
                     VALUES ('$category')";
-                    
+
                     "INSERT INTO work_author(`work_id`, `author_id`)
                     VALUES ((SELECT id_work FROM work WHERE title = '$title'), (SELECT id_author FROM author WHERE lastname = '$authorLastname' AND firstname = '$authorFirstname'))";
 
@@ -510,55 +510,107 @@
          <div id="box-edit-book-info" class="box-dashboard">
              <h3 class="h3-dashboard">Modification d'un livre dans la base de données</h3>
              <hr>
-             <form action="#" id="form-book-edit">
-                 <div id="form-book-edit-left">
-                     <div class="add-form-template-label-input">
-                         <label for="work-title-edit" class="label-form-add-book">Titre du livre</label>
-                         <input type="text" name="work-title" id="work-title-edit" class="input-form-add-book" />
-                     </div>
-                     <div class="add-form-template-label-input">
-                         <label for="author-firstname-edit" class="label-form-add-book">Prénom de l'autheur</label>
-                         <input type="text" name="author-firstname" id="author-firstname-edit" class="input-form-add-book" />
-                     </div>
-                     <div class="add-form-template-label-input">
-                         <label for="author-lastname-edit" class="label-form-add-book">Nom de l'autheur</label>
-                         <input type="text" name="author-lastname" id="author-lastname-edit" class="input-form-add-book" />
-                     </div>
-                     <div class="add-form-template-label-input">
+
+             <?php
+                $id = $_GET['id'];
+                $req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `ISBN`,
+GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
+GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
+FROM `work`
+
+INNER JOIN `work_genre` 
+ON `work`.`id_work` = `work_genre`.`work_id`
+
+INNER JOIN `genre`
+ON `work_genre`.`genre_id` =`genre`.`id_genre`
+
+INNER JOIN `work_author`
+ON `work_author`.`work_id` = `work`.`id_work`
+
+INNER JOIN `author`
+ON `work_author`.`author_id` = `author`.`id_author`
+
+WHERE `id_work` = :id");
+                $req_book->bindParam('id', $id, PDO::PARAM_INT);
+                $req_book->execute();
+
+                while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
+                    $genre = str_replace(",", "', '", $book['genres']);
+                    $title = str_replace("'", "\'", $book['title']);
+
+                ?>
+
+
+
+
+                 <form action="#" id="form-book-edit">
+                     <div id="form-book-edit-left">
+                         <div class="add-form-template-label-input">
+                             <label for="work-title-edit" class="label-form-add-book">Titre du livre</label>
+                             <input type="text" name="work-title" id="work-title-edit" class="input-form-add-book" value="<?= $book['title'] ?>" />
+                         </div>
+                         <div class="add-form-template-label-input">
+                             <label for="author-firstname-edit" class="label-form-add-book">Prénom de l'autheur</label>
+                             <input type="text" name="author-firstname" id="author-firstname-edit" class="input-form-add-book" />
+                         </div>
+                         <div class="add-form-template-label-input">
+                             <label for="author-lastname-edit" class="label-form-add-book">Nom de l'autheur</label>
+                             <input type="text" name="author-lastname" id="author-lastname-edit" class="input-form-add-book" />
+                         </div>
+
+
+
+                         <!-- <div class="add-form-template-label-input">
                          <label for="work-genre-A-edit" class="label-form-add-book">Genre A du livre</label>
                          <input type="text" name="work-genre-A" id="work-genre-A-edit" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-genre-B-edit" class="label-form-add-book">Genre B du livre</label>
                          <input type="text" name="work-genre-B" id="work-genre-B-edit" class="input-form-add-book" />
-                     </div>
-                     <div class="add-form-template-label-input">
-                         <label for="work-category-edit" class="label-form-add-book">Categorie du livre</label>
-                         <input type="text" name="work-category" id="work-category-edit" class="input-form-add-book" />
-                     </div>
-                     <div class="add-form-template-label-input">
-                         <label for="work-publish-date-edit" class="label-form-add-book">Date de publication du livre</label>
-                         <input type="date" name="work-publish-date" id="work-publish-date-edit" class="input-form-add-book" />
-                     </div>
-                     <div class="add-form-template-label-input">
-                         <label for="work-ISBN-edit" class="label-form-add-book">ISBN (ex: ISBN 13 :874-6-2457-6478-8) </label>
-                         <input type="text" name="work-ISBN" id="work-ISBN-edit" class="input-form-add-book" />
-                     </div>
-                     <div class="add-form-template-label-input">
-                     </div>
-                 </div>
-                 <div id="form-book-edit-right">
-                     <label for="work-extract-edit" class="label-form-add-book">Extrait du livre</label>
-                     <textarea name="work-extract-edit" id="work-extract"></textarea>
+                     </div> -->
 
-                     <label for="work-pict-edit" class="label-form-add-book">Nom de l'image de couverture (ajouter le format au nom)</label>
-                     <input type="text" name="work-pict" id="work-pict-edit" class="input-form-add-book" />
-                 </div>
-                 <div id="group-btn-form-edit-commun">
-                     <button type="reset" id="btn-reset-form-add-book">Reset</button>
-                     <button type="submit" id="btn-submit-form-add-book">Modifier</button>
-                 </div>
-             </form>
+                         <select name="work-genre" id="work-genre-edit" class="select-form-add-book">
+                             <option value="avanture">Aventure</option>
+                             <option value="horreur">Horreur</option>
+                             <option value="historique">Historique</option>
+                             <option value="enfant">Enfant</option>
+                             <option value="sci-fi">Sci-fi</option>
+                             <option value="éducation">Éducation</option>
+                             <option value="romantique">Romantique</option>
+                             <option value="détective">Détective</option>
+                             <option value="jeunesse">Jeunesse</option>
+                         </select>
+
+
+
+                         <div class="add-form-template-label-input">
+                             <label for="work-category-edit" class="label-form-add-book">Categorie du livre</label>
+                             <input type="text" name="work-category" id="work-category-edit" class="input-form-add-book" />
+                         </div>
+                         <div class="add-form-template-label-input">
+                             <label for="work-publish-date-edit" class="label-form-add-book">Date de publication du livre</label>
+                             <input type="date" name="work-publish-date" id="work-publish-date-edit" class="input-form-add-book" />
+                         </div>
+                         <div class="add-form-template-label-input">
+                             <label for="work-ISBN-edit" class="label-form-add-book">ISBN (ex: ISBN 13 :874-6-2457-6478-8) </label>
+                             <input type="text" name="work-ISBN" id="work-ISBN-edit" class="input-form-add-book" />
+                         </div>
+                         <div class="add-form-template-label-input">
+                         </div>
+                     </div>
+                     <div id="form-book-edit-right">
+                         <label for="work-extract-edit" class="label-form-add-book">Extrait du livre</label>
+                         <textarea name="work-extract-edit" id="work-extract"></textarea>
+
+                         <label for="work-pict-edit" class="label-form-add-book">Nom de l'image de couverture (ajouter le format au nom)</label>
+                         <input type="text" name="work-pict" id="work-pict-edit" class="input-form-add-book" />
+                     </div>
+                     <div id="group-btn-form-edit-commun">
+                         <button type="reset" id="btn-reset-form-add-book">Reset</button>
+                         <button type="submit" id="btn-submit-form-add-book">Modifier</button>
+                     </div>
+                 </form>
+             <?php } ?>
          </div>
      </div>
      </div>
