@@ -55,7 +55,7 @@ for (const btnOptionCrud of btnOptionCruds) {
 
     const aEditDataCrud = document.createElement("a");
     aEditDataCrud.setAttribute("id", "btn-confirmed");
-    aEditDataCrud.setAttribute("href", "#dashboard-page-book-edit?id=" + idWork);
+    aEditDataCrud.setAttribute("href", "./edit-book.php?id=" + idWork);
     aEditDataCrud.innerHTML = "Editer ses données";
 
     moreDetailBookCrud.appendChild(aEditDataCrud);

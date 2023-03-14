@@ -807,7 +807,7 @@ section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-right {
   justify-content: center;
   width: 50%;
 }
-section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-right textarea#work-extract {
+section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-right textarea#work-extract-edit {
   width: 690px;
   height: 600px;
   font-size: 20px;
