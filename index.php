@@ -121,7 +121,7 @@ coucou
           while ($heart = $req_heart->fetch(PDO::FETCH_ASSOC)) {
 
           ?>
-            <li><a href="./front/book-detail.php?id=<?= $heart['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt="<?= $heart['title'] ?>"></a></li>
+            <li><a href="./front/book-detail.php?id=<?= $heart['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt=""></a></li>
 
           <?php
             $i++;
@@ -140,7 +140,7 @@ coucou
       <h3 id="h3-tag">#tout juste disponible</h3>
       <div id="container-cards">
 
-        <!-- find last 6 books in our librarerie -->
+        <!-- find last 9 books in our librarerie -->
 
 
         <?php
