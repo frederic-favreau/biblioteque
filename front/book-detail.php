@@ -2,10 +2,12 @@
 
 include_once '../connexion.php';
 $id = $_GET['id'];
-$req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `ISBN`,
+$req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
+DATE_FORMAT(`published_at`, '%d/%m/%Y') AS `published`, `ISBN`,
 GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
 GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
 FROM `work`
+
 
 INNER JOIN `work_genre` 
 ON `work`.`id_work` = `work_genre`.`work_id`
@@ -58,7 +60,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                         <li>Auteur <span class="bdd-var"><?= str_replace(',', ', ', $book['authors']) ?></span></li>
                         <li>Genre <span class="bdd-var"><?= str_replace(',', ', ', $book['genres']) ?></span></li>
                         <li>Catégorie <span class="bdd-var">['category']</span></li>
-                        <li>Date de publication <span class="bdd-var"><?= $book['published_at'] ?></span></li>
+                        <li>Date de publication <span class="bdd-var"><?= $book['published'] ?></span></li>
 
                         <li> Nom de l'éditeur<span class="bdd-var">['editor name']</span></li>
                         <li>Date de l'édition<span class="bdd-var">['editor date']</span></li>
@@ -70,7 +72,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <ul class="info-work-description">
                         <li>Auteur <span><?= str_replace(',', ', ', $book['authors']) ?></span></li>
                         <li>Genre <span><?= str_replace(',', ', ', $book['genres']) ?></span></li>
-                        <li>Date de publication <span><?= $book['published_at'] ?></span></li>
+                        <li>Date de publication <span><?= $book['published'] ?></span></li>
                     </ul>
                     <hr>
                     <ul class="list-info-revervation">

@@ -8,7 +8,7 @@
 
  <section id="dashboard-page-default" class="row-limit-size-db">
      <div class="container-dashboard-base">
-         <h1 class="h1-dashboard">Bienvenue <?=$_SESSION['firstname']?> dans votre tableau de bord</h1>
+         <h1 class="h1-dashboard">Bienvenue <?= $_SESSION['firstname'] ?> dans votre tableau de bord</h1>
 
          <h2 class="h2-dashboard">Voici le suivi de vos activités</h2>
 
@@ -216,7 +216,7 @@
          <h2 class="h2-dashboard">Vous pouvez modifier l'ensemble de vos données</h2>
 
          <div id="container-profil-tabs">
-            
+
              <div id="box-personal-info" class="box-dashboard">
                  <h3 class="h3-dashboard">Mes informations </h3>
                  <hr>
@@ -224,16 +224,16 @@
                      <div id="container-fullname">
                          <div id="firstname">
                              <label for="firstname" class="label-fullname">Prénom</label>
-                             <input type="text" name="firstname" id="firstname" class="input-fullname" value="<?=$_SESSION['firstname']?>" />
+                             <input type="text" name="firstname" id="firstname" class="input-fullname" value="<?= $_SESSION['firstname'] ?>" />
                          </div>
                          <div id="laststname">
                              <label for="lastname">Nom</label>
-                             <input type="text" name="lastname" id="lastname" class="input-fullname" value="<?= $_SESSION['lastname']?>"/>
+                             <input type="text" name="lastname" id="lastname" class="input-fullname" value="<?= $_SESSION['lastname'] ?>" />
                          </div>
                      </div>
                      <div id="email">
                          <label for="input-mail" id="label-email">Email</label>
-                         <input type="email" name="mail" id="input-mail" value="<?=$_SESSION['mail']?>" />
+                         <input type="email" name="mail" id="input-mail" value="<?= $_SESSION['mail'] ?>" />
                      </div>
                      <div id="location">
                          <label for="input-location" id="label-location">Adresse de votre résidence</label>
@@ -244,36 +244,36 @@
                          <label for="password" id="label-password">Votre mot de passe</label>
                          <input type="password" name="password" id="input-password" placeholder="Password" />
                      </div>
-                     <?php 
-                            
-                     
-                     
-                     ?>
+                     <?php
+
+
+
+                        ?>
                      <div id="group-btn-form">
                          <button type="reset" id="btn-reset">Reset</button>
                          <button type="submit" id="btn-submit" name="modifier">Modifier</button>
-                        <?php if(isset($_POST['modifier'])){
-                            $mail= $_POST['mail'];
-                            $password = $_POST['password'];
-                            $firstname = $_POST['firstname'];
-                            $lastname = $_POST['lastname'];
-                            $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
-                            $adress = $_POST['adress'];
+                         <?php if (isset($_POST['modifier'])) {
+                                $mail = $_POST['mail'];
+                                $password = $_POST['password'];
+                                $firstname = $_POST['firstname'];
+                                $lastname = $_POST['lastname'];
+                                $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
+                                $adress = $_POST['adress'];
 
-                            $req = $db->prepare('UPDATE `user`SET `firstname` = :firstname, `lastname` = :lastname, `mail` = :mail,`password` = :password, `adress` = :adress
+                                $req = $db->prepare('UPDATE `user`SET `firstname` = :firstname, `lastname` = :lastname, `mail` = :mail,`password` = :password, `adress` = :adress
                             WHERE `id_user` = :id');
-                            
-                            $req->bindParam('firstname', $firstname, PDO::PARAM_STR);
-                            $req->bindParam('id', $id, PDO::PARAM_INT);
-                            $req->bindParam('mail', $mail, PDO::PARAM_STR);
-                            $req->bindParam('lastname', $lastname, PDO::PARAM_STR);
-                            $req->bindParam('password', $passwordHashed, PDO::PARAM_STR);
-                            $req->bindParam('adress', $adress, PDO::PARAM_STR);
-                            $req->execute();
-                        } 
-                        
-                        
-                        ?>
+
+                                $req->bindParam('firstname', $firstname, PDO::PARAM_STR);
+                                $req->bindParam('id', $id, PDO::PARAM_INT);
+                                $req->bindParam('mail', $mail, PDO::PARAM_STR);
+                                $req->bindParam('lastname', $lastname, PDO::PARAM_STR);
+                                $req->bindParam('password', $passwordHashed, PDO::PARAM_STR);
+                                $req->bindParam('adress', $adress, PDO::PARAM_STR);
+                                $req->execute();
+                            }
+
+
+                            ?>
                      </div>
                  </form>
              </div>
@@ -325,9 +325,70 @@
                  <div id="container-list-book-crud">
                      <ul class="list-book-crud">
                          <?php
-                            $reqAskCrud = ("SELECT `pict`, `title`, `id_work`, `extract`, `published_at`, `ISBN`, CONCAT(`author`.`firstname`, ' ', `author`.`lastname`) as `author`, `id_work` FROM `work` INNER JOIN `work_author` ON `work_author`.`work_id` = `work`.`id_work` INNER JOIN `author` ON `work_author`.`author_id` = `author`.`id_author` ORDER BY `work`.`title` ASC");
+
+
+                            // Requête pour récupérer les stocks
+                            $reqStock = ("SELECT `work_id`, `stock` FROM `copy`");
+                            $resultStock = $db->query($reqStock);
+                            
+
+                            
+                            while ($row = $resultStock->fetch(PDO::FETCH_ASSOC)) {
+                                // Stockage du stock correspondant à chaque work_id
+                                $stocks[$row['work_id']][] = $row['stock'];
+                                var_dump($stocks);
+                            }
+
+
+
+
+
+
+                            $reqAskCrud = ("SELECT `id_work`,`title`,`pict`,`extract`,`category`.`category`, `copy`.`location`,
+                            DATE_FORMAT(`published_at`, '%d/%m/%Y') AS `published`, `ISBN`,
+                            GROUP_CONCAT(DISTINCT DATE_FORMAT(`editor`.`date`, '%d/%m/%Y' )ORDER BY `id_editor`) AS `edition_date`,
+                            GROUP_CONCAT(DISTINCT `editor`.`editor_name` ORDER BY `id_editor`)  AS `editors`, 
+                            GROUP_CONCAT( `copy`.`stock`) AS `stock`,
+                            GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
+                            GROUP_CONCAT( DISTINCT CONCAT (`author`.`lastname`, ' ' , `author`.`firstname`)) AS `author` 
+                            
+                            FROM `work` 
+                            
+                            INNER JOIN `work_author` ON `work_author`.`work_id` = `work`.`id_work` 
+                            
+                            INNER JOIN `author` ON `work_author`.`author_id` = `author`.`id_author`
+
+                            INNER JOIN `work_genre` 
+                            ON `work`.`id_work` = `work_genre`.`work_id`
+
+                            INNER JOIN `genre`
+                            ON `work_genre`.`genre_id` =`genre`.`id_genre` 
+
+                            INNER JOIN `work_category` 
+                            ON `work`.`id_work` = `work_category`.`work_id`
+
+                            INNER JOIN `category`
+                            ON `work_category`.`category_id` =`category`.`id_category` 
+
+                            INNER JOIN `copy` 
+                            ON `work`.`id_work` = `copy`.`work_id`
+
+                            INNER JOIN `editor`
+                            ON `copy`.`editor_id` =`editor`.`id_editor` 
+                            
+                            GROUP BY `copy`.`work_id`
+                            ORDER BY `work`.`title` ASC");
                             $reqCrud = $db->query($reqAskCrud);
+
+
+
+
                             while ($crud = $reqCrud->fetch(PDO::FETCH_ASSOC)) {
+                                $workId = $crud['id_work'];
+                                $disponible = 'indisponible';
+                                if(in_array(1,$stocks[$workId])){
+                                    $disponible = 'disponible';
+                                }
                             ?>
 
                              <li class="item-book-crud">
@@ -336,9 +397,9 @@
                                          <img src="../img/books/<?= $crud['pict'] ?>" alt="<?= $crud['title'] ?>" class="pict-book-crud" onclick="centrerImage(this)">
                                      </li>
                                      <li class="item-title-crud"> <?= $crud['title'] ?></li>
-                                     <li class="item-author-crud"><?= $crud['author'] ?></li>
-                                     <!-- <li class="item-status-crud">['status']</li> -->
-                                     <!-- <li class="item-copy-crud">['nb copy']</li> -->
+                                     <li class="item-author-crud"><?= str_replace(',', ', ', $crud['author']) ?></li>
+                                     <li class="item-status-crud"><?= $crud['location'] ?></li>
+                                     <li class="item-copy-crud"><?= $disponible?></li>
                                      <li class="btn-option-crud" data-idWork="<?= $crud['id_work'] ?>" data-title="<?= $crud['title'] ?>" data-pict="<?= $crud['pict'] ?>">⚙️
                                      </li>
                                      <div class="container-complete-detail-info-book">
@@ -346,12 +407,15 @@
                                              <div class="item-complete-right">
                                                  <h3>Fiche technique</h3>
                                                  <ul class="all-info-book">
-                                                     <li>Auteur <span class="bdd-var"><?= $crud['author'] ?></span></li>
-                                                     <li>Genre <span class="bdd-var">['genres'] </span></li>
-                                                     <li>Catégorie <span class="bdd-var">['category']</span></li>
-                                                     <li>Date de publication <span class="bdd-var"><?= $crud['published_at'] ?></span></li>
-                                                     <li> Nom de l'éditeur<span class="bdd-var">['editor name']</span></li>
-                                                     <li>Date de l'édition<span class="bdd-var">['editor date']</span></li>
+                                                     <li>Auteur <span class="bdd-var"><?= str_replace(',', ', ', $crud['author']) ?></span></li>
+                                                     <li>Genre <span class="bdd-var">
+                                                             <?= str_replace(',', ', ', $crud['genres']) ?> </span></li>
+                                                     <li>Catégorie <span class="bdd-var"><?= $crud['category'] ?>
+                                                         </span></li>
+                                                     <li>Date de publication <span class="bdd-var"><?= $crud['published'] ?></span></li>
+                                                     <li> Nom de l'éditeur<span class="bdd-var"><?= str_replace(',', ', ', $crud['editors']) ?>
+                                                         </span></li>
+                                                     <li>Date de l'édition<span class="bdd-var"><?= str_replace(',', ', ', $crud['edition_date']) ?></span></li>
                                                      <li>ISBN<span class="bdd-var"><?= $crud['ISBN'] ?></span></li>
                                                  </ul>
                                              </div>
