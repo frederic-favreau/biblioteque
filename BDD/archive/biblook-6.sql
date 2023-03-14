@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 14 mars 2023 à 12:15
+-- Généré le : jeu. 09 mars 2023 à 11:04
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -61,17 +61,9 @@ INSERT INTO `author` (`id_author`, `lastname`, `firstname`) VALUES
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `id_category` int NOT NULL AUTO_INCREMENT,
-  `category` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_category`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
-
---
--- Déchargement des données de la table `category`
---
-
-INSERT INTO `category` (`id_category`, `category`) VALUES
-(1, 'roman'),
-(2, 'encyclopedie');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -82,60 +74,14 @@ INSERT INTO `category` (`id_category`, `category`) VALUES
 DROP TABLE IF EXISTS `copy`;
 CREATE TABLE IF NOT EXISTS `copy` (
   `id_copy` int NOT NULL AUTO_INCREMENT,
-  `editor_id` int DEFAULT NULL,
+  `id_editor` int DEFAULT NULL,
   `location` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `work_id` int NOT NULL,
+  `id_work` int NOT NULL,
   `stock` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_copy`) USING BTREE,
-  KEY `WORK` (`work_id`),
-  KEY `EDITOR` (`editor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb3;
-
---
--- Déchargement des données de la table `copy`
---
-
-INSERT INTO `copy` (`id_copy`, `editor_id`, `location`, `work_id`, `stock`) VALUES
-(1, 2, 'section education', 1, 1),
-(2, 2, 'section education', 1, 1),
-(3, 2, 'section education', 1, 1),
-(4, 2, 'section education', 1, 1),
-(5, 2, 'section education', 1, 0),
-(6, 2, 'section education', 1, 0),
-(7, 2, 'section enfant', 2, 0),
-(8, 2, 'section enfant', 2, 0),
-(9, 2, 'section enfant', 2, 1),
-(10, 2, 'section enfant', 2, 1),
-(11, 2, 'section enfant', 2, 1),
-(12, 1, 'section aventure', 3, 0),
-(13, 1, 'section aventure', 3, 0),
-(14, 3, 'section aventure', 3, 0),
-(15, 3, 'section sci-fi', 4, 1),
-(16, 3, 'section sci-fi', 4, 1),
-(17, 1, 'section enfant', 5, 1),
-(18, 1, 'section enfant', 5, 1),
-(19, 1, 'section enfant', 5, 0),
-(20, 3, 'section aventure', 6, 0),
-(21, 3, 'section aventure', 6, 0),
-(22, 3, 'section aventure', 6, 1),
-(23, 2, 'section horreur', 7, 1),
-(24, 2, 'section horreur', 7, 1),
-(25, 1, 'section horreur', 7, 1),
-(26, 1, 'section horreur', 7, 0),
-(27, 1, 'section horreur', 7, 0),
-(28, 2, 'section aventure', 8, 0),
-(29, 2, 'section aventure', 8, 0),
-(30, 3, 'section aventure', 9, 1),
-(31, 3, 'section aventure', 9, 1),
-(32, 3, 'section aventure', 9, 0),
-(33, 1, 'section détective', 10, 1),
-(34, 1, 'section détective', 10, 1),
-(35, 1, 'section détective', 10, 1),
-(36, 3, 'section détective', 11, 0),
-(37, 3, 'section détective', 11, 0),
-(38, 2, 'section education', 12, 1),
-(39, 2, 'section education', 12, 1),
-(40, 2, 'section education', 12, 0);
+  KEY `WORK` (`id_work`),
+  KEY `EDITOR` (`id_editor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -146,20 +92,11 @@ INSERT INTO `copy` (`id_copy`, `editor_id`, `location`, `work_id`, `stock`) VALU
 DROP TABLE IF EXISTS `editor`;
 CREATE TABLE IF NOT EXISTS `editor` (
   `id_editor` int NOT NULL AUTO_INCREMENT,
-  `editor_name` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `name` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `number` int DEFAULT NULL,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`id_editor`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
-
---
--- Déchargement des données de la table `editor`
---
-
-INSERT INTO `editor` (`id_editor`, `editor_name`, `number`, `date`) VALUES
-(1, 'Fred', 5959, '2021-05-31'),
-(2, 'Jirka', 5498, '2012-08-08'),
-(3, 'Cocotte', 2687, '1987-11-03');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -180,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `genre` (
 
 INSERT INTO `genre` (`id_genre`, `name`) VALUES
 (1, 'aventure'),
-(2, 'horreur'),
+(2, 'horeur'),
 (3, 'historique'),
 (4, 'enfant'),
 (5, 'sci-fi'),
@@ -226,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `avatar` varchar(1) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `role` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `user`
@@ -234,14 +171,15 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id_user`, `firstname`, `lastname`, `mail`, `password`, `adress`, `avatar`, `role`) VALUES
 (1, 'Azrael', 'Gargamel', 'mortauxSchtroumpfs@gmail.com', '12345', '55 Rue de la Paix, Paris', NULL, 0),
-(2, 'demo', 'demo', 'demo@gmail.com', '$2y$10$7yYm/fykRFaNrRKZhdrCheOgWo4aj8qeuHII0QEoXbOPMI217OT6S', '', NULL, 0),
+(2, 'demo', 'demo', 'demo@gmail.com', '12345', 'Rue de Prague, Lyon', NULL, 0),
 (3, 'admin', 'admin', 'admin@gmail.com', '12345', 'Place de la Bière, Dijon', NULL, 1),
 (7, 'Maya', 'Abeille', 'maya@gmail.com', '$2y$10$HEkwsfLRAs3jJzh4k06jfuPpeKHqNusucEjACwz3AR/sNG/ZZp4iS', NULL, NULL, NULL),
-(9, 'Cocotte', 'Elisa', 'elisa@google.com', '$2y$10$odqpKdrFFQbyV//dBckZBeOL5kd0jZ3TG2DD8ROjb5cSYiCvQNlS.', NULL, NULL, NULL),
-(10, 'Papa', 'Papa Schtroumpf', 'papaSchtroumpf@gmail.com', '$2y$10$YU4A1C80dqo1GqSi9muzcun6qVWiIRqAqtXaoYu5a05ivdHN.RFgK', NULL, NULL, NULL),
-(11, 'de', 'Schtroumpfette', 'Schtroumpfette@gmail.com', '$2y$10$jJIAm2UDCCQpVLa7SCgan.ltw3LqW9ICG/gAMG3sSZIbIAuYny/ZS', NULL, NULL, NULL),
-(22, 'KIng', 'Kong', 'Kong@gmail.com', '$2y$10$oUJ.0jlCzmlAHQ819Pck6O6WiCaAFWIUJG.OYVHxJOGqoCpMTbOfi', NULL, NULL, NULL),
-(23, 'm;lmldfs', 'kopkfds', 'eda@yahoo.fr', '$2y$10$ocK827Z3DaQquoBM7kYnN.iARRdc1ErZZ8G5QaEN.6s0wuTH5RVj6', NULL, NULL, NULL);
+(9, 'Elisa', 'Elisa', 'elisa@google.com', '$2y$10$odqpKdrFFQbyV//dBckZBeOL5kd0jZ3TG2DD8ROjb5cSYiCvQNlS.', NULL, NULL, NULL),
+(10, 'Papa Schtroumpf', 'Papa Schtroumpf', 'papaSchtroumpf@gmail.com', '$2y$10$YU4A1C80dqo1GqSi9muzcun6qVWiIRqAqtXaoYu5a05ivdHN.RFgK', NULL, NULL, NULL),
+(11, 'Schtroumpfette', 'Schtroumpfette', 'Schtroumpfette@gmail.com', '$2y$10$jJIAm2UDCCQpVLa7SCgan.ltw3LqW9ICG/gAMG3sSZIbIAuYny/ZS', NULL, NULL, NULL),
+(15, 'dfsq', 'fsdqf', 'bnkhhdihuio@jikjgdjf.fr', '$2y$10$mRViPKvPUbs/kYzROkoHluEVUeevmTR/ufZIS5mZ7vE7cQwNhuLgm', NULL, NULL, NULL),
+(16, 'dfsq', 'fsdqf', 'bnkhhdihuio@jikjgdjf.fr', '$2y$10$tEyjyWP/OE0jLxru4HuNL.j/OMSqdd.8gWYyRsVgMGDLuuQVM60sq', NULL, NULL, NULL),
+(17, 'fsdqf', 'sqdfsq<', 'jhiofzs@kjfdsdo.fr', '$2y$10$A5PyWVZF96SflNEDGbttoO1LUN9BpU1R.bbfRpQwGUP9DVJg6R1JC', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -321,29 +259,11 @@ INSERT INTO `work_author` (`author_id`, `work_id`) VALUES
 
 DROP TABLE IF EXISTS `work_category`;
 CREATE TABLE IF NOT EXISTS `work_category` (
-  `category_id` int DEFAULT NULL,
-  `work_id` int DEFAULT NULL,
-  KEY `id_category` (`category_id`),
-  KEY `id_work` (`work_id`)
+  `id_category` int DEFAULT NULL,
+  `id_work` int DEFAULT NULL,
+  KEY `id_category` (`id_category`),
+  KEY `id_work` (`id_work`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Déchargement des données de la table `work_category`
---
-
-INSERT INTO `work_category` (`category_id`, `work_id`) VALUES
-(2, 1),
-(1, 2),
-(1, 3),
-(1, 4),
-(1, 5),
-(1, 6),
-(1, 7),
-(1, 8),
-(1, 9),
-(1, 10),
-(1, 11),
-(2, 12);
 
 -- --------------------------------------------------------
 
@@ -390,8 +310,8 @@ INSERT INTO `work_genre` (`genre_id`, `work_id`) VALUES
 -- Contraintes pour la table `copy`
 --
 ALTER TABLE `copy`
-  ADD CONSTRAINT `copy_ibfk_2` FOREIGN KEY (`editor_id`) REFERENCES `editor` (`id_editor`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `copy_ibfk_3` FOREIGN KEY (`work_id`) REFERENCES `work` (`id_work`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `copy_ibfk_2` FOREIGN KEY (`id_editor`) REFERENCES `editor` (`id_editor`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `copy_ibfk_3` FOREIGN KEY (`id_work`) REFERENCES `work` (`id_work`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `loan`
@@ -411,8 +331,8 @@ ALTER TABLE `work_author`
 -- Contraintes pour la table `work_category`
 --
 ALTER TABLE `work_category`
-  ADD CONSTRAINT `work_category_ibfk_3` FOREIGN KEY (`category_id`) REFERENCES `category` (`id_category`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `work_category_ibfk_4` FOREIGN KEY (`work_id`) REFERENCES `work` (`id_work`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `work_category_ibfk_3` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `work_category_ibfk_4` FOREIGN KEY (`id_work`) REFERENCES `work` (`id_work`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `work_genre`
