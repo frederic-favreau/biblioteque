@@ -226,7 +226,7 @@ coucou
           <div class="card-blog-bottom">
             <h4>Lorem, ipsum dolor.</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
-            <a href="./blog.php">Lire l'article ↗</a>
+            <a href="./front/blog.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
@@ -239,7 +239,7 @@ coucou
           <div class="card-blog-bottom">
             <h4>Lorem, ipsum dolor.</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
-            <a href="./blog2.php">Lire l'article ↗</a>
+            <a href="./front/blog2.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">

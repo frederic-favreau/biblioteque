@@ -174,6 +174,20 @@ include_once '../admin/header-main.php';
     </div>
     </div>
     </div>
+
+    <?php if (isset($_SESSION['modified'])) : ?>
+        <div id="confirmed-modified">
+            <p><?= $_SESSION["modified"] ?></p>
+        </div>
+        <?php unset($_SESSION["modified"]); ?>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['notModified'])) : ?>
+        <div id="not-modified">
+            <p><?= $_SESSION["notModified"] ?></p>
+        </div>
+        <?php unset($_SESSION["notModified"]); ?>
+    <?php endif; ?>
 </section>
 
 

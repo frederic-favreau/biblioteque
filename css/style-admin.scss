@@ -994,4 +994,63 @@ section#dashboard-page-book-edit {
       }
     }
   }
+
+  #confirmed-modified {
+    width: 350px;
+    height: 80px;
+    border-radius: 10px;
+    position: fixed;
+    text-align: center;
+    animation: slide-in 50ms;
+    background-color: green;
+    opacity: 0;
+    top: 90%;
+    left: 1%;
+
+    p {
+      margin: auto;
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 80px;
+    }
+    @keyframes slide-in {
+      from {
+        opacity: 0;
+      }
+      30% {
+          opacity: 1;
+      }
+      80% {
+          opacity: 1;
+      }
+      90% {
+          opacity: 1;
+      }
+      to {
+          opacity: 0;
+      }
+    }
+  }
+
+  #not-modified {
+    width: 350px;
+    height: 80px;
+    border-radius: 10px;
+    position: fixed;
+    text-align: center;
+    animation: slide-in 50ms;
+    background-color: red;
+    opacity: 0;
+    top: 90%;
+    left: 1%;
+
+    p {
+      margin: auto;
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 80px;
+    }
+  }
+
+  
 }
