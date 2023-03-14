@@ -52,7 +52,7 @@ h3.h3-dashboard {
   font-size: 12px;
   text-align: inherit;
   color: $btn-red;
-  margin-bottom: 6px;
+  margin-right: auto;
   @media screen and (min-width: 950px) {
     font-size: 20px;
   }
@@ -505,28 +505,29 @@ section#dashboard-page-profil {
   div.search-add-crud-book {
     position: sticky;
     top: 0;
+    width: 100%;
     background-color: $white; /* couleur de fond pour la div */
     z-index: 100;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    margin-top: 10px;
     margin-bottom: 20px;
     border-bottom: 1px solid gray;
+    padding: 10px 0 20px 0;
 
     div.search-crud-input {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
+      align-items: baseline;
+      width: fit-content;
+      margin-right: auto;
 
       input#input-seach-book {
-        width: 30%;
+        width: 400px;
         height: 40px;
         padding-left: 10px;
         border-radius: 5px;
-        margin: 10px;
+        margin-left: auto;
+        margin-right: 10px;
       }
 
       button#btn-search-book {
@@ -542,19 +543,6 @@ section#dashboard-page-profil {
         &:hover {
           cursor: pointer;
           background-color: $btn-main-blue-over;
-        }
-      }
-
-      button#btn-all-detail {
-        border: none;
-        background-color: transparent;
-        color: $main-blue;
-        font-weight: bold;
-
-        &:hover {
-          cursor: pointer;
-          color: $btn-main-blue-over;
-          text-decoration: underline;
         }
       }
     }
@@ -575,6 +563,19 @@ section#dashboard-page-profil {
       &:hover {
         cursor: pointer;
         background-color: $btn-main-blue-over;
+      }
+    }
+
+    button#btn-all-detail {
+      border: none;
+      background-color: transparent;
+      color: $main-blue;
+      font-weight: bold;
+
+      &:hover {
+        cursor: pointer;
+        color: $btn-main-blue-over;
+        text-decoration: underline;
       }
     }
   }
@@ -769,10 +770,7 @@ section#dashboard-page-profil {
   }
 }
 
-
-
 // ----------  SECTION DASHBOARD - PAGE ADD BOOK----------
-
 
 section#dashboard-page-book-add {
   form#form-add-book {
@@ -781,7 +779,6 @@ section#dashboard-page-book-add {
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
-    
 
     .label-form-add-book {
       display: block;
@@ -879,10 +876,7 @@ section#dashboard-page-book-add {
   }
 }
 
-
-
 // ----------  SECTION DASHBOARD - PAGE EDIT BOOK----------
-
 
 section#dashboard-page-book-edit {
   form#form-book-edit {
@@ -891,7 +885,7 @@ section#dashboard-page-book-edit {
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
-    
+
     .label-form-add-book {
       display: block;
       font-size: 18px;
@@ -924,8 +918,6 @@ section#dashboard-page-book-edit {
       }
     }
 
-
-
     div#form-book-edit-left {
       display: flex;
       flex-direction: column;
@@ -947,7 +939,7 @@ section#dashboard-page-book-edit {
       justify-content: center;
       width: 50%;
 
-      textarea#work-extract-edit{
+      textarea#work-extract-edit {
         width: 690px;
         height: 600px;
         font-size: 20px;

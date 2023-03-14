@@ -12,39 +12,39 @@ include_once '../admin/header-main.php';
 
         <div class="container-crud-book-tabs">
             <div id="box-crud-book" class="box-dashboard">
-                <h3 class="h3-dashboard">Les livres de la bibliothèque Biblook</h3>
-                <hr>
+
                 <div class="search-add-crud-book">
+                    <h3 class="h3-dashboard">Les livres de la bibliothèque Biblook</h3>
                     <div class="search-crud-input">
                         <input type="text" id="input-seach-book">
                         <button type="submit" id="btn-search-book">Rechercher</button>
                         <button type="button" id="btn-all-detail">Vue détails</button>
                     </div>
-                    <a href="./inset.php" type="button" id="btn-add-book">Ajouter un livre</a>
+                    <a href="./inset-book.php" type="button" id="btn-add-book">Ajouter un livre</a>
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">
                         <?php
 
 
-                            // Requête pour récupérer les stocks
-                            $reqStock = ("SELECT `work_id`, `stock` FROM `copy`");
-                            $resultStock = $db->query($reqStock);
-                            
-                            
-                            while ($row = $resultStock->fetch(PDO::FETCH_ASSOC)) {
-                                // Stockage du stock correspondant à chaque work_id
-                                $stocks[$row['work_id']][] = $row['stock'];
-                            }
+                        // Requête pour récupérer les stocks
+                        $reqStock = ("SELECT `work_id`, `stock` FROM `copy`");
+                        $resultStock = $db->query($reqStock);
+
+
+                        while ($row = $resultStock->fetch(PDO::FETCH_ASSOC)) {
+                            // Stockage du stock correspondant à chaque work_id
+                            $stocks[$row['work_id']][] = $row['stock'];
+                        }
 
 
 
 
-                            $reqAskCrud = ("SELECT `id_work`,`title`,`pict`,`extract`,`category`.`category`, `copy`.`location`,
+                        $reqAskCrud = ("SELECT `id_work`,`title`,`pict`,`extract`,`category`.`category`, `copy`.`location`,
                             DATE_FORMAT(`published_at`, '%d/%m/%Y') AS `published`, `ISBN`,
                             GROUP_CONCAT(DISTINCT DATE_FORMAT(`editor`.`date`, '%d/%m/%Y' )ORDER BY `id_editor`) AS `edition_date`,
                             GROUP_CONCAT(DISTINCT `editor`.`editor_name` ORDER BY `id_editor`)  AS `editors`, 
-                            GROUP_CONCAT( `copy`.`stock`) AS `stock`,
+                            GROUP_CONCAT(`copy`.`stock`) AS `stock`,
                             GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
                             GROUP_CONCAT( DISTINCT CONCAT (`author`.`lastname`, ' ' , `author`.`firstname`)) AS `author` 
                             
@@ -74,18 +74,18 @@ include_once '../admin/header-main.php';
                             
                             GROUP BY `copy`.`work_id`
                             ORDER BY `work`.`title` ASC");
-                            $reqCrud = $db->query($reqAskCrud);
+                        $reqCrud = $db->query($reqAskCrud);
 
 
 
 
-                            while ($crud = $reqCrud->fetch(PDO::FETCH_ASSOC)) {
-                                $workId = $crud['id_work'];
-                                $disponible = 'indisponible';
-                                if(in_array(1,$stocks[$workId])){
-                                    $disponible = 'disponible';
-                                }
-                            ?>
+                        while ($crud = $reqCrud->fetch(PDO::FETCH_ASSOC)) {
+                            $workId = $crud['id_work'];
+                            $disponible = 'indisponible';
+                            if (in_array(1, $stocks[$workId])) {
+                                $disponible = 'disponible';
+                            }
+                        ?>
 
                             <li class="item-book-crud">
                                 <ul class="detail-item-book-crud">
@@ -95,7 +95,7 @@ include_once '../admin/header-main.php';
                                     <li class="item-title-crud"> <?= $crud['title'] ?></li>
                                     <li class="item-author-crud"><?= str_replace(',', ', ', $crud['author']) ?></li>
                                     <li class="item-status-crud"><?= $crud['location'] ?></li>
-                                     <li class="item-copy-crud"><?= $disponible?></li>
+                                    <li class="item-copy-crud"><?= $disponible ?></li>
                                     <li class="btn-option-crud" data-idWork="<?= $crud['id_work'] ?>" data-title="<?= $crud['title'] ?>" data-pict="<?= $crud['pict'] ?>">⚙️
                                     </li>
                                     <div class="container-complete-detail-info-book">
@@ -103,17 +103,17 @@ include_once '../admin/header-main.php';
                                             <div class="item-complete-right">
                                                 <h3>Fiche technique</h3>
                                                 <ul class="all-info-book">
-                                                     <li>Auteur <span class="bdd-var"><?= str_replace(',', ', ', $crud['author']) ?></span></li>
-                                                     <li>Genre <span class="bdd-var">
-                                                             <?= str_replace(',', ', ', $crud['genres']) ?> </span></li>
-                                                     <li>Catégorie <span class="bdd-var"><?= $crud['category'] ?>
-                                                         </span></li>
-                                                     <li>Date de publication <span class="bdd-var"><?= $crud['published'] ?></span></li>
-                                                     <li> Nom de l'éditeur<span class="bdd-var"><?= str_replace(',', ', ', $crud['editors']) ?>
-                                                         </span></li>
-                                                     <li>Date de l'édition<span class="bdd-var"><?= str_replace(',', ', ', $crud['edition_date']) ?></span></li>
-                                                     <li>ISBN<span class="bdd-var"><?= $crud['ISBN'] ?></span></li>
-                                                 </ul>
+                                                    <li>Auteur <span class="bdd-var"><?= str_replace(',', ', ', $crud['author']) ?></span></li>
+                                                    <li>Genre <span class="bdd-var">
+                                                            <?= str_replace(',', ', ', $crud['genres']) ?> </span></li>
+                                                    <li>Catégorie <span class="bdd-var"><?= $crud['category'] ?>
+                                                        </span></li>
+                                                    <li>Date de publication <span class="bdd-var"><?= $crud['published'] ?></span></li>
+                                                    <li> Nom de l'éditeur<span class="bdd-var"><?= str_replace(',', ', ', $crud['editors']) ?>
+                                                        </span></li>
+                                                    <li>Date de l'édition<span class="bdd-var"><?= str_replace(',', ', ', $crud['edition_date']) ?></span></li>
+                                                    <li>ISBN<span class="bdd-var"><?= $crud['ISBN'] ?></span></li>
+                                                </ul>
                                             </div>
                                             <div class="item-complete-left">
                                                 <h3>Extrait du livre</h3>
@@ -145,7 +145,7 @@ include_once '../admin/header-main.php';
 </section>
 
 </main>
- <script src="../js/main-admin.js"></script>
- </body>
+<script src="../js/main-admin.js"></script>
+</body>
 
- </html>
+</html>

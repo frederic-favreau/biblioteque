@@ -48,7 +48,7 @@ h3.h3-dashboard {
   font-size: 12px;
   text-align: inherit;
   color: #ff5e38;
-  margin-bottom: 6px;
+  margin-right: auto;
 }
 @media screen and (min-width: 950px) {
   h3.h3-dashboard {
@@ -437,28 +437,30 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
 .container-crud-book-tabs div.search-add-crud-book {
   position: sticky;
   top: 0;
+  width: 100%;
   background-color: #fff; /* couleur de fond pour la div */
   z-index: 100;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  margin-top: 10px;
   margin-bottom: 20px;
   border-bottom: 1px solid gray;
+  padding: 10px 0 20px 0;
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
+  align-items: baseline;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: auto;
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input input#input-seach-book {
-  width: 30%;
+  width: 400px;
   height: 40px;
   padding-left: 10px;
   border-radius: 5px;
-  margin: 10px;
+  margin-left: auto;
+  margin-right: 10px;
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-search-book {
   width: 100px;
@@ -473,17 +475,6 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-search-book:hover {
   cursor: pointer;
   background-color: #05497b;
-}
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-all-detail {
-  border: none;
-  background-color: transparent;
-  color: #0868ae;
-  font-weight: bold;
-}
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-all-detail:hover {
-  cursor: pointer;
-  color: #05497b;
-  text-decoration: underline;
 }
 .container-crud-book-tabs div.search-add-crud-book a#btn-add-book {
   display: flex;
@@ -501,6 +492,17 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
 .container-crud-book-tabs div.search-add-crud-book a#btn-add-book:hover {
   cursor: pointer;
   background-color: #05497b;
+}
+.container-crud-book-tabs div.search-add-crud-book button#btn-all-detail {
+  border: none;
+  background-color: transparent;
+  color: #0868ae;
+  font-weight: bold;
+}
+.container-crud-book-tabs div.search-add-crud-book button#btn-all-detail:hover {
+  cursor: pointer;
+  color: #05497b;
+  text-decoration: underline;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud {
   padding-top: 10px;
