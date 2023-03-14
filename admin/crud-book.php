@@ -20,7 +20,7 @@ include_once '../admin/header-main.php';
                         <button type="submit" id="btn-search-book">Rechercher</button>
                         <button type="button" id="btn-all-detail">Vue détails</button>
                     </div>
-                    <a href="./inset-book.php" type="button" id="btn-add-book">Ajouter un livre</a>
+                    <a href="./insert-book.php" type="button" id="btn-add-book">Ajouter un livre</a>
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">
