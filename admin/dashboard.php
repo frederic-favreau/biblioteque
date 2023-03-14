@@ -336,7 +336,6 @@
                             while ($row = $resultStock->fetch(PDO::FETCH_ASSOC)) {
                                 // Stockage du stock correspondant à chaque work_id
                                 $stocks[$row['work_id']][] = $row['stock'];
-                                var_dump($stocks);
                             }
 
 
