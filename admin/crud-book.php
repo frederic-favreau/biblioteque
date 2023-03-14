@@ -82,10 +82,20 @@ include_once '../admin/header-main.php';
                         while ($crud = $reqCrud->fetch(PDO::FETCH_ASSOC)) {
                             $workId = $crud['id_work'];
                             $disponible = 'indisponible';
+
+
                             if (in_array(1, $stocks[$workId])) {
                                 $disponible = 'disponible';
                             }
+
+                            $i = 0;
+                            foreach ($stocks[$workId] as $value) {
+                                if ($value == 0)
+                                    $i++;
+                            }
+                            
                         ?>
+                            
 
                             <li class="item-book-crud">
                                 <ul class="detail-item-book-crud">
@@ -112,6 +122,8 @@ include_once '../admin/header-main.php';
                                                     <li> Nom de l'éditeur<span class="bdd-var"><?= str_replace(',', ', ', $crud['editors']) ?>
                                                         </span></li>
                                                     <li>Date de l'édition<span class="bdd-var"><?= str_replace(',', ', ', $crud['edition_date']) ?></span></li>
+                                                    <li>Nombre d'exemplaires<span class="bdd-var"><?= count($stocks[$workId]) ?></span></li>
+                                                    <li>Nombre d'exemplaires empruntés<span class="bdd-var"><?= $i ?></span></li>
                                                     <li>ISBN<span class="bdd-var"><?= $crud['ISBN'] ?></span></li>
                                                 </ul>
                                             </div>
