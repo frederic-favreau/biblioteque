@@ -30,7 +30,9 @@ if (!isset($_SESSION['id-user'])) {
                         <ul class="list-btn-side-bar">
                             <li><a href="./dashboard.php"><img src="../img/side-bar/picto-home.svg" alt="accueil" id="btn-home">Mon accueil</a></li>
                             <li><a href="./crud-book.php"><img src="../img/side-bar/picto-CRUD.svg" alt="crud">Gérer les livres</a></li>
+                            <li><a href="./register-book.php"><img src="../img/picto/bookmark.svg" alt="crud">Registre des emprunts</a></li>
                             <li><a href="#"><img src="../img/side-bar/picto-users.svg" alt="utilisateur">Gérer les utilisateurs</a></li>
+                            <li><a href="../front/catalog.php"><img src="../img/picto/search-lg.svg" alt="utilisateur">Consulter le catalogue</a></li>
                             
                         </ul>
                     </div>
