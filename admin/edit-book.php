@@ -75,12 +75,12 @@ include_once '../admin/header-main.php';
                         $reqUpdateWorkGenre->execute();
                     }
 
-                    $_SESSION["modified"] = "Votre article a bien été modifié";
+                    $_SESSION["modified"] = "Mise à jour réussit";
                     header("Location: edit-book.php?id=" . $id);
                     exit();
                 }
             } catch (PDOException $e) {
-                $_SESSION["notModified"] = "Votre article n'a pas été modifié";
+                $_SESSION["notModified"] = "Problème lors de la mise à jour";
                 header("Location: edit-book.php?id=" . $id);
                 exit();
             }
@@ -169,16 +169,19 @@ include_once '../admin/header-main.php';
                     <input type="submit" id="btn-submit-form-add-book" name="submit" value="Modifier" />
                 </div>
             </form>
+
             <?php if (isset($_SESSION['modified'])) : ?>
-                <div id="confirmed-modified">
-                    <p><?= $_SESSION["modified"] ?></p>
+                <div id="confirmed-modified" onclick="hideDivConfirmed('confirmed-modified')">
+                    <p><strong><?= $_SESSION["modified"] ?></strong></p>
+                    <p class="info-msg-bdd">Les données que vous avez modifié ont bien été enregistré </p>
                 </div>
                 <?php unset($_SESSION["modified"]); ?>
             <?php endif; ?>
 
             <?php if (isset($_SESSION['notModified'])) : ?>
-                <div id="not-modified">
-                    <p><?= $_SESSION["notModified"] ?></p>
+                <div id="not-modified" onclick="hideDivNotConfirmed('not-modified')">
+                    <p><strong><?= $_SESSION["notModified"] ?></strong></p>
+                    <p class="info-msg-bdd">Les données que vous avez modifié n'ont pas été enregistré</p>
                 </div>
                 <?php unset($_SESSION["notModified"]); ?>
             <?php endif; ?>

@@ -74,6 +74,10 @@ main {
   display: block;
 }
 
+.hidden {
+  display: none;
+}
+
 #image-centree {
   position: fixed;
   top: 50%;
@@ -85,6 +89,23 @@ main {
   cursor: pointer;
 }
 
+@keyframes slide-in {
+  from {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 header#side-bar-log #sidebar-wrapper {
   height: 100vh;
   position: fixed;
@@ -756,6 +777,80 @@ section#dashboard-page-book-add form#form-add-book div#group-btn-form-add-commun
   cursor: pointer;
   background-color: #05497b;
 }
+section#dashboard-page-book-add #confirmed-added {
+  position: relative;
+  width: 350px;
+  height: 160px;
+  border-radius: 10px;
+  position: fixed;
+  text-align: center;
+  animation: slide-in 8000ms;
+  background-color: #fff;
+  opacity: 0;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+}
+section#dashboard-page-book-add #confirmed-added::after {
+  content: url(../img/picto/update-icon-notif-succes.svg);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+section#dashboard-page-book-add #confirmed-added:hover {
+  cursor: pointer;
+}
+section#dashboard-page-book-add #confirmed-added p > strong {
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 80px;
+  color: #070606;
+}
+section#dashboard-page-book-add #confirmed-added p.info-msg-bdd {
+  color: #475467;
+  font-size: 14px;
+  line-height: 20px;
+}
+section#dashboard-page-book-add #not-added {
+  position: relative;
+  width: 350px;
+  height: 80px;
+  border-radius: 10px;
+  position: fixed;
+  text-align: center;
+  animation: slide-in 8000ms;
+  background-color: #fff;
+  opacity: 0;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+}
+section#dashboard-page-book-add #not-added::after {
+  content: url(../img/picto/update-icon-notif-warning.svg);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+section#dashboard-page-book-add #not-added:hover {
+  cursor: pointer;
+}
+section#dashboard-page-book-add #not-added p > strong {
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 80px;
+  color: #070606;
+}
+section#dashboard-page-book-add #not-added p.info-msg-bdd {
+  color: #475467;
+  font-size: 14px;
+  line-height: 20px;
+}
 
 section#dashboard-page-book-edit form#form-book-edit {
   display: flex;
@@ -856,4 +951,78 @@ section#dashboard-page-book-edit form#form-book-edit div#group-btn-form-edit-com
 section#dashboard-page-book-edit form#form-book-edit div#group-btn-form-edit-commun #btn-submit-form-add-book:hover {
   cursor: pointer;
   background-color: #05497b;
+}
+section#dashboard-page-book-edit #confirmed-modified {
+  position: relative;
+  width: 350px;
+  height: 160px;
+  border-radius: 10px;
+  position: fixed;
+  text-align: center;
+  animation: slide-in 8000ms;
+  background-color: #fff;
+  opacity: 0;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+}
+section#dashboard-page-book-edit #confirmed-modified::after {
+  content: url(../img/picto/update-icon-notif-succes.svg);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+section#dashboard-page-book-edit #confirmed-modified:hover {
+  cursor: pointer;
+}
+section#dashboard-page-book-edit #confirmed-modified p > strong {
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 80px;
+  color: #070606;
+}
+section#dashboard-page-book-edit #confirmed-modified p.info-msg-bdd {
+  color: #475467;
+  font-size: 14px;
+  line-height: 20px;
+}
+section#dashboard-page-book-edit #not-modified {
+  position: relative;
+  width: 350px;
+  height: 80px;
+  border-radius: 10px;
+  position: fixed;
+  text-align: center;
+  animation: slide-in 8000ms;
+  background-color: #fff;
+  opacity: 0;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+}
+section#dashboard-page-book-edit #not-modified::after {
+  content: url(../img/picto/update-icon-notif-warning.svg);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+section#dashboard-page-book-edit #not-modified:hover {
+  cursor: pointer;
+}
+section#dashboard-page-book-edit #not-modified p > strong {
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 80px;
+  color: #070606;
+}
+section#dashboard-page-book-edit #not-modified p.info-msg-bdd {
+  color: #475467;
+  font-size: 14px;
+  line-height: 20px;
 }/*# sourceMappingURL=style-admin.css.map */
