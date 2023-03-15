@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 14 mars 2023 à 23:19
+-- Généré le : mer. 15 mars 2023 à 06:45
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `author` (
   `lastname` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `firstname` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_author`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `author`
@@ -55,7 +55,11 @@ INSERT INTO `author` (`id_author`, `lastname`, `firstname`) VALUES
 (13, '', ''),
 (14, 'Monneret', 'Philippe'),
 (15, 'Hill', 'Napoleon'),
-(16, 'Schtroumpfs', 'robert');
+(16, 'Schtroumpfs', 'robert'),
+(17, 'Obata', 'Takeshi'),
+(18, 'Ohba', 'Tsugumi'),
+(19, 'Ohba', 'Tsugumi'),
+(20, 'Ohba', 'Tsugumi');
 
 -- --------------------------------------------------------
 
@@ -177,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `genre` (
   `id_genre` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_genre`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `genre`
@@ -195,7 +199,11 @@ INSERT INTO `genre` (`id_genre`, `name`) VALUES
 (9, 'jeunesse'),
 (10, ''),
 (11, 'education'),
-(12, 'education');
+(12, 'education'),
+(13, 'Manga'),
+(14, 'Manga'),
+(15, 'Manga'),
+(16, 'Manga');
 
 -- --------------------------------------------------------
 
@@ -267,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `work` (
   `published_at` date DEFAULT NULL,
   `ISBN` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_work`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `work`
@@ -288,7 +296,11 @@ INSERT INTO `work` (`id_work`, `title`, `pict`, `extract`, `new`, `published_at`
 (12, 'Les chevaux ne mentent jamais: Le secret des chuchoteurs', 'Les_chevaux_ne_mentent_jamais.jpg', 'Quand nous cherchons à communiquer avec eux, les chevaux nous révèlent des choses sur nous-mêmes. Mêlant réflexions sur la relation humain-cheval, commentaires morphologiques, analyse du langage corporel et explications techniques simples sur le dressage sans résistance, Chris Irwin montre combien assurance intérieure, conscience de soi, honnêteté et confiance sont indispensables dans l\'établissement d\'une bonne relation avec le cheval.\r\n\r\nChris Irwin a sillonné l\'Amérique du Nord et l\'Europe pour porter la parole du dressage sans résistance, une pratique développée en trente années. Ses cours lui ont valu la réputation de meilleur dresseur du Canada et ses livres sont traduits dans le monde entier.', 1, '2022-05-26', 'ISBN 13 :654-4-24752485-1'),
 (13, 'Joe Bar team, tome 1', 'joe-bar-team1', 'Ils sont 7 cinglés à moto prêts à tout. Champions des tours chronométrés du pâté de maison, ces rois de l\'arsouille cumulent les gamelles. Quand ils ne sont pas sur leurs motos, on les retrouve au comptoir du Joe Bar en train de commenter leurs derniers exploits avec une mauvaise foi de rigueur ... Cette BD qui pétarade, sent l\'huile bouillie et le radar cramé, est plus qu\'un succès phénoménal. Tous les motards en herbe se sont réveillés à la lecture de ces gags pour, à l\'unisson, chanter la gloire du Joe Bar Team... refrain repris en cœur par les lecteurs de BD du monde entier. Opération lifting pour le Joe Bar Team, la série culte des années 90, qui change la carrosserie de ses 4 bolides : une nouvelle impression et4 nouvelles couvertures, dynamiques et accrocheuses, viennent revitaminer la collection qui s\'apprête, du même coup, à toucher encore plus de nouveaux lecteurs. En attendant l\'arrivée du tome 5, signé Bar2, et le raz de marée qui s\'en suivra, voici les aventures du Joe Bar Team prêtes à gagner tout un tas de nouvelles courses !', 1, '2003-05-14', 'ISBN-13 :978-2749300566'),
 (14, '50 pilotes de légende en MotoGP', '50 pilotes de legende en MotoGP.jpg', 'Les 50 meilleurs pilotes moto de l\'histoire classés et portraiturés par deux spécialistes\r\nD\'Agostini à Rossi, de Doohan à Marquez, de Rougerie à Laconi... qui est le meilleur ? Lequel a le plus marqué son époque ?\r\nÀ l\'heure où un Français est champion du monde en titre, deux experts livrent leur classement argumenté des 50 meilleurs pilotes de l\'histoire. Une façon de revisiter, ou de découvrir, une discipline en plein boom avec un Top 50 établi sur des critères précis : talent, palmarès, charisme, popularité.\r\nLe livre permettra aux nostalgiques ou aux fans actuels de voyager dans le temps à travers ces pilotes fédérateurs, avec des histoires uniques. Certains ont connu des destins tragiques ou miraculeux. Chaque parcours est marquant et passionnant.', 1, '2022-05-12', 'ISBN-10 :226317902X'),
-(15, 'Réfléchissez et devenez riche: Le grand livre de l’esprit maître', 'Reflechissez et devenez riche.jpg', '«Les principes contenus dans ce livre ont été réunis à partir de l’expérience de plus de 500 hommes qui ont réellement accumulé de grandes richesses. Des gens qui ont d’abord été pauvres, qui n’avaient reçu que peu d’éducation et qui n’ont bénéficié d’aucune relation influente. Ces principes ont bien servi ces hommes. Vous pouvez les mettre à profit vous-même. Et vous trouverez que c’est beaucoup plus facile que difficile.» L’ouvrage Réfléchissez et devenez riche de Napoleon Hill est devenu la bible de la prospérité et du succès pour des millions de lecteurs depuis sa publication initiale en 1937. Les 13 «étapes vers la richesse» que Hill met en lumière sont devenues un tremplin vers une meilleure vie pour des gens de tous les horizons: des gens d’affaires aux étudiants, en passant par tous ceux qui veulent atteindre leur but dans la vie et vivre leurs passions. Remaniée dans ce nouveau format interactif et facile à utiliser, avec plus d’une douzaine d’éléments\r\nexclusifs, cette édition sera la seule édition que tout étudiant sérieux de Réfléchissez et devenez riche voudra utiliser, non seulement pour lire le texte, mais aussi pour le comprendre, le maîtriser et le mettre en action dans sa vie.', NULL, '2014-03-05', '');
+(15, 'Réfléchissez et devenez riche: Le grand livre de l’esprit maître', 'Reflechissez et devenez riche.jpg', '«Les principes contenus dans ce livre ont été réunis à partir de l’expérience de plus de 500 hommes qui ont réellement accumulé de grandes richesses. Des gens qui ont d’abord été pauvres, qui n’avaient reçu que peu d’éducation et qui n’ont bénéficié d’aucune relation influente. Ces principes ont bien servi ces hommes. Vous pouvez les mettre à profit vous-même. Et vous trouverez que c’est beaucoup plus facile que difficile.» L’ouvrage Réfléchissez et devenez riche de Napoleon Hill est devenu la bible de la prospérité et du succès pour des millions de lecteurs depuis sa publication initiale en 1937. Les 13 «étapes vers la richesse» que Hill met en lumière sont devenues un tremplin vers une meilleure vie pour des gens de tous les horizons: des gens d’affaires aux étudiants, en passant par tous ceux qui veulent atteindre leur but dans la vie et vivre leurs passions. Remaniée dans ce nouveau format interactif et facile à utiliser, avec plus d’une douzaine d’éléments\r\nexclusifs, cette édition sera la seule édition que tout étudiant sérieux de Réfléchissez et devenez riche voudra utiliser, non seulement pour lire le texte, mais aussi pour le comprendre, le maîtriser et le mettre en action dans sa vie.', NULL, '2014-03-05', ''),
+(16, 'Death Note - Tome 1', 'death-notet1.jpg', 'Light Yagami ramasse un étrange carnet oublié dans la cour de son lycée. Selon les instructions du carnet, la personne dont le nom est écrit dans les pages du Death Note mourra dans les 40 secondes !! Quelques jours plus tard, Light fait la connaissance de l\'ancien propriétaire du carnet : Ryûk, un dieu de la mort ! Poussé par l\'ennui, il a fait entrer le carnet sur terre. Ryûk découvre alors que Light a déjà commencé à remplir son carnet...', 1, '2007-01-18', 'ISBN-13 :978-2505000327'),
+(17, 'Death Note - Tome 2', 'death-notet2.jpg', 'Light entend bien imposer au monde sa vision de la Justice ! De nombreux criminels sont morts après que leurs noms aient été inscrits dans le Death Note ! Alerté par ces morts étranges, le FBI enquête au Japon. Light fait partie des suspects mais, grâce au Death Note, il parvient à se débarrasser des soupçons qui pèsent sur lui. Malgré cela, L, continue à suivre le jeune homme !', NULL, '2007-02-01', 'ISBN-13 :978-2505000426'),
+(18, 'Death Note - Tome 3', 'death-notet3.jpg', 'La résidence de Light est placée sous surveillance vidéo. L et Light se livrent un duel silencieux relayé par les caméras cachées dans la maison du jeune homme. Grâce à un habile stratagème, Light parvient à établir la preuve de son innocence. Cela n\'empêche pas L d\'avoir des soupçons de plus en plus forts et de passer à l\'action. Parviendra-t-il à démasquer le mystérieux Kira ?!!', NULL, '2007-04-05', 'ISBN-13 :978-2505000792'),
+(19, 'Death Note - Tome 4', 'death-notet4.jpg', 'Un second Kira, dont les méthodes diffèrent de celles de Light, a fait son apparition. Au quartier général d\'enquête, L contacte Light afin de lui demander sa collaboration. Ce dernier découvre alors le sens caché du message envoyé par l\'autre Kira ! Light décide de préparer une rencontre... !!', NULL, '2007-05-31', 'ISBN-13 :978-2505001065');
 
 -- --------------------------------------------------------
 
@@ -325,7 +337,11 @@ INSERT INTO `work_author` (`author_id`, `work_id`) VALUES
 (11, 12),
 (13, 13),
 (14, 14),
-(15, 15);
+(15, 15),
+(17, 16),
+(18, 17),
+(19, 18),
+(20, 19);
 
 -- --------------------------------------------------------
 
@@ -397,7 +413,11 @@ INSERT INTO `work_genre` (`genre_id`, `work_id`) VALUES
 (6, 12),
 (10, 13),
 (11, 14),
-(12, 15);
+(12, 15),
+(13, 16),
+(14, 17),
+(15, 18),
+(16, 19);
 
 --
 -- Contraintes pour les tables déchargées

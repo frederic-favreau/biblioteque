@@ -13,6 +13,7 @@ require_once '../connexion.php';
             <hr>
 
             <?php
+            try {
             if (isset($_POST['submit'])) {
                 $title = addslashes($_POST['work-title-add']);
                 $authorFirstname = addslashes($_POST['author-firstname-add']);
@@ -46,7 +47,19 @@ require_once '../connexion.php';
                 // Requête pour insérer la table work_genre
                 $query = "INSERT INTO `work_genre` (`work_id`, `genre_id`) VALUES ('$workId', '$genreId')";
                 $db->query($query);
+
+                $_SESSION["added"] = "Ajout réussit";
+                header("Location: edit-book.php?id=" . $workId);
+                ob_end_flush();
+                exit();
             }
+            
+        } catch (PDOException $e) {
+            $_SESSION["notAdded"] = "Problème lors de l'ajout";
+            header("Location: edit-book.php?id=" . $workId);
+            ob_end_flush();
+            exit();
+        }
             ?>
 
 
@@ -65,7 +78,7 @@ require_once '../connexion.php';
                         <input type="text" name="author-lastname-add" id="author-lastname-add" class="input-form-add-book" />
                     </div>
                     <div class="add-form-template-label-input">
-                        <label for="work-genre-add" class="label-form-add-book">Genre A du livre</label>
+                        <label for="work-genre-add" class="label-form-add-book">Genre du livre</label>
                         <input type="text" name="work-genre-add" id="work-genre-add" class="input-form-add-book" />
                     </div>
                     <div class="add-form-template-label-input">
@@ -95,6 +108,23 @@ require_once '../connexion.php';
                     <input type="submit" id="btn-submit-form-add-book" name="submit" value="Ajouter"></input>
                 </div>
             </form>
+
+            <?php if (isset($_SESSION['added'])) : ?>
+                <div id="confirmed-added">
+                    <p><strong><?= $_SESSION["added"] ?></strong></p>
+                    <p class="info-msg-bdd">Les données que vous avez ajouté ont bien <br> été enregistré </p>
+                </div>
+                <?php unset($_SESSION["added"]); ?>
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['notAdded'])) : ?>
+                <div id="not-added">
+                    <p><strong><?= $_SESSION["notAdded"] ?></strong></p>
+                    <p class="info-msg-bdd">Les données que vous avez ajouté n'ont pas <br> été enregistré</p>
+                </div>
+                <?php unset($_SESSION["notAdded"]); ?>
+            <?php endif; ?>
+
         </div>
     </div>
     </div>

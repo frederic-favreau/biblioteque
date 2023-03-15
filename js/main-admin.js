@@ -1,5 +1,14 @@
-// SIDEBAR LEFT WINDOW
+// CLOSE NOTIFICATION ADD, EDIT AND DELETE ITEM TO BDD
+function hideDivConfirmed(divId) {
+  document.getElementById(divId).classList.add('hidden');
+}
 
+function hideDivNotConfirmed(divId) {
+  document.getElementById(divId).classList.add('hidden');
+}
+
+
+// SIDEBAR LEFT WINDOW
 const sidebarWrapper = document.getElementById("sidebar-wrapper");
 
 sidebarWrapper.addEventListener("mouseenter", () => {
@@ -9,6 +18,7 @@ sidebarWrapper.addEventListener("mouseenter", () => {
 sidebarWrapper.addEventListener("mouseleave", () => {
   sidebarWrapper.classList.remove("active");
 });
+
 
 // VIEW ALL DETAIL OF WORK CRUD
 let linkDetailcrud = document.getElementById("more-detail-book-crud");
@@ -22,6 +32,7 @@ btnAllDetailCb.addEventListener("click", function () {
     boxDetailCb.classList.toggle("active");
   }
 });
+
 
 // ADD A BOX OPTION FOR BOOK CRUD
 let btnOptionCruds = document.querySelectorAll(".btn-option-crud");
@@ -85,7 +96,6 @@ for (const btnOptionCrud of btnOptionCruds) {
 
 
 // ACTIVE BOX TEMPORAL
-
 const boxFormPersonal = document.getElementById("container-profil-tabs");
 const boxHome = document.getElementById("container-home-tabs");
 const btnProfil = document.getElementById("profil-pict");
@@ -116,8 +126,8 @@ btnHome.addEventListener("click", function () {
   }
 });
 
-// ZOOM PICTURE BOX CRUD
 
+// ZOOM PICTURE BOX CRUD
 function centrerImage(img) {
   let imageCentree = document.querySelector("#image-centree");
   if (imageCentree) {

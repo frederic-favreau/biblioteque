@@ -76,6 +76,10 @@ main {
   display: block;
 }
 
+.hidden {
+  display: none;
+}
+
 #image-centree {
   position: fixed;
   top: 50%;
@@ -85,6 +89,24 @@ main {
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
@@ -874,6 +896,91 @@ section#dashboard-page-book-add {
       }
     }
   }
+
+  #confirmed-added {
+    position: relative;
+    width: 350px;
+    height: 160px;
+    border-radius: 10px;
+    position: fixed;
+    text-align: center;
+    animation: slide-in 8000ms;
+    background-color: $white;
+    opacity: 0;
+    top: 90%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+
+    &::after {
+      content: url(../img/picto/update-icon-notif-succes.svg);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+
+    p > strong {
+      margin: auto;
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 80px;
+      color: $black;
+    }
+
+    p.info-msg-bdd {
+      color: #475467;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  #not-added {
+    position: relative;
+    width: 350px;
+    height: 80px;
+    border-radius: 10px;
+    position: fixed;
+    text-align: center;
+    animation: slide-in 8000ms;
+    background-color: $white;
+    opacity: 0;
+    top: 90%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+
+    &::after {
+      content: url(../img/picto/update-icon-notif-warning.svg);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    p > strong {
+      margin: auto;
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 80px;
+      color: $black;
+    }
+
+    p.info-msg-bdd {
+      color: #475467;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
 }
 
 // ----------  SECTION DASHBOARD - PAGE EDIT BOOK----------
@@ -996,61 +1103,87 @@ section#dashboard-page-book-edit {
   }
 
   #confirmed-modified {
+    position: relative;
     width: 350px;
-    height: 80px;
+    height: 160px;
     border-radius: 10px;
     position: fixed;
     text-align: center;
-    animation: slide-in 50ms;
-    background-color: green;
+    animation: slide-in 8000ms;
+    background-color: $white;
     opacity: 0;
     top: 90%;
-    left: 1%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
 
-    p {
+    &::after {
+      content: url(../img/picto/update-icon-notif-succes.svg);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+
+    p > strong {
       margin: auto;
       font-size: 1.2rem;
       font-weight: bold;
       line-height: 80px;
+      color: $black;
     }
-    @keyframes slide-in {
-      from {
-        opacity: 0;
-      }
-      30% {
-          opacity: 1;
-      }
-      80% {
-          opacity: 1;
-      }
-      90% {
-          opacity: 1;
-      }
-      to {
-          opacity: 0;
-      }
+
+    p.info-msg-bdd {
+      color: #475467;
+      font-size: 14px;
+      line-height: 20px;
     }
   }
 
   #not-modified {
+    position: relative;
     width: 350px;
     height: 80px;
     border-radius: 10px;
     position: fixed;
     text-align: center;
-    animation: slide-in 50ms;
-    background-color: red;
+    animation: slide-in 8000ms;
+    background-color: $white;
     opacity: 0;
     top: 90%;
-    left: 1%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
 
-    p {
+    &::after {
+      content: url(../img/picto/update-icon-notif-warning.svg);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    p > strong {
       margin: auto;
       font-size: 1.2rem;
       font-weight: bold;
       line-height: 80px;
+      color: $black;
+    }
+
+    p.info-msg-bdd {
+      color: #475467;
+      font-size: 14px;
+      line-height: 20px;
     }
   }
-
-  
 }
