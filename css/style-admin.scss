@@ -905,7 +905,7 @@ section#dashboard-page-book-add {
     position: fixed;
     text-align: center;
     animation: slide-in 8000ms;
-    background-color: $white;
+    background-color: $main-blue;
     opacity: 0;
     top: 90%;
     left: 90%;
@@ -934,7 +934,7 @@ section#dashboard-page-book-add {
     }
 
     p.info-msg-bdd {
-      color: #475467;
+      color: $white;
       font-size: 14px;
       line-height: 20px;
     }
@@ -1110,7 +1110,7 @@ section#dashboard-page-book-edit {
     position: fixed;
     text-align: center;
     animation: slide-in 8000ms;
-    background-color: $white;
+    background-color: $main-blue;
     opacity: 0;
     top: 90%;
     left: 90%;
@@ -1135,11 +1135,11 @@ section#dashboard-page-book-edit {
       font-size: 1.2rem;
       font-weight: bold;
       line-height: 80px;
-      color: $black;
+      color: $white;
     }
 
     p.info-msg-bdd {
-      color: #475467;
+      color: $white;
       font-size: 14px;
       line-height: 20px;
     }

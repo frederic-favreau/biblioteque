@@ -785,7 +785,7 @@ section#dashboard-page-book-add #confirmed-added {
   position: fixed;
   text-align: center;
   animation: slide-in 8000ms;
-  background-color: #fff;
+  background-color: #0868ae;
   opacity: 0;
   top: 90%;
   left: 90%;
@@ -810,7 +810,7 @@ section#dashboard-page-book-add #confirmed-added p > strong {
   color: #070606;
 }
 section#dashboard-page-book-add #confirmed-added p.info-msg-bdd {
-  color: #475467;
+  color: #fff;
   font-size: 14px;
   line-height: 20px;
 }
@@ -960,7 +960,7 @@ section#dashboard-page-book-edit #confirmed-modified {
   position: fixed;
   text-align: center;
   animation: slide-in 8000ms;
-  background-color: #fff;
+  background-color: #0868ae;
   opacity: 0;
   top: 90%;
   left: 90%;
@@ -982,10 +982,10 @@ section#dashboard-page-book-edit #confirmed-modified p > strong {
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 80px;
-  color: #070606;
+  color: #fff;
 }
 section#dashboard-page-book-edit #confirmed-modified p.info-msg-bdd {
-  color: #475467;
+  color: #fff;
   font-size: 14px;
   line-height: 20px;
 }

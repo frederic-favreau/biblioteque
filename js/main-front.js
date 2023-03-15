@@ -41,7 +41,6 @@ btnLoan.addEventListener("click", function (e) {
   pictBook.setAttribute("alt", `${title}`);
   pictBook.src = `../img/books/${pict}`;
   boxLoan.appendChild(pictBook);
-  console.log(pictBook.src);
 
   const location = document.createElement("p");
   boxLoan.append(location);
