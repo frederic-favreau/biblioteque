@@ -151,7 +151,7 @@ coucou
           //CONCAT(...,SPACE(1),...) gathers result of two colones in one and insert one space between 
           //theese results
 
-          "SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
+          "SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, 
         GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
         GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
         FROM `work`
@@ -179,7 +179,17 @@ coucou
 
           <div class="card">
             <div class="top-item-card">
-              <span class="tag-new-index">Nouveau</span>
+            <?php
+                        $now = date('Y-m-d',  strtotime('-2 month') );
+                        $date = $card['published_at'];
+                        if($date > $now){
+                            ?>
+                            <span class="tag-new-index">Nouveau</span>
+                        <?php
+                        }
+
+                        ?>
+              
               <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
             </div>
             <div class="bottom-item-card">

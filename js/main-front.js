@@ -14,6 +14,7 @@ btnLoan.addEventListener("click", function (e) {
   let title = this.dataset.title;
   let pict = this.dataset.pict;
   let idWork = this.dataset.idWork;
+  let loc = this.dataset.location;
 
   document.body.style.overflow = "hidden";
 
@@ -45,7 +46,7 @@ btnLoan.addEventListener("click", function (e) {
 
   const location = document.createElement("p");
   boxLoan.append(location);
-  location.innerText = "Son emplacement : A38";
+  location.innerText = "Son emplacement: " + `${loc}`;
 
   const btnConfirmed = document.createElement("a");
   btnConfirmed.setAttribute("id", "btn-confirmed");

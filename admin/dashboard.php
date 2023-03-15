@@ -1,5 +1,6 @@
  <?php
     include_once '../admin/header-main.php';
+    include_once '../connexion.php'
     ?>
 
  <!-- ---------- SECTION DASHBOARD - PAGE DEFAULT ---------- -->
@@ -137,58 +138,34 @@
                  <h3 class="h3-dashboard">Les livres recommandés par Biblook</h3>
                  <hr>
                  <ul class="list-book-box">
-                     <li class="item-list-book">
-                         <div class="format-pict-book ">
-                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
-                             <ul class="container-description">
-                                 <li class="list-title">['title']</li>
-                                 <li class="list-author">['author']</li>
-                             </ul>
-                         </div>
-                         <div class="container-info-loan">
-                             <p class="info-disponibility">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
-                         </div>
-                     </li>
-                     <li class="item-list-book">
-                         <div class="format-pict-book ">
-                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
-                             <ul class="container-description">
-                                 <li class="list-title">['title']</li>
-                                 <li class="list-author">['author']</li>
-                             </ul>
-                         </div>
-                         <div class="container-info-loan">
-                             <p class="info-disponibility">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
-                         </div>
-                     </li>
-                     <li class="item-list-book">
-                         <div class="format-pict-book ">
-                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
-                             <ul class="container-description">
-                                 <li class="list-title">['title']</li>
-                                 <li class="list-author">['author']</li>
-                             </ul>
-                         </div>
-                         <div class="container-info-loan">
-                             <p class="info-disponibility">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
-                         </div>
-                     </li>
-                     <li class="item-list-book">
-                         <div class="format-pict-book ">
-                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
-                             <ul class="container-description">
-                                 <li class="list-title">['title']</li>
-                                 <li class="list-author">['author']</li>
-                             </ul>
-                         </div>
-                         <div class="container-info-loan">
-                             <p class="info-disponibility">['disponible sous 3 heures']</p>
-                             <a href="#" class="btn-format-standard">Emprunter maintenant</a>
-                         </div>
-                     </li>
+                     <?php
+                        $sql_reco = 
+                        "SELECT `id_work`,`pict`,`title`,
+                        CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`) AS `authors`
+                        FROM `work`
+                        INNER JOIN `work_author`
+                        ON `work_author`.`work_id` = `work`.`id_work`
+                        INNER JOIN `author`
+                        ON `work_author`.`author_id` = `author`.`id_author` 
+                        ORDER BY `id_work` DESC LIMIT 4";
+                        $req_reco =  $db->query($sql_reco);
+                        while ($reco = $req_reco->fetch(PDO::FETCH_ASSOC)) {
+
+                        ?>
+                         <li class="item-list-book">
+                             <div class="format-pict-book ">
+                                 <img src="../img/books/<?= $reco['pict'] ?>" class="pict-book-standard" alt="<?= $reco['title'] ?>">
+                                 <ul class="container-description">
+                                     <li class="list-title"><?= $reco['title'] ?></li>
+                                     <li class="list-author"><?= $reco['authors'] ?></li>
+                                 </ul>
+                             </div>
+                             <div class="container-info-loan">
+                                 <p class="info-disponibility">['disponible sous 3 heures']</p>
+                                 <a href="#" class="btn-format-standard">Emprunter maintenant</a>
+                             </div>
+                         </li>
+                     <?php } ?>
                  </ul>
              </div>
 
