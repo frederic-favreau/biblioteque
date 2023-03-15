@@ -16,7 +16,7 @@ include_once '../connexion.php'; ?>
 
     <main>
         <section id="section-article" class="row-limit-size">
-            <img src="../img/books/bonjour keto.png">
+            <img src="../img/photosblog/bonjour keto.png">
             <h1>Nelly Genisson</h1>
             <h2>Régime Kéto</h2>
 
