@@ -1,0 +1,171 @@
+$btn-red: #ff5e38;
+$btn-red-hover: #b53928;
+$main-blue: #0868ae;
+$white: #fff;
+$black: #070606;
+$footer: #043a61;
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nova Slim', sans-serif;
+}
+
+.row-limit-size {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+}
+
+//Début//
+
+h1 {
+    margin: 30px;
+    margin-top: 110px;
+    font-weight: 400;
+    font-size: 80px;
+    color: #1B9690;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    padding-left: 170px;
+    border-left: solid;
+    border-left-width: thick;
+    font-family: Nova;
+}
+@font-face {
+    font-family: Nova;
+    src: url("/projet/biblioteque/fonts/NovaSlim-Regular.ttf");
+}
+
+hr {
+    clear: both;
+    width: 30%;
+    margin: auto;
+    margin-top: 100px;
+    height: 5px;
+    background-color: #1b9690;
+    border: none;
+}
+
+section#section-article {
+    
+    padding-top: 60px;
+
+    //PHOTO DU LIVRE//
+
+
+    //chris irwin//
+
+    //les chevaux ne mentent jamais//
+    h2 {
+        margin: 30px;
+        margin-top: -100px;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 60px;
+        letter-spacing: -0.02em;
+        color: black;
+        font-family: Nova;
+        padding-left: 180px;
+    }
+
+    //AVIS//
+    div#containeravis {
+        background-position: right;
+        width: 50%;
+        margin: 50px;
+        margin-top: 20px;
+        display: flex;
+        font-size: xx-large;
+        img {
+            height: 35px;
+            width: auto;
+            margin-left: 30px;
+        }    
+    }
+
+    //DATE//
+    div#date {
+        color: #FF5E38;
+        font-size: x-large;
+        font-weight: bold;
+        background-position: right;
+        width: 50%;
+        margin-top: 20px;
+        margin-left: 50px;
+        display: flex;
+    }
+
+    // STEPHANIE SERMOYER//
+    div#containernom {
+        background-position: right;
+        margin-top: 20px;
+        margin-left: 50px;
+        display: flex;
+        font-size: larger;
+        img {
+            height: 50px;
+            width: auto;
+        }
+        p {
+            margin-left: 20px;
+        }
+    }
+
+        //TEXTE CHERCHER A COMMUNIQUER...//
+    div#texte {
+        margin-top: 100px;
+        margin-left: 50px;
+        display: flex;
+        font-size: x-large;
+        line-height: 50px;
+    }
+
+        //image section cheval//
+    img {
+        width: 350px;
+        height: auto;
+        float: right;
+    }
+}
+
+
+section#section-article2 {
+    padding-top: 60px;
+    text-align: center;
+
+    h1{
+        text-align: left;
+    }
+
+    //les chevaux ne mentent jamais//
+    h2 {
+        margin-top: 100px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 60px;
+        color: #1b9690;
+        font-family: Nova;
+    }
+
+    img {
+        width: 500px;
+        height: auto;
+        margin-top: 80px;
+    }
+    p{
+        margin-top: 60px;
+        color: black;
+        font-size: 30px;
+        line-height: 60px;
+    }
+ 
+}

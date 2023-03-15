@@ -20,9 +20,8 @@ h1 {
   margin: 30px;
   margin-top: 110px;
   font-weight: 400;
-  font-size: 100px;
-  letter-spacing: -0.02em;
-  color: #1b9690;
+  font-size: 80px;
+  color: #1B9690;
   padding-top: 40px;
   padding-bottom: 80px;
   padding-left: 170px;
@@ -31,6 +30,10 @@ h1 {
   font-family: Nova;
 }
 
+@font-face {
+  font-family: Nova;
+  src: url("/projet/biblioteque/fonts/NovaSlim-Regular.ttf");
+}
 hr {
   clear: both;
   width: 30%;
@@ -41,10 +44,6 @@ hr {
   border: none;
 }
 
-@font-face {
-  font-family: Nova;
-  src: url("/projet/biblioteque/fonts/NovaSlim-Regular.ttf");
-}
 section#section-article {
   padding-top: 60px;
 }
@@ -73,7 +72,7 @@ section#section-article div#containeravis img {
   margin-left: 30px;
 }
 section#section-article div#date {
-  color: #ff5e38;
+  color: #FF5E38;
   font-size: x-large;
   font-weight: bold;
   background-position: right;
@@ -122,48 +121,17 @@ section#section-article2 h2 {
   font-weight: 400;
   font-size: 60px;
   line-height: 60px;
-  color: black;
+  color: #1b9690;
   font-family: Nova;
 }
 section#section-article2 img {
   width: 500px;
   height: auto;
+  margin-top: 80px;
 }
 section#section-article2 p {
   margin-top: 60px;
-  color: #1b9690;
+  color: black;
   font-size: 30px;
   line-height: 60px;
-}
-section#section-article2 div#photo1 {
-  position: absolute;
-  margin-top: 100px;
-  display: flex;
-  rotate: -10deg;
-  margin-left: 6%;
-}
-section#section-article2 div#photo1 img {
-  width: 400px;
-  height: auto;
-}
-section#section-article2 div#photo2 {
-  position: absolute;
-  margin-top: 80px;
-  display: flex;
-  rotate: 10deg;
-  margin-left: 43%;
-}
-section#section-article2 div#photo2 img {
-  width: 400px;
-  height: auto;
-}
-section#section-article2 div#photo3 {
-  position: absolute;
-  margin-top: 400px;
-  rotate: 3deg;
-  margin-left: 26%;
-}
-section#section-article2 div#photo3 img {
-  width: 400px;
-  height: auto;
-}/*# sourceMappingURL=style-blog2.css.map */
+}/*# sourceMappingURL=style3.css.map */

@@ -1,240 +1,200 @@
+$btn-red: #ff5e38;
+$btn-red-hover: #b53928;
+$main-blue: #0868ae;
+$white: #fff;
+$black: #070606;
+$footer: #043a61;
+
 *,
 ::after,
 ::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Nova Slim', sans-serif;
+  font-family: "Nova Slim", sans-serif;
 }
 
 .row-limit-size {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
+//Début//
 
+h1 {
+  margin: 30px;
+  margin-top: 110px;
+  font-weight: 400;
+  font-size: 100px;
+  //line-height: 60px;
+  letter-spacing: -0.02em;
+  color: #1b9690;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  padding-left: 170px;
+  border-left: solid;
+  border-left-width: thick;
+  font-family: Nova;
+}
+
+hr {
+  clear: both;
+  width: 30%;
+  margin: auto;
+  margin-top: 100px;
+  height: 5px;
+  background-color: #1b9690;
+  border: none;
+}
+
+@font-face {
+  font-family: Nova;
+  src: url("/projet/biblioteque/fonts/NovaSlim-Regular.ttf");
+}
 
 section#section-article {
-    padding-top: 60px;
-    
-    @font-face {
-        font-family: Nova;
-        src: url("/projet/biblioteque/fonts/NovaSlim-Regular.ttf");
-      }
+  padding-top: 60px;
 
-    div#containerballons{
-        background-image: url("/projet/biblioteque/img/photosblog/ballons-removebg-preview 1.png");
-        height: 500px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: right;
-        width: 100%;
-        padding-top: 100px;
-    }
-    //ballons//
+  //PHOTO DU LIVRE//
+
+  //chris irwin//
+
+  //les chevaux ne mentent jamais//
+  h2 {
+    margin: 30px;
+    margin-top: -100px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+    color: black;
+    font-family: Nova;
+    padding-left: 180px;
+  }
+
+  //AVIS//
+  div#containeravis {
+    background-position: right;
+    width: 50%;
+    margin: 50px;
+    margin-top: 20px;
+    display: flex;
+    font-size: xx-large;
     img {
-        width: 350px;
-        height: auto;
-        float: right;
+      height: 35px;
+      width: auto;
+      margin-left: 30px;
     }
+  }
 
-    //h1 titres blog  ...//
-    h1 {
-        margin: 30px ;
-        margin-top: 230px;
-        text-align: center;
-        font-weight: 400;
-        font-size: 100px;
-        line-height: 60px;
-        letter-spacing: -0.02em;
-        color: #1B9690;
-        padding-top: 40px;
-        padding-bottom: 40px;
-        border-left: solid;
-        border-left-width:thick;
-        font-family: Nova;
+  //DATE//
+  div#date {
+    color: #ff5e38;
+    font-size: x-large;
+    font-weight: bold;
+    background-position: right;
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+  }
+
+  // STEPHANIE SERMOYER//
+  div#containernom {
+    background-position: right;
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    font-size: larger;
+    img {
+      height: 50px;
+      width: auto;
     }
-
-
-
-    //texte bibliotheque biblook SDB//
-    h2 {
-
-        position: relative;
-        text-align: center;
-        margin-top: 100px;
-        font-size:xxx-large;
+    p {
+      margin-left: 20px;
     }
+  }
 
-    //texte mercredi 21 juin//
-    h3 {
-        margin: 30px;
-        margin-top: 100px;
-        height: 200px;
-        line-height: 100px;
-        background-color: #21BCB4;
-        border-radius: 10px;
-        text-align: center;
-        font-size:xxx-large;
+  //TEXTE CHERCHER A COMMUNIQUER...//
+  div#texte {
+    margin-top: 100px;
+    margin-left: 50px;
+    display: flex;
+    font-size: x-large;
+    line-height: 50px;
+  }
+
+  //image section cheval//
+  img {
+    width: 350px;
+    height: auto;
+    float: right;
+  }
+}
+
+section#section-article2 {
+  padding-top: 60px;
+  text-align: center;
+
+  h1 {
+    text-align: left;
+  }
+
+  //les chevaux ne mentent jamais//
+  h2 {
+    margin-top: 100px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;
+    color: black;
+    font-family: Nova;
+  }
+
+  img {
+    width: 500px;
+    height: auto;
+  }
+  p {
+    margin-top: 60px;
+    color: #1b9690;
+    font-size: 30px;
+    line-height: 60px;
+  }
+  div#photo1 {
+    position: absolute;
+    margin-top: 100px;
+    display: flex;
+    img {
+      width: 400px;
+      height: auto;
     }
-
-    //venez troquer des boutures//
-    h4 {
-        margin-top: 250px;
-        text-align: center;
-        font-weight: 400;
-        font-size: 100px;
-        line-height: 60px;
-        letter-spacing: -0.02em;
-        color: #1B9690;
+    rotate: -10deg;
+    margin-left: 6%;
+  }
+  div#photo2 {
+    position: absolute;
+    margin-top: 80px;
+    display: flex;
+    img {
+      width: 400px;
+      height: auto;
     }
-
-    //entree gratuite et ouvert à tous//
-    div#containerpub1 {
-        margin: 30px;
-        rotate: (-5deg);
-        float: left;
-         p {
-            font-weight: bold;
-            font-size: 50px;
-            line-height: 30px;
-            letter-spacing: -0.02em;
-            color: #FF5E38;
-        }
+    rotate: 10deg;
+    margin-left: 43%;
+  }
+  div#photo3 {
+    position: absolute;
+    margin-top: 400px;
+    img {
+      width: 400px;
+      height: auto;
     }
-    div#containerpub2 {
-        margin: 30px;
-        rotate: (5deg);
-        float: right;
-         p {
-            font-weight: bold;
-            font-size: 50px;
-            line-height: 30px;
-            letter-spacing: -0.02em;
-            color: #FF5E38;
-        }
-    }
-
-    //cotillons//
-    div#descriptif {
-        margin-top: 250px;
-        
-        background-image: url("/projet/biblioteque/img/photosblog/cotillons-removebg-preview\ 1.png");
-        height: 300px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: left;
-        width: 100%;
-
-
-        //visite guidée vente de livres atelier lecture//
-        ul {
-            margin-left: 400px;
-            clear: both;
-            color: #FF5E38;
-            text-align: left;
-            font-weight: bold;
-            font-size: 24px;
-            line-height: 30px;
-            letter-spacing: -0.02em;
-            margin-top: 60px;
-            //en +//
-            font-weight: 100;
-            font-size: 70px;
-            line-height: 60px;
-            letter-spacing: -0.02em;
-        }
-        li {
-            display: block;
-            margin-bottom: 30px;
-        }
-
-    }
-
-    div#containerfloral{
-        background-image: url("/projet/biblioteque/img/photosblog/floral-removebg-preview 1.png");
-        height: 600px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        width: 100%;
-        padding-top: 100px;
-        p{
-            color: black;
-            text-align: center;
-            font-weight: bold;
-            margin-top: 140px;
-            font-weight: 100;
-            font-size: 50px;
-        }
-    }
-
-    hr {
-        clear: both;
-        width: 50%;
-        margin: auto;
-        margin-top: 100px;
-        height: 5px;
-        background-color: #1b9690;
-        border: none;
-    }
-
-    //bas de la page//
-    div#activités {
-        width: 50%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: auto;
-        color: #1b9690;
-        //en +//
-        text-align: center;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 30px;
-        letter-spacing: -0.02em;
-        margin-top: 60px;
-        margin-bottom: 60px;
-        p {
-            width: 100%;
-            margin-top: 20px;
-        }
-
-    }
-
-    //rdv le 24 avril à 14h//
-    div#bg-floral {
-        clear: both;
-        color: black;
-        text-align: center;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 30px;
-        letter-spacing: -0.02em;
-        margin-top: 60px;
-        //en +//
-        font-weight: 100;
-        font-size: 30px;
-        line-height: 60px;
-        letter-spacing: -0.02em;
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
+    rotate: 3deg;
+    margin-left: 26%;
+  }
 }
