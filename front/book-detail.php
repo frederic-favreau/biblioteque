@@ -2,9 +2,26 @@
 
 include_once '../connexion.php';
 $id = $_GET['id'];
-$req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `ISBN`,
+
+// Requête pour récupérer les stocks
+$reqStock = ("SELECT `work_id`, `stock` FROM `copy`");
+$resultStock = $db->query($reqStock);
+
+
+while ($row = $resultStock->fetch(PDO::FETCH_ASSOC)) {
+    // Stockage du stock correspondant à chaque work_id
+    $stocks[$row['work_id']][] = $row['stock'];
+}
+
+
+
+
+$req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `ISBN`, `copy`.`location`, `category`.`category`,`published_at`,
+DATE_FORMAT(`published_at`, '%d/%m/%Y') AS `published`,
 GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
-GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
+GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors`,
+GROUP_CONCAT(DISTINCT `editor`.`editor_name` ORDER BY `id_editor`)  AS `editors`,
+GROUP_CONCAT(DISTINCT DATE_FORMAT(`editor`.`date`, '%d/%m/%Y' )ORDER BY `id_editor`) AS `edition_date`
 FROM `work`
 
 INNER JOIN `work_genre` 
@@ -19,6 +36,18 @@ ON `work_author`.`work_id` = `work`.`id_work`
 INNER JOIN `author`
 ON `work_author`.`author_id` = `author`.`id_author`
 
+INNER JOIN `copy` 
+ON `work`.`id_work` = `copy`.`work_id`
+
+INNER JOIN `work_category` 
+ON `work`.`id_work` = `work_category`.`work_id`
+
+INNER JOIN `category`
+ON `work_category`.`category_id` =`category`.`id_category` 
+
+INNER JOIN `editor`
+ON `copy`.`editor_id` =`editor`.`id_editor` 
+
 WHERE `id_work` = :id");
 $req_book->bindParam('id', $id, PDO::PARAM_INT);
 $req_book->execute();
@@ -26,6 +55,22 @@ $req_book->execute();
 while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
     $genre = str_replace(",", "', '", $book['genres']);
     $title = str_replace("'", "\'", $book['title']);
+    $workId = $book['id_work'];
+    $disponible = 'indisponible';
+
+
+    if (in_array(1, $stocks[$workId])) {
+        $disponible = 'disponible';
+    }
+
+    $i = 0;
+    foreach ($stocks[$workId] as $value) {
+        if ($value == 0)
+            $i++;
+    }
+    $now = date('Y-m-d',  strtotime('-2 month') );
+    $date = $book['published_at'];
+    
 
 ?>
 
@@ -36,7 +81,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
             <li>></li>
             <li><a href="./catalog.php#section-catalog">Catalogue</a></li>
             <li>></li>
-            <li><a href="#"><?= $book['title'] ?></a></li>
+            <li><a href="#"><?= $title?></a></li>
         </ul>
 
 
@@ -47,7 +92,22 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
         <section id="section-detail-book" class="row-limit-size">
             <div id="container-detail-book">
                 <div class="item-detail-book-left">
-                    <div class="book-new">['new']</div>
+                    
+                        <?php
+                        
+                        if($date > $now){
+                            ?>
+                            <div class="book-new">New</div>
+                        <?php
+                        }
+
+                        ?>
+                    
+                
+                
+                
+                
+                
                     <h1 class="title-work"><?= $book['title'] ?></h1>
                     <p class="author"><?= str_replace(',', ', ', $book['authors']) ?></p>
                     <figure><img src="../img/books/<?= $book['pict'] ?>" alt="<?= $book['title'] ?>"></figure>
@@ -57,11 +117,11 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <ul class="all-info-book">
                         <li>Auteur <span class="bdd-var"><?= str_replace(',', ', ', $book['authors']) ?></span></li>
                         <li>Genre <span class="bdd-var"><?= str_replace(',', ', ', $book['genres']) ?></span></li>
-                        <li>Catégorie <span class="bdd-var">['category']</span></li>
-                        <li>Date de publication <span class="bdd-var"><?= $book['published_at'] ?></span></li>
+                        <li>Catégorie <span class="bdd-var"></span><?= $book['category'] ?></li>
+                        <li>Date de publication <span class="bdd-var"><?= $book['published'] ?></span></li>
 
-                        <li> Nom de l'éditeur<span class="bdd-var">['editor name']</span></li>
-                        <li>Date de l'édition<span class="bdd-var">['editor date']</span></li>
+                        <li> Nom de l'éditeur<span class="bdd-var"><?= str_replace(',', ', ', $book['editors']) ?></span></li>
+                        <li>Date de l'édition<span class="bdd-var"><?= str_replace(',', ', ', $book['edition_date']) ?></span></li>
                         <li>ISBN<span class="bdd-var"><?= $book['ISBN'] ?></span></li>
                     </ul>
                 </div>
@@ -70,22 +130,28 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <ul class="info-work-description">
                         <li>Auteur <span><?= str_replace(',', ', ', $book['authors']) ?></span></li>
                         <li>Genre <span><?= str_replace(',', ', ', $book['genres']) ?></span></li>
-                        <li>Date de publication <span><?= $book['published_at'] ?></span></li>
+                        <li>Date de publication <span><?= $book['published'] ?></span></li>
                     </ul>
                     <hr>
                     <ul class="list-info-revervation">
-                        <li>['Livre disponible en bibliothèque']</li>
+                        <li>Localisation: <?= $book['location'] ?></li>
+                        <li>Livre <?=$disponible?> en bibliothèque</li>
                         <li>A retirer à Biblook sous 3 heures</li>
                     </ul>
 
                     <?php
-                    $req_loan = $db->prepare("SELECT `id_work`, `title`, `pict` FROM `work` WHERE `id_work` = :id");
+                    $req_loan = $db->prepare(
+                        "SELECT `id_work`, `title`, `pict`, `copy`.`location`
+                        FROM `work` 
+                        INNER JOIN `copy` 
+                        ON `work`.`id_work` = `copy`.`work_id`                     
+                        WHERE `id_work` = :id");
                     $req_loan->bindParam('id', $id, PDO::PARAM_INT);
                     $req_loan->execute();
                     $req_book_loan = $req_loan->fetch(PDO::FETCH_ASSOC);
 
                     ?>
-                    <a href="#" id="btn-loan" data-idWork="<?= $req_book_loan['id_work'] ?>" data-title="<?= $req_book_loan['title'] ?>" data-pict="<?= $req_book_loan['pict'] ?>">Emprunter ce livre</a>
+                    <a href="#" id="btn-loan" data-idWork="<?= $req_book_loan['id_work'] ?>" data-title="<?= $req_book_loan['title'] ?>" data-pict="<?= $req_book_loan['pict'] ?>"data-location="<?= $req_book_loan['location'] ?>">Emprunter ce livre</a>
 
                     <hr>
                     <ul class="list-advantage">
