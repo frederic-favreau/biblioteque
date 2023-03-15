@@ -23,7 +23,7 @@ include_once '../connexion.php'; ?>
 
             <div id="containeravis">
                 <p>Avis</p>
-                <img src="../img/photosblog/etoiles.png">    
+                <img src="../img/photosblog/etoiles.png">
             </div>
 
             <div id="date">
@@ -31,7 +31,7 @@ include_once '../connexion.php'; ?>
             </div>
 
             <div id="containernom">
-                <img src="../img/photosblog/stephanie.png">    
+                <img src="../img/photosblog/stephanie.png">
                 <p>Stéphanie Bouché<br>Sermoyer</p>
             </div>
 
@@ -46,32 +46,12 @@ include_once '../connexion.php'; ?>
             </div>
 
         </section>
-        <hr>
-        
-        <section id="section-article2" class="row-limit-size">
-            <h1>Lettre aux écolos: Comment bien s'informer?</h1>
-            <img src="../img/photosblog/ecolo.png">
-            <p>
-                “Le 03 février 2023, <br>
-                les écolos se sont rassemblés <br>
-à la bibliothèque afin de partager leurs connaissances <br>
-et d’aider à choisir sa lecture afin de préserver notre planète.” 
-            </p>
-            <h2>Voici le choix des ouvrages:</h2>
-            <div id="photo1">
-            <img src="../img/photosblog/livre_ecolo1.png">
-            </div>
-            <div id="photo2">
-            <img src="../img/photosblog/livre_ecolo2.png">
-            </div>
-            <div id="photo3">
-            <img src="../img/photosblog/livre_ecolo3.png">
-            </div>
-        </section>
+
     </main>
 
 </body>
-<?php 
+<?php
 include_once '../front/footer-default.php';
 ?>
+
 </html>

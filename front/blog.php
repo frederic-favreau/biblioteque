@@ -42,19 +42,6 @@ include_once '../connexion.php'; ?>
                     <li>Atelier lecture pour les enfants</li>
                 </ul>
             </div>
-            <hr>
-            <h1>Venez troquer des boutures!</h1>
-            <div id="containerfloral">
-            <p>RDV le 24 avril<br> 2023 à 14h</br></p>
-            </div>
-            <div id="activités">
-                <p style="text-align: center;">Partager des conseils de culture</p>
-                <p style="text-align: left;">Discuter jardinage</p>
-                <p style="text-align: right;">Se conseiller</p>
-                <p style="text-align: center;">Echanger des idées</p>
-
-            </div>
-
         </section>
     </main>
 </body>
