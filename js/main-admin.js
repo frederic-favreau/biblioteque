@@ -165,10 +165,11 @@ for (const btnOptionCrud of btnOptionCruds) {
       pictBook.setAttribute("alt", `${titleWork}`);
       pictBook.src = `../img/books/${pictWork}`;
       boxDeleteBook.appendChild(pictBook);
+      console.log(pictBook);
 
       const btnConfirmed = document.createElement("a");
       btnConfirmed.setAttribute("id", "btn-confirmed-delete-book");
-      btnConfirmed.setAttribute("href", "./delete-book.php?id=" + id);
+      // btnConfirmed.setAttribute("href", "./delete-book.php?id=" + idWork;
       boxDeleteBook.appendChild(btnConfirmed);
       btnConfirmed.innerHTML = "Supprimer";
 
@@ -177,8 +178,6 @@ for (const btnOptionCrud of btnOptionCruds) {
         modaleBg.remove();
         document.body.style.overflow = "auto";
       });
-
-      console.log(pictBook);
     });
 
     deleteBookCrud.appendChild(aDeleteDataCrud);
