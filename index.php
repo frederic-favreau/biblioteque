@@ -54,7 +54,7 @@
 
 
   <!-- ---------- SECTION - NEWS ---------- -->
-coucou
+cocotte
 
   <main>
     <section id="section-news" class="row-limit-size">
