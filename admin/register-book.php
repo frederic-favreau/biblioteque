@@ -14,7 +14,32 @@ include_once '../admin/header-main.php';
             <hr>
 
 
-            <form action="#" id="form-loan-register" method="POST" action="" enctype="multipart/form-data">
+            <form action="#" id="form-loan-register" method="POST" action="" enctype="multipart/form-data" name="emrunte">
+                <?php
+                if (isset($_POST['submit']) && !empty($_POST['submit'])) {
+                    $idCopy = addslashes($_POST['copy-id']);
+                    $dateEmprunt = date('Y-m-d');
+                    $dt = strtotime("$dateEmprunt");
+                    
+                    $dateRetour = date("Y-m-d", strtotime("+1 month", $dt));
+                    
+                    $idUser = addslashes($_POST['user-id']);
+                    $status = 1;
+
+
+                    $stmt = $db->prepare("INSERT INTO `loan` (`copy_id`,`release_date`,`theoretical_date`, `status`, `user_id`)
+                      VALUES (:idCopy, :dateEmprunt, :dateRetour, :status, :idUser);
+                      UPDATE `copy` SET `stock` = 0 WHERE `id_copy` = :idCopy");
+                    $stmt->bindParam(':idCopy', $idCopy);
+                    $stmt->bindParam(':dateEmprunt', $dateEmprunt);
+                    $stmt->bindParam(':dateRetour', $dateRetour);
+                    $stmt->bindParam(':status', $status);
+                    $stmt->bindParam(':idUser', $idUser);
+                    $stmt->execute();
+                    
+                }
+
+                ?>
                 <div id="form-loan-register-left">
                     <div class="add-form-template-label-input">
                         <label for="copy-id" class="label-form-add-book">ID de l'exemplaire</label>
@@ -37,6 +62,7 @@ include_once '../admin/header-main.php';
                         <input type="submit" id="btn-submit-form-loan-register" name="submit" value="Enregistrer" />
                     </div>
                 </div>
+
             </form>
         </div>
     </div>
