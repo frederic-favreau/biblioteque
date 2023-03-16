@@ -13,6 +13,12 @@
   margin: 0 auto;
 }
 
+.row-limit-size-full {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
 body {
   font-family: "Hind Madurai", sans-serif;
   background-color: #fafafb;
@@ -79,9 +85,8 @@ h2 {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9;
+    z-index: 9999;
     width: 100%;
-    border-bottom: 1px solid gray;
   }
 }
 #main-header #main-nav-bar #container-nav-bar {
@@ -237,13 +242,20 @@ h2 {
   width: 100%;
   padding-top: 100px;
   padding-bottom: 60px;
+  background: #0868ae;
+  background: linear-gradient(to bottom, #0868ae 0%, #0868ae 100%);
 }
-@media screen and (min-width: 950px) {
-  #section-news {
-    padding-top: 120px;
-  }
+#section-news canvas {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
 }
 #section-news #container-section-news {
+  position: absolute;
+  top: 450px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -255,6 +267,9 @@ h2 {
 }
 #section-news #container-section-news #item-section-news-left h1 {
   white-space: nowrap;
+  color: #f9b017;
+  background-color: #0868ae;
+  font-size: 70px;
 }
 @media screen and (min-width: 950px) {
   #section-news #container-section-news #item-section-news-left h1 {
@@ -262,21 +277,27 @@ h2 {
     margin-bottom: 50px;
   }
 }
-#section-news #container-section-news #item-section-news-left p {
-  text-align: center;
+#section-news #container-section-news #item-section-news-left p#sub-title {
+  padding: 15px;
+  line-height: 45px;
+  font-size: 30px;
+  color: #fff;
+  background-color: #0868ae;
 }
 @media screen and (min-width: 950px) {
-  #section-news #container-section-news #item-section-news-left p {
+  #section-news #container-section-news #item-section-news-left p#sub-title {
     margin-bottom: 50px;
   }
 }
 #section-news #container-section-news #item-section-news-left #btn-join-reader {
   display: block;
+  font-size: 20px;
   margin: 0 auto;
-  width: 250px;
-  padding: 12px;
+  width: 350px;
+  padding: 15px 20px;
   background-color: #0868ae;
   color: #fff;
+  border: 2px solid #fff;
   border-radius: 10px;
   text-align: center;
   transition: background-color 0.3s ease;
@@ -367,7 +388,7 @@ h2 {
   background-size: cover !important;
   background-position: center !important;
   padding: 1em 2em;
-  background: #0868ae;
+  background: #ff5e38;
   border-radius: 10px;
 }
 #section-news .flip > .front p,
@@ -417,11 +438,12 @@ h2 {
   padding-top: 80px;
   padding-top: 60px;
 }
-#section-heart p.sub-title {
+#section-heart p#sub-title {
   text-align: center;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 100px;
+  color: #fff;
 }
 #section-heart #group-btn {
   width: -moz-fit-content;

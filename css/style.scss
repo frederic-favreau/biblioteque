@@ -19,6 +19,12 @@ $footer: #043a61;
   margin: 0 auto;
 }
 
+.row-limit-size-full {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
 body {
   font-family: "Hind Madurai", sans-serif;
   background-color: #fafafb;
@@ -81,9 +87,9 @@ h2 {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 9;
+      z-index: 9999;
       width: 100%;
-      border-bottom: 1px solid gray;
+      // border-bottom: 1px solid gray;
     }
 
     background: $main-blue;
@@ -150,7 +156,7 @@ h2 {
             width: 150px;
             border: none;
             font-size: 16px;
-            font-family: 'Hind Madurai', sans-serif;
+            font-family: "Hind Madurai", sans-serif;
             font-weight: bold;
             padding: 12px;
             background-color: $btn-red;
@@ -255,11 +261,23 @@ h2 {
   padding-top: 100px;
   padding-bottom: 60px;
 
-  @media screen and (min-width: 950px) {
-    padding-top: 120px;
+  background: #0868ae;
+  background: -moz-linear-gradient(top, #0868ae 0%, #043a61 100%);
+  background: -webkit-linear-gradient(top, #0868ae 0%, #0868ae 100%);
+  background: linear-gradient(to bottom, #0868ae 0%, #0868ae 100%);
+
+  canvas {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
   }
 
   #container-section-news {
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -271,6 +289,9 @@ h2 {
     #item-section-news-left {
       h1 {
         white-space: nowrap;
+        color: #f9b017;
+        background-color: $main-blue;
+        font-size: 70px;
 
         @media screen and (min-width: 950px) {
           margin-top: 50px;
@@ -278,8 +299,12 @@ h2 {
         }
       }
 
-      p {
-        text-align: center;
+      p#sub-title {
+        padding: 15px;
+        line-height: 45px;
+        font-size: 30px;
+        color: $white;
+        background-color: $main-blue;
 
         @media screen and (min-width: 950px) {
           margin-bottom: 50px;
@@ -288,11 +313,13 @@ h2 {
 
       #btn-join-reader {
         display: block;
+        font-size: 20px;
         margin: 0 auto;
-        width: 250px;
-        padding: 12px;
+        width: 350px;
+        padding: 15px 20px;
         background-color: $main-blue;
         color: $white;
+        border: 2px solid $white;
         border-radius: 10px;
         text-align: center;
         transition: background-color 0.3s ease;
@@ -404,7 +431,7 @@ h2 {
       background-size: cover !important;
       background-position: center !important;
       padding: 1em 2em;
-      background: $main-blue;
+      background: $btn-red;
       border-radius: 10px;
 
       p {
@@ -471,11 +498,12 @@ h2 {
   padding-top: 80px;
   padding-top: 60px;
 
-  p.sub-title {
+  p#sub-title {
     text-align: center;
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 100px;
+    color: $white;
   }
 
   #group-btn {
@@ -669,7 +697,6 @@ h2 {
         border-radius: 15px 0 15px 0;
         background-color: $btn-red;
         color: $white;
-
       }
 
       img {

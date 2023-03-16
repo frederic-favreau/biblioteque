@@ -54,15 +54,15 @@
 
 
   <!-- ---------- SECTION - NEWS ---------- -->
-cocotte
 
   <main>
-    <section id="section-news" class="row-limit-size">
+    <section id="section-news" class="row-limit-size-full">
+    <canvas></canvas>
       <div id="container-section-news">
         <div id="item-section-news-left">
           <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
-          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs <br> pour offrir des moments de lecture inoubliable !</p>
-          <a href="#" id="btn-join-reader">Rejoins-nous dans l'aventure</a>
+          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs pour offrir des moments de lecture inoubliable !</p>
+          <a href="#" id="btn-join-reader">Débuter aventure maintenant</a>
         </div>
         <div id="item-section-news-right">
           <div id="item-news-right-top">
@@ -435,6 +435,7 @@ cocotte
     </div>
   </footer>
 
+  <script src="./js/hero.js"></script>
   <script src="./main.js"></script>
 </body>
 
