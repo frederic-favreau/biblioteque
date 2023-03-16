@@ -11,24 +11,24 @@ var ctx = canvas.getContext("2d");
 
 //possible characters that will appear
 var characterList = [
-  "Elisa",
-  "livre",
+  "Michel Bussi",
+  "Livre",
   "Roman",
   "Aventure",
   "Connaissance",
-  "Jirka",
+  "Albert Camus",
   "Jeunesse",
   "Manga",
   "Biblook",
   "Education",
   "Encyclopedie",
-  "Fred",
+  "Guillaume Musso",
 ];
 
 //stocks possible character attributes
 var layers = {
   n: 10, //number of layers
-  letters: [15, 25, 10], //letters per layer (starting from the deepest layer)
+  letters: [5, 10, 15, 10], //letters per layer (starting from the deepest layer)
   coef: [0.1, 0.2, 0.4, 0.6, 0.8], //how much the letters move from the mouse (starting from the deepest layer)
   size: [16, 22, 36, 40, 46], //font size of the letters (starting from the deepest layer)
   color: ["#ccc", "#e71f73", "#bbb", "#1B9690"], //color of the letters (starting from the deepest layer)

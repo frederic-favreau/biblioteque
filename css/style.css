@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *,
 ::after,
 ::before {
@@ -78,6 +77,7 @@ h2 {
   width: 100%;
 }
 #main-header #main-nav-bar {
+  transition: background-color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
   background: #0868ae;
 }
 @media screen and (min-width: 950px) {
@@ -88,6 +88,9 @@ h2 {
     z-index: 9999;
     width: 100%;
   }
+}
+#main-header #main-nav-bar.anim-nav {
+  border-bottom: 1px solid gray;
 }
 #main-header #main-nav-bar #container-nav-bar {
   width: 100%;
@@ -125,6 +128,7 @@ h2 {
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
     display: block;
     position: relative;
+    font-size: 16px;
     width: 300px;
     height: 45px;
     border-radius: 15px;
@@ -144,23 +148,23 @@ h2 {
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top input#btn-search-nav-top {
     display: block;
     position: absolute;
-    right: 0;
-    top: 0px;
+    right: -2px;
+    top: -2px;
     width: 150px;
     border: none;
     font-size: 16px;
     font-family: "Hind Madurai", sans-serif;
     font-weight: bold;
-    padding: 12px;
+    padding: 14px 0;
     background-color: #ff5e38;
     color: #fff;
     border-radius: 10px;
     text-align: center;
     transition: background-color 0.3s ease;
-    outline: none;
   }
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top input#btn-search-nav-top:hover {
     background-color: #b53928;
+    cursor: pointer;
   }
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion {
@@ -240,7 +244,6 @@ h2 {
 
 #section-news {
   width: 100%;
-  padding-top: 100px;
   padding-bottom: 60px;
   background: #0868ae;
   background: linear-gradient(to bottom, #0868ae 0%, #0868ae 100%);
@@ -265,16 +268,20 @@ h2 {
     flex-wrap: nowrap;
   }
 }
+#section-news #container-section-news #item-section-news-left {
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
 #section-news #container-section-news #item-section-news-left h1 {
   white-space: nowrap;
   color: #f9b017;
-  background-color: #0868ae;
   font-size: 70px;
+  z-index: 1;
 }
 @media screen and (min-width: 950px) {
   #section-news #container-section-news #item-section-news-left h1 {
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 }
 #section-news #container-section-news #item-section-news-left p#sub-title {
@@ -282,7 +289,7 @@ h2 {
   line-height: 45px;
   font-size: 30px;
   color: #fff;
-  background-color: #0868ae;
+  z-index: 1;
 }
 @media screen and (min-width: 950px) {
   #section-news #container-section-news #item-section-news-left p#sub-title {
@@ -304,8 +311,9 @@ h2 {
   margin-bottom: 50px;
 }
 #section-news #container-section-news #item-section-news-left #btn-join-reader:hover {
-  opacity: 0.9;
-  transform: scale(1.1);
+  transform: scale(1.01);
+  color: #f9b017;
+  border: 2px solid #f9b017;
 }
 @media screen and (min-width: 950px) {
   #section-news #container-section-news #item-section-news-left {
@@ -435,8 +443,9 @@ h2 {
 
 #section-heart {
   width: 100%;
-  padding-top: 80px;
+  padding-top: 120px;
   padding-top: 60px;
+  overflow: hidden;
 }
 #section-heart p#sub-title {
   text-align: center;
@@ -484,6 +493,16 @@ h2 {
     padding-right: 25px;
   }
 }
+#section-heart ul.top .left-card {
+  position: relative;
+  transform: translateX(-100%);
+  transition: transform 1s ease;
+}
+#section-heart ul.top .right-card {
+  position: relative;
+  transform: translateX(100%);
+  transition: transform 1s ease;
+}
 #section-heart ul.top li {
   margin-bottom: 120px;
 }
@@ -529,12 +548,12 @@ h2 {
 }
 #section-heart ul.top li:nth-child(1) a img {
   position: absolute;
+  top: 0px;
   transform-origin: bottom left;
   transform: rotate(-5deg);
   width: 200px;
   height: 300px;
   margin-left: -30px;
-  top: 0px;
 }
 #section-heart ul.top li:nth-child(2) a {
   color: #28e2d9;
@@ -657,6 +676,28 @@ h2 {
   margin-right: 10px;
   margin-top: 20px;
 }
+#section-soon-available #container-cards .card .bottom-item-card a.link-page:hover {
+  color: #043a61;
+}
+#section-soon-available #container-cards .card.show-card-row1 {
+  animation: slide-up 1s ease;
+}
+#section-soon-available #container-cards .card.show-card-row2 {
+  animation: slide-up 1.8s ease;
+}
+#section-soon-available #container-cards .card.show-card-row3 {
+  animation: slide-up 2.6s ease;
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 #section-cta-available {
   width: 100%;
@@ -723,22 +764,22 @@ h2 {
   }
 }
 #section-blog #container-section-blog .card-blog #pict-aticle-1 {
-  background-image: url(../img/interieur-biblio/biblio6.png);
+  background-image: url(../img/photosblog/cards/pexels-tim-mossholder-4843912.jpg);
 }
 #section-blog #container-section-blog .card-blog #pict-aticle-2 {
-  background-image: url(../img/interieur-biblio/biblio5.png);
+  background-image: url(../img/photosblog/cards/pexels-pixabay-52500.jpg);
 }
 #section-blog #container-section-blog .card-blog #pict-aticle-3 {
-  background-image: url(../img/interieur-biblio/Capture\ d’écran\ 2023-03-02\ 145009.png);
+  background-image: url(../img/photosblog/cards/pexels-ketut-subiyanto-4473398.jpg);
 }
 #section-blog #container-section-blog .card-blog #pict-aticle-4 {
-  background-image: url(../img/interieur-biblio/Capture\ d’écran\ 2023-03-02\ 145133.png);
+  background-image: url(../img/photosblog/cards/pexels-akil-mazumder-1072824.jpg);
 }
 #section-blog #container-section-blog .card-blog #pict-aticle-5 {
-  background-image: url(../img/interieur-biblio/grd-biblio.jpg);
+  background-image: url(../img/photosblog/cards/pexels-photo-532192.jpeg);
 }
 #section-blog #container-section-blog .card-blog #pict-aticle-6 {
-  background-image: url(../img/interieur-biblio/paris.png);
+  background-image: url(../img/photosblog/cards/pexels-brett-sayles-992734.jpg);
 }
 #section-blog #container-section-blog .card-blog .card-blog-top {
   height: 55%;
@@ -750,7 +791,7 @@ h2 {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 72px;
+  height: 50px;
   padding: 16px;
   background: rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -767,6 +808,7 @@ h2 {
   float: right;
 }
 #section-blog #container-section-blog .card-blog .card-blog-bottom {
+  position: relative;
   height: 45%;
   display: flex;
   flex-direction: column;
@@ -784,6 +826,9 @@ h2 {
   margin: 8px 0 14px;
 }
 #section-blog #container-section-blog .card-blog .card-blog-bottom a {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
   font-size: 14px;
   color: #0868ae;
 }
