@@ -8,7 +8,7 @@
 
  <section id="dashboard-page-default" class="row-limit-size-db">
      <div class="container-dashboard-base">
-         <h1 class="h1-dashboard">Bienvenue <?= $_SESSION['firstname'] ?> dans votre tableau de bord</h1>
+         <h1 class="h1-dashboard"><?= $_SESSION['firstname'] ?>, bienvenue  dans votre tableau de bord</h1>
 
          <h2 class="h2-dashboard">Voici le suivi de vos activités</h2>
 

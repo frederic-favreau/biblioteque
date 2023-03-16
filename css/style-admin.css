@@ -17,6 +17,15 @@ body {
   background: #f6f5f7;
   font-family: "Hind Madurai", sans-serif;
 }
+body div.bloc-modale {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
 
 h1.h1-dashboard {
   font-size: 20px;
@@ -68,6 +77,79 @@ main {
   width: 100%;
   padding-left: 100px;
   z-index: -1;
+}
+main div#box-delete-book {
+  z-index: 999;
+  width: 400px;
+  height: 500px;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+  border-radius: 10px;
+}
+main div#box-delete-book p#txt-box-delete-book {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 auto 25px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-family: "Hind Madurai", sans-serif;
+  color: #ff5e38;
+  text-align: center;
+  margin-bottom: 260px;
+}
+main div#box-delete-book p#book-title-delete-box {
+  color: #0868ae;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Nova Slim", cursive, sans-serif;
+  margin-bottom: 10px;
+  text-align: center;
+}
+main div#box-delete-book img#pict-book-modale-delete-box {
+  height: 200px;
+  width: auto;
+  margin: 0 auto;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+}
+main div#box-delete-book a#btn-cancel-delete-book {
+  position: absolute;
+  left: 50px;
+  bottom: 20px;
+  border: 2px solid #0868ae;
+  color: #0868ae;
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+main div#box-delete-book a#btn-cancel-delete-book:hover {
+  background-color: #0868ae;
+  color: #fff;
+  cursor: pointer;
+}
+main div#box-delete-book a#btn-confirmed-delete-book {
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+  border: 1px solid #b53928;
+  background-color: #b53928;
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+main div#box-delete-book a#btn-confirmed-delete-book:hover {
+  background-color: #05497b;
+  color: #fff;
+  cursor: pointer;
 }
 
 .active {
@@ -447,6 +529,154 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   cursor: pointer;
 }
 
+section#loan-register form#form-loan-register .label-form-add-book {
+  display: block;
+  font-size: 18px;
+  margin-right: 20px;
+  color: #0868ae;
+  font-weight: bold;
+}
+section#loan-register form#form-loan-register .input-form-add-book {
+  width: 600px;
+  height: 44px;
+  font-size: 20px;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid gray;
+  margin-bottom: 30px;
+}
+section#loan-register form#form-loan-register div#form-loan-register-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+section#loan-register form#form-loan-register div#form-loan-register-left div.add-form-template-label-input .label-form-add-book {
+  font-size: 18px;
+  margin-right: 20px;
+}
+section#loan-register form#form-loan-register div#form-loan-register-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section#loan-register form#form-loan-register div#form-loan-register-right textarea#work-extract {
+  width: 690px;
+  height: 600px;
+  font-size: 20px;
+  text-align: start;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid gray;
+  margin-bottom: 30px;
+}
+section#loan-register form#form-loan-register div#group-btn-loan-register-commun {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-right: 111px;
+}
+section#loan-register form#form-loan-register div#group-btn-loan-register-commun #btn-reset-form-loan-register {
+  width: 160px;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid #0868ae;
+  color: #0868ae;
+  margin-right: 30px;
+  margin-right: 20px;
+}
+section#loan-register form#form-loan-register div#group-btn-loan-register-commun #btn-reset-form-loan-register:hover {
+  cursor: pointer;
+  background-color: #0868ae;
+  color: #fff;
+}
+section#loan-register form#form-loan-register div#group-btn-loan-register-commun #btn-submit-form-loan-register {
+  width: 160px;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #0868ae;
+  border: #0868ae;
+  color: #fff;
+  margin-right: 30px;
+  margin-right: 20px;
+}
+section#loan-register form#form-loan-register div#group-btn-loan-register-commun #btn-submit-form-loan-register:hover {
+  cursor: pointer;
+  background-color: #05497b;
+}
+
+p.info-msg-bdd-delete {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+p.info-succes-notif > strong {
+  margin: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 80px;
+  color: #fff;
+}
+
+section#dashboard-page-book-crud div#confirmed-delete {
+  width: 350px;
+  height: 160px;
+  padding: 30px;
+  border-radius: 10px;
+  position: fixed;
+  text-align: center;
+  animation: slide-in 5000ms;
+  background-color: #0868ae;
+  opacity: 0;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+}
+section#dashboard-page-book-crud div#confirmed-delete::after {
+  content: url(../img/picto/update-icon-notif-succes.svg);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+section#dashboard-page-book-crud div#confirmed-delete:hover {
+  cursor: pointer;
+}
+
+div#confirmed-error {
+  width: 350px;
+  height: 160px;
+  border-radius: 10px;
+  position: fixed;
+  text-align: center;
+  animation: slide-in 5000ms;
+  background-color: #b53928;
+  color: #fff;
+  opacity: 0;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+}
+div#confirmed-error::after {
+  content: url(../img/picto/update-icon-notif-warning.svg);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+div#confirmed-error:hover {
+  cursor: pointer;
+}
+
 .container-crud-book-tabs {
   height: -moz-fit-content;
   height: fit-content;
@@ -460,7 +690,7 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   top: 0;
   width: 100%;
   background-color: #fff; /* couleur de fond pour la div */
-  z-index: 100;
+  z-index: 30;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -483,17 +713,16 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   margin-left: auto;
   margin-right: 10px;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-search-book {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input input#btn-search-book {
   width: 100px;
   height: 40px;
-  font-weight: bold;
   border-radius: 10px;
   background-color: #0868ae;
   border: #0868ae;
   color: #fff;
   margin-right: 30px;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-search-book:hover {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input input#btn-search-book:hover {
   cursor: pointer;
   background-color: #05497b;
 }
@@ -501,10 +730,9 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
+  width: 140px;
   height: 40px;
   border-radius: 10px;
-  font-weight: bold;
   background-color: #0868ae;
   border: #0868ae;
   color: #fff;
@@ -778,7 +1006,6 @@ section#dashboard-page-book-add form#form-add-book div#group-btn-form-add-commun
   background-color: #05497b;
 }
 section#dashboard-page-book-add #confirmed-added {
-  position: relative;
   width: 350px;
   height: 160px;
   border-radius: 10px;
@@ -807,7 +1034,7 @@ section#dashboard-page-book-add #confirmed-added p > strong {
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 80px;
-  color: #070606;
+  color: #fff;
 }
 section#dashboard-page-book-add #confirmed-added p.info-msg-bdd {
   color: #fff;
@@ -822,7 +1049,7 @@ section#dashboard-page-book-add #not-added {
   position: fixed;
   text-align: center;
   animation: slide-in 8000ms;
-  background-color: #fff;
+  background-color: #05497b;
   opacity: 0;
   top: 90%;
   left: 90%;

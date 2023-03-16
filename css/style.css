@@ -811,9 +811,9 @@ h2 {
 #section-faq #container-faq .item-faq .toggle-symbol:before {
   content: "+";
 }
-#section-faq #container-faq .item-faq .question {
+#section-faq #container-faq .item-faq p.question {
   margin: 10px 0 10px;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
 }
 #section-faq #container-faq .item-faq .faq-answer {
@@ -824,6 +824,9 @@ h2 {
 }
 #section-faq #container-faq .item-faq.active .toggle-symbol:before {
   content: "-";
+}
+#section-faq #container-faq .item-faq p {
+  font-size: 20px;
 }
 #section-faq #container-faq .item-faq p:first-child {
   margin-bottom: 5px;

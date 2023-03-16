@@ -27,55 +27,70 @@ include_once '../admin/header-main.php';
                     $workPict = addslashes($_POST['work-pict-edit']);
 
                     // Requête pour mettre à jour le livre
-                    $reqBookNewedit = $db->prepare("UPDATE `work` SET `title` = '$title', `published_at` = '$publishedDate', `ISBN` = '$ISBN', `extract` = '$extract', `pict` = '$workPict' WHERE `id_work`= :id");
-                    $reqBookNewedit->bindParam('id', $id, PDO::PARAM_INT);
+                    $reqBookNewedit = $db->prepare("UPDATE `work` SET `title` = :title, `published_at` = :publishedDate, `ISBN` = :ISBN, `extract` = :extract, `pict` = :workPict WHERE `id_work`= :id");
+                    $reqBookNewedit->bindParam(':title', $title);
+                    $reqBookNewedit->bindParam(':publishedDate', $publishedDate);
+                    $reqBookNewedit->bindParam(':ISBN', $ISBN);
+                    $reqBookNewedit->bindParam(':extract', $extract);
+                    $reqBookNewedit->bindParam(':workPict', $workPict);
+                    $reqBookNewedit->bindParam(':id', $id, PDO::PARAM_INT);
                     $reqBookNewedit->execute();
 
                     // Vérifie si l'auteur existe déjà
-                    $reqAuthorExists = $db->prepare("SELECT `id_author` FROM `author` WHERE `firstname` = '$authorFirstname' AND `lastname` = '$authorLastname'");
+                    $reqAuthorExists = $db->prepare("SELECT `id_author` FROM `author` WHERE `firstname` = :authorFirstname AND `lastname` = :authorLastname");
+                    $reqAuthorExists->bindParam(':authorFirstname', $authorFirstname);
+                    $reqAuthorExists->bindParam(':authorLastname', $authorLastname);
                     $reqAuthorExists->execute();
                     $authorExists = $reqAuthorExists->fetch(PDO::FETCH_ASSOC);
 
                     if ($authorExists) {
                         // L'auteur existe déjà, il suffit de mettre à jour la table work_author
                         $authorId = $authorExists['id_author'];
-                        $reqUpdateWorkAuthor = $db->prepare("UPDATE `work_author` SET `author_id` = '$authorId' WHERE `work_id` = :id");
-                        $reqUpdateWorkAuthor->bindParam('id', $id, PDO::PARAM_INT);
+                        $reqUpdateWorkAuthor = $db->prepare("UPDATE `work_author` SET `author_id` = :authorId WHERE `work_id` = :id");
+                        $reqUpdateWorkAuthor->bindParam(':authorId', $authorId);
+                        $reqUpdateWorkAuthor->bindParam(':id', $id, PDO::PARAM_INT);
                         $reqUpdateWorkAuthor->execute();
                     } else {
                         // L'auteur n'existe pas, insérer le nouvel auteur et mettre à jour la table work_author
-                        $reqInsertAuthor = $db->prepare("INSERT INTO `author` (`firstname`, `lastname`) VALUES ('$authorFirstname', '$authorLastname')");
+                        $reqInsertAuthor = $db->prepare("INSERT INTO `author` (`firstname`, `lastname`) VALUES (:authorFirstname, :authorLastname)");
+                        $reqInsertAuthor->bindParam(':authorFirstname', $authorFirstname);
+                        $reqInsertAuthor->bindParam(':authorLastname', $authorLastname);
                         $reqInsertAuthor->execute();
                         $newAuthorId = $db->lastInsertId();
 
-                        $reqUpdateWorkAuthor = $db->prepare("UPDATE `work_author` SET `author_id` = '$newAuthorId' WHERE `work_id` = :id");
-                        $reqUpdateWorkAuthor->bindParam('id', $id, PDO::PARAM_INT);
+                        $reqUpdateWorkAuthor = $db->prepare("UPDATE `work_author` SET `author_id` = :newAuthorId WHERE `work_id` = :id");
+                        $reqUpdateWorkAuthor->bindParam(':newAuthorId', $newAuthorId);
+                        $reqUpdateWorkAuthor->bindParam(':id', $id, PDO::PARAM_INT);
                         $reqUpdateWorkAuthor->execute();
                     }
 
-                    // Vérifier si le genre existe déjà
-                    $reqGenreExists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = '$genre'");
-                    $reqGenreExists->execute();
-                    $genreExists = $reqGenreExists->fetch(PDO::FETCH_ASSOC);
+                        // Vérifier si le genre existe déjà
+                        $reqGenreExists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = :genre");
+                        $reqGenreExists->bindParam(':genre', $genre);
+                        $reqGenreExists->execute();
+                        $genreExists = $reqGenreExists->fetch(PDO::FETCH_ASSOC);
 
                     if ($genreExists) {
                         // Le genre existe déjà, il suffit de mettre à jour la table work_genre
                         $genreId = $genreExists['id_genre'];
-                        $reqUpdateWorkGenre = $db->prepare("UPDATE `work_genre` SET `genre_id` = '$genreId' WHERE `work_id` = :id");
-                        $reqUpdateWorkGenre->bindParam('id', $id, PDO::PARAM_INT);
+                        $reqUpdateWorkGenre = $db->prepare("UPDATE `work_genre` SET `genre_id` = :genreId WHERE `work_id` = :id");
+                        $reqUpdateWorkGenre->bindParam(':genreId', $genreId);
+                        $reqUpdateWorkGenre->bindParam(':id', $id, PDO::PARAM_INT);
                         $reqUpdateWorkGenre->execute();
                     } else {
                         // Le genre n'existe pas, insérer le nouveau genre et mettre à jour la table work_genre
-                        $reqInsertGenre = $db->prepare("INSERT INTO `genre` (`name`) VALUES ('$genre')");
+                        $reqInsertGenre = $db->prepare("INSERT INTO `genre` (`name`) VALUES (:genre)");
+                        $reqInsertGenre->bindParam(':genre', $genre);
                         $reqInsertGenre->execute();
                         $newGenreId = $db->lastInsertId();
 
-                        $reqUpdateWorkGenre = $db->prepare("UPDATE `work_genre` SET `genre_id` = '$newGenreId' WHERE `work_id` = :id");
-                        $reqUpdateWorkGenre->bindParam('id', $id, PDO::PARAM_INT);
+                        $reqUpdateWorkGenre = $db->prepare("UPDATE `work_genre` SET `genre_id` = :newGenreId WHERE `work_id` = :id");
+                        $reqUpdateWorkGenre->bindParam(':newGenreId', $newGenreId);
+                        $reqUpdateWorkGenre->bindParam(':id', $id, PDO::PARAM_INT);
                         $reqUpdateWorkGenre->execute();
                     }
 
-                    $_SESSION["modified"] = "Mise à jour réussit";
+                    $_SESSION["modified"] = "Mise à jour réussie";
                     header("Location: edit-book.php?id=" . $id);
                     exit();
                 }

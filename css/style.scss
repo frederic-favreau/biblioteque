@@ -996,9 +996,9 @@ h2 {
         }
       }
 
-      .question {
+      p.question {
         margin: 10px 0 10px;
-        font-size: 18px;
+        font-size: 22px;
         font-weight: bold;
       }
 
@@ -1017,6 +1017,7 @@ h2 {
       }
 
       p {
+        font-size: 20px;
         &:first-child {
           margin-bottom: 5px;
           font-size: 18px;
