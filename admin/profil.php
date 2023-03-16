@@ -1,5 +1,7 @@
 <?php
 include_once '../admin/header-main.php';
+include_once '../connexion.php';
+$id = $_SESSION['id-user']
 ?>
 
 <!-- ---------- SECTION DASHBOARD - PAGE PROFIL ---------- -->
@@ -47,8 +49,8 @@ include_once '../admin/header-main.php';
                     <div id="group-btn-form">
                         <button type="reset" id="btn-reset">Reset</button>
                         <button type="submit" id="btn-submit" name="modifier">Modifier</button>
-                        <?php if (isset($_POST['modifier'])) {
-                            $mail = $_POST['mail'];
+                        <?php if(isset($_POST['modifier'])){
+                            $mail= $_POST['mail'];
                             $password = $_POST['password'];
                             $firstname = $_POST['firstname'];
                             $lastname = $_POST['lastname'];
@@ -57,7 +59,7 @@ include_once '../admin/header-main.php';
 
                             $req = $db->prepare('UPDATE `user`SET `firstname` = :firstname, `lastname` = :lastname, `mail` = :mail,`password` = :password, `adress` = :adress
                             WHERE `id_user` = :id');
-
+                            
                             $req->bindParam('firstname', $firstname, PDO::PARAM_STR);
                             $req->bindParam('id', $id, PDO::PARAM_INT);
                             $req->bindParam('mail', $mail, PDO::PARAM_STR);
@@ -65,9 +67,9 @@ include_once '../admin/header-main.php';
                             $req->bindParam('password', $passwordHashed, PDO::PARAM_STR);
                             $req->bindParam('adress', $adress, PDO::PARAM_STR);
                             $req->execute();
-                        }
-
-
+                        } 
+                        
+                        
                         ?>
                     </div>
                 </form>
