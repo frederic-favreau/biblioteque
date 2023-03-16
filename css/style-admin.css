@@ -957,7 +957,7 @@ section#dashboard-page-book-add form#form-add-book div#form-add-book-right {
   justify-content: center;
   width: 50%;
 }
-section#dashboard-page-book-add form#form-add-book div#form-add-book-right textarea#work-extract {
+section#dashboard-page-book-add form#form-add-book div#form-add-book-right textarea#work-extract-add {
   width: 690px;
   height: 600px;
   font-size: 20px;
