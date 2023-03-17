@@ -19,6 +19,7 @@ if ($req->rowCount()==1){
         $_SESSION['firstname'] = $user['firstname'];
         $_SESSION['lastname'] = $user['lastname'];
         $_SESSION['mail'] = $user['mail'];
+        $_SESSION['connect'] = true;
         header('Location: ./dashboard.php');
         
 

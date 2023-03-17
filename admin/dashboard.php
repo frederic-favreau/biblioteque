@@ -1,6 +1,7 @@
  <?php
     include_once '../admin/header-main.php';
-    include_once '../connexion.php'
+    include_once '../connexion.php';
+    
     ?>
 
  <!-- ---------- SECTION DASHBOARD - PAGE DEFAULT ---------- -->
