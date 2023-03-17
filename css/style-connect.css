@@ -114,6 +114,7 @@ main #section-authentication {
   height: 100%;
 }
 main #section-authentication .container {
+  z-index: 9;
   position: relative;
   width: 100%;
   height: 80%;
@@ -123,7 +124,7 @@ main #section-authentication .container {
   overflow: hidden;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
 main #section-authentication .form-container {
   position: absolute;
@@ -132,27 +133,29 @@ main #section-authentication .form-container {
   transition: all 0.6s ease-in-out;
 }
 main #section-authentication .form-container::before {
+  z-index: 999;
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   border-width: 0;
   border-style: solid;
-  border-top-color: #fafafb;
   border-right-color: #fff;
+  border-top-color: #fafafb;
   border-left-color: #fafafb;
   border-bottom-color: #fff;
   border-radius: 0 0 5px 0;
   transition: border 0.5s ease-out;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 main #section-authentication .form-container:hover::before {
-  border-width: 100px;
+  border-width: 90px;
 }
 main #section-authentication .sign-in-container {
   left: 0;
   width: 50%;
   z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 main #section-authentication .container.right-panel-active .sign-in-container {
   transform: translateX(100%);

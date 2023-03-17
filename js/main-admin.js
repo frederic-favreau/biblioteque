@@ -100,11 +100,14 @@ for (const btnOptionCrud of btnOptionCruds) {
       const modaleBg = document.createElement("div");
       modaleBg.classList.add("bloc-modale");
       body.append(modaleBg);
+  
+      
 
       const boxDeleteBook = document.createElement("div");
       boxDeleteBook.setAttribute("id", "box-delete-book");
       boxDeleteBook.classList.add("active-box-delete-book");
       main.append(boxDeleteBook);
+
 
       const confirmation = document.createElement("p");
       confirmation.setAttribute("id", "txt-box-delete-book");

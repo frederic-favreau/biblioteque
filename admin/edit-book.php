@@ -17,14 +17,14 @@ include_once '../admin/header-main.php';
             try {
                 $id = $_GET['id'];
                 if (isset($_POST['submit'])) {
-                    $title = addslashes($_POST['work-title-edit']);
-                    $authorFirstname = addslashes($_POST['author-firstname-edit']);
-                    $authorLastname = addslashes($_POST['author-lastname-edit']);
-                    $genre = addslashes($_POST['work-genre-edit']);
-                    $publishedDate = addslashes($_POST['work-publish-date-edit']);
-                    $ISBN = addslashes($_POST['work-ISBN-edit']);
-                    $extract = addslashes($_POST['work-extract-edit']);
-                    $workPict = addslashes($_POST['work-pict-edit']);
+                    $title = ($_POST['work-title-edit']);
+                    $authorFirstname = ($_POST['author-firstname-edit']);
+                    $authorLastname = ($_POST['author-lastname-edit']);
+                    $genre = ($_POST['work-genre-edit']);
+                    $publishedDate = ($_POST['work-publish-date-edit']);
+                    $ISBN = ($_POST['work-ISBN-edit']);
+                    $extract = ($_POST['work-extract-edit']);
+                    $workPict = ($_POST['work-pict-edit']);
 
                     // Requête pour mettre à jour le livre
                     $reqBookNewedit = $db->prepare("UPDATE `work` SET `title` = :title, `published_at` = :publishedDate, `ISBN` = :ISBN, `extract` = :extract, `pict` = :workPict WHERE `id_work`= :id");

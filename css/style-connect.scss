@@ -124,6 +124,7 @@ main {
     height: 100%;
 
     .container {
+      z-index: 9;
       position: relative;
       width: 100%;
       height: 80%;
@@ -133,8 +134,8 @@ main {
       overflow: hidden;
       background-color: $white;
       border-radius: 10px;
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-        0 10px 10px rgba(0, 0, 0, 0.22);
+      box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+
     }
 
     .form-container {
@@ -144,24 +145,25 @@ main {
       transition: all 0.6s ease-in-out;
 
       &::before {
+        z-index: 999;
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 0px;
+        left: 0px;
         border-width: 0;
         border-style: solid;
-        border-top-color: #fafafb;
         border-right-color: $white;
+        border-top-color: #fafafb;
         border-left-color: #fafafb;
+        
         border-bottom-color: $white;
         border-radius: 0 0 5px 0;
         transition: border 0.5s ease-out;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-        0 10px 10px rgba(0, 0, 0, 0.22);
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
       }
 
       &:hover::before {
-        border-width: 100px;
+        border-width: 90px;
       }
     }
 
@@ -169,6 +171,7 @@ main {
       left: 0;
       width: 50%;
       z-index: 2;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
     }
 
     .container.right-panel-active .sign-in-container {

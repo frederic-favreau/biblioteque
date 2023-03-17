@@ -97,7 +97,7 @@ h2 {
     }
 
     &.anim-nav {
-      border-bottom: 1px solid gray;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     }
 
     #container-nav-bar {
@@ -265,7 +265,8 @@ h2 {
 
 #section-news {
   width: 100%;
-  padding-bottom: 60px;
+  backdrop-filter: blur(20px);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
   background: #0868ae;
   background: -moz-linear-gradient(top, #0868ae 0%, #043a61 100%);
@@ -293,7 +294,6 @@ h2 {
     }
 
     #item-section-news-left {
-      backdrop-filter: blur(1px);
 
       h1 {
         white-space: nowrap;
@@ -810,6 +810,7 @@ h2 {
   width: 100%;
   height: 400px;
   padding: 80px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   background-image: radial-gradient(
       circle at 19% 90%,
       rgba(190, 190, 190, 0.04) 0%,
@@ -1116,6 +1117,7 @@ h2 {
     border-radius: 50px;
     color: $white;
     padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
     h4 {
       font-style: normal;
@@ -1209,6 +1211,7 @@ h2 {
   width: 100%;
   padding: 40px 20px 60px;
   background-color: $footer;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
   #container-footer-top {
     width: 100%;
