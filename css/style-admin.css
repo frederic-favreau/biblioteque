@@ -609,6 +609,71 @@ section#loan-register form#form-loan-register div#group-btn-loan-register-commun
   cursor: pointer;
   background-color: #05497b;
 }
+section#loan-register form#form-in-loan-register .label-form-add-book {
+  display: block;
+  font-size: 18px;
+  margin-right: 20px;
+  color: #0868ae;
+  font-weight: bold;
+}
+section#loan-register form#form-in-loan-register .input-form-add-book {
+  width: 600px;
+  height: 44px;
+  font-size: 20px;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid gray;
+  margin-bottom: 30px;
+}
+section#loan-register form#form-in-loan-register div#form-in-loan-register-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+section#loan-register form#form-in-loan-register div#form-in-loan-register-left div.add-form-template-label-input .label-form-add-book {
+  font-size: 18px;
+  margin-right: 20px;
+}
+section#loan-register form#form-in-loan-register div#group-btn-in-loan-register-commun {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-right: 111px;
+}
+section#loan-register form#form-in-loan-register div#group-btn-in-loan-register-commun #btn-reset-form-in-loan-register {
+  width: 160px;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid #0868ae;
+  color: #0868ae;
+  margin-right: 30px;
+  margin-right: 20px;
+}
+section#loan-register form#form-in-loan-register div#group-btn-in-loan-register-commun #btn-reset-form-in-loan-register:hover {
+  cursor: pointer;
+  background-color: #0868ae;
+  color: #fff;
+}
+section#loan-register form#form-in-loan-register div#group-btn-in-loan-register-commun #btn-submit-form-in-loan-register {
+  width: 160px;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #0868ae;
+  border: #0868ae;
+  color: #fff;
+  margin-right: 30px;
+  margin-right: 20px;
+}
+section#loan-register form#form-in-loan-register div#group-btn-in-loan-register-commun #btn-submit-form-in-loan-register:hover {
+  cursor: pointer;
+  background-color: #05497b;
+}
 
 p.info-msg-bdd-delete {
   margin-top: 30px;

@@ -131,6 +131,24 @@ main #section-authentication .form-container {
   height: 100%;
   transition: all 0.6s ease-in-out;
 }
+main #section-authentication .form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: 0;
+  border-style: solid;
+  border-top-color: #fafafb;
+  border-right-color: #fff;
+  border-left-color: #fafafb;
+  border-bottom-color: #fff;
+  border-radius: 0 0 5px 0;
+  transition: border 0.5s ease-out;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+main #section-authentication .form-container:hover::before {
+  border-width: 100px;
+}
 main #section-authentication .sign-in-container {
   left: 0;
   width: 50%;

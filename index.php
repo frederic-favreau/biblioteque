@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Nova+Slim&family=Risque&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -40,7 +42,7 @@
           </form>
         </div>
         <div id="container-group-btn-connexion">
-          <a href="./front/connect.php" id="btn-sign-up"><span>Connexion</span>
+          <a href="./front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
             <div id="menu-burger">
               <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
               <div class="menu-burger-pipe" id="menu-burger-pipe-middle"></div>
@@ -54,15 +56,15 @@
 
 
   <!-- ---------- SECTION - NEWS ---------- -->
-cocotte
 
   <main>
-    <section id="section-news" class="row-limit-size">
+    <section id="section-news" class="row-limit-size-full">
+      <canvas></canvas>
       <div id="container-section-news">
         <div id="item-section-news-left">
           <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
-          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs <br> pour offrir des moments de lecture inoubliable !</p>
-          <a href="#" id="btn-join-reader">Rejoins-nous dans l'aventure</a>
+          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs pour offrir des moments de lecture inoubliable !</p>
+          <a href="#" id="btn-join-reader">Débuter l'aventure maintenant</a>
         </div>
         <div id="item-section-news-right">
           <div id="item-news-right-top">
@@ -112,21 +114,23 @@ cocotte
 
     <section id="section-heart" class="row-limit-size">
       <h2>Coups de coeur</h1>
-        <p class="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
+        <p class="sub-title-section">Nos lecteurs partagent leur coups de coeurs</p>
         <ul class="top">
           <?php
           $sql_heart = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
           $req_heart =  $db->query($sql_heart);
           $i = 1;
           while ($heart = $req_heart->fetch(PDO::FETCH_ASSOC)) {
-
+            $card_class = ($i <= 2) ? 'left-card' : 'right-card';
           ?>
-            <li><a href="./front/book-detail.php?id=<?= $heart['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt=""></a></li>
+
+            <li class="<?= $card_class ?>"><a href="./front/book-detail.php?id=<?= $heart['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt=""></a></li>
 
           <?php
             $i++;
           } ?>
         </ul>
+
         <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
     </section>
 
@@ -137,7 +141,7 @@ cocotte
     <section id="section-soon-available" class="row-limit-size">
 
       <h2>Derniers arrivages</h2>
-      <h3 id="h3-tag">#tout juste disponible</h3>
+      <h3 id="h3-tag"># tout juste disponible</h3>
       <div id="container-cards">
 
         <!-- find last 9 books in our librarerie -->
@@ -179,17 +183,17 @@ cocotte
 
           <div class="card">
             <div class="top-item-card">
-            <?php
-                        $now = date('Y-m-d',  strtotime('-2 month') );
-                        $date = $card['published_at'];
-                        if($date > $now){
-                            ?>
-                            <span class="tag-new-index">Nouveau</span>
-                        <?php
-                        }
+              <?php
+              $now = date('Y-m-d',  strtotime('-2 month'));
+              $date = $card['published_at'];
+              if ($date > $now) {
+              ?>
+                <span class="tag-new-index">Nouveau</span>
+              <?php
+              }
 
-                        ?>
-              
+              ?>
+
               <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
             </div>
             <div class="bottom-item-card">
@@ -229,78 +233,79 @@ cocotte
         <div class="card-blog">
           <div class="card-blog-top" id="pict-aticle-1">
             <div class="article-infos">
-              <div>Lorem ipsum <br> Mars 2023</div>
+              <div>Mars 2023</div>
               <div class="category">Nouveautés</div>
             </div>
           </div>
           <div class="card-blog-bottom">
-            <h4>Lorem, ipsum dolor.</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
+            <h4>Journée Portes Ouvertes</h4>
+            <p>Visite guidée à Biblook, vente de livres atelier et lecture pour les enfants...</p>
             <a href="./front/blog.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top" id="pict-aticle-2">
             <div class="article-infos">
-              <div>Lorem ipsum <br> Mars 2023</div>
+              <div>Mars 2023</div>
               <div class="category">Nouveautés</div>
             </div>
           </div>
           <div class="card-blog-bottom">
-            <h4>Lorem, ipsum dolor.</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
+            <h4>Les chevaux ne mentent jamais</h4>
+            <p>Chercher à communiquer avec les chevaux nous en révèle beaucoup sur soi-même...</p>
             <a href="./front/blog2.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top" id="pict-aticle-3">
             <div class="article-infos">
-              <div>Lorem ipsum <br> Mars 2023</div>
+              <div>Février 2023</div>
               <div class="category">Nouveautés</div>
             </div>
           </div>
           <div class="card-blog-bottom">
-            <h4>Lorem, ipsum dolor.</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
+            <h4>Une amie m’a parlé du régime Kéto</h4>
+            <p>Après plusieurs régimes différents, une amie m’ parlé du régime Kéto..</p>
             <a href="./front/blog3.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top" id="pict-aticle-4">
             <div class="article-infos">
-              <div>Lorem ipsum <br> Mars 2023</div>
+              <div>Février 2023</div>
               <div class="category">Nouveautés</div>
             </div>
           </div>
           <div class="card-blog-bottom">
-            <h4>Lorem, ipsum dolor.</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
+            <h4>Venez troquer des boutures</h4>
+            <p>Un super évenement à ne pas rater près de chez vous..</p>
             <a href="./front/blog4.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top" id="pict-aticle-5">
             <div class="article-infos">
-              <div>Lorem ipsum <br> Mars 2023</div>
+              <div>Janvier 2023</div>
               <div class="category">Nouveautés</div>
             </div>
           </div>
           <div class="card-blog-bottom">
-            <h4>Lorem, ipsum dolor.</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
+            <h4>Lettre aux écolos: Comment bien s'informer?</h4>
+            <p>Les écolos se sont rassemblés
+              à la bibliothèque afin de partager leurs connaissances..</p>
             <a href="./front/blog5.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top" id="pict-aticle-6">
             <div class="article-infos">
-              <div>Lorem ipsum <br> Mars 2023</div>
+              <div>Janvier 2023</div>
               <div class="category">Nouveautés</div>
             </div>
           </div>
           <div class="card-blog-bottom">
-            <h4>Lorem, ipsum dolor.</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias suscipit Lorem ipsum dolor..</p>
+            <h4>Prix du Club-lecture 2022</h4>
+            <p>Le 28 octobre 2022 le Club-lecture de la bibliothèque de Saint-Denis-les-Bourg..</p>
             <a href="./front/blog6.php">Lire l'article ↗</a>
           </div>
         </div>
@@ -407,7 +412,7 @@ cocotte
           <div id="list-left">
             <li><a href="#main-header">Nouveautés</a></li>
             <li><a href="#section-heart">Coups de coeur</a></li>
-            <li><a href="#section-soon-available">Bientôt disponible</a></li>
+            <li><a href="#section-soon-available">Derniers arrivages</a></li>
           </div>
           <div id="list-right">
             <li><a href="#section-blog">Blog</a></li>
@@ -435,6 +440,7 @@ cocotte
     </div>
   </footer>
 
+  <script src="./js/hero.js"></script>
   <script src="./main.js"></script>
 </body>
 

@@ -19,6 +19,12 @@ $footer: #043a61;
   margin: 0 auto;
 }
 
+.row-limit-size-full {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
 body {
   font-family: "Hind Madurai", sans-serif;
   background-color: #fafafb;
@@ -77,16 +83,22 @@ h2 {
   width: 100%;
 
   #main-nav-bar {
+    transition: background-color 0.3s ease-in-out,
+      border-bottom 0.3s ease-in-out;
+    background: $main-blue;
+
     @media screen and (min-width: 950px) {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 9;
+      z-index: 9999;
       width: 100%;
-      border-bottom: 1px solid gray;
+      // border-bottom: 1px solid gray;
     }
 
-    background: $main-blue;
+    &.anim-nav {
+      border-bottom: 1px solid gray;
+    }
 
     #container-nav-bar {
       width: 100%;
@@ -127,6 +139,7 @@ h2 {
           @media screen and (min-width: 950px) {
             display: block;
             position: relative;
+            font-size: 16px;
             width: 300px;
             height: 45px;
             border-radius: 15px;
@@ -145,23 +158,23 @@ h2 {
           @media screen and (min-width: 950px) {
             display: block;
             position: absolute;
-            right: 0;
-            top: 0px;
+            right: -2px;
+            top: -2px;
             width: 150px;
             border: none;
             font-size: 16px;
-            font-family: 'Hind Madurai', sans-serif;
+            font-family: "Hind Madurai", sans-serif;
             font-weight: bold;
-            padding: 12px;
+            padding: 14px 0;
             background-color: $btn-red;
             color: #fff;
             border-radius: 10px;
             text-align: center;
             transition: background-color 0.3s ease;
-            outline: none;
 
             &:hover {
               background-color: $btn-red-hover;
+              cursor: pointer;
             }
           }
         }
@@ -252,14 +265,25 @@ h2 {
 
 #section-news {
   width: 100%;
-  padding-top: 100px;
   padding-bottom: 60px;
 
-  @media screen and (min-width: 950px) {
-    padding-top: 120px;
+  background: #0868ae;
+  background: -moz-linear-gradient(top, #0868ae 0%, #043a61 100%);
+  background: -webkit-linear-gradient(top, #0868ae 0%, #0868ae 100%);
+  background: linear-gradient(to bottom, #0868ae 0%, #0868ae 100%);
+
+  canvas {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
   }
 
   #container-section-news {
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -269,17 +293,26 @@ h2 {
     }
 
     #item-section-news-left {
+      backdrop-filter: blur(1px);
+
       h1 {
         white-space: nowrap;
+        color: #f9b017;
+        font-size: 70px;
+        z-index: 1;
 
         @media screen and (min-width: 950px) {
           margin-top: 50px;
-          margin-bottom: 50px;
+          margin-bottom: 100px;
         }
       }
 
-      p {
-        text-align: center;
+      p#sub-title {
+        padding: 15px;
+        line-height: 45px;
+        font-size: 30px;
+        color: $white;
+        z-index: 1;
 
         @media screen and (min-width: 950px) {
           margin-bottom: 50px;
@@ -288,19 +321,22 @@ h2 {
 
       #btn-join-reader {
         display: block;
+        font-size: 20px;
         margin: 0 auto;
-        width: 250px;
-        padding: 12px;
+        width: 350px;
+        padding: 15px 20px;
         background-color: $main-blue;
         color: $white;
+        border: 2px solid $white;
         border-radius: 10px;
         text-align: center;
         transition: background-color 0.3s ease;
         margin-bottom: 50px;
 
         &:hover {
-          opacity: 0.9;
-          transform: scale(1.1);
+          transform: scale(1.01);
+          color: #f9b017;
+          border: 2px solid #f9b017;
         }
       }
 
@@ -404,7 +440,7 @@ h2 {
       background-size: cover !important;
       background-position: center !important;
       padding: 1em 2em;
-      background: $main-blue;
+      background: $btn-red;
       border-radius: 10px;
 
       p {
@@ -468,14 +504,16 @@ h2 {
 
 #section-heart {
   width: 100%;
-  padding-top: 80px;
+  padding-top: 120px;
   padding-top: 60px;
+  overflow: hidden;
 
-  p.sub-title {
+  p.sub-title-section {
     text-align: center;
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 100px;
+    color: $black;
   }
 
   #group-btn {
@@ -518,6 +556,18 @@ h2 {
       display: flex;
       flex-wrap: wrap;
       padding-right: 25px;
+    }
+
+    .left-card {
+      position: relative;
+      transform: translateX(-100%);
+      transition: transform 1s ease;
+    }
+
+    .right-card {
+      position: relative;
+      transform: translateX(100%);
+      transition: transform 1s ease;
     }
 
     li {
@@ -567,12 +617,12 @@ h2 {
 
         img {
           position: absolute;
+          top: 0px;
           transform-origin: bottom left;
           transform: rotate(-5deg);
           width: 200px;
           height: 300px;
           margin-left: -30px;
-          top: 0px;
         }
       }
     }
@@ -669,7 +719,6 @@ h2 {
         border-radius: 15px 0 15px 0;
         background-color: $btn-red;
         color: $white;
-
       }
 
       img {
@@ -710,17 +759,6 @@ h2 {
           text-transform: capitalize;
         }
 
-        // .description-card {
-        //   height: 60px;
-        //   margin: 8px 0 8px;
-        //   font-size: 14px;
-        //   text-overflow: ellipsis;
-        //   overflow: hidden;
-        //   display: -webkit-box;
-        //   -webkit-box-orient: vertical;
-        //   -webkit-line-clamp: 3;
-        // }
-
         a.link-page {
           position: absolute;
           right: 10px;
@@ -729,7 +767,38 @@ h2 {
           color: $main-blue;
           margin-right: 10px;
           margin-top: 20px;
+
+          &:hover {
+            color: $footer;
+          }
         }
+      }
+    }
+
+    // .card.show-card {
+    //   animation: slide-up 0.3s ease;
+    // }
+
+    .card.show-card-row1 {
+      animation: slide-up 1s ease;
+    }
+
+    .card.show-card-row2 {
+      animation: slide-up 1.8s ease;
+    }
+
+    .card.show-card-row3 {
+      animation: slide-up 2.6s ease;
+    }    
+
+    @keyframes slide-up {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
       }
     }
   }
@@ -865,40 +934,40 @@ h2 {
       }
 
       #pict-aticle-1 {
-        background-image: url(../img/interieur-biblio/biblio6.png);
+        background-image: url(../img/photosblog/cards/pexels-tim-mossholder-4843912.jpg);
       }
 
       #pict-aticle-2 {
-        background-image: url(../img/interieur-biblio/biblio5.png);
+        background-image: url(../img/photosblog/cards/pexels-pixabay-52500.jpg);
       }
 
       #pict-aticle-3 {
-        background-image: url(../img/interieur-biblio/Capture\ d’écran\ 2023-03-02\ 145009.png);
+        background-image: url(../img/photosblog/cards/pexels-ketut-subiyanto-4473398.jpg);
       }
 
       #pict-aticle-4 {
-        background-image: url(../img/interieur-biblio/Capture\ d’écran\ 2023-03-02\ 145133.png);
+        background-image: url(../img/photosblog/cards/pexels-akil-mazumder-1072824.jpg);
       }
 
       #pict-aticle-5 {
-        background-image: url(../img/interieur-biblio/grd-biblio.jpg);
+        background-image: url(../img/photosblog/cards/pexels-photo-532192.jpeg);
       }
 
       #pict-aticle-6 {
-        background-image: url(../img/interieur-biblio/paris.png);
+        background-image: url(../img/photosblog/cards/pexels-brett-sayles-992734.jpg);
       }
 
       .card-blog-top {
         height: 55%;
-        background-position: center;
-        background-size: cover;
+        background-position:center;
+        background-size:cover;
         position: relative;
 
         .article-infos {
           position: absolute;
           bottom: 0;
           width: 100%;
-          height: 72px;
+          height: 50px;
           padding: 16px;
           background: rgba(255, 255, 255, 0.3);
           border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -918,6 +987,7 @@ h2 {
       }
 
       .card-blog-bottom {
+        position: relative;
         height: 45%;
         display: flex;
         flex-direction: column;
@@ -937,6 +1007,9 @@ h2 {
         }
 
         a {
+          position: absolute;
+          right: 20px;
+          bottom: 20px;
           font-size: 14px;
           color: $main-blue;
         }
