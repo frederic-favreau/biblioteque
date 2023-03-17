@@ -97,7 +97,8 @@ h2 {
     }
 
     &.anim-nav {
-      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+        rgba(0, 0, 0, 0.24) 0px 1px 2px;
     }
 
     #container-nav-bar {
@@ -294,7 +295,6 @@ h2 {
     }
 
     #item-section-news-left {
-
       h1 {
         white-space: nowrap;
         color: #f9b017;
@@ -789,7 +789,7 @@ h2 {
 
     .card.show-card-row3 {
       animation: slide-up 2.6s ease;
-    }    
+    }
 
     @keyframes slide-up {
       from {
@@ -960,8 +960,8 @@ h2 {
 
       .card-blog-top {
         height: 55%;
-        background-position:center;
-        background-size:cover;
+        background-position: center;
+        background-size: cover;
         position: relative;
 
         .article-infos {
@@ -1023,16 +1023,94 @@ h2 {
   }
 }
 
+// ---------- SECTION - BLOG ----------
+
+#section-zoom {
+  padding-top: 120px;
+
+  h2 {
+    margin-bottom: 80px;
+  }
+
+  #container-section-zoom {
+    width: 100%;
+
+    div.pict-left, div.pict-right   {
+      display: flex;
+      flex-wrap: wrap;
+      width: 80%;
+      margin: 0 auto;
+      justify-content: space-evenly;
+
+      h4 {
+        font-size: 30px;
+        color:$btn-red;
+        margin-bottom: 2px;
+      }
+
+      h5 {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 20PX;
+        color: #11635F;
+      }
+    }
+
+    div.pict-right {
+      .item-text-commun {
+        padding: 20px;
+        width: 50%;
+      }
+
+      .item-pict-commun {
+        width: 50%;
+
+        img {
+          height: 80%;
+          width: auto;
+          float: right;
+        }
+      }
+    }
+
+    div.pict-left {
+      .item-text-commun {
+        padding: 20px;
+        width: 49%;
+      }
+
+      .item-pict-commun {
+        width: 49%;
+      }
+
+      img {
+        height: 80%;
+        width: auto;
+        float: left;
+      }
+    }
+    
+  }
+}
+
 // ---------- SECTION - FAQ ----------
 
 #section-faq {
   position: relative;
-  padding-top: 120px;
+  padding-top: 100px;
   padding-bottom: 60px;
+
+  h2#section-title {
+    margin-bottom: -30px;
+  }
 
   h3.h3-faq {
     text-align: center;
-    margin-bottom: 80px;
+    margin-top: 40px;
+    margin-bottom: 60px;
   }
 
   #container-faq {

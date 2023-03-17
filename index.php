@@ -313,10 +313,78 @@
     </section>
 
 
+
+    <!-- ---------- SECTION - ZOOM ---------- -->
+
+
+    <section id="section-zoom" class="row-limit-size">
+      <h3 id="h3-tag"></h3>
+      <h2>Zoom sur nos Biblookeurs</h2>
+      <div id="container-section-zoom">
+        <div id="item-top-zoom-1" class="pict-right">
+          <div id="item-text" class="item-text-commun">
+            <h4>Margot Fleury</h4>
+            <h5>Etudiante en droit, adhérente chez Biblook depuis un an</h5>
+            <p>“Etudiante en droit, une amie m’a recommandé cette bibliothèque.
+              J’apprends beaucoup grâce aux livres, cela m’aide pour mes études.
+              Tout est bien organisé, les ouvrages m’aident à m’instruire.
+              Bon accueil ”.</p>
+          </div>
+          <div id="item-pict1" class="item-pict-commun">
+            <img src="./img/zoom/Margaux-fleury-zoom-2.png" alt="Margot Fleury">
+          </div>
+        </div>
+        <div id="item-top-zoom-2" class="pict-left">
+          <div id="item-pict" class="item-pict-commun">
+            <img src="./img/zoom/Ethan-zoom-4.png" alt="Ethan Siou">
+          </div>
+          <div id="item-text" class="item-text-commun">
+            <h4>Ethan Siou</h4>
+            <h5>Etudiant en médecine, adhérent depuis deux ans</h5>
+            <p>“Etudiante en droit, une amie m’a recommandé cette bibliothèque.
+              J’apprends beaucoup grâce aux livres, cela m’aide pour mes études.
+              Tout est bien organisé, les ouvrages m’aident à m’instruire.
+              Bon accueil ”.</p>
+          </div>
+        </div>
+        <div id="item-top-zoom-1" class="pict-right">
+          <div id="item-text" class="item-text-commun">
+            <h4>Marilou Balu</h4>
+            <h5>Retraité, adhérent chez Biblook depuis 5 ans</h5>
+            <p>J’accompagne mes deux enfants aux ateliers lecture organisé et encadré par une
+              bénévole tous les mercredis après-midi, c’est devenu une activité principale, ils se
+              régalent. Les bénévoles sont très humains, développe la curiosité des enfants,
+              et leur permettent de rencontrer d’autres enfants autour d’une histoire.
+              Bbiblook est calme, chaleureux ou l’on passe de bon moments”.</p>
+          </div>
+          <div id="item-pict1" class="item-pict-commun">
+            <img src="./img/zoom/Marilou-zoom-3.png" alt="Margot Fleury">
+          </div>
+        </div>
+        <div id="item-top-zoom-2" class="pict-left">
+          <div id="item-pict" class="item-pict-commun">
+            <img src="./img/zoom/Henri-Burtin-zoom-1.png" alt="Henri Burtin">
+          </div>
+          <div id="item-text" class="item-text-commun">
+            <h4>Henri Burtin</h4>
+            <h5>Retraité, adhérent chez Biblook depuis 5 ans</h5>
+            <p>“Fidèle à Biblook, je trouve ce lieu intéressant dans la diversité des ouvrages.
+              Je passe beaucoup de temps à lire, les bénévoles font un travail remarquable.
+              Je me suis inscrit il y 5 ans, la carte de fidélité apporte de bons avantages.
+              J’accompagne mes petits-enfants pour des ateliers lectures organisé par Biblook;
+              tout le monde trouve son bonheur, je recommande cette biblothèque ”.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+
     <!-- ---------- SECTION - FAQ ---------- -->
 
     <section id="section-faq" class="row-limit-size">
-      <h2>Foire aux questions</h2>
+      <h2 id="section-title">Foire aux questions</h2>
       <h3 class="h3-faq">Toutes les choses que vous devez savoir sont ici.</h3>
       <div id="container-faq">
         <div class="item-faq">
