@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <?php session_start() ?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Nova+Slim&family=Risque&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -42,7 +44,18 @@
           </form>
         </div>
         <div id="container-group-btn-connexion">
-          <a href="./front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
+        <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+    // Afficher le contenu pour les utilisateurs connectés
+    ?>
+    <div><a href="#" id="btn-avatar">avatar</a></div> 
+    
+    <?php
+} else { ?>
+  <a href="./front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
+  <?php
+}?>
+          
+          
             <div id="menu-burger">
               <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
               <div class="menu-burger-pipe" id="menu-burger-pipe-middle"></div>
@@ -58,6 +71,8 @@
   <!-- ---------- SECTION - NEWS ---------- -->
 
   <main>
+  
+    // Afficher le contenu pour les utilisateurs connectés?>
     <section id="section-news" class="row-limit-size-full">
       <canvas></canvas>
       <div id="container-section-news">
@@ -107,7 +122,8 @@
             </div>
           </div>
     </section>
-
+   
+    
 
     <!-- ---------- SECTION - HEART ---------- -->
 

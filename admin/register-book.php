@@ -49,14 +49,7 @@ include_once '../admin/header-main.php';
                         <label for="copy-id" class="label-form-add-book">ID de l'exemplaire</label>
                         <input type="text" name="copy-id" id="copy-id" class="input-form-add-book" value="" />
                     </div>
-                    <div class="add-form-template-label-input">
-                        <label for="loan-date-start" class="label-form-add-book">Date de l'emprunt</label>
-                        <input type="date" name="loan-date-start" id="loan-date-start" class="input-form-add-book" value="" />
-                    </div>
-                    <div class="add-form-template-label-input">
-                        <label for="loan-date-return" class="label-form-add-book">Date théorique du retour</label>
-                        <input type="date" name="loan-date-return" id="loan-date-return" class="input-form-add-book" value="" />
-                    </div>
+                    
                     <div id="form-loan-register-right">
                         <label for="user-id" class="label-form-add-book">ID du lecteur</label>
                         <input type="text" name="user-id" id="user-id" class="input-form-add-book" value="" />
@@ -81,15 +74,47 @@ include_once '../admin/header-main.php';
 
 
             <form action="#" id="form-in-loan-register" method="POST" action="" enctype="multipart/form-data">
+                <?php
+                if(isset($_POST['submit-in']) && !empty($_POST['submit-in'])){
+                    
+                    $idCopy = $_POST['copy-in-id'];
+                    $stm = $db->prepare('SELECT `id_loan` FROM `loan` WHERE `copy_id` = :idCopy ORDER BY `release_date` DESC LIMIT 1');
+                    $stm->bindParam(':idCopy', $idCopy);
+                    $stm->execute();
+                    $loan = $stm->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+                    
+                    $idLoan = $loan['id_loan'];
+                    $dateRetour = date("Y-m-d");                    
+                    $status = 0;
+
+
+
+                    $stmt = $db->prepare('UPDATE `loan` SET `date_return_loan` = :dateRetour ,`status` = :status 
+                    WHERE `id_loan` = :idLoan;
+                      
+                    UPDATE `copy` SET `stock` = 1 WHERE `id_copy` = :idCopy');
+                    $stmt->bindParam(':idCopy', $idCopy);
+                    $stmt->bindParam(':idLoan', $idLoan );
+                    $stmt->bindParam(':dateRetour', $dateRetour);
+                    $stmt->bindParam(':status', $status);
+                    
+                    $stmt->execute();
+                    
+
+
+
+                }
+                ?>
                 <div id="form-in-loan-register-left">
                     <div class="add-form-in-template-label-input">
-                        <label for="copy-in-id" class="label-form-add-book">ID de l'exemplaire</label>
+                        <label for="copy-in-id" class="label-form-add-book">ID de l'exmplaire</label>
                         <input type="text" name="copy-in-id" id="copy-in-id" class="input-form-add-book" value="" />
                     </div>
-                    <div id="form-in-loan-register-right">
-                        <label for="user-in-id" class="label-form-add-book">ID du lecteur</label>
-                        <input type="text" name="user-in-id" id="user-in-id" class="input-form-add-book" value="" />
-                    </div>
+                    
                     <div id="group-btn-in-loan-register-commun">
                         <input type="reset" id="btn-reset-form-in-loan-register" name="reset" value="Reset" />
                         <input type="submit" id="btn-submit-form-in-loan-register" name="submit-in" value="Enregistrer" />

@@ -58,3 +58,6 @@ btnLoan.addEventListener("click", function (e) {
     document.body.style.overflow = "auto";
   });
 });
+
+
+
