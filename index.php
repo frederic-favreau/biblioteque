@@ -114,7 +114,7 @@
 
     <section id="section-heart" class="row-limit-size">
       <h2>Coups de coeur</h1>
-        <p class="sub-title">Nos lecteurs partagent leur coups de coeurs</p>
+        <p class="sub-title-section">Nos lecteurs partagent leur coups de coeurs</p>
         <ul class="top">
           <?php
           $sql_heart = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";

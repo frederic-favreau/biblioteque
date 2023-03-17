@@ -447,12 +447,12 @@ h2 {
   padding-top: 60px;
   overflow: hidden;
 }
-#section-heart p#sub-title {
+#section-heart p.sub-title-section {
   text-align: center;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 100px;
-  color: #fff;
+  color: #070606;
 }
 #section-heart #group-btn {
   width: -moz-fit-content;
