@@ -143,9 +143,13 @@ h2 {
             font-size: 16px;
             width: 300px;
             height: 45px;
-            border-radius: 15px;
+            border-radius: 8px;
             padding-left: 30px;
             border: none;
+
+            &:focus {
+              outline: none;
+            }
           }
 
           @media screen and (min-width: 1100px) {
@@ -159,17 +163,17 @@ h2 {
           @media screen and (min-width: 950px) {
             display: block;
             position: absolute;
-            right: -2px;
-            top: -2px;
+            right: 0;
+            top: 0;
             width: 150px;
             border: none;
             font-size: 16px;
             font-family: "Hind Madurai", sans-serif;
             font-weight: bold;
-            padding: 14px 0;
+            padding: 12px 0;
             background-color: $btn-red;
             color: #fff;
-            border-radius: 10px;
+            border-radius: 8px;
             text-align: center;
             transition: background-color 0.3s ease;
 
@@ -184,37 +188,9 @@ h2 {
       #container-group-btn-connexion {
         margin-left: auto;
 
-        @media screen and (min-width: 950px) {
-          display: flex;
-          justify-items: center;
-          align-items: center;
-        }
-
-        #btn-log-in {
-          display: none;
-          font-weight: bold;
-
-          @media screen and (min-width: 950px) {
-            display: block;
-            padding: 10px;
-            background-color: transparent;
-            color: $btn-red;
-            font-size: 16px;
-            font-family: "Hind Madurai", sans-serif;
-            margin-right: 10px;
-
-            &:hover {
-              border: 3px solid $btn-red;
-              border-radius: 10px;
-              margin-left: -6px;
-            }
-          }
-        }
-
         #btn-sign-up {
           #menu-burger {
-            width: 50px;
-            height: 50px;
+            padding: 10px 30px;
             color: $white;
             border-radius: 10px;
             display: flex;
@@ -243,7 +219,7 @@ h2 {
 
               @media screen and (min-width: 950px) {
                 display: block;
-                padding: 12px;
+                padding: 12px 24px;
                 background-color: $btn-red;
                 color: $white;
                 border-radius: 10px;
@@ -505,7 +481,6 @@ h2 {
 #section-heart {
   width: 100%;
   padding-top: 120px;
-  padding-top: 60px;
   overflow: hidden;
 
   p.sub-title-section {
@@ -571,7 +546,7 @@ h2 {
     }
 
     li {
-      margin-bottom: 120px;
+      margin-bottom: 60px;
 
       @media screen and (min-width: 950px) {
         width: 33%;
@@ -1035,7 +1010,8 @@ h2 {
   #container-section-zoom {
     width: 100%;
 
-    div.pict-left, div.pict-right   {
+    div.pict-left,
+    div.pict-right {
       display: flex;
       flex-wrap: wrap;
       width: 80%;
@@ -1044,7 +1020,7 @@ h2 {
 
       h4 {
         font-size: 30px;
-        color:$btn-red;
+        color: $btn-red;
         margin-bottom: 2px;
       }
 
@@ -1054,8 +1030,8 @@ h2 {
       }
 
       p {
-        font-size: 20PX;
-        color: #11635F;
+        font-size: 20px;
+        color: #11635f;
       }
     }
 
@@ -1092,7 +1068,6 @@ h2 {
         float: left;
       }
     }
-    
   }
 }
 
@@ -1100,11 +1075,10 @@ h2 {
 
 #section-faq {
   position: relative;
-  padding-top: 100px;
-  padding-bottom: 60px;
+  padding-top: 120px;
 
   h2#section-title {
-    margin-bottom: -30px;
+    margin-bottom: 30px;
   }
 
   h3.h3-faq {
@@ -1192,7 +1166,7 @@ h2 {
     justify-content: space-evenly;
     text-align: center;
     background-color: $main-blue;
-    border-radius: 50px;
+    border-radius: 12px;
     color: $white;
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -1231,11 +1205,12 @@ h2 {
 
 #section-location {
   position: relative;
+  padding-top: 120px;
   padding-bottom: 150px;
 
   h3.h3-location {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
   p {
@@ -1251,7 +1226,7 @@ h2 {
 
   #iframe-google {
     position: absolute;
-    top: 475px;
+    top: 555px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -1264,8 +1239,8 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 500px;
-    border-radius: 0 0 20px 20px;
+    margin-top: 480px;
+    border-radius: 0 0 12px 12px;
     background-color: $white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
       rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -1287,7 +1262,7 @@ h2 {
 
 #footer {
   width: 100%;
-  padding: 40px 20px 60px;
+  padding: 120px 20px 60px;
   background-color: $footer;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
