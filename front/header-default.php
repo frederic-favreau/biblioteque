@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <?php session_start()?>
+  <?php session_start() ?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,8 +25,8 @@
     <nav id="main-nav-bar">
       <div id="container-nav-bar" class="row-limit-size">
         <div id="container-group-logo">
-          <img src="../img/logo-seul-biblook-noir.svg" alt="Biblook">
-          <span id="nav-logo-text">Biblook</span>
+          <a href="../index.php" class="link-page-home"><img src="../img/logo-seul-biblook-noir.svg" alt="Biblook">
+            <span id="nav-logo-text">Biblook</span></a>
         </div>
         <div id="container-group-search-nav-top">
           <form action="../front/catalog.php?placeholde" method="GET">
@@ -46,7 +46,7 @@
           <?php
           } else { ?>
             <a href="../front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
-            var_dump
+              var_dump
             <?php
           } ?>
 

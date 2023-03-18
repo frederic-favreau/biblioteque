@@ -20,9 +20,9 @@
   <?php
   require_once './connexion.php';
 
-
-
   ?>
+
+
 
   <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
 
@@ -31,47 +31,46 @@
     <nav id="main-nav-bar">
       <div id="container-nav-bar" class="row-limit-size">
         <div id="container-group-logo">
-          <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
-          <span id="nav-logo-text">Biblook</span>
+          <a href="#section-news" class="link-page-home"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+            <span id="nav-logo-text">Biblook</span></a>
         </div>
         <div id="container-group-search-nav-top">
           <form action="./front/catalog.php?placeholde" method="GET">
-
             <input type="search" name="search" id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
             <input type="submit" name="rechercher" value="Rechercher" id="btn-search-nav-top">
-
-
           </form>
         </div>
         <div id="container-group-btn-connexion">
-        <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
-    // Afficher le contenu pour les utilisateurs connectés
-    ?>
-    <div><a href="#" id="btn-avatar">avatar</a></div> 
-    
-    <?php
-} else { ?>
-  <a href="./front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
-  <?php
-}?>
-          
-          
+          <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+            // Afficher le contenu pour les utilisateurs connectés
+          ?>
+            <div><a href="#" id="btn-avatar">avatar</a></div>
+
+          <?php
+          } else { ?>
+            <a href="./front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
+            <?php
+          } ?>
+
+
             <div id="menu-burger">
               <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
               <div class="menu-burger-pipe" id="menu-burger-pipe-middle"></div>
               <div class="menu-burger-pipe" id="menu-burger-pipe-bottom"></div>
             </div>
-          </a>
+            </a>
         </div>
       </div>
     </nav>
   </header>
 
 
+
   <!-- ---------- SECTION - NEWS ---------- -->
 
+
   <main>
-  
+
     // Afficher le contenu pour les utilisateurs connectés?>
     <section id="section-news" class="row-limit-size-full">
       <canvas></canvas>
@@ -122,32 +121,32 @@
             </div>
           </div>
     </section>
-   
-    
+
+
 
     <!-- ---------- SECTION - HEART ---------- -->
 
 
     <section id="section-heart" class="row-limit-size">
-      <h2>Coups de coeur</h1>
-        <p class="sub-title-section">Nos lecteurs partagent leur coups de coeurs</p>
-        <ul class="top">
-          <?php
-          $sql_heart = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
-          $req_heart =  $db->query($sql_heart);
-          $i = 1;
-          while ($heart = $req_heart->fetch(PDO::FETCH_ASSOC)) {
-            $card_class = ($i <= 2) ? 'left-card' : 'right-card';
-          ?>
+      <h2>Coups de coeur</h2>
+      <p class="sub-title-section" id="sub-title-heart">Nos lecteurs partagent leur coups de coeurs</p>
+      <ul class="top">
+        <?php
+        $sql_heart = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
+        $req_heart =  $db->query($sql_heart);
+        $i = 1;
+        while ($heart = $req_heart->fetch(PDO::FETCH_ASSOC)) {
+          $card_class = 'animated-card';
+        ?>
 
-            <li class="<?= $card_class ?>"><a href="./front/book-detail.php?id=<?= $heart['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt=""></a></li>
+          <li class="<?= $card_class ?>"><a href="./front/book-detail.php?id=<?= $heart['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt=""></a></li>
 
-          <?php
-            $i++;
-          } ?>
-        </ul>
+        <?php
+          $i++;
+        } ?>
+      </ul>
 
-        <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
+      <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
     </section>
 
 
@@ -157,7 +156,7 @@
     <section id="section-soon-available" class="row-limit-size">
 
       <h2>Derniers arrivages</h2>
-      <h3 id="h3-tag"># tout juste disponible</h3>
+      <h3 id="h3-tag">tout juste disponible</h3>
       <div id="container-cards">
 
         <!-- find last 9 books in our librarerie -->
@@ -197,7 +196,7 @@
         ?>
 
 
-          <div class="card">
+          <div class="card" style="--card-index: 1;">
             <div class="top-item-card">
               <?php
               $now = date('Y-m-d',  strtotime('-2 month'));
@@ -210,7 +209,7 @@
 
               ?>
 
-              <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
+              <img src="./img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>" class="pict-card-book">
             </div>
             <div class="bottom-item-card">
 
@@ -218,10 +217,10 @@
               <!-- str_replace takes three arguments, first element to replace, 
             seconde element to insert, third target of function -->
 
-              <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
+              <h4 id="title-genre"><?= str_replace(',', ', ', $card['genres']) ?></h4>
               <h3 class="title-card-index"><?= $card['title'] ?></h3>
               <!-- <p class="description-card"><?= $card['extract'] ?></p> -->
-              <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
+              <h5 id="title-author"><?= str_replace(',', ', ', $card['authors']) ?></h5>
               <a href="./front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
             </div>
           </div>
@@ -229,25 +228,28 @@
       </div>
     </section>
 
+
+
     <!-- ---------- SECTION - CTA AVAILABLE ---------- -->
 
 
     <section id="section-cta-available">
-      <h2>Vous recherchez un livre en particulier ?</h2>
-      <p id="sub-title">Faites votre demande dès maintenant auprès de <span id="font-logo">Biblook</span></p>
+      <h2 class="title-cta">Vous recherchez un livre en particulier ?</h2>
+      <p class="sub-title-section" id="sub-title-cta">Faites votre demande dès maintenant auprès de <span id="font-logo">Biblook</span></p>
       <a href="#">Demander un livre</a>
     </section>
+
 
 
     <!-- ---------- SECTION - BLOG ---------- -->
 
 
     <section id="section-blog" class="row-limit-size">
-      <h3 id="h3-tag">En manque d'infos ?</h3>
+      <p class="sub-title-section">En manque d'infos ?</p>
       <h2>Notre blog</h2>
       <div id="container-section-blog">
         <div class="card-blog">
-          <div class="card-blog-top" id="pict-aticle-1">
+          <div class="card-blog-top hover-scale" id="pict-aticle-1">
             <div class="article-infos">
               <div>Mars 2023</div>
               <div class="category">Nouveautés</div>
@@ -255,12 +257,12 @@
           </div>
           <div class="card-blog-bottom">
             <h4>Journée Portes Ouvertes</h4>
-            <p>Visite guidée à Biblook, vente de livres atelier et lecture pour les enfants...</p>
+            <p>Visite guidée à Biblook, vente de livres atelier et lecture pour les enfants Lorem ipsum dolor sit. ...</p>
             <a href="./front/blog.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top" id="pict-aticle-2">
+          <div class="card-blog-top hover-scale" id="pict-aticle-2">
             <div class="article-infos">
               <div>Mars 2023</div>
               <div class="category">Nouveautés</div>
@@ -268,12 +270,12 @@
           </div>
           <div class="card-blog-bottom">
             <h4>Les chevaux ne mentent jamais</h4>
-            <p>Chercher à communiquer avec les chevaux nous en révèle beaucoup sur soi-même...</p>
+            <p>Chercher à communiquer avec les chevaux nous en révèle beaucoup sur soi-même Lorem ipsum dolor sit amet consectetur....</p>
             <a href="./front/blog2.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top" id="pict-aticle-3">
+          <div class="card-blog-top hover-scale" id="pict-aticle-3">
             <div class="article-infos">
               <div>Février 2023</div>
               <div class="category">Nouveautés</div>
@@ -281,12 +283,12 @@
           </div>
           <div class="card-blog-bottom">
             <h4>Une amie m’a parlé du régime Kéto</h4>
-            <p>Après plusieurs régimes différents, une amie m’ parlé du régime Kéto..</p>
+            <p>Après plusieurs régimes différents, une amie m’ parlé du régime Kéto.. Lorem ipsum dolor sit amet consectetur adipisicing...</p>
             <a href="./front/blog3.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top" id="pict-aticle-4">
+          <div class="card-blog-top hover-scale" id="pict-aticle-4">
             <div class="article-infos">
               <div>Février 2023</div>
               <div class="category">Nouveautés</div>
@@ -294,12 +296,12 @@
           </div>
           <div class="card-blog-bottom">
             <h4>Venez troquer des boutures</h4>
-            <p>Un super évenement à ne pas rater près de chez vous..</p>
+            <p>Un super évenement à ne pas rater près de chez vous.. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, enim...</p>
             <a href="./front/blog4.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top" id="pict-aticle-5">
+          <div class="card-blog-top hover-scale" id="pict-aticle-5">
             <div class="article-infos">
               <div>Janvier 2023</div>
               <div class="category">Nouveautés</div>
@@ -313,7 +315,7 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top" id="pict-aticle-6">
+          <div class="card-blog-top hover-scale" id="pict-aticle-6">
             <div class="article-infos">
               <div>Janvier 2023</div>
               <div class="category">Nouveautés</div>
@@ -321,7 +323,7 @@
           </div>
           <div class="card-blog-bottom">
             <h4>Prix du Club-lecture 2022</h4>
-            <p>Le 28 octobre 2022 le Club-lecture de la bibliothèque de Saint-Denis-les-Bourg..</p>
+            <p>Le 28 octobre 2022 le Club-lecture de la bibliothèque de Saint-Denis-les-Bourg.. Lorem ipsum dolor sit amet... </p>
             <a href="./front/blog6.php">Lire l'article ↗</a>
           </div>
         </div>
@@ -334,17 +336,16 @@
 
 
     <section id="section-zoom" class="row-limit-size">
-      <h3 id="h3-tag"></h3>
       <h2>Zoom sur nos Biblookeurs</h2>
       <div id="container-section-zoom">
         <div id="item-top-zoom-1" class="pict-right">
           <div id="item-text" class="item-text-commun">
             <h4>Margot Fleury</h4>
             <h5>Etudiante en droit, adhérente chez Biblook depuis un an</h5>
-            <p>“Etudiante en droit, une amie m’a recommandé cette bibliothèque.
+            <p><span>❝</span> Etudiante en droit, une amie m’a recommandé cette bibliothèque.
               J’apprends beaucoup grâce aux livres, cela m’aide pour mes études.
               Tout est bien organisé, les ouvrages m’aident à m’instruire.
-              Bon accueil ”.</p>
+              Bon accueil. <span>❞</span></p>
           </div>
           <div id="item-pict1" class="item-pict-commun">
             <img src="./img/zoom/Margaux-fleury-zoom-2.png" alt="Margot Fleury">
@@ -357,21 +358,21 @@
           <div id="item-text" class="item-text-commun">
             <h4>Ethan Siou</h4>
             <h5>Etudiant en médecine, adhérent depuis deux ans</h5>
-            <p>“Etudiante en droit, une amie m’a recommandé cette bibliothèque.
+            <p><span>❝</span> Etudiante en droit, une amie m’a recommandé cette bibliothèque.
               J’apprends beaucoup grâce aux livres, cela m’aide pour mes études.
               Tout est bien organisé, les ouvrages m’aident à m’instruire.
-              Bon accueil ”.</p>
+              Bon accueil. <span>❞</span></p>
           </div>
         </div>
         <div id="item-top-zoom-1" class="pict-right">
           <div id="item-text" class="item-text-commun">
             <h4>Marilou Balu</h4>
             <h5>Retraité, adhérent chez Biblook depuis 5 ans</h5>
-            <p>J’accompagne mes deux enfants aux ateliers lecture organisé et encadré par une
+            <p><span>❝</span> J’accompagne mes deux enfants aux ateliers lecture organisé et encadré par une
               bénévole tous les mercredis après-midi, c’est devenu une activité principale, ils se
               régalent. Les bénévoles sont très humains, développe la curiosité des enfants,
               et leur permettent de rencontrer d’autres enfants autour d’une histoire.
-              Bbiblook est calme, chaleureux ou l’on passe de bon moments”.</p>
+              Bbiblook est calme, chaleureux ou l’on passe de bon moments. <span>❞</span></p>
           </div>
           <div id="item-pict1" class="item-pict-commun">
             <img src="./img/zoom/Marilou-zoom-3.png" alt="Margot Fleury">
@@ -384,11 +385,11 @@
           <div id="item-text" class="item-text-commun">
             <h4>Henri Burtin</h4>
             <h5>Retraité, adhérent chez Biblook depuis 5 ans</h5>
-            <p>“Fidèle à Biblook, je trouve ce lieu intéressant dans la diversité des ouvrages.
+            <p><span>❝</span> Fidèle à Biblook, je trouve ce lieu intéressant dans la diversité des ouvrages.
               Je passe beaucoup de temps à lire, les bénévoles font un travail remarquable.
               Je me suis inscrit il y 5 ans, la carte de fidélité apporte de bons avantages.
               J’accompagne mes petits-enfants pour des ateliers lectures organisé par Biblook;
-              tout le monde trouve son bonheur, je recommande cette biblothèque ”.</p>
+              tout le monde trouve son bonheur, je recommande cette biblothèque. <span>❞</span></p>
           </div>
         </div>
       </div>
@@ -399,9 +400,10 @@
 
     <!-- ---------- SECTION - FAQ ---------- -->
 
+
     <section id="section-faq" class="row-limit-size">
       <h2 id="section-title">Foire aux questions</h2>
-      <h3 class="h3-faq">Toutes les choses que vous devez savoir sont ici.</h3>
+      <p class="sub-title-section">Toutes les choses que vous devez savoir sont ici.</p>
       <div id="container-faq">
         <div class="item-faq">
           <p class="question">Que faire si j'ai perdu ma carte lecteur ?</p>
@@ -424,7 +426,7 @@
         </div>
         <hr>
         <div class="item-faq">
-          <p class="question">Puis-je prolonger le prêt de mes  livres ?</p>
+          <p class="question">Puis-je prolonger le prêt de mes livres ?</p>
           <p class="faq-answer">Les livres peuvent être prolongés, depuis votre espace client.</p>
           <div class="toggle-symbol"></div>
         </div>
@@ -448,37 +450,45 @@
           <img src="./img/profil-round/Avatar (2).png" alt="avatar2">
         </div>
         <h4>Vous avez une ou des questions ?</h4>
-        <p>Et vous n'avez pas toruvé sur notre site ? Alors n'hésitez pas une seconde, contacter nos supers administrateurs.</p>
+        <p>Alors n'hésitez pas une seconde, contacter nos supers administrateurs</p>
         <a href="#">Nous contacter</a>
       </div>
     </section>
+
 
 
     <!-- ---------- SECTION - LOCATION ---------- -->
 
 
     <section id="section-location" class="row-limit-size">
-      <h3 class="h3-location">Où nous trouver ?</h3>
-      <h2>Direction <span id="font-logo">Biblook</span> <br> à Saint-Denis-les-Bourg</h2>
+      <p class="sub-title-section">Où nous trouver ?</p>
+      <h2 id="title-location">Direction <span id="font-logo">Biblook</span> <br> à Saint-Denis-les-Bourg</h2>
       <div id="iframe-google">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div id="container-info-location">
         <ul>
-          <li><span>Infos pratiques :</span></li>
-          <li>📫 244B Rue du Point du Jour, <br> 01000 Saint-Denis-lès-Bourg</li>
-          <li>🌐 onlineformationpro.com</li>
-          <li>☏ 04 28 36 06 93</li>
+          <h5><img src="./img/picto/Icon-mail.svg" alt="Email"></h5>
+          <li><span>Email</span></li>
+          <li>Notre équipe est là pour vous accueillir</li>
+          <li><a href="#">contact@biblook.com</a></li>
         </ul>
         <ul>
-          <li><span>Nos horaires :</span></li>
-          <li>Du lundi au vendredi 08:30-12:00</li>
-          <li>Du lundi au vendredi 13:30-17:00</li>
-          <li>Du samedi au dimanche fermé</li>
+          <h5><img src="./img/picto/marker-pin-02.svg" alt="Localisation"></h5>
+          <li><span>Nous situer</span></li>
+          <li>244b rue du Pont du Jour</li>
+          <li>01000, Saint-Denis-lès-Bourg</li>
+        </ul>
+        <ul>
+          <h5><img src="./img/picto/phone.svg" alt="Téléphone"></h5>
+          <li><span>Téléphone</span></li>
+          <li>Notre équipe est là pour vous accueillir</li>
+          <li><a href="#">+33 4 38 38 24 38</a></li>
         </ul>
       </div>
     </section>
   </main>
+
 
 
   <!-- ---------- SECTION - FOOTER ---------- -->
@@ -487,9 +497,9 @@
   <footer id="footer">
     <div id="container-footer-top">
       <div id="item-footer-left">
-        <div id="group-logo">
-          <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
-          <span id="font-logo">Biblook</span>
+        <div id="container-group-logo-botom">
+          <a href="#section-news" class="link-page-home"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+            <span id="nav-logo-text">Biblook</span></a>
         </div>
         <ul>
           <div id="list-left">
@@ -508,9 +518,9 @@
       </div>
       <div id="item-footer-right">
         <p>Newsletter</p>
-        <form action="#">
+        <form action="#" id="newsletter">
           <input type="mail">
-          <button type="submit">Souscrire</button>
+          <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
         </form>
       </div>
     </div>

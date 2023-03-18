@@ -4,7 +4,6 @@ const showFilters = document.querySelectorAll(".show-filter");
 
 showFilters.forEach((filter) => {
   filter.addEventListener("click", () => {
-
     const itemFilter = filter.parentElement;
     itemFilter.classList.toggle("active");
 
@@ -12,138 +11,108 @@ showFilters.forEach((filter) => {
     listFilter.classList.toggle("active");
 
     const toggleSymbol = filter.querySelector(".toggle-symbol");
-    toggleSymbol.textContent = listFilter.classList.contains("active") ? "-" : "+";
+    toggleSymbol.textContent = listFilter.classList.contains("active")
+      ? "-"
+      : "+";
   });
 });
-
 
 // ANIMATION CARD SECTION LAST ARRIVED
 
-const section = document.querySelector('#section-soon-available');
-const cards = document.querySelectorAll('.card');
-const firstRow = document.querySelectorAll('.card:nth-child(-n+3)');
-const secondRow = document.querySelectorAll('.card:nth-child(n+4):nth-child(-n+6)');
-const thirdRow = document.querySelectorAll('.card:nth-child(n+7)');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      cards.forEach(card => {
-        card.classList.add('show-card');
-      });
-      observer.unobserve(section);
-    }
-  });
-});
-const observerFirstRow = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      firstRow.forEach(card => {
-        card.classList.add('show-card-row1');
-      });
-      observerFirstRow.unobserve(section);
-    }
-  });
-});
-const observerSecondRow = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      secondRow.forEach(card => {
-        card.classList.add('show-card-row2');
-      });
-      observerSecondRow.unobserve(section);
-    }
-  });
-});
-const observerThirdRow = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      thirdRow.forEach(card => {
-        card.classList.add('show-card-row3');
-      });
-      observerThirdRow.unobserve(section);
-    }
-  });
-});
+const section = document.querySelector("#section-soon-available");
+const cards = document.querySelectorAll(".card");
+const firstRow = document.querySelectorAll(".card:nth-child(-n+3)");
+const secondRow = document.querySelectorAll(
+  ".card:nth-child(n+4):nth-child(-n+6)"
+);
+const thirdRow = document.querySelectorAll(".card:nth-child(n+7)");
 
-observer.observe(section);
-observerFirstRow.observe(section);
-observerSecondRow.observe(section);
-observerThirdRow.observe(section);
+const animateRow = (row, animationClass) => {
+  row.forEach((card, index) => {
+    card.style.setProperty('--card-index', index + 1); // Ajoutez cette ligne ici
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            card.classList.add(animationClass);
+            observer.unobserve(card);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(card);
+  });
+};
 
 
+animateRow(firstRow, "show-card-row1");
+animateRow(secondRow, "show-card-row2");
+animateRow(thirdRow, "show-card-row3");
 
 // ANIMATION NAV BAR AND STICKY
 
-const nav = document.getElementById('main-nav-bar');
+const nav = document.getElementById("main-nav-bar");
 
-window.addEventListener('scroll', function () {
-
-    if(window.scrollY > 30) {
-        nav.classList.add('anim-nav');
-    } else {
-        nav.classList.remove('anim-nav');
-    }
-
-})
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 30) {
+    nav.classList.add("anim-nav");
+  } else {
+    nav.classList.remove("anim-nav");
+  }
+});
 
 // ANIMATION SECTION HEART
 
 document.addEventListener("DOMContentLoaded", function () {
-  const sectionHeart = document.querySelector('#section-heart');
+  const sectionHeart = document.querySelector("#section-heart");
 
-  const observer = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        var leftCards = document.querySelectorAll('.left-card');
-        var rightCards = document.querySelectorAll('.right-card');
+  const observer = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          let cards = document.querySelectorAll(".animated-card");
 
-        leftCards.forEach(function (card) {
-          card.style.transform = 'translateX(0)';
-        });
+          cards.forEach(function (card, index) {
+            card.style.animation = `slideIn 1s ${index * 0.5}s forwards`;
+          });
 
-        rightCards.forEach(function (card) {
-          card.style.transform = 'translateX(0)';
-        });
-
-        // Désactive l'observer après l'animation
-        observer.disconnect();
-      }
-    });
-  }, {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1 // Pourcentage de la section visible avant de déclencher l'animation
-  });
+          // Désactive l'observer après l'animation
+          observer.disconnect();
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: "0px", // Décale la zone d'observation vers le bas de 100 pixels
+      threshold: 0.6, // Pourcentage de la section visible avant de déclencher l'animation
+    }
+  );
 
   observer.observe(sectionHeart);
 });
-
-
 
 // Show and hide answer for FAQ
 
 const faqItems = document.querySelectorAll(".item-faq");
 
 faqItems.forEach((item) => {
-  item.addEventListener("click", () => {
+  item.addEventListener("click", function () {
     item.classList.toggle("active");
   });
 });
 
-
 let btnAvatar = document.getElementById("btn-avatar");
 
-btnAvatar.addEventListener("click",function(){
-let menuAvatar = document.createElement('div');
-menuAvatar.id = 'menuAvatar';
+btnAvatar.addEventListener("click", function () {
+  let menuAvatar = document.createElement("div");
+  menuAvatar.id = "menuAvatar";
 
-let Avatar = document.getElementById('menuAvatar');
-Avatar.style.height = '100px';
-Avatar.style.width = '100px';
-Avatar.style.color = 'red';
-let headerRight = document.getElementById('container-group-btn-connexion');
-headerRight.appendChild(menuAvatar);
-})
-
-
-
+  let Avatar = document.getElementById("menuAvatar");
+  Avatar.style.height = "100px";
+  Avatar.style.width = "100px";
+  Avatar.style.color = "red";
+  let headerRight = document.getElementById("container-group-btn-connexion");
+  headerRight.appendChild(menuAvatar);
+});

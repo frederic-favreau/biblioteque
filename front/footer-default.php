@@ -4,9 +4,9 @@
 <footer id="footer">
     <div id="container-footer-top">
       <div id="item-footer-left">
-        <div id="group-logo">
-          <img src="../img/logo-seul-biblook-noir.svg" alt="Biblook">
-          <span id="font-logo">Biblook</span>
+      <div id="container-group-logo-botom">
+          <a href="../index.php" class="link-page-home"><img src="../img/logo-seul-biblook-noir.svg" alt="Biblook">
+            <span id="nav-logo-text">Biblook</span></a>
         </div>
         <ul>
           <div id="list-left">
