@@ -449,6 +449,13 @@ p.sub-title-section {
 #section-news .flip.flip-vertical:hover > .back {
   transform: rotateX(0deg);
 }
+#section-news .flip.auto-flip > .front, #section-news .flip.manual-flip > .front {
+  transform: rotateY(180deg);
+}
+#section-news .flip.auto-flip > .back, #section-news .flip.manual-flip > .back {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
 #section-news .flip {
   position: relative;
   display: inline-block;
@@ -816,35 +823,43 @@ p.sub-title-section {
     width: 384px;
     height: 456px;
   }
-  #section-blog #container-section-blog .card-blog:hover .card-blog-top {
-    transform: scale(1.05);
+  #section-blog #container-section-blog .card-blog:hover .bg-image {
+    transform: scale(1.1);
   }
 }
-#section-blog #container-section-blog .card-blog #pict-aticle-1 {
+#section-blog #container-section-blog .card-blog div.bg-image#pict-aticle-1 {
   background-image: url(../img/photosblog/cards/pexels-tim-mossholder-4843912.jpg);
 }
-#section-blog #container-section-blog .card-blog #pict-aticle-2 {
+#section-blog #container-section-blog .card-blog .bg-image#pict-aticle-2 {
   background-image: url(../img/photosblog/cards/pexels-pixabay-52500.jpg);
 }
-#section-blog #container-section-blog .card-blog #pict-aticle-3 {
+#section-blog #container-section-blog .card-blog .bg-image#pict-aticle-3 {
   background-image: url(../img/photosblog/cards/pexels-ketut-subiyanto-4473398.jpg);
 }
-#section-blog #container-section-blog .card-blog #pict-aticle-4 {
+#section-blog #container-section-blog .card-blog .bg-image#pict-aticle-4 {
   background-image: url(../img/photosblog/cards/pexels-akil-mazumder-1072824.jpg);
 }
-#section-blog #container-section-blog .card-blog #pict-aticle-5 {
+#section-blog #container-section-blog .card-blog .bg-image#pict-aticle-5 {
   background-image: url(../img/photosblog/cards/pexels-photo-532192.jpeg);
 }
-#section-blog #container-section-blog .card-blog #pict-aticle-6 {
+#section-blog #container-section-blog .card-blog .bg-image#pict-aticle-6 {
   background-image: url(../img/photosblog/cards/pexels-brett-sayles-992734.jpg);
 }
 #section-blog #container-section-blog .card-blog .card-blog-top {
   height: 55%;
   max-height: 55%;
   overflow: hidden;
+  position: relative;
+  transition: all 0.5s ease;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#section-blog #container-section-blog .card-blog .card-blog-top .bg-image {
+  width: 100%;
+  height: 100%;
   background-position: center;
   background-size: cover;
-  position: relative;
+  position: absolute;
   transition: transform 0.5s ease;
 }
 #section-blog #container-section-blog .card-blog .card-blog-top .article-infos {

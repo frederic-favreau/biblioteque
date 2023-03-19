@@ -1,7 +1,7 @@
 $btn-red: #ff5e38;
 $btn-red-hover: #b53928;
 $main-blue: #0868ae;
-$main-blue-hover:#05497b;
+$main-blue-hover: #05497b;
 $white: #fff;
 $black: #070606;
 $footer: #043a61;
@@ -424,27 +424,6 @@ p.sub-title-section {
         }
       }
 
-      // #btn-join-reader {
-      //   display: block;
-      //   font-size: 20px;
-      //   margin: 0 auto;
-      //   width: 350px;
-      //   padding: 15px 20px;
-      //   background-color: $main-blue;
-      //   color: $white;
-      //   border: 2px solid $white;
-      //   border-radius: 8px;
-      //   text-align: center;
-      //   transition: background-color 0.3s ease;
-      //   margin-bottom: 50px;
-
-      //   &:hover {
-      //     transform: scale(1.01);
-      //     color: #f9b017;
-      //     border: 2px solid #f9b017;
-      //   }
-      // }
-
       @media screen and (min-width: 950px) {
         width: 50%;
       }
@@ -526,6 +505,18 @@ p.sub-title-section {
         > .back {
           transform: rotateX(0deg);
         }
+      }
+    }
+
+    &.auto-flip,
+    &.manual-flip {
+      > .front {
+        transform: rotateY(180deg);
+      }
+
+      > .back {
+        opacity: 1;
+        transform: rotateY(0deg);
       }
     }
   }
@@ -1019,32 +1010,34 @@ p.sub-title-section {
         width: 384px;
         height: 456px;
 
-        &:hover .card-blog-top {
-          transform: scale(1.05);
+        &:hover {
+          .bg-image {
+            transform: scale(1.1);
+          }
         }
       }
 
-      #pict-aticle-1 {
+      div.bg-image#pict-aticle-1 {
         background-image: url(../img/photosblog/cards/pexels-tim-mossholder-4843912.jpg);
       }
 
-      #pict-aticle-2 {
+      .bg-image#pict-aticle-2 {
         background-image: url(../img/photosblog/cards/pexels-pixabay-52500.jpg);
       }
 
-      #pict-aticle-3 {
+      .bg-image#pict-aticle-3 {
         background-image: url(../img/photosblog/cards/pexels-ketut-subiyanto-4473398.jpg);
       }
 
-      #pict-aticle-4 {
+      .bg-image#pict-aticle-4 {
         background-image: url(../img/photosblog/cards/pexels-akil-mazumder-1072824.jpg);
       }
 
-      #pict-aticle-5 {
+      .bg-image#pict-aticle-5 {
         background-image: url(../img/photosblog/cards/pexels-photo-532192.jpeg);
       }
 
-      #pict-aticle-6 {
+      .bg-image#pict-aticle-6 {
         background-image: url(../img/photosblog/cards/pexels-brett-sayles-992734.jpg);
       }
 
@@ -1052,10 +1045,18 @@ p.sub-title-section {
         height: 55%;
         max-height: 55%;
         overflow: hidden;
-        background-position: center;
-        background-size: cover;
         position: relative;
-        transition: transform 0.5s ease;
+        transition: all 0.5s ease;
+        object-fit: cover;
+
+        .bg-image {
+          width: 100%;
+          height: 100%;
+          background-position: center;
+          background-size: cover;
+          position: absolute;
+          transition: transform 0.5s ease;
+        }
 
         .article-infos {
           position: absolute;

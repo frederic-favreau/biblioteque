@@ -40,14 +40,13 @@
           <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
             // Afficher le contenu pour les utilisateurs connectés
           ?>
-            <div><a href="#" id="btn-avatar">avatar</a></div>
+            <div><a href="./admin/logout.php" id="btn-avatar"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a></div>
 
           <?php
           } else { ?>
             <a href="./front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
             <?php
           } ?>
-
 
             <div id="menu-burger">
               <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
@@ -59,8 +58,6 @@
       </div>
     </nav>
   </header>
-
-
 
   <!-- ---------- SECTION - NEWS ---------- -->
 
@@ -86,14 +83,14 @@
         </div>
         <div id="item-section-news-right">
           <div id="item-news-right-top">
-            <div class="flip">
+            <div class="flip" data-index="0">
               <div class="front front-item-1" style="background-image: url(./img/news-3.png)">
               </div>
               <div class="back front-item-1">
                 <p><span>Lorem</span> ipsum dolor sit amet consectetur adipisicing elit. Voluptas nulla minima perferendis ipsum ab...</p>
               </div>
             </div>
-            <div class="flip">
+            <div class="flip" data-index="1">
               <div class="front front-item-2" style="background-image: url(./img/news-2.png)">
               </div>
               <div class="back front-item-2">
@@ -102,21 +99,21 @@
             </div>
           </div>
           <div id="item-news-right-bottom">
-            <div class="flip">
+            <div class="flip" data-index="2">
               <div class="front front-item-4" style="background-image: url(./img/news-1.png)">
               </div>
               <div class="back front-item-4">
                 <p><span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis..</p>
               </div>
             </div>
-            <div class="flip">
+            <div class="flip" data-index="3">
               <div class="front front-item-3" style="background-image: url(./img/news-1.png)">
               </div>
               <div class="back front-item-3">
                 <p><span>Lorem</span> tools make application development quicker and easier to maintain than if you did everything by hand..</p>
               </div>
             </div>
-            <div class="flip">
+            <div class="flip" data-index="4">
               <div class="front front-item-5" style="background-image: url(./img/news-1.png)">
               </div>
               <div class="back front-item-5">
@@ -253,7 +250,8 @@
       <h2>Notre blog</h2>
       <div id="container-section-blog">
         <div class="card-blog">
-          <div class="card-blog-top hover-scale" id="pict-aticle-1">
+          <div class="card-blog-top">
+            <div class="bg-image hover-scale" id="pict-aticle-1"></div>
             <div class="article-infos">
               <div>Mars 2023</div>
               <div class="category">Nouveautés</div>
@@ -266,7 +264,8 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top hover-scale" id="pict-aticle-2">
+          <div class="card-blog-top">
+            <div class="bg-image hover-scale" id="pict-aticle-2"></div>
             <div class="article-infos">
               <div>Mars 2023</div>
               <div class="category">Nouveautés</div>
@@ -279,7 +278,8 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top hover-scale" id="pict-aticle-3">
+          <div class="card-blog-top">
+            <div class="bg-image hover-scale" id="pict-aticle-3"></div>
             <div class="article-infos">
               <div>Février 2023</div>
               <div class="category">Nouveautés</div>
@@ -292,7 +292,8 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top hover-scale" id="pict-aticle-4">
+          <div class="card-blog-top">
+            <div class="bg-image hover-scale" id="pict-aticle-4"></div>
             <div class="article-infos">
               <div>Février 2023</div>
               <div class="category">Nouveautés</div>
@@ -305,7 +306,8 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top hover-scale" id="pict-aticle-5">
+          <div class="card-blog-top">
+            <div class="bg-image hover-scale" id="pict-aticle-5"></div>
             <div class="article-infos">
               <div>Janvier 2023</div>
               <div class="category">Nouveautés</div>
@@ -319,7 +321,8 @@
           </div>
         </div>
         <div class="card-blog">
-          <div class="card-blog-top hover-scale" id="pict-aticle-6">
+          <div class="card-blog-top">
+            <div class="bg-image hover-scale" id="pict-aticle-6"></div>
             <div class="article-infos">
               <div>Janvier 2023</div>
               <div class="category">Nouveautés</div>

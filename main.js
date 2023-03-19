@@ -1,3 +1,60 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const sectionNews = document.querySelector("#section-news");
+  const flips = document.querySelectorAll(".flip");
+  let currentIndex = 0;
+  const duration = 70 * 100; // 30 secondes
+  let cardHovered = false; // Ajout d'une variable pour vérifier si une carte est survolée
+
+  function rotateCards() {
+    if (!cardHovered) { // Vérifie si aucune carte n'est survolée
+      flips[currentIndex].classList.remove("auto-flip");
+
+      currentIndex++;
+      if (currentIndex >= flips.length) {
+        currentIndex = 0;
+      }
+
+      flips[currentIndex].classList.add("auto-flip");
+    }
+
+    setTimeout(rotateCards, duration);
+  }
+
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        rotateCards();
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    threshold: 0.1,
+  });
+
+  observer.observe(sectionNews);
+
+  flips.forEach((flip) => {
+    flip.addEventListener("mouseover", () => {
+      const index = parseInt(flip.dataset.index);
+      if (index !== currentIndex) {
+        flip.classList.add("manual-flip");
+        cardHovered = true; // Mettre à jour la variable lorsque la souris est sur la carte
+      }
+    });
+
+    flip.addEventListener("mouseout", () => {
+      flip.classList.remove("manual-flip");
+      cardHovered = false; // Mettre à jour la variable lorsque la souris quitte la carte
+    });
+  });
+});
+
+
+
+
 //
 //
 // BTN BACK TO TOP
