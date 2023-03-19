@@ -40,7 +40,7 @@
           <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
             // Afficher le contenu pour les utilisateurs connectés
           ?>
-            <div><a href="./admin/logout.php" id="btn-avatar"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a></div>
+            <div id="box-index-logout"><a href="./admin/logout.php" id="btn-avatar"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a></div>
 
           <?php
           } else { ?>
