@@ -210,16 +210,4 @@ faqItems.forEach((item) => {
   });
 });
 
-let btnAvatar = document.getElementById("btn-avatar");
 
-btnAvatar.addEventListener("click", function () {
-  let menuAvatar = document.createElement("div");
-  menuAvatar.id = "menuAvatar";
-
-  let Avatar = document.getElementById("menuAvatar");
-  Avatar.style.height = "100px";
-  Avatar.style.width = "100px";
-  Avatar.style.color = "red";
-  let headerRight = document.getElementById("container-group-btn-connexion");
-  headerRight.appendChild(menuAvatar);
-});
