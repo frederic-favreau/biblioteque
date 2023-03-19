@@ -4,6 +4,7 @@ $main-blue: #0868ae;
 $white: #fff;
 $black: #070606;
 $footer: #043a61;
+$background: #fafafb;
 
 body {
   div.bloc-modale {
@@ -17,8 +18,6 @@ body {
   }
 }
 
-
-
 // ---------- MODALE LOAN CONFIRMATION ----------
 
 main {
@@ -31,10 +30,10 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 30px ;
+    padding: 30px;
     box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08),
       0px 8px 8px -4px rgba(16, 24, 40, 0.03);
-    border-radius: 10px;
+    border-radius: 8px;
 
     p#loan-confimation {
       font-size: 1.2rem;
@@ -75,8 +74,7 @@ main {
       border: 1px solid $main-blue;
       color: $main-blue;
       padding: 10px 40px;
-      border-radius: 10px;
-
+      border-radius: 8px;
 
       &:hover {
         background-color: $main-blue;
@@ -96,9 +94,7 @@ main {
   display: block;
 }
 
-
 // ---------- SECTION - DETAIL BOOK ----------
-
 
 section#section-detail-book {
   padding-top: 60px;
@@ -122,7 +118,7 @@ section#section-detail-book {
         color: $white;
         background-color: $main-blue;
         padding: 3px 50px;
-        border-radius: 20px 0 20px 0;
+        border-radius: 8px 0 8px 0;
         @media screen and (min-width: 950px) {
           font-size: 12px;
           padding: 6px 50px;
@@ -186,7 +182,7 @@ section#section-detail-book {
 
       h3#info-technical {
         font-size: 20px;
-        font-family: 'Nova Slim', cursive, sans-serif;
+        font-family: "Nova Slim", cursive, sans-serif;
         color: $main-blue;
         margin-bottom: 20px;
         @media screen and (min-width: 950px) {
@@ -200,7 +196,8 @@ section#section-detail-book {
           flex-wrap: wrap;
           flex-direction: column;
           font-size: 16px;
-          padding: 6px 0;
+          padding: 6px 20px;
+          border-radius: 8px;
           color: gray;
           @media screen and (min-width: 950px) {
             width: 80%;
@@ -231,7 +228,7 @@ section#section-detail-book {
       width: 100%;
       height: fit-content;
       padding: 20px;
-      border-radius: 20px;
+      border-radius: 8px;
       background-color: #fff;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       @media screen and (min-width: 950px) {
@@ -242,8 +239,6 @@ section#section-detail-book {
         font-size: 20px;
         text-align: inherit;
         color: $main-blue;
-        border: 1px solid $main-blue;
-        border-radius: 5px;
         margin-bottom: 4px;
       }
 
@@ -274,7 +269,7 @@ section#section-detail-book {
       ul.list-info-revervation {
         li {
           font-size: 16px;
-          color: $btn-red-hover;
+          color: $black;
           @media screen and (min-width: 950px) {
             font-size: 18px;
           }
@@ -290,7 +285,6 @@ section#section-detail-book {
       h4.title-work-description {
         font-size: 20px;
         color: $main-blue;
-        margin-top: 16px;
         margin-bottom: 6px;
         padding: 10px;
       }
@@ -322,7 +316,7 @@ section#section-detail-book {
         padding: 12px;
         background-color: $main-blue;
         color: $white;
-        border-radius: 10px;
+        border-radius: 8px;
         text-align: center;
         transition: background-color 0.3s ease;
         margin-top: 20px;
@@ -349,21 +343,19 @@ section#section-detail-book {
   }
 }
 
-
 // ---------- SECTION - RECOMMENDATION ----------
-
 
 #section-recommandation {
   padding-bottom: 60px;
+  padding-bottom: 140px;
   h3.standard-title-section {
     font-size: 30px;
-    font-family: 'Nova Slim', cursive, sans-serif;
+    font-family: "Nova Slim", cursive, sans-serif;
     color: $main-blue;
     margin-top: 16px;
     margin-bottom: 6px;
     @media screen and (min-width: 950px) {
       font-size: 40px;
-      text-decoration: underline;
     }
   }
 
@@ -382,8 +374,16 @@ section#section-detail-book {
       margin: 100px auto 40px auto;
       height: 230px;
       padding: 15px 5px 15px 200px;
-      border-radius: 5px;
+      border-radius: 8px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      &:hover img {
+        transform: translateY(-15px);
+      }
+
+      &:hover {
+        background-color: $white;
+      }
 
       img {
         position: absolute;
@@ -402,39 +402,40 @@ section#section-detail-book {
 
       .bottom-item-card {
         h4 {
-          margin: 5px 0;
+          font-size: 16px;
+          margin: 15px 0;
           text-transform: capitalize;
         }
 
         h3#title-book-card {
-          font-family: 'Nova Slim', cursive, sans-serif;
+          font-family: "Nova Slim", sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: normal;
+          letter-spacing: 0.04em;
           color: $main-blue;
-        }
-
-
-
-        .title-card {
-          font-size: 10px;
-          text-transform: capitalize;
-        }
-
-        .description-card {
-          height: 60px;
-          margin: 8px 0 8px;
-          font-size: 14px;
           text-overflow: ellipsis;
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 3;
+          margin-bottom: 12px;
+        }
+
+        h5 {
+          font-size: 14px;
+          text-transform: capitalize;
         }
 
         a.link-page {
           position: absolute;
-          font-size: 14px;
-          bottom: 10px;
           right: 10px;
+          bottom: 15px;
+          font-size: 16px;
           color: $main-blue;
+          margin-right: 10px;
+          margin-top: 20px;
+
+          &:hover {
+            color: $footer;
+          }
         }
       }
     }
@@ -443,41 +444,4 @@ section#section-detail-book {
 
 hr {
   margin: 20px 0 80px;
-}
-
-
-// ---------- SECTION - TAG - RECOMMENDATION ----------
-
-section#section-tag-recommandation {
-  padding-bottom: 120px;
-  h3.standard-title-section {
-    font-size: 30px;
-    font-family: 'Nova Slim', cursive, sans-serif;
-    color: $main-blue;
-    margin-top: 16px;
-    margin-bottom: 60px;
-    @media screen and (min-width: 950px) {
-      font-size: 40px;
-      text-decoration: underline;
-    }
-  }
-  div#container-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    div.tag-reco {
-      font-size: 16px;
-      font-weight: bold;
-      padding: 10px 40px;
-      color: $main-blue;
-      border: 1px solid $main-blue;
-      border-radius: 30px;
-
-      &:hover {
-        cursor: pointer;
-        background-color: $main-blue;
-        color: $white;
-      }
-    }
-  }
 }

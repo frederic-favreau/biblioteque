@@ -108,6 +108,16 @@ p.sub-title-section {
     opacity: 1;
   }
 }
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 #main-header {
   width: 100%;
 }
@@ -682,16 +692,6 @@ p.sub-title-section {
 }
 #section-soon-available .card.show-card-row3 {
   animation: slide-up 2.6s ease;
-}
-@keyframes slide-up {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 #section-cta-available {

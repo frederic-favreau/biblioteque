@@ -12,7 +12,6 @@ include_once '../connexion.php';
 
     <section id="section-catalog" class="row-limit-size">
         <?php
-        var_dump($_SESSION['firstname']);
         if (isset($_GET['search'])) { ?>
             <h1 id="value-search">"<?= $_GET['search'] ?>"</h1>
         <?php } ?>

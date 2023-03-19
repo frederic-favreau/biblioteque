@@ -94,6 +94,8 @@ p.sub-title-section {
   letter-spacing: 2px;
 }
 
+// ----- KEYFRAME -----
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -110,6 +112,17 @@ p.sub-title-section {
   }
   100% {
     transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -788,17 +801,6 @@ p.sub-title-section {
 
   .card.show-card-row3 {
     animation: slide-up 2.6s ease;
-  }
-
-  @keyframes slide-up {
-    from {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
   }
 }
 
