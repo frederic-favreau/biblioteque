@@ -40,7 +40,7 @@
           <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
             // Afficher le contenu pour les utilisateurs connectés
           ?>
-            <div id="container-box-index-logout"><a href="" id="btn-index-session"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a></div>
+            <div id="container-box-index-logout"><a href="#" id="btn-index-session"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a></div>
 
           <?php
           } else { ?>
@@ -544,7 +544,7 @@
 
   <!-- <script src="./js/hero.js"></script> -->
   <script src="./main.js"></script>
-  <script src="./js/logout.js"></script>
+  <script src="./js/logout-index.js"></script>
   <button id="back-to-top" title="Retour en haut">
     <i class="fas fa-arrow-up"></i>
   </button>

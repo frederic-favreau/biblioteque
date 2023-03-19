@@ -211,6 +211,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
             </div>
         </section>
     </main>
+    <script src="../js/logout-all.js"></script>
     <script src="../js/main-front.js"></script>
     <script src="../main.js"></script>
     </body>
