@@ -111,7 +111,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <ul class="all-info-book">
                         <li>Auteur <span class="bdd-var"><?= str_replace(',', ', ', $book['authors']) ?></span></li>
                         <li>Genre <span class="bdd-var"><?= str_replace(',', ', ', $book['genres']) ?></span></li>
-                        <li>Catégorie <span class="bdd-var"></span><?= $book['category'] ?></li>
+                        <li>Catégorie <span class="bdd-var"><?= $book['category'] ?></span></li>
                         <li>Date de publication <span class="bdd-var"><?= $book['published'] ?></span></li>
 
                         <li> Nom de l'éditeur<span class="bdd-var"><?= str_replace(',', ', ', $book['editors']) ?></span></li>
@@ -129,7 +129,6 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <hr>
                     <ul class="list-info-revervation">
                         <li>Livre <?= $disponible ?> en bibliothèque</li>
-                        <li>Localisation : <?= $book['location'] ?></li>
                         <li>A retirer à Biblook sous 3 heures</li>
                     </ul>
 
@@ -150,8 +149,8 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
 
                     <hr>
                     <ul class="list-advantage">
-                        <li>Réservez en ligne & retirer sous 3h</li>
-                        <li>Demande gratuite de nouveau livre</li>
+                        <li>Réservez en ligne <br> & retirer sous 3h</li>
+                        <li>Demande gratuite <br> de nouveau livre</li>
                         <li>Redonnez votre livre sous 30 jours</li>
                     </ul>
                 </div>

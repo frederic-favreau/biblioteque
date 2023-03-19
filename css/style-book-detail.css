@@ -201,6 +201,7 @@ section#section-detail-book div#container-detail-book div.item-detail-book-left 
 section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li span.bdd-var {
   font-size: 16px;
   color: #0868ae;
+  text-transform: capitalize;
 }
 @media screen and (min-width: 950px) {
   section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li span.bdd-var {
@@ -234,6 +235,7 @@ section#section-detail-book div#container-detail-book #item-detail-book-right ul
 }
 section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li {
   font-size: 16px;
+  text-transform: capitalize;
   color: gray;
 }
 @media screen and (min-width: 950px) {
@@ -244,6 +246,7 @@ section#section-detail-book div#container-detail-book #item-detail-book-right ul
 section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li span {
   font-size: 16px;
   color: #0868ae;
+  text-transform: capitalize;
 }
 @media screen and (min-width: 950px) {
   section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li span {
@@ -256,7 +259,7 @@ section#section-detail-book div#container-detail-book #item-detail-book-right hr
 }
 section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li {
   font-size: 16px;
-  color: #070606;
+  color: #ff5e38;
 }
 @media screen and (min-width: 950px) {
   section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li {
@@ -355,6 +358,15 @@ section#section-detail-book div#container-detail-book div#item-detail-book-right
 }
 #section-recommandation #container-cards .card:hover {
   background-color: #fff;
+}
+#section-recommandation #container-cards .card::before {
+  position: absolute;
+  content: url(../img/picto/heart-rounded.svg);
+  top: 10px;
+  right: 10px;
+}
+#section-recommandation #container-cards .card:hover::before {
+  cursor: pointer;
 }
 #section-recommandation #container-cards .card img {
   position: absolute;

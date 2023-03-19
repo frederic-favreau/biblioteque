@@ -1,5 +1,46 @@
 //
 //
+// BTN BACK TO TOP
+$(document).ready(function() {
+  // Affiche ou masque le bouton en fonction du défilement
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > $(window).height()) {
+      $('#back-to-top').fadeIn();
+    } else {
+      $('#back-to-top').fadeOut();
+    }
+  });
+
+  // Animer le défilement vers le haut lors du clic sur le bouton
+  $('#back-to-top').click(function() {
+    $('html, body').animate({ scrollTop: 0 }, 1000);
+    return false;
+  });
+});
+
+
+//
+//
+// ANIMATION SLOW-RETOURN SINCE LINK PAGE-BOTTOM
+$(document).ready(function() {
+  $('a.slow-return').on('click', function(event) {
+    event.preventDefault(); // Empêche le comportement par défaut du lien
+
+    // Récupère la cible de la section
+    var target = $($(this).attr('href'));
+
+    if (target.length) {
+      // Animer le défilement jusqu'à la section cible
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000); // Durée de l'animation en millisecondes
+    }
+  });
+});
+
+
+//
+//
 // Show and hide filter box for catalog
 
 const showFilters = document.querySelectorAll(".show-filter");

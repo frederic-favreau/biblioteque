@@ -20,7 +20,7 @@ include_once '../connexion.php';
                 <p id="filter-title">Filtres</p>
                 <hr>
                 <div class="item-filter" id="item-filter-category">
-                    <p class="show-filter">Categorie <span class="toggle-symbol">+</span></p>
+                    <p class="show-filter">Categories<span class="toggle-symbol">+</span></p>
                     <ul class="list-filter">
                         <?php
                         $sql_genre =
@@ -59,7 +59,7 @@ include_once '../connexion.php';
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-editor">
-                    <p class="show-filter">Editeur <span class="toggle-symbol">+</span></p>
+                    <p class="show-filter">Editeurs <span class="toggle-symbol">+</span></p>
                     <ul class="list-filter">
                         <li><a href="#">Lorem (22)</a></li>
                         <li><a href="#">Lorem (22)</a></li>
@@ -70,7 +70,7 @@ include_once '../connexion.php';
                 </div>
                 <hr>
                 <div class="item-filter" id="item-filter-autor">
-                    <p class="show-filter">Autheur <span class="toggle-symbol">+</span></p>
+                    <p class="show-filter">Auteurs <span class="toggle-symbol">+</span></p>
                     <ul class="list-filter">
 
 
@@ -209,6 +209,9 @@ include_once '../connexion.php';
     </section>
 </main>
 <script src="../main.js"></script>
+<button id="back-to-top" title="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 </body>
 <?php include_once '../front/footer-default.php'; ?>
 

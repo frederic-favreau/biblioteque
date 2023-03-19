@@ -90,6 +90,27 @@ p.sub-title-section {
   letter-spacing: 2px;
 }
 
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  border: none;
+  outline: none;
+  background-color: #0868ae;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+#back-to-top:hover {
+  background-color: #05497b;
+}
+#back-to-top::after {
+  content: url(../img/picto/arrow-narrow-up.svg);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -268,12 +289,6 @@ p.sub-title-section {
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   background: #0868ae;
-  background: linear-gradient(to bottom, #0868ae 0%, #0868ae 100%);
-}
-#section-news canvas {
-  z-index: -1;
-  height: 100%;
-  width: 100%;
 }
 #section-news #container-section-news {
   position: absolute;
@@ -663,6 +678,15 @@ p.sub-title-section {
 #section-soon-available #container-cards .card.show-card-row3 {
   animation: slide-up 0.5s ease forwards;
   animation-delay: calc(0.3s * (var(--card-index) - 1));
+}
+#section-soon-available #container-cards .card::before {
+  position: absolute;
+  content: url(../img/picto/heart-rounded.svg);
+  top: 10px;
+  right: 10px;
+}
+#section-soon-available #container-cards .card:hover::before {
+  cursor: pointer;
 }
 #section-soon-available #container-cards span.tag-new-index {
   position: absolute;

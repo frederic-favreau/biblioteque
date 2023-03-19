@@ -39,12 +39,14 @@ main #section-catalog h1 {
 }
 main #section-catalog #container-catalog #container-filter {
   position: sticky;
-  top: 80px;
+  top: 120px;
   bottom: 80px;
   width: 100%;
   padding: 20px 0;
   height: -moz-fit-content;
   height: fit-content;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -81,9 +83,17 @@ main #section-catalog #container-catalog #container-filter .item-filter span.tog
 main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter {
   margin-left: 40px;
   margin-bottom: 10px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
 }
 main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter:last-child {
   margin-bottom: 10px;
+}
+main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter.active {
+  max-height: 400px;
+  opacity: 1;
 }
 main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter li {
   margin-bottom: 3px;
@@ -97,32 +107,29 @@ main #section-catalog #container-catalog #container-filter .item-filter ul.list-
   cursor: pointer;
   text-decoration: underline;
 }
-main #section-catalog #container-catalog #container-filter .item-filter ul.list-filter {
-  display: none;
-}
 main #section-catalog #container-catalog #container-filter .item-filter.active .list-filter {
-  display: block;
+  max-height: 400px;
+  opacity: 1;
 }
-main #section-catalog #container-catalog #container-filter hr {
+main #section-catalog #container-catalog hr {
   width: 90%;
   margin: 0 auto;
   border: none;
   border: 1px solid gray;
   opacity: 0.1;
 }
-main #section-catalog #container-catalog #container-cards {
+main #section-catalog #container-cards {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 30px;
 }
 @media screen and (min-width: 950px) {
-  main #section-catalog #container-catalog #container-cards {
+  main #section-catalog #container-cards {
     width: 79%;
   }
 }
-main #section-catalog #container-catalog #container-cards .container-sort {
+main #section-catalog #container-cards .container-sort {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
@@ -130,15 +137,14 @@ main #section-catalog #container-catalog #container-cards .container-sort {
   flex-wrap: wrap;
   justify-content: space-evenly;
   color: #0868ae;
-  margin-top: 30px;
 }
-main #section-catalog #container-catalog #container-cards .container-sort #help-choise {
+main #section-catalog #container-cards .container-sort #help-choise {
   width: 46%;
   font-size: 20px;
   text-align: center;
   margin-bottom: 20px;
 }
-main #section-catalog #container-catalog #container-cards .container-sort #sort {
+main #section-catalog #container-cards .container-sort #sort {
   width: 500px;
   min-height: 40px;
   font-size: 16px;
@@ -148,26 +154,34 @@ main #section-catalog #container-catalog #container-cards .container-sort #sort 
   border-radius: 10px;
   font-weight: bold;
 }
-main #section-catalog #container-catalog #container-cards .card {
+main #section-catalog #container-cards .card {
   position: relative;
   max-width: 530px;
   min-width: 530px;
   width: 33%;
-  margin: 100px auto 100px auto;
+  margin: 60px auto 20px auto;
   height: 300px;
-  margin-bottom: 40px;
   padding: 15px 5px 15px 200px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: #fafafb;
 }
-main #section-catalog #container-catalog #container-cards .card:hover img {
+main #section-catalog #container-cards .card:hover img {
   transform: translateY(-15px);
 }
-main #section-catalog #container-catalog #container-cards .card:hover {
+main #section-catalog #container-cards .card:hover {
   background-color: #fff;
 }
-main #section-catalog #container-catalog #container-cards .card img {
+main #section-catalog #container-cards .card::before {
+  position: absolute;
+  content: url(../img/picto/heart-rounded.svg);
+  top: 10px;
+  right: 10px;
+}
+main #section-catalog #container-cards .card:hover::before {
+  cursor: pointer;
+}
+main #section-catalog #container-cards .card img {
   position: absolute;
   top: 10%;
   left: 25px;
@@ -178,12 +192,12 @@ main #section-catalog #container-catalog #container-cards .card img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: transform 0.5s ease;
 }
-main #section-catalog #container-catalog #container-cards .card .bottom-item-card h4 {
+main #section-catalog #container-cards .card .bottom-item-card h4 {
   font-size: 16px;
   margin: 15px 0;
   text-transform: capitalize;
 }
-main #section-catalog #container-catalog #container-cards .card .bottom-item-card h3.title-book-catalog {
+main #section-catalog #container-cards .card .bottom-item-card h3.title-book-catalog {
   font-family: "Nova Slim", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -194,11 +208,11 @@ main #section-catalog #container-catalog #container-cards .card .bottom-item-car
   text-overflow: ellipsis;
   margin-bottom: 12px;
 }
-main #section-catalog #container-catalog #container-cards .card .bottom-item-card h5 {
+main #section-catalog #container-cards .card .bottom-item-card h5 {
   font-size: 14px;
   text-transform: capitalize;
 }
-main #section-catalog #container-catalog #container-cards .card .bottom-item-card .description-card {
+main #section-catalog #container-cards .card .bottom-item-card .description-card {
   min-height: 60px;
   max-height: 100px;
   margin: 8px 0 8px;
@@ -210,7 +224,7 @@ main #section-catalog #container-catalog #container-cards .card .bottom-item-car
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
 }
-main #section-catalog #container-catalog #container-cards .card .bottom-item-card a.link-page {
+main #section-catalog #container-cards .card .bottom-item-card a.link-page {
   position: absolute;
   right: 10px;
   bottom: 15px;
@@ -219,6 +233,6 @@ main #section-catalog #container-catalog #container-cards .card .bottom-item-car
   margin-right: 10px;
   margin-top: 20px;
 }
-main #section-catalog #container-catalog #container-cards .card .bottom-item-card a.link-page:hover {
+main #section-catalog #container-cards .card .bottom-item-card a.link-page:hover {
   color: #043a61;
 }/*# sourceMappingURL=style-catalogue.css.map */

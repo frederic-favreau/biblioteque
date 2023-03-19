@@ -12,17 +12,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Nova+Slim&family=Risque&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
   <?php
   require_once './connexion.php';
-
   ?>
-
-
 
   <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
 
@@ -506,21 +502,21 @@
     <div id="container-footer-top">
       <div id="item-footer-left">
         <div id="container-group-logo-botom">
-          <a href="#section-news" class="link-page-home"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+          <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
             <span id="nav-logo-text">Biblook</span></a>
         </div>
         <ul>
           <div id="list-left">
-            <li><a href="#main-header">Nouveautés</a></li>
-            <li><a href="#section-heart">Coups de coeur</a></li>
-            <li><a href="#section-soon-available">Derniers arrivages</a></li>
-            <li><a href="#section-zoom">Zoom</a></li>
+            <li><a href="#main-header" class="slow-return">Nouveautés</a></li>
+            <li><a href="#section-heart" class="slow-return">Coups de coeur</a></li>
+            <li><a href="#section-soon-available" class="slow-return">Derniers arrivages</a></li>
+            <li><a href="#section-zoom" class="slow-return">Zoom</a></li>
 
           </div>
           <div id="list-right">
-            <li><a href="#section-blog">Blog</a></li>
-            <li><a href="#section-faq">FAQ</a></li>
-            <li><a href="#section-location">Contact</a></li>
+            <li><a href="#section-blog" class="slow-return">Blog</a></li>
+            <li><a href="#section-faq" class="slow-return">FAQ</a></li>
+            <li><a href="#section-location" class="slow-return">Contact</a></li>
           </div>
         </ul>
       </div>
@@ -545,6 +541,9 @@
 
   <!-- <script src="./js/hero.js"></script> -->
   <script src="./main.js"></script>
+  <button id="back-to-top" title="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 </body>
 
 </html>

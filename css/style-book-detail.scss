@@ -213,6 +213,7 @@ section#section-detail-book {
           span.bdd-var {
             font-size: 16px;
             color: $main-blue;
+            text-transform: capitalize;
             @media screen and (min-width: 950px) {
               font-size: 18px;
             }
@@ -246,6 +247,7 @@ section#section-detail-book {
         margin-top: 12px;
         li {
           font-size: 16px;
+          text-transform: capitalize;
           color: gray;
           @media screen and (min-width: 950px) {
             font-size: 18px;
@@ -254,6 +256,7 @@ section#section-detail-book {
           span {
             font-size: 16px;
             color: $main-blue;
+            text-transform: capitalize;
             @media screen and (min-width: 950px) {
               font-size: 18px;
             }
@@ -269,7 +272,7 @@ section#section-detail-book {
       ul.list-info-revervation {
         li {
           font-size: 16px;
-          color: $black;
+          color: $btn-red;
           @media screen and (min-width: 950px) {
             font-size: 18px;
           }
@@ -383,6 +386,17 @@ section#section-detail-book {
 
       &:hover {
         background-color: $white;
+      }
+
+      &::before {
+        position: absolute;
+        content: url(../img/picto/heart-rounded.svg);
+        top: 10px;
+        right: 10px;
+      }
+
+      &:hover::before {
+        cursor: pointer;
       }
 
       img {
