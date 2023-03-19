@@ -339,7 +339,7 @@ p.sub-title-section {
   transition: all 0.35s;
 }
 #section-news #container-section-news #item-section-news-left .wrapper .link_wrapper a#btn-join-reader:hover {
-  width: 200px;
+  width: 250px;
   border: 3px solid #ff5e38;
   background: transparent;
   color: #fff;

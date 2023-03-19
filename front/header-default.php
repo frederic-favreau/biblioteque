@@ -46,7 +46,6 @@
           <?php
           } else { ?>
             <a href="../front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
-              var_dump
             <?php
           } ?>
 

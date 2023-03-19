@@ -4,6 +4,7 @@ $main-blue: #0868ae;
 $white: #fff;
 $black: #070606;
 $footer: #043a61;
+$background: #fafafb;
 
 main {
   width: 90%;
@@ -79,7 +80,6 @@ main {
             padding: 10px 0 10px 0;
             margin-left: 30px;
 
-
             &:hover {
               cursor: pointer;
             }
@@ -108,9 +108,9 @@ main {
                 text-transform: capitalize;
 
                 &:hover {
-                    cursor: pointer;
-                    text-decoration: underline;
-                  }
+                  cursor: pointer;
+                  text-decoration: underline;
+                }
               }
             }
           }
@@ -185,6 +185,16 @@ main {
           padding: 15px 5px 15px 200px;
           border-radius: 5px;
           box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          background-color: $background;
+
+
+          &:hover img {
+            transform: translateY(-15px);
+          }
+
+          &:hover {
+            background-color: $white;
+          }
 
           img {
             position: absolute;
@@ -195,30 +205,30 @@ main {
             object-fit: cover;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             transition: transform 0.5s ease;
-
-            &:hover {
-              transform: translateY(-15px);
-            }
           }
 
           .bottom-item-card {
             h4 {
+              font-size: 16px;
               margin: 15px 0;
               text-transform: capitalize;
             }
 
             h3.title-book-catalog {
+              font-family: "Nova Slim", sans-serif;
+              font-style: normal;
               font-weight: bold;
-              font-size: 16px;
+              font-size: 18px;
               line-height: normal;
               letter-spacing: 0.04em;
               color: $main-blue;
               text-overflow: ellipsis;
-              font-family: 'Nova Slim', cursive, sans-serif;
+              margin-bottom: 12px;
             }
 
-            .title-card {
-              font-size: 10px;
+            h5 {
+              font-size: 14px;
+              text-transform: capitalize;
             }
 
             .description-card {
@@ -236,10 +246,16 @@ main {
 
             a.link-page {
               position: absolute;
-              bottom: 10px;
               right: 10px;
-              font-size: 14px;
+              bottom: 15px;
+              font-size: 16px;
               color: $main-blue;
+              margin-right: 10px;
+              margin-top: 20px;
+
+              &:hover {
+                color: $footer;
+              }
             }
           }
         }
