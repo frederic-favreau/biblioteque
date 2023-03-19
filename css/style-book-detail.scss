@@ -5,6 +5,7 @@ $white: #fff;
 $black: #070606;
 $footer: #043a61;
 $background: #fafafb;
+$bgModal : rgba(6,13,30,.7);
 
 body {
   div.bloc-modale {
@@ -13,7 +14,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: $bgModal;
     z-index: 99;
   }
 }

@@ -6,6 +6,7 @@ function hideDivConfirmed(divId) {
 function hideDivNotConfirmed(divId) {
   document.getElementById(divId).classList.add("hidden");
 }
+
 //
 //
 // SIDEBAR LEFT WINDOW
@@ -18,6 +19,7 @@ sidebarWrapper.addEventListener("mouseenter", () => {
 sidebarWrapper.addEventListener("mouseleave", () => {
   sidebarWrapper.classList.remove("active");
 });
+
 //
 //
 // VIEW ALL DETAIL OF WORK CRUD
@@ -32,6 +34,7 @@ btnAllDetailCb.addEventListener("click", function () {
     boxDetailCb.classList.toggle("active");
   }
 });
+
 //
 //
 // ADD A BOX OPTION FOR BOOK CRUD
@@ -100,8 +103,7 @@ for (const btnOptionCrud of btnOptionCruds) {
       const modaleBg = document.createElement("div");
       modaleBg.classList.add("bloc-modale");
       body.append(modaleBg);
-  
-      
+
 
       const boxDeleteBook = document.createElement("div");
       boxDeleteBook.setAttribute("id", "box-delete-book");

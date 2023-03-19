@@ -6,6 +6,7 @@ $white: #fff;
 $black: #070606;
 $footer: #043a61;
 $bgc-dashboard: #f0f7ff;
+$bgModal : rgba(6,13,30,.7);
 
 *,
 ::after,
@@ -31,7 +32,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: $bgModal;
     z-index: 99;
   }
 }

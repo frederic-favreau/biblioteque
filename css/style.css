@@ -22,6 +22,15 @@ body {
   font-family: "Hind Madurai", sans-serif;
   background-color: #fafafb;
 }
+body div.bloc-modale {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 13, 30, 0.7);
+  z-index: 99;
+}
 
 ul {
   list-style-type: none;
@@ -100,7 +109,7 @@ p.sub-title-section {
   outline: none;
   background-color: #0868ae;
   cursor: pointer;
-  padding: 5px;
+  padding: 12px;
   border-radius: 8px;
   font-size: 18px;
 }
@@ -285,31 +294,45 @@ p.sub-title-section {
     background-color: #b53928;
   }
 }
-#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout {
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout a#btn-index-session img {
+  position: absolute;
+  top: -24px;
+  left: -80px;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout {
   position: absolute;
   top: 42px;
   right: 50px;
-  width: 200px;
-  height: -moz-fit-content;
-  height: fit-content;
+  width: 180px;
+  height: 150px;
   background-color: #fff;
   border-radius: 8px;
-  padding: 20px;
+  padding: 10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout a#btn-index-session img {
-  position: absolute;
-  top: -65px;
-  left: 170px;
-}
-#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout ul li {
-  padding: 5px;
-}
-#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout ul li a:first-of-type {
-  text-decoration: none;
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:first-of-type {
+  font-size: 18px;
   color: #0868ae;
-  font-size: 20px;
+  margin-bottom: 3px;
 }
-#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout ul li a:hover {
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:last-of-type {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 180px;
+  background-color: #043a61;
+  padding: 6px;
+  border-radius: 0 0 8px 8px;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:last-of-type a {
+  font-size: 14px;
+  color: #fff;
+  float: right;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li a {
+  font-size: 14px;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li a:hover {
   text-decoration: underline;
 }
 

@@ -1,6 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
     const avatarProfil = document.getElementById("container-box-index-logout"); //parent de la boxIndexLogout
     const btnIndexSession = document.getElementById("btn-index-session"); //btn de déclenchement de la boxIndexLogout
+    let body = document.querySelector("body");
+  
+    function removeBoxAndBgModal() {
+      const existingBox = document.getElementById("box-index-logout");
+      const modaleBg = document.querySelector(".bloc-modale");
+  
+      if (existingBox) {
+        avatarProfil.removeChild(existingBox);
+      }
+  
+      if (modaleBg) {
+        modaleBg.remove();
+      }
+  
+      document.body.style.overflow = "auto";
+    }
   
     btnIndexSession.addEventListener('click', function (event) {
       event.preventDefault();
@@ -10,9 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
   
       // Si la box existe, la supprimer
       if (existingBox) {
-        avatarProfil.removeChild(existingBox);
+        removeBoxAndBgModal();
         return;
       }
+  
+      document.body.style.overflow = "hidden";
+  
+      const modaleBg = document.createElement("div");
+      modaleBg.classList.add("bloc-modale");
+      body.append(modaleBg);
+      modaleBg.addEventListener('click', removeBoxAndBgModal);
   
       // Sinon, créer et ajouter la box
       const boxIndexLogout = document.createElement("div");
@@ -21,9 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const ulBoxIndexLogout = document.createElement("ul");
   
       const liGreetings = document.createElement("li");
-      const greetingsLink = document.createElement("a");
-      greetingsLink.innerHTML = `Ravi de vous revoir`;
-      liGreetings.appendChild(greetingsLink);
+      liGreetings.innerHTML = `Votre menu`;
       ulBoxIndexLogout.appendChild(liGreetings);
   
       const liDashboard = document.createElement("li");
