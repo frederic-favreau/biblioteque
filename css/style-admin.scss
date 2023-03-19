@@ -221,7 +221,7 @@ header#side-bar-log {
     white-space: nowrap;
 
     &.active {
-      width: 250px;
+      width: 280px;
       z-index: 999;
     }
 
@@ -247,6 +247,13 @@ header#side-bar-log {
           width: 120px;
           position: relative;
           white-space: nowrap;
+
+          span#dashbord-title {
+            position: absolute;
+            top: -10px;
+            left: -54px;
+            font-size: 18px;
+          }
 
           img#logo-big-sidebar {
             width: 80px;
@@ -274,6 +281,7 @@ header#side-bar-log {
         ul.list-btn-side-bar {
           position: relative;
           list-style: none;
+          margin-top: 80px;
         }
 
         li {
@@ -298,7 +306,7 @@ header#side-bar-log {
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: bold;
           text-decoration: none;
           color: #fff;
@@ -332,7 +340,7 @@ header#side-bar-log {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
             text-decoration: none;
             color: #fff;

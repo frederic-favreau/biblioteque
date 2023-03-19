@@ -200,7 +200,7 @@ header#side-bar-log #sidebar-wrapper {
   white-space: nowrap;
 }
 header#side-bar-log #sidebar-wrapper.active {
-  width: 250px;
+  width: 280px;
   z-index: 999;
 }
 header#side-bar-log #sidebar-wrapper nav#main-sidebar {
@@ -226,6 +226,12 @@ header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation 
   position: relative;
   white-space: nowrap;
 }
+header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation a#logo-sidebar span#dashbord-title {
+  position: absolute;
+  top: -10px;
+  left: -54px;
+  font-size: 18px;
+}
 header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation a#logo-sidebar img#logo-big-sidebar {
   width: 80px;
   position: absolute;
@@ -248,6 +254,7 @@ header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation 
 header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation ul.list-btn-side-bar {
   position: relative;
   list-style: none;
+  margin-top: 80px;
 }
 header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation li {
   display: flex;
@@ -268,7 +275,7 @@ header#side-bar-log #sidebar-wrapper nav#main-sidebar #container-top-navigation 
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
   color: #fff;
@@ -295,7 +302,7 @@ header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
   color: #fff;
