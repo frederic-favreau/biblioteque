@@ -1,4 +1,6 @@
-// Show and hise filter box for catalog
+//
+//
+// Show and hide filter box for catalog
 
 const showFilters = document.querySelectorAll(".show-filter");
 
@@ -17,6 +19,8 @@ showFilters.forEach((filter) => {
   });
 });
 
+//
+//
 // ANIMATION CARD SECTION LAST ARRIVED
 
 const section = document.querySelector("#section-soon-available");
@@ -29,7 +33,7 @@ const thirdRow = document.querySelectorAll(".card:nth-child(n+7)");
 
 const animateRow = (row, animationClass) => {
   row.forEach((card, index) => {
-    card.style.setProperty('--card-index', index + 1); // Ajoutez cette ligne ici
+    card.style.setProperty("--card-index", index + 1);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -46,11 +50,12 @@ const animateRow = (row, animationClass) => {
   });
 };
 
-
 animateRow(firstRow, "show-card-row1");
 animateRow(secondRow, "show-card-row2");
 animateRow(thirdRow, "show-card-row3");
 
+//
+//
 // ANIMATION NAV BAR AND STICKY
 
 const nav = document.getElementById("main-nav-bar");
@@ -63,6 +68,8 @@ window.addEventListener("scroll", function () {
   }
 });
 
+//
+//
 // ANIMATION SECTION HEART
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -75,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let cards = document.querySelectorAll(".animated-card");
 
           cards.forEach(function (card, index) {
-            card.style.animation = `slideIn 1s ${index * 0.5}s forwards`;
+            card.style.animation = `slideIn 0.3s ${index * 0.3}s forwards`;
           });
 
           // Désactive l'observer après l'animation
@@ -93,6 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
   observer.observe(sectionHeart);
 });
 
+//
+//
 // Show and hide answer for FAQ
 
 const faqItems = document.querySelectorAll(".item-faq");
