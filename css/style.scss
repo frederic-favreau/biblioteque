@@ -169,7 +169,6 @@ p.sub-title-section {
       left: 0;
       z-index: 9999;
       width: 100%;
-      // border-bottom: 1px solid gray;
     }
 
     &.anim-nav {
@@ -265,6 +264,7 @@ p.sub-title-section {
       }
 
       #container-group-btn-connexion {
+        position: relative;
         margin-left: auto;
 
         #btn-sign-up {
@@ -309,6 +309,45 @@ p.sub-title-section {
                   background-color: $btn-red-hover;
                 }
               }
+            }
+          }
+        }
+
+        div#container-box-index-logout {
+          position: absolute;
+          top: 42px;
+          right: 50px;
+          width: 200px;
+          height: fit-content;
+          background-color: $white;
+          border-radius: 8px;
+          padding: 20px;
+          a#btn-index-session {
+            img {
+              position: absolute;
+              top: -65px;
+              left: 170px;
+            }
+          }
+
+          ul {
+            li {
+              padding: 5px;
+              a {
+
+                &:first-of-type{
+                  text-decoration: none;
+                  color: $main-blue;
+                  font-size: 20px;
+                }
+
+                &:hover {
+                  text-decoration: underline;
+                }
+
+              }
+
+
             }
           }
         }

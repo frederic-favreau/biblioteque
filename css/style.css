@@ -239,6 +239,7 @@ p.sub-title-section {
   }
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion {
+  position: relative;
   margin-left: auto;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger {
@@ -283,6 +284,33 @@ p.sub-title-section {
   #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span:hover {
     background-color: #b53928;
   }
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout {
+  position: absolute;
+  top: 42px;
+  right: 50px;
+  width: 200px;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout a#btn-index-session img {
+  position: absolute;
+  top: -65px;
+  left: 170px;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout ul li {
+  padding: 5px;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout ul li a:first-of-type {
+  text-decoration: none;
+  color: #0868ae;
+  font-size: 20px;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout ul li a:hover {
+  text-decoration: underline;
 }
 
 #section-news {
