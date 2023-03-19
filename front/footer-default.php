@@ -4,18 +4,20 @@
 <footer id="footer">
     <div id="container-footer-top">
       <div id="item-footer-left">
-      <div id="container-group-logo-botom">
-          <a href="../index.php" class="link-page-home"><img src="../img/logo-seul-biblook-noir.svg" alt="Biblook">
+        <div id="container-group-logo-botom">
+          <a href="../index.php#section-news" class="link-page-home"><img src="../img/logo-seul-biblook-noir.svg" alt="Biblook">
             <span id="nav-logo-text">Biblook</span></a>
         </div>
         <ul>
           <div id="list-left">
-            <li><a href="../index.php#main-header">Nouveautés</a></li>
+          <li><a href="../index.php#section-news">Nouveautés</a></li>
             <li><a href="../index.php#section-heart">Coups de coeur</a></li>
             <li><a href="../index.php#section-soon-available">Bientôt disponible</a></li>
+            <li><a href="../index.php#section-zoom">Zoom</a></li>
+
           </div>
           <div id="list-right">
-            <li><a href="../index.php#section-blog">Blog</a></li>
+          <li><a href="../index.php#section-blog">Blog</a></li>
             <li><a href="../index.php#section-faq">FAQ</a></li>
             <li><a href="../index.php#section-location">Contact</a></li>
           </div>
@@ -23,9 +25,9 @@
       </div>
       <div id="item-footer-right">
         <p>Newsletter</p>
-        <form action="#">
+        <form action="#" id="newsletter">
           <input type="mail">
-          <button type="submit">Souscrire</button>
+          <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
         </form>
       </div>
     </div>
