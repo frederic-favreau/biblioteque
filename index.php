@@ -27,7 +27,7 @@
     <nav id="main-nav-bar">
       <div id="container-nav-bar" class="row-limit-size">
         <div id="container-group-logo">
-          <a href="#section-news" class="link-page-home"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+          <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
             <span id="nav-logo-text">Biblook</span></a>
         </div>
         <div id="container-group-search-nav-top">

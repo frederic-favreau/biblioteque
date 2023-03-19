@@ -188,6 +188,7 @@ p.sub-title-section {
     }
 
     #container-nav-bar {
+      position: relative;
       width: 100%;
       height: 72px;
       padding: 10px;
@@ -221,7 +222,10 @@ p.sub-title-section {
       }
 
       #container-group-search-nav-top {
-        position: relative;
+        position: absolute;
+        top: 36px;
+        left: 720px;
+        transform: translate(-50%, -50%);
 
         #input-search-nav-top {
           display: none;
@@ -330,7 +334,7 @@ p.sub-title-section {
             img {
               position: absolute;
               top: -24px;
-              left: -80px;
+              left: -200px;
             }
           }
 

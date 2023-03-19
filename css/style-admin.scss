@@ -96,7 +96,7 @@ main {
     padding: 30px;
     box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08),
       0px 8px 8px -4px rgba(16, 24, 40, 0.03);
-    border-radius: 10px;
+    border-radius: 8px;
 
     p#txt-box-delete-book {
       font-size: 1.2rem;
@@ -138,7 +138,7 @@ main {
       border: 2px solid $main-blue;
       color: $main-blue;
       padding: 10px 40px;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: bold;
 
       &:hover {
@@ -156,7 +156,7 @@ main {
       background-color: $btn-red-hover;
       color: $white;
       padding: 10px 40px;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: bold;
 
       &:hover {
@@ -373,7 +373,7 @@ div.container-dashboard-base {
     width: 100%;
     height: fit-content;
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 20px;
     margin-bottom: 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -395,7 +395,7 @@ div.container-dashboard-base {
 
       &:nth-child(odd) {
         background-color: #f0f7ff;
-        border-radius: 5px;
+        border-radius: 8px;
       }
 
       div.format-pict-book {
@@ -440,10 +440,10 @@ div.container-dashboard-base {
           padding: 15px;
           font-weight: bold;
           border: none;
-          border-radius: 5px;
+          border-radius: 8px;
           background-color: $main-blue;
           color: $white;
-          border-radius: 10px;
+          border-radius: 8px;
           text-align: center;
           transition: background-color 0.3s ease;
 
@@ -493,7 +493,7 @@ section#dashboard-page-profil {
             width: 400px;
             height: 44px;
             font-size: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
             padding-left: 10px;
             border: 1px solid gray;
           }
@@ -528,7 +528,7 @@ section#dashboard-page-profil {
             width: 400px;
             height: 44px;
             font-size: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
             padding-left: 10px;
             border: 1px solid gray;
           }
@@ -547,7 +547,7 @@ section#dashboard-page-profil {
             width: 840px;
             height: 44px;
             font-size: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
             padding-left: 10px;
             border: 1px solid gray;
           }
@@ -567,7 +567,7 @@ section#dashboard-page-profil {
             width: 400px;
             height: 44px;
             font-size: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
             padding-left: 10px;
             border: 1px solid gray;
             margin-bottom: 20px;
@@ -581,12 +581,12 @@ section#dashboard-page-profil {
           button#btn-reset {
             width: 160px;
             height: 40px;
-            border-radius: 5px;
+            border-radius: 8px;
             margin-right: 20px;
             border: 1px solid $main-blue;
             color: $main-blue;
             background-color: $white;
-            border-radius: 10px;
+            border-radius: 8px;
             text-align: center;
             transition: background-color 0.3s ease;
 
@@ -601,10 +601,10 @@ section#dashboard-page-profil {
             width: 160px;
             height: 40px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             background-color: $main-blue;
             color: $white;
-            border-radius: 10px;
+            border-radius: 8px;
             text-align: center;
             transition: background-color 0.3s ease;
 
@@ -635,7 +635,7 @@ section#loan-register {
       width: 600px;
       height: 44px;
       font-size: 20px;
-      border-radius: 5px;
+      border-radius: 8px;
       padding-left: 10px;
       border: 1px solid gray;
       margin-bottom: 30px;
@@ -666,7 +666,7 @@ section#loan-register {
         height: 600px;
         font-size: 20px;
         text-align: start;
-        border-radius: 5px;
+        border-radius: 8px;
         padding-left: 10px;
         border: 1px solid gray;
         margin-bottom: 30px;
@@ -684,7 +684,7 @@ section#loan-register {
         width: 160px;
         height: 40px;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: transparent;
         border: 1px solid $main-blue;
         color: $main-blue;
@@ -702,7 +702,7 @@ section#loan-register {
         width: 160px;
         height: 40px;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: $main-blue;
         border: $main-blue;
         color: $white;
@@ -732,7 +732,7 @@ section#loan-register {
       width: 600px;
       height: 44px;
       font-size: 20px;
-      border-radius: 5px;
+      border-radius: 8px;
       padding-left: 10px;
       border: 1px solid gray;
       margin-bottom: 30px;
@@ -764,7 +764,7 @@ section#loan-register {
         width: 160px;
         height: 40px;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: transparent;
         border: 1px solid $main-blue;
         color: $main-blue;
@@ -782,7 +782,7 @@ section#loan-register {
         width: 160px;
         height: 40px;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: $main-blue;
         border: $main-blue;
         color: $white;
@@ -819,7 +819,7 @@ section#dashboard-page-book-crud {
     width: 350px;
     height: 160px;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 8px;
     position: fixed;
     text-align: center;
     animation: slide-in 5000ms;
@@ -848,7 +848,7 @@ section#dashboard-page-book-crud {
 div#confirmed-error {
   width: 350px;
   height: 160px;
-  border-radius: 10px;
+  border-radius: 8px;
   position: fixed;
   text-align: center;
   animation: slide-in 5000ms;
@@ -904,7 +904,7 @@ div#confirmed-error {
         width: 400px;
         height: 40px;
         padding-left: 10px;
-        border-radius: 5px;
+        border-radius: 8px;
         margin-left: auto;
         margin-right: 10px;
       }
@@ -912,11 +912,12 @@ div#confirmed-error {
       input#btn-search-book {
         width: 100px;
         height: 40px;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: $main-blue;
         border: $main-blue;
         color: $white;
         margin-right: 30px;
+        font-weight: bold;
 
         &:hover {
           cursor: pointer;
@@ -931,11 +932,12 @@ div#confirmed-error {
       align-items: center;
       width: 140px;
       height: 40px;
-      border-radius: 10px;
+      border-radius: 8px;
       background-color: $main-blue;
       border: $main-blue;
       color: $white;
       margin-right: 20px;
+      font-weight: bold;
 
       &:hover {
         cursor: pointer;
@@ -965,7 +967,7 @@ div#confirmed-error {
 
         &:nth-child(odd) {
           background-color: #f0f7ff;
-          border-radius: 5px;
+          border-radius: 8px;
         }
 
         ul.detail-item-book-crud {
@@ -979,6 +981,8 @@ div#confirmed-error {
           li {
             width: 150px;
             text-align: center;
+            padding-right: 50px;
+
             img.pict-book-crud {
               height: 100px;
               width: auto;
@@ -991,6 +995,7 @@ div#confirmed-error {
             }
           }
           li.item-title-crud {
+            position: relative;
             color: $main-blue;
             font-size: 18px;
             font-weight: bold;
@@ -999,9 +1004,15 @@ div#confirmed-error {
           }
 
           li.btn-option-crud {
-            position: relative;
+            position: absolute;
+            right: 0px;
+            top: -10px;
             font-size: 30px;
-            padding: 15px;
+            padding: 2px 8px;
+            background-color: $btn-red;
+            width: fit-content;
+            height: fit-content;
+            border-radius: 8px;
 
             &:hover {
               cursor: pointer;
@@ -1009,9 +1020,9 @@ div#confirmed-error {
           }
 
           li.container-box-option-crud {
-            position: relative;
-            width: 0;
-            height: 0;
+            position: absolute;
+            top: 0;
+            right: -60px;
 
             div.box-option-crud {
               position: absolute;
@@ -1022,7 +1033,7 @@ div#confirmed-error {
               padding: 16px;
               background-color: $white;
               box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-              border-radius: 5px;
+              border-radius: 8px;
               z-index: 999;
               margin-bottom: 50px;
               text-align: start;
@@ -1110,8 +1121,9 @@ div#confirmed-error {
                     flex-wrap: wrap;
                     flex-direction: column;
                     font-size: 16px;
-                    padding: 6px 0;
                     color: gray;
+                    padding: 6px 20px;
+                    border-radius: 8px;
                     @media screen and (min-width: 950px) {
                       width: 100%;
                       height: fit-content;
@@ -1168,7 +1180,7 @@ section#dashboard-page-book-add {
       width: 600px;
       height: 44px;
       font-size: 20px;
-      border-radius: 5px;
+      border-radius: 8px;
       padding-left: 10px;
       border: 1px solid gray;
       margin-bottom: 30px;
@@ -1200,7 +1212,7 @@ section#dashboard-page-book-add {
         height: 600px;
         font-size: 20px;
         text-align: start;
-        border-radius: 5px;
+        border-radius: 8px;
         padding-left: 10px;
         border: 1px solid gray;
         margin-bottom: 30px;
@@ -1218,7 +1230,7 @@ section#dashboard-page-book-add {
         width: 160px;
         height: 40px;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: transparent;
         border: 1px solid $main-blue;
         color: $main-blue;
@@ -1236,7 +1248,7 @@ section#dashboard-page-book-add {
         width: 160px;
         height: 40px;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: $main-blue;
         border: $main-blue;
         color: $white;
@@ -1254,7 +1266,7 @@ section#dashboard-page-book-add {
   #confirmed-added {
     width: 350px;
     height: 160px;
-    border-radius: 10px;
+    border-radius: 8px;
     position: fixed;
     text-align: center;
     animation: slide-in 8000ms;
@@ -1297,7 +1309,7 @@ section#dashboard-page-book-add {
     position: relative;
     width: 350px;
     height: 80px;
-    border-radius: 10px;
+    border-radius: 8px;
     position: fixed;
     text-align: center;
     animation: slide-in 8000ms;
@@ -1359,7 +1371,7 @@ section#dashboard-page-book-edit {
       width: 600px;
       height: 44px;
       font-size: 20px;
-      border-radius: 5px;
+      border-radius: 8px;
       padding-left: 10px;
       border: 1px solid gray;
       margin-bottom: 30px;
@@ -1369,7 +1381,7 @@ section#dashboard-page-book-edit {
       width: 600px;
       height: 44px;
       font-size: 20px;
-      border-radius: 5px;
+      border-radius: 8px;
       padding-left: 10px;
       border: 1px solid gray;
       margin-bottom: 30px;
@@ -1405,7 +1417,7 @@ section#dashboard-page-book-edit {
         height: 600px;
         font-size: 20px;
         text-align: start;
-        border-radius: 5px;
+        border-radius: 8px;
         padding-left: 10px;
         border: 1px solid gray;
         margin-bottom: 30px;
@@ -1423,7 +1435,7 @@ section#dashboard-page-book-edit {
         width: 160px;
         height: 40px;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: transparent;
         border: 1px solid $main-blue;
         color: $main-blue;
@@ -1441,7 +1453,7 @@ section#dashboard-page-book-edit {
         width: 160px;
         height: 40px;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: $main-blue;
         border: $main-blue;
         color: $white;
@@ -1460,7 +1472,7 @@ section#dashboard-page-book-edit {
     position: relative;
     width: 350px;
     height: 160px;
-    border-radius: 10px;
+    border-radius: 8px;
     position: fixed;
     text-align: center;
     animation: slide-in 8000ms;
@@ -1503,7 +1515,7 @@ section#dashboard-page-book-edit {
     position: relative;
     width: 350px;
     height: 80px;
-    border-radius: 10px;
+    border-radius: 8px;
     position: fixed;
     text-align: center;
     animation: slide-in 8000ms;

@@ -168,6 +168,7 @@ p.sub-title-section {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 #main-header #main-nav-bar #container-nav-bar {
+  position: relative;
   width: 100%;
   height: 72px;
   padding: 10px;
@@ -196,7 +197,10 @@ p.sub-title-section {
   color: #fff;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top {
-  position: relative;
+  position: absolute;
+  top: 36px;
+  left: 720px;
+  transform: translate(-50%, -50%);
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
   display: none;
@@ -297,7 +301,7 @@ p.sub-title-section {
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout a#btn-index-session img {
   position: absolute;
   top: -24px;
-  left: -80px;
+  left: -200px;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout {
   position: absolute;
