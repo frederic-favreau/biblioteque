@@ -5,7 +5,7 @@ body div.bloc-modale {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(6, 13, 30, 0.7);
   z-index: 99;
 }
 
@@ -20,7 +20,7 @@ main div#box-loan {
   transform: translate(-50%, -50%);
   padding: 30px;
   box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 main div#box-loan p#loan-confimation {
   font-size: 1.2rem;
@@ -57,7 +57,7 @@ main div#box-loan a#btn-confirmed {
   border: 1px solid #0868ae;
   color: #0868ae;
   padding: 10px 40px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 main div#box-loan a#btn-confirmed:hover {
   background-color: #0868ae;
@@ -101,7 +101,7 @@ section#section-detail-book div#container-detail-book div.item-detail-book-left 
   color: #fff;
   background-color: #0868ae;
   padding: 3px 50px;
-  border-radius: 20px 0 20px 0;
+  border-radius: 8px 0 8px 0;
 }
 @media screen and (min-width: 950px) {
   section#section-detail-book div#container-detail-book div.item-detail-book-left div.book-new {
@@ -183,7 +183,8 @@ section#section-detail-book div#container-detail-book div.item-detail-book-left 
   flex-wrap: wrap;
   flex-direction: column;
   font-size: 16px;
-  padding: 6px 0;
+  padding: 6px 20px;
+  border-radius: 8px;
   color: gray;
 }
 @media screen and (min-width: 950px) {
@@ -200,6 +201,7 @@ section#section-detail-book div#container-detail-book div.item-detail-book-left 
 section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li span.bdd-var {
   font-size: 16px;
   color: #0868ae;
+  text-transform: capitalize;
 }
 @media screen and (min-width: 950px) {
   section#section-detail-book div#container-detail-book div.item-detail-book-left ul.all-info-book li span.bdd-var {
@@ -213,7 +215,7 @@ section#section-detail-book div#container-detail-book #item-detail-book-right {
   height: -moz-fit-content;
   height: fit-content;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 8px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -226,8 +228,6 @@ section#section-detail-book div#container-detail-book #item-detail-book-right h4
   font-size: 20px;
   text-align: inherit;
   color: #0868ae;
-  border: 1px solid #0868ae;
-  border-radius: 5px;
   margin-bottom: 4px;
 }
 section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description {
@@ -235,6 +235,7 @@ section#section-detail-book div#container-detail-book #item-detail-book-right ul
 }
 section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li {
   font-size: 16px;
+  text-transform: capitalize;
   color: gray;
 }
 @media screen and (min-width: 950px) {
@@ -245,6 +246,7 @@ section#section-detail-book div#container-detail-book #item-detail-book-right ul
 section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li span {
   font-size: 16px;
   color: #0868ae;
+  text-transform: capitalize;
 }
 @media screen and (min-width: 950px) {
   section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description li span {
@@ -257,7 +259,7 @@ section#section-detail-book div#container-detail-book #item-detail-book-right hr
 }
 section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li {
   font-size: 16px;
-  color: #b53928;
+  color: #ff5e38;
 }
 @media screen and (min-width: 950px) {
   section#section-detail-book div#container-detail-book #item-detail-book-right ul.list-info-revervation li {
@@ -270,7 +272,6 @@ section#section-detail-book div#container-detail-book #item-detail-book-right ul
 section#section-detail-book div#container-detail-book div#item-detail-book-right h4.title-work-description {
   font-size: 20px;
   color: #0868ae;
-  margin-top: 16px;
   margin-bottom: 6px;
   padding: 10px;
 }
@@ -297,7 +298,7 @@ section#section-detail-book div#container-detail-book div#item-detail-book-right
   padding: 12px;
   background-color: #0868ae;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s ease;
   margin-top: 20px;
@@ -320,6 +321,7 @@ section#section-detail-book div#container-detail-book div#item-detail-book-right
 
 #section-recommandation {
   padding-bottom: 60px;
+  padding-bottom: 140px;
 }
 #section-recommandation h3.standard-title-section {
   font-size: 30px;
@@ -331,7 +333,6 @@ section#section-detail-book div#container-detail-book div#item-detail-book-right
 @media screen and (min-width: 950px) {
   #section-recommandation h3.standard-title-section {
     font-size: 40px;
-    text-decoration: underline;
   }
 }
 #section-recommandation #container-cards {
@@ -349,8 +350,23 @@ section#section-detail-book div#container-detail-book div#item-detail-book-right
   margin: 100px auto 40px auto;
   height: 230px;
   padding: 15px 5px 15px 200px;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#section-recommandation #container-cards .card:hover img {
+  transform: translateY(-15px);
+}
+#section-recommandation #container-cards .card:hover {
+  background-color: #fff;
+}
+#section-recommandation #container-cards .card::before {
+  position: absolute;
+  content: url(../img/picto/heart-rounded.svg);
+  top: 10px;
+  right: 10px;
+}
+#section-recommandation #container-cards .card:hover::before {
+  cursor: pointer;
 }
 #section-recommandation #container-cards .card img {
   position: absolute;
@@ -367,70 +383,38 @@ section#section-detail-book div#container-detail-book div#item-detail-book-right
   transform: translateY(-15px);
 }
 #section-recommandation #container-cards .card .bottom-item-card h4 {
-  margin: 5px 0;
+  font-size: 16px;
+  margin: 15px 0;
   text-transform: capitalize;
 }
 #section-recommandation #container-cards .card .bottom-item-card h3#title-book-card {
-  font-family: "Nova Slim", cursive, sans-serif;
+  font-family: "Nova Slim", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 0.04em;
   color: #0868ae;
-}
-#section-recommandation #container-cards .card .bottom-item-card .title-card {
-  font-size: 10px;
-  text-transform: capitalize;
-}
-#section-recommandation #container-cards .card .bottom-item-card .description-card {
-  height: 60px;
-  margin: 8px 0 8px;
-  font-size: 14px;
   text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  margin-bottom: 12px;
+}
+#section-recommandation #container-cards .card .bottom-item-card h5 {
+  font-size: 14px;
+  text-transform: capitalize;
 }
 #section-recommandation #container-cards .card .bottom-item-card a.link-page {
   position: absolute;
-  font-size: 14px;
-  bottom: 10px;
   right: 10px;
+  bottom: 15px;
+  font-size: 16px;
   color: #0868ae;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+#section-recommandation #container-cards .card .bottom-item-card a.link-page:hover {
+  color: #043a61;
 }
 
 hr {
   margin: 20px 0 80px;
-}
-
-section#section-tag-recommandation {
-  padding-bottom: 120px;
-}
-section#section-tag-recommandation h3.standard-title-section {
-  font-size: 30px;
-  font-family: "Nova Slim", cursive, sans-serif;
-  color: #0868ae;
-  margin-top: 16px;
-  margin-bottom: 60px;
-}
-@media screen and (min-width: 950px) {
-  section#section-tag-recommandation h3.standard-title-section {
-    font-size: 40px;
-    text-decoration: underline;
-  }
-}
-section#section-tag-recommandation div#container-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-section#section-tag-recommandation div#container-tags div.tag-reco {
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 40px;
-  color: #0868ae;
-  border: 1px solid #0868ae;
-  border-radius: 30px;
-}
-section#section-tag-recommandation div#container-tags div.tag-reco:hover {
-  cursor: pointer;
-  background-color: #0868ae;
-  color: #fff;
 }/*# sourceMappingURL=style-book-detail.css.map */

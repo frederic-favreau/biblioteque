@@ -4,6 +4,7 @@ $main-blue: #0868ae;
 $white: #fff;
 $black: #070606;
 $footer: #043a61;
+$background: #fafafb;
 
 main {
   width: 90%;
@@ -49,14 +50,16 @@ main {
       #container-filter {
         position: -webkit-sticky;
         position: sticky;
-        top: 80px;
+        top: 120px;
         bottom: 80px;
         width: 100%;
-        height: fit-content;
+        padding: 20px 0;
+        height: fit-content; // changez la hauteur en auto
+        max-height: calc(100vh - 160px);
+        overflow-y: auto; // permet de défiler verticalement si nécessaire
         background-color: $white;
         border-radius: 20px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
         @media screen and (min-width: 950px) {
           width: 20%;
         }
@@ -79,7 +82,6 @@ main {
             padding: 10px 0 10px 0;
             margin-left: 30px;
 
-
             &:hover {
               cursor: pointer;
             }
@@ -94,9 +96,18 @@ main {
           ul.list-filter {
             margin-left: 40px;
             margin-bottom: 10px;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
 
             &:last-child {
               margin-bottom: 10px;
+            }
+
+            &.active {
+              max-height: 400px; // Ajustez cette valeur en fonction de vos besoins
+              opacity: 1;
             }
 
             li {
@@ -108,138 +119,158 @@ main {
                 text-transform: capitalize;
 
                 &:hover {
-                    cursor: pointer;
-                    text-decoration: underline;
-                  }
+                  cursor: pointer;
+                  text-decoration: underline;
+                }
               }
             }
           }
 
-          ul.list-filter {
-            display: none;
-          }
-
           &.active {
             .list-filter {
-              display: block;
+              max-height: 400px; // Ajustez cette valeur en fonction de vos besoins
+              opacity: 1;
             }
           }
-        }
-
-        hr {
-          width: 90%;
-          margin: 0 auto;
-          border: none;
-          border: 1px solid gray;
-          opacity: 0.1;
         }
       }
 
-      #container-cards {
+      hr {
+        width: 90%;
+        margin: 0 auto;
+        border: none;
+        border: 1px solid gray;
+        opacity: 0.1;
+      }
+    }
+
+    #container-cards {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      @media screen and (min-width: 950px) {
+        width: 79%;
+      }
+
+      .container-sort {
         width: 100%;
+        height: fit-content;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        margin-top: 30px;
+        color: $main-blue;
 
-        @media screen and (min-width: 950px) {
-          width: 79%;
+        #help-choise {
+          width: 46%;
+          font-size: 20px;
+          text-align: center;
+          margin-bottom: 20px;
         }
 
-        .container-sort {
-          width: 100%;
-          height: fit-content;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-evenly;
+        #sort {
+          width: 500px;
+          min-height: 40px;
+          font-size: 16px;
+          text-align: center;
           color: $main-blue;
-          margin-top: 30px;
+          background-color: #fff;
+          border-radius: 10px;
+          font-weight: bold;
+        }
+      }
 
-          #help-choise {
-            width: 46%;
-            font-size: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-          }
+      .card {
+        position: relative;
+        max-width: 530px;
+        min-width: 530px;
+        width: 33%;
+        margin: 60px auto 20px auto;
+        height: 300px;
+        padding: 15px 5px 15px 200px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: $background;
 
-          #sort {
-            width: 500px;
-            min-height: 40px;
-            font-size: 16px;
-            text-align: center;
-            color: $main-blue;
-            background-color: #fff;
-            border-radius: 10px;
-            font-weight: bold;
-          }
+        &:hover img {
+          transform: translateY(-15px);
         }
 
-        .card {
-          position: relative;
-          max-width: 530px;
-          min-width: 530px;
-          width: 33%;
-          margin: 100px auto 100px auto;
-          height: 300px;
-          margin-bottom: 40px;
-          padding: 15px 5px 15px 200px;
-          border-radius: 5px;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        &:hover {
+          background-color: $white;
+        }
 
-          img {
+        &::before {
+          position: absolute;
+          content: url(../img/picto/heart-rounded.svg);
+          top: 10px;
+          right: 10px;
+        }
+
+        &:hover::before {
+          cursor: pointer;
+        }
+
+        img {
+          position: absolute;
+          top: 10%;
+          left: 25px;
+          width: 150px;
+          height: 230px;
+          object-fit: cover;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          transition: transform 0.5s ease;
+        }
+
+        .bottom-item-card {
+          h4 {
+            font-size: 16px;
+            margin: 15px 0;
+            text-transform: capitalize;
+          }
+
+          h3.title-book-catalog {
+            font-family: "Nova Slim", sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: normal;
+            letter-spacing: 0.04em;
+            color: $main-blue;
+            text-overflow: ellipsis;
+            margin-bottom: 12px;
+          }
+
+          h5 {
+            font-size: 14px;
+            text-transform: capitalize;
+          }
+
+          .description-card {
+            min-height: 60px;
+            max-height: 100px;
+            margin: 8px 0 8px;
+            width: 95%;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+          }
+
+          a.link-page {
             position: absolute;
-            top: 10%;
-            left: 25px;
-            width: 150px;
-            height: 230px;
-            object-fit: cover;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            transition: transform 0.5s ease;
+            right: 10px;
+            bottom: 15px;
+            font-size: 16px;
+            color: $main-blue;
+            margin-right: 10px;
+            margin-top: 20px;
 
             &:hover {
-              transform: translateY(-15px);
-            }
-          }
-
-          .bottom-item-card {
-            h4 {
-              margin: 15px 0;
-              text-transform: capitalize;
-            }
-
-            h3.title-book-catalog {
-              font-weight: bold;
-              font-size: 16px;
-              line-height: normal;
-              letter-spacing: 0.04em;
-              color: $main-blue;
-              text-overflow: ellipsis;
-              font-family: 'Nova Slim', cursive, sans-serif;
-            }
-
-            .title-card {
-              font-size: 10px;
-            }
-
-            .description-card {
-              min-height: 60px;
-              max-height: 100px;
-              margin: 8px 0 8px;
-              width: 95%;
-              font-size: 14px;
-              text-overflow: ellipsis;
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 5;
-            }
-
-            a.link-page {
-              position: absolute;
-              bottom: 10px;
-              right: 10px;
-              font-size: 14px;
-              color: $main-blue;
+              color: $footer;
             }
           }
         }

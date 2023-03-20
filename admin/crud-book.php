@@ -216,7 +216,7 @@ include_once '../admin/header-main.php';
                                         <li class="item-author-crud"><?= str_replace(',', ', ', $crud['author']) ?></li>
                                         <li class="item-status-crud"><?= $crud['location'] ?></li>
                                         <li class="item-copy-crud"><?= $disponible ?></li>
-                                        <li class="btn-option-crud" data-idWork="<?= $crud['id_work'] ?>" data-title="<?= $crud['title'] ?>" data-pict="<?= $crud['pict'] ?>">⚙️
+                                        <li class="btn-option-crud" data-idWork="<?= $crud['id_work'] ?>" data-title="<?= $crud['title'] ?>" data-pict="<?= $crud['pict'] ?>"><img src="../img/picto/magic-wand-02.svg" alt="baguette">
                                         </li>
                                         <div class="container-complete-detail-info-book">
                                             <div class="container-flex-crud">
