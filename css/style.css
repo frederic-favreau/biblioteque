@@ -30,7 +30,6 @@ body div.bloc-modale {
   right: 0;
   bottom: 0;
   background: rgba(6, 13, 30, 0.5);
-  z-index: 50;
 }
 
 body.no-scroll {
@@ -110,7 +109,7 @@ p.sub-title-section {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 100;
+  z-index: 20;
   border: none;
   outline: none;
   background-color: #0868ae;
@@ -804,6 +803,9 @@ p.sub-title-section {
 }
 #section-soon-available #container-cards .card input.input-heart:hover {
   background-image: url("../img/picto/heart-rounded-full-blue.svg");
+}
+#section-soon-available #container-cards .card input.input-heart-red {
+  background-image: url("../img/picto/heart-rounded-full-red.svg");
 }
 #section-soon-available #container-cards img.pict-card-book {
   position: absolute;

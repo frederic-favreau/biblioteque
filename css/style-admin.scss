@@ -452,6 +452,19 @@ div.container-dashboard-base {
             cursor: pointer;
           }
         }
+
+        input.delete-favorit-book {
+          background-image: url('../img/picto/trash-03\ \(1\).svg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          width: 30px; /* Ajustez la largeur selon vos besoins */
+          height: 30px; /* Ajustez la hauteur selon vos besoins */
+
+        }
       }
     }
   }

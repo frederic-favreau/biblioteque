@@ -24,7 +24,7 @@
 
 
   <header id="main-header">
-    <nav id="main-nav-bar">
+    <nav id="main-nav-bar" class="no-croll-bar">
       <div id="container-nav-bar" class="row-limit-size">
         <div id="container-group-logo">
           <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
@@ -32,7 +32,7 @@
         </div>
         <div id="container-group-search-nav-top">
           <form action="./front/catalog.php?placeholde" method="GET">
-            <input type="search" name="search" id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
+            <input type="search" name="search" id="input-search-nav-top" placeholder="Taper votre recherche">
             <input type="submit" name="rechercher" value="Rechercher" id="btn-search-nav-top">
           </form>
         </div>
@@ -204,7 +204,6 @@
               $date = $card['published_at'];
               if ($date > $now) {
               ?>
-                <span class="tag-new-index">Nouveau</span>
               <?php
               }
 

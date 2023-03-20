@@ -6,7 +6,7 @@ body div.bloc-modale {
   right: 0;
   bottom: 0;
   background: rgba(6, 13, 30, 0.5);
-  z-index: 99;
+  z-index: 50;
 }
 
 main div#box-loan {
@@ -230,6 +230,31 @@ section#section-detail-book div#container-detail-book #item-detail-book-right h4
   color: #0868ae;
   margin-bottom: 4px;
 }
+section#section-detail-book div#container-detail-book #item-detail-book-right form.like-main-pict {
+  position: relative;
+}
+section#section-detail-book div#container-detail-book #item-detail-book-right form.like-main-pict input.heart-wishlist {
+  position: absolute;
+  top: -60px;
+  right: 0px;
+}
+section#section-detail-book div#container-detail-book #item-detail-book-right form.like-main-pict input.input-heart {
+  background-image: url("../img/picto/heart-rounded.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+}
+section#section-detail-book div#container-detail-book #item-detail-book-right form.like-main-pict input.input-heart:hover {
+  background-image: url("../img/picto/heart-rounded-full-blue.svg");
+}
+section#section-detail-book div#container-detail-book #item-detail-book-right form.like-main-pict input.input-heart-red {
+  background-image: url("../img/picto/heart-rounded-full-red.svg");
+}
 section#section-detail-book div#container-detail-book #item-detail-book-right ul.info-work-description {
   margin-top: 12px;
 }
@@ -404,6 +429,28 @@ section#section-detail-book div#container-detail-book div#item-detail-book-right
 }
 #section-recommandation #container-cards .card .bottom-item-card a.link-page:hover {
   color: #043a61;
+}
+#section-recommandation #container-cards .card input.heart-wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#section-recommandation #container-cards .card input.input-heart {
+  background-image: url("../img/picto/heart-rounded.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+}
+#section-recommandation #container-cards .card input.input-heart:hover {
+  background-image: url("../img/picto/heart-rounded-full-blue.svg");
+}
+#section-recommandation #container-cards .card input.input-heart-red {
+  background-image: url("../img/picto/heart-rounded-full-red.svg");
 }
 
 hr {

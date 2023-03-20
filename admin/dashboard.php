@@ -135,7 +135,8 @@
                              </div>
                              <div class="container-info-loan">
                                  <p class="info-disponibility"><?= $disponible ?></p>
-                                 <a href="#" class="btn-format-standard">Emprunter maintenant</a>
+                                 <a href="../front/book-detail.php?id=<?= $like['id_work'] ?>" class="btn-format-standard">Emprunter maintenant</a>
+                                 <input type="submit" class="delete-favorit-book" value="">
                              </div>
                          </li>
                      <?php

@@ -230,4 +230,26 @@ main #section-catalog #container-cards .card .bottom-item-card a.link-page {
 }
 main #section-catalog #container-cards .card .bottom-item-card a.link-page:hover {
   color: #043a61;
+}
+main #section-catalog #container-cards .card input.heart-wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+main #section-catalog #container-cards .card input.input-heart {
+  background-image: url("../img/picto/heart-rounded.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+}
+main #section-catalog #container-cards .card input.input-heart:hover {
+  background-image: url("../img/picto/heart-rounded-full-blue.svg");
+}
+main #section-catalog #container-cards .card input.input-heart-red {
+  background-image: url("../img/picto/heart-rounded-full-red.svg");
 }/*# sourceMappingURL=style-catalogue.css.map */

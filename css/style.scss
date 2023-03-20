@@ -40,7 +40,6 @@ body {
     right: 0;
     bottom: 0;
     background: $bgModal;
-    z-index: 50;
   }
 }
 
@@ -119,7 +118,7 @@ p.sub-title-section {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 100;
+  z-index: 20;
   border: none;
   outline: none;
   background-color: $main-blue;
@@ -931,6 +930,9 @@ p.sub-title-section {
         }
       }
 
+      input.input-heart-red {
+        background-image: url('../img/picto/heart-rounded-full-red.svg');
+      }
     }
 
     img.pict-card-book {

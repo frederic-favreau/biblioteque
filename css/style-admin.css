@@ -397,6 +397,17 @@ div.container-dashboard-base .box-dashboard hr {
   background-color: #05497b;
   cursor: pointer;
 }
+.container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan input.delete-favorit-book {
+  background-image: url("../img/picto/trash-03 (1).svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+}
 
 .empty {
   background-color: #f0f7ff;
