@@ -24,45 +24,75 @@
                  <h3 class="h3-dashboard">Mes livres en cours d'emprunt</h3>
                  <hr>
                  <ul class="list-book-box">
+                  <?php 
+
+                $idUser = $_SESSION['id-user'];
+                $date = date('Y-m-d');
+                  
+                  $loanSql = $db->prepare("SELECT `title`,`pict`, `id_work`, `loan`.`id_loan`,
+                  GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors`,
+                  DATEDIFF( `loan`.`theoretical_date`, :date) AS `nbJours`
+                  FROM `work`
+                  
+                  INNER JOIN `work_author`
+                  ON `work_author`.`work_id` = `work`.`id_work`
+                                      
+                  INNER JOIN `author`
+                  ON `work_author`.`author_id` = `author`.`id_author`
+                                      
+                  INNER JOIN `copy`
+                  ON `copy`.`work_id`=`work`.`id_work`
+                  
+                  INNER JOIN `loan`
+                  ON `loan`.`copy_id`=`copy`.`id_copy`
+                  
+                  WHERE  `loan`.`user_id` = :id_user AND `loan`.`status` = 1
+                  GROUP BY `loan`.`id_loan`
+                  ORDER BY `nbJours`");
+
+                        $loanSql->bindParam('id_user', $idUser, PDO::PARAM_STR);
+                        $loanSql->bindParam('date', $date, PDO::PARAM_STR);
+
+                        $loanSql->execute();
+                        while ($loan = $loanSql->fetch(PDO::FETCH_ASSOC)) {
+
+                    ?>
                      <li class="item-list-book">
                          <div class="format-pict-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
+                             <img src="../img/books/<?= $loan['pict'] ?>" class="pict-book-standard" alt="<?= $loan['title'] ?>">
                              <ul class="container-description">
-                                 <li class="list-title">['title']</li>
-                                 <li class="list-author">['author']</li>
+                                 <li class="list-title"><?= $loan['title'] ?></li>
+                                 <li class="list-author"><?= $authors = str_replace(',',', ',$loan['authors']) ?></li>
                              </ul>
                          </div>
                          <div class="container-info-loan">
-                             <p class="info-disponibility">['Il vous reste x jours']</p>
+                             <p class="info-disponibility">
+                               <?php 
+                               if($loan['nbJours'] > 0){
+                                ?>
+                                Il vous reste <?= $loan['nbJours'] ?> jours</p>
+                                <?php 
+                               }elseif($loan['nbJours'] < 0){
+                                ?>
+                                Attention, vous avez du retard de <?= $retard = str_replace('-','',$loan['nbJours'])?> jours</p>
+                                <?php 
+
+                               }else{
+                                ?>
+                                Votre emprunt se termine aujourd'hui</p>
+                                <?php 
+                               }
+                               ?>
+                             
+                             
+                             
+                             
+                             
                              <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
                          </div>
                      </li>
-                     <li class="item-list-book">
-                         <div class="format-pict-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
-                             <ul class="container-description">
-                                 <li class="list-title">['title']</li>
-                                 <li class="list-author">['author']</li>
-                             </ul>
-                         </div>
-                         <div class="container-info-loan">
-                             <p class="info-disponibility">['Il vous reste x jours']</p>
-                             <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
-                         </div>
-                     </li>
-                     <li class="item-list-book">
-                         <div class="format-pict-book">
-                             <img src="../img/books/ça.jpg" class="pict-book-standard" alt="['titre']">
-                             <ul class="container-description">
-                                 <li class="list-title">['title']</li>
-                                 <li class="list-author">['author']</li>
-                             </ul>
-                         </div>
-                         <div class="container-info-loan">
-                             <p class="info-disponibility">['Il vous reste x jours']</p>
-                             <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
-                         </div>
-                     </li>
+                     <?php } ?>
+                     
                  </ul>
              </div>
 
@@ -135,7 +165,7 @@
                              </div>
                              <div class="container-info-loan">
                                  <p class="info-disponibility"><?= $disponible ?></p>
-                                 <a href="#" class="btn-format-standard">Emprunter maintenant</a>
+                                 <a href="../front/book-detail.php?id=<?= $workId ?>" class="btn-format-standard">Emprunter maintenant</a>
                              </div>
                          </li>
                      <?php
@@ -194,7 +224,58 @@
                  <h3 class="h3-dashboard">Historique de mes emprunts</h3>
                  <hr>
                  <ul>
-                     <li class="empty"><a href="#"></a>Vous n'avez pas encore emprunté de livre</li>
+
+                 <?php
+
+                 $historiqueSql = $db->prepare("SELECT `title`,`pict`, `id_work`, `loan`.`id_loan`,
+                 DATE_FORMAT(`loan`.`date_return_loan`, '%d/%m/%Y') AS `retour`,
+                  GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors`,
+                  DATEDIFF( `loan`.`theoretical_date`, :date) AS `nbJours`
+                  FROM `work`
+                  
+                  INNER JOIN `work_author`
+                  ON `work_author`.`work_id` = `work`.`id_work`
+                                      
+                  INNER JOIN `author`
+                  ON `work_author`.`author_id` = `author`.`id_author`
+                                      
+                  INNER JOIN `copy`
+                  ON `copy`.`work_id`=`work`.`id_work`
+                  
+                  INNER JOIN `loan`
+                  ON `loan`.`copy_id`=`copy`.`id_copy`
+                  
+                  WHERE  `loan`.`user_id` = :id_user AND `loan`.`status` = 0
+                  GROUP BY `loan`.`id_loan`
+                  ORDER BY `nbJours`");
+
+$historiqueSql->bindParam('id_user', $idUser, PDO::PARAM_STR);
+$historiqueSql->bindParam('date', $date, PDO::PARAM_STR);
+
+$historiqueSql->execute();
+                        while ($historique = $historiqueSql->fetch(PDO::FETCH_ASSOC)) {
+
+                    ?>
+                     <li class="item-list-book">
+                         <div class="format-pict-book">
+                             <img src="../img/books/<?= $historique['pict'] ?>" class="pict-book-standard" alt="<?= $historique['title'] ?>">
+                             <ul class="container-description">
+                                 <li class="list-title"><?= $historique['title'] ?></li>
+                                 <li class="list-author"><?= $authors = str_replace(',',', ',$historique['authors']) ?></li>
+                             </ul>
+                         </div>
+                         <div class="container-info-loan">
+                             <p class="info-disponibility"> <?= $historique['retour'] ?></p>
+                              
+                             
+                             
+                             
+                             
+                             
+                             <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
+                         </div>
+                     </li>
+                     <?php } ?>
                  </ul>
              </div>
          </div>
