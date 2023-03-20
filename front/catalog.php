@@ -199,6 +199,13 @@ include_once '../connexion.php';
                                 <p class="description-card"><?= $card['extract'] ?></p>
                                 <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
                                 <a href="./book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
+                                <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+                                ?>
+                                    <form action="../admin/like-catalog.php?id=<?= $card['id_work'] ?>" method="POST">
+
+                                        <input type="submit" value="coeur" name="coeur" class="heart-wishlist">
+                                    </form>
+                                <?php } ?>
                             </div>
                         </div>
                 <?php }
@@ -212,7 +219,7 @@ include_once '../connexion.php';
 <script src="../main.js"></script>
 <button id="back-to-top" title="Retour en haut">
     <i class="fas fa-arrow-up"></i>
-  </button>
+</button>
 </body>
 <?php include_once '../front/footer-default.php'; ?>
 

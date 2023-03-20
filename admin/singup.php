@@ -3,6 +3,7 @@ session_start();
 
 require_once '../connexion.php';
 
+
 $mail= $_POST['mail'];
 $password = $_POST['password'];
 $firstname = $_POST['firstname'];
