@@ -31,6 +31,7 @@ $bgModal: rgba(6, 13, 30, 0.5);
 body {
   font-family: "Hind Madurai", sans-serif;
   background-color: #fafafb;
+  overflow-x: hidden;
 
   div.bloc-modale {
     position: fixed;
@@ -39,8 +40,13 @@ body {
     right: 0;
     bottom: 0;
     background: $bgModal;
-    z-index: 99;
+    z-index: 50;
   }
+}
+
+body.no-scroll {
+  margin-right: 17px;
+  overflow: hidden;
 }
 
 ul {
@@ -200,7 +206,7 @@ p.sub-title-section {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 9999;
+      z-index: 99;
       width: 100%;
     }
 
@@ -360,6 +366,7 @@ p.sub-title-section {
           }
 
           div#box-index-logout {
+            z-index: 999;
             position: absolute;
             top: 42px;
             right: 74px;
@@ -907,6 +914,23 @@ p.sub-title-section {
         top: 10px;
         right: 10px;
       }
+
+      input.input-heart {
+        background-image: url('../img/picto/heart-rounded.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 30px; /* Ajustez la largeur selon vos besoins */
+        height: 30px; /* Ajustez la hauteur selon vos besoins */
+
+        &:hover {
+          background-image: url('../img/picto/heart-rounded-full-blue.svg');
+        }
+      }
+
     }
 
     img.pict-card-book {
@@ -1279,7 +1303,7 @@ p.sub-title-section {
       animation-duration: 1s;
       animation-fill-mode: both;
       opacity: 0;
-      
+
       .item-text-commun {
         padding: 20px;
         width: 49%;

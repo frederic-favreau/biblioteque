@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 20 mars 2023 à 17:18
+-- Généré le : jeu. 16 mars 2023 à 10:54
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `copy` (
   PRIMARY KEY (`id_copy`) USING BTREE,
   KEY `WORK` (`work_id`),
   KEY `EDITOR` (`editor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `copy`
@@ -108,10 +108,10 @@ INSERT INTO `copy` (`id_copy`, `editor_id`, `location`, `work_id`, `stock`) VALU
 (1, 2, 'section education', 1, 1),
 (2, 2, 'section education', 1, 1),
 (3, 2, 'section education', 1, 1),
-(4, 2, 'section education', 1, 0),
-(5, 2, 'section education', 1, 1),
-(6, 2, 'section education', 1, 1),
-(7, 2, 'section enfant', 2, 1),
+(4, 2, 'section education', 1, 1),
+(5, 2, 'section education', 1, 0),
+(6, 2, 'section education', 1, 0),
+(7, 2, 'section enfant', 2, 0),
 (8, 2, 'section enfant', 2, 0),
 (9, 2, 'section enfant', 2, 1),
 (10, 2, 'section enfant', 2, 1),
@@ -119,57 +119,37 @@ INSERT INTO `copy` (`id_copy`, `editor_id`, `location`, `work_id`, `stock`) VALU
 (12, 1, 'section aventure', 3, 0),
 (13, 1, 'section aventure', 3, 0),
 (14, 3, 'section aventure', 3, 0),
-(15, 3, 'section sci-fi', 4, 0),
+(15, 3, 'section sci-fi', 4, 1),
 (16, 3, 'section sci-fi', 4, 1),
 (17, 1, 'section enfant', 5, 1),
 (18, 1, 'section enfant', 5, 1),
-(19, 1, 'section enfant', 5, 1),
-(20, 3, 'section aventure', 6, 1),
-(21, 3, 'section aventure', 6, 1),
+(19, 1, 'section enfant', 5, 0),
+(20, 3, 'section aventure', 6, 0),
+(21, 3, 'section aventure', 6, 0),
 (22, 3, 'section aventure', 6, 1),
 (23, 2, 'section horreur', 7, 1),
-(24, 2, 'section horreur', 7, 0),
-(26, 1, 'section horreur', 7, 1),
-(27, 1, 'section horreur', 7, 1),
-(28, 2, 'section aventure', 8, 1),
-(29, 2, 'section aventure', 8, 1),
+(24, 2, 'section horreur', 7, 1),
+(26, 1, 'section horreur', 7, 0),
+(27, 1, 'section horreur', 7, 0),
+(28, 2, 'section aventure', 8, 0),
+(29, 2, 'section aventure', 8, 0),
 (30, 3, 'section aventure', 9, 1),
 (31, 3, 'section aventure', 9, 1),
-(32, 3, 'section aventure', 9, 1),
+(32, 3, 'section aventure', 9, 0),
 (33, 1, 'section détective', 10, 1),
 (34, 1, 'section détective', 10, 1),
 (35, 1, 'section détective', 10, 1),
-(36, 3, 'section détective', 11, 1),
-(37, 3, 'section détective', 11, 1),
+(36, 3, 'section détective', 11, 0),
+(37, 3, 'section détective', 11, 0),
 (38, 2, 'section education', 12, 1),
 (39, 2, 'section education', 12, 1),
-(40, 2, 'section education', 12, 1),
+(40, 2, 'section education', 12, 0),
 (41, 2, 'section enfant', 13, 1),
 (42, 2, 'section enfant', 13, 1),
 (43, 2, 'section enfant', 13, 1),
-(44, 2, 'section enfant', 13, 1),
-(45, 2, 'section enfant', 13, 1),
-(46, 2, 'section education', 14, 1),
-(47, 2, 'section education', 14, 1),
-(48, 2, 'section education', 14, 1),
-(49, 2, 'section education', 14, 1),
-(50, 1, 'section détective', 15, 1),
-(51, 1, 'section détective', 15, 1),
-(52, 3, 'section détective', 15, 1),
-(53, 3, 'section détective', 16, 1),
-(54, 3, 'section détective', 16, 1),
-(55, 2, 'section enfant', 17, 1),
-(56, 2, 'section enfant', 17, 1),
-(57, 2, 'section enfant', 17, 1),
-(58, 2, 'section enfant', 17, 1),
-(59, 1, 'section sci-fi', 18, 1),
-(60, 1, 'section sci-fi', 18, 1),
-(61, 1, 'section sci-fi', 18, 1),
-(62, 1, 'section sci-fi', 18, 1),
-(63, 3, 'section education', 19, 1),
-(64, 3, 'section education', 19, 1),
-(65, 2, 'section education', 19, 1),
-(66, 2, 'section education', 19, 1);
+(44, 2, 'section enfant', 13, 0),
+(45, 2, 'section enfant', 13, 0),
+(46, 2, 'section education', 14, 1);
 
 -- --------------------------------------------------------
 
@@ -233,76 +213,22 @@ INSERT INTO `genre` (`id_genre`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `like`
---
-
-DROP TABLE IF EXISTS `like`;
-CREATE TABLE IF NOT EXISTS `like` (
-  `work_id` int NOT NULL,
-  `user_id` int NOT NULL,
-  KEY `LIKE` (`user_id`) USING BTREE,
-  KEY `WORK` (`work_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `like`
---
-
-INSERT INTO `like` (`work_id`, `user_id`) VALUES
-(1, 22),
-(5, 2),
-(6, 22),
-(7, 22),
-(8, 22),
-(9, 22),
-(11, 2),
-(12, 22),
-(17, 2),
-(11, 2),
-(7, 2),
-(3, 2);
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `loan`
 --
 
 DROP TABLE IF EXISTS `loan`;
 CREATE TABLE IF NOT EXISTS `loan` (
   `id_loan` int NOT NULL AUTO_INCREMENT,
-  `copy_id` int DEFAULT NULL,
+  `id_copy` int DEFAULT NULL,
   `release_date` date DEFAULT NULL,
   `theoretical_date` date DEFAULT NULL,
   `date_return_loan` date DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
-  `user_id` int DEFAULT NULL,
+  `id_user` int DEFAULT NULL,
   PRIMARY KEY (`id_loan`),
-  KEY `COPY` (`copy_id`),
-  KEY `USER` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb3;
-
---
--- Déchargement des données de la table `loan`
---
-
-INSERT INTO `loan` (`id_loan`, `copy_id`, `release_date`, `theoretical_date`, `date_return_loan`, `status`, `user_id`) VALUES
-(1, 11, '0000-00-00', '0000-00-00', '2023-03-17', 0, 1),
-(2, 12, '0000-00-00', '0000-00-00', NULL, 1, 2),
-(3, 13, '0000-00-00', '0000-00-00', NULL, 1, 3),
-(4, 14, '0000-00-00', '0000-00-00', NULL, 1, 1),
-(8, 22, '0000-00-00', '0000-00-00', '2023-03-17', 0, 7),
-(12, 5, '0000-00-00', '0000-00-00', NULL, 1, 3),
-(13, 8, '2004-00-00', '0000-00-00', NULL, 1, 2),
-(23, 4, '0000-00-00', '0000-00-00', NULL, 1, 1),
-(35, 15, '0000-00-00', '0000-00-00', NULL, 1, 3),
-(48, 24, '0000-00-00', '0000-00-00', NULL, 1, 22),
-(49, 14, '0000-00-00', '0000-00-00', NULL, 1, 22),
-(50, 7, '2023-03-16', '2023-04-16', NULL, 1, 22),
-(56, 4, '2023-03-16', '2023-04-17', NULL, 1, 22),
-(57, 7, '2023-03-17', '2023-04-17', '2023-03-17', 0, 22),
-(58, 1, '2023-03-17', '2023-04-17', '2023-03-17', 0, 22),
-(59, 5, '2023-03-17', '2023-04-17', '2023-03-17', 0, 22);
+  KEY `COPY` (`id_copy`),
+  KEY `USER` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -321,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `avatar` varchar(1) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `role` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `user`
@@ -335,8 +261,7 @@ INSERT INTO `user` (`id_user`, `firstname`, `lastname`, `mail`, `password`, `adr
 (9, 'Cocotte', 'Elisa', 'elisa@google.com', '$2y$10$odqpKdrFFQbyV//dBckZBeOL5kd0jZ3TG2DD8ROjb5cSYiCvQNlS.', NULL, NULL, NULL),
 (10, 'Papa', 'Papa Schtroumpf', 'papaSchtroumpf@gmail.com', '$2y$10$YU4A1C80dqo1GqSi9muzcun6qVWiIRqAqtXaoYu5a05ivdHN.RFgK', NULL, NULL, NULL),
 (11, 'de', 'Schtroumpfette', 'Schtroumpfette@gmail.com', '$2y$10$jJIAm2UDCCQpVLa7SCgan.ltw3LqW9ICG/gAMG3sSZIbIAuYny/ZS', NULL, NULL, NULL),
-(22, 'KIng', 'Kong', 'Kong@gmail.com', '$2y$10$oUJ.0jlCzmlAHQ819Pck6O6WiCaAFWIUJG.OYVHxJOGqoCpMTbOfi', NULL, NULL, NULL),
-(24, 'hhuuhiop', 'ouhio', 'ygyug@hjioh.fr', '$2y$10$EMbMFGWvyLoVKyZPrnwfJOFvnYWGnQDqa9dX74Gk4aouumItbTvyS', NULL, NULL, NULL);
+(22, 'KIng', 'Kong', 'Kong@gmail.com', '$2y$10$oUJ.0jlCzmlAHQ819Pck6O6WiCaAFWIUJG.OYVHxJOGqoCpMTbOfi', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -453,13 +378,7 @@ INSERT INTO `work_category` (`category_id`, `work_id`) VALUES
 (1, 10),
 (1, 11),
 (2, 12),
-(2, 13),
-(1, 14),
-(1, 15),
-(1, 16),
-(1, 17),
-(2, 18),
-(2, 19);
+(2, 13);
 
 -- --------------------------------------------------------
 
@@ -517,18 +436,11 @@ ALTER TABLE `copy`
   ADD CONSTRAINT `copy_ibfk_3` FOREIGN KEY (`work_id`) REFERENCES `work` (`id_work`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Contraintes pour la table `like`
---
-ALTER TABLE `like`
-  ADD CONSTRAINT `like_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `like_ibfk_2` FOREIGN KEY (`work_id`) REFERENCES `work` (`id_work`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
 -- Contraintes pour la table `loan`
 --
 ALTER TABLE `loan`
-  ADD CONSTRAINT `loan_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `loan_ibfk_3` FOREIGN KEY (`copy_id`) REFERENCES `copy` (`id_copy`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `loan_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `loan_ibfk_3` FOREIGN KEY (`id_copy`) REFERENCES `copy` (`id_copy`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `work_author`
