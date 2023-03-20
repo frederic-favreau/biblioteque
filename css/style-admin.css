@@ -550,13 +550,12 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 90%;
   min-height: 120px;
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li {
   width: 150px;
   text-align: center;
-  padding-right: 50px;
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud {
   height: 100px;
@@ -577,8 +576,7 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
   position: absolute;
-  right: -15px;
-  top: 39px;
+  right: -80px;
   font-size: 30px;
   padding: 2px 8px;
   width: 30px;
@@ -1053,12 +1051,12 @@ div#confirmed-error:hover {
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li {
   width: 150px;
   text-align: center;
-  padding-right: 50px;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud {
   height: 100px;
   width: auto;
   padding-left: 20px;
+  margin-left: -20px;
   z-index: -1;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud:hover {
@@ -1576,4 +1574,5 @@ section#crud-user div#box-crud-user div.item-complete-center ul.all-info-history
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 6px 20px;
 }/*# sourceMappingURL=style-admin.css.map */

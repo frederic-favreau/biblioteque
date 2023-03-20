@@ -639,12 +639,11 @@ section#loan-register {
           flex-wrap: wrap;
           justify-content: space-between;
           align-items: center;
-          width: 95%;
+          width: 90%;
           min-height: 120px;
           li {
             width: 150px;
             text-align: center;
-            padding-right: 50px;
 
             img.pict-book-crud {
               height: 100px;
@@ -668,8 +667,7 @@ section#loan-register {
 
           li.btn-option-crud {
             position: absolute;
-            right: -15px;
-            top: 39px;
+            right: -80px;
             font-size: 30px;
             padding: 2px 8px;
             width: 30px;
@@ -1215,12 +1213,12 @@ div#confirmed-error {
           li {
             width: 150px;
             text-align: center;
-            padding-right: 50px;
 
             img.pict-book-crud {
               height: 100px;
               width: auto;
               padding-left: 20px;
+              margin-left: -20px;
               z-index: -1;
 
               &:hover {
@@ -1822,6 +1820,7 @@ section#crud-user {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            padding: 6px 20px;
           }
         }
       }
