@@ -164,6 +164,28 @@ p.sub-title-section {
   }
 }
 
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 // ---------- HEADER - NAV - TOP ----------
 
 #main-header {
@@ -1141,7 +1163,7 @@ p.sub-title-section {
           color: $white;
           font-weight: bold;
           font-size: 14px;
-          border-radius: 0 8px 0 20px;
+          border-radius: 0 8px 0 8px;
         }
       }
 
@@ -1220,15 +1242,21 @@ p.sub-title-section {
       p {
         font-size: 20px;
         line-height: 30px;
-        color: #11635f;
+        color: $black;
 
         span {
           font-size: 30px;
+          color: $main-blue;
         }
       }
     }
 
     div.pict-right {
+      animation-name: slideFromRight;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      opacity: 0;
+
       .item-text-commun {
         padding: 20px;
         width: 50%;
@@ -1247,6 +1275,11 @@ p.sub-title-section {
     }
 
     div.pict-left {
+      animation-name: slideFromLeft;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      opacity: 0;
+      
       .item-text-commun {
         padding: 20px;
         width: 49%;

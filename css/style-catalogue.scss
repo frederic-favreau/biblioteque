@@ -28,6 +28,10 @@ main {
 
       a {
         color: $main-blue;
+
+        &:hover {
+          color: $footer;
+        }
       }
     }
   }
@@ -66,6 +70,7 @@ main {
         }
 
         p#filter-title {
+          font-family: 'Nova Slim', cursive, sans-serif;
           font-size: 17px;
           font-weight: 600;
           color: $main-blue;

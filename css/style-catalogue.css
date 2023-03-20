@@ -22,6 +22,9 @@ main #Breadcrumb li {
 main #Breadcrumb li a {
   color: #0868ae;
 }
+main #Breadcrumb li a:hover {
+  color: #043a61;
+}
 main #section-catalog {
   padding-top: 10px;
   padding-bottom: 100px;
@@ -57,6 +60,7 @@ main #section-catalog #container-catalog #container-filter {
   }
 }
 main #section-catalog #container-catalog #container-filter p#filter-title {
+  font-family: "Nova Slim", cursive, sans-serif;
   font-size: 17px;
   font-weight: 600;
   color: #0868ae;
