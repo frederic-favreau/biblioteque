@@ -223,7 +223,18 @@
               <!-- <p class="description-card"><?= $card['extract'] ?></p> -->
               <h5 id="title-author"><?= str_replace(',', ', ', $card['authors']) ?></h5>
               <a href="./front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
-              <input type="submit" value="coeur" class="heart-wishlist">
+
+
+              <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+              ?>
+                <form action="./admin/like.php?id=<?= $card['id_work'] ?>" method="POST">
+
+                  <input type="submit" value="coeur" name="coeur" class="heart-wishlist">
+                </form>
+              <?php } ?>
+
+
+
             </div>
           </div>
         <?php } ?>

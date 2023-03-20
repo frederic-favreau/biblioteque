@@ -201,16 +201,7 @@ main {
           background-color: $white;
         }
 
-        &::before {
-          position: absolute;
-          content: url(../img/picto/heart-rounded.svg);
-          top: 10px;
-          right: 10px;
-        }
-
-        &:hover::before {
-          cursor: pointer;
-        }
+        
 
         img {
           position: absolute;
