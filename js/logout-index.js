@@ -40,10 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const ulBoxIndexLogout = document.createElement("ul");
 
-        const liGreetings = document.createElement("li");
-        liGreetings.innerHTML = `Votre menu`;
-        ulBoxIndexLogout.appendChild(liGreetings);
-
         const liDashboard = document.createElement("li");
         const dashboardLink = document.createElement("a");
         dashboardLink.href = `./admin/dashboard.php`;

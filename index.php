@@ -87,14 +87,14 @@
               <div class="front front-item-1" style="background-image: url(./img/news-3.png)">
               </div>
               <div class="back front-item-1">
-                <p><span>Lorem</span> ipsum dolor sit amet consectetur adipisicing elit. Voluptas nulla minima perferendis ipsum ab...</p>
+                <p><span>Elisa</span> accueil vos enfants pour des ateliers lecture tous les mercredis après-midi</p>
               </div>
             </div>
             <div class="flip" data-index="1">
               <div class="front front-item-2" style="background-image: url(./img/news-2.png)">
               </div>
               <div class="back front-item-2">
-                <p><span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis..</p>
+                <p><span>Najia</span> vous fait découvrir les derniers coups de cœur</p>
               </div>
             </div>
           </div>
@@ -103,21 +103,21 @@
               <div class="front front-item-4" style="background-image: url(./img/news-1.png)">
               </div>
               <div class="back front-item-4">
-                <p><span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis..</p>
+                <p><span>Frédéric</span> présente les derniers arrivages chaque semaine</p>
               </div>
             </div>
             <div class="flip" data-index="3">
               <div class="front front-item-3" style="background-image: url(./img/news-1.png)">
               </div>
               <div class="back front-item-3">
-                <p><span>Lorem</span> tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                <p><span>Jirka</span> est à disposition pour l’agenda des évènements</p>
               </div>
             </div>
             <div class="flip" data-index="4">
               <div class="front front-item-5" style="background-image: url(./img/news-1.png)">
               </div>
               <div class="back front-item-5">
-                <p><span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis..</p>
+                <p><span>Alex</span> est à votre service pour vos recherches de livres</p>
               </div>
             </div>
           </div>
@@ -264,85 +264,73 @@
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-1"></div>
-            <div class="article-infos">
-              <div>Mars 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Journée Portes Ouvertes</h4>
             <p>Visite guidée à Biblook, vente de livres atelier et lecture pour les enfants Lorem ipsum dolor sit. ...</p>
+            <p class="date-article-blog"><i>Mars 2023</i></p>
             <a href="./front/blog.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-2"></div>
-            <div class="article-infos">
-              <div>Mars 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Les chevaux ne mentent jamais</h4>
             <p>Chercher à communiquer avec les chevaux nous en révèle beaucoup sur soi-même Lorem ipsum dolor sit amet consectetur....</p>
+            <p class="date-article-blog"><i>Mars 2023</i></p>
             <a href="./front/blog2.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-3"></div>
-            <div class="article-infos">
-              <div>Février 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Une amie m’a parlé du régime Kéto</h4>
             <p>Après plusieurs régimes différents, une amie m’ parlé du régime Kéto.. Lorem ipsum dolor sit amet consectetur adipisicing...</p>
+            <p class="date-article-blog"><i>Février 2023</i></p>
             <a href="./front/blog3.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-4"></div>
-            <div class="article-infos">
-              <div>Février 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Venez troquer des boutures</h4>
             <p>Un super évenement à ne pas rater près de chez vous.. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, enim...</p>
+            <p class="date-article-blog"><i>Février 2023</i></p>
             <a href="./front/blog4.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-5"></div>
-            <div class="article-infos">
-              <div>Janvier 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Lettre aux écolos: Comment bien s'informer?</h4>
             <p>Les écolos se sont rassemblés
               à la bibliothèque afin de partager leurs connaissances..</p>
+              <p class="date-article-blog"><i>Janvier 2023</i></p>
             <a href="./front/blog5.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-6"></div>
-            <div class="article-infos">
-              <div>Janvier 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Prix du Club-lecture 2022</h4>
             <p>Le 28 octobre 2022 le Club-lecture de la bibliothèque de Saint-Denis-les-Bourg.. Lorem ipsum dolor sit amet... </p>
+            <p class="date-article-blog"><i>Janvier 2023</i></p>
             <a href="./front/blog6.php">Lire l'article ↗</a>
           </div>
         </div>
