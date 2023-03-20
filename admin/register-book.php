@@ -3,9 +3,9 @@ require_once '../connexion.php';
 include_once '../admin/header-main.php';
 ?>
 
+
+
 <!-- ---------- SECTION lOAN BOOK REGISTER ---------- -->
-
-
 
 <section id="loan-register" class="row-limit-size-db">
 

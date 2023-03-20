@@ -38,7 +38,7 @@ if (!isset($_SESSION['id-user'])) {
                                 <a href="./register-book.php"><img src="../img/picto/bookmark.svg" alt="crud">Registre des emprunts</a>
                             </li>
                             <li>
-                                <a href="#"><img src="../img/side-bar/picto-users.svg" alt="utilisateur">Gérer les utilisateurs</a>
+                                <a href="./crud-user.php"><img src="../img/side-bar/picto-users.svg" alt="utilisateur">Gérer les utilisateurs</a>
                             </li>
                             <li>
                                 <a href="../front/catalog.php"><img src="../img/picto/search-lg.svg" alt="utilisateur">Consulter le catalogue</a>
