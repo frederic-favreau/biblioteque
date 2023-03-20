@@ -37,8 +37,7 @@ include_once '../admin/header-main.php';
                                 <li class="id-copy-loan">['id de la copy']</li>
                                 <li class="id-user-loan">['id du lecteur']</li>
                                 <li class="nb-days-loan">['nb jours restant']</li>
-                                <li class="btn-option-crud" data-idWork="" data-title="" data-pict="">
-                                </li>
+                                <li class="btn-option-crud" data-idWork="['id_work']" data-title="['title']" data-pict="['pict']"><img src="../img/picto/magic-wand-02.svg" alt="Crayon"></li>
                                 <div class="container-complete-detail-info-book">
                                     <div class="container-flex-crud">
                                         <div class="item-complete-right">
@@ -48,7 +47,7 @@ include_once '../admin/header-main.php';
                                                 <li>Genre <span class="bdd-var">['genres']</span></li>
                                                 <li>Catégorie <span class="bdd-var">['category']</span></li>
                                                 <li>Date de publication <span class="bdd-var">['published']</span></li>
-                                                <li> Nom de l'éditeur<span class="bdd-var">['editors']</span></li>
+                                                <li>Nom de l'éditeur<span class="bdd-var">['editors']</span></li>
                                                 <li>Date de l'édition<span class="bdd-var">['edition_date']</span></li>
                                                 <li>Nombre d'exemplaires<span class="bdd-var">['count work id']</span></li>
                                                 <li>ISBN<span class="bdd-var">['ISBN']</span></li>
