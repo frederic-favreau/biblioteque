@@ -622,6 +622,242 @@ section#dashboard-page-profil {
 // ----------  SECTION lOAN BOOK REGISTER ----------
 
 section#loan-register {
+
+  div#container-list-book-crud {
+    ul.list-book-crud {
+      li.item-book-crud {
+        padding-top: 10px;
+        padding-bottom: 5px;
+
+        &:nth-child(odd) {
+          background-color: #f0f7ff;
+          border-radius: 8px;
+        }
+
+        ul.detail-item-book-crud {
+          position: relative;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          min-height: 120px;
+          li {
+            width: 150px;
+            text-align: center;
+            padding-right: 50px;
+
+            img.pict-book-crud {
+              height: 100px;
+              width: auto;
+              padding-left: 20px;
+              z-index: -1;
+
+              &:hover {
+                cursor: zoom-in;
+              }
+            }
+          }
+          li.item-title-crud {
+            position: relative;
+            color: $main-blue;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: "Nova Slim", cursive, sans-serif;
+            width: 400px;
+          }
+
+          li.btn-option-crud {
+            position: absolute;
+            right: 0px;
+            top: -10px;
+            font-size: 30px;
+            padding: 2px 8px;
+            background-color: $btn-red;
+            width: fit-content;
+            height: fit-content;
+            border-radius: 8px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          li.container-box-option-crud {
+            position: absolute;
+            top: 0;
+            right: -60px;
+
+            div.box-option-crud {
+              position: absolute;
+              right: 120px;
+              top: 0;
+              width: 220px;
+              height: fit-content;
+              padding: 16px;
+              background-color: $white;
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+              border-radius: 8px;
+              z-index: 999;
+              margin-bottom: 50px;
+              text-align: start;
+              display: block;
+
+              button.btn-detail-option-box {
+                border: none;
+                background-color: transparent;
+
+                &:hover {
+                  cursor: pointer;
+                  font-weight: bold;
+                }
+              }
+
+              button.btn-close-option-box {
+                position: absolute;
+                top: 0;
+                right: 12px;
+                font-size: 18px;
+                padding: 6px;
+                border: none;
+                background-color: transparent;
+
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+
+              &.active {
+                display: block;
+              }
+
+              h4 {
+                font-size: 16px;
+                font-weight: bold;
+                color: $btn-red;
+                margin-bottom: 2px;
+              }
+
+              ul.list-option-crud {
+                li {
+                  text-align: start;
+                  font-size: 14px;
+                  padding: 3px;
+                  width: 100%;
+                  &:hover {
+                    font-weight: bold;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+
+          div.container-complete-detail-info-book {
+            display: none;
+
+            &.active {
+              display: block;
+            }
+            div.container-flex-crud {
+              width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-evenly;
+              padding-top: 30px;
+              padding-bottom: 30px;
+
+              h3 {
+                margin-bottom: 15px;
+                color: $main-blue;
+              }
+
+              div.item-complete-left {
+                width: 40%;
+                color: $main-blue;
+
+                ul.all-info-user {
+                  li {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    font-size: 16px;
+                    color: gray;
+                    padding: 6px 20px;
+                    border-radius: 8px;
+                    @media screen and (min-width: 950px) {
+                      width: 100%;
+                      height: fit-content;
+                      font-size: 18px;
+                      flex-direction: row;
+                      justify-content: space-between;
+
+                      &:nth-child(odd) {
+                        background-color: #fafafa; /* couleur pour les éléments impairs */
+                      }
+
+                      &:nth-child(even) {
+                        background-color: $bgc-dashboard; /* couleur pour les éléments impairs */
+                      }
+                    }
+
+                    span.bdd-var {
+                      font-size: 16px;
+                      color: $main-blue;
+                      @media screen and (min-width: 950px) {
+                        font-size: 18px;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .item-complete-right {
+                width: 40%;
+                ul.all-info-book {
+                  li {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    font-size: 16px;
+                    color: gray;
+                    padding: 6px 20px;
+                    border-radius: 8px;
+                    @media screen and (min-width: 950px) {
+                      width: 100%;
+                      height: fit-content;
+                      font-size: 18px;
+                      flex-direction: row;
+                      justify-content: space-between;
+
+                      &:nth-child(odd) {
+                        background-color: #fafafa; /* couleur pour les éléments impairs */
+                      }
+
+                      &:nth-child(even) {
+                        background-color: $bgc-dashboard; /* couleur pour les éléments impairs */
+                      }
+                    }
+
+                    span.bdd-var {
+                      font-size: 16px;
+                      color: $main-blue;
+                      @media screen and (min-width: 950px) {
+                        font-size: 18px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+// BOX LOAN REGITER
+
   form#form-loan-register {
     .label-form-add-book {
       display: block;
@@ -900,7 +1136,7 @@ div#confirmed-error {
       width: fit-content;
       margin-right: auto;
 
-      input#input-seach-book {
+      input.input-search {
         width: 400px;
         height: 40px;
         padding-left: 10px;
@@ -909,7 +1145,7 @@ div#confirmed-error {
         margin-right: 10px;
       }
 
-      input#btn-search-book {
+      input.btn-search {
         width: 100px;
         height: 40px;
         border-radius: 8px;
@@ -926,7 +1162,7 @@ div#confirmed-error {
       }
     }
 
-    a#btn-add-book {
+    a.btn-add {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1090,6 +1326,7 @@ div#confirmed-error {
           }
 
           div.container-complete-detail-info-book {
+            width: 100%;
             display: none;
 
             &.active {

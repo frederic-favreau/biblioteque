@@ -4,10 +4,10 @@ include_once '../admin/header-main.php';
 ?>
 
 <!-- ---------- SECTION DASHBOARD - PAGE CRUD BOOK ---------- -->
+
 <section id="dashboard-page-book-crud" class="row-limit-size-db">
     <div class="container-dashboard-base" id="container-dashboard-modified">
-        <h1 class="h1-dashboard">Bienvenue ['prenom'] dans votre gestion des livres</h1>
-
+        <h1 class="h1-dashboard">Bienvenue dans votre gestion des livres</h1>
         <h2 class="h2-dashboard">Vous pouvez ajouter, supprimer et modifier l'ensemble des livres de la bibliothèque</h2>
 
         <div class="container-crud-book-tabs">
@@ -17,12 +17,12 @@ include_once '../admin/header-main.php';
                     <h3 class="h3-dashboard">Les livres de la bibliothèque Biblook</h3>
                     <div class="search-crud-input">
                         <form action="" method="post">
-                            <input type="text" id="input-seach-book" name="text">
-                            <input type="submit" id="btn-search-book" name='rechercher' value="Rechercher"></input>
+                            <input type="text" id="input-seach-book" class="input-search" name="text">
+                            <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value="Rechercher"></input>
                             <button type="button" id="btn-all-detail">Vue détails</button>
                         </form>
                     </div>
-                    <a href="./insert-book.php" type="button" id="btn-add-book">Ajouter un livre</a>
+                    <a href="./insert-book.php" type="button" id="btn-add-book" class="btn-add">Ajouter un livre</a>
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">
