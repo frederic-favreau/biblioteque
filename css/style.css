@@ -307,34 +307,36 @@ p.sub-title-section {
   position: absolute;
   top: 42px;
   right: 50px;
-  width: 180px;
-  height: 150px;
+  width: 220px;
+  height: 160px;
   background-color: #fff;
   border-radius: 8px;
   padding: 10px 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li {
+  margin-top: 3px;
+}
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:first-of-type {
   font-size: 18px;
   color: #0868ae;
-  margin-bottom: 3px;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:last-of-type {
   position: absolute;
   bottom: -2px;
   left: 0;
-  width: 180px;
+  width: 220px;
   background-color: #043a61;
   padding: 6px;
   border-radius: 0 0 8px 8px;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:last-of-type a {
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   float: right;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li a {
-  font-size: 14px;
+  font-size: 16px;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li a:hover {
   text-decoration: underline;
@@ -741,14 +743,10 @@ p.sub-title-section {
   animation: slide-up 0.5s ease forwards;
   animation-delay: calc(0.3s * (var(--card-index) - 1));
 }
-#section-soon-available #container-cards .card::before {
+#section-soon-available #container-cards .card input.heart-wishlist {
   position: absolute;
-  content: url(../img/picto/heart-rounded.svg);
   top: 10px;
   right: 10px;
-}
-#section-soon-available #container-cards .card:hover::before {
-  cursor: pointer;
 }
 #section-soon-available #container-cards span.tag-new-index {
   position: absolute;
