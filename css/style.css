@@ -743,14 +743,10 @@ p.sub-title-section {
   animation: slide-up 0.5s ease forwards;
   animation-delay: calc(0.3s * (var(--card-index) - 1));
 }
-#section-soon-available #container-cards .card::before {
+#section-soon-available #container-cards .card input.heart-wishlist {
   position: absolute;
-  content: url(../img/picto/heart-rounded.svg);
   top: 10px;
   right: 10px;
-}
-#section-soon-available #container-cards .card:hover::before {
-  cursor: pointer;
 }
 #section-soon-available #container-cards span.tag-new-index {
   position: absolute;

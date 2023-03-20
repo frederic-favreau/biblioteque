@@ -223,6 +223,7 @@
               <!-- <p class="description-card"><?= $card['extract'] ?></p> -->
               <h5 id="title-author"><?= str_replace(',', ', ', $card['authors']) ?></h5>
               <a href="./front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
+              <input type="submit" value="coeur" class="heart-wishlist">
             </div>
           </div>
         <?php } ?>

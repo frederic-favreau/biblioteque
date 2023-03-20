@@ -6,7 +6,7 @@ $white: #fff;
 $black: #070606;
 $footer: #043a61;
 $background: #fafafb;
-$bgModal : rgba(6,13,30,.7);
+$bgModal: rgba(6, 13, 30, 0.7);
 
 *,
 ::after,
@@ -329,7 +329,6 @@ p.sub-title-section {
         }
 
         div#container-box-index-logout {
-
           a#btn-index-session {
             img {
               position: absolute;
@@ -356,7 +355,7 @@ p.sub-title-section {
                   font-size: 18px;
                   color: $main-blue;
                 }
-  
+
                 &:last-of-type {
                   position: absolute;
                   bottom: -2px;
@@ -366,13 +365,13 @@ p.sub-title-section {
                   padding: 6px;
                   border-radius: 0 0 8px 8px;
                 }
-  
+
                 &:last-of-type a {
                   font-size: 16px;
                   color: $white;
                   float: right;
                 }
-  
+
                 a {
                   font-size: 16px;
                   &:hover {
@@ -863,16 +862,22 @@ p.sub-title-section {
         animation-delay: calc(0.3s * (var(--card-index) - 1));
       }
 
-      &::before {
+      input.heart-wishlist {
         position: absolute;
-        content: url(../img/picto/heart-rounded.svg);
         top: 10px;
         right: 10px;
       }
 
-      &:hover::before {
-        cursor: pointer;
-      }
+      // &::before {
+      //   position: absolute;
+      //   content: url(../img/picto/heart-rounded.svg);
+      //   top: 10px;
+      //   right: 10px;
+      // }
+
+      // &:hover::before {
+      //   cursor: pointer;
+      // }
     }
 
     span.tag-new-index {
