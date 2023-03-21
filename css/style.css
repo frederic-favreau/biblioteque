@@ -1348,36 +1348,55 @@ section#section-news .text-shadow {
 
 #section-location {
   position: relative;
-  padding-top: 80px;
+  padding-top: 0px;
   padding-bottom: 180px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-#section-location h2#title-location {
-  margin-top: -30px;
+@media screen and (min-width: 950px) {
+  #section-location {
+    padding-top: 80px;
+  }
 }
-#section-location #iframe-google {
-  position: absolute;
-  top: 595px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+#section-location div#iframe-google {
+  width: 90%;
+  margin: 30px auto;
 }
-#section-location #container-info-location {
+#section-location div#iframe-google iframe {
+  width: 100%;
   max-width: 1200px;
-  height: 250px;
-  margin: 0 auto;
+  height: 450px;
+}
+#section-location div#iframe-google #container-info-location {
+  width: 100%;
+  max-width: 1200px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 30px;
+  margin: -10px 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 530px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
   border-radius: 0 0 8px 8px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
-#section-location #container-info-location ul li {
+@media screen and (min-width: 650px) {
+  #section-location div#iframe-google #container-info-location {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+#section-location div#iframe-google #container-info-location ul {
+  margin: 20px 50px;
+}
+#section-location div#iframe-google #container-info-location ul li {
   font-size: 18px;
   margin: 10px 0;
 }
-#section-location #container-info-location ul li span {
+#section-location div#iframe-google #container-info-location ul li span {
   font-weight: bold;
   color: #0868ae;
 }

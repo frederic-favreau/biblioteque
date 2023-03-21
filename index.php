@@ -337,85 +337,84 @@
     <!-- ---------- SECTION - LOCATION ---------- -->
 
 
-    <!-- <section id="section-location" class="row-limit-size">
+    <section id="section-location" class="row-limit-size">
       <p class="sub-title-section">Où nous trouver ?</p>
       <h2 id="title-location">Direction <span id="font-logo">Biblook</span> <br> à Saint-Denis-les-Bourg</h2>
       <div id="iframe-google">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <div id="container-info-location">
-        <ul>
-          <h5><img src="./img/picto/marker-pin-02.svg" alt="Localisation"></h5>
-          <li><span>Nous situer</span></li>
-          <li>244b rue du Pont du Jour</li>
-          <li>01000, Saint-Denis-lès-Bourg</li>
-        </ul>
-        <ul>
-          <h5><img src="./img/picto/Icon-mail.svg" alt="Email"></h5>
-          <li><span>Email</span></li>
-          <li><a href="#">contact@biblook.com</a></li>
-        </ul>
-        <ul>
-          <h5><img src="./img/picto/phone.svg" alt="Téléphone"></h5>
-          <li><span>Téléphone</span></li>
-          <li><a href="#">+33 4 38 38 24 38</a></li>
-        </ul>
-      </div>
-    </section>
-  </main> -->
-
-
-
-    <!-- ---------- SECTION - FOOTER ---------- -->
-
-
-    <footer id="footer">
-      <div id="container-footer-top">
-        <div id="item-footer-left">
-          <div id="container-group-logo-botom">
-            <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
-              <span id="nav-logo-text">Biblook</span></a>
-          </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="container-info-location">
           <ul>
-            <div id="list-left">
-              <li><a href="#main-header" class="slow-return">Nouveautés</a></li>
-              <li><a href="#section-heart" class="slow-return">Coups de coeur</a></li>
-              <li><a href="#section-soon-available" class="slow-return">Derniers arrivages</a></li>
-              <li><a href="#section-zoom" class="slow-return">Zoom</a></li>
-
-            </div>
-            <div id="list-right">
-              <li><a href="#section-blog" class="slow-return">Blog</a></li>
-              <li><a href="#section-faq" class="slow-return">FAQ</a></li>
-              <li><a href="#section-location" class="slow-return">Contact</a></li>
-            </div>
+            <h5><img src="./img/picto/marker-pin-02.svg" alt="Localisation"></h5>
+            <li><span>Nous situer</span></li>
+            <li>244b rue du Pont du Jour</li>
+            <li>01000, Saint-Denis-lès-Bourg</li>
+          </ul>
+          <ul>
+            <h5><img src="./img/picto/Icon-mail.svg" alt="Email"></h5>
+            <li><span>Email</span></li>
+            <li><a href="#">contact@biblook.com</a></li>
+          </ul>
+          <ul>
+            <h5><img src="./img/picto/phone.svg" alt="Téléphone"></h5>
+            <li><span>Téléphone</span></li>
+            <li><a href="#">+33 4 38 38 24 38</a></li>
           </ul>
         </div>
-        <div id="item-footer-right">
-          <form action="#" id="newsletter">
-            <label for="mail" id="label-mail-newsletter">Newsletter</label>
-            <input type="mail" name="mail">
-            <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
-          </form>
-        </div>
       </div>
-      <hr>
-      <div id="container-footer-bottom" class="row-limit-size">
-        <ul>
-          <li><a href="#">Conditions</a></li>
-          <li><a href="#">Copyright</a></li>
-          <li><a href="#">Cokkies</a></li>
-        </ul>
-        <p>©2023 <span id="font-logo">Biblook</span>. Tous droits réservés.</p>
-      </div>
-    </footer>
+    </section>
+  </main>
 
-    <!-- <script src="./js/hero.js"></script> -->
-    <script src="./main.js"></script>
-    <script src="./js/logout-index.js"></script>
-    <button id="back-to-top" title="Retour en haut">
-      <i class="fas fa-arrow-up"></i>
-    </button>
+
+
+  <!-- ---------- SECTION - FOOTER ---------- -->
+
+
+  <footer id="footer">
+    <div id="container-footer-top">
+      <div id="item-footer-left">
+        <div id="container-group-logo-botom">
+          <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+            <span id="nav-logo-text">Biblook</span></a>
+        </div>
+        <ul>
+          <div id="list-left">
+            <li><a href="#main-header" class="slow-return">Nouveautés</a></li>
+            <li><a href="#section-heart" class="slow-return">Coups de coeur</a></li>
+            <li><a href="#section-soon-available" class="slow-return">Derniers arrivages</a></li>
+            <li><a href="#section-zoom" class="slow-return">Zoom</a></li>
+
+          </div>
+          <div id="list-right">
+            <li><a href="#section-blog" class="slow-return">Blog</a></li>
+            <li><a href="#section-faq" class="slow-return">FAQ</a></li>
+            <li><a href="#section-location" class="slow-return">Contact</a></li>
+          </div>
+        </ul>
+      </div>
+      <div id="item-footer-right">
+        <form action="#" id="newsletter">
+          <label for="mail" id="label-mail-newsletter">Newsletter</label>
+          <input type="mail" name="mail">
+          <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div id="container-footer-bottom" class="row-limit-size">
+      <ul>
+        <li><a href="#">Conditions</a></li>
+        <li><a href="#">Copyright</a></li>
+        <li><a href="#">Cokkies</a></li>
+      </ul>
+      <p>©2023 <span id="font-logo">Biblook</span>. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+  <script src="./js/logout-index.js"></script>
+  <button id="back-to-top" title="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 </body>
 
 </html>
