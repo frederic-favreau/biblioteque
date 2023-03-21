@@ -212,16 +212,24 @@
               <!-- <p class="description-card"><?= $card['extract'] ?></p> -->
               <h5 id="title-author"><?= str_replace(',', ', ', $card['authors']) ?></h5>
               <a href="./front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
+              <form action="./admin/like.php?id=<?= $card['id_work']?>" method="POST">
 
+              <?php 
+              $idUser= $_SESSION['id-user']; 
+              $idBook = $card['id_work'];
+              
+              
+              if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+                $coeurSql = $db->prepare("SELECT `work_id`,`user_id` FROM `like` WHERE`user_id` = :user_id AND `work_id` = :work_id");
 
-              <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+                $coeurSql->bindParam('user_id',$idUser,PDO::PARAM_INT);
+                $coeurSql->bindParam('work_id',$idBook,PDO::PARAM_INT);
+                $coeurSql->execute();
+                $coeur = $coeurSql->fetch(PDO::FETCH_ASSOC);
+                if($coeur == true){
               ?>
-                <form action="./admin/like.php?id=<?= $card['id_work'] ?>" method="POST">
 
-                  <input type="submit" value="" name="coeur" class="heart-wishlist input-heart">
-                </form>
-              <?php } ?>
-
+                </fonrm>
 
 
             </div>
