@@ -32,11 +32,6 @@ body div.bloc-modale {
   z-index: 50;
 }
 
-body.no-scroll {
-  margin-right: 17px;
-  overflow: hidden;
-}
-
 ul {
   list-style-type: none;
 }
@@ -713,15 +708,11 @@ section#section-news .text-shadow {
   position: relative;
   left: -15%;
   top: 0;
+  left: -120px;
+  top: 100px;
+  margin-right: -100px;
 }
-@media screen and (min-width: 950px) {
-  #section-heart li:nth-child(1) a {
-    left: -120px;
-    top: 100px;
-    margin-right: -100px;
-  }
-}
-#section-heart li:nth-child(1) a img {
+#section-heart li:nth-child(1) img {
   position: absolute;
   top: 0px;
   transform-origin: bottom left;
@@ -730,13 +721,16 @@ section#section-news .text-shadow {
   height: 300px;
   margin-left: -10px;
 }
-#section-heart li:nth-child(2) a {
+
+li:nth-child(2) a {
   color: #28e2d9;
 }
-#section-heart li:nth-child(3) a {
+
+li:nth-child(3) a {
   color: #ffd317;
 }
-#section-heart li:nth-child(4) a {
+
+li:nth-child(4) a {
   color: #0b95fa;
 }
 
@@ -762,10 +756,9 @@ section#section-news .text-shadow {
 }
 
 #section-soon-available {
-  width: 90%;
+  width: 100%;
   padding-top: 120px;
   padding-bottom: 120px;
-  margin: 0 auto;
 }
 #section-soon-available #h3-tag {
   width: -moz-fit-content;
@@ -786,21 +779,25 @@ section#section-news .text-shadow {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 30px;
 }
 #section-soon-available #container-cards .card {
   position: relative;
-  max-width: 450px;
-  min-width: 450px;
-  width: 33%;
-  margin: 100px auto 40px auto;
+  width: 280px;
+  margin: 260px 20px -50px 20px;
   height: 230px;
-  padding: 15px 5px 15px 200px;
   border-radius: 8px;
-  background-color: #fafafb;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: transparent;
   opacity: 0;
-  transform: translateY(100%);
+}
+@media screen and (min-width: 500px) {
+  #section-soon-available #container-cards .card {
+    width: 450px;
+    margin: 100px auto 40px auto;
+    padding: 15px 5px 15px 200px;
+    background-color: #fafafb;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: translateY(100%);
+  }
 }
 #section-soon-available #container-cards .card:hover img.pict-card-book {
   transform: translateY(-15px);
@@ -846,8 +843,9 @@ section#section-news .text-shadow {
 }
 #section-soon-available #container-cards img.pict-card-book {
   position: absolute;
-  top: -40px;
-  left: 25px;
+  top: -120px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 150px;
   height: 230px;
   -o-object-fit: cover;
@@ -855,15 +853,22 @@ section#section-news .text-shadow {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: all 0.5s ease;
 }
+@media screen and (min-width: 500px) {
+  #section-soon-available #container-cards img.pict-card-book {
+    top: -40px;
+    left: 25px;
+    transform: none;
+  }
+}
 #section-soon-available #container-cards img.pict-card-book:hover {
   transform: translateY(-15px);
 }
-#section-soon-available #container-cards .bottom-item-card h4#title-genre {
+#section-soon-available #container-cards div.bottom-item-card h4#title-genre {
   font-size: 16px;
   margin: 15px 0;
   text-transform: capitalize;
 }
-#section-soon-available #container-cards .bottom-item-card h3.title-card-index {
+#section-soon-available #container-cards div.bottom-item-card h3.title-card-index {
   font-family: "Nova Slim", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -874,20 +879,25 @@ section#section-news .text-shadow {
   text-overflow: ellipsis;
   margin-bottom: 12px;
 }
-#section-soon-available #container-cards .bottom-item-card h5.title-author {
+#section-soon-available #container-cards div.bottom-item-card h5.title-author {
   font-size: 14px;
   text-transform: capitalize;
 }
-#section-soon-available #container-cards .bottom-item-card a.link-page {
-  position: absolute;
-  right: 10px;
-  bottom: 15px;
+#section-soon-available #container-cards div.bottom-item-card a.link-page {
+  margin-top: 25px;
   font-size: 16px;
   color: #0868ae;
   margin-right: 10px;
   margin-top: 20px;
 }
-#section-soon-available #container-cards .bottom-item-card a.link-page:hover {
+@media screen and (min-width: 500px) {
+  #section-soon-available #container-cards div.bottom-item-card a.link-page {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+  }
+}
+#section-soon-available #container-cards div.bottom-item-card a.link-page:hover {
   color: #043a61;
 }
 #section-soon-available .card.show-card-row1 {

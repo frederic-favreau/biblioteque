@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let cardHovered = false; // Ajout d'une variable pour vérifier si une carte est survolée
 
   function rotateCards() {
-    if (!cardHovered) { // Vérifie si aucune carte n'est survolée
+    if (!cardHovered) {
+      // Vérifie si aucune carte n'est survolée
       flips[currentIndex].classList.remove("auto-flip");
 
       currentIndex++;
@@ -55,49 +56,47 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-
 //
 //
 // BTN BACK TO TOP
-$(document).ready(function() {
+$(document).ready(function () {
   // Affiche ou masque le bouton en fonction du défilement
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > $(window).height()) {
-      $('#back-to-top').fadeIn();
+      $("#back-to-top").fadeIn();
     } else {
-      $('#back-to-top').fadeOut();
+      $("#back-to-top").fadeOut();
     }
   });
 
   // Animer le défilement vers le haut lors du clic sur le bouton
-  $('#back-to-top').click(function() {
-    $('html, body').animate({ scrollTop: 0 }, 1000);
+  $("#back-to-top").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 1000);
     return false;
   });
 });
 
-
 //
 //
 // ANIMATION SLOW-RETOURN SINCE LINK PAGE-BOTTOM
-$(document).ready(function() {
-  $('a.slow-return').on('click', function(event) {
+$(document).ready(function () {
+  $("a.slow-return").on("click", function (event) {
     event.preventDefault(); // Empêche le comportement par défaut du lien
 
     // Récupère la cible de la section
-    var target = $($(this).attr('href'));
+    var target = $($(this).attr("href"));
 
     if (target.length) {
       // Animer le défilement jusqu'à la section cible
-      $('html, body').animate({
-        scrollTop: target.offset().top
-      }, 1000); // Durée de l'animation en millisecondes
+      $("html, body").animate(
+        {
+          scrollTop: target.offset().top,
+        },
+        1000
+      ); // Durée de l'animation en millisecondes
     }
   });
 });
-
 
 //
 //
@@ -212,5 +211,3 @@ faqItems.forEach((item) => {
     item.classList.toggle("active");
   });
 });
-
-
