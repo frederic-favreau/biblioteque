@@ -66,9 +66,9 @@ h2 {
   }
 }
 
-+ p.sub-title-section {
+p.sub-title-section {
   font-size: 20px;
-  text-align: start;
+  text-align: center;
   margin: 30px auto;
   font-weight: bold;
   line-height: 24px;
@@ -76,7 +76,7 @@ h2 {
   display: block;
 }
 @media screen and (min-width: 950px) {
-  + p.sub-title-section {
+  p.sub-title-section {
     font-size: 22px;
     line-height: 30px;
     text-align: center;
@@ -396,7 +396,8 @@ h2 {
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:last-of-type a {
   font-size: 16px;
   color: #fff;
-  float: right;
+  margin-left: 2px;
+  float: left;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:last-of-type a:hover {
   color: #ff5e38;
@@ -949,6 +950,7 @@ section#section-news .text-shadow {
   }
 }
 #section-cta-available p#sub-title-cta {
+  text-align: center;
   margin-top: 25px;
   margin-bottom: 20px;
   font-size: 14px;
@@ -978,15 +980,17 @@ section#section-news .text-shadow {
 }
 
 #section-blog {
-  padding-top: 120px;
-  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-top: 60px;
+  padding-bottom: 80px;
 }
 #section-blog h2 {
   margin-top: -25px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 #section-blog #container-section-blog {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -994,8 +998,9 @@ section#section-news .text-shadow {
   margin: 0 auto;
 }
 #section-blog #container-section-blog .card-blog {
-  width: 320px;
-  height: 380px;
+  width: 100%;
+  max-width: 420px;
+  height: 540px;
   background-color: #fff;
   border-radius: 8px 8px 0 0;
   overflow: hidden;

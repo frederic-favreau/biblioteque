@@ -74,9 +74,9 @@ h2 {
     line-height: 70px;
   }
 }
-+ p.sub-title-section {
+p.sub-title-section {
   font-size: 20px;
-  text-align: start;
+  text-align: center;
   margin: 30px auto;
   font-weight: bold;
   line-height: 24px;
@@ -425,7 +425,8 @@ h2 {
                 &:last-of-type a {
                   font-size: 16px;
                   color: $white;
-                  float: right;
+                  margin-left: 2px;
+                  float: left;
 
                   &:hover {
                     color: $btn-red;
@@ -1129,6 +1130,7 @@ section#section-news {
   }
 
   p#sub-title-cta {
+    text-align: center;
     margin-top: 25px;
     margin-bottom: 20px;
     font-size: 14px;
@@ -1162,16 +1164,17 @@ section#section-news {
 // ---------- SECTION - BLOG ----------
 
 #section-blog {
-  padding-top: 120px;
-  position: relative;
+  height: fit-content;
+  padding-top: 60px;
+  padding-bottom: 80px;
 
   h2 {
     margin-top: -25px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
   #container-section-blog {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -1179,8 +1182,9 @@ section#section-news {
     margin: 0 auto;
 
     .card-blog {
-      width: 320px;
-      height: 380px;
+      width: 100%;
+      max-width: 420px;
+      height: 540px;
       background-color: $white;
       border-radius: 8px 8px 0 0;
       overflow: hidden;

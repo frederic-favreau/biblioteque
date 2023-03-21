@@ -129,8 +129,7 @@
 
     <!-- ---------- SECTION - BLOG ---------- -->
 
-
-    <!-- <section id="section-blog" class="row-limit-size">
+    <section id="section-blog" class="row-limit-size">
       <p class="sub-title-section">En manque d'infos ?</p>
       <h2>Notre blog</h2>
       <div id="container-section-blog">
@@ -141,7 +140,7 @@
           </div>
           <div class="card-blog-bottom">
             <h4>Journée Portes Ouvertes</h4>
-            <p>Bbiblook vous ouvre ces portes le mercredi 21 juin 2023 et vous propose une visite guidée. Au programme découverte des lieux ...</p>
+            <p>Biblook vous ouvre ces portes le mercredi 21 juin 2023 et vous propose une visite guidée. Au programme découverte des lieux ...</p>
             <p class="date-article-blog"><i>Mars 2023</i></p>
             <a href="./front/blog.php">Lire l'article ↗</a>
           </div>
@@ -207,7 +206,7 @@
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
 
 
