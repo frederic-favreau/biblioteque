@@ -353,12 +353,12 @@
               Bon accueil.<span>❞</span></p>
           </div>
           <div id="item-pict1" class="item-pict-commun">
-            <img src="./img/zoom/Margaux-fleury-zoom-2.png" alt="Margot Fleury">
+            <img src="./img/zoom/Margaux-fleury-zoom-2.jpg" alt="Margot Fleury">
           </div>
         </div>
         <div id="item-top-zoom-2" class="pict-left">
           <div id="item-pict" class="item-pict-commun">
-            <img src="./img/zoom/Ethan-zoom-4.png" alt="Ethan Siou">
+            <img src="./img/zoom/Ethan-zoom-4.jpg" alt="Ethan Siou">
           </div>
           <div id="item-text" class="item-text-commun">
             <h4>Ethan Siou</h4>
@@ -380,12 +380,12 @@
               Bbiblook est calme, chaleureux ou l’on passe de bon moments. <span>❞</span></p>
           </div>
           <div id="item-pict1" class="item-pict-commun">
-            <img src="./img/zoom/Marilou-zoom-3.png" alt="Margot Fleury">
+            <img src="./img/zoom/Marilou-zoom-3.jpg" alt="Margot Fleury">
           </div>
         </div>
         <div id="item-top-zoom-2" class="pict-left">
           <div id="item-pict" class="item-pict-commun">
-            <img src="./img/zoom/Henri-Burtin-zoom-1.png" alt="Henri Burtin">
+            <img src="./img/zoom/Henri-Burtin-zoom-1.jpg" alt="Henri Burtin">
           </div>
           <div id="item-text" class="item-text-commun">
             <h4>Henri Burtin</h4>
