@@ -24,7 +24,7 @@
 
 
   <header id="main-header">
-    <nav id="main-nav-bar" class="no-croll-bar">
+    <nav id="main-nav-bar">
       <div id="container-nav-bar" class="row-limit-size">
         <div id="container-group-logo">
           <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
@@ -38,15 +38,16 @@
         </div>
         <div id="container-group-btn-connexion">
           <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
-            // Afficher le contenu pour les utilisateurs connectés
           ?>
-            <div id="container-box-index-logout"><a href="#" id="btn-index-session"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a></div>
-
-          <?php
-          } else { ?>
-            <a href="./front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
+            <div id="container-box-index-logout">
+              <a href="#" id="btn-index-session"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a>
             <?php
-          } ?>
+          } else { ?>
+              <a href="./front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
+              <?php
+            }
+              ?>
+            </div>
 
             <div id="menu-burger">
               <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
@@ -63,23 +64,12 @@
 
 
   <main>
-
-    // Afficher le contenu pour les utilisateurs connectés?>
     <section id="section-news" class="row-limit-size-full">
       <div id="container-section-news">
         <div id="item-section-news-left">
           <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
           <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs pour offrir des moments de lecture inoubliable !</p>
-          <div class="wrapper">
-            <div class="link_wrapper">
-              <a href="#" id="btn-join-reader">Débuter l'aventure</a>
-              <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
-                  <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z" />
-                </svg>
-              </div>
-            </div>
-          </div>
+          <a href="#" id="btn-join-reader">Débuter l'aventure</a>
         </div>
         <div id="item-section-news-right">
           <div id="item-news-right-top">
@@ -188,7 +178,7 @@
         INNER JOIN `author`
         ON `work_author`.`author_id` = `author`.`id_author`
 
-        GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 9";
+        GROUP BY `id_work` ORDER BY `id_work` DESC LIMIT 6";
 
 
         $req = $db->query($sql);
@@ -238,13 +228,8 @@
                 $coeur = $coeurSql->fetch(PDO::FETCH_ASSOC);
                 if($coeur == true){
               ?>
-              
-              <input type="submit" value="" name="coeur" class="heart-wishlist input-heart input-heart-red">
-              
-              <?php }else{?>
-                <input type="submit" value="" name="coeur" class="heart-wishlist input-heart input-fill-blue">                
-                <?php }} ?>
-                </form>
+
+                </fonrm>
 
 
             </div>
@@ -329,7 +314,7 @@
           <div class="card-blog-bottom">
             <h4>Lettre aux écolos: Comment bien s'informer?</h4>
             <p>Les écolos se sont rassemblés à la bibliothèque afin de partager leurs connaissances et de guider certains lecteurs ...</p>
-              <p class="date-article-blog"><i>Janvier 2023</i></p>
+            <p class="date-article-blog"><i>Janvier 2023</i></p>
             <a href="./front/blog5.php">Lire l'article ↗</a>
           </div>
         </div>
@@ -353,7 +338,7 @@
     <!-- ---------- SECTION - ZOOM ---------- -->
 
 
-    <section id="section-zoom" class="row-limit-size">
+    <!-- <section id="section-zoom" class="row-limit-size">
       <h2>Zoom sur nos Biblookeurs</h2>
       <div id="container-section-zoom">
         <div id="item-top-zoom-1" class="pict-right">
@@ -410,7 +395,7 @@
               tout le monde trouve son bonheur, je recommande cette biblothèque. <span>❞</span></p>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </section>
 
@@ -485,7 +470,7 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div id="container-info-location">
-      <ul>
+        <ul>
           <h5><img src="./img/picto/marker-pin-02.svg" alt="Localisation"></h5>
           <li><span>Nous situer</span></li>
           <li>244b rue du Pont du Jour</li>
