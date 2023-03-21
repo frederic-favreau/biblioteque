@@ -789,7 +789,6 @@ p.sub-title-section {
   right: 10px;
 }
 #section-soon-available #container-cards .card input.input-heart {
-  background-image: url("../img/picto/heart-rounded.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -801,6 +800,9 @@ p.sub-title-section {
 }
 #section-soon-available #container-cards .card input.input-heart:hover {
   background-image: url("../img/picto/heart-rounded-full-blue.svg");
+}
+#section-soon-available #container-cards .card input.input-fill-blue {
+  background-image: url("../img/picto/heart-rounded.svg");
 }
 #section-soon-available #container-cards .card input.input-heart-red {
   background-image: url("../img/picto/heart-rounded-full-red.svg");
