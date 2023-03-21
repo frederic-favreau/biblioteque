@@ -916,7 +916,6 @@ p.sub-title-section {
       }
 
       input.input-heart {
-        background-image: url('../img/picto/heart-rounded.svg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -929,6 +928,10 @@ p.sub-title-section {
         &:hover {
           background-image: url('../img/picto/heart-rounded-full-blue.svg');
         }
+      }
+
+      input.input-fill-blue {
+        background-image: url('../img/picto/heart-rounded.svg');
       }
 
       input.input-heart-red {
