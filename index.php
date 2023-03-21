@@ -16,12 +16,12 @@
 </head>
 
 <body class="no-croll">
-  <?php
-  require_once './connexion.php';
-  ?>
+
+  <?php require_once './connexion.php'; ?>
+
+
 
   <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
-
 
   <header id="main-header">
     <nav id="main-nav-bar">
@@ -60,8 +60,9 @@
     </nav>
   </header>
 
-  <!-- ---------- SECTION - NEWS ---------- -->
 
+
+  <!-- ---------- SECTION - NEWS ---------- -->
 
   <main>
     <section id="section-news" class="row-limit-size-full">
@@ -69,7 +70,7 @@
         <div id="item-section-news-left">
           <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
           <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs pour offrir
-           des moments de lecture inoubliable !</p>
+            des moments de lecture inoubliable !</p>
           <a href="#" id="btn-join-reader">Débuter l'aventure</a>
         </div>
         <div id="item-section-news-right">
@@ -116,16 +117,13 @@
 
 
 
-   
-
     <!-- ---------- SECTION - CTA AVAILABLE ---------- -->
 
-
-    <!-- <section id="section-cta-available">
+    <section id="section-cta-available">
       <h2 class="title-cta">Vous recherchez un livre en particulier ?</h2>
       <p class="sub-title-section" id="sub-title-cta">Faites votre demande dès maintenant auprès de <span id="font-logo">Biblook</span></p>
       <a href="#">Demander un livre</a>
-    </section> -->
+    </section>
 
 
 
@@ -370,56 +368,56 @@
 
 
 
-  <!-- ---------- SECTION - FOOTER ---------- -->
+    <!-- ---------- SECTION - FOOTER ---------- -->
 
 
-  <footer id="footer">
-    <div id="container-footer-top">
-      <div id="item-footer-left">
-        <div id="container-group-logo-botom">
-          <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
-            <span id="nav-logo-text">Biblook</span></a>
+    <footer id="footer">
+      <div id="container-footer-top">
+        <div id="item-footer-left">
+          <div id="container-group-logo-botom">
+            <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+              <span id="nav-logo-text">Biblook</span></a>
+          </div>
+          <ul>
+            <div id="list-left">
+              <li><a href="#main-header" class="slow-return">Nouveautés</a></li>
+              <li><a href="#section-heart" class="slow-return">Coups de coeur</a></li>
+              <li><a href="#section-soon-available" class="slow-return">Derniers arrivages</a></li>
+              <li><a href="#section-zoom" class="slow-return">Zoom</a></li>
+
+            </div>
+            <div id="list-right">
+              <li><a href="#section-blog" class="slow-return">Blog</a></li>
+              <li><a href="#section-faq" class="slow-return">FAQ</a></li>
+              <li><a href="#section-location" class="slow-return">Contact</a></li>
+            </div>
+          </ul>
         </div>
+        <div id="item-footer-right">
+          <form action="#" id="newsletter">
+            <label for="mail" id="label-mail-newsletter">Newsletter</label>
+            <input type="mail" name="mail">
+            <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
+          </form>
+        </div>
+      </div>
+      <hr>
+      <div id="container-footer-bottom" class="row-limit-size">
         <ul>
-          <div id="list-left">
-            <li><a href="#main-header" class="slow-return">Nouveautés</a></li>
-            <li><a href="#section-heart" class="slow-return">Coups de coeur</a></li>
-            <li><a href="#section-soon-available" class="slow-return">Derniers arrivages</a></li>
-            <li><a href="#section-zoom" class="slow-return">Zoom</a></li>
-
-          </div>
-          <div id="list-right">
-            <li><a href="#section-blog" class="slow-return">Blog</a></li>
-            <li><a href="#section-faq" class="slow-return">FAQ</a></li>
-            <li><a href="#section-location" class="slow-return">Contact</a></li>
-          </div>
+          <li><a href="#">Conditions</a></li>
+          <li><a href="#">Copyright</a></li>
+          <li><a href="#">Cokkies</a></li>
         </ul>
+        <p>©2023 <span id="font-logo">Biblook</span>. Tous droits réservés.</p>
       </div>
-      <div id="item-footer-right">
-        <p>Newsletter</p>
-        <form action="#" id="newsletter">
-          <input type="mail">
-          <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
-        </form>
-      </div>
-    </div>
-    <hr>
-    <div id="container-footer-bottom" class="row-limit-size">
-      <ul>
-        <li><a href="#">Conditions</a></li>
-        <li><a href="#">Copyright</a></li>
-        <li><a href="#">Cokkies</a></li>
-      </ul>
-      <p>©2023 <span id="font-logo">Biblook</span>. Tous droits réservés.</p>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- <script src="./js/hero.js"></script> -->
-  <script src="./main.js"></script>
-  <script src="./js/logout-index.js"></script>
-  <button id="back-to-top" title="Retour en haut">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+    <!-- <script src="./js/hero.js"></script> -->
+    <script src="./main.js"></script>
+    <script src="./js/logout-index.js"></script>
+    <button id="back-to-top" title="Retour en haut">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
 
 </html>
