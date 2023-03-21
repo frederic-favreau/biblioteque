@@ -31,7 +31,6 @@ $bgModal: rgba(6, 13, 30, 0.5);
 body {
   font-family: "Hind Madurai", sans-serif;
   background-color: #fafafb;
-  width: 100vw;
 
   div.bloc-modale {
     position: fixed;
@@ -42,11 +41,6 @@ body {
     background: $bgModal;
     z-index: 50;
   }
-}
-
-body.no-scroll {
-  margin-right: 17px;
-  overflow: hidden;
 }
 
 ul {
@@ -63,7 +57,7 @@ h2 {
   font-family: "Nova Slim", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 40px;
   line-height: 38px;
   text-align: center;
   letter-spacing: 0.04em;
@@ -75,25 +69,9 @@ h2 {
     line-height: 70px;
   }
 }
-
-p#sub-title {
-  font-size: 14px;
-  text-align: start;
-  margin: 30px auto;
-  font-weight: bold;
-  line-height: 24px;
-  color: $black;
-  display: block;
-
-  @media screen and (min-width: 950px) {
-    font-size: 18px;
-    line-height: 30px;
-  }
-}
-
 p.sub-title-section {
-  font-size: 14px;
-  text-align: start;
+  font-size: 20px;
+  text-align: center;
   margin: 30px auto;
   font-weight: bold;
   line-height: 24px;
@@ -169,29 +147,6 @@ p.sub-title-section {
     opacity: 1;
   }
 }
-
-@keyframes slideFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
 // ---------- HEADER - NAV - TOP ----------
 
 #main-header {
@@ -238,13 +193,20 @@ p.sub-title-section {
           }
 
           img {
-            width: 85px;
+            width: 65px;
+            @media screen and (min-width: 500px) {
+              width: 85px;
+            }
           }
 
           #nav-logo-text {
             font-family: "Risque", cursive, sans-serif;
-            font-size: 36px;
+            font-size: 26px;
             color: $white;
+
+            @media screen and (min-width: 500px) {
+              font-size: 36px;
+            }
           }
         }
       }
@@ -362,7 +324,17 @@ p.sub-title-section {
         div#container-box-index-logout {
           a#btn-index-session {
             img {
+              width: 38px;
               line-height: 72px;
+
+              @media screen and (min-width: 500px) {
+                width: 50px;
+              }
+
+              @media screen and (min-width: 950px) {
+                width: 50px;
+                margin-top: 4px;
+              }
             }
           }
 
@@ -370,7 +342,7 @@ p.sub-title-section {
             z-index: 999;
             position: absolute;
             top: 42px;
-            right: 74px;
+            right: 0px;
             width: 220px;
             height: 160px;
             background-color: $white;
@@ -378,18 +350,30 @@ p.sub-title-section {
             padding: 10px 20px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
+            @media screen and (min-width: 500px) {
+              top: 55px;
+            }
+
+            @media screen and (min-width: 950px) {
+              top: 70px;
+            }
+
             &::after {
               position: absolute;
               display: block;
               content: "";
-              top: -10px;
-              left: 50%;
+              top: -8px;
+              left: 88%;
               margin-left: -8px;
               width: 0;
               height: 0;
               border-color: transparent transparent #fff;
               border-style: solid;
               border-width: 0 1pc 1pc;
+
+              @media screen and (min-width: 500px) {
+                left: 86%;
+              }
             }
 
             ul {
@@ -413,7 +397,8 @@ p.sub-title-section {
                 &:last-of-type a {
                   font-size: 16px;
                   color: $white;
-                  float: right;
+                  margin-left: 2px;
+                  float: left;
 
                   &:hover {
                     color: $btn-red;
@@ -437,28 +422,52 @@ p.sub-title-section {
 
 // ---------- SECTION - NEWS ----------
 
-#section-news {
+section#section-news {
   width: 100%;
+  height: fit-content;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   background: #0868ae;
-  padding: 120px 50px 0 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
-  #container-section-news {
+  @media screen and (min-width: 1280px) {
+    padding-top: 80px;
+  }
+
+  div#container-section-news {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow: hidden;
 
     @media screen and (min-width: 950px) {
       flex-wrap: nowrap;
     }
 
     #item-section-news-left {
-      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      @media screen and (min-width: 950px) {
+        padding-top: 60px;
+        width: 90%;
+        margin: 0 auto;
+      }
+
       h1 {
         white-space: nowrap;
         color: #f9b017;
-        font-size: 40px;
+        font-size: 25px;
+        line-height: 30px;
         z-index: 1;
+
+        @media screen and (min-width: 500px) {
+          font-size: 40px;
+          line-height: 50px;
+        }
 
         @media screen and (min-width: 650px) {
           font-size: 55px;
@@ -466,24 +475,30 @@ p.sub-title-section {
           margin-bottom: 0px;
         }
 
-        @media screen and (min-width: 950px) {
-          font-size: 40px;
-          margin-top: 50px;
-          margin-bottom: 0px;
-        }
+        // @media screen and (min-width: 950px) {
+        //   font-size: 40px;
+        //   margin-top: 50px;
+        //   margin-bottom: 0px;
+        // }
 
         @media screen and (min-width: 1350px) {
           font-size: 70px;
+          line-height: 80px;
         }
       }
 
       p#sub-title {
-        padding: 15px;
-        line-height: 30px;
-        font-size: 20px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        line-height: 24px;
+        font-size: 14px;
+        font-weight: bold;
         color: $white;
-        z-index: 1;
-        width: 450px;
+        text-align: center;
+
+        @media screen and (min-width: 500px) {
+          font-size: 16px;
+        }
 
         @media screen and (min-width: 650px) {
           line-height: 35px;
@@ -491,12 +506,10 @@ p.sub-title-section {
           width: 600px;
         }
 
-        @media screen and (min-width: 950px) {
-          margin-bottom: 50px;
-          font-size: 20px;
-          width: 500px;
+        @media screen and (min-width: 1280px) {
+          margin-top: 40px;
+          margin-bottom: 30px;
         }
-
         @media screen and (min-width: 1350px) {
           font-size: 30px;
           width: 100%;
@@ -504,13 +517,10 @@ p.sub-title-section {
       }
 
       a#btn-join-reader {
-        padding: 12px 24px;
-        line-height: 50px;
+        padding: 12px 36px;
         font-weight: bold;
-        text-decoration: none;
         background: $btn-red;
         color: $white;
-        letter-spacing: 1px;
         border-radius: 8px;
         transition: all 0.35s;
 
@@ -529,8 +539,10 @@ p.sub-title-section {
       width: 100%;
       text-align: center;
       padding-top: 50px;
+      display: none;
 
-      @media screen and (min-width: 950px) {
+      @media screen and (min-width: 1280px) {
+        display: block;
         width: 50%;
       }
 
@@ -700,18 +712,24 @@ p.sub-title-section {
 
 #section-heart {
   width: 100%;
-  padding-top: 120px;
+  margin: 0 auto;
+  padding-top: 80px;
   padding-bottom: 60px;
   overflow: hidden;
+
+  @media screen and (min-width: 950px) {
+    padding-top: 120px;
+  }
 
   p#sub-title-heart {
     margin-top: 10px;
     margin-bottom: 60px;
+    text-align: center;
   }
 
   ul.top {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 130px;
     list-style-type: none;
 
     @media screen and (min-width: 950px) {
@@ -721,25 +739,32 @@ p.sub-title-section {
     }
 
     li {
-      margin-bottom: 60px;
+      padding: 60px;
 
-      @media screen and (min-width: 950px) {
-        width: 33%;
+      @media screen and (min-width: 650px) {
+        width: 100%;
         margin-right: -100px;
         margin-left: -30px;
         padding: 0;
         transition: all 0.5s ease;
       }
 
-      &:hover {
-        @media screen and (min-width: 950px) {
-          transform: translateY(-50px);
-        }
+      @media screen and (min-width: 950px) {
+        width: 25%;
+        padding: 0;
+        transition: all 0.5s ease;
       }
+
+      // @media screen and (min-width: 950px) {
+      //   margin-right: 0px;
+      //   padding: 0;
+      //   transition: all 0.5s ease;
+      // }
     }
 
     .animated-card {
       position: relative;
+      left: 0;
       opacity: 0;
     }
 
@@ -764,43 +789,43 @@ p.sub-title-section {
     a {
       color: #ff6b38;
       position: relative;
-      left: -10%;
+      left: -15%;
       top: 0;
 
       @media screen and (min-width: 950px) {
-        left: -120px;
-        top: 100px;
-        margin-right: -100px;
       }
+      left: -120px;
+      top: 100px;
+      margin-right: -100px;
+    }
 
-      img {
-        position: absolute;
-        top: 0px;
-        transform-origin: bottom left;
-        transform: rotate(-5deg);
-        width: 200px;
-        height: 300px;
-        margin-left: -10px;
-      }
+    img {
+      position: absolute;
+      top: 0px;
+      transform-origin: bottom left;
+      transform: rotate(-5deg);
+      width: 200px;
+      height: 300px;
+      margin-left: -10px;
     }
   }
+}
 
-  li:nth-child(2) {
-    a {
-      color: #28e2d9;
-    }
+li:nth-child(2) {
+  a {
+    color: #28e2d9;
   }
+}
 
-  li:nth-child(3) {
-    a {
-      color: #ffd317;
-    }
+li:nth-child(3) {
+  a {
+    color: #ffd317;
   }
+}
 
-  li:nth-child(4) {
-    a {
-      color: #0b95fa;
-    }
+li:nth-child(4) {
+  a {
+    color: #0b95fa;
   }
 }
 
@@ -829,10 +854,9 @@ p.sub-title-section {
 // ---------- SECTION - lAST ARRIVAL ----------
 
 #section-soon-available {
-  width: 90%;
+  width: 100%;
   padding-top: 120px;
   padding-bottom: 120px;
-  margin: 0 auto;
 
   #h3-tag {
     width: fit-content;
@@ -853,21 +877,24 @@ p.sub-title-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-top: 30px;
 
     .card {
       position: relative;
-      max-width: 450px;
-      min-width: 450px;
-      width: 33%;
-      margin: 100px auto 40px auto;
+      width: 280px;
+      margin: 260px 20px -50px 20px;
       height: 230px;
-      padding: 15px 5px 15px 200px;
       border-radius: 8px;
-      background-color: $background;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background-color: transparent;
       opacity: 0;
-      transform: translateY(100%);
+
+      @media screen and (min-width: 500px) {
+        width: 450px;
+        margin: 100px auto 40px auto;
+        padding: 15px 5px 15px 200px;
+        background-color: $background;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        transform: translateY(100%);
+      }
 
       &:hover img.pict-card-book {
         transform: translateY(-15px);
@@ -914,7 +941,7 @@ p.sub-title-section {
       }
 
       input.input-fill-blue {
-        background-image: url('../img/picto/heart-rounded.svg');
+        background-image: url("../img/picto/heart-rounded.svg");
       }
 
       input.input-heart-red {
@@ -924,20 +951,27 @@ p.sub-title-section {
 
     img.pict-card-book {
       position: absolute;
-      top: -40px;
-      left: 25px;
+      top: -120px;
+      left: 50%;
+      transform: translate(-50%,-50%);
       width: 150px;
       height: 230px;
       object-fit: cover;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       transition: all 0.5s ease;
 
+      @media screen and (min-width: 500px) {
+        top: -40px;
+        left: 25px;
+        transform: none;
+      }
+
       &:hover {
         transform: translateY(-15px);
       }
     }
 
-    .bottom-item-card {
+    div.bottom-item-card {
       h4#title-genre {
         font-size: 16px;
         margin: 15px 0;
@@ -962,13 +996,17 @@ p.sub-title-section {
       }
 
       a.link-page {
-        position: absolute;
-        right: 10px;
-        bottom: 15px;
+        margin-top: 25px;
         font-size: 16px;
         color: $main-blue;
         margin-right: 10px;
         margin-top: 20px;
+
+        @media screen and (min-width: 500px) {
+          position: absolute;
+          right: 10px;
+          bottom: 15px;
+        }
 
         &:hover {
           color: $footer;
@@ -994,8 +1032,10 @@ p.sub-title-section {
 
 #section-cta-available {
   width: 100%;
-  height: 400px;
-  padding: 80px;
+  height: fit-content;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   background-image: radial-gradient(
       circle at 19% 90%,
@@ -1059,18 +1099,40 @@ p.sub-title-section {
   text-align: center;
 
   h2.title-cta {
-    font-size: 45px;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 25px;
+    line-height: 35px;
     color: $white;
+
+    @media screen and (min-width: 650px) {
+      font-size: 35px;
+    }
+
+    @media screen and (min-width: 1270px) {
+      font-size: 50px;
+    }
   }
 
   p#sub-title-cta {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
     color: $white;
+
+    @media screen and (min-width: 650px) {
+      margin-top: 35px;
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
   }
 
   a {
     display: block;
     margin: 0 auto;
-    width: 250px;
+    width: 199px;
     padding: 12px 24px;
     background-color: $btn-red;
     color: $white;
@@ -1087,16 +1149,21 @@ p.sub-title-section {
 // ---------- SECTION - BLOG ----------
 
 #section-blog {
-  padding-top: 120px;
-  position: relative;
+  height: fit-content;
+  padding-top: 60px;
+  padding-bottom: 40px;
+
+  @media screen and (min-width: 1150px) {
+    padding-bottom: 0px;
+  }
 
   h2 {
     margin-top: -25px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
   #container-section-blog {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -1104,8 +1171,9 @@ p.sub-title-section {
     margin: 0 auto;
 
     .card-blog {
-      width: 320px;
-      height: 380px;
+      width: 100%;
+      max-width: 420px;
+      height: 540px;
       background-color: $white;
       border-radius: 8px 8px 0 0;
       overflow: hidden;
@@ -1225,17 +1293,24 @@ p.sub-title-section {
 // ---------- SECTION - ZOOM ----------
 
 #section-zoom {
-  padding-top: 120px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  height: fit-content;
+
+  @media screen and (min-width: 950px) {
+    padding-top: 120px;
+    padding-bottom: 0;
+  }
 
   #container-section-zoom {
-    width: 100%;
-    margin-top: 60px;
+    padding-top: 60px;
+    width: 90%;
+    margin: 0 auto;
 
     div.pict-left,
     div.pict-right {
       display: flex;
       flex-wrap: wrap;
-      width: 80%;
       margin: 0 auto;
       justify-content: space-evenly;
 
@@ -1253,9 +1328,13 @@ p.sub-title-section {
       }
 
       p {
-        font-size: 20px;
+        font-size: 16px;
         line-height: 30px;
         color: $black;
+
+        @media screen and (min-width: 1150px) {
+          font-size: 20px;
+        }
 
         span {
           font-size: 30px;
@@ -1265,48 +1344,60 @@ p.sub-title-section {
     }
 
     div.pict-right {
-      animation-name: slideFromRight;
-      animation-duration: 1s;
-      animation-fill-mode: both;
-      opacity: 0;
-
+      width: 100%;
       .item-text-commun {
         padding: 20px;
-        width: 50%;
+
+        @media screen and (min-width: 1150px) {
+          width: 49%;
+        }
       }
 
       .item-pict-commun {
-        width: 50%;
+        @media screen and (min-width: 1150px) {
+          width: 49%;
+        }
 
         img {
+          display: none;
           height: 80%;
           width: auto;
           float: right;
           border-radius: 8px;
+
+          @media screen and (min-width: 1150px) {
+            display: block;
+          }
         }
       }
     }
 
     div.pict-left {
-      animation-name: slideFromLeft;
-      animation-duration: 1s;
-      animation-fill-mode: both;
-      opacity: 0;
-
+      width: 100%;
       .item-text-commun {
         padding: 20px;
-        width: 49%;
+
+        @media screen and (min-width: 1150px) {
+          width: 49%;
+        }
       }
 
       .item-pict-commun {
-        width: 49%;
+        @media screen and (min-width: 1150px) {
+          width: 40%;
+        }
       }
 
       img {
+        display: none;
         height: 80%;
         width: auto;
         float: left;
         border-radius: 8px;
+
+        @media screen and (min-width: 1150px) {
+          display: block;
+        }
       }
     }
   }
@@ -1316,7 +1407,13 @@ p.sub-title-section {
 
 #section-faq {
   position: relative;
-  padding-top: 120px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  height: fit-content;
+
+  @media screen and (min-width: 950px) {
+    padding-top: 120px;
+  }
 
   h2#section-title {
     margin-bottom: -10px;
@@ -1332,13 +1429,23 @@ p.sub-title-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 40px;
+    width: 90%;
+    margin: 0 auto;
+
+    @media screen and (min-width: 950px) {
+      margin-top: 60px;
+    }
 
     hr {
-      width: 60%;
+      width: 80%;
       margin-top: 15px;
       margin-bottom: 5px;
       border: 1px solid lightgray;
+
+      @media screen and (min-width: 950px) {
+        width: 70%;
+      }
     }
 
     .item-faq {
@@ -1365,18 +1472,27 @@ p.sub-title-section {
 
       p.question {
         margin: 12px 0 8px;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
         margin-bottom: 5px;
         font-weight: bold;
         line-height: 24px;
+        width: 95%;
+
+        @media screen and (min-width: 950px) {
+          font-size: 20px;
+        }
       }
 
       p.faq-answer {
         display: none;
-        font-size: 18px;
+        font-size: 14px;
         opacity: 0;
         transition: opacity 0.5s ease;
+
+        @media screen and (min-width: 950px) {
+          font-size: 18px;
+        }
       }
 
       &.active {
@@ -1418,15 +1534,23 @@ p.sub-title-section {
     h4 {
       font-style: normal;
       font-weight: 600;
-      font-size: 30px;
+      font-size: 25px;
       line-height: 30px;
+
+      @media screen and (min-width: 950px) {
+        font-size: 30px;
+      }
     }
 
     p {
       font-style: normal;
       font-weight: 400;
-      font-size: 22px;
+      font-size: 18px;
       line-height: 28px;
+
+      @media screen and (min-width: 950px) {
+        font-size: 22px;
+      }
     }
 
     a {
@@ -1449,42 +1573,55 @@ p.sub-title-section {
 
 #section-location {
   position: relative;
-  padding-top: 80px;
+  padding-top: 0px;
   padding-bottom: 180px;
+  height: fit-content;
 
-  h2#title-location {
-    margin-top: -30px;
+  @media screen and (min-width: 950px) {
+    padding-top: 80px;
   }
 
-  #iframe-google {
-    position: absolute;
-    top: 595px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  div#iframe-google {
+    width: 90%;
+    margin: 30px auto;
 
-  #container-info-location {
-    max-width: 1200px;
-    height: 250px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 530px;
-    border-radius: 0 0 8px 8px;
-    background-color: $white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    iframe {
+      width: 100%;
+      max-width: 1200px;
+      height: 450px;
+    }
 
-    ul {
-      li {
-        font-size: 18px;
-        margin: 10px 0;
+    #container-info-location {
+      width: 100%;
+      max-width: 1200px;
+      height: fit-content;
+      padding: 30px;
+      margin: -10px 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: baseline;
+      border-radius: 0 0 8px 8px;
+      background-color: $white;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
-        span {
-          font-weight: bold;
-          color: $main-blue;
+      @media screen and (min-width: 650px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      ul {
+        margin: 20px 50px;
+        li {
+          font-size: 18px;
+          margin: 10px 0;
+
+          span {
+            font-weight: bold;
+            color: $main-blue;
+          }
         }
       }
     }
@@ -1515,7 +1652,7 @@ p.sub-title-section {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: baseline;
+      // align-items: baseline;
 
       @media screen and (min-width: 950px) {
         justify-content: flex-start;
@@ -1525,9 +1662,13 @@ p.sub-title-section {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         width: 100%;
         margin-left: -25px;
+
+        @media screen and (min-width: 950px) {
+          justify-content: flex-start;
+        }
 
         a.link-page-home {
           display: flex;
@@ -1601,21 +1742,30 @@ p.sub-title-section {
       margin-top: 40px;
       margin-bottom: 20px;
 
-      p {
-        color: $white;
-
-        @media screen and (min-width: 950px) {
-          text-align: start;
-        }
-      }
-
       form#newsletter {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         margin-bottom: 35px;
+
+        @media screen and (min-width: 950px) {
+          flex-direction: row;
+        }
+
+        label#label-mail-newsletter {
+          color: $white;
+          display: block;
+          width: 100%;
+          text-align: center;
+
+          @media screen and (min-width: 950px) {
+            text-align: start;
+            padding-left: 80px;
+          }
+        }
 
         input {
           width: 250px;
@@ -1642,7 +1792,7 @@ p.sub-title-section {
           transition: background-color 0.3s ease;
 
           @media screen and (min-width: 950px) {
-            width: 110px;
+            width: 150px;
             height: 48px;
             margin-left: 10px;
             padding-right: 10px;

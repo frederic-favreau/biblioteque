@@ -15,13 +15,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body class="no-croll">
-  <?php
-  require_once './connexion.php';
-  ?>
+<body>
+
+  <?php require_once './connexion.php'; ?>
+
+
 
   <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
-
 
   <header id="main-header">
     <nav id="main-nav-bar">
@@ -60,15 +60,17 @@
     </nav>
   </header>
 
-  <!-- ---------- SECTION - NEWS ---------- -->
 
+
+  <!-- ---------- SECTION - NEWS ---------- -->
 
   <main>
     <section id="section-news" class="row-limit-size-full">
-      <div id="container-section-news">
+      <div id="container-section-news" class="row-limit-size">
         <div id="item-section-news-left">
           <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
-          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs pour offrir des moments de lecture inoubliable !</p>
+          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs pour offrir
+            des moments de lecture inoubliable !</p>
           <a href="#" id="btn-join-reader">Débuter l'aventure</a>
         </div>
         <div id="item-section-news-right">
@@ -115,34 +117,7 @@
 
 
 
-    <!-- ---------- SECTION - HEART ---------- -->
-
-
-    <section id="section-heart" class="row-limit-size">
-      <h2>Coups de coeur</h2>
-      <p class="sub-title-section" id="sub-title-heart">Nos lecteurs partagent leur coups de coeurs</p>
-      <ul class="top">
-        <?php
-        $sql_heart = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
-        $req_heart =  $db->query($sql_heart);
-        $i = 1;
-        while ($heart = $req_heart->fetch(PDO::FETCH_ASSOC)) {
-          $card_class = 'animated-card';
-        ?>
-
-          <li class="<?= $card_class ?>"><a href="./front/book-detail.php?id=<?= $heart['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt="<?= $heart['title'] ?>"></a></li>
-
-        <?php
-          $i++;
-        } ?>
-      </ul>
-
-      <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
-    </section>
-
-
     <!-- ---------- SECTION - lAST ARRIVAL ---------- -->
-
 
     <section id="section-soon-available" class="row-limit-size">
 
@@ -248,7 +223,6 @@
 
     <!-- ---------- SECTION - CTA AVAILABLE ---------- -->
 
-
     <section id="section-cta-available">
       <h2 class="title-cta">Vous recherchez un livre en particulier ?</h2>
       <p class="sub-title-section" id="sub-title-cta">Faites votre demande dès maintenant auprès de <span id="font-logo">Biblook</span></p>
@@ -258,7 +232,6 @@
 
 
     <!-- ---------- SECTION - BLOG ---------- -->
-
 
     <section id="section-blog" class="row-limit-size">
       <p class="sub-title-section">En manque d'infos ?</p>
@@ -271,7 +244,7 @@
           </div>
           <div class="card-blog-bottom">
             <h4>Journée Portes Ouvertes</h4>
-            <p>Bbiblook vous ouvre ces portes le mercredi 21 juin 2023 et vous propose une visite guidée. Au programme découverte des lieux ...</p>
+            <p>Biblook vous ouvre ces portes le mercredi 21 juin 2023 et vous propose une visite guidée. Au programme découverte des lieux ...</p>
             <p class="date-article-blog"><i>Mars 2023</i></p>
             <a href="./front/blog.php">Lire l'article ↗</a>
           </div>
@@ -344,7 +317,7 @@
     <!-- ---------- SECTION - ZOOM ---------- -->
 
 
-    <!-- <section id="section-zoom" class="row-limit-size">
+    <section id="section-zoom" class="row-limit-size">
       <h2>Zoom sur nos Biblookeurs</h2>
       <div id="container-section-zoom">
         <div id="item-top-zoom-1" class="pict-right">
@@ -401,14 +374,13 @@
               tout le monde trouve son bonheur, je recommande cette biblothèque. <span>❞</span></p>
           </div>
         </div>
-      </div> -->
+      </div>
 
     </section>
 
 
 
     <!-- ---------- SECTION - FAQ ---------- -->
-
 
     <section id="section-faq" class="row-limit-size">
       <h2 id="section-title">Foire aux questions</h2>
@@ -473,25 +445,25 @@
       <p class="sub-title-section">Où nous trouver ?</p>
       <h2 id="title-location">Direction <span id="font-logo">Biblook</span> <br> à Saint-Denis-les-Bourg</h2>
       <div id="iframe-google">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <div id="container-info-location">
-        <ul>
-          <h5><img src="./img/picto/marker-pin-02.svg" alt="Localisation"></h5>
-          <li><span>Nous situer</span></li>
-          <li>244b rue du Pont du Jour</li>
-          <li>01000, Saint-Denis-lès-Bourg</li>
-        </ul>
-        <ul>
-          <h5><img src="./img/picto/Icon-mail.svg" alt="Email"></h5>
-          <li><span>Email</span></li>
-          <li><a href="#">contact@biblook.com</a></li>
-        </ul>
-        <ul>
-          <h5><img src="./img/picto/phone.svg" alt="Téléphone"></h5>
-          <li><span>Téléphone</span></li>
-          <li><a href="#">+33 4 38 38 24 38</a></li>
-        </ul>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="container-info-location">
+          <ul>
+            <h5><img src="./img/picto/marker-pin-02.svg" alt="Localisation"></h5>
+            <li><span>Nous situer</span></li>
+            <li>244b rue du Pont du Jour</li>
+            <li>01000, Saint-Denis-lès-Bourg</li>
+          </ul>
+          <ul>
+            <h5><img src="./img/picto/Icon-mail.svg" alt="Email"></h5>
+            <li><span>Email</span></li>
+            <li><a href="#">contact@biblook.com</a></li>
+          </ul>
+          <ul>
+            <h5><img src="./img/picto/phone.svg" alt="Téléphone"></h5>
+            <li><span>Téléphone</span></li>
+            <li><a href="#">+33 4 38 38 24 38</a></li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
@@ -524,9 +496,9 @@
         </ul>
       </div>
       <div id="item-footer-right">
-        <p>Newsletter</p>
         <form action="#" id="newsletter">
-          <input type="mail">
+          <label for="mail" id="label-mail-newsletter">Newsletter</label>
+          <input type="mail" name="mail">
           <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
         </form>
       </div>
@@ -542,7 +514,6 @@
     </div>
   </footer>
 
-  <!-- <script src="./js/hero.js"></script> -->
   <script src="./main.js"></script>
   <script src="./js/logout-index.js"></script>
   <button id="back-to-top" title="Retour en haut">
