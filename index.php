@@ -278,8 +278,7 @@
 
     <!-- ---------- SECTION - FAQ ---------- -->
 
-
-    <!-- <section id="section-faq" class="row-limit-size">
+    <section id="section-faq" class="row-limit-size">
       <h2 id="section-title">Foire aux questions</h2>
       <p class="sub-title-section">Toutes les choses que vous devez savoir sont ici.</p>
       <div id="container-faq">
@@ -331,7 +330,7 @@
         <p>Alors n'hésitez pas une seconde, contacter nos supers administrateurs</p>
         <a href="#">Nous contacter</a>
       </div>
-    </section> -->
+    </section>
 
 
 

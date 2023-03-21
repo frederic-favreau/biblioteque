@@ -1095,8 +1095,9 @@ section#section-news .text-shadow {
   }
 }
 #section-zoom #container-section-zoom {
+  padding-top: 60px;
   width: 90%;
-  margin-top: 60px;
+  margin: 0 auto;
 }
 #section-zoom #container-section-zoom div.pict-left,
 #section-zoom #container-section-zoom div.pict-right {
@@ -1194,7 +1195,15 @@ section#section-news .text-shadow {
 
 #section-faq {
   position: relative;
-  padding-top: 120px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media screen and (min-width: 950px) {
+  #section-faq {
+    padding-top: 120px;
+  }
 }
 #section-faq h2#section-title {
   margin-bottom: -10px;
@@ -1208,13 +1217,25 @@ section#section-news .text-shadow {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 40px;
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 950px) {
+  #section-faq #container-faq {
+    margin-top: 60px;
+  }
 }
 #section-faq #container-faq hr {
-  width: 60%;
+  width: 80%;
   margin-top: 15px;
   margin-bottom: 5px;
   border: 1px solid lightgray;
+}
+@media screen and (min-width: 950px) {
+  #section-faq #container-faq hr {
+    width: 70%;
+  }
 }
 #section-faq #container-faq .item-faq {
   position: relative;
@@ -1239,17 +1260,28 @@ section#section-news .text-shadow {
 }
 #section-faq #container-faq .item-faq p.question {
   margin: 12px 0 8px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
   font-weight: bold;
   line-height: 24px;
+  width: 95%;
+}
+@media screen and (min-width: 950px) {
+  #section-faq #container-faq .item-faq p.question {
+    font-size: 20px;
+  }
 }
 #section-faq #container-faq .item-faq p.faq-answer {
   display: none;
-  font-size: 18px;
+  font-size: 14px;
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+@media screen and (min-width: 950px) {
+  #section-faq #container-faq .item-faq p.faq-answer {
+    font-size: 16px;
+  }
 }
 #section-faq #container-faq .item-faq.active .faq-answer {
   display: block;
