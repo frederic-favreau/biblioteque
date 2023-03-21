@@ -21,7 +21,7 @@
 body {
   font-family: "Hind Madurai", sans-serif;
   background-color: #fafafb;
-  overflow-x: hidden;
+  width: 100vw;
 }
 body div.bloc-modale {
   position: fixed;
@@ -197,7 +197,7 @@ p.sub-title-section {
   position: relative;
   width: 100%;
   height: 72px;
-  padding: 10px;
+  padding: 10px 27px 10px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,24 +223,29 @@ p.sub-title-section {
   color: #fff;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top {
-  position: absolute;
-  top: 36px;
-  left: 720px;
-  transform: translate(-50%, -50%);
+  position: relative;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
   display: none;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top::-moz-placeholder {
+  color: #fff;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top::placeholder {
+  color: #fff;
 }
 @media screen and (min-width: 950px) {
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
     display: block;
     position: relative;
-    font-size: 16px;
-    width: 300px;
+    font-size: 18px;
+    width: 400px;
     height: 45px;
-    border-radius: 8px;
     padding-left: 30px;
     border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
   }
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top:focus {
     outline: none;
@@ -325,9 +330,7 @@ p.sub-title-section {
   }
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout a#btn-index-session img {
-  position: absolute;
-  top: -24px;
-  left: -200px;
+  line-height: 72px;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout {
   z-index: 999;
@@ -389,13 +392,9 @@ p.sub-title-section {
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   background: #0868ae;
+  padding: 120px 50px 0 50px;
 }
 #section-news #container-section-news {
-  position: absolute;
-  top: 450px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -405,83 +404,76 @@ p.sub-title-section {
     flex-wrap: nowrap;
   }
 }
+#section-news #container-section-news #item-section-news-left {
+  position: relative;
+}
 #section-news #container-section-news #item-section-news-left h1 {
   white-space: nowrap;
   color: #f9b017;
-  font-size: 70px;
+  font-size: 40px;
   z-index: 1;
+}
+@media screen and (min-width: 650px) {
+  #section-news #container-section-news #item-section-news-left h1 {
+    font-size: 55px;
+    line-height: 65px;
+    margin-bottom: 0px;
+  }
 }
 @media screen and (min-width: 950px) {
   #section-news #container-section-news #item-section-news-left h1 {
+    font-size: 40px;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
+  }
+}
+@media screen and (min-width: 1350px) {
+  #section-news #container-section-news #item-section-news-left h1 {
+    font-size: 70px;
   }
 }
 #section-news #container-section-news #item-section-news-left p#sub-title {
   padding: 15px;
-  line-height: 45px;
-  font-size: 30px;
+  line-height: 30px;
+  font-size: 20px;
   color: #fff;
   z-index: 1;
+  width: 450px;
+}
+@media screen and (min-width: 650px) {
+  #section-news #container-section-news #item-section-news-left p#sub-title {
+    line-height: 35px;
+    font-size: 25px;
+    width: 600px;
+  }
 }
 @media screen and (min-width: 950px) {
   #section-news #container-section-news #item-section-news-left p#sub-title {
     margin-bottom: 50px;
+    font-size: 20px;
+    width: 500px;
   }
 }
-#section-news #container-section-news #item-section-news-left .wrapper {
-  position: fixed;
-  top: 90%;
-  left: 10%;
-  transform: translate(-50%, -50%);
+@media screen and (min-width: 1350px) {
+  #section-news #container-section-news #item-section-news-left p#sub-title {
+    font-size: 30px;
+    width: 100%;
+  }
 }
-#section-news #container-section-news #item-section-news-left .wrapper .link_wrapper {
-  position: relative;
-}
-#section-news #container-section-news #item-section-news-left .wrapper .link_wrapper a#btn-join-reader {
-  display: block;
-  width: 250px;
-  height: 50px;
+#section-news #container-section-news #item-section-news-left a#btn-join-reader {
+  padding: 12px 24px;
   line-height: 50px;
   font-weight: bold;
   text-decoration: none;
   background: #ff5e38;
-  text-align: center;
   color: #fff;
-  text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: 8px;
   transition: all 0.35s;
 }
-#section-news #container-section-news #item-section-news-left .wrapper .link_wrapper a#btn-join-reader:hover {
-  width: 250px;
-  border: 3px solid #ff5e38;
-  background: transparent;
+#section-news #container-section-news #item-section-news-left a#btn-join-reader:hover {
+  background: #b53928;
   color: #fff;
-}
-#section-news #container-section-news #item-section-news-left .wrapper .link_wrapper a#btn-join-reader:hover + .icon {
-  border: 3px solid #ff5e38;
-  right: -25%;
-}
-#section-news #container-section-news #item-section-news-left .wrapper .link_wrapper div.icon {
-  width: 30px;
-  height: 30px;
-  border: 3px solid transparent;
-  position: absolute;
-  transform: rotate(45deg);
-  right: 0;
-  top: 10px;
-  z-index: -1;
-  transition: all 0.35s;
-}
-#section-news #container-section-news #item-section-news-left .wrapper .link_wrapper div.icon svg {
-  width: 25px;
-  position: absolute;
-  top: calc(50% - 12px);
-  left: calc(50% - 12px);
-  transform: rotate(-45deg);
-  fill: #fff;
-  transition: all 0.35s;
 }
 @media screen and (min-width: 950px) {
   #section-news #container-section-news #item-section-news-left {
@@ -561,7 +553,12 @@ p.sub-title-section {
   display: inline-block;
   margin-right: 1em;
   margin-bottom: 1em;
-  width: 200px;
+  width: 150px;
+}
+@media screen and (min-width: 1430px) {
+  #section-news .flip {
+    width: 200px;
+  }
 }
 #section-news .flip > .front,
 #section-news .flip > .back {
