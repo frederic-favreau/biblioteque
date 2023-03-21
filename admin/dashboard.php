@@ -165,7 +165,8 @@
                              </div>
                              <div class="container-info-loan">
                                  <p class="info-disponibility"><?= $disponible ?></p>
-
+                                 <a href="../front/book-detail.php?id=<?= $workId ?>" class="btn-format-standard">Emprunter maintenant</a>
+                                 <input type="submit" class="delete-favorit-book" value="">                            
                              </div>
                          </li>
                      <?php
@@ -174,7 +175,6 @@
                         ?>
                  </ul>
              </div>
-
 
 
              <!-- ---------- BOX RECO ---------- -->
