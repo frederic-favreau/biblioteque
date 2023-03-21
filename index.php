@@ -213,7 +213,7 @@
     <!-- ---------- SECTION - ZOOM ---------- -->
 
 
-    <!-- <section id="section-zoom" class="row-limit-size">
+    <section id="section-zoom" class="row-limit-size">
       <h2>Zoom sur nos Biblookeurs</h2>
       <div id="container-section-zoom">
         <div id="item-top-zoom-1" class="pict-right">
@@ -270,7 +270,7 @@
               tout le monde trouve son bonheur, je recommande cette biblothèque. <span>❞</span></p>
           </div>
         </div>
-      </div> -->
+      </div>
 
     </section>
 

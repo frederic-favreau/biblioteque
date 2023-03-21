@@ -137,26 +137,6 @@ p.sub-title-section {
     opacity: 1;
   }
 }
-@keyframes slideFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slideFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 #main-header {
   width: 100%;
 }
@@ -983,7 +963,12 @@ section#section-news .text-shadow {
   height: -moz-fit-content;
   height: fit-content;
   padding-top: 60px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
+}
+@media screen and (min-width: 1150px) {
+  #section-blog {
+    padding-bottom: 0px;
+  }
 }
 #section-blog h2 {
   margin-top: -25px;
@@ -1099,17 +1084,24 @@ section#section-news .text-shadow {
 }
 
 #section-zoom {
-  padding-top: 120px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media screen and (min-width: 950px) {
+  #section-zoom {
+    padding-top: 120px;
+  }
 }
 #section-zoom #container-section-zoom {
-  width: 100%;
+  width: 90%;
   margin-top: 60px;
 }
 #section-zoom #container-section-zoom div.pict-left,
 #section-zoom #container-section-zoom div.pict-right {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
   margin: 0 auto;
   justify-content: space-evenly;
 }
@@ -1128,9 +1120,15 @@ section#section-news .text-shadow {
 }
 #section-zoom #container-section-zoom div.pict-left p,
 #section-zoom #container-section-zoom div.pict-right p {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 30px;
   color: #070606;
+}
+@media screen and (min-width: 1150px) {
+  #section-zoom #container-section-zoom div.pict-left p,
+  #section-zoom #container-section-zoom div.pict-right p {
+    font-size: 20px;
+  }
 }
 #section-zoom #container-section-zoom div.pict-left p span,
 #section-zoom #container-section-zoom div.pict-right p span {
@@ -1138,42 +1136,60 @@ section#section-news .text-shadow {
   color: #0868ae;
 }
 #section-zoom #container-section-zoom div.pict-right {
-  animation-name: slideFromRight;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  opacity: 0;
+  width: 100%;
 }
 #section-zoom #container-section-zoom div.pict-right .item-text-commun {
   padding: 20px;
-  width: 50%;
 }
-#section-zoom #container-section-zoom div.pict-right .item-pict-commun {
-  width: 50%;
+@media screen and (min-width: 1150px) {
+  #section-zoom #container-section-zoom div.pict-right .item-text-commun {
+    width: 49%;
+  }
+}
+@media screen and (min-width: 1150px) {
+  #section-zoom #container-section-zoom div.pict-right .item-pict-commun {
+    width: 49%;
+  }
 }
 #section-zoom #container-section-zoom div.pict-right .item-pict-commun img {
+  display: none;
   height: 80%;
   width: auto;
   float: right;
   border-radius: 8px;
 }
+@media screen and (min-width: 1150px) {
+  #section-zoom #container-section-zoom div.pict-right .item-pict-commun img {
+    display: block;
+  }
+}
 #section-zoom #container-section-zoom div.pict-left {
-  animation-name: slideFromLeft;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  opacity: 0;
+  width: 100%;
 }
 #section-zoom #container-section-zoom div.pict-left .item-text-commun {
   padding: 20px;
-  width: 49%;
 }
-#section-zoom #container-section-zoom div.pict-left .item-pict-commun {
-  width: 49%;
+@media screen and (min-width: 1150px) {
+  #section-zoom #container-section-zoom div.pict-left .item-text-commun {
+    width: 49%;
+  }
+}
+@media screen and (min-width: 1150px) {
+  #section-zoom #container-section-zoom div.pict-left .item-pict-commun {
+    width: 40%;
+  }
 }
 #section-zoom #container-section-zoom div.pict-left img {
+  display: none;
   height: 80%;
   width: auto;
   float: left;
   border-radius: 8px;
+}
+@media screen and (min-width: 1150px) {
+  #section-zoom #container-section-zoom div.pict-left img {
+    display: block;
+  }
 }
 
 #section-faq {

@@ -152,29 +152,6 @@ p.sub-title-section {
     opacity: 1;
   }
 }
-
-@keyframes slideFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
 // ---------- HEADER - NAV - TOP ----------
 
 #main-header {
@@ -1166,7 +1143,11 @@ section#section-news {
 #section-blog {
   height: fit-content;
   padding-top: 60px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
+
+  @media screen and (min-width: 1150px) {
+    padding-bottom: 0px;
+  }
 
   h2 {
     margin-top: -25px;
@@ -1304,17 +1285,22 @@ section#section-news {
 // ---------- SECTION - ZOOM ----------
 
 #section-zoom {
-  padding-top: 120px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  height: fit-content;
+
+  @media screen and (min-width: 950px) {
+    padding-top: 120px;
+  }
 
   #container-section-zoom {
-    width: 100%;
+    width: 90%;
     margin-top: 60px;
 
     div.pict-left,
     div.pict-right {
       display: flex;
       flex-wrap: wrap;
-      width: 80%;
       margin: 0 auto;
       justify-content: space-evenly;
 
@@ -1332,9 +1318,13 @@ section#section-news {
       }
 
       p {
-        font-size: 20px;
+        font-size: 16px;
         line-height: 30px;
         color: $black;
+
+        @media screen and (min-width: 1150px) {
+          font-size: 20px;
+        }
 
         span {
           font-size: 30px;
@@ -1344,48 +1334,62 @@ section#section-news {
     }
 
     div.pict-right {
-      animation-name: slideFromRight;
-      animation-duration: 1s;
-      animation-fill-mode: both;
-      opacity: 0;
-
+      width: 100%;
       .item-text-commun {
         padding: 20px;
-        width: 50%;
+
+        @media screen and (min-width: 1150px) {
+          width: 49%;
+        }
       }
 
       .item-pict-commun {
-        width: 50%;
+
+        @media screen and (min-width: 1150px) {
+          width: 49%;
+        }
 
         img {
+          display: none;
           height: 80%;
           width: auto;
           float: right;
           border-radius: 8px;
+
+          @media screen and (min-width: 1150px) {
+            display: block;
+          }
         }
       }
     }
 
     div.pict-left {
-      animation-name: slideFromLeft;
-      animation-duration: 1s;
-      animation-fill-mode: both;
-      opacity: 0;
-
+      width: 100%;
       .item-text-commun {
         padding: 20px;
-        width: 49%;
+
+        @media screen and (min-width: 1150px) {
+          width: 49%;
+        }
       }
 
       .item-pict-commun {
-        width: 49%;
+
+        @media screen and (min-width: 1150px) {
+          width: 40%;
+        }
       }
 
       img {
+        display: none;
         height: 80%;
         width: auto;
         float: left;
         border-radius: 8px;
+
+        @media screen and (min-width: 1150px) {
+          display: block;
+        }
       }
     }
   }

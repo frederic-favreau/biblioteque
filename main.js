@@ -1,34 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const pictRightElements = document.querySelectorAll(".pict-right");
-  const pictLeftElements = document.querySelectorAll(".pict-left");
-
-  function handleIntersection(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = "running";
-      } else {
-        entry.target.style.animationPlayState = "paused";
-      }
-    });
-  }
-
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.3
-  };
-
-  const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-  pictRightElements.forEach(element => {
-    observer.observe(element);
-  });
-
-  pictLeftElements.forEach(element => {
-    observer.observe(element);
-  });
-});
-
 //
 //
 // ROTATION CYCLE CARDS HERO
