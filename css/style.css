@@ -1092,6 +1092,7 @@ section#section-news .text-shadow {
 @media screen and (min-width: 950px) {
   #section-zoom {
     padding-top: 120px;
+    padding-bottom: 0;
   }
 }
 #section-zoom #container-section-zoom {
@@ -1280,7 +1281,7 @@ section#section-news .text-shadow {
 }
 @media screen and (min-width: 950px) {
   #section-faq #container-faq .item-faq p.faq-answer {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 #section-faq #container-faq .item-faq.active .faq-answer {
@@ -1313,14 +1314,24 @@ section#section-news .text-shadow {
 #section-faq #banner-faq-contact h4 {
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 30px;
+}
+@media screen and (min-width: 950px) {
+  #section-faq #banner-faq-contact h4 {
+    font-size: 30px;
+  }
 }
 #section-faq #banner-faq-contact p {
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 28px;
+}
+@media screen and (min-width: 950px) {
+  #section-faq #banner-faq-contact p {
+    font-size: 22px;
+  }
 }
 #section-faq #banner-faq-contact a {
   display: block;
