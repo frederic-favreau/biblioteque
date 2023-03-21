@@ -21,7 +21,6 @@
 body {
   font-family: "Hind Madurai", sans-serif;
   background-color: #fafafb;
-  width: 100vw;
 }
 body div.bloc-modale {
   position: fixed;
@@ -52,7 +51,7 @@ h2 {
   font-family: "Nova Slim", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 40px;
   line-height: 38px;
   text-align: center;
   letter-spacing: 0.04em;
@@ -68,7 +67,7 @@ h2 {
 }
 
 p#sub-title {
-  font-size: 14px;
+  font-size: 20px;
   text-align: start;
   margin: 30px auto;
   font-weight: bold;
@@ -84,7 +83,7 @@ p#sub-title {
 }
 
 p.sub-title-section {
-  font-size: 14px;
+  font-size: 20px;
   text-align: start;
   margin: 30px auto;
   font-weight: bold;
@@ -390,11 +389,25 @@ p.sub-title-section {
 
 #section-news {
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   background: #0868ae;
-  padding: 120px 50px 0 50px;
+  padding: 40px 90px 80px 50px;
+}
+@media screen and (min-width: 650px) {
+  #section-news {
+    padding: 40px 90px 80px 50px;
+  }
+}
+@media screen and (min-width: 950px) {
+  #section-news {
+    padding: 120px 90px 80px 50px;
+  }
 }
 #section-news #container-section-news {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -407,10 +420,16 @@ p.sub-title-section {
 #section-news #container-section-news #item-section-news-left {
   position: relative;
 }
+@media screen and (min-width: 950px) {
+  #section-news #container-section-news #item-section-news-left {
+    width: 100%;
+  }
+}
 #section-news #container-section-news #item-section-news-left h1 {
   white-space: nowrap;
   color: #f9b017;
   font-size: 40px;
+  line-height: 50px;
   z-index: 1;
 }
 @media screen and (min-width: 650px) {
@@ -420,38 +439,26 @@ p.sub-title-section {
     margin-bottom: 0px;
   }
 }
-@media screen and (min-width: 950px) {
-  #section-news #container-section-news #item-section-news-left h1 {
-    font-size: 40px;
-    margin-top: 50px;
-    margin-bottom: 0px;
-  }
-}
 @media screen and (min-width: 1350px) {
   #section-news #container-section-news #item-section-news-left h1 {
     font-size: 70px;
+    line-height: 80px;
   }
 }
 #section-news #container-section-news #item-section-news-left p#sub-title {
-  padding: 15px;
   line-height: 30px;
   font-size: 20px;
   color: #fff;
   z-index: 1;
   width: 450px;
+  white-space: nowrap;
+  margin-left: 40px;
 }
 @media screen and (min-width: 650px) {
   #section-news #container-section-news #item-section-news-left p#sub-title {
     line-height: 35px;
     font-size: 25px;
     width: 600px;
-  }
-}
-@media screen and (min-width: 950px) {
-  #section-news #container-section-news #item-section-news-left p#sub-title {
-    margin-bottom: 50px;
-    font-size: 20px;
-    width: 500px;
   }
 }
 @media screen and (min-width: 1350px) {
@@ -470,6 +477,7 @@ p.sub-title-section {
   letter-spacing: 1px;
   border-radius: 8px;
   transition: all 0.35s;
+  margin-left: 40px;
 }
 #section-news #container-section-news #item-section-news-left a#btn-join-reader:hover {
   background: #b53928;
@@ -484,9 +492,11 @@ p.sub-title-section {
   width: 100%;
   text-align: center;
   padding-top: 50px;
+  display: none;
 }
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 1280px) {
   #section-news #container-section-news #item-section-news-right {
+    display: block;
     width: 50%;
   }
 }
@@ -615,17 +625,24 @@ p.sub-title-section {
 
 #section-heart {
   width: 100%;
-  padding-top: 120px;
+  margin: 0 auto;
+  padding-top: 80px;
   padding-bottom: 60px;
   overflow: hidden;
+}
+@media screen and (min-width: 950px) {
+  #section-heart {
+    padding-top: 120px;
+  }
 }
 #section-heart p#sub-title-heart {
   margin-top: 10px;
   margin-bottom: 60px;
+  text-align: center;
 }
 #section-heart ul.top {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 200px;
   list-style-type: none;
 }
 @media screen and (min-width: 950px) {
@@ -636,11 +653,11 @@ p.sub-title-section {
   }
 }
 #section-heart ul.top li {
-  margin-bottom: 60px;
+  padding: 60px;
 }
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 650px) {
   #section-heart ul.top li {
-    width: 33%;
+    width: 49%;
     margin-right: -100px;
     margin-left: -30px;
     padding: 0;
@@ -648,12 +665,15 @@ p.sub-title-section {
   }
 }
 @media screen and (min-width: 950px) {
-  #section-heart ul.top li:hover {
-    transform: translateY(-50px);
+  #section-heart ul.top li {
+    width: 25%;
+    padding: 0;
+    transition: all 0.5s ease;
   }
 }
 #section-heart ul.top .animated-card {
   position: relative;
+  left: 0;
   opacity: 0;
 }
 #section-heart ul.top a {
@@ -674,7 +694,7 @@ p.sub-title-section {
 #section-heart li:nth-child(1) a {
   color: #ff6b38;
   position: relative;
-  left: -10%;
+  left: -15%;
   top: 0;
 }
 @media screen and (min-width: 950px) {

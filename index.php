@@ -68,7 +68,8 @@
       <div id="container-section-news">
         <div id="item-section-news-left">
           <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
-          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs pour offrir des moments de lecture inoubliable !</p>
+          <p id="sub-title">Des supers volontaires viennent rejoindre nos <br> rangs pour offrir
+           des moments de lecture <br> inoubliable !</p>
           <a href="#" id="btn-join-reader">Débuter l'aventure</a>
         </div>
         <div id="item-section-news-right">
@@ -469,7 +470,7 @@
     <!-- ---------- SECTION - LOCATION ---------- -->
 
 
-    <section id="section-location" class="row-limit-size">
+    <!-- <section id="section-location" class="row-limit-size">
       <p class="sub-title-section">Où nous trouver ?</p>
       <h2 id="title-location">Direction <span id="font-logo">Biblook</span> <br> à Saint-Denis-les-Bourg</h2>
       <div id="iframe-google">
@@ -494,7 +495,7 @@
         </ul>
       </div>
     </section>
-  </main>
+  </main> -->
 
 
 
