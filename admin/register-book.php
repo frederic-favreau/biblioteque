@@ -29,44 +29,271 @@ include_once '../admin/header-main.php';
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">
-                        <li class="item-book-crud">
-                            <ul class="detail-item-book-crud">
-                                <li class="item-pict-crud">
-                                    <img src="../img/books/motogp.jpg" alt="['title']" class="pict-book-crud">
+
+                        <?php
+
+                        if (isset($_POST['rechercher']) && !empty($_POST['rechercher'])) {
+                            $recheche = $_POST['text'];
+
+                            $reqStock = ("SELECT `work_id`, `stock` FROM `copy`");
+                            $resultStock = $db->query($reqStock);
+
+
+                            while ($row = $resultStock->fetch(PDO::FETCH_ASSOC)) {
+                                // Stockage du stock correspondant à chaque work_id
+                                $stocks[$row['work_id']][] = $row['stock'];
+                            }
+
+                            $date = date('Y-m-d');
+
+                            $registreSql = $db->prepare(
+                                'SELECT  `title`,`pict`, `copy`.`id_copy`, `category`.`category`, `editor`.`editor_name`, `id_work`, `ISBN`, `user`.`firstname`,`user`.`lastname`,`user`.`mail`,`user`.`adress`,`user`.`id_user`,
+                        DATE_FORMAT(`editor`.`date`,"%d/%m/%Y") AS `editdate`,
+                        DATE_FORMAT(`published_at`, "%d/%m/%Y") AS `published`,
+                        GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genes`,
+                        GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `auhors`,
+                        DATEDIFF( `loan`.`theoretical_date`, :date) AS `nbJours`
+                        FROM `work`
+                        
+                        INNER JOIN `work_author`
+                        ON `work_author`.`work_id` = `work`.`id_work`
+                        
+                        INNER JOIN `author`
+                        ON `work_author`.`author_id` = `author`.`id_author`
+                        
+                        INNER JOIN `copy`
+                        ON `copy`.`work_id`=`work`.`id_work`
+                        
+                        INNER JOIN `work_genre`
+                        ON `work_genre`.`work_id` = `work`.`id_work`
+                        
+                        INNER JOIN `genre`
+                        ON `genre`.`id_genre` = `work_genre`.`genre_id`
+                        
+                        INNER JOIN `work_category`
+                        ON `work_category`.`work_id` = `work`.`id_work`
+                        
+                        INNER JOIN `category`
+                        ON `category`.`id_category` = `work_category`.`category_id`
+                        
+                        INNER JOIN `editor`
+                        ON `editor`.`id_editor` = `copy`.`editor_id`
+                        
+                        INNER JOIN `loan`
+                        ON `loan`.`copy_id` = `copy`.`id_copy`
+                        
+                        INNER JOIN `user`
+                        ON `user`.`id_user` = `loan`.`user_id`
+                        
+                        WHERE `loan`.`status` = 1 AND (`title` LIKE "%' . $recheche . '%" OR  `author`.`lastname` LIKE "%' . $recheche . '%"  OR  `author`.`firstname` LIKE "%' . $recheche . '%" OR `genre`.`name` LIKE "%' . $recheche . '%" OR `copy`.`id_copy` LIKE "%' . $recheche . '%")
+                    
+                        
+                        GROUP BY `copy`.`id_copy`
+                        ORDER BY `nbJours`'
+                            );
+                            $registreSql->bindParam('date', $date, PDO::PARAM_STR);
+                            $registreSql->execute();
+                            while ($registre = $registreSql->fetch(PDO::FETCH_ASSOC)) {
+                                $workId = $registre['id_work'];
+                        ?>
+
+
+
+
+
+
+
+                                <li class="item-book-crud">
+                                    <ul class="detail-item-book-crud">
+                                        <li class="item-pict-crud">
+                                            <img src="../img/books/<?= $registre['pict'] ?>" alt="<?= $registre['title'] ?>" class="pict-book-crud">
+                                        </li>
+                                        <li class="id-copy-loan">ID Exemplaire: <?= $registre['id_copy'] ?></li>
+                                        <li class="id-user-loan">ID Client: <?= $registre['id_user'] ?></li>
+                                        <li class="nb-days-loan">
+                                            <?php
+                                            if ($registre['nbJours'] > 0) {
+                                            ?>
+                                                Il reste <?= $registre['nbJours'] ?> jours</p>
+                                            <?php
+                                            } elseif ($registre['nbJours'] < 0) {
+                                            ?>
+                                                Retard de <?= $retard = str_replace('-', '', $registre['nbJours']) ?> jours</p>
+                                            <?php
+
+                                            } else {
+                                            ?>
+                                                Emprunt se termine aujourd'hui</p>
+                                            <?php
+                                            }
+                                            ?>
+
+
+
+                                        </li>
+                                        <li class="btn-option-crud" data-idWork="['id_work']" data-title="['title']" data-pict="['pict']"><img src="../img/picto/magic-wand-02.svg" alt="Crayon"></li>
+                                        <div class="container-complete-detail-info-book">
+                                            <div class="container-flex-crud">
+                                                <div class="item-complete-right">
+                                                    <h3>Fiche technique du livre</h3>
+                                                    <ul class="all-info-book">
+                                                        <li>Titre <span class="bdd-var"><?= $registre['title'] ?></span></li>
+                                                        <li>Auteur <span class="bdd-var"><?= $registre['auhors'] ?></span></li>
+                                                        <li>Genre <span class="bdd-var"><?= $registre['genes'] ?></span></li>
+                                                        <li>Catégorie <span class="bdd-var"><?= $registre['category'] ?></span></li>
+                                                        <li>Date de publication <span class="bdd-var"><?= $registre['published'] ?></span></li>
+                                                        <li>Nom de l'éditeur<span class="bdd-var"><?= $registre['editor_name'] ?></span></li>
+                                                        <li>Date de l'édition<span class="bdd-var"><?= $registre['editdate'] ?></span></li>
+                                                        <li>Nombre d'exemplaires<span class="bdd-var"><?= count($stocks[$workId]) ?></span></li>
+                                                        <li>ISBN<span class="bdd-var"><?= $registre['ISBN'] ?></span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="item-complete-left">
+                                                    <h3>Détail du lecteur</h3>
+                                                    <ul class="all-info-user">
+                                                        <li>Prénom <span class="bdd-var"><?= $registre['firstname'] ?></span></li>
+                                                        <li>Nom <span class="bdd-var"><?= $registre['lastname'] ?></span></li>
+                                                        <li>Email<span class="bdd-var"><?= $registre['mail'] ?></span></li>
+                                                        <li>Adresse <span class="bdd-var"><?= $registre['adress'] ?></span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <li class="container-box-option-crud">
+                                    </ul>
                                 </li>
-                                <li class="id-copy-loan">['id de la copy']</li>
-                                <li class="id-user-loan">['id du lecteur']</li>
-                                <li class="nb-days-loan">['nb jours restant']</li>
-                                <li class="btn-option-crud" data-idWork="['id_work']" data-title="['title']" data-pict="['pict']"><img src="../img/picto/magic-wand-02.svg" alt="Crayon"></li>
-                                <div class="container-complete-detail-info-book">
-                                    <div class="container-flex-crud">
-                                        <div class="item-complete-right">
-                                            <h3>Fiche technique du livre</h3>
-                                            <ul class="all-info-book">
-                                                <li>Auteur <span class="bdd-var">['author']</span></li>
-                                                <li>Genre <span class="bdd-var">['genres']</span></li>
-                                                <li>Catégorie <span class="bdd-var">['category']</span></li>
-                                                <li>Date de publication <span class="bdd-var">['published']</span></li>
-                                                <li>Nom de l'éditeur<span class="bdd-var">['editors']</span></li>
-                                                <li>Date de l'édition<span class="bdd-var">['edition_date']</span></li>
-                                                <li>Nombre d'exemplaires<span class="bdd-var">['count work id']</span></li>
-                                                <li>ISBN<span class="bdd-var">['ISBN']</span></li>
-                                            </ul>
+                            <?php }
+                        } else {
+
+                            $reqStock = ("SELECT `work_id`, `stock` FROM `copy`");
+                            $resultStock = $db->query($reqStock);
+
+
+                            while ($row = $resultStock->fetch(PDO::FETCH_ASSOC)) {
+                                // Stockage du stock correspondant à chaque work_id
+                                $stocks[$row['work_id']][] = $row['stock'];
+                            }
+
+                            $date = date('Y-m-d');
+
+                            $registreSql = $db->prepare(
+                                'SELECT  `title`,`pict`, `copy`.`id_copy`, `category`.`category`, `editor`.`editor_name`, `id_work`, `ISBN`, `user`.`firstname`,`user`.`lastname`,`user`.`mail`,`user`.`adress`,`user`.`id_user`,
+                                DATE_FORMAT(`editor`.`date`,"%d/%m/%Y") AS `editdate`,
+                                DATE_FORMAT(`published_at`, "%d/%m/%Y") AS `published`,
+                                GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genes`,
+                                GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `auhors`,
+                                DATEDIFF( `loan`.`theoretical_date`, :date) AS `nbJours`
+                                FROM `work`
+
+                                INNER JOIN `work_author`
+                                ON `work_author`.`work_id` = `work`.`id_work`
+
+                                INNER JOIN `author`
+                                ON `work_author`.`author_id` = `author`.`id_author`
+
+                                INNER JOIN `copy`
+                                ON `copy`.`work_id`=`work`.`id_work`
+
+                                INNER JOIN `work_genre`
+                                ON `work_genre`.`work_id` = `work`.`id_work`
+
+                                INNER JOIN `genre`
+                                ON `genre`.`id_genre` = `work_genre`.`genre_id`
+
+                                INNER JOIN `work_category`  
+                                ON `work_category`.`work_id` = `work`.`id_work`
+
+                                INNER JOIN `category`
+                                ON `category`.`id_category` = `work_category`.`category_id`
+
+                                INNER JOIN `editor`
+                                ON `editor`.`id_editor` = `copy`.`editor_id`
+
+                                INNER JOIN `loan`
+                                ON `loan`.`copy_id` = `copy`.`id_copy`
+
+                                INNER JOIN `user`
+                                ON `user`.`id_user` = `loan`.`user_id`
+
+                                WHERE `loan`.`status` = 1 
+
+                                GROUP BY `copy`.`id_copy`
+                                ORDER BY `nbJours`'
+                            );
+                            $registreSql->bindParam('date', $date, PDO::PARAM_STR);
+                            $registreSql->execute();
+                            while ($registre = $registreSql->fetch(PDO::FETCH_ASSOC)) {
+                                $workId = $registre['id_work'];
+                            ?>
+
+
+
+
+
+
+
+                                <li class="item-book-crud">
+                                    <ul class="detail-item-book-crud">
+                                        <li class="item-pict-crud">
+                                            <img src="../img/books/<?= $registre['pict'] ?>" alt="<?= $registre['title'] ?>" class="pict-book-crud">
+                                        </li>
+                                        <li class="id-copy-loan">ID Exemplaire: <?= $registre['id_copy'] ?></li>
+                                        <li class="id-user-loan">ID Client: <?= $registre['id_user'] ?></li>
+                                        <li class="nb-days-loan">
+                                            <?php
+                                            if ($registre['nbJours'] > 0) {
+                                            ?>
+                                                Il reste <?= $registre['nbJours'] ?> jours</p>
+                                            <?php
+                                            } elseif ($registre['nbJours'] < 0) {
+                                            ?>
+                                                Retard de <?= $retard = str_replace('-', '', $registre['nbJours']) ?> jours</p>
+                                            <?php
+
+                                            } else {
+                                            ?>
+                                                Emprunt se termine aujourd'hui</p>
+                                            <?php
+                                            }
+                                            ?>
+
+
+
+                                        </li>
+                                        <li class="btn-option-crud" data-idWork="['id_work']" data-title="['title']" data-pict="['pict']"><img src="../img/picto/magic-wand-02.svg" alt="Crayon"></li>
+                                        <div class="container-complete-detail-info-book">
+                                            <div class="container-flex-crud">
+                                                <div class="item-complete-right">
+                                                    <h3>Fiche technique du livre</h3>
+                                                    <ul class="all-info-book">
+                                                        <li>Titre <span class="bdd-var"><?= $registre['title'] ?></span></li>
+                                                        <li>Auteur <span class="bdd-var"><?= $registre['auhors'] ?></span></li>
+                                                        <li>Genre <span class="bdd-var"><?= $registre['genes'] ?></span></li>
+                                                        <li>Catégorie <span class="bdd-var"><?= $registre['category'] ?></span></li>
+                                                        <li>Date de publication <span class="bdd-var"><?= $registre['published'] ?></span></li>
+                                                        <li>Nom de l'éditeur<span class="bdd-var"><?= $registre['editor_name'] ?></span></li>
+                                                        <li>Date de l'édition<span class="bdd-var"><?= $registre['editdate'] ?></span></li>
+                                                        <li>Nombre d'exemplaires<span class="bdd-var"><?= count($stocks[$workId]) ?></span></li>
+                                                        <li>ISBN<span class="bdd-var"><?= $registre['ISBN'] ?></span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="item-complete-left">
+                                                    <h3>Détail du lecteur</h3>
+                                                    <ul class="all-info-user">
+                                                        <li>Prénom <span class="bdd-var"><?= $registre['firstname'] ?></span></li>
+                                                        <li>Nom <span class="bdd-var"><?= $registre['lastname'] ?></span></li>
+                                                        <li>Email<span class="bdd-var"><?= $registre['mail'] ?></span></li>
+                                                        <li>Adresse <span class="bdd-var"><?= $registre['adress'] ?></span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="item-complete-left">
-                                            <h3>Détail du lecteur</h3>
-                                            <ul class="all-info-user">
-                                                <li>Prénom <span class="bdd-var">['firstname']</span></li>
-                                                <li>Nom <span class="bdd-var">['lastname']</span></li>
-                                                <li>Email<span class="bdd-var">['email']</span></li>
-                                                <li>Adresse <span class="bdd-var">['adress']</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <li class="container-box-option-crud">
-                            </ul>
-                        </li>
+                                        <li class="container-box-option-crud">
+                                    </ul>
+                                </li>
+                        <?php }
+                        } ?>
+
                     </ul>
                 </div>
             </div>

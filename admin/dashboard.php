@@ -119,21 +119,21 @@
                         }
 
                         $likeSql = $db->prepare("SELECT `title`,`pict`, `id_work`,
-                    GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors`
-                    FROM `work`
-                    
-                    INNER JOIN `work_author`
-                    ON `work_author`.`work_id` = `work`.`id_work`
-                    
-                    INNER JOIN `author`
-                    ON `work_author`.`author_id` = `author`.`id_author`
-                    
-                    INNER JOIN `like`
-                    ON `like`.`work_id` = `work`.`id_work`
-                    
-                    WHERE `like`.`work_id` = `id_work` AND `like`.`user_id` = :id_user
-                    
-                    GROUP BY `id_work`");
+                        GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors`
+                        FROM `work`
+                        
+                        INNER JOIN `work_author`
+                        ON `work_author`.`work_id` = `work`.`id_work`
+                        
+                        INNER JOIN `author`
+                        ON `work_author`.`author_id` = `author`.`id_author`
+                        
+                        INNER JOIN `like`
+                        ON `like`.`work_id` = `work`.`id_work`
+                        
+                        WHERE `like`.`user_id` = :id_user
+                        
+                        GROUP BY `id_work`");
 
                         $likeSql->bindParam('id_user', $idUser, PDO::PARAM_STR);
 
@@ -166,7 +166,10 @@
                              <div class="container-info-loan">
                                  <p class="info-disponibility"><?= $disponible ?></p>
                                  <a href="../front/book-detail.php?id=<?= $workId ?>" class="btn-format-standard">Emprunter maintenant</a>
-                                 <input type="submit" class="delete-favorit-book" value="">                            
+                                 <form action="../admin/delete-like.php?id=<?= $like['id_work'] ?>" method="POST">
+                                 <input type="submit" class="delete-favorit-book"> 
+                                 </form>
+                                
                              </div>
                          </li>
                      <?php
