@@ -249,12 +249,11 @@ section#section-detail-book {
 
         input.heart-wishlist {
           position: absolute;
-          top: -60px;
-          right: 0px;
+          top: 10px;
+          right: 10px;
         }
   
         input.input-heart {
-          background-image: url('../img/picto/heart-rounded.svg');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -267,6 +266,10 @@ section#section-detail-book {
           &:hover {
             background-image: url('../img/picto/heart-rounded-full-blue.svg');
           }
+        }
+  
+        input.input-fill-blue {
+          background-image: url('../img/picto/heart-rounded.svg');
         }
   
         input.input-heart-red {
