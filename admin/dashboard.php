@@ -141,6 +141,7 @@
                         while ($like = $likeSql->fetch(PDO::FETCH_ASSOC)) {
 
                             $workId = $like['id_work'];
+                            var_dump($workId);
                             $disponible = 'indisponible';
 
 
