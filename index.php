@@ -15,7 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body>
+<body class="no-croll">
   <?php
   require_once './connexion.php';
   ?>
@@ -24,7 +24,7 @@
 
 
   <header id="main-header">
-    <nav id="main-nav-bar">
+    <nav id="main-nav-bar" class="no-croll-bar">
       <div id="container-nav-bar" class="row-limit-size">
         <div id="container-group-logo">
           <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
@@ -32,7 +32,7 @@
         </div>
         <div id="container-group-search-nav-top">
           <form action="./front/catalog.php?placeholde" method="GET">
-            <input type="search" name="search" id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
+            <input type="search" name="search" id="input-search-nav-top" placeholder="Taper votre recherche">
             <input type="submit" name="rechercher" value="Rechercher" id="btn-search-nav-top">
           </form>
         </div>
@@ -87,14 +87,14 @@
               <div class="front front-item-1" style="background-image: url(./img/news-3.png)">
               </div>
               <div class="back front-item-1">
-                <p><span>Lorem</span> ipsum dolor sit amet consectetur adipisicing elit. Voluptas nulla minima perferendis ipsum ab...</p>
+                <p><span>Elisa</span> accueil vos enfants pour des ateliers lecture tous les mercredis après-midi</p>
               </div>
             </div>
             <div class="flip" data-index="1">
               <div class="front front-item-2" style="background-image: url(./img/news-2.png)">
               </div>
               <div class="back front-item-2">
-                <p><span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis..</p>
+                <p><span>Najia</span> vous fait découvrir les derniers coups de cœur</p>
               </div>
             </div>
           </div>
@@ -103,21 +103,21 @@
               <div class="front front-item-4" style="background-image: url(./img/news-1.png)">
               </div>
               <div class="back front-item-4">
-                <p><span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis..</p>
+                <p><span>Frédéric</span> présente les derniers arrivages chaque semaine</p>
               </div>
             </div>
             <div class="flip" data-index="3">
               <div class="front front-item-3" style="background-image: url(./img/news-1.png)">
               </div>
               <div class="back front-item-3">
-                <p><span>Lorem</span> tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                <p><span>Jirka</span> est à disposition pour l’agenda des évènements</p>
               </div>
             </div>
             <div class="flip" data-index="4">
               <div class="front front-item-5" style="background-image: url(./img/news-1.png)">
               </div>
               <div class="back front-item-5">
-                <p><span>Lorem</span> ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis..</p>
+                <p><span>Alex</span> est à votre service pour vos recherches de livres</p>
               </div>
             </div>
           </div>
@@ -204,7 +204,6 @@
               $date = $card['published_at'];
               if ($date > $now) {
               ?>
-                <span class="tag-new-index">Nouveau</span>
               <?php
               }
 
@@ -229,7 +228,7 @@
               ?>
                 <form action="./admin/like.php?id=<?= $card['id_work'] ?>" method="POST">
 
-                  <input type="submit" value="coeur" name="coeur" class="heart-wishlist">
+                <input type="submit" value="" name="coeur" class="heart-wishlist input-heart">
                 </form>
               <?php } ?>
 
@@ -264,85 +263,72 @@
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-1"></div>
-            <div class="article-infos">
-              <div>Mars 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Journée Portes Ouvertes</h4>
-            <p>Visite guidée à Biblook, vente de livres atelier et lecture pour les enfants Lorem ipsum dolor sit. ...</p>
+            <p>Bbiblook vous ouvre ces portes le mercredi 21 juin 2023 et vous propose une visite guidée. Au programme découverte des lieux ...</p>
+            <p class="date-article-blog"><i>Mars 2023</i></p>
             <a href="./front/blog.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-2"></div>
-            <div class="article-infos">
-              <div>Mars 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Les chevaux ne mentent jamais</h4>
-            <p>Chercher à communiquer avec les chevaux nous en révèle beaucoup sur soi-même Lorem ipsum dolor sit amet consectetur....</p>
+            <p>Chercher à communiquer avec les chevaux nous en révèle beaucoup sur soi-même. Un livre dans lequel on apprend le comportement du cheval ...</p>
+            <p class="date-article-blog"><i>Mars 2023</i></p>
             <a href="./front/blog2.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-3"></div>
-            <div class="article-infos">
-              <div>Février 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Une amie m’a parlé du régime Kéto</h4>
-            <p>Après plusieurs régimes différents, une amie m’ parlé du régime Kéto.. Lorem ipsum dolor sit amet consectetur adipisicing...</p>
+            <p>Après plusieurs régimes différents, une amie m’ parlé du régime Kéto. C’est grâce à ce livre que j’ai découvert une nouvelle expérience sur la façon de manger et de cuisiner ...</p>
+            <p class="date-article-blog"><i>Février 2023</i></p>
             <a href="./front/blog3.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-4"></div>
-            <div class="article-infos">
-              <div>Février 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Venez troquer des boutures</h4>
-            <p>Un super évenement à ne pas rater près de chez vous.. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, enim...</p>
+            <p>Un évènement à ne pas rater près de chez vous. RDV le 24 avril 2023 à 14h. Journée de partage pour se conseiller, s’entraider autour du thème du jardinage ...</p>
+            <p class="date-article-blog"><i>Février 2023</i></p>
             <a href="./front/blog4.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-5"></div>
-            <div class="article-infos">
-              <div>Janvier 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Lettre aux écolos: Comment bien s'informer?</h4>
-            <p>Les écolos se sont rassemblés
-              à la bibliothèque afin de partager leurs connaissances..</p>
+            <p>Les écolos se sont rassemblés à la bibliothèque afin de partager leurs connaissances et de guider certains lecteurs ...</p>
+              <p class="date-article-blog"><i>Janvier 2023</i></p>
             <a href="./front/blog5.php">Lire l'article ↗</a>
           </div>
         </div>
         <div class="card-blog">
           <div class="card-blog-top">
             <div class="bg-image hover-scale" id="pict-aticle-6"></div>
-            <div class="article-infos">
-              <div>Janvier 2023</div>
-              <div class="category">Nouveautés</div>
-            </div>
+            <div class="article-infos">Nouveautés</div>
           </div>
           <div class="card-blog-bottom">
             <h4>Prix du Club-lecture 2022</h4>
-            <p>Le 28 octobre 2022 le Club-lecture de la bibliothèque de Saint-Denis-les-Bourg.. Lorem ipsum dolor sit amet... </p>
+            <p>Le 28 octobre 2022 le Club-lecture de la bibliothèque Bibllok de Saint-Denis-les-Bourg s’est réuni comme chaque années pour élire le prix du Club-lecture ... </p>
+            <p class="date-article-blog"><i>Janvier 2023</i></p>
             <a href="./front/blog6.php">Lire l'article ↗</a>
           </div>
         </div>
@@ -364,7 +350,7 @@
             <p><span>❝</span> Etudiante en droit, une amie m’a recommandé cette bibliothèque.
               J’apprends beaucoup grâce aux livres, cela m’aide pour mes études.
               Tout est bien organisé, les ouvrages m’aident à m’instruire.
-              Bon accueil. <span>❞</span></p>
+              Bon accueil.<span>❞</span></p>
           </div>
           <div id="item-pict1" class="item-pict-commun">
             <img src="./img/zoom/Margaux-fleury-zoom-2.png" alt="Margot Fleury">
@@ -486,22 +472,20 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11044.437612948708!2d5.2002043!3d46.2082786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f351d5381cf5a1%3A0xa21cda6ac9796fea!2sOnlineformapro!5e0!3m2!1sfr!2sfr!4v1677963587612!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div id="container-info-location">
-        <ul>
-          <h5><img src="./img/picto/Icon-mail.svg" alt="Email"></h5>
-          <li><span>Email</span></li>
-          <li>Notre équipe est là pour vous accueillir</li>
-          <li><a href="#">contact@biblook.com</a></li>
-        </ul>
-        <ul>
+      <ul>
           <h5><img src="./img/picto/marker-pin-02.svg" alt="Localisation"></h5>
           <li><span>Nous situer</span></li>
           <li>244b rue du Pont du Jour</li>
           <li>01000, Saint-Denis-lès-Bourg</li>
         </ul>
         <ul>
+          <h5><img src="./img/picto/Icon-mail.svg" alt="Email"></h5>
+          <li><span>Email</span></li>
+          <li><a href="#">contact@biblook.com</a></li>
+        </ul>
+        <ul>
           <h5><img src="./img/picto/phone.svg" alt="Téléphone"></h5>
           <li><span>Téléphone</span></li>
-          <li>Notre équipe est là pour vous accueillir</li>
           <li><a href="#">+33 4 38 38 24 38</a></li>
         </ul>
       </div>

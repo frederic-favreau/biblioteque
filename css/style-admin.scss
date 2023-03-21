@@ -6,7 +6,7 @@ $white: #fff;
 $black: #070606;
 $footer: #043a61;
 $bgc-dashboard: #f0f7ff;
-$bgModal : rgba(6,13,30,.7);
+$bgModal: rgba(6, 13, 30, 0.5);
 
 *,
 ::after,
@@ -452,6 +452,19 @@ div.container-dashboard-base {
             cursor: pointer;
           }
         }
+
+        input.delete-favorit-book {
+          background-image: url('../img/picto/trash-03\ \(1\).svg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          width: 30px; /* Ajustez la largeur selon vos besoins */
+          height: 30px; /* Ajustez la hauteur selon vos besoins */
+
+        }
       }
     }
   }
@@ -622,7 +635,6 @@ section#dashboard-page-profil {
 // ----------  SECTION lOAN BOOK REGISTER ----------
 
 section#loan-register {
-
   div#container-list-book-crud {
     ul.list-book-crud {
       li.item-book-crud {
@@ -640,12 +652,11 @@ section#loan-register {
           flex-wrap: wrap;
           justify-content: space-between;
           align-items: center;
-          width: 100%;
+          width: 90%;
           min-height: 120px;
           li {
             width: 150px;
             text-align: center;
-            padding-right: 50px;
 
             img.pict-book-crud {
               height: 100px;
@@ -669,12 +680,10 @@ section#loan-register {
 
           li.btn-option-crud {
             position: absolute;
-            right: 0px;
-            top: -10px;
+            right: -80px;
             font-size: 30px;
             padding: 2px 8px;
-            background-color: $btn-red;
-            width: fit-content;
+            width: 30px;
             height: fit-content;
             border-radius: 8px;
 
@@ -812,7 +821,7 @@ section#loan-register {
                 }
               }
 
-              .item-complete-right {
+              div.item-complete-right {
                 width: 40%;
                 ul.all-info-book {
                   li {
@@ -856,7 +865,7 @@ section#loan-register {
     }
   }
 
-// BOX LOAN REGITER
+  // BOX LOAN REGITER
 
   form#form-loan-register {
     .label-form-add-book {
@@ -1212,17 +1221,17 @@ div#confirmed-error {
           flex-wrap: wrap;
           justify-content: space-between;
           align-items: center;
-          width: 100%;
+          width: 95%;
           min-height: 120px;
           li {
             width: 150px;
             text-align: center;
-            padding-right: 50px;
 
             img.pict-book-crud {
               height: 100px;
               width: auto;
               padding-left: 20px;
+              margin-left: -20px;
               z-index: -1;
 
               &:hover {
@@ -1241,11 +1250,10 @@ div#confirmed-error {
 
           li.btn-option-crud {
             position: absolute;
-            right: 0px;
-            top: -10px;
+            right: -60px;
+            top: 35px;
             font-size: 30px;
             padding: 2px 8px;
-            background-color: $btn-red;
             width: fit-content;
             height: fit-content;
             border-radius: 8px;
@@ -1262,7 +1270,7 @@ div#confirmed-error {
 
             div.box-option-crud {
               position: absolute;
-              right: 120px;
+              right: 50px;
               top: 0;
               width: 220px;
               height: fit-content;
@@ -1792,13 +1800,43 @@ section#dashboard-page-book-edit {
   }
 }
 
-
-
 // ----------  SECTION lOAN BOOK REGISTER ----------
 
-// section#crud-user {
+section#crud-user {
+  div#box-crud-user {
 
-//   div#box-crud-user {
+    div.item-complete-center {
+      width: 100%;
 
-//   }
-// }
+      ul.all-info-history-loan {
+        display: flex;
+        flex-direction: column;
+  
+        li.loan-history-row {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 16px;
+          color: gray;
+          padding: 6px 20px;
+          border-radius: 8px;
+          @media screen and (min-width: 950px) {
+            width: 100%;
+            height: fit-content;
+            font-size: 18px;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+
+          ul.item-loan-history-row {
+            width: 95%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 6px 20px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
             modaleBg.remove();
         }
 
-        document.body.style.overflow = "auto";
+        document.body.classList.remove('no-scroll');
+
+
     }
 
     btnIndexSession.addEventListener('click', function (event) {
@@ -27,8 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             removeBoxAndBgModal();
             return;
         }
-
-        document.body.style.overflow = "hidden";
+        document.body.classList.add('no-scroll');
 
         const modaleBg = document.createElement("div");
         modaleBg.classList.add("bloc-modale");
@@ -39,10 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
         boxIndexLogout.id = "box-index-logout";
 
         const ulBoxIndexLogout = document.createElement("ul");
-
-        const liGreetings = document.createElement("li");
-        liGreetings.innerHTML = `Votre menu`;
-        ulBoxIndexLogout.appendChild(liGreetings);
 
         const liDashboard = document.createElement("li");
         const dashboardLink = document.createElement("a");

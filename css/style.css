@@ -21,6 +21,7 @@
 body {
   font-family: "Hind Madurai", sans-serif;
   background-color: #fafafb;
+  overflow-x: hidden;
 }
 body div.bloc-modale {
   position: fixed;
@@ -28,8 +29,13 @@ body div.bloc-modale {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(6, 13, 30, 0.7);
-  z-index: 99;
+  background: rgba(6, 13, 30, 0.5);
+  z-index: 50;
+}
+
+body.no-scroll {
+  margin-right: 17px;
+  overflow: hidden;
 }
 
 ul {
@@ -104,7 +110,7 @@ p.sub-title-section {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 100;
+  z-index: 20;
   border: none;
   outline: none;
   background-color: #0868ae;
@@ -148,6 +154,26 @@ p.sub-title-section {
     opacity: 1;
   }
 }
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 #main-header {
   width: 100%;
 }
@@ -160,7 +186,7 @@ p.sub-title-section {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 99;
     width: 100%;
   }
 }
@@ -304,9 +330,10 @@ p.sub-title-section {
   left: -200px;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout {
+  z-index: 999;
   position: absolute;
   top: 42px;
-  right: 50px;
+  right: 74px;
   width: 220px;
   height: 160px;
   background-color: #fff;
@@ -314,8 +341,21 @@ p.sub-title-section {
   padding: 10px 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout::after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: -10px;
+  left: 50%;
+  margin-left: -8px;
+  width: 0;
+  height: 0;
+  border-color: transparent transparent #fff;
+  border-style: solid;
+  border-width: 0 1pc 1pc;
+}
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li {
-  margin-top: 3px;
+  margin-top: 10px;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:first-of-type {
   font-size: 18px;
@@ -335,11 +375,14 @@ p.sub-title-section {
   color: #fff;
   float: right;
 }
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:last-of-type a:hover {
+  color: #ff5e38;
+}
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li a {
   font-size: 16px;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li a:hover {
-  text-decoration: underline;
+  color: #043a61;
 }
 
 #section-news {
@@ -421,21 +464,21 @@ p.sub-title-section {
   right: -25%;
 }
 #section-news #container-section-news #item-section-news-left .wrapper .link_wrapper div.icon {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border: 3px solid transparent;
   position: absolute;
   transform: rotate(45deg);
   right: 0;
-  top: 0;
+  top: 10px;
   z-index: -1;
   transition: all 0.35s;
 }
 #section-news #container-section-news #item-section-news-left .wrapper .link_wrapper div.icon svg {
-  width: 30px;
+  width: 25px;
   position: absolute;
-  top: calc(50% - 15px);
-  left: calc(50% - 15px);
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
   transform: rotate(-45deg);
   fill: #fff;
   transition: all 0.35s;
@@ -748,14 +791,22 @@ p.sub-title-section {
   top: 10px;
   right: 10px;
 }
-#section-soon-available #container-cards span.tag-new-index {
-  position: absolute;
-  top: -10px;
-  right: 0;
-  padding: 5px 15px;
-  border-radius: 8px 0 8px 0;
-  background-color: #ff5e38;
-  color: #fff;
+#section-soon-available #container-cards .card input.input-heart {
+  background-image: url("../img/picto/heart-rounded.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+}
+#section-soon-available #container-cards .card input.input-heart:hover {
+  background-image: url("../img/picto/heart-rounded-full-blue.svg");
+}
+#section-soon-available #container-cards .card input.input-heart-red {
+  background-image: url("../img/picto/heart-rounded-full-red.svg");
 }
 #section-soon-available #container-cards img.pict-card-book {
   position: absolute;
@@ -899,8 +950,8 @@ p.sub-title-section {
   background-image: url(../img/photosblog/cards/pexels-brett-sayles-992734.jpg);
 }
 #section-blog #container-section-blog .card-blog .card-blog-top {
-  height: 55%;
-  max-height: 55%;
+  height: 50%;
+  max-height: 50%;
   overflow: hidden;
   position: relative;
   transition: all 0.5s ease;
@@ -917,25 +968,19 @@ p.sub-title-section {
 }
 #section-blog #container-section-blog .card-blog .card-blog-top .article-infos {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  padding: 16px;
+  top: 0px;
+  right: 0;
+  padding: 8px 16px;
   background: #ff5e38;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   color: #fff;
   font-weight: bold;
   font-size: 14px;
-}
-#section-blog #container-section-blog .card-blog .card-blog-top .article-infos div {
-  float: left;
-}
-#section-blog #container-section-blog .card-blog .card-blog-top .article-infos .category {
-  float: right;
+  border-radius: 0 8px 0 8px;
 }
 #section-blog #container-section-blog .card-blog .card-blog-bottom {
   position: relative;
-  height: 45%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -952,12 +997,19 @@ p.sub-title-section {
   line-height: 24px;
   margin: 8px 0 14px;
 }
+#section-blog #container-section-blog .card-blog .card-blog-bottom p.date-article-blog {
+  position: absolute;
+  left: 20px;
+  bottom: 4px;
+}
 #section-blog #container-section-blog .card-blog .card-blog-bottom a {
   position: absolute;
   right: 20px;
   bottom: 20px;
-  font-size: 16px;
   color: #0868ae;
+}
+#section-blog #container-section-blog .card-blog .card-blog-bottom a:hover {
+  color: #043a61;
 }
 
 #section-zoom {
@@ -992,11 +1044,18 @@ p.sub-title-section {
 #section-zoom #container-section-zoom div.pict-right p {
   font-size: 20px;
   line-height: 30px;
-  color: #11635f;
+  color: #070606;
 }
 #section-zoom #container-section-zoom div.pict-left p span,
 #section-zoom #container-section-zoom div.pict-right p span {
   font-size: 30px;
+  color: #0868ae;
+}
+#section-zoom #container-section-zoom div.pict-right {
+  animation-name: slideFromRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
 }
 #section-zoom #container-section-zoom div.pict-right .item-text-commun {
   padding: 20px;
@@ -1010,6 +1069,12 @@ p.sub-title-section {
   width: auto;
   float: right;
   border-radius: 8px;
+}
+#section-zoom #container-section-zoom div.pict-left {
+  animation-name: slideFromLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
 }
 #section-zoom #container-section-zoom div.pict-left .item-text-commun {
   padding: 20px;

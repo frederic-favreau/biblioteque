@@ -106,14 +106,6 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <p class="author"><?= str_replace(',', ', ', $book['authors']) ?></p>
 
 
-                    <form action="../admin/like-book-detail.php?id=<?= $book['id_work'] ?>" method="POST">
-
-                        <input type="submit" value="coeur" name="coeur" class="heart-wishlist">
-                    </form>
-
-
-
-
 
                     <figure><img src="../img/books/<?= $book['pict'] ?>" alt="<?= $book['title'] ?>"></figure>
                     <h2 id="title-extract">Extrait du livre</h2>
@@ -132,6 +124,9 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                 </div>
                 <div id="item-detail-book-right">
                     <h4 class="title-work-description"><?= $book['title'] ?></h4>
+                    <form action="../admin/like-book-detail.php?id=<?= $book['id_work'] ?>" method="POST" class="like-main-pict">
+                        <input type="submit" value="" name="coeur" class="heart-wishlist input-heart">
+                    </form>
                     <ul class="info-work-description">
                         <li>Auteur <span><?= str_replace(',', ', ', $book['authors']) ?></span></li>
                         <li>Genre <span><?= str_replace(',', ', ', $book['genres']) ?></span></li>
@@ -216,9 +211,9 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                             <h3 id="title-book-card"><?= $card['title'] ?></h3>
                             <h5><?= $card['authors'] ?></h5>
                             <a href="../front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
-                            <form action="../admin/like-book-detail.php?id=<?= $card['id_work'] ?>" method="POST">
+                            <form action="../admin/like-book-detail.php?id=<?= $card['id_work'] ?>" method="POST" class="like-card-reco">
 
-                                <input type="submit" value="coeur" name="coeur" class="heart-wishlist">
+                                <input type="submit" value="" name="coeur" class="heart-wishlist input-heart">
                             </form>
                         </div>
                     </div>

@@ -209,7 +209,7 @@ include_once '../connexion.php';
                                 ?>
                                     <form action="../admin/like-catalog.php?id=<?= $card['id_work'] ?>" method="POST">
 
-                                        <input type="submit" value="coeur" name="coeur" class="heart-wishlist">
+                                        <input type="submit" value="" name="coeur" class="heart-wishlist input-heart">
                                     </form>
                                 <?php } ?>
                             </div>

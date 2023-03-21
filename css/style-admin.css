@@ -23,7 +23,7 @@ body div.bloc-modale {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(6, 13, 30, 0.7);
+  background: rgba(6, 13, 30, 0.5);
   z-index: 99;
 }
 
@@ -397,6 +397,17 @@ div.container-dashboard-base .box-dashboard hr {
   background-color: #05497b;
   cursor: pointer;
 }
+.container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan input.delete-favorit-book {
+  background-image: url("../img/picto/trash-03 (1).svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+}
 
 .empty {
   background-color: #f0f7ff;
@@ -550,13 +561,12 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   min-height: 120px;
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li {
   width: 150px;
   text-align: center;
-  padding-right: 50px;
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud {
   height: 100px;
@@ -577,13 +587,10 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
   position: absolute;
-  right: 0px;
-  top: -10px;
+  right: -80px;
   font-size: 30px;
   padding: 2px 8px;
-  background-color: #ff5e38;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 30px;
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 8px;
@@ -707,10 +714,10 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
     font-size: 18px;
   }
 }
-section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right {
+section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud div.item-complete-right {
   width: 40%;
 }
-section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li {
+section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud div.item-complete-right ul.all-info-book li {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -720,7 +727,7 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
   border-radius: 8px;
 }
 @media screen and (min-width: 950px) {
-  section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li {
+  section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud div.item-complete-right ul.all-info-book li {
     width: 100%;
     height: -moz-fit-content;
     height: fit-content;
@@ -728,19 +735,19 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
     flex-direction: row;
     justify-content: space-between;
   }
-  section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li:nth-child(odd) {
+  section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud div.item-complete-right ul.all-info-book li:nth-child(odd) {
     background-color: #fafafa; /* couleur pour les éléments impairs */
   }
-  section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li:nth-child(even) {
+  section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud div.item-complete-right ul.all-info-book li:nth-child(even) {
     background-color: #f0f7ff; /* couleur pour les éléments impairs */
   }
 }
-section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li span.bdd-var {
+section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud div.item-complete-right ul.all-info-book li span.bdd-var {
   font-size: 16px;
   color: #0868ae;
 }
 @media screen and (min-width: 950px) {
-  section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li span.bdd-var {
+  section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud div.item-complete-right ul.all-info-book li span.bdd-var {
     font-size: 18px;
   }
 }
@@ -1049,18 +1056,18 @@ div#confirmed-error:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 95%;
   min-height: 120px;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li {
   width: 150px;
   text-align: center;
-  padding-right: 50px;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud {
   height: 100px;
   width: auto;
   padding-left: 20px;
+  margin-left: -20px;
   z-index: -1;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud:hover {
@@ -1076,11 +1083,10 @@ div#confirmed-error:hover {
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
   position: absolute;
-  right: 0px;
-  top: -10px;
+  right: -60px;
+  top: 35px;
   font-size: 30px;
   padding: 2px 8px;
-  background-color: #ff5e38;
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -1097,7 +1103,7 @@ div#confirmed-error:hover {
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud {
   position: absolute;
-  right: 120px;
+  right: 50px;
   top: 0;
   width: 220px;
   height: -moz-fit-content;
@@ -1546,4 +1552,38 @@ section#dashboard-page-book-edit #not-modified p.info-msg-bdd {
   color: #475467;
   font-size: 14px;
   line-height: 20px;
+}
+
+section#crud-user div#box-crud-user div.item-complete-center {
+  width: 100%;
+}
+section#crud-user div#box-crud-user div.item-complete-center ul.all-info-history-loan {
+  display: flex;
+  flex-direction: column;
+}
+section#crud-user div#box-crud-user div.item-complete-center ul.all-info-history-loan li.loan-history-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  color: gray;
+  padding: 6px 20px;
+  border-radius: 8px;
+}
+@media screen and (min-width: 950px) {
+  section#crud-user div#box-crud-user div.item-complete-center ul.all-info-history-loan li.loan-history-row {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    font-size: 18px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+section#crud-user div#box-crud-user div.item-complete-center ul.all-info-history-loan li.loan-history-row ul.item-loan-history-row {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 6px 20px;
 }/*# sourceMappingURL=style-admin.css.map */

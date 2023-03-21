@@ -29,38 +29,55 @@ include_once '../admin/header-main.php';
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">
+
                         <li class="item-book-crud">
                             <ul class="detail-item-book-crud">
-                                <li class="item-pict-crud">
-                                    <img src="../img/books/motogp.jpg" alt="['title']" class="pict-book-crud">
-                                </li>
-                                <li class="id-copy-loan">['id de la copy']</li>
-                                <li class="id-user-loan">['id du lecteur']</li>
-                                <li class="nb-days-loan">['nb jours restant']</li>
+                                <li class="id-crud-user">['id de l'user']</li>
+                                <li class="firstname-crud-user">['firstname-user']</li>
+                                <li class="lastname-crud-user">['lastname-user']</li>
+                                <li class="mail-crud-user">['Email du user']</li>
                                 <li class="btn-option-crud" data-idWork="" data-title="" data-pict="">
                                 </li>
                                 <div class="container-complete-detail-info-book">
                                     <div class="container-flex-crud">
-                                        <div class="item-complete-right">
-                                            <h3>Fiche technique du livre</h3>
-                                            <ul class="all-info-book">
-                                                <li>Auteur <span class="bdd-var">['author']</span></li>
-                                                <li>Genre <span class="bdd-var">['genres']</span></li>
-                                                <li>Catégorie <span class="bdd-var">['category']</span></li>
-                                                <li>Date de publication <span class="bdd-var">['published']</span></li>
-                                                <li> Nom de l'éditeur<span class="bdd-var">['editors']</span></li>
-                                                <li>Date de l'édition<span class="bdd-var">['edition_date']</span></li>
-                                                <li>Nombre d'exemplaires<span class="bdd-var">['count work id']</span></li>
-                                                <li>ISBN<span class="bdd-var">['ISBN']</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="item-complete-left">
-                                            <h3>Détail du lecteur</h3>
-                                            <ul class="all-info-user">
-                                                <li>Prénom <span class="bdd-var">['firstname']</span></li>
-                                                <li>Nom <span class="bdd-var">['lastname']</span></li>
-                                                <li>Email<span class="bdd-var">['email']</span></li>
-                                                <li>Adresse <span class="bdd-var">['adress']</span></li>
+                                        <div class="item-complete-center">
+                                            <h3>Histoire des emprunts du client</h3>
+                                            <ul class="all-info-history-loan">
+                                                <li class="loan-history-row">
+                                                    <ul class="item-loan-history-row">
+                                                        <li class="pict-crud-user">
+                                                            <img src="../img/books/24 Heures du Mans- 1923 -2023.jpg" alt="['title']" class="pict-book-crud">
+                                                        </li>
+                                                        <li class="title-crud-user"> ['title'] </li>
+                                                        <li class="id-copy-crud-user">['id-copy']</li>
+                                                        <li class="date-start-crud-user">['date debut d'emprunt']</li>
+                                                        <li class="date-close-crud-user">['date de retour']</li>
+                                                        <li class="btn-option-crud" data-idWork="['id_work']" data-title="['title']" data-pict="['pict']"><img src="../img/picto/magic-wand-02.svg" alt="Crayon">
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="loan-history-row">
+                                                    <ul class="item-loan-history-row">
+                                                        <li class="pict-crud-user">
+                                                            <img src="../img/books/24 Heures du Mans- 1923 -2023.jpg" alt="['title']" class="pict-book-crud">
+                                                        </li>
+                                                        <li class="title-crud-user"> ['title'] </li>
+                                                        <li class="id-copy-crud-user">['id-copy']</li>
+                                                        <li class="date-start-crud-user">['date debut d'emprunt']</li>
+                                                        <li class="date-close-crud-user">['date de retour']</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="loan-history-row">
+                                                    <ul class="item-loan-history-row">
+                                                        <li class="pict-crud-user">
+                                                            <img src="../img/books/24 Heures du Mans- 1923 -2023.jpg" alt="['title']" class="pict-book-crud">
+                                                        </li>
+                                                        <li class="title-crud-user"> ['title'] </li>
+                                                        <li class="id-copy-crud-user">['id-copy']</li>
+                                                        <li class="date-start-crud-user">['date debut d'emprunt']</li>
+                                                        <li class="date-close-crud-user">['date de retour']</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -68,6 +85,117 @@ include_once '../admin/header-main.php';
                                 <li class="container-box-option-crud">
                             </ul>
                         </li>
+                        <li class="item-book-crud">
+                            <ul class="detail-item-book-crud">
+                                <li class="id-crud-user">['id de l'user']</li>
+                                <li class="firstname-crud-user">['firstname-user']</li>
+                                <li class="lastname-crud-user">['lastname-user']</li>
+                                <li class="mail-crud-user">['Email du user']</li>
+                                <li class="btn-option-crud" data-idWork="" data-title="" data-pict="">
+                                </li>
+                                <div class="container-complete-detail-info-book">
+                                    <div class="container-flex-crud">
+                                        <div class="item-complete-center">
+                                            <h3>Histoire des emprunts du client</h3>
+                                            <ul class="all-info-history-loan">
+                                                <li class="loan-history-row">
+                                                    <ul class="item-loan-history-row">
+                                                        <li class="pict-crud-user">
+                                                            <img src="../img/books/24 Heures du Mans- 1923 -2023.jpg" alt="['title']" class="pict-book-crud">
+                                                        </li>
+                                                        <li class="title-crud-user"> ['title'] </li>
+                                                        <li class="id-copy-crud-user">['id-copy']</li>
+                                                        <li class="date-start-crud-user">['date debut d'emprunt']</li>
+                                                        <li class="date-close-crud-user">['date de retour']</li>
+                                                        <li class="btn-option-crud" data-idWork="['id_work']" data-title="['title']" data-pict="['pict']"><img src="../img/picto/magic-wand-02.svg" alt="Crayon">
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="loan-history-row">
+                                                    <ul class="item-loan-history-row">
+                                                        <li class="pict-crud-user">
+                                                            <img src="../img/books/24 Heures du Mans- 1923 -2023.jpg" alt="['title']" class="pict-book-crud">
+                                                        </li>
+                                                        <li class="title-crud-user"> ['title'] </li>
+                                                        <li class="id-copy-crud-user">['id-copy']</li>
+                                                        <li class="date-start-crud-user">['date debut d'emprunt']</li>
+                                                        <li class="date-close-crud-user">['date de retour']</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="loan-history-row">
+                                                    <ul class="item-loan-history-row">
+                                                        <li class="pict-crud-user">
+                                                            <img src="../img/books/24 Heures du Mans- 1923 -2023.jpg" alt="['title']" class="pict-book-crud">
+                                                        </li>
+                                                        <li class="title-crud-user"> ['title'] </li>
+                                                        <li class="id-copy-crud-user">['id-copy']</li>
+                                                        <li class="date-start-crud-user">['date debut d'emprunt']</li>
+                                                        <li class="date-close-crud-user">['date de retour']</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li class="container-box-option-crud">
+                            </ul>
+                        </li>
+                        <li class="item-book-crud">
+                            <ul class="detail-item-book-crud">
+                                <li class="id-crud-user">['id de l'user']</li>
+                                <li class="firstname-crud-user">['firstname-user']</li>
+                                <li class="lastname-crud-user">['lastname-user']</li>
+                                <li class="mail-crud-user">['Email du user']</li>
+                                <li class="btn-option-crud" data-idWork="" data-title="" data-pict="">
+                                </li>
+                                <div class="container-complete-detail-info-book">
+                                    <div class="container-flex-crud">
+                                        <div class="item-complete-center">
+                                            <h3>Histoire des emprunts du client</h3>
+                                            <ul class="all-info-history-loan">
+                                                <li class="loan-history-row">
+                                                    <ul class="item-loan-history-row">
+                                                        <li class="pict-crud-user">
+                                                            <img src="../img/books/24 Heures du Mans- 1923 -2023.jpg" alt="['title']" class="pict-book-crud">
+                                                        </li>
+                                                        <li class="title-crud-user"> ['title'] </li>
+                                                        <li class="id-copy-crud-user">['id-copy']</li>
+                                                        <li class="date-start-crud-user">['date debut d'emprunt']</li>
+                                                        <li class="date-close-crud-user">['date de retour']</li>
+                                                        <li class="btn-option-crud" data-idWork="['id_work']" data-title="['title']" data-pict="['pict']"><img src="../img/picto/magic-wand-02.svg" alt="Crayon">
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="loan-history-row">
+                                                    <ul class="item-loan-history-row">
+                                                        <li class="pict-crud-user">
+                                                            <img src="../img/books/24 Heures du Mans- 1923 -2023.jpg" alt="['title']" class="pict-book-crud">
+                                                        </li>
+                                                        <li class="title-crud-user"> ['title'] </li>
+                                                        <li class="id-copy-crud-user">['id-copy']</li>
+                                                        <li class="date-start-crud-user">['date debut d'emprunt']</li>
+                                                        <li class="date-close-crud-user">['date de retour']</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="loan-history-row">
+                                                    <ul class="item-loan-history-row">
+                                                        <li class="pict-crud-user">
+                                                            <img src="../img/books/24 Heures du Mans- 1923 -2023.jpg" alt="['title']" class="pict-book-crud">
+                                                        </li>
+                                                        <li class="title-crud-user"> ['title'] </li>
+                                                        <li class="id-copy-crud-user">['id-copy']</li>
+                                                        <li class="date-start-crud-user">['date debut d'emprunt']</li>
+                                                        <li class="date-close-crud-user">['date de retour']</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li class="container-box-option-crud">
+                            </ul>
+                        </li>
+
                     </ul>
                 </div>
             </div>

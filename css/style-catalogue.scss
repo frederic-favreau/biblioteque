@@ -5,6 +5,7 @@ $white: #fff;
 $black: #070606;
 $footer: #043a61;
 $background: #fafafb;
+$bgModal: rgba(6, 13, 30, 0.5);
 
 main {
   width: 90%;
@@ -27,6 +28,10 @@ main {
 
       a {
         color: $main-blue;
+
+        &:hover {
+          color: $footer;
+        }
       }
     }
   }
@@ -65,6 +70,7 @@ main {
         }
 
         p#filter-title {
+          font-family: 'Nova Slim', cursive, sans-serif;
           font-size: 17px;
           font-weight: 600;
           color: $main-blue;
@@ -201,8 +207,6 @@ main {
           background-color: $white;
         }
 
-        
-
         img {
           position: absolute;
           top: 10%;
@@ -264,6 +268,32 @@ main {
               color: $footer;
             }
           }
+        }
+
+        input.heart-wishlist {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+  
+        input.input-heart {
+          background-image: url('../img/picto/heart-rounded.svg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          width: 30px; /* Ajustez la largeur selon vos besoins */
+          height: 30px; /* Ajustez la hauteur selon vos besoins */
+  
+          &:hover {
+            background-image: url('../img/picto/heart-rounded-full-blue.svg');
+          }
+        }
+  
+        input.input-heart-red {
+          background-image: url('../img/picto/heart-rounded-full-red.svg');
         }
       }
     }
