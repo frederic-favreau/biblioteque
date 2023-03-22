@@ -386,6 +386,38 @@ header#side-bar-log {
   }
 }
 
+/* BOTTOM BAR */
+#bottom-bar {
+  display: none;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: $main-blue;
+  z-index: 9999;
+  align-items: center;
+
+  @media screen and (max-width: 950px) {
+    display: flex;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
 // ----------  CLASS COMMUNE - DASHBOARD ----------
 
 div.container-dashboard-base {

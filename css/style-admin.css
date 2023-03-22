@@ -342,6 +342,36 @@ header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil
   left: 8px;
 }
 
+/* BOTTOM BAR */
+#bottom-bar {
+  display: none;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #0868ae;
+  z-index: 9999;
+  align-items: center;
+}
+@media screen and (max-width: 950px) {
+  #bottom-bar {
+    display: flex;
+  }
+}
+#bottom-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+}
+#bottom-bar img {
+  width: 30px;
+  height: 30px;
+}
+
 div.container-dashboard-base .box-dashboard {
   width: 100%;
   height: -moz-fit-content;
