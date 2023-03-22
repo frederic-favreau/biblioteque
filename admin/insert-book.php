@@ -1,6 +1,8 @@
  <?php
     include_once '../admin/header-main.php';
     require_once '../connexion.php';
+    
+    
     ?>
 
 
@@ -39,6 +41,12 @@
                 $db->query($query);
                 $workId = $db->lastInsertId();
 
+                $lastIDSql = "SELECT `id_work` FROM `work` ORDER BY `id_work` DESC LIMIT 1";
+                $reqLastId = $db->query($lastIDSql);
+                $lastIdFetch = $reqLastId->fetch(PDO::FETCH_ASSOC);
+                $lastId = $lastIdFetch['id_work'];
+                ;
+
                 // Requête pour insérer l'auteur
                 $query = "INSERT  IGNORE INTO `author` (`firstname`, `lastname`) VALUES ('$authorFirstname', '$authorLastname');
                 SET @author_id = LAST_INSERT_ID();
@@ -53,20 +61,38 @@
                 $authorId = $db->lastInsertId();
 
                 // Requête pour insérer le genre
-                $query = "SELECT `genre`.`name` FROM genre"
+                $reqGenreExists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = :genre");
+                        $reqGenreExists->bindParam(':genre', $genre);
+                        $reqGenreExists->execute();
+                        $genreExists = $reqGenreExists->fetch(PDO::FETCH_ASSOC);
+                if($genreExists == true){
+                    //INSERT INTO `aliment_lieu` (`aliment_id`, `lieu_id`) VALUES ('11', '1');
+                $idGenre = $genreExists['id_genre'];
+                var_dump($idGenre);
+                var_dump($lastId);
+                $query = $db->prepare
+                ("INSERT INTO `work_genre` (`work_id`,`genre_id`) VALUES(:work_id,:genre_id)");
+                $query->bindParam('genre_id', $idGenre, PDO::PARAM_INT);
+                $query->bindParam('work_id', $lastId, PDO::PARAM_INT);
+                $query->execute();
+                
+
+
+                }
+                
 
                 
-                $query = "INSERT INTO `genre` (`name`) VALUES ('$genre') WHERE NOT EXISTS(SELECT `genre` (`name`) FROM `genres`);
+                /*$query = "INSERT INTO `genre` (`name`) VALUES ('$genre');
                 SET @genre_id = LAST_INSERT_ID();
                 INSERT INTO work_genre (work_id,genre_id) VALUES(@work_id, @genre_id)";
                 $db->query($query);
-                $genreId = $db->lastInsertId();
+                $genreId = $db->lastInsertId();*/
 
-                $query = "INSERT INTO `genre` (`name`) VALUES ('$genre2') WHERE NOT EXISTS(SELECT `genre` (`name`) FROM `genres`);
+                /*$query = "INSERT INTO `genre` (`name`) VALUES ('$genre2');
                 SET @genre_id = LAST_INSERT_ID();
                 INSERT INTO work_genre (work_id,genre_id) VALUES(@work_id, @genre_id)";
                 $db->query($query);
-                $genreId = $db->lastInsertId();
+                $genreId = $db->lastInsertId();*/
 
 
                 $_SESSION["added"] = "Ajout réussit";
