@@ -103,7 +103,9 @@ include_once '../connexion.php';
                         <option value="date">Date de parution</option>
                         <option value="Disponibility">Disponibilité</option>
                     </select>
-                    <a href="#" id="help-choise">🔎 Me laisser guider </a>
+                    <form action="" method="post">
+                        <input type="submit" value="Ramdom" name="ramdom">
+                    </form>
                 </div>
                 <?php
 
@@ -155,12 +157,44 @@ include_once '../connexion.php';
                         ?>
                         <p> Aucun livre trouvé</p>
                     <?php
-                    }
+                    }} elseif(isset($_POST['ramdom'])) {
+                        $sql = 'SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
+                        GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
+                        GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
+                        FROM `work`
+    
+                        INNER JOIN `work_genre` 
+                        ON `work`.`id_work` = `work_genre`.`work_id`
+    
+                        INNER JOIN `genre`
+                        ON `work_genre`.`genre_id` =`genre`.`id_genre`
+    
+                        INNER JOIN `work_author`
+                        ON `work_author`.`work_id` = `work`.`id_work`
+    
+                        INNER JOIN `author`
+                        ON `work_author`.`author_id` = `author`.`id_author`
+                        GROUP BY `id_work` ORDER BY RAND() LIMIT 1';
+                        $req_catalog = $db->query($sql); 
+            
+                       while($card = $req_catalog->fetch(PDO::FETCH_ASSOC)){
+                        ?>
+                        <div class="card">
+                                <div class="top-item-card">
+                                    <img src="../img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
+                                </div>
+                                <div class="bottom-item-card">
+                                    <h4><?= str_replace(',', ', ', $card['genres']) ?></h4>
+                                    <h3 class="title-book-catalog"><?= $card['title'] ?></h3>
+                                    <p class="description-card"><?= $card['extract'] ?></p>
+                                    <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
+                                    <a href="./book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
+                                </div>
+                            </div>
+                        <?php }
 
-                    ?>
 
-                    <?php
-                } else {
+                    } else {
                     $sql =
                         'SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
                     GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
