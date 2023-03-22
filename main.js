@@ -1,16 +1,15 @@
 //
 //
-// ROTATION CYCLE CARDS HERO
+// ROTATION CYCLE CARDS SECTION NEWS
 document.addEventListener("DOMContentLoaded", () => {
   const sectionNews = document.querySelector("#section-news");
   const flips = document.querySelectorAll(".flip");
   let currentIndex = 0;
-  const duration = 70 * 100; // 30 secondes
-  let cardHovered = false; // Ajout d'une variable pour vérifier si une carte est survolée
+  const duration = 70 * 100;
+  let cardHovered = false;
 
   function rotateCards() {
     if (!cardHovered) {
-      // Vérifie si aucune carte n'est survolée
       flips[currentIndex].classList.remove("auto-flip");
 
       currentIndex++;

@@ -53,13 +53,11 @@ h2.h2-dashboard {
   text-align: inherit;
   color: #0868ae;
   margin-bottom: 6px;
-  padding-left: 10px;
 }
 @media screen and (min-width: 950px) {
   h2.h2-dashboard {
     font-size: 20px;
     margin-bottom: 12px;
-    padding-left: 0px;
   }
 }
 
@@ -89,7 +87,7 @@ main {
 }
 @media screen and (min-width: 950px) {
   main {
-    padding-left: 100px;
+    padding-left: 70px;
   }
 }
 main div#box-delete-book {
@@ -982,6 +980,14 @@ p.info-succes-notif > strong {
   color: #fff;
 }
 
+section#dashboard-page-book-crud {
+  padding-top: 20px;
+}
+@media screen and (min-width: 950px) {
+  section#dashboard-page-book-crud {
+    padding-top: 40px;
+  }
+}
 section#dashboard-page-book-crud div#confirmed-delete {
   width: 350px;
   height: 160px;
@@ -1050,36 +1056,32 @@ div#confirmed-error:hover {
   z-index: 30;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   border-bottom: 1px solid gray;
-  padding: 10px 0 20px 0;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input {
-  width: 100%;
-  margin-right: auto;
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.input-search {
+  width: 100%;
   height: 40px;
   padding-left: 10px;
   border-radius: 8px;
-  margin-left: auto;
-  margin-right: 10px;
-}
-@media screen and (min-width: 950px) {
-  .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.input-search {
-    width: 400px;
-  }
+  margin: 20px auto;
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.btn-search {
   display: block;
   width: 100%;
+  max-width: 200px;
   height: 40px;
   border-radius: 8px;
   background-color: #0868ae;
   border: #0868ae;
   color: #fff;
-  margin-right: 30px;
   font-weight: bold;
 }
 @media screen and (min-width: 950px) {
@@ -1091,37 +1093,37 @@ div#confirmed-error:hover {
   cursor: pointer;
   background-color: #05497b;
 }
-.container-crud-book-tabs div.search-add-crud-book a.btn-add {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form a.btn-add {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 140px;
+  width: 40px;
   height: 40px;
   border-radius: 8px;
   background-color: #0868ae;
   border: #0868ae;
   color: #fff;
-  margin-right: 20px;
-  font-weight: bold;
 }
-.container-crud-book-tabs div.search-add-crud-book a.btn-add:hover {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form a.btn-add:hover {
   cursor: pointer;
   background-color: #05497b;
 }
-.container-crud-book-tabs div.search-add-crud-book button#btn-all-detail {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-all-detail {
+  display: block;
   border: none;
   background-color: transparent;
   color: #0868ae;
   font-weight: bold;
+  padding: 20px 10px;
 }
-.container-crud-book-tabs div.search-add-crud-book button#btn-all-detail:hover {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-all-detail:hover {
   cursor: pointer;
   color: #05497b;
   text-decoration: underline;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud {
-  padding-top: 10px;
-  padding-bottom: 5px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud:nth-child(odd) {
   background-color: #f0f7ff;
@@ -1131,14 +1133,21 @@ div#confirmed-error:hover {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 90%;
+  margin: 0 auto;
   min-height: 120px;
 }
+@media screen and (min-width: 950px) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud {
+    flex-direction: row;
+  }
+}
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li {
-  width: 150px;
   text-align: center;
+  padding: 5px;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud {
   height: 100px;
@@ -1156,12 +1165,23 @@ div#confirmed-error:hover {
   font-size: 18px;
   font-weight: bold;
   font-family: "Nova Slim", cursive, sans-serif;
-  width: 400px;
+}
+@media screen and (min-width: 950px) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-title-crud {
+    width: 400px;
+  }
+}
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-author-crud {
+  color: gray;
+}
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.item-status-crud {
+  color: #ff5e38;
+  font-weight: bold;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
   position: absolute;
-  right: -60px;
-  top: 35px;
+  right: -20px;
+  top: -20px;
   font-size: 30px;
   padding: 2px 8px;
   width: -moz-fit-content;
@@ -1169,6 +1189,13 @@ div#confirmed-error:hover {
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 8px;
+}
+@media screen and (min-width: 1200px) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
+    position: absolute;
+    right: -60px;
+    top: -20px;
+  }
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud:hover {
   cursor: pointer;
@@ -1243,32 +1270,64 @@ div#confirmed-error:hover {
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+@media screen and (min-width: 950px) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 950px) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud {
+    flex-direction: row;
+  }
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud h3 {
   margin-bottom: 15px;
   color: #0868ae;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-left {
-  width: 40%;
+  width: 100%;
+  margin-top: 20px;
   color: #0868ae;
 }
+@media screen and (min-width: 950px) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-left {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-left {
+    width: 45%;
+  }
+}
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right {
-  width: 40%;
+  width: 100%;
+}
+@media screen and (min-width: 950px) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right {
+    width: 45%;
+  }
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  justify-content: space-between;
   font-size: 16px;
   color: gray;
   padding: 6px 20px;
   border-radius: 8px;
 }
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 500px) {
   .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book div.container-flex-crud .item-complete-right ul.all-info-book li {
     width: 100%;
     height: -moz-fit-content;
