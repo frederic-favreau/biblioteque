@@ -194,6 +194,7 @@ section#section-detail-book {
       }
 
       ul.all-info-book {
+        margin-bottom: 40px;
         li {
           display: flex;
           flex-wrap: wrap;
@@ -202,15 +203,19 @@ section#section-detail-book {
           padding: 6px 20px;
           border-radius: 8px;
           color: gray;
+
+          @media screen and (min-width: 500px) {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+
+          &:nth-child(odd) {
+            background-color: #f2f2f2; /* couleur pour les éléments impairs */
+          }
+
           @media screen and (min-width: 950px) {
             width: 80%;
             font-size: 18px;
-            flex-direction: row;
-            justify-content: space-between;
-
-            &:nth-child(odd) {
-              background-color: #f2f2f2; /* couleur pour les éléments impairs */
-            }
           }
 
           span.bdd-var {
@@ -231,6 +236,7 @@ section#section-detail-book {
       top: 120px;
       width: 100%;
       height: fit-content;
+      padding: 15px;
       border-radius: 8px;
       background-color: #fff;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -250,8 +256,8 @@ section#section-detail-book {
 
         input.heart-wishlist {
           position: absolute;
-          top: 10px;
-          right: 10px;
+          top: -60px;
+          right: 0px;
         }
 
         input.input-heart {
@@ -320,6 +326,14 @@ section#section-detail-book {
     }
 
     div#item-detail-book-right {
+      max-width: 500px;
+      margin: 0 auto;
+      width: 100%;
+
+      @media screen and (min-width: 950px) {
+        width: 40%;
+      }
+
       h4.title-work-description {
         font-size: 20px;
         color: $main-blue;
@@ -384,16 +398,26 @@ section#section-detail-book {
 // ---------- SECTION - RECOMMENDATION ----------
 
 #section-recommandation {
-  padding-bottom: 60px;
   padding-bottom: 140px;
+  width: 100%;
+  height: fit-content;
+
   h3.standard-title-section {
     font-size: 30px;
     font-family: "Nova Slim", cursive, sans-serif;
     color: $main-blue;
     margin-top: 16px;
-    margin-bottom: 6px;
+    margin-bottom: -40px;
+    text-align: center;
+
+    @media screen and (min-width: 500px) {
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+
     @media screen and (min-width: 950px) {
       font-size: 40px;
+      margin-bottom: 40px;
     }
   }
 
@@ -422,7 +446,6 @@ section#section-detail-book {
         padding: 15px 5px 15px 200px;
         background-color: $background;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        transform: translateY(100%);
       }
 
       &:hover img {
@@ -435,13 +458,20 @@ section#section-detail-book {
 
       img {
         position: absolute;
-        top: -40px;
-        left: 25px;
+        top: -100px;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 150px;
         height: 230px;
         object-fit: cover;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         transition: transform 0.5s ease;
+
+        @media screen and (min-width: 500px) {
+          top: -40px;
+          left: 25px;
+          transform: none;
+        }
 
         &:hover {
           transform: translateY(-15px);
