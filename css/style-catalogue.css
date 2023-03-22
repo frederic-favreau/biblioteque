@@ -171,32 +171,57 @@ main #section-catalog #container-cards .container-sort #sort {
 }
 main #section-catalog #container-cards .card {
   position: relative;
-  max-width: 530px;
-  min-width: 530px;
-  width: 33%;
-  margin: 60px auto 20px auto;
-  height: 300px;
-  padding: 15px 5px 15px 200px;
+  max-width: 430px;
+  width: 100%;
+  margin: 230px auto 20px auto;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 30px 15px 60px 15px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: #fafafb;
 }
-main #section-catalog #container-cards .card:hover img {
-  transform: translateY(-15px);
+@media screen and (min-width: 550px) {
+  main #section-catalog #container-cards .card {
+    margin: 60px auto 20px auto;
+    width: 33%;
+    max-width: 530px;
+    min-width: 530px;
+    padding: 15px 5px 15px 200px;
+    height: 300px;
+  }
+}
+@media screen and (min-width: 550px) {
+  main #section-catalog #container-cards .card:hover img {
+    transform: translateY(-15px);
+  }
 }
 main #section-catalog #container-cards .card:hover {
   background-color: #fff;
 }
 main #section-catalog #container-cards .card img {
   position: absolute;
-  top: 10%;
-  left: 25px;
+  top: -90px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 150px;
   height: 230px;
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transition: transform 0.5s ease;
+}
+@media screen and (min-width: 550px) {
+  main #section-catalog #container-cards .card img {
+    transform: none;
+    top: 32px;
+    left: 30px;
+    width: 150px;
+    height: 230px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform 0.5s ease;
+  }
 }
 main #section-catalog #container-cards .card .bottom-item-card h4 {
   font-size: 16px;

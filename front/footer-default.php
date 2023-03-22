@@ -24,9 +24,9 @@
         </ul>
       </div>
       <div id="item-footer-right">
-        <p>Newsletter</p>
-        <form action="#" id="newsletter">
-          <input type="mail">
+      <form action="#" id="newsletter">
+          <label for="mail" id="label-mail-newsletter">Newsletter</label>
+          <input type="mail" name="mail">
           <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
         </form>
       </div>

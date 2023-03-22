@@ -36,6 +36,10 @@ main {
     }
   }
 
+
+
+  // ---------- SECTION - CATALOG ----------
+
   #section-catalog {
     padding-top: 10px;
     padding-bottom: 100px;
@@ -181,10 +185,7 @@ main {
           @media screen and (min-width: 950px) {
             width: 46%;
           }
-          
         }
-
-
 
         #sort {
           width: 500px;
@@ -201,18 +202,29 @@ main {
 
       .card {
         position: relative;
-        max-width: 530px;
-        min-width: 530px;
-        width: 33%;
-        margin: 60px auto 20px auto;
-        height: 300px;
-        padding: 15px 5px 15px 200px;
+        max-width: 430px;
+        width: 100%;
+        margin: 230px auto 20px auto;
+        height: fit-content;
+        padding: 30px 15px 60px 15px;
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         background-color: $background;
 
+        @media screen and (min-width: 550px) {
+          margin: 60px auto 20px auto;
+          width: 33%;
+          max-width: 530px;
+          min-width: 530px;
+          padding: 15px 5px 15px 200px;
+          height: 300px;
+        }
+
         &:hover img {
-          transform: translateY(-15px);
+          @media screen and (min-width: 550px) {
+            transform: translateY(-15px);
+          }
+          
         }
 
         &:hover {
@@ -221,13 +233,24 @@ main {
 
         img {
           position: absolute;
-          top: 10%;
-          left: 25px;
+          top: -90px;
+          left: 50%;
+          transform: translate(-50%,-50%);
           width: 150px;
           height: 230px;
           object-fit: cover;
           box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          transition: transform 0.5s ease;
+
+          @media screen and (min-width: 550px) {
+            transform: none;
+            top: 32px;
+            left: 30px;
+            width: 150px;
+            height: 230px;
+            object-fit: cover;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            transition: transform 0.5s ease;
+          }
         }
 
         .bottom-item-card {
