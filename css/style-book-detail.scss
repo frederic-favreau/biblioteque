@@ -5,7 +5,7 @@ $white: #fff;
 $black: #070606;
 $footer: #043a61;
 $background: #fafafb;
-$bgModal : rgba(6,13,30,0.5);
+$bgModal: rgba(6, 13, 30, 0.5);
 
 body {
   div.bloc-modale {
@@ -231,7 +231,6 @@ section#section-detail-book {
       top: 120px;
       width: 100%;
       height: fit-content;
-      padding: 20px;
       border-radius: 8px;
       background-color: #fff;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -254,7 +253,7 @@ section#section-detail-book {
           top: 10px;
           right: 10px;
         }
-  
+
         input.input-heart {
           background-size: cover;
           background-position: center;
@@ -264,18 +263,18 @@ section#section-detail-book {
           cursor: pointer;
           width: 30px; /* Ajustez la largeur selon vos besoins */
           height: 30px; /* Ajustez la hauteur selon vos besoins */
-  
+
           &:hover {
-            background-image: url('../img/picto/heart-rounded-full-blue.svg');
+            background-image: url("../img/picto/heart-rounded-full-blue.svg");
           }
         }
-  
+
         input.input-fill-blue {
-          background-image: url('../img/picto/heart-rounded.svg');
+          background-image: url("../img/picto/heart-rounded.svg");
         }
-  
+
         input.input-heart-red {
-          background-image: url('../img/picto/heart-rounded-full-red.svg');
+          background-image: url("../img/picto/heart-rounded-full-red.svg");
         }
       }
 
@@ -403,18 +402,28 @@ section#section-detail-book {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-top: 30px;
 
     .card {
       position: relative;
-      max-width: 450px;
-      min-width: 450px;
-      width: 33%;
-      margin: 100px auto 40px auto;
-      height: 230px;
-      padding: 15px 5px 15px 200px;
+      width: 100%;
+      max-width: 350px;
+      margin: 320px auto -50px auto;
+      padding: 15px;
+      min-height: 180px;
+      height: fit-content;
       border-radius: 8px;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background-color: $white;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+      @media screen and (min-width: 500px) {
+        max-width: 450px;
+        height: 230px;
+        margin: 100px 10px 40px 10px;
+        padding: 15px 5px 15px 200px;
+        background-color: $background;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        transform: translateY(100%);
+      }
 
       &:hover img {
         transform: translateY(-15px);
@@ -423,7 +432,6 @@ section#section-detail-book {
       &:hover {
         background-color: $white;
       }
-
 
       img {
         position: absolute;
@@ -486,7 +494,7 @@ section#section-detail-book {
       }
 
       input.input-heart {
-        background-image: url('../img/picto/heart-rounded.svg');
+        background-image: url("../img/picto/heart-rounded.svg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -497,12 +505,12 @@ section#section-detail-book {
         height: 30px; /* Ajustez la hauteur selon vos besoins */
 
         &:hover {
-          background-image: url('../img/picto/heart-rounded-full-blue.svg');
+          background-image: url("../img/picto/heart-rounded-full-blue.svg");
         }
       }
 
       input.input-heart-red {
-        background-image: url('../img/picto/heart-rounded-full-red.svg');
+        background-image: url("../img/picto/heart-rounded-full-red.svg");
       }
     }
   }
