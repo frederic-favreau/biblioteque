@@ -167,7 +167,7 @@
                                  <p class="info-disponibility"><?= $disponible ?></p>
                                  <a href="../front/book-detail.php?id=<?= $workId ?>" class="btn-format-standard">Emprunter maintenant</a>
                                  <form action="../admin/delete-like.php?id=<?= $like['id_work'] ?>" method="POST">
-                                 <input type="submit" class="delete-favorit-book"> 
+                                 <input type="submit" class="delete-favorit-book" value=""> 
                                  </form>
                                 
                              </div>
