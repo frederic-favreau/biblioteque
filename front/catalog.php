@@ -53,17 +53,6 @@ include_once '../connexion.php';
                     <div class="toggle-symbol"></div>
                 </div>
                 <hr>
-                <div class="item-filter" id="item-filter-opinion">
-                    <p class="show-filter">Avis <span class="toggle-symbol">+</span></p>
-                    <ul class="list-filter">
-                        <li><a href="#">Lorem (22)</a></li>
-                        <li><a href="#">Lorem (22)</a></li>
-                        <li><a href="#">Lorem (22)</a></li>
-                        <li><a href="#">Lorem (22)</a></li>
-                    </ul>
-                    <div class="toggle-symbol"></div>
-                </div>
-                <hr>
                 <div class="item-filter" id="item-filter-editor">
                     <p class="show-filter">Editeurs <span class="toggle-symbol">+</span></p>
                     <ul class="list-filter">

@@ -880,16 +880,21 @@ li:nth-child(4) {
 
     .card {
       position: relative;
-      width: 280px;
-      margin: 260px 20px -50px 20px;
-      height: 230px;
+      width: 100%;
+      max-width: 350px;
+      margin: 320px auto -50px auto;
+      padding: 15px;
+      min-height: 180px;
+      height: fit-content;
       border-radius: 8px;
-      background-color: transparent;
+      background-color: $white;
       opacity: 0;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
       @media screen and (min-width: 500px) {
-        width: 450px;
-        margin: 100px auto 40px auto;
+        max-width: 450px;
+        height: 230px;
+        margin: 100px 10px 40px 10px;
         padding: 15px 5px 15px 200px;
         background-color: $background;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -951,7 +956,7 @@ li:nth-child(4) {
 
     img.pict-card-book {
       position: absolute;
-      top: -120px;
+      top: -100px;
       left: 50%;
       transform: translate(-50%,-50%);
       width: 150px;
@@ -996,7 +1001,9 @@ li:nth-child(4) {
       }
 
       a.link-page {
-        margin-top: 25px;
+        position: absolute;
+        bottom: 5px;
+        right: 15px;
         font-size: 16px;
         color: $main-blue;
         margin-right: 10px;

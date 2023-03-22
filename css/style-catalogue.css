@@ -41,11 +41,9 @@ main #section-catalog h1 {
   }
 }
 main #section-catalog #container-catalog #container-filter {
-  position: sticky;
-  top: 120px;
-  bottom: 80px;
   width: 100%;
   padding: 20px 0;
+  margin-bottom: 30px;
   height: -moz-fit-content;
   height: fit-content;
   max-height: calc(100vh - 160px);
@@ -53,6 +51,13 @@ main #section-catalog #container-catalog #container-filter {
   background-color: #fff;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+@media screen and (min-width: 950px) {
+  main #section-catalog #container-catalog #container-filter {
+    position: sticky;
+    top: 120px;
+    bottom: 80px;
+  }
 }
 @media screen and (min-width: 950px) {
   main #section-catalog #container-catalog #container-filter {
@@ -143,14 +148,20 @@ main #section-catalog #container-cards .container-sort {
   color: #0868ae;
 }
 main #section-catalog #container-cards .container-sort #help-choise {
-  width: 46%;
+  width: 100%;
   font-size: 20px;
   text-align: center;
   margin-bottom: 20px;
 }
+@media screen and (min-width: 950px) {
+  main #section-catalog #container-cards .container-sort #help-choise {
+    width: 46%;
+  }
+}
 main #section-catalog #container-cards .container-sort #sort {
   width: 500px;
   min-height: 40px;
+  margin-bottom: 20px;
   font-size: 16px;
   text-align: center;
   color: #0868ae;

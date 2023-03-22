@@ -53,24 +53,28 @@ main {
       }
 
       #container-filter {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 120px;
-        bottom: 80px;
         width: 100%;
         padding: 20px 0;
+        margin-bottom: 30px;
         height: fit-content; // changez la hauteur en auto
         max-height: calc(100vh - 160px);
         overflow-y: auto; // permet de défiler verticalement si nécessaire
         background-color: $white;
         border-radius: 20px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        @media screen and (min-width: 950px) {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 120px;
+          bottom: 80px;
+        }
         @media screen and (min-width: 950px) {
           width: 20%;
         }
 
         p#filter-title {
-          font-family: 'Nova Slim', cursive, sans-serif;
+          font-family: "Nova Slim", cursive, sans-serif;
           font-size: 17px;
           font-weight: 600;
           color: $main-blue;
@@ -169,15 +173,23 @@ main {
         color: $main-blue;
 
         #help-choise {
-          width: 46%;
+          width: 100%;
           font-size: 20px;
           text-align: center;
           margin-bottom: 20px;
+
+          @media screen and (min-width: 950px) {
+            width: 46%;
+          }
+          
         }
+
+
 
         #sort {
           width: 500px;
           min-height: 40px;
+          margin-bottom: 20px;
           font-size: 16px;
           text-align: center;
           color: $main-blue;
@@ -275,9 +287,9 @@ main {
           top: 10px;
           right: 10px;
         }
-  
+
         input.input-heart {
-          background-image: url('../img/picto/heart-rounded.svg');
+          background-image: url("../img/picto/heart-rounded.svg");
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -286,14 +298,14 @@ main {
           cursor: pointer;
           width: 30px; /* Ajustez la largeur selon vos besoins */
           height: 30px; /* Ajustez la hauteur selon vos besoins */
-  
+
           &:hover {
-            background-image: url('../img/picto/heart-rounded-full-blue.svg');
+            background-image: url("../img/picto/heart-rounded-full-blue.svg");
           }
         }
-  
+
         input.input-heart-red {
-          background-image: url('../img/picto/heart-rounded-full-red.svg');
+          background-image: url("../img/picto/heart-rounded-full-red.svg");
         }
       }
     }
