@@ -30,7 +30,7 @@ include_once '../connexion.php';
                     <ul class="list-filter">
                         <?php
                         $sql_genre =
-                            "SELECT `genre`.`id_genre`,`genre`.`name`, COUNT(*) AS `nblivre`  
+                        "SELECT `genre`.`id_genre`,`genre`.`name`, COUNT(*) AS `nblivre`  
                         FROM `work`
 
                         INNER JOIN `work_genre`
@@ -56,10 +56,32 @@ include_once '../connexion.php';
                 <div class="item-filter" id="item-filter-editor">
                     <p class="show-filter">Editeurs <span class="toggle-symbol">+</span></p>
                     <ul class="list-filter">
-                        <li><a href="#">Lorem (22)</a></li>
-                        <li><a href="#">Lorem (22)</a></li>
-                        <li><a href="#">Lorem (22)</a></li>
-                        <li><a href="#">Lorem (22)</a></li>
+                    <?php
+                        $sql_editor =
+                        "SELECT `editor`.`id_editor`,`editor`.`editor_name`, 
+                        `copy`.`id_copy`,
+                        COUNT( DISTINCT `work`.`id_work`) as `nb`
+                        
+                        FROM `work`
+                        
+                        INNER JOIN `copy`
+                        ON `copy`.`work_id` = `work`.`id_work`
+                        
+                        INNER JOIN `editor`
+                        ON `copy`.`editor_id` =`editor`.`id_editor`
+                        
+                        GROUP BY `editor`.`editor_name`
+                        ORDER BY `editor`.`editor_name` ASC";
+
+
+                        $req_editor = $db->query($sql_editor);
+                        while ($editor = $req_editor->fetch(PDO::FETCH_ASSOC)) {
+
+                        ?>
+                            <li><a href="./catalog.php?id=<?= $editor['id_editor'] ?>"><?= $editor['editor_name'] . ' ' ?>(<?= $editor['nb'] ?>)</a></li>
+
+
+                        <?php } ?>
                     </ul>
                     <div class="toggle-symbol"></div>
                 </div>
@@ -196,23 +218,28 @@ include_once '../connexion.php';
 
                     } else {
                     $sql =
-                        'SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
+                    'SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, 
                     GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
-                    GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors` 
+                    GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors`,
+                    COUNT(`like`.`work_id`) AS like_count 
                     FROM `work`
-
+                
                     INNER JOIN `work_genre` 
                     ON `work`.`id_work` = `work_genre`.`work_id`
-
+                
                     INNER JOIN `genre`
                     ON `work_genre`.`genre_id` =`genre`.`id_genre`
-
+                
                     INNER JOIN `work_author`
                     ON `work_author`.`work_id` = `work`.`id_work`
-
+                
                     INNER JOIN `author`
                     ON `work_author`.`author_id` = `author`.`id_author`
-                    GROUP BY `id_work` ORDER BY `id_work` DESC';
+                    
+                    LEFT JOIN `like`
+                    ON `like`.`work_id` = `work`.`id_work`
+                    
+                    GROUP BY `id_work` ORDER BY like_count DESC';
                     $req_catalog = $db->query($sql);
 
                     while ($card = $req_catalog->fetch(PDO::FETCH_ASSOC)) {
