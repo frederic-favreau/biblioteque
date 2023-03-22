@@ -18,6 +18,7 @@
 body {
   background: #f6f5f7;
   font-family: "Hind Madurai", sans-serif;
+  overflow-x: hidden;
 }
 body div.bloc-modale {
   position: fixed;
@@ -35,7 +36,6 @@ h1.h1-dashboard {
   text-align: inherit;
   color: #0868ae;
   margin-bottom: 6px;
-  padding-left: 10px;
 }
 h1.h1-dashboard::first-letter {
   text-transform: uppercase;
@@ -209,6 +209,7 @@ header#side-bar-log {
   }
 }
 header#side-bar-log #sidebar-wrapper {
+  z-index: 9999;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -629,7 +630,7 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   min-height: 120px;
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li {
@@ -651,7 +652,7 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
   font-size: 18px;
   font-weight: bold;
   font-family: "Nova Slim", cursive, sans-serif;
-  width: 400px;
+  width: 100%;
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
   position: absolute;
@@ -1053,29 +1054,66 @@ div#confirmed-error:hover {
   top: 0;
   width: 100%;
   background-color: #fff; /* couleur de fond pour la div */
-  z-index: 30;
+  z-index: 3;
+  border-bottom: 1px solid gray;
+}
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+}
+@media screen and (min-width: 1200px) {
+  .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form {
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form p.title-sticky-crud {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  color: #ff5e38;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form p.title-sticky-crud {
+    width: 20%;
+  }
+}
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  border-bottom: 1px solid gray;
-}
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.input-search {
   width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard {
+    width: 60%;
+    max-width: 600px;
+  }
+}
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard input.input-search {
+  width: 80%;
+  max-width: 500px;
   height: 40px;
   padding-left: 10px;
   border-radius: 8px;
-  margin: 20px auto;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.btn-search {
+@media screen and (min-width: 1200px) {
+  .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard input.input-search {
+    width: 50%;
+  }
+}
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard input.btn-search {
   display: block;
-  width: 100%;
+  width: 20%;
   max-width: 200px;
   height: 40px;
   border-radius: 8px;
@@ -1084,39 +1122,39 @@ div#confirmed-error:hover {
   color: #fff;
   font-weight: bold;
 }
-@media screen and (min-width: 950px) {
-  .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.btn-search {
-    width: 100px;
-  }
-}
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.btn-search:hover {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard input.btn-search:hover {
   cursor: pointer;
   background-color: #05497b;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form a.btn-add {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 20%;
+}
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard a.btn-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
   border-radius: 8px;
   background-color: #0868ae;
   border: #0868ae;
   color: #fff;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form a.btn-add:hover {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard a.btn-add:hover {
   cursor: pointer;
   background-color: #05497b;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-all-detail {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard button#btn-all-detail {
   display: block;
   border: none;
   background-color: transparent;
   color: #0868ae;
   font-weight: bold;
-  padding: 20px 10px;
+  margin-right: 15px;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input button#btn-all-detail:hover {
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard button#btn-all-detail:hover {
   cursor: pointer;
   color: #05497b;
   text-decoration: underline;

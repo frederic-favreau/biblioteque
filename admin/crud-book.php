@@ -16,11 +16,18 @@ include_once '../admin/header-main.php';
                 <div class="search-add-crud-book">
                     <!-- <h6 class="h3-dashboard" id="h6-center">Les livres de la bibliothèque Biblook</h6> -->
                     <div class="search-crud-input">
+
                         <form action="" method="post">
-                            <input type="text" id="input-seach-book" class="input-search" name="text">
-                            <a href="./insert-book.php" type="button" id="btn-add-book" class="btn-add">+</a>
-                            <button type="button" id="btn-all-detail">Vue détails</button>
-                            <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value="Rechercher"></input>
+                            <p class="title-sticky-crud">Tous les livres de la bibliothèque</p>
+                            <div class="group-search-standard">
+                                <input type="text" id="input-seach-book" class="input-search" name="text">
+                                <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value="R"></input>
+                            </div>
+                            <div class="group-tool-standard">
+                                <button type="button" id="btn-all-detail">Vue détails</button>
+                                <a href="./insert-book.php" type="button" id="btn-add-book" class="btn-add">+</a>
+                            </div>
+
                         </form>
                     </div>
 
