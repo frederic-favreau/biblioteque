@@ -117,7 +117,7 @@ section#section-detail-book div#container-detail-book div.item-detail-book-left 
 }
 @media screen and (min-width: 950px) {
   section#section-detail-book div#container-detail-book div.item-detail-book-left h1.title-work {
-    width: 90%;
+    width: 100%;
     line-height: 32px;
     margin-bottom: 6px;
     font-size: 28px;
@@ -144,6 +144,8 @@ section#section-detail-book div#container-detail-book div.item-detail-book-left 
   margin: 0 auto 40px;
   display: block;
   background-color: gray;
+  width: 280px;
+  height: auto;
 }
 section#section-detail-book div#container-detail-book div.item-detail-book-left h2#title-extract {
   font-size: 20px;
