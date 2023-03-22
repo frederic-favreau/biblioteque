@@ -17,8 +17,16 @@
             if (isset($_POST['submit'])) {
                 $title = addslashes($_POST['work-title-add']);
                 $authorFirstname = addslashes($_POST['author-firstname-add']);
+                $authorFirstname2 = addslashes($_POST['author-firstname-2-add']);
+                
                 $authorLastname = addslashes($_POST['author-lastname-add']);
+                $authorLastname2 = addslashes($_POST['author-2-lastname-add']);
+
+                
                 $genre = addslashes($_POST['work-genre-add']);
+                $genre2 = addslashes($_POST['work-genre-2-add']);
+
+                
                 $category = addslashes($_POST['work-category-add']);
                 $publishedDate = addslashes($_POST['work-publish-date-add']);
                 $ISBN = addslashes($_POST['work-ISBN-add']);
@@ -26,37 +34,50 @@
                 $workPict = addslashes($_POST['work-pict-add']);
 
                 // Requête pour insérer le livre
-                $query = "INSERT INTO `work` (`title`, `published_at`, `ISBN`, `extract`, `pict`) VALUES ('$title', '$publishedDate', '$ISBN', '$extract', '$workPict')";
+                $query = "INSERT INTO `work` (`title`, `published_at`, `ISBN`, `extract`, `pict`) VALUES ('$title', '$publishedDate', '$ISBN', '$extract', '$workPict');
+                SET @work_id = LAST_INSERT_ID();";
                 $db->query($query);
                 $workId = $db->lastInsertId();
 
                 // Requête pour insérer l'auteur
-                $query = "INSERT INTO `author` (`firstname`, `lastname`) VALUES ('$authorFirstname', '$authorLastname')";
+                $query = "INSERT  IGNORE INTO `author` (`firstname`, `lastname`) VALUES ('$authorFirstname', '$authorLastname');
+                SET @author_id = LAST_INSERT_ID();
+                INSERT INTO work_author (work_id,author_id) VALUES(@work_id, @author_id)";
                 $db->query($query);
                 $authorId = $db->lastInsertId();
 
-                // Requête pour insérer la table work_author
-                $query = "INSERT INTO `work_author` (`work_id`, `author_id`) VALUES ('$workId', '$authorId')";
+                $query = "INSERT  IGNORE INTO `author` (`firstname`, `lastname`) VALUES ('$authorFirstname2', '$authorLastname2');
+                SET @author_id = LAST_INSERT_ID();
+                INSERT INTO work_author (work_id,author_id) VALUES(@work_id, @author_id)";
                 $db->query($query);
+                $authorId = $db->lastInsertId();
 
                 // Requête pour insérer le genre
-                $query = "INSERT INTO `genre` (`name`) VALUES ('$genre')";
+                $query = "SELECT `genre`.`name` FROM genre"
+
+                
+                $query = "INSERT INTO `genre` (`name`) VALUES ('$genre') WHERE NOT EXISTS(SELECT `genre` (`name`) FROM `genres`);
+                SET @genre_id = LAST_INSERT_ID();
+                INSERT INTO work_genre (work_id,genre_id) VALUES(@work_id, @genre_id)";
                 $db->query($query);
                 $genreId = $db->lastInsertId();
 
-                // Requête pour insérer la table work_genre
-                $query = "INSERT INTO `work_genre` (`work_id`, `genre_id`) VALUES ('$workId', '$genreId')";
+                $query = "INSERT INTO `genre` (`name`) VALUES ('$genre2') WHERE NOT EXISTS(SELECT `genre` (`name`) FROM `genres`);
+                SET @genre_id = LAST_INSERT_ID();
+                INSERT INTO work_genre (work_id,genre_id) VALUES(@work_id, @genre_id)";
                 $db->query($query);
+                $genreId = $db->lastInsertId();
+
 
                 $_SESSION["added"] = "Ajout réussit";
-                header("Location: edit-book.php?id=" . $workId);
+                //header("Location: edit-book.php?id=" . $workId);
                 ob_end_flush();
                 exit();
             }
             
         } catch (PDOException $e) {
             $_SESSION["notAdded"] = "Problème lors de l'ajout";
-            header("Location: edit-book.php?id=" . $workId);
+           //header("Location: edit-book.php?id=" . $workId);
             ob_end_flush();
             exit();
         }
@@ -68,35 +89,35 @@
                      <!-- ... autres champs existants ... -->
                      <div class="add-form-template-label-input">
                          <label for="work-title-add" class="label-form-add-book">Titre du livre</label>
-                         <input type="text" name="work-title-add" id="work-title-add" class="input-form-add-book" />
+                         <input type="text" name="work-title-add" id="work-title-add" class="input-form-add-book" value="hh" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="author-firstname-add" class="label-form-add-book">Prénom de l'autheur</label>
-                         <input type="text" name="author-firstname-add" id="author-firstname-add" class="input-form-add-book" />
+                         <input type="text" name="author-firstname-add" id="author-firstname-add" value="hh" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="author-firstname-2-add" class="label-form-add-book">Prénom de l'auteur (optionnel)</label>
-                         <input type="text" name="author-firstname-2-add" id="author-firstname-2-add" class="input-form-add-book" />
+                         <input type="text" name="author-firstname-2-add" id="author-firstname-2-add" value="oo"class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="author-lastname-add" class="label-form-add-book">Nom de l'autheur</label>
-                         <input type="text" name="author-lastname-add" id="author-lastname-add" class="input-form-add-book" />
+                         <input type="text" name="author-lastname-add" id="author-lastname-add" value="hh" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="author-2-lastname-add" class="label-form-add-book">Nom de l'auteur (optionnel)</label>
-                         <input type="text" name="author-2-lastname-add" id="author-2-lastname-add" class="input-form-add-book" />
+                         <input type="text" name="author-2-lastname-add" id="author-2-lastname-add" value="oo" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-genre-add" class="label-form-add-book">Genre du livre</label>
-                         <input type="text" name="work-genre-add" id="work-genre-add" class="input-form-add-book" />
+                         <input type="text" name="work-genre-add" id="work-genre-add" class="input-form-add-book" value="aventure"/>
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-genre-2-add" class="label-form-add-book">Deuxième genre du livre (optionnel)</label>
-                         <input type="text" name="work-genre-2-add" id="work-genre-2-add" class="input-form-add-book" />
+                         <input type="text" name="work-genre-2-add" id="work-genre-2-add" value="historique" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-category-add" class="label-form-add-book">Categorie du livre</label>
-                         <input type="text" name="work-category-add" id="work-category-add" class="input-form-add-book" />
+                         <input type="text" name="work-category-add" id="work-category-add" value="hh" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-publish-date-add" class="label-form-add-book">Date de publication du livre</label>
@@ -104,7 +125,7 @@
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-ISBN-add" class="label-form-add-book">ISBN (ex: ISBN 13 :874-6-2457-6478-8)</label>
-                         <input type="text" name="work-ISBN-add" id="work-ISBN-add" class="input-form-add-book" />
+                         <input type="text" name="work-ISBN-add" id="work-ISBN-add" class="input-form-add-book" value="hh" />
                      </div>
                      <div class="add-form-template-label-input">
                      </div>
@@ -112,28 +133,28 @@
 
                      <div class="add-form-template-label-input">
                          <label for="available-copies-add" class="label-form-add-book">Nombre de copies disponibles</label>
-                         <input type="number" name="available-copies-add" id="available-copies-add" class="input-form-add-book" />
+                         <input type="number" name="available-copies-add" id="available-copies-add" class="input-form-add-book" value="4"/>
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="total-copies-add" class="label-form-add-book">Nombre total de copies dans la bibliothèque</label>
-                         <input type="number" name="total-copies-add" id="total-copies-add" class="input-form-add-book" />
+                         <input type="number" name="total-copies-add" id="total-copies-add" value="4" class="input-form-add-book" />
                      </div>
                  </div>
                  <div id="form-add-book-right">
                      <!-- ... autres champs existants ... -->
                      <label for="work-extract-add" class="label-form-add-book">Extrait du livre</label>
-                     <textarea name="work-extract-add" id="work-extract-add"></textarea>
+                     <textarea name="work-extract-add" id="work-extract-add" value="hh"></textarea>
 
                      <label for="work-pict" class="label-form-add-book">Nom de l'image de couverture (ajouter le format au nom)</label>
-                     <input type="text" name="work-pict-add" id="work-pict-add" class="input-form-add-book" />
+                     <input type="text" name="work-pict-add" id="work-pict-add" class="input-form-add-book" value="hh"/>
 
                      <div class="add-form-template-label-input">
                          <label for="publisher-name-add" class="label-form-add-book">Nom de l'éditeur</label>
-                         <input type="text" name="publisher-name-add" id="publisher-name-add" class="input-form-add-book" />
+                         <input type="text" name="publisher-name-add" id="publisher-name-add" class="input-form-add-book" value="hh"/>
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="publisher-date-add" class="label-form-add-book">Date d'édition</label>
-                         <input type="date" name="publisher-date-add" id="publisher-date-add" class="input-form-add-book" />
+                         <input type="date" name="publisher-date-add" id="publisher-date-add" value="hh" class="input-form-add-book" />
                      </div>
                  </div>
                  <div id="group-btn-form-add-commun">
