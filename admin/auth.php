@@ -6,7 +6,7 @@ require_once '../connexion.php';
 $mail= $_POST['mail'];
 $password = $_POST['password'];
 
-$req = $db->prepare("SELECT `id_user`, `mail`, `firstname`, `lastname`, `password` FROM `user` WHERE `mail` = :mail");
+$req = $db->prepare("SELECT `id_user`, `mail`, `firstname`, `lastname`, `password`, `role` FROM `user` WHERE `mail` = :mail");
 $req->bindParam('mail', $mail, PDO::PARAM_STR);
 $req->execute();
 
@@ -20,7 +20,14 @@ if ($req->rowCount()==1){
         $_SESSION['lastname'] = $user['lastname'];
         $_SESSION['mail'] = $user['mail'];
         $_SESSION['connect'] = true;
+        $_SESSION['role'] = $user['role'];
+    
+                            
+        if($_SESSION['role'] == 0){
         header('Location: ./dashboard.php');
+        }else{
+            header('Location: ./crud-book.php');   
+        }
         
 
 

@@ -28,9 +28,17 @@ if (!isset($_SESSION['id-user'])) {
                     <div id="container-top-navigation">
                         <a href="../index.php" id="logo-sidebar"><img src="../img/logo-seul-biblook-noir.svg" alt="Bliblook" id="logo-big-sidebar" /><span id="dashbord-title">Tableau de bord</span></a>
                         <ul class="list-btn-side-bar">
+                            <?php
+                            
+                            if($_SESSION['role'] == 0){
+                            ?>
                             <li>
                                 <a href="./dashboard.php"><img src="../img/side-bar/picto-home.svg" alt="accueil" id="btn-home">Mon accueil</a>
                             </li>
+                            <?php
+                            }
+                            if($_SESSION['role'] == 1){
+                            ?>
                             <li>
                                 <a href="./crud-book.php"><img src="../img/side-bar/picto-CRUD.svg" alt="crud">Gérer les livres</a>
                             </li>
@@ -40,6 +48,9 @@ if (!isset($_SESSION['id-user'])) {
                             <li>
                                 <a href="./crud-user.php"><img src="../img/side-bar/picto-users.svg" alt="utilisateur">Gérer les utilisateurs</a>
                             </li>
+                            <?php
+                            }
+                            ?>
                             <li>
                                 <a href="../front/catalog.php"><img src="../img/picto/search-lg.svg" alt="utilisateur">Consulter le catalogue</a>
                             </li>
