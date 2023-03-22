@@ -17,9 +17,11 @@ $bgModal: rgba(6, 13, 30, 0.5);
 }
 
 .row-limit-size-db {
-  padding-top: 40px;
-  padding-left: 100px;
-  padding: 40px 100px;
+  @media screen and (min-width: 950px) {
+    padding-top: 40px;
+    padding-left: 100px;
+    padding: 40px 100px;
+  }
 }
 
 body {
@@ -42,6 +44,7 @@ h1.h1-dashboard {
   text-align: inherit;
   color: $main-blue;
   margin-bottom: 6px;
+  
   @media screen and (min-width: 950px) {
     font-size: 30px;
     margin-bottom: 20px;
@@ -79,8 +82,11 @@ a {
 
 main {
   width: 100%;
-  padding-left: 100px;
   z-index: -1;
+
+  @media screen and (min-width: 950px) {
+    padding-left: 100px;
+  }
 
   // ---------- MODALE BOX DELETE BOX----------
 
@@ -209,6 +215,10 @@ main {
 // ----------  HEADER DASHBOARD  ----------
 
 header#side-bar-log {
+  display: none;
+  @media screen and (min-width: 950px) {
+    display: block;
+  }
   #sidebar-wrapper {
     height: 100vh;
     position: fixed;
@@ -454,7 +464,7 @@ div.container-dashboard-base {
         }
 
         input.delete-favorit-book {
-          background-image: url('../img/picto/trash-03\ \(1\).svg');
+          background-image: url("../img/picto/trash-03\ \(1\).svg");
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -463,7 +473,6 @@ div.container-dashboard-base {
           cursor: pointer;
           width: 30px; /* Ajustez la largeur selon vos besoins */
           height: 30px; /* Ajustez la hauteur selon vos besoins */
-
         }
       }
     }
@@ -1804,14 +1813,13 @@ section#dashboard-page-book-edit {
 
 section#crud-user {
   div#box-crud-user {
-
     div.item-complete-center {
       width: 100%;
 
       ul.all-info-history-loan {
         display: flex;
         flex-direction: column;
-  
+
         li.loan-history-row {
           width: 100%;
           display: flex;

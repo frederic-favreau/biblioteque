@@ -7,10 +7,12 @@
   padding: 0;
 }
 
-.row-limit-size-db {
-  padding-top: 40px;
-  padding-left: 100px;
-  padding: 40px 100px;
+@media screen and (min-width: 950px) {
+  .row-limit-size-db {
+    padding-top: 40px;
+    padding-left: 100px;
+    padding: 40px 100px;
+  }
 }
 
 body {
@@ -75,8 +77,12 @@ a {
 
 main {
   width: 100%;
-  padding-left: 100px;
   z-index: -1;
+}
+@media screen and (min-width: 950px) {
+  main {
+    padding-left: 100px;
+  }
 }
 main div#box-delete-book {
   z-index: 999;
@@ -186,6 +192,14 @@ main div#box-delete-book a#btn-confirmed-delete-book:hover {
   }
   to {
     opacity: 0;
+  }
+}
+header#side-bar-log {
+  display: none;
+}
+@media screen and (min-width: 950px) {
+  header#side-bar-log {
+    display: block;
   }
 }
 header#side-bar-log #sidebar-wrapper {
