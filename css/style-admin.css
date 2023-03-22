@@ -371,7 +371,7 @@ div.container-dashboard-base .box-dashboard hr {
 @media screen and (min-width: 1250px) {
   .container-home-tabs ul.list-book-box li.item-list-book {
     flex-direction: row;
-    padding: 10px 0 10px 20px;
+    padding: 20px 0 20px 20px;
   }
 }
 .container-home-tabs ul.list-book-box li.item-list-book:nth-child(odd) {
@@ -397,11 +397,18 @@ div.container-dashboard-base .box-dashboard hr {
   margin-right: 20px;
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book ul.container-description li.list-title {
+  width: 200px;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #0868ae;
   font-family: "Nova Slim", cursive, sans-serif;
+}
+@media screen and (min-width: 1250px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book ul.container-description li.list-title {
+    max-width: 400px;
+    width: 100%;
+  }
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book ul.container-description li.list-author {
   font-size: 16px;
@@ -450,9 +457,6 @@ div.container-dashboard-base .box-dashboard hr {
   cursor: pointer;
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan input.delete-favorit-book {
-  position: absolute;
-  top: -200px;
-  left: 10px;
   background-image: url("../img/picto/trash-03 (1).svg");
   background-size: cover;
   background-position: center;

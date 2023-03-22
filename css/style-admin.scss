@@ -417,7 +417,7 @@ div.container-dashboard-base {
 
       @media screen and (min-width: 1250px) {
         flex-direction: row;
-        padding: 10px 0 10px 20px;
+        padding: 20px 0 20px 20px;
       }
 
       &:nth-child(odd) {
@@ -445,11 +445,17 @@ div.container-dashboard-base {
 
         ul.container-description {
           li.list-title {
+            width: 200px;
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 10px;
             color: $main-blue;
             font-family: "Nova Slim", cursive, sans-serif;
+
+            @media screen and (min-width: 1250px) {
+              max-width: 400px;
+              width: 100%;
+            }
           }
 
           li.list-author {
@@ -502,9 +508,6 @@ div.container-dashboard-base {
         }
 
         input.delete-favorit-book {
-          position: absolute;
-          top: -200px;
-          left: 10px;
           background-image: url("../img/picto/trash-03\ \(1\).svg");
           background-size: cover;
           background-position: center;

@@ -16,7 +16,7 @@ include_once '../connexion.php';
             <h1 id="value-search">"<?= $_GET['search'] ?>"</h1>
         <?php } else { ?>
 
-            <h1>"Catalog"</h1>
+            <h1>Bienvenue dans le Catalogue</h1>
 
         <?php
 
