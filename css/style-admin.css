@@ -7,10 +7,12 @@
   padding: 0;
 }
 
-.row-limit-size-db {
-  padding-top: 40px;
-  padding-left: 100px;
-  padding: 40px 100px;
+@media screen and (min-width: 950px) {
+  .row-limit-size-db {
+    padding-top: 40px;
+    padding-left: 100px;
+    padding: 40px 100px;
+  }
 }
 
 body {
@@ -29,14 +31,20 @@ body div.bloc-modale {
 
 h1.h1-dashboard {
   font-size: 20px;
+  line-height: 25px;
   text-align: inherit;
   color: #0868ae;
   margin-bottom: 6px;
+  padding-left: 10px;
+}
+h1.h1-dashboard::first-letter {
+  text-transform: uppercase;
 }
 @media screen and (min-width: 950px) {
   h1.h1-dashboard {
     font-size: 30px;
     margin-bottom: 20px;
+    padding-left: 0;
   }
 }
 
@@ -45,16 +53,18 @@ h2.h2-dashboard {
   text-align: inherit;
   color: #0868ae;
   margin-bottom: 6px;
+  padding-left: 10px;
 }
 @media screen and (min-width: 950px) {
   h2.h2-dashboard {
     font-size: 20px;
     margin-bottom: 12px;
+    padding-left: 0px;
   }
 }
 
 h3.h3-dashboard {
-  font-size: 12px;
+  font-size: 18px;
   text-align: inherit;
   color: #ff5e38;
   margin-right: auto;
@@ -75,8 +85,12 @@ a {
 
 main {
   width: 100%;
-  padding-left: 100px;
   z-index: -1;
+}
+@media screen and (min-width: 950px) {
+  main {
+    padding-left: 100px;
+  }
 }
 main div#box-delete-book {
   z-index: 999;
@@ -186,6 +200,14 @@ main div#box-delete-book a#btn-confirmed-delete-book:hover {
   }
   to {
     opacity: 0;
+  }
+}
+header#side-bar-log {
+  display: none;
+}
+@media screen and (min-width: 950px) {
+  header#side-bar-log {
+    display: block;
   }
 }
 header#side-bar-log #sidebar-wrapper {
@@ -342,8 +364,15 @@ div.container-dashboard-base .box-dashboard hr {
 }
 .container-home-tabs ul.list-book-box li.item-list-book {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 10px 0 10px 20px;
+  padding: 30px 0;
+}
+@media screen and (min-width: 1250px) {
+  .container-home-tabs ul.list-book-box li.item-list-book {
+    flex-direction: row;
+    padding: 10px 0 10px 20px;
+  }
 }
 .container-home-tabs ul.list-book-box li.item-list-book:nth-child(odd) {
   background-color: #f0f7ff;
@@ -352,7 +381,15 @@ div.container-dashboard-base .box-dashboard hr {
 .container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book {
   display: flex;
   flex-wrap: wrap;
-  width: 40%;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 1250px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book {
+    justify-content: inherit;
+    margin-bottom: 0px;
+    width: 40%;
+  }
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book img.pict-book-standard {
   height: 100px;
@@ -371,18 +408,33 @@ div.container-dashboard-base .box-dashboard hr {
   color: gray;
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan {
-  width: 60%;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  flex-direction: column;
   justify-content: space-evenly;
+}
+@media screen and (min-width: 1250px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan {
+    width: 60%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan p.info-disponibility {
   color: #ff5e38;
   font-weight: bold;
-  margin-right: 70px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1250px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan p.info-disponibility {
+    margin-right: 70px;
+    margin-bottom: 0px;
+  }
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan a.btn-format-standard {
+  display: block;
   padding: 15px;
   font-weight: bold;
   border: none;
@@ -398,6 +450,9 @@ div.container-dashboard-base .box-dashboard hr {
   cursor: pointer;
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan input.delete-favorit-book {
+  position: absolute;
+  top: -200px;
+  left: 10px;
   background-image: url("../img/picto/trash-03 (1).svg");
   background-size: cover;
   background-position: center;
@@ -405,8 +460,19 @@ div.container-dashboard-base .box-dashboard hr {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  width: 30px; /* Ajustez la largeur selon vos besoins */
-  height: 30px; /* Ajustez la hauteur selon vos besoins */
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+}
+@media screen and (min-width: 350px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan input.delete-favorit-book {
+    position: inherit;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan input.delete-favorit-book {
+    position: inherit;
+  }
 }
 
 .empty {
@@ -968,7 +1034,7 @@ div#confirmed-error:hover {
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -986,22 +1052,24 @@ div#confirmed-error:hover {
   padding: 10px 0 20px 0;
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input {
-  display: flex;
-  align-items: baseline;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   margin-right: auto;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input input.input-search {
-  width: 400px;
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.input-search {
   height: 40px;
   padding-left: 10px;
   border-radius: 8px;
   margin-left: auto;
   margin-right: 10px;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input input.btn-search {
-  width: 100px;
+@media screen and (min-width: 950px) {
+  .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.input-search {
+    width: 400px;
+  }
+}
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.btn-search {
+  display: block;
+  width: 100%;
   height: 40px;
   border-radius: 8px;
   background-color: #0868ae;
@@ -1010,7 +1078,12 @@ div#confirmed-error:hover {
   margin-right: 30px;
   font-weight: bold;
 }
-.container-crud-book-tabs div.search-add-crud-book div.search-crud-input input.btn-search:hover {
+@media screen and (min-width: 950px) {
+  .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.btn-search {
+    width: 100px;
+  }
+}
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input form input.btn-search:hover {
   cursor: pointer;
   background-color: #05497b;
 }

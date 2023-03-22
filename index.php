@@ -61,6 +61,28 @@
   </header>
 
 
+  <main>
+    <section id="section-main-hero" class="row-limit-size-full">
+      <div id="container-section-main-hero" class="row-limit-size">
+      <div id="item-section-main-hero-left">
+        <h1>Biblook</h1>
+        <h2>La bibliothèque qui propose des livres pour Apprendre</h2>
+        <div class="picto-choix-profil">
+          <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+          <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+          <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+        </div>
+        <a href="#" id="discover-space">Découvrir l'espace enfants</a>
+      </div>
+      <div id="item-section-main-hero-right">
+        <img src="./img/hero/fille-livre-1.jpg" alt="Fille">
+      </div>
+      </div>
+    </section>
+
+
+
+
 
   <!-- ---------- SECTION - NEWS ---------- -->
 
