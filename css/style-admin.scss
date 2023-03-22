@@ -41,13 +41,20 @@ body {
 
 h1.h1-dashboard {
   font-size: 20px;
+  line-height: 25px;
   text-align: inherit;
   color: $main-blue;
   margin-bottom: 6px;
+  padding-left: 10px;
   
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
   @media screen and (min-width: 950px) {
     font-size: 30px;
     margin-bottom: 20px;
+    padding-left: 0;
   }
 }
 
@@ -56,17 +63,22 @@ h2.h2-dashboard {
   text-align: inherit;
   color: $main-blue;
   margin-bottom: 6px;
+  padding-left: 10px;
+
   @media screen and (min-width: 950px) {
     font-size: 20px;
     margin-bottom: 12px;
+    padding-left: 0px;
+
   }
 }
 
 h3.h3-dashboard {
-  font-size: 12px;
+  font-size: 18px;
   text-align: inherit;
   color: $btn-red;
   margin-right: auto;
+
   @media screen and (min-width: 950px) {
     font-size: 20px;
   }
@@ -400,8 +412,14 @@ div.container-dashboard-base {
   ul.list-book-box {
     li.item-list-book {
       display: flex;
+      flex-direction: column;
       width: 100%;
-      padding: 10px 0 10px 20px;
+      padding: 30px 0;
+
+      @media screen and (min-width: 1250px) {
+        flex-direction: row;
+        padding: 10px 0 10px 20px;
+      }
 
       &:nth-child(odd) {
         background-color: #f0f7ff;
@@ -411,7 +429,14 @@ div.container-dashboard-base {
       div.format-pict-book {
         display: flex;
         flex-wrap: wrap;
-        width: 40%;
+        justify-content: center;
+        margin-bottom: 30px;
+
+        @media screen and (min-width: 1250px) {
+          justify-content: inherit;
+          margin-bottom: 0px;
+          width: 40%;
+        }
 
         img.pict-book-standard {
           height: 100px;
@@ -435,18 +460,32 @@ div.container-dashboard-base {
         }
       }
       div.container-info-loan {
-        width: 60%;
+        position: relative;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        flex-direction: column;
         justify-content: space-evenly;
+
+        @media screen and (min-width: 1250px) {
+          width: 60%;
+          flex-direction: row;
+          justify-content: space-evenly;
+        }
+
         p.info-disponibility {
           color: $btn-red;
           font-weight: bold;
-          margin-right: 70px;
+          margin-bottom: 20px;
+
+          @media screen and (min-width: 1250px) {
+            margin-right: 70px;
+            margin-bottom: 0px;
+          }
         }
 
         a.btn-format-standard {
+          display: block;
           padding: 15px;
           font-weight: bold;
           border: none;
@@ -464,6 +503,9 @@ div.container-dashboard-base {
         }
 
         input.delete-favorit-book {
+          position: absolute;
+          top: -200px;
+          left: 10px;
           background-image: url("../img/picto/trash-03\ \(1\).svg");
           background-size: cover;
           background-position: center;
@@ -471,8 +513,19 @@ div.container-dashboard-base {
           background-color: transparent;
           border: none;
           cursor: pointer;
-          width: 30px; /* Ajustez la largeur selon vos besoins */
-          height: 30px; /* Ajustez la hauteur selon vos besoins */
+          width: 30px;
+          height: 30px;
+          margin-top: 20px;
+
+          @media screen and (min-width: 350px) {
+            position: inherit;
+
+          }
+
+          @media screen and (min-width: 1250px) {
+            position: inherit;
+          }
+          
         }
       }
     }
