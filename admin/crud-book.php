@@ -22,7 +22,7 @@ include_once '../admin/header-main.php';
                             <button type="button" id="btn-all-detail">Vue détails</button>
                         </form>
                     </div>
-                    <a href="./insert-book.php" type="button" id="btn-add-book" class="btn-add">Ajouter un livre</a>
+                    <a href="./LCCN.php" type="button" id="btn-add-book" class="btn-add">Ajouter un livre</a>
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">

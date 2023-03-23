@@ -1,8 +1,8 @@
  <?php
     include_once '../admin/header-main.php';
     require_once '../connexion.php';
-    
-    
+
+
     ?>
 
 
@@ -15,99 +15,192 @@
              <hr>
 
              <?php
-            try {
-            if (isset($_POST['submit'])) {
-                $title = addslashes($_POST['work-title-add']);
-                $authorFirstname = addslashes($_POST['author-firstname-add']);
-                $authorFirstname2 = addslashes($_POST['author-firstname-2-add']);
-                
-                $authorLastname = addslashes($_POST['author-lastname-add']);
-                $authorLastname2 = addslashes($_POST['author-2-lastname-add']);
+                try {
+                    if (isset($_POST['submit'])) {
+                        $title = addslashes($_POST['work-title-add']);
+                        $authorFirstname = addslashes($_POST['author-firstname-add']);
+                        $authorFirstname2 = addslashes($_POST['author-firstname-2-add']);
 
-                
-                $genre = addslashes($_POST['work-genre-add']);
-                $genre2 = addslashes($_POST['work-genre-2-add']);
+                        $authorLastname = addslashes($_POST['author-lastname-add']);
+                        $authorLastname2 = addslashes($_POST['author-2-lastname-add']);
+                        $author = $authorLastname . ' ' . $authorFirstname;
+                        $author2 = $authorLastname2 . ' ' . $authorFirstname2;
 
-                
-                $category = addslashes($_POST['work-category-add']);
-                $publishedDate = addslashes($_POST['work-publish-date-add']);
-                $ISBN = addslashes($_POST['work-ISBN-add']);
-                $extract = addslashes($_POST['work-extract-add']);
-                $workPict = addslashes($_POST['work-pict-add']);
 
-                // Requête pour insérer le livre
-                $query = "INSERT INTO `work` (`title`, `published_at`, `ISBN`, `extract`, `pict`) VALUES ('$title', '$publishedDate', '$ISBN', '$extract', '$workPict');
-                SET @work_id = LAST_INSERT_ID();";
-                $db->query($query);
-                $workId = $db->lastInsertId();
+                        $genre = addslashes($_POST['work-genre-add']);
+                        $genre2 = addslashes($_POST['work-genre-2-add']);
 
-                $lastIDSql = "SELECT `id_work` FROM `work` ORDER BY `id_work` DESC LIMIT 1";
-                $reqLastId = $db->query($lastIDSql);
-                $lastIdFetch = $reqLastId->fetch(PDO::FETCH_ASSOC);
-                $lastId = $lastIdFetch['id_work'];
-                ;
 
-                // Requête pour insérer l'auteur
-                $query = "INSERT  IGNORE INTO `author` (`firstname`, `lastname`) VALUES ('$authorFirstname', '$authorLastname');
-                SET @author_id = LAST_INSERT_ID();
-                INSERT INTO work_author (work_id,author_id) VALUES(@work_id, @author_id)";
-                $db->query($query);
-                $authorId = $db->lastInsertId();
+                        $category = addslashes($_POST['work-category-add']);
+                        $publishedDate = addslashes($_POST['work-publish-date-add']);
+                        $ISBN = addslashes($_POST['work-ISBN-add']);
+                        $extract = addslashes($_POST['work-extract-add']);
+                        $workPict = addslashes($_POST['work-pict-add']);
 
-                $query = "INSERT  IGNORE INTO `author` (`firstname`, `lastname`) VALUES ('$authorFirstname2', '$authorLastname2');
-                SET @author_id = LAST_INSERT_ID();
-                INSERT INTO work_author (work_id,author_id) VALUES(@work_id, @author_id)";
-                $db->query($query);
-                $authorId = $db->lastInsertId();
+                        // Requête pour insérer le livre
+                        $query = "INSERT INTO `work` (`title`, `published_at`, `ISBN`, `extract`, `pict`) VALUES ('$title', '$publishedDate', '$ISBN', '$extract', '$workPict');
+                        SET @work_id = LAST_INSERT_ID();";
+                        $db->query($query);
+                        $workId = $db->lastInsertId();
 
-                // Requête pour insérer le genre
-                $reqGenreExists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = :genre");
+                        $lastIDSql = "SELECT `id_work` FROM `work` ORDER BY `id_work` DESC LIMIT 1";
+                        $reqLastId = $db->query($lastIDSql);
+                        $lastIdFetch = $reqLastId->fetch(PDO::FETCH_ASSOC);
+                        $lastId = $lastIdFetch['id_work'];;
+
+                        // Requête pour insérer l'auteur
+
+
+
+                        //First author
+
+                        $reqAuthorExists = $db->prepare("SELECT `id_author`, CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`) AS `authors` FROM `author` WHERE CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`) = :authors");
+                        $reqAuthorExists->bindParam(':authors', $author);
+                        $reqAuthorExists->execute();
+                        $AuthorExists = $reqAuthorExists->fetch(PDO::FETCH_ASSOC);
+                        if($AuthorExists) {
+                            //INSERT INTO `aliment_lieu` (`aliment_id`, `lieu_id`) VALUES ('11', '1');
+                            $idAuthor = $AuthorExists['id_author'];
+                            $query = $db->prepare("INSERT INTO `work_author` (`work_id`,`author_id`) VALUES(:work_id,:author_id)");
+                            $query->bindParam('author_id', $idAuthor, PDO::PARAM_INT);
+                            $query->bindParam('work_id', $lastId, PDO::PARAM_INT);
+                            $query->execute();
+
+                            
+                        }else{
+                            $query = "INSERT  IGNORE INTO `author` (`firstname`, `lastname`) VALUES ('$authorFirstname', '$authorLastname');
+                            SET @author_id = LAST_INSERT_ID();
+                            INSERT INTO work_author (work_id,author_id) VALUES(@work_id, @author_id)";
+                            $db->query($query);
+                            $authorId = $db->lastInsertId();}
+                        
+
+
+
+
+                            //Insert 2nd author
+                            $reqAuthorExists = $db->prepare("SELECT `id_author`, CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`) AS `authors` FROM `author` WHERE CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`) = :authors");
+                            $reqAuthorExists->bindParam(':authors', $author2);
+                            $reqAuthorExists->execute();
+                            $AuthorExists = $reqAuthorExists->fetch(PDO::FETCH_ASSOC);
+                            
+                            if($AuthorExists) {
+                                $idAuthor2 = $AuthorExists['id_author'];
+                                
+                                $query = $db->prepare("INSERT INTO `work_author` (`work_id`,`author_id`) VALUES(:work_id,:author_id)");
+                                $query->bindParam('author_id', $idAuthor2, PDO::PARAM_INT);
+                                $query->bindParam('work_id', $lastId, PDO::PARAM_INT);
+                                $query->execute();
+    
+                                
+                            }else{
+                                $query = "INSERT  IGNORE INTO `author` (`firstname`, `lastname`) VALUES ('$authorFirstname', '$authorLastname');
+                                SET @author_id = LAST_INSERT_ID();
+                                INSERT INTO work_author (work_id,author_id) VALUES(@work_id, @author_id)";
+                                $db->query($query);
+                                $authorId = $db->lastInsertId();}
+
+
+
+
+
+
+
+                        // Requête pour insérer le genre
+
+
+                        //Firs Genre
+
+
+                        $reqGenreExists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = :genre");
                         $reqGenreExists->bindParam(':genre', $genre);
                         $reqGenreExists->execute();
                         $genreExists = $reqGenreExists->fetch(PDO::FETCH_ASSOC);
-                if($genreExists == true){
-                    //INSERT INTO `aliment_lieu` (`aliment_id`, `lieu_id`) VALUES ('11', '1');
-                $idGenre = $genreExists['id_genre'];
-                var_dump($idGenre);
-                var_dump($lastId);
-                $query = $db->prepare
-                ("INSERT INTO `work_genre` (`work_id`,`genre_id`) VALUES(:work_id,:genre_id)");
-                $query->bindParam('genre_id', $idGenre, PDO::PARAM_INT);
-                $query->bindParam('work_id', $lastId, PDO::PARAM_INT);
-                $query->execute();
-                
+                        if ($genreExists == true) {
+                            //INSERT INTO `aliment_lieu` (`aliment_id`, `lieu_id`) VALUES ('11', '1');
+                            $idGenre = $genreExists['id_genre'];
+                            $query = $db->prepare("INSERT INTO `work_genre` (`work_id`,`genre_id`) VALUES(:work_id,:genre_id)");
+                            $query->bindParam('genre_id', $idGenre, PDO::PARAM_INT);
+                            $query->bindParam('work_id', $lastId, PDO::PARAM_INT);
+                            $query->execute();
+                        } else {
+                            $query = "INSERT INTO `genre` (`name`) VALUES ('$genre');
+                    SET @genre_id = LAST_INSERT_ID();
+                    INSERT INTO work_genre (work_id,genre_id) VALUES(@work_id, @genre_id)";
+                            $db->query($query);
+                            $genreId = $db->lastInsertId();
+                        }
 
 
+
+
+                        //SECONDE GENRE
+
+                        $reqGenreExists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = :genre");
+                        $reqGenreExists->bindParam(':genre', $genre2);
+                        $reqGenreExists->execute();
+                        $genreExists = $reqGenreExists->fetch(PDO::FETCH_ASSOC);
+
+
+                        if ($genreExists == true) {
+                            //INSERT INTO `aliment_lieu` (`aliment_id`, `lieu_id`) VALUES ('11', '1');
+                            $idGenre = $genreExists['id_genre'];
+                            $query = $db->prepare("INSERT INTO `work_genre` (`work_id`,`genre_id`) VALUES(:work_id,:genre_id)");
+                            $query->bindParam('genre_id', $idGenre, PDO::PARAM_INT);
+                            $query->bindParam('work_id', $lastId, PDO::PARAM_INT);
+                            $query->execute();
+                        } else {
+                            $query = "INSERT INTO `genre` (`name`) VALUES ('$genre2');
+                            SET @genre_id = LAST_INSERT_ID();
+                            INSERT INTO work_genre (work_id,genre_id) VALUES(@work_id, @genre_id)";
+                            $db->query($query);
+                            $genreId = $db->lastInsertId();
+                        }
+
+
+
+
+
+                        //INSERT CATEGORIE
+
+
+                        var_dump($category);
+                        $reqCategorieExists = $db->prepare("SELECT `id_category` FROM `category` WHERE `category` = :category");
+                        $reqCategorieExists->bindParam(':category', $category);
+                        $reqCategorieExists->execute();
+                        $CategorieExists = $reqCategorieExists->fetch(PDO::FETCH_ASSOC);
+
+                        
+                        if ($CategorieExists) {
+                            $idCategory = $CategorieExists['id_category'];
+                            var_dump($idCategory);
+                            $query = $db->prepare("INSERT INTO `work_category` (`work_id`,`category_id`) VALUES(:work_id,:category_id)");
+                            $query->bindParam('category_id', $idCategory, PDO::PARAM_INT);
+                            $query->bindParam('work_id', $lastId, PDO::PARAM_INT);
+                            $query->execute();
+                        } else {
+                            $query = "INSERT INTO `category` (`category`) VALUES ('$category');
+                            SET @category_id = LAST_INSERT_ID();
+                            INSERT INTO work_category (work_id,category_id) VALUES(@work_id, @category_id)";
+                            $db->query($query);
+                            $genreId = $db->lastInsertId();
+                        }
+
+
+
+
+                        $_SESSION["added"] = "Ajout réussit";
+                        header("Location: insert-copy.php");
+                        ob_end_flush();
+                        exit();
+                    }
+                } catch (PDOException $e) {
+                    $_SESSION["notAdded"] = "Problème lors de l'ajout";
+                    //header("Location: edit-book.php?id=" . $workId);
+                    ob_end_flush();
+                    exit();
                 }
-                
-
-                
-                /*$query = "INSERT INTO `genre` (`name`) VALUES ('$genre');
-                SET @genre_id = LAST_INSERT_ID();
-                INSERT INTO work_genre (work_id,genre_id) VALUES(@work_id, @genre_id)";
-                $db->query($query);
-                $genreId = $db->lastInsertId();*/
-
-                /*$query = "INSERT INTO `genre` (`name`) VALUES ('$genre2');
-                SET @genre_id = LAST_INSERT_ID();
-                INSERT INTO work_genre (work_id,genre_id) VALUES(@work_id, @genre_id)";
-                $db->query($query);
-                $genreId = $db->lastInsertId();*/
-
-
-                $_SESSION["added"] = "Ajout réussit";
-                //header("Location: edit-book.php?id=" . $workId);
-                ob_end_flush();
-                exit();
-            }
-            
-        } catch (PDOException $e) {
-            $_SESSION["notAdded"] = "Problème lors de l'ajout";
-           //header("Location: edit-book.php?id=" . $workId);
-            ob_end_flush();
-            exit();
-        }
-            ?>
+                ?>
 
 
              <form action="#" method="POST" id="form-add-book">
@@ -123,7 +216,7 @@
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="author-firstname-2-add" class="label-form-add-book">Prénom de l'auteur (optionnel)</label>
-                         <input type="text" name="author-firstname-2-add" id="author-firstname-2-add" value="oo"class="input-form-add-book" />
+                         <input type="text" name="author-firstname-2-add" id="author-firstname-2-add" value="oo" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="author-lastname-add" class="label-form-add-book">Nom de l'autheur</label>
@@ -135,7 +228,7 @@
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-genre-add" class="label-form-add-book">Genre du livre</label>
-                         <input type="text" name="work-genre-add" id="work-genre-add" class="input-form-add-book" value="aventure"/>
+                         <input type="text" name="work-genre-add" id="work-genre-add" class="input-form-add-book" value="aventure" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-genre-2-add" class="label-form-add-book">Deuxième genre du livre (optionnel)</label>
@@ -150,21 +243,13 @@
                          <input type="date" name="work-publish-date-add" id="work-publish-date-add" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
-                         <label for="work-ISBN-add" class="label-form-add-book">ISBN (ex: ISBN 13 :874-6-2457-6478-8)</label>
-                         <input type="text" name="work-ISBN-add" id="work-ISBN-add" class="input-form-add-book" value="hh" />
+                         <label for="work-ISBN-add" class="label-form-add-book">LCCN (exemple: 2001098868)</label>
+                         <input type="text" name="work-ISBN-add" id="work-ISBN-add" class="input-form-add-book" value="<?= $_GET['LCCN']?>" />
                      </div>
                      <div class="add-form-template-label-input">
                      </div>
 
 
-                     <div class="add-form-template-label-input">
-                         <label for="available-copies-add" class="label-form-add-book">Nombre de copies disponibles</label>
-                         <input type="number" name="available-copies-add" id="available-copies-add" class="input-form-add-book" value="4"/>
-                     </div>
-                     <div class="add-form-template-label-input">
-                         <label for="total-copies-add" class="label-form-add-book">Nombre total de copies dans la bibliothèque</label>
-                         <input type="number" name="total-copies-add" id="total-copies-add" value="4" class="input-form-add-book" />
-                     </div>
                  </div>
                  <div id="form-add-book-right">
                      <!-- ... autres champs existants ... -->
@@ -172,16 +257,9 @@
                      <textarea name="work-extract-add" id="work-extract-add" value="hh"></textarea>
 
                      <label for="work-pict" class="label-form-add-book">Nom de l'image de couverture (ajouter le format au nom)</label>
-                     <input type="text" name="work-pict-add" id="work-pict-add" class="input-form-add-book" value="hh"/>
+                     <input type="text" name="work-pict-add" id="work-pict-add" class="input-form-add-book" value="encyclopedie_de_la_biere.jpg" />
 
-                     <div class="add-form-template-label-input">
-                         <label for="publisher-name-add" class="label-form-add-book">Nom de l'éditeur</label>
-                         <input type="text" name="publisher-name-add" id="publisher-name-add" class="input-form-add-book" value="hh"/>
-                     </div>
-                     <div class="add-form-template-label-input">
-                         <label for="publisher-date-add" class="label-form-add-book">Date d'édition</label>
-                         <input type="date" name="publisher-date-add" id="publisher-date-add" value="hh" class="input-form-add-book" />
-                     </div>
+                     
                  </div>
                  <div id="group-btn-form-add-commun">
                      <input type="reset" id="btn-reset-form-add-book" name="reset" value="Reset"></input>
