@@ -646,6 +646,9 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   cursor: pointer;
 }
 
+section#loan-register {
+  padding: 30px 30px 0;
+}
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud {
   padding-top: 10px;
   padding-bottom: 5px;
@@ -660,7 +663,7 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   min-height: 120px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -688,13 +691,18 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
   position: absolute;
   top: 2px;
-  right: 10px;
+  right: 0px;
   font-size: 30px;
   padding: 2px 8px;
   width: 30px;
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 8px;
+}
+@media screen and (min-width: 500px) {
+  section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
+    right: -60px;
+  }
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud:hover {
   cursor: pointer;
@@ -706,8 +714,8 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud {
   position: absolute;
-  right: 120px;
-  top: 0;
+  right: 40px;
+  top: 20px;
   width: 220px;
   height: -moz-fit-content;
   height: fit-content;
@@ -1028,7 +1036,7 @@ p.info-succes-notif > strong {
 }
 
 section#dashboard-page-book-crud {
-  padding-top: 20px;
+  padding: 30px 30px 0px;
 }
 @media screen and (min-width: 950px) {
   section#dashboard-page-book-crud {
@@ -1263,7 +1271,7 @@ div#confirmed-error:hover {
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
   position: absolute;
-  right: -20px;
+  right: -40px;
   top: -20px;
   font-size: 30px;
   padding: 2px 8px;

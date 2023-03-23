@@ -478,7 +478,7 @@
             <h5><img src="./img/picto/marker-pin-02.svg" alt="Localisation"></h5>
             <li><span>Nous situer</span></li>
             <li>244b rue du Pont du Jour</li>
-            <li>01000, Saint-Denis-lès-Bourg</li>
+            <li>01000 Saint-Denis-lès-Bourg</li>
           </ul>
           <ul>
             <h5><img src="./img/picto/Icon-mail.svg" alt="Email"></h5>
@@ -488,7 +488,7 @@
           <ul>
             <h5><img src="./img/picto/phone.svg" alt="Téléphone"></h5>
             <li><span>Téléphone</span></li>
-            <li><a href="#">+33 4 38 38 24 38</a></li>
+            <li><a href="#">04 38 38 24 38</a></li>
           </ul>
         </div>
       </div>
