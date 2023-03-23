@@ -1484,13 +1484,15 @@ li:nth-child(4) a {
   }
 }
 #section-location div#iframe-google {
-  width: 90%;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: 30px auto;
 }
 #section-location div#iframe-google iframe {
   width: 100%;
   max-width: 1200px;
   height: 450px;
+  margin: 0 auto;
 }
 #section-location div#iframe-google #container-info-location {
   width: 100%;
