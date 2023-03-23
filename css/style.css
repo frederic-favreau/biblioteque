@@ -899,15 +899,15 @@ section#section-news .text-shadow {
   color: #fff;
   transition: all 0.3s ease;
 }
-@media screen and (min-width: 950px) {
-  #section-heart #btn-show-heart {
-    width: 343px;
-    margin-top: -100px;
-  }
-}
 #section-heart #btn-show-heart:hover {
   opacity: 0.9;
   transform: scale(1.1);
+}
+@media screen and (min-width: 950px) {
+  #section-heart #btn-show-heart {
+    width: 343px;
+    margin-top: -20px;
+  }
 }
 
 #section-soon-available {
@@ -1508,7 +1508,7 @@ section#section-news .text-shadow {
 }
 #section-faq #banner-faq-contact a {
   display: block;
-  padding: 12px 24px;
+  padding: 12px 32px;
   background-color: #ff5e38;
   color: #fff;
   border-radius: 8px;
