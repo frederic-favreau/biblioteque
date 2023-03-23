@@ -29,8 +29,8 @@
       </div>
       <div id="container-group-search-nav-top">
         <form action="../front/catalog.php?placeholde" method="GET">
-          <input type="search" name="search" id="input-search-nav-top" placeholder="🔎 Taper votre recherche">
-          <input type="submit" name="rechercher" value="Rechercher" id="btn-search-nav-top">
+          <input type="search" name="search" id="input-search-nav-top" placeholder="Taper votre recherche">
+          <input type="submit" name="rechercher" value="" id="btn-search-nav-top">
         </form>
       </div>
       <div id="container-group-btn-connexion">

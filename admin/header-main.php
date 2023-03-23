@@ -29,25 +29,25 @@ if (!isset($_SESSION['id-user'])) {
                         <a href="../index.php" id="logo-sidebar"><img src="../img/logo-seul-biblook-noir.svg" alt="Bliblook" id="logo-big-sidebar" /><span id="dashbord-title">Tableau de bord</span></a>
                         <ul class="list-btn-side-bar">
                             <?php
-                            
-                            if($_SESSION['role'] == 0){
+
+                            if ($_SESSION['role'] == 0) {
                             ?>
-                            <li>
-                                <a href="./dashboard.php"><img src="../img/side-bar/picto-home.svg" alt="accueil" id="btn-home">Mon accueil</a>
-                            </li>
+                                <li>
+                                    <a href="./dashboard.php"><img src="../img/side-bar/picto-home.svg" alt="accueil" id="btn-home">Mon accueil</a>
+                                </li>
                             <?php
                             }
-                            if($_SESSION['role'] == 1){
+                            if ($_SESSION['role'] == 1) {
                             ?>
-                            <li>
-                                <a href="./crud-book.php"><img src="../img/side-bar/picto-CRUD.svg" alt="crud">Gérer les livres</a>
-                            </li>
-                            <li>
-                                <a href="./register-book.php"><img src="../img/picto/bookmark.svg" alt="crud">Registre des emprunts</a>
-                            </li>
-                            <li>
-                                <a href="./crud-user.php"><img src="../img/side-bar/picto-users.svg" alt="utilisateur">Gérer les utilisateurs</a>
-                            </li>
+                                <li>
+                                    <a href="./crud-book.php"><img src="../img/side-bar/picto-CRUD.svg" alt="crud">Gérer les livres</a>
+                                </li>
+                                <li>
+                                    <a href="./register-book.php"><img src="../img/picto/bookmark.svg" alt="crud">Registre des emprunts</a>
+                                </li>
+                                <li>
+                                    <a href="./crud-user.php"><img src="../img/side-bar/picto-users.svg" alt="utilisateur">Gérer les utilisateurs</a>
+                                </li>
                             <?php
                             }
                             ?>
@@ -72,4 +72,12 @@ if (!isset($_SESSION['id-user'])) {
             </div>
         </nav>
     </header>
+    <!-- BOTTOM BAR -->
+    <div id="bottom-bar">
+        <a href="./crud-book.php"><img src="../img/side-bar/picto-CRUD.svg" alt="crud"></a>
+        <a href="./register-book.php"><img src="../img/picto/bookmark.svg" alt="crud"></a>
+        <a href="./crud-user.php"><img src="../img/side-bar/picto-users.svg" alt="utilisateur"></a>
+        <a href="../front/catalog.php"><img src="../img/picto/search-lg.svg" alt="utilisateur"></a>
+    </div>
+
     <main>

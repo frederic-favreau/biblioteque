@@ -33,7 +33,7 @@
         <div id="container-group-search-nav-top">
           <form action="./front/catalog.php?placeholde" method="GET">
             <input type="search" name="search" id="input-search-nav-top" placeholder="Taper votre recherche">
-            <input type="submit" name="rechercher" value="Rechercher" id="btn-search-nav-top">
+            <input type="submit" name="rechercher" value="" id="btn-search-nav-top">
           </form>
         </div>
         <div id="container-group-btn-connexion">
@@ -62,17 +62,34 @@
 
 
 
-  <!-- ---------- SECTION - NEWS ---------- -->
+  <!-- ---------- SECTION - MAIN HERO ---------- -->
 
   <main>
+    <section id="section-main-hero" class="row-limit-size">
+      <div id="container-section-main-hero">
+        <div id="item-section-main-hero-left">
+          <h1 id="title-hero">Biblook</h1>
+          <p id="sub-title-hero">La bibliothèque qui propose des <br> livres pour Apprendre</p>
+          <div class="picto-choise-profil">
+            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun">
+            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun">
+            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun">
+          </div>
+          <a href="#" id="discover-space">Découvrir l'espace enfants</a>
+        </div>
+        <div id="item-section-main-hero-right">
+          <img src="./img/hero/fille-livre-1-removebg-preview.png" alt="Fille" class="pict-reader-hero">
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- ---------- SECTION - NEWS ---------- -->
+
+
     <section id="section-news" class="row-limit-size-full">
       <div id="container-section-news" class="row-limit-size">
-        <div id="item-section-news-left">
-          <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
-          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs pour offrir
-            des moments de lecture inoubliable !</p>
-          <a href="#" id="btn-join-reader">Débuter l'aventure</a>
-        </div>
         <div id="item-section-news-right">
           <div id="item-news-right-top">
             <div class="flip" data-index="0">
@@ -113,6 +130,14 @@
               </div>
             </div>
           </div>
+        </div>
+        <div id="item-section-news-left">
+          <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
+          <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs pour offrir
+            des moments de lecture inoubliable !</p>
+          <a href="#" id="btn-join-reader">Débuter l'aventure</a>
+        </div>
+      </div>
     </section>
 
 
@@ -191,11 +216,11 @@
               <form action="./admin/like.php?id=<?= $card['id_work'] ?>" method="POST">
 
                 <?php
-                
+
 
                 if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
                   $idUser = $_SESSION['id-user'];
-                $idBook = $card['id_work'];
+                  $idBook = $card['id_work'];
 
                   $coeurSql = $db->prepare("SELECT `work_id`,`user_id` FROM `like` WHERE`user_id` = :user_id AND `work_id` = :work_id");
 
@@ -471,7 +496,6 @@
   </main>
 
 
-
   <!-- ---------- SECTION - FOOTER ---------- -->
 
 
@@ -484,7 +508,8 @@
         </div>
         <ul>
           <div id="list-left">
-            <li><a href="#main-header" class="slow-return">Nouveautés</a></li>
+            <li><a href="#main-header" class="slow-return">Découvrir</a></li>
+            <li><a href="#section-news" class="slow-return">Nouveautés</a></li>
             <li><a href="#section-heart" class="slow-return">Coups de coeur</a></li>
             <li><a href="#section-soon-available" class="slow-return">Derniers arrivages</a></li>
             <li><a href="#section-zoom" class="slow-return">Zoom</a></li>
@@ -499,8 +524,7 @@
       </div>
       <div id="item-footer-right">
         <form action="#" id="newsletter">
-          <label for="mail" id="label-mail-newsletter">Newsletter</label>
-          <input type="mail" name="mail">
+          <input type="mail" name="mail" placeholder="Rejoinez la Newsletter">
           <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
         </form>
       </div>

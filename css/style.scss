@@ -7,6 +7,7 @@ $black: #070606;
 $footer: #043a61;
 $background: #fafafb;
 $bgModal: rgba(6, 13, 30, 0.5);
+$grayForBlue: #fefeff;
 
 *,
 ::after,
@@ -55,8 +56,6 @@ a {
 h1,
 h2 {
   font-family: "Nova Slim", sans-serif;
-  font-style: normal;
-  font-weight: 400;
   font-size: 40px;
   line-height: 38px;
   text-align: center;
@@ -69,6 +68,7 @@ h2 {
     line-height: 70px;
   }
 }
+
 p.sub-title-section {
   font-size: 20px;
   text-align: center;
@@ -229,9 +229,9 @@ p.sub-title-section {
             height: 45px;
             padding-left: 30px;
             border: none;
-            border-bottom: 1px solid $white;
+            border-bottom: 1px solid $grayForBlue;
             background-color: transparent;
-            color: $white;
+            color: $grayForBlue;
 
             &:focus {
               outline: none;
@@ -249,23 +249,22 @@ p.sub-title-section {
           @media screen and (min-width: 950px) {
             display: block;
             position: absolute;
-            right: 0;
+            right: 15px;
             top: 0;
-            width: 150px;
+            width: 30px;
+            height: 30px;
+            background-image: url("../img/picto/search-lg.svg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: transparent;
             border: none;
-            font-size: 16px;
-            font-family: "Hind Madurai", sans-serif;
-            font-weight: bold;
-            padding: 12px 0;
-            background-color: $btn-red;
-            color: #fff;
-            border-radius: 8px;
-            text-align: center;
+            cursor: pointer;
             transition: background-color 0.3s ease;
 
             &:hover {
-              background-color: $btn-red-hover;
               cursor: pointer;
+              transform: scale(1.07);
             }
           }
         }
@@ -420,6 +419,118 @@ p.sub-title-section {
   }
 }
 
+// ---------- SECTION - MAIN HERO ----------
+
+section#section-main-hero {
+  min-height: 400px;
+  height: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @media screen and (min-width: 950px) {
+    padding-top: 140px;
+  }
+
+  div#container-section-main-hero {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+
+    div#item-section-main-hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      @media screen and (min-width: 650px) {
+        width: 50%;
+      }
+
+      h1#title-hero {
+        font-size: 50px;
+        font-family: "Risque", cursive, sans-serif;
+        letter-spacing: 2px;
+        color: $black;
+        text-align: center;
+
+        @media screen and (min-width: 650px) {
+          font-size: 70px;
+        }
+
+        @media screen and (min-width: 1280px) {
+          font-size: 80px;
+        }
+      }
+
+      p#sub-title-hero {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        font-size: 20px;
+        font-weight: bold;
+        color: $black;
+        font-family: "Nova Slim", cursive, sans-serif;
+
+        @media screen and (min-width: 650px) {
+          font-size: 20px;
+        }
+
+        @media screen and (min-width: 1280px) {
+          font-size: 30px;
+        }
+      }
+
+      div.picto-choise-profil {
+        img.pict-hero-commun {
+          width: 90px;
+
+          @media screen and (min-width: 950px) {
+            width: 140px;
+          }
+
+          @media screen and (min-width: 1280px) {
+            width: 180px;
+          }
+        }
+      }
+
+      a#discover-space {
+        margin-top: 60px;
+        padding: 12px 36px;
+        font-weight: bold;
+        background: $btn-red;
+        color: $white;
+        border-radius: 8px;
+        transition: all 0.35s;
+
+        &:hover {
+          background: $btn-red-hover;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  div#item-section-main-hero-right {
+    display: none;
+    text-align: center;
+
+    img.pict-reader-hero {
+      width: 300px;
+      height: auto;
+
+      @media screen and (min-width: 1280px) {
+        width: 380px;
+      }
+    }
+
+    @media screen and (min-width: 650px) {
+      display: block;
+      width: 50%;
+    }
+  }
+}
+
 // ---------- SECTION - NEWS ----------
 
 section#section-news {
@@ -432,6 +543,7 @@ section#section-news {
 
   @media screen and (min-width: 1280px) {
     padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   div#container-section-news {
@@ -475,14 +587,8 @@ section#section-news {
           margin-bottom: 0px;
         }
 
-        // @media screen and (min-width: 950px) {
-        //   font-size: 40px;
-        //   margin-top: 50px;
-        //   margin-bottom: 0px;
-        // }
-
         @media screen and (min-width: 1350px) {
-          font-size: 70px;
+          font-size: 65px;
           line-height: 80px;
         }
       }
@@ -958,7 +1064,7 @@ li:nth-child(4) {
       position: absolute;
       top: -100px;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       width: 150px;
       height: 230px;
       object-fit: cover;
@@ -1589,13 +1695,14 @@ li:nth-child(4) {
   }
 
   div#iframe-google {
-    width: 90%;
+    width: fit-content;
     margin: 30px auto;
 
     iframe {
       width: 100%;
       max-width: 1200px;
       height: 450px;
+      margin: 0 auto;
     }
 
     #container-info-location {
@@ -1644,7 +1751,8 @@ li:nth-child(4) {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
   #container-footer-top {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1753,25 +1861,13 @@ li:nth-child(4) {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         text-align: center;
         margin-bottom: 35px;
 
         @media screen and (min-width: 950px) {
           flex-direction: row;
-        }
-
-        label#label-mail-newsletter {
-          color: $white;
-          display: block;
-          width: 100%;
-          text-align: center;
-
-          @media screen and (min-width: 950px) {
-            text-align: start;
-            padding-left: 80px;
-          }
         }
 
         input {

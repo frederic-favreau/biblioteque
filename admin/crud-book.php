@@ -14,15 +14,23 @@ include_once '../admin/header-main.php';
             <div id="box-crud-book" class="box-dashboard">
 
                 <div class="search-add-crud-book">
-                    <h3 class="h3-dashboard">Les livres de la bibliothèque Biblook</h3>
+                    <!-- <h6 class="h3-dashboard" id="h6-center">Les livres de la bibliothèque Biblook</h6> -->
                     <div class="search-crud-input">
+
                         <form action="" method="post">
-                            <input type="text" id="input-seach-book" class="input-search" name="text">
-                            <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value="Rechercher"></input>
-                            <button type="button" id="btn-all-detail">Vue détails</button>
+                            <p class="title-sticky-crud">Tous les livres de la bibliothèque</p>
+                            <div class="group-search-standard">
+                                <input type="text" id="input-seach-book" class="input-search" name="text">
+                                <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value="R"></input>
+                            </div>
+                            <div class="group-tool-standard">
+                                <button type="button" id="btn-all-detail">Vue détails</button>
+                                <a href="./insert-book.php" type="button" id="btn-add-book" class="btn-add">+</a>
+                            </div>
+
                         </form>
                     </div>
-                    <a href="./LCCN.php" type="button" id="btn-add-book" class="btn-add">Ajouter un livre</a>
+
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">

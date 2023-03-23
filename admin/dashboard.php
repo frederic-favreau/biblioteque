@@ -89,10 +89,6 @@
                                             }
                                     ?>
 
-
-
-
-
                                  <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
                                  </div>
                              </li>
@@ -109,15 +105,9 @@
                  <div id="box-whish-list" class="box-dashboard">
                      <h3 class="h3-dashboard">Mes livres en favoris</h3>
 
-
-                     
-
-                     <form action="../admin/deleteAllLikes.php" method="POST">
+                     <!-- <form action="../admin/deleteAllLikes.php" method="POST">
                          <input type="submit" class="delete-favorit-book" value="Suprimer tout mes Likes">
-                     </form>
-
-
-
+                     </form> -->
 
                      <hr>
 
@@ -157,7 +147,7 @@
                             $likeSql->bindParam('id_user', $idUser, PDO::PARAM_STR);
 
                             $likeSql->execute();
-                            
+
                             while ($like = $likeSql->fetch(PDO::FETCH_ASSOC)) {
                                 $mesLikes = true;
 
@@ -186,19 +176,21 @@
                                  </div>
                                  <div class="container-info-loan">
                                      <p class="info-disponibility"><?= $disponible ?></p>
-                                     <a href="../front/book-detail.php?id=<?= $workId ?>" class="btn-format-standard">Emprunter maintenant</a>
                                      <form action="../admin/delete-like.php?id=<?= $like['id_work'] ?>" method="POST">
                                          <input type="submit" class="delete-favorit-book" value="">
                                      </form>
+                                     <a href="../front/book-detail.php?id=<?= $workId ?>" class="btn-format-standard">Emprunter maintenant</a>
+
 
                                  </div>
                              </li>
                          <?php
-                            }if($mesLikes == false){?>
+                            }
+                            if ($mesLikes == false) { ?>
 
-                                <p>Vous n'avez pas de livre en favorit</p>
-                                
-                                <?php }
+                             <p>Vous n'avez pas de livre en favorit</p>
+
+                         <?php }
 
                             ?>
                      </ul>
@@ -254,8 +246,8 @@
                      <ul>
 
                          <?php
-                $histoire = false;
-                $historiqueSql = $db->prepare("SELECT `title`,`pict`, `id_work`, `loan`.`id_loan`,
+                            $histoire = false;
+                            $historiqueSql = $db->prepare("SELECT `title`,`pict`, `id_work`, `loan`.`id_loan`,
                  DATE_FORMAT(`loan`.`date_return_loan`, '%d/%m/%Y') AS `retour`,
                   GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors`,
                   DATEDIFF( `loan`.`theoretical_date`, :date) AS `nbJours`
@@ -283,7 +275,7 @@
                             $historiqueSql->execute();
 
 
-                            
+
                             while ($historique = $historiqueSql->fetch(PDO::FETCH_ASSOC)) {
                                 $histoire = true;
                             ?>
@@ -306,11 +298,12 @@
                                      <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
                                  </div>
                              </li>
-                         <?php }if($histoire == false){?>
+                         <?php }
+                            if ($histoire == false) { ?>
 
-<p>Vous n'avez jamais emprunté de livre</p>
+                             <p>Vous n'avez jamais emprunté de livre</p>
 
-<?php } ?>
+                         <?php } ?>
                      </ul>
                  </div>
              </div>
