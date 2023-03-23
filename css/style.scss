@@ -156,14 +156,11 @@ p.sub-title-section {
     transition: background-color 0.3s ease-in-out,
       border-bottom 0.3s ease-in-out;
     background: $main-blue;
-
-    @media screen and (min-width: 950px) {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 99;
-      width: 100%;
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
 
     &.anim-nav {
       box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
@@ -221,11 +218,11 @@ p.sub-title-section {
             color: $white;
           }
 
-          @media screen and (min-width: 950px) {
+          @media screen and (min-width: 650px) {
             display: block;
             position: relative;
             font-size: 18px;
-            width: 400px;
+            width: 300px;
             height: 45px;
             padding-left: 30px;
             border: none;
@@ -246,7 +243,7 @@ p.sub-title-section {
         input#btn-search-nav-top {
           display: none;
 
-          @media screen and (min-width: 950px) {
+          @media screen and (min-width: 650px) {
             display: block;
             position: absolute;
             right: 15px;
@@ -426,7 +423,7 @@ p.sub-title-section {
 section#section-main-hero {
   min-height: 400px;
   height: 100%;
-  padding-top: 40px;
+  padding-top: 110px;
   padding-bottom: 40px;
 
   @media screen and (min-width: 950px) {

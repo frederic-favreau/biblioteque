@@ -746,7 +746,7 @@ section#loan-register {
           flex-wrap: wrap;
           justify-content: space-between;
           align-items: center;
-          width: 100%;
+          width: 90%;
           min-height: 120px;
           padding-top: 20px;
           padding-bottom: 20px;
@@ -778,12 +778,16 @@ section#loan-register {
           li.btn-option-crud {
             position: absolute;
             top: 2px;
-            right: 10px;
+            right: 0px;
             font-size: 30px;
             padding: 2px 8px;
             width: 30px;
             height: fit-content;
             border-radius: 8px;
+
+            @media screen and (min-width: 500px) {
+              right: -60px;
+            }
 
             &:hover {
               cursor: pointer;
@@ -797,8 +801,8 @@ section#loan-register {
 
             div.box-option-crud {
               position: absolute;
-              right: 120px;
-              top: 0;
+              right: 40px;
+              top: 20px;
               width: 220px;
               height: fit-content;
               padding: 16px;
@@ -1418,6 +1422,7 @@ div#confirmed-error {
               }
             }
           }
+          
           li.item-title-crud {
             position: relative;
             color: $main-blue;
@@ -1441,7 +1446,7 @@ div#confirmed-error {
 
           li.btn-option-crud {
             position: absolute;
-            right: -20px;
+            right: -40px;
             top: -20px;
             font-size: 30px;
             padding: 2px 8px;

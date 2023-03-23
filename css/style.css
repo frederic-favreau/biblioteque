@@ -136,15 +136,11 @@ p.sub-title-section {
 #main-header #main-nav-bar {
   transition: background-color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
   background: #0868ae;
-}
-@media screen and (min-width: 950px) {
-  #main-header #main-nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    width: 100%;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
 }
 #main-header #main-nav-bar.anim-nav {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -200,12 +196,12 @@ p.sub-title-section {
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top::placeholder {
   color: #fff;
 }
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 650px) {
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
     display: block;
     position: relative;
     font-size: 18px;
-    width: 400px;
+    width: 300px;
     height: 45px;
     padding-left: 30px;
     border: none;
@@ -225,7 +221,7 @@ p.sub-title-section {
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top input#btn-search-nav-top {
   display: none;
 }
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 650px) {
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top input#btn-search-nav-top {
     display: block;
     position: absolute;
@@ -386,7 +382,7 @@ p.sub-title-section {
 section#section-main-hero {
   min-height: 400px;
   height: 100%;
-  padding-top: 40px;
+  padding-top: 110px;
   padding-bottom: 40px;
 }
 @media screen and (min-width: 950px) {
