@@ -69,7 +69,8 @@
       <div id="container-section-main-hero">
         <div id="item-section-main-hero-left">
           <h1 id="title-hero">Biblook</h1>
-          <p id="sub-title-hero">La bibliothèque qui propose des <br> livres pour Apprendre</p>
+          <p id="sub-title-hero">La bibliothèque qui propose des <br> livres pour <span class="word-animation-hero">Apprendre</span></p>
+          apprendre, imaginer, rêver, découvrir, s'évader
           <div class="picto-choise-profil">
             <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun">
             <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun">
@@ -83,7 +84,7 @@
       </div>
     </section>
 
-    
+
 
     <!-- ---------- SECTION - NEWS ---------- -->
 
@@ -142,13 +143,13 @@
 
 
 
-     <!-- ---------- SECTION - HEART ---------- -->
+    <!-- ---------- SECTION - HEART ---------- -->
 
-     <section id="section-heart" class="row-limit-size">
+    <section id="section-heart" class="row-limit-size">
       <h2>Coups de coeur</h2>
       <p class="sub-title-section" id="sub-title-heart">Nos lecteurs partagent leur coups de coeurs</p>
       <ul class="top">
-      <?php
+        <?php
         $sql_heart = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
         $req_heart =  $db->query($sql_heart);
         $i = 1;
@@ -392,16 +393,16 @@
           <div id="item-text" class="item-text-commun">
             <h4>Ethan Siou</h4>
             <h5>Etudiant en médecine, adhérent depuis deux ans</h5>
-            <p><span>❝</span> Etudiante en droit, une amie m’a recommandé cette bibliothèque.
-              J’apprends beaucoup grâce aux livres, cela m’aide pour mes études.
-              Tout est bien organisé, les ouvrages m’aident à m’instruire.
-              Bon accueil. <span>❞</span></p>
+            <p><span>❝</span> “Avec des cours intensifs, je me ressource chez Biblook dans un lieu calme et apaisant.
+              J’approndis mes connaissance en médecine grâce aux livres que j’emprunte à la bibliothèque.
+              Les délais sont respectables, les étudiants sont valorisés avec la carte de fidélité.
+              Une bibliothèque chaleureuse ou il fait bon d’étudier ”. <span>❞</span></p>
           </div>
         </div>
         <div id="item-top-zoom-1" class="pict-right">
           <div id="item-text" class="item-text-commun">
             <h4>Marilou Balu</h4>
-            <h5>Retraité, adhérent chez Biblook depuis 5 ans</h5>
+            <h5>Mère au foyer, maman de deux enfants</h5>
             <p><span>❝</span> J’accompagne mes deux enfants aux ateliers lecture organisé et encadré par une
               bénévole tous les mercredis après-midi, c’est devenu une activité principale, ils se
               régalent. Les bénévoles sont très humains, développe la curiosité des enfants,

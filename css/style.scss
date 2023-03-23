@@ -828,13 +828,12 @@ section#section-news {
 
   p#sub-title-heart {
     margin-top: 10px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     text-align: center;
   }
 
   ul.top {
     text-align: center;
-    margin-top: 130px;
     list-style-type: none;
 
     @media screen and (min-width: 950px) {
@@ -843,114 +842,154 @@ section#section-news {
     }
 
     li {
-      padding: 60px;
+      width: 95%;
+      margin-bottom: 70px;
 
-      @media screen and (min-width: 650px) {
+      @media screen and (min-width: 950px) {
         width: 100%;
         margin-right: -100px;
+        margin-bottom: 100px;
         margin-left: -30px;
         padding: 0;
-        transition: all 0.5s ease;
+        padding: 60px;
       }
 
       @media screen and (min-width: 950px) {
+        width: 57%;
+        transition: all 0.5s ease;
+      }
+
+      @media screen and (min-width: 1400px) {
         width: 33%;
-        transition: all 0.5s ease;
+        margin-bottom: 0;
       }
 
-      // @media screen and (min-width: 950px) {
-      //   margin-right: 0px;
-      //   padding: 0;
-      //   transition: all 0.5s ease;
-      // }
+      a {
+        font-weight: bolder;
+        font-size: 230px;
+        font-family: "Risque", cursive, sans-serif;
+        margin-bottom: 20px;
+
+        img {
+          width: 130px;
+          height: 250px;
+          object-fit: cover;
+          border-radius: 8px;
+          margin-left: -15px;
+
+          @media screen and (min-width: 950px) {
+            width: 180px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-left: -50px;
+          }
+        }
+      }
     }
 
-    .animated-card {
-      position: relative;
-      left: 0;
-      opacity: 0;
+    @media screen and (min-width: 950px) {
+      .animated-card {
+        position: relative;
+        left: 0;
+        opacity: 0;
+      }
     }
 
-    a {
-      font-weight: bolder;
-      line-height: 155px;
-      font-size: 300px;
-      font-family: "Risque", cursive, sans-serif;
-      margin-bottom: 20px;
+    li:nth-child(1) {
+      margin-bottom: 130px;
 
-      img {
-        width: 180px;
-        height: 280px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-left: -50px;
+      @media screen and (min-width: 850px) {
+        top: -40px;
+      }
+
+      @media screen and (min-width: 1400px) {
+        top: -40px;
+        left: -45px;
+      }
+
+
+
+      a {
+        color: #ff6b38;
+        position: relative;
+        left: -20%;
+        top: -8px;
+
+        @media screen and (min-width: 500px) {
+          left: -110px;
+        }
+
+        @media screen and (min-width: 950px) {
+          left: -100px;
+          top: 40px;
+          margin-right: -100px;
+        }
+
+        img {
+          position: absolute;
+          top: 20px;
+          transform-origin: bottom left;
+          transform: rotate(-5deg);
+          width: 150px;
+          height: 260px;
+          margin-left: -0px;
+
+          @media screen and (min-width: 950px) {
+            position: absolute;
+            top: 0px;
+            width: 200px;
+            height: 300px;
+            margin-right: 35px;
+          }
+        }
+      }
+    }
+
+    li:nth-child(2) {
+      a {
+        color: $main-blue;
+      }
+    }
+
+    li:nth-child(3) {
+      a {
+        color: #f9b017;
+      }
+    }
+
+    li:nth-child(4) {
+      a {
+        color: $footer;
       }
     }
   }
 
-  li:nth-child(1) {
-    a {
-      color: #ff6b38;
-      position: relative;
-      left: -15%;
-      top: 0;
+  #btn-show-heart {
+    display: block;
+    width: 243px;
+    margin: 70px auto 0;
+    text-align: center;
+    padding: 12px 24px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    background: $main-blue;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    color: $white;
+    transition: all 0.3s ease;
 
-      @media screen and (min-width: 950px) {
-      }
-      left: -120px;
-      top: 100px;
-      margin-right: -100px;
+    @media screen and (min-width: 950px) {
+      width: 343px;
+      margin-top: -100px;
     }
 
-    img {
-      position: absolute;
-      top: 0px;
-      transform-origin: bottom left;
-      transform: rotate(-5deg);
-      width: 200px;
-      height: 300px;
-      margin-left: -10px;
+    &:hover {
+      opacity: 0.9;
+      transform: scale(1.1);
     }
-  }
-}
-
-li:nth-child(2) {
-  a {
-    color: $main-blue;
-  }
-}
-
-li:nth-child(3) {
-  a {
-    color: $main-blue;
-  }
-}
-
-li:nth-child(4) {
-  a {
-    color: $main-blue;
-  }
-}
-
-#btn-show-heart {
-  display: block;
-  width: 343px;
-  margin: 70px auto 0;
-  text-align: center;
-  padding: 12px 24px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  background: $main-blue;
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  border-radius: 8px;
-  color: $white;
-  transition: all 0.3s ease;
-
-  &:hover {
-    opacity: 0.9;
-    transform: scale(1.1);
   }
 }
 
@@ -1683,7 +1722,6 @@ li:nth-child(4) {
 
 #section-location {
   position: relative;
-  padding-top: 0px;
   padding-bottom: 180px;
   height: fit-content;
 
@@ -1692,8 +1730,13 @@ li:nth-child(4) {
   }
 
   div#iframe-google {
-    width: fit-content;
-    margin: 30px auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 950px) {
+      width: fit-content;
+      margin: 30px auto;
+    }
 
     iframe {
       width: 100%;
@@ -1707,7 +1750,7 @@ li:nth-child(4) {
       max-width: 1200px;
       height: fit-content;
       padding: 30px;
-      margin: -10px 0 auto;
+      margin: -10px auto 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -1868,7 +1911,7 @@ li:nth-child(4) {
         }
 
         input {
-          width: 250px;
+          width: 212px;
           height: 36px;
           margin-top: 5px;
           border-radius: 8px;
