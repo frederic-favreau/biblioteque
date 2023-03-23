@@ -1,3 +1,6 @@
+//
+//
+// CYCLE CHANGE WORD SUB-TITLE HERO
 const words = ['imaginer', 'rêver', 'découvrir', "s'évader"];
 const animatedWord = document.getElementById('animated-word');
 let currentIndex = 0;
@@ -15,20 +18,43 @@ function changeWord() {
 }
 
 setInterval(changeWord, 3000);
+
 //
 //
-//
-const images = ['fille-livre-1.jpg', 'fille-livre-2.jpg', 'fille-livre-3.jpg'];
+// CYCLE CHANGE PICT HERO
+const images = {
+  fille: ['fille-livre-1.jpg', 'fille-livre-2.jpg', 'fille-livre-3.jpg'],
+  ado: ['ado-livre-1.jpg', 'ado-livre-2.jpg', 'ado-livre-3.jpg'],
+  senior: ['senior-livre-1.jpg', 'senior-livre-2.jpg', 'senior-livre-3.jpg']
+};
+
 const pictReaderHero = document.querySelector('.pict-reader-hero');
+const pictHeroFille = document.getElementById('pict-hero-fille');
+const pictHeroAdo = document.getElementById('pict-hero-ado');
+const pictHeroAdulte = document.getElementById('pict-hero-adulte');
+
+let currentImages = images.fille;
 let imageIndex = 0;
 
 function changeImage() {
-  imageIndex = (imageIndex + 1) % images.length;
-  pictReaderHero.setAttribute('src', `./img/hero/${images[imageIndex]}`);
+  imageIndex = (imageIndex + 1) % currentImages.length;
+  pictReaderHero.setAttribute('src', `./img/hero/${currentImages[imageIndex]}`);
   pictReaderHero.setAttribute('alt', `Fille ${imageIndex + 1}`);
 }
 
+function updateImages(category) {
+  currentImages = images[category];
+  imageIndex = -1;
+  changeImage();
+}
+
+pictHeroFille.addEventListener('click', () => updateImages('fille'));
+pictHeroAdo.addEventListener('click', () => updateImages('ado'));
+pictHeroAdulte.addEventListener('click', () => updateImages('senior'));
+
 setInterval(changeImage, 5000);
+
+
 
 
 

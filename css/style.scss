@@ -539,6 +539,16 @@ section#section-main-hero {
           @media screen and (min-width: 1280px) {
             width: 180px;
           }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        img#pict-hero-fille::before {
+          content: url(../img/hero/cursor-click-02.jpg);
+          width: 30px;
+          height: 30px;
         }
       }
 

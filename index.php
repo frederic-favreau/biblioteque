@@ -75,7 +75,7 @@
             <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-ado">
             <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-adulte">
           </div>
-          <a href="#" id="discover-space">Découvrir l'espace enfants</a>
+          <a href="#" id="discover-space">Découvrir le catalogue</a>
         </div>
         <div id="item-section-main-hero-right">
           <img src="./img/hero/fille-livre-1.jpg" alt="Fille" class="pict-reader-hero">

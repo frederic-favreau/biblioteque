@@ -504,6 +504,14 @@ section#section-main-hero div#container-section-main-hero div#item-section-main-
     width: 180px;
   }
 }
+section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil img.pict-hero-commun:hover {
+  cursor: pointer;
+}
+section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil img#pict-hero-fille::before {
+  content: url(../img/hero/cursor-click-02.jpg);
+  width: 30px;
+  height: 30px;
+}
 section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left a#discover-space {
   margin-top: 60px;
   padding: 12px 36px;
