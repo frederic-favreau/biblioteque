@@ -83,9 +83,7 @@
       </div>
     </section>
 
-
-
-
+    
 
     <!-- ---------- SECTION - NEWS ---------- -->
 
@@ -496,7 +494,6 @@
       </div>
     </section>
   </main>
-
 
 
   <!-- ---------- SECTION - FOOTER ---------- -->
