@@ -370,6 +370,8 @@ p.sub-title-section {
   color: #fff;
   margin-left: 2px;
   float: left;
+  padding-left: 10px;
+  padding: 5px 0 5px 10px;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li:last-of-type a:hover {
   color: #ff5e38;

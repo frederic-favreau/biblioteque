@@ -728,6 +728,7 @@ section#dashboard-page-profil {
 // ----------  SECTION lOAN BOOK REGISTER ----------
 
 section#loan-register {
+  padding: 30px 30px 0;
   div#container-list-book-crud {
     ul.list-book-crud {
       li.item-book-crud {
@@ -1180,8 +1181,10 @@ p.info-succes-notif > strong {
   line-height: 80px;
   color: $white;
 }
+
+
 section#dashboard-page-book-crud {
-  padding-top: 20px;
+  padding: 30px 30px 0px;
 
   @media screen and (min-width: 950px) {
     padding-top: 40px;
