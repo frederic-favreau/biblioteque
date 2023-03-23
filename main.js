@@ -1,5 +1,26 @@
 //
 //
+// Show and hide filter box for catalog
+
+const showFilters = document.querySelectorAll(".show-filter");
+
+showFilters.forEach((filter) => {
+  filter.addEventListener("click", () => {
+    const itemFilter = filter.parentElement;
+    itemFilter.classList.toggle("active");
+
+    const listFilter = itemFilter.querySelector(".list-filter");
+    listFilter.classList.toggle("active");
+
+    const toggleSymbol = filter.querySelector(".toggle-symbol");
+    toggleSymbol.textContent = listFilter.classList.contains("active")
+      ? "-"
+      : "+";
+  });
+});
+
+//
+//
 // CYCLE CHANGE WORD SUB-TITLE HERO
 const words = ['imaginer', 'rêver', 'découvrir', "s'évader"];
 const animatedWord = document.getElementById('animated-word');
@@ -53,12 +74,6 @@ pictHeroAdo.addEventListener('click', () => updateImages('ado'));
 pictHeroAdulte.addEventListener('click', () => updateImages('senior'));
 
 setInterval(changeImage, 5000);
-
-
-
-
-
-
 
 //
 //
@@ -156,27 +171,6 @@ $(document).ready(function () {
         1000
       ); // Durée de l'animation en millisecondes
     }
-  });
-});
-
-//
-//
-// Show and hide filter box for catalog
-
-const showFilters = document.querySelectorAll(".show-filter");
-
-showFilters.forEach((filter) => {
-  filter.addEventListener("click", () => {
-    const itemFilter = filter.parentElement;
-    itemFilter.classList.toggle("active");
-
-    const listFilter = itemFilter.querySelector(".list-filter");
-    listFilter.classList.toggle("active");
-
-    const toggleSymbol = filter.querySelector(".toggle-symbol");
-    toggleSymbol.textContent = listFilter.classList.contains("active")
-      ? "-"
-      : "+";
   });
 });
 
