@@ -65,21 +65,20 @@
   <!-- ---------- SECTION - MAIN HERO ---------- -->
 
   <main>
-    <section id="section-main-hero" class="row-limit-size">
-      <div id="container-section-main-hero">
+    <section id="section-main-hero" class="row-limit-size-full">
+      <div id="container-section-main-hero" class="row-limit-size-full">
         <div id="item-section-main-hero-left">
           <h1 id="title-hero">Biblook</h1>
-          <p id="sub-title-hero">La bibliothèque qui propose des <br> livres pour <span class="word-animation-hero">Apprendre</span></p>
-          apprendre, imaginer, rêver, découvrir, s'évader
+          <p id="sub-title-hero">La bibliothèque qui propose <br> des livres pour <span class="animated-word smoke-effect" id="animated-word">Apprendre</span></p>
           <div class="picto-choise-profil">
-            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun">
-            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun">
-            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun">
+            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-fille">
+            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-ado">
+            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-adulte">
           </div>
           <a href="#" id="discover-space">Découvrir l'espace enfants</a>
         </div>
         <div id="item-section-main-hero-right">
-          <img src="./img/hero/fille-livre-1-removebg-preview.png" alt="Fille" class="pict-reader-hero">
+          <img src="./img/hero/fille-livre-1.jpg" alt="Fille" class="pict-reader-hero">
         </div>
       </div>
     </section>

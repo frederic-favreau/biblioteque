@@ -1,3 +1,39 @@
+const words = ['imaginer', 'rêver', 'découvrir', "s'évader"];
+const animatedWord = document.getElementById('animated-word');
+let currentIndex = 0;
+
+function changeWord() {
+    animatedWord.classList.remove('smoke-effect');
+    animatedWord.style.opacity = 0;
+
+    setTimeout(() => {
+        currentIndex = (currentIndex + 1) % words.length;
+        animatedWord.textContent = words[currentIndex];
+        animatedWord.style.opacity = 1;
+        animatedWord.classList.add('smoke-effect');
+    }, 300);
+}
+
+setInterval(changeWord, 3000);
+//
+//
+//
+const images = ['fille-livre-1.jpg', 'fille-livre-2.jpg', 'fille-livre-3.jpg'];
+const pictReaderHero = document.querySelector('.pict-reader-hero');
+let imageIndex = 0;
+
+function changeImage() {
+  imageIndex = (imageIndex + 1) % images.length;
+  pictReaderHero.setAttribute('src', `./img/hero/${images[imageIndex]}`);
+  pictReaderHero.setAttribute('alt', `Fille ${imageIndex + 1}`);
+}
+
+setInterval(changeImage, 5000);
+
+
+
+
+
 //
 //
 // ROTATION CYCLE CARDS SECTION NEWS
