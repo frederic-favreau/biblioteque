@@ -142,6 +142,31 @@
 
 
 
+     <!-- ---------- SECTION - HEART ---------- -->
+
+     <section id="section-heart" class="row-limit-size">
+      <h2>Coups de coeur</h2>
+      <p class="sub-title-section" id="sub-title-heart">Nos lecteurs partagent leur coups de coeurs</p>
+      <ul class="top">
+      <?php
+        $sql_heart = "SELECT `id_work`,`pict`,`title` FROM `work` ORDER BY `id_work` DESC LIMIT 4";
+        $req_heart =  $db->query($sql_heart);
+        $i = 1;
+        while ($heart = $req_heart->fetch(PDO::FETCH_ASSOC)) {
+          $card_class = 'animated-card';
+        ?>
+
+          <li class="<?= $card_class ?>"><a href="./front/book-detail.php?id=<?= $heart['id_work'] ?>"><?= $i ?><img src="./img/books/<?= $heart['pict'] ?>" alt="<?= $heart['title'] ?>"></a></li>
+
+        <?php
+          $i++;
+        } ?>
+      </ul>
+
+      <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
+    </section>
+
+
 
     <!-- ---------- SECTION - lAST ARRIVAL ---------- -->
 

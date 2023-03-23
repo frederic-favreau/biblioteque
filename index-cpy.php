@@ -1,7 +1,7 @@
  <!-- ---------- SECTION - HEART ---------- -->
 
 
-    <!-- <section id="section-heart" class="row-limit-size">
+    <section id="section-heart" class="row-limit-size">
       <h2>Coups de coeur</h2>
       <p class="sub-title-section" id="sub-title-heart">Nos lecteurs partagent leur coups de coeurs</p>
       <ul class="top">
@@ -21,7 +21,7 @@
       </ul>
 
       <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
-    </section> -->
+    </section>
 
 
     <!-- ---------- SECTION - lAST ARRIVAL ---------- -->

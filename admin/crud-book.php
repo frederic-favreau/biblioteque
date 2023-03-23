@@ -30,7 +30,7 @@ include_once '../admin/header-main.php';
 
                         </form>
                     </div>
-
+                    <a href="./LCCN.php" type="button" id="btn-add-book" class="btn-add">Ajouter un livre</a>
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">
