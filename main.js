@@ -21,21 +21,61 @@ showFilters.forEach((filter) => {
 
 //
 //
+// SHOW AND HIDE SEARCH BARD MOBILE VIEW
+document.addEventListener("DOMContentLoaded", function () {
+  const showImgBzrBtn = document.getElementById("show-search-bar");
+  const leftArrowBtn = document.getElementById("left-arrow");
+  const arrowContainer = document.getElementById("arrow-container");
+  const containerGroupLogo = document.getElementById("container-group-logo");
+  const containerGroupSearchNavTop = document.getElementById(
+    "container-group-search-nav-top"
+  );
+  const containerBoxindexLogout = document.getElementById(
+    "container-box-index-logout"
+  );
+
+  showImgBzrBtn.addEventListener("click", function () {
+    if (window.innerWidth <= 650) {
+      arrowContainer.style.display = "block";
+      containerGroupLogo.style.display = "none";
+      containerGroupSearchNavTop.style.width = "95%";
+      containerGroupSearchNavTop.style.display = "block";
+      showImgBzrBtn.style.display = "none";
+      containerBoxindexLogout.style.display = "none";
+      containerGroupSearchNavTop.style.transform = "scaleY(1)";
+      containerGroupSearchNavTop.style.opacity = "1";
+    }
+  });
+
+  leftArrowBtn.addEventListener("click", function () {
+    if (window.innerWidth <= 650) {
+      arrowContainer.style.display = "none";
+      containerGroupLogo.style.display = "flex";
+      containerGroupSearchNavTop.style.width = "auto";
+      containerGroupSearchNavTop.style.display = "none";
+      showImgBzrBtn.style.display = "block";
+      containerBoxindexLogout.style.display = "block";
+    }
+  });
+});
+
+//
+//
 // CYCLE CHANGE WORD SUB-TITLE HERO
-const words = ['imaginer', 'rêver', 'découvrir', "s'évader"];
-const animatedWord = document.getElementById('animated-word');
+const words = ["imaginer", "rêver", "découvrir", "s'évader"];
+const animatedWord = document.getElementById("animated-word");
 let currentIndex = 0;
 
 function changeWord() {
-    animatedWord.classList.remove('smoke-effect');
-    animatedWord.style.opacity = 0;
+  animatedWord.classList.remove("smoke-effect");
+  animatedWord.style.opacity = 0;
 
-    setTimeout(() => {
-        currentIndex = (currentIndex + 1) % words.length;
-        animatedWord.textContent = words[currentIndex];
-        animatedWord.style.opacity = 1;
-        animatedWord.classList.add('smoke-effect');
-    }, 300);
+  setTimeout(() => {
+    currentIndex = (currentIndex + 1) % words.length;
+    animatedWord.textContent = words[currentIndex];
+    animatedWord.style.opacity = 1;
+    animatedWord.classList.add("smoke-effect");
+  }, 300);
 }
 
 setInterval(changeWord, 3000);
@@ -44,23 +84,23 @@ setInterval(changeWord, 3000);
 //
 // CYCLE CHANGE PICT HERO
 const images = {
-  fille: ['fille-livre-1.jpg', 'fille-livre-2.jpg', 'fille-livre-3.jpg'],
-  ado: ['ado-livre-1.jpg', 'ado-livre-2.jpg', 'ado-livre-3.jpg'],
-  senior: ['senior-livre-1.jpg', 'senior-livre-2.jpg', 'senior-livre-3.jpg']
+  fille: ["fille-livre-1.jpg", "fille-livre-2.jpg", "fille-livre-3.jpg"],
+  ado: ["ado-livre-1.jpg", "ado-livre-2.jpg", "ado-livre-3.jpg"],
+  senior: ["senior-livre-1.jpg", "senior-livre-2.jpg", "senior-livre-3.jpg"],
 };
 
-const pictReaderHero = document.querySelector('.pict-reader-hero');
-const pictHeroFille = document.getElementById('pict-hero-fille');
-const pictHeroAdo = document.getElementById('pict-hero-ado');
-const pictHeroAdulte = document.getElementById('pict-hero-adulte');
+const pictReaderHero = document.querySelector(".pict-reader-hero");
+const pictHeroFille = document.getElementById("pict-hero-fille");
+const pictHeroAdo = document.getElementById("pict-hero-ado");
+const pictHeroAdulte = document.getElementById("pict-hero-adulte");
 
 let currentImages = images.fille;
 let imageIndex = 0;
 
 function changeImage() {
   imageIndex = (imageIndex + 1) % currentImages.length;
-  pictReaderHero.setAttribute('src', `./img/hero/${currentImages[imageIndex]}`);
-  pictReaderHero.setAttribute('alt', `Fille ${imageIndex + 1}`);
+  pictReaderHero.setAttribute("src", `./img/hero/${currentImages[imageIndex]}`);
+  pictReaderHero.setAttribute("alt", `Fille ${imageIndex + 1}`);
 }
 
 function updateImages(category) {
@@ -69,11 +109,11 @@ function updateImages(category) {
   changeImage();
 }
 
-pictHeroFille.addEventListener('click', () => updateImages('fille'));
-pictHeroAdo.addEventListener('click', () => updateImages('ado'));
-pictHeroAdulte.addEventListener('click', () => updateImages('senior'));
+pictHeroFille.addEventListener("click", () => updateImages("fille"));
+pictHeroAdo.addEventListener("click", () => updateImages("ado"));
+pictHeroAdulte.addEventListener("click", () => updateImages("senior"));
 
-setInterval(changeImage, 5000);
+setInterval(changeImage, 3000);
 
 //
 //

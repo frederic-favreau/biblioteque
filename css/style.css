@@ -148,7 +148,7 @@ p.sub-title-section {
   position: relative;
   width: 100%;
   height: 72px;
-  padding: 10px 27px 10px 10px;
+  padding: 10px 10px 10px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,11 +183,38 @@ p.sub-title-section {
     font-size: 36px;
   }
 }
+@media screen and (min-width: 650px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-logo a.link-page-home #nav-logo-text {
+    font-size: 36px;
+  }
+}
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top {
+  display: none;
   position: relative;
+  width: 95%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 650px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top {
+    display: block;
+    width: 300px;
+  }
+}
+@media screen and (min-width: 950px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top {
+    width: 600px;
+  }
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
-  display: none;
+  position: relative;
+  font-size: 18px;
+  width: 90%;
+  height: 45px;
+  border: none;
+  border-bottom: 1px solid #fefeff;
+  background-color: transparent;
+  color: #fefeff;
+  margin: 0 auto;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top::-moz-placeholder {
   color: #fff;
@@ -195,21 +222,13 @@ p.sub-title-section {
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top::placeholder {
   color: #fff;
 }
+#main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top:focus {
+  outline: none;
+}
 @media screen and (min-width: 650px) {
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
-    display: block;
-    position: relative;
-    font-size: 18px;
     width: 300px;
-    height: 45px;
     padding-left: 30px;
-    border: none;
-    border-bottom: 1px solid #fefeff;
-    background-color: transparent;
-    color: #fefeff;
-  }
-  #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top:focus {
-    outline: none;
   }
 }
 @media screen and (min-width: 1100px) {
@@ -218,54 +237,59 @@ p.sub-title-section {
   }
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top input#btn-search-nav-top {
-  display: none;
+  display: block;
+  position: absolute;
+  right: -8px;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/picto/search-lg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 @media screen and (min-width: 650px) {
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top input#btn-search-nav-top {
-    display: block;
     position: absolute;
-    right: 15px;
-    top: 0;
-    width: 30px;
-    height: 30px;
-    background-image: url("../img/picto/search-lg.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    right: 30px;
+    top: 5px;
   }
-  #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top input#btn-search-nav-top:hover {
-    cursor: pointer;
-    transform: scale(1.07);
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top input#btn-search-nav-top:hover {
+  cursor: pointer;
+  transform: scale(1.07);
+}
+#main-header #main-nav-bar #container-nav-bar div#btn-responsive-search {
+  position: absolute;
+  right: 60px;
+}
+@media screen and (min-width: 500px) {
+  #main-header #main-nav-bar #container-nav-bar div#btn-responsive-search {
+    position: absolute;
+    right: 70px;
   }
+}
+@media screen and (min-width: 650px) {
+  #main-header #main-nav-bar #container-nav-bar div#btn-responsive-search {
+    display: none;
+  }
+}
+#main-header #main-nav-bar #container-nav-bar div#btn-responsive-search button#show-search-bar {
+  width: 30px;
+  height: 30px;
+  background-color: #0868ae;
+  border: none;
+}
+#main-header #main-nav-bar #container-nav-bar div#btn-responsive-search button#show-search-bar:hover {
+  cursor: pointer;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion {
   position: relative;
   margin-left: auto;
-}
-#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger {
-  padding: 12px 24px;
-  color: #fff;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-content: center;
-  border-radius: 8px;
-}
-#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger .menu-burger-pipe {
-  width: 80%;
-  height: 10%;
-  background-color: #fff;
-  margin: 0 auto;
-}
-@media screen and (min-width: 950px) {
-  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up #menu-burger {
-    display: none;
-  }
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span {
   display: none;
@@ -376,6 +400,24 @@ p.sub-title-section {
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion div#container-box-index-logout div#box-index-logout ul li a:hover {
   color: #043a61;
+}
+#main-header #main-nav-bar #container-nav-bar #arrow-container {
+  display: none;
+  margin-right: 1rem;
+}
+@media screen and (min-width: 650px) {
+  #main-header #main-nav-bar #container-nav-bar #arrow-container {
+    display: none;
+  }
+}
+#main-header #main-nav-bar #container-nav-bar #arrow-container #left-arrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#main-header #main-nav-bar #container-nav-bar #arrow-container #left-arrow img {
+  width: 24px;
+  height: 24px;
 }
 
 section#section-main-hero {

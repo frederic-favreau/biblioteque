@@ -30,15 +30,18 @@
           <a href="#section-main-hero" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
             <span id="nav-logo-text">Biblook</span></a>
         </div>
+        <div id="arrow-container">
+          <button id="left-arrow"><img src="./img/picto/chevron-left.svg" alt="Flèche gauche"></button>
+        </div>
         <div id="container-group-search-nav-top">
           <form action="./front/catalog.php?placeholde" method="GET">
             <input type="search" name="search" id="input-search-nav-top" placeholder="Taper votre recherche">
             <input type="submit" name="rechercher" value="" id="btn-search-nav-top">
           </form>
         </div>
-        <!-- <div id="btn-responsive-search">
+        <div id="btn-responsive-search">
           <button type="button" id="show-search-bar"><img src="./img/picto/search-lg.svg" alt="Loupe"></button>
-        </div> -->
+        </div>
         <div id="container-group-btn-connexion">
           <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
           ?>
@@ -50,12 +53,6 @@
               <?php
             }
               ?>
-            </div>
-
-            <div id="menu-burger">
-              <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
-              <div class="menu-burger-pipe" id="menu-burger-pipe-middle"></div>
-              <div class="menu-burger-pipe" id="menu-burger-pipe-bottom"></div>
             </div>
             </a>
         </div>
@@ -265,7 +262,6 @@
                 } ?>
 
               </form>
-
 
             </div>
           </div>
@@ -530,12 +526,12 @@
     <div id="container-footer-top">
       <div id="item-footer-left">
         <div id="container-group-logo-botom">
-          <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+          <a href="#section-main-hero" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
             <span id="nav-logo-text">Biblook</span></a>
         </div>
         <ul>
           <div id="list-left">
-            <li><a href="#main-header" class="slow-return">Découvrir</a></li>
+            <li><a href="#section-main-hero" class="slow-return">Découvrir</a></li>
             <li><a href="#section-news" class="slow-return">Nouveautés</a></li>
             <li><a href="#section-heart" class="slow-return">Coups de coeur</a></li>
             <li><a href="#section-soon-available" class="slow-return">Derniers arrivages</a></li>
