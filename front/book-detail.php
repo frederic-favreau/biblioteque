@@ -16,7 +16,7 @@ while ($row = $resultStock->fetch(PDO::FETCH_ASSOC)) {
 
 
 
-$req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `ISBN`, `copy`.`location`, `category`.`category`,`published_at`,
+$req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `LCCN`, `copy`.`location`, `category`.`category`,`published_at`,
 DATE_FORMAT(`published_at`, '%d/%m/%Y') AS `published`,
 GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genres`, 
 GROUP_CONCAT(DISTINCT CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`)) AS `authors`,
@@ -119,7 +119,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
 
                         <li> Nom de l'éditeur<span class="bdd-var"><?= str_replace(',', ', ', $book['editors']) ?></span></li>
                         <li>Date de l'édition<span class="bdd-var"><?= str_replace(',', ', ', $book['edition_date']) ?></span></li>
-                        <li>ISBN<span class="bdd-var"><?= $book['ISBN'] ?></span></li>
+                        <li>LCCN<span class="bdd-var"><?= $book['LCCN'] ?></span></li>
                     </ul>
                 </div>
                 <div id="item-detail-book-right">

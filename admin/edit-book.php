@@ -104,7 +104,11 @@ include_once '../admin/header-main.php';
 
             <?php
             $id = $_GET['id'];
-            $req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `ISBN`,`author`.`lastname`, `author`.`firstname`, `genre`.`name` FROM `work`
+            $req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `ISBN`, `category`.`category`,
+            GROUP_CONCAT(DISTINCT `author`.`lastname`) AS `lastname`,
+            GROUP_CONCAT(DISTINCT `author`.`firstname`) AS `firstname`,
+            GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genre`
+                FROM `work`
                 INNER JOIN `work_genre`
                 ON `work`.`id_work` = `work_genre`.`work_id`
                 INNER JOIN `genre`
@@ -113,10 +117,24 @@ include_once '../admin/header-main.php';
                 ON `work_author`.`work_id` = `work`.`id_work`
                 INNER JOIN `author`
                 ON `work_author`.`author_id` = `author`.`id_author`
-                WHERE `id_work` = :id");
+                INNER JOIN `work_category` 
+                ON `work`.`id_work` = `work_category`.`work_id`
+
+                INNER JOIN `category`
+                ON `work_category`.`category_id` =`category`.`id_category` 
+                WHERE `id_work` = :id
+                ");
             $req_book->bindParam('id', $id, PDO::PARAM_INT);
             $req_book->execute();
+            
+            
             $book = $req_book->fetch(PDO::FETCH_ASSOC);
+            
+           
+            $authorsLastName = explode(',',$book['lastname']);
+            $authorsFirstName = explode(',',$book['firstname']);
+            $genres = explode(',',$book['genre']);
+            
             ?>
 
 
@@ -128,17 +146,30 @@ include_once '../admin/header-main.php';
                     </div>
                     <div class="add-form-template-label-input">
                         <label for="author-firstname-edit" class="label-form-add-book">Prénom de l'autheur</label>
-                        <input type="text" name="author-firstname-edit" id="author-firstname-edit" class="input-form-add-book" value="<?= $book['firstname'] ?>" />
+                        <input type="text" name="author-firstname-edit" id="author-firstname-edit" class="input-form-add-book" value="<?= $authorsFirstName[0] ?>" />
                     </div>
                     <div class="add-form-template-label-input">
                         <label for="author-lastname-edit" class="label-form-add-book">Nom de l'autheur</label>
-                        <input type="text" name="author-lastname-edit" id="author-lastname-edit" class="input-form-add-book" value="<?= $book['lastname'] ?>" />
+                        <input type="text" name="author-lastname-edit" id="author-lastname-edit" class="input-form-add-book" value="<?= $authorsLastName[0] ?>" />
                     </div>
+                    <div class="add-form-template-label-input">
+                         <label for="author-firstname-2-edit" class="label-form-add-book">Prénom de l'auteur (optionnel)</label>
+                         <input type="text" name="author-firstname-2-edit" id="author-firstname-2-edit" value="<?=$authorsFirstName[1]?>" class="input-form-add-book" />
+                     </div>
+
+                     <div class="add-form-template-label-input">
+                         <label for="author-2-lastname-edit" class="label-form-add-book">Nom de l'auteur (optionnel)</label>
+                         <input type="text" name="author-2-lastname-edit" id="author-2-lastname-edit" value="<?= $authorsLastName[1] ?>" class="input-form-add-book" />
+                     </div>
 
                     <div class="add-form-template-label-input">
                         <label for="work-genre-edit" class="label-form-add-book">Genre du livre</label>
-                        <input type="text" name="work-genre-edit" id="work-genre-edit" class="input-form-add-book" value="<?= $book['name'] ?>" />
+                        <input type="text" name="work-genre-edit" id="work-genre-edit" class="input-form-add-book" value="<?= $genres[0]?>" />
                     </div>
+                    <div class="add-form-template-label-input">
+                         <label for="work-genre-2-edit" class="label-form-add-book">Deuxième genre du livre (optionnel)</label>
+                         <input type="text" name="work-genre-2-edit" id="work-genre-2-edit" value="<?= $genres[1]?>" class="input-form-add-book" />
+                     </div>
 
                     <!-- <div class="add-form-template-label-input">
                          <label for="work-genre-B-edit" class="label-form-add-book">Genre B du livre</label>
@@ -159,7 +190,7 @@ include_once '../admin/header-main.php';
 
                     <div class="add-form-template-label-input">
                         <label for="work-category-edit" class="label-form-add-book">Catégorie du livre</label>
-                        <input type="text" name="work-category-edit" id="work-category-edit" class="input-form-add-book" value="" />
+                        <input type="text" name="work-category-edit" id="work-category-edit" class="input-form-add-book" value="<?= $book['category'] ?>" />
                     </div>
                     <div class="add-form-template-label-input">
                         <label for="work-publish-date-edit" class="label-form-add-book">Date de publication du livre</label>
@@ -185,7 +216,8 @@ include_once '../admin/header-main.php';
                 </div>
             </form>
 
-            <?php if (isset($_SESSION['modified'])) : ?>
+            <?php 
+             if (isset($_SESSION['modified'])) : ?>
                 <div id="confirmed-modified" onclick="hideDivConfirmed('confirmed-modified')">
                     <p><strong><?= $_SESSION["modified"] ?></strong></p>
                     <p class="info-msg-bdd">Les données que vous avez modifié ont bien été enregistré </p>

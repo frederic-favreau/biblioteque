@@ -88,7 +88,7 @@
 
 
                         $_SESSION["added"] = "Ajout réussit";
-                        //header("Location: edit-book.php?id=" . $workId);
+                        header("Location: edit-book.php?id=" . $id);
                         ob_end_flush();
                         exit();
                     }

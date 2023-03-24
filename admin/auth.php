@@ -21,13 +21,20 @@ if ($req->rowCount()==1){
         $_SESSION['mail'] = $user['mail'];
         $_SESSION['connect'] = true;
         $_SESSION['role'] = $user['role'];
+        $passwordHash = $user['password'];
+        if(password_verify($password, $user['password'])){
+            if($_SESSION['role'] == 0){
+                header('Location: ./dashboard.php');
+                }else{
+                    header('Location: ./crud-book.php');   
+                }
+            
+        }else {
+            header('Location: ../front/connect.php?err=1');
+        }
     
                             
-        if($_SESSION['role'] == 0){
-        header('Location: ./dashboard.php');
-        }else{
-            header('Location: ./crud-book.php');   
-        }
+        
         
 
 

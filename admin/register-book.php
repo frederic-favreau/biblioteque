@@ -177,7 +177,7 @@ include_once '../admin/header-main.php';
                             $date = date('Y-m-d');
 
                             $registreSql = $db->prepare(
-                                'SELECT  `title`,`pict`, `copy`.`id_copy`, `category`.`category`, `editor`.`editor_name`, `id_work`, `ISBN`, `user`.`firstname`,`user`.`lastname`,`user`.`mail`,`user`.`adress`,`user`.`id_user`,
+                                'SELECT  `title`,`pict`, `copy`.`id_copy`, `category`.`category`, `editor`.`editor_name`, `id_work`, `LCCN`, `user`.`firstname`,`user`.`lastname`,`user`.`mail`,`user`.`adress`,`user`.`id_user`,
                                 DATE_FORMAT(`editor`.`date`,"%d/%m/%Y") AS `editdate`,
                                 DATE_FORMAT(`published_at`, "%d/%m/%Y") AS `published`,
                                 GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genes`,
@@ -274,7 +274,7 @@ include_once '../admin/header-main.php';
                                                         <li>Nom de l'éditeur<span class="bdd-var"><?= $registre['editor_name'] ?></span></li>
                                                         <li>Date de l'édition<span class="bdd-var"><?= $registre['editdate'] ?></span></li>
                                                         <li>Nombre d'exemplaires<span class="bdd-var"><?= count($stocks[$workId]) ?></span></li>
-                                                        <li>ISBN<span class="bdd-var"><?= $registre['ISBN'] ?></span></li>
+                                                        <li>LCCN<span class="bdd-var"><?= $registre['LCCN'] ?></span></li>
                                                     </ul>
                                                 </div>
                                                 <div class="item-complete-left">
