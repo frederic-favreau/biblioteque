@@ -36,6 +36,9 @@
             <input type="submit" name="rechercher" value="" id="btn-search-nav-top">
           </form>
         </div>
+        <!-- <div id="btn-responsive-search">
+          <button type="button" id="show-search-bar"><img src="./img/picto/search-lg.svg" alt="Loupe"></button>
+        </div> -->
         <div id="container-group-btn-connexion">
           <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
           ?>
