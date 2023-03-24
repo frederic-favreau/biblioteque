@@ -1670,12 +1670,44 @@ section#dashboard-page-book-add {
       align-items: center;
       width: 50%;
 
-      div.add-form-template-label-input {
-        .label-form-add-book {
-          font-size: 18px;
-          margin-right: 20px;
+
+      div.add-div{
+
+        border: solid $main-blue 3px;
+        padding: 20px 20px 0 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+
+
+        button.add-div-btn{
+          margin-bottom: 20px;
+          margin-left: 66%;
+          padding: 0 10px;
+          background-color: $main-blue;
+          color: $white;
+          border-radius: 5px;
+          border: none;
+          font-size: 1.2em;
+          height: 40px;
+          width: 200px;
+
+
+
         }
+
+
+        div.add-form-template-label-input {
+          .label-form-add-book {
+            font-size: 18px;
+            margin-right: 20px;
+          }
+        }
+
+
+
       }
+
+      
     }
 
     div#form-add-book-right {

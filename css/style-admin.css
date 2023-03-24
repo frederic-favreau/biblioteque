@@ -1474,7 +1474,25 @@ section#dashboard-page-book-add form#form-add-book div#form-add-book-left {
   align-items: center;
   width: 50%;
 }
-section#dashboard-page-book-add form#form-add-book div#form-add-book-left div.add-form-template-label-input .label-form-add-book {
+section#dashboard-page-book-add form#form-add-book div#form-add-book-left div.add-div {
+  border: solid #0868ae 3px;
+  padding: 20px 20px 0 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+section#dashboard-page-book-add form#form-add-book div#form-add-book-left div.add-div button.add-div-btn {
+  margin-bottom: 20px;
+  margin-left: 66%;
+  padding: 0 10px;
+  background-color: #0868ae;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2em;
+  height: 40px;
+  width: 200px;
+}
+section#dashboard-page-book-add form#form-add-book div#form-add-book-left div.add-div div.add-form-template-label-input .label-form-add-book {
   font-size: 18px;
   margin-right: 20px;
 }

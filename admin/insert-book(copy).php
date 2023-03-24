@@ -49,14 +49,14 @@ require_once '../connexion.php';
                 $db->query($query);
 
                 $_SESSION["added"] = "Ajout réussit";
-                header("Location: edit-book.php?id=" . $workId);
+                //header("Location: edit-book.php?id=" . $workId);
                 ob_end_flush();
                 exit();
             }
             
         } catch (PDOException $e) {
             $_SESSION["notAdded"] = "Problème lors de l'ajout";
-            header("Location: edit-book.php?id=" . $workId);
+            //header("Location: edit-book.php?id=" . $workId);
             ob_end_flush();
             exit();
         }
