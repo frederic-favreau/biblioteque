@@ -22,16 +22,58 @@
              $idWORKSql->execute();
              $idFetch = $idWORKSql->fetch(PDO::FETCH_ASSOC);
              $id=$idFetch['id_work'];
-             var_dump($id);
-                try {
+               try {
                     if (isset($_POST['submit'])) {
                         
-                        $publishedDate = addslashes($_POST['work-publish-date-add']);
+                        $publishedDate = addslashes($_POST['publisher-date-add']);
                         $LCCN = addslashes($_POST['work-ISBN-add']);
                         $editor = addslashes($_POST['publisher-name-add']);
-                        $Localisaton = addslashes($_POST['$Localisaton']);
+                        $Localisaton = addslashes($_POST['Localisaton']);
+                        $EditorNumber = addslashes($_POST['NumeroEditor']);
 
-                        $sqlCopy = $db->prepare('INSERT INTO `copy` (`editor_id `,`location`,`work_id `,`stock`)VALUE');
+
+
+
+
+                        //INSERT EDITOR
+                        $reqEditorExists = $db->prepare("SELECT `id_editor` FROM `editor` WHERE `editor_name` = :editor");
+                        $reqEditorExists->bindParam(':editor', $editor);
+                        $reqEditorExists->execute();
+                        $EditorExists = $reqEditorExists->fetch(PDO::FETCH_ASSOC);
+
+
+                        if ($EditorExists == false) {
+                            $queryEditor = $db->prepare("INSERT INTO `editor` (`editor_name`,`number`,`date`) VALUES (:editor_name,:number,:date)");
+                            $queryEditor->bindParam('editor_name', $editor, PDO::PARAM_STR);
+                            $queryEditor->bindParam('number', $EditorNumber, PDO::PARAM_INT);
+                            $queryEditor->bindParam('date', $publishedDate);
+                            $queryEditor->execute();
+                            
+
+                            $queryLastIdEditor = "SELECT `id_editor` FROM `editor` ORDER BY `id_editor` DESC LIMIT 1";
+                            $reqLastIdEditor = $db->query($queryLastIdEditor);
+                            $fetchLastIdEditor = $reqLastIdEditor->fetch(PDO::FETCH_ASSOC);
+                            $IdEdiditor = $fetchLastIdEditor['id_editor'];
+
+                        }else{
+                            $IdEdiditor = $EditorExists['id_editor'];
+                        }
+                       
+
+
+
+
+
+                        //INSERT COPY
+
+                        $stock = 1;
+                        
+                        $sqlCopy = $db->prepare('INSERT INTO `copy` (`editor_id`,`location`,`work_id`,`stock`) VALUES(:editor_id,:location,:work_id,:stock)');
+                            $sqlCopy->bindParam('editor_id', $IdEdiditor, PDO::PARAM_INT);
+                            $sqlCopy->bindParam('location', $Localisaton, PDO::PARAM_STR);
+                            $sqlCopy->bindParam('work_id', $id, PDO::PARAM_INT);
+                            $sqlCopy->bindParam('stock', $stock, PDO::PARAM_INT);
+                            $sqlCopy->execute();
                         
                         
                         
@@ -73,13 +115,18 @@
                  <div id="form-add-book-right">
                     
 
+                     
+                     <div class="add-form-template-label-input">
+                         <label for="publisher-name-add" class="label-form-add-book">Localisaton</label>
+                         <input type="text" name="Localisaton" id="Localisaton" class="input-form-add-book" value="hh" />
+                     </div>
                      <div class="add-form-template-label-input">
                          <label for="publisher-name-add" class="label-form-add-book">Nom de l'éditeur</label>
                          <input type="text" name="publisher-name-add" id="publisher-name-add" class="input-form-add-book" value="hh" />
                      </div>
                      <div class="add-form-template-label-input">
-                         <label for="publisher-name-add" class="label-form-add-book">Localisaton</label>
-                         <input type="text" name="Localisaton" id="Localisaton" class="input-form-add-book" value="hh" />
+                         <label for="publisher-name-add" class="label-form-add-book">Numero de l'éditeur</label>
+                         <input type="text" name="NumeroEditor" id="NumeroEditor" class="input-form-add-book" value="45864" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="publisher-date-add" class="label-form-add-book">Date d'édition</label>

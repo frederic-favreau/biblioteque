@@ -183,3 +183,19 @@ function centrerImage(img) {
     document.body.style.overflow = "auto";
   };
 }
+
+
+
+
+
+//SECOND AUTbtn_AjouterHOR
+/*
+let  = document.getElementsByClassName('add-div-btn');
+
+for(a=0; a<btn_Ajouter.length; a++){
+  btn_Ajouter[a].addEventListener('click', function(){
+    let Ajouter_Element = document.createElement('div');
+    let form_left = document.getElementById;('form-add-book-left');
+    form_left.appendChild(Ajouter_Element);
+    Ajouter_Element.className = 'add-div';
+})};*/
