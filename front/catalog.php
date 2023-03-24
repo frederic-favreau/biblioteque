@@ -126,7 +126,7 @@ include_once '../connexion.php';
                         <option value="Disponibility">Disponibilité</option>
                     </select>
                     <form action="" method="post">
-                        <input type="submit" value="Ramdom" name="ramdom">
+                        <input type="submit" value="Livre aléatoire" name="ramdom" id="ramdom">
                     </form>
                 </div>
                 <?php

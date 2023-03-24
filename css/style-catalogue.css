@@ -169,7 +169,17 @@ main #section-catalog #container-cards .container-sort #sort {
   border-radius: 10px;
   font-weight: bold;
 }
-main #section-catalog #container-cards .card {
+main #section-catalog #container-cards .container-sort input#ramdom {
+  display: block;
+  padding: 12px 24px;
+  background-color: red;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+main #section-catalog .card {
   position: relative;
   max-width: 430px;
   width: 100%;
@@ -182,7 +192,7 @@ main #section-catalog #container-cards .card {
   background-color: #fafafb;
 }
 @media screen and (min-width: 550px) {
-  main #section-catalog #container-cards .card {
+  main #section-catalog .card {
     margin: 60px auto 20px auto;
     width: 33%;
     max-width: 530px;
@@ -192,14 +202,14 @@ main #section-catalog #container-cards .card {
   }
 }
 @media screen and (min-width: 550px) {
-  main #section-catalog #container-cards .card:hover img {
+  main #section-catalog .card:hover img {
     transform: translateY(-15px);
   }
 }
-main #section-catalog #container-cards .card:hover {
+main #section-catalog .card:hover {
   background-color: #fff;
 }
-main #section-catalog #container-cards .card img {
+main #section-catalog .card img {
   position: absolute;
   top: -90px;
   left: 50%;
@@ -211,7 +221,7 @@ main #section-catalog #container-cards .card img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 @media screen and (min-width: 550px) {
-  main #section-catalog #container-cards .card img {
+  main #section-catalog .card img {
     transform: none;
     top: 32px;
     left: 30px;
@@ -223,12 +233,12 @@ main #section-catalog #container-cards .card img {
     transition: transform 0.5s ease;
   }
 }
-main #section-catalog #container-cards .card .bottom-item-card h4 {
+main #section-catalog .card .bottom-item-card h4 {
   font-size: 16px;
   margin: 15px 0;
   text-transform: capitalize;
 }
-main #section-catalog #container-cards .card .bottom-item-card h3.title-book-catalog {
+main #section-catalog .card .bottom-item-card h3.title-book-catalog {
   font-family: "Nova Slim", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -239,11 +249,11 @@ main #section-catalog #container-cards .card .bottom-item-card h3.title-book-cat
   text-overflow: ellipsis;
   margin-bottom: 12px;
 }
-main #section-catalog #container-cards .card .bottom-item-card h5 {
+main #section-catalog .card .bottom-item-card h5 {
   font-size: 14px;
   text-transform: capitalize;
 }
-main #section-catalog #container-cards .card .bottom-item-card .description-card {
+main #section-catalog .card .bottom-item-card .description-card {
   min-height: 60px;
   max-height: 100px;
   margin: 8px 0 8px;
@@ -255,7 +265,7 @@ main #section-catalog #container-cards .card .bottom-item-card .description-card
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
 }
-main #section-catalog #container-cards .card .bottom-item-card a.link-page {
+main #section-catalog .card .bottom-item-card a.link-page {
   position: absolute;
   right: 10px;
   bottom: 15px;
@@ -264,15 +274,15 @@ main #section-catalog #container-cards .card .bottom-item-card a.link-page {
   margin-right: 10px;
   margin-top: 20px;
 }
-main #section-catalog #container-cards .card .bottom-item-card a.link-page:hover {
+main #section-catalog .card .bottom-item-card a.link-page:hover {
   color: #043a61;
 }
-main #section-catalog #container-cards .card input.heart-wishlist {
+main #section-catalog .card input.heart-wishlist {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-main #section-catalog #container-cards .card input.input-heart {
+main #section-catalog .card input.input-heart {
   background-image: url("../img/picto/heart-rounded.svg");
   background-size: cover;
   background-position: center;
@@ -283,9 +293,9 @@ main #section-catalog #container-cards .card input.input-heart {
   width: 30px; /* Ajustez la largeur selon vos besoins */
   height: 30px; /* Ajustez la hauteur selon vos besoins */
 }
-main #section-catalog #container-cards .card input.input-heart:hover {
+main #section-catalog .card input.input-heart:hover {
   background-image: url("../img/picto/heart-rounded-full-blue.svg");
 }
-main #section-catalog #container-cards .card input.input-heart-red {
+main #section-catalog .card input.input-heart-red {
   background-image: url("../img/picto/heart-rounded-full-red.svg");
 }/*# sourceMappingURL=style-catalogue.css.map */

@@ -27,7 +27,7 @@
     <nav id="main-nav-bar">
       <div id="container-nav-bar" class="row-limit-size">
         <div id="container-group-logo">
-          <a href="#section-news" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
+          <a href="#section-main-hero" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
             <span id="nav-logo-text">Biblook</span></a>
         </div>
         <div id="container-group-search-nav-top">
@@ -137,7 +137,7 @@
           <h1>Les nouveautés chez <br> <span id="font-logo">Biblook</span></h1>
           <p id="sub-title">Des supers volontaires viennent rejoindre nos rangs pour offrir
             des moments de lecture inoubliable !</p>
-          <a href="#" id="btn-join-reader">Débuter l'aventure</a>
+          <a href="./front/connect.php" id="btn-join-reader">Débuter l'aventure</a>
         </div>
       </div>
     </section>
@@ -165,7 +165,7 @@
         } ?>
       </ul>
 
-      <a href="#" id="btn-show-heart">Voir tous les coups de coeur</a>
+      <a href="./front/catalog.php" id="btn-show-heart">Voir tous les coups de coeur</a>
     </section>
 
 
@@ -280,7 +280,7 @@
     <section id="section-cta-available">
       <h2 class="title-cta">Vous recherchez un livre en particulier ?</h2>
       <p class="sub-title-section" id="sub-title-cta">Faites votre demande dès maintenant auprès de <span id="font-logo">Biblook</span></p>
-      <a href="#">Demander un livre</a>
+      <a href="./front/connect.php">Demander un livre</a>
     </section>
 
 
@@ -486,7 +486,7 @@
         </div>
         <h4>Vous avez une ou des questions ?</h4>
         <p>Alors n'hésitez pas une seconde, contacter nos supers administrateurs</p>
-        <a href="#">Nous contacter</a>
+        <a href="#section-location">Nous contacter</a>
       </div>
     </section>
 

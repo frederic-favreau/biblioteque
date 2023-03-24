@@ -1046,8 +1046,8 @@ section#section-news .text-shadow {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  width: 30px; /* Ajustez la largeur selon vos besoins */
-  height: 30px; /* Ajustez la hauteur selon vos besoins */
+  width: 30px;
+  height: 30px;
 }
 #section-soon-available #container-cards .card input.input-heart:hover {
   background-image: url("../img/picto/heart-rounded-full-blue.svg");
