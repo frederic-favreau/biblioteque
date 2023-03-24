@@ -77,9 +77,20 @@ for (const btnOptionCrud of btnOptionCruds) {
     const aEditDataCrud = document.createElement("a");
     aEditDataCrud.setAttribute("id", "btn-confirmed");
     aEditDataCrud.setAttribute("href", "./edit-book.php?id=" + idWork);
-    aEditDataCrud.innerHTML = "Editer ses données";
+    aEditDataCrud.innerHTML = "Editer les donnés d'ouvrage";
 
     editDetailBookCrud.appendChild(aEditDataCrud);
+
+    const editDetailCopyCrud = document.createElement("li");
+    editDetailCopyCrud.setAttribute("id", "more-detail-book-crud");
+    listOptionCrud.appendChild(editDetailCopyCrud);
+
+    const aEditDataExemplare = document.createElement("a");
+    aEditDataExemplare.setAttribute("id", "btn-exemplaire");
+    aEditDataExemplare.setAttribute("href", "./edit-copy-book.php?id=" + idWork);
+    aEditDataExemplare.innerHTML = "Editer les d'un exemplaire";
+
+    editDetailCopyCrud.appendChild(aEditDataExemplare)
 
     const deleteBookCrud = document.createElement("li");
     deleteBookCrud.setAttribute("id", "delete-book-crud");
