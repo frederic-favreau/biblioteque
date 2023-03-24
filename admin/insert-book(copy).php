@@ -26,7 +26,7 @@ require_once '../connexion.php';
                 $workPict = addslashes($_POST['work-pict-add']);
 
                 // Requête pour insérer le livre
-                $query = "INSERT INTO `work` (`title`, `published_at`, `ISBN`, `extract`, `pict`) VALUES ('$title', '$publishedDate', '$ISBN', '$extract', '$workPict')";
+                $query = "INSERT INTO `work` (`title`, `published_at`, `LCCN`, `extract`, `pict`) VALUES ('$title', '$publishedDate', '$ISBN', '$extract', '$workPict')";
                 $db->query($query);
                 $workId = $db->lastInsertId();
 

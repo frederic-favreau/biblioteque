@@ -26,11 +26,11 @@
                         
                             $LCCN = addslashes($_POST['work-ISBN-add']);
                             
-                            $query = $db->prepare("SELECT `ISBN` FROM `work`");
+                            $query = $db->prepare("SELECT `LCCN` FROM `work`");
                             $query->execute();
                             $LCCNArray = [];
                             while($LCCNExists = $query->fetch(PDO::FETCH_ASSOC)){
-                                $LCCNArray[]= $LCCNExists['ISBN'];
+                                $LCCNArray[]= $LCCNExists['LCCN'];
                             }
                             
                             
