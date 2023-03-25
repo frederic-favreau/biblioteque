@@ -176,10 +176,12 @@
                                  </div>
                                  <div class="container-info-loan">
                                      <p class="info-disponibility"><?= $disponible ?></p>
-                                     <form action="../admin/delete-like.php?id=<?= $like['id_work'] ?>" method="POST">
-                                         <input type="submit" class="delete-favorit-book" value="">
-                                     </form>
-                                     <a href="../front/book-detail.php?id=<?= $workId ?>" class="btn-format-standard">Emprunter maintenant</a>
+                                     <div class="container-btn-wishlist">
+                                         <form action="../admin/delete-like.php?id=<?= $like['id_work'] ?>" method="POST">
+                                             <input type="submit" class="delete-favorit-book" value="">
+                                         </form>
+                                         <a href="../front/book-detail.php?id=<?= $workId ?>" class="btn-format-standard" id="btn-more-time-loan">Emprunter maintenant</a>
+                                     </div>
 
 
                                  </div>

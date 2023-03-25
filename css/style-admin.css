@@ -36,6 +36,7 @@ h1.h1-dashboard {
   text-align: inherit;
   color: #0868ae;
   margin-bottom: 6px;
+  padding: 20px 20px 0 20px;
 }
 h1.h1-dashboard::first-letter {
   text-transform: uppercase;
@@ -53,11 +54,13 @@ h2.h2-dashboard {
   text-align: inherit;
   color: #0868ae;
   margin-bottom: 6px;
+  padding-left: 20px;
 }
 @media screen and (min-width: 950px) {
   h2.h2-dashboard {
     font-size: 20px;
     margin-bottom: 12px;
+    padding-left: inherit;
   }
 }
 
@@ -400,7 +403,7 @@ div.container-dashboard-base .box-dashboard hr {
 @media screen and (min-width: 1250px) {
   .container-home-tabs ul.list-book-box li.item-list-book {
     flex-direction: row;
-    padding: 20px 0 20px 20px;
+    padding: 20px;
   }
 }
 .container-home-tabs ul.list-book-box li.item-list-book:nth-child(odd) {
@@ -455,7 +458,7 @@ div.container-dashboard-base .box-dashboard hr {
   .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan {
     width: 60%;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan p.info-disponibility {
@@ -467,6 +470,37 @@ div.container-dashboard-base .box-dashboard hr {
   .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan p.info-disponibility {
     margin-right: 70px;
     margin-bottom: 0px;
+  }
+}
+.container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist {
+  display: flex;
+  justify-content: space-evenly;
+}
+.container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist a.btn-more-time-loan:hover {
+  background-color: #05497b;
+  cursor: pointer;
+}
+.container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+  background-image: url("../img/picto/trash-03 (1).svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+@media screen and (min-width: 350px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: inherit;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: inherit;
   }
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan a.btn-format-standard {
@@ -484,28 +518,6 @@ div.container-dashboard-base .box-dashboard hr {
 .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan a.btn-format-standard:hover {
   background-color: #05497b;
   cursor: pointer;
-}
-.container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan input.delete-favorit-book {
-  background-image: url("../img/picto/trash-03 (1).svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  margin-top: 20px;
-}
-@media screen and (min-width: 350px) {
-  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan input.delete-favorit-book {
-    position: inherit;
-  }
-}
-@media screen and (min-width: 1250px) {
-  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan input.delete-favorit-book {
-    position: inherit;
-  }
 }
 
 .empty {

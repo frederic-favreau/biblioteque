@@ -46,6 +46,7 @@ h1.h1-dashboard {
   text-align: inherit;
   color: $main-blue;
   margin-bottom: 6px;
+  padding: 20px 20px 0 20px;
 
   &::first-letter {
     text-transform: uppercase;
@@ -63,10 +64,12 @@ h2.h2-dashboard {
   text-align: inherit;
   color: $main-blue;
   margin-bottom: 6px;
+  padding-left: 20px;
 
   @media screen and (min-width: 950px) {
     font-size: 20px;
     margin-bottom: 12px;
+    padding-left: inherit;
   }
 }
 
@@ -447,7 +450,7 @@ div.container-dashboard-base {
 
       @media screen and (min-width: 1250px) {
         flex-direction: row;
-        padding: 20px 0 20px 20px;
+        padding: 20px;
       }
 
       &:nth-child(odd) {
@@ -500,12 +503,12 @@ div.container-dashboard-base {
         flex-wrap: wrap;
         align-items: center;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content:space-evenly;
 
         @media screen and (min-width: 1250px) {
           width: 60%;
           flex-direction: row;
-          justify-content: space-evenly;
+          justify-content: space-between;
         }
 
         p.info-disponibility {
@@ -519,6 +522,39 @@ div.container-dashboard-base {
           }
         }
 
+        div.container-btn-wishlist {
+          display: flex;
+          justify-content: space-evenly;
+          a.btn-more-time-loan {
+
+            &:hover {
+              background-color: #05497b;
+              cursor: pointer;
+            }
+          }
+
+          input.delete-favorit-book {
+            background-image: url("../img/picto/trash-03\ \(1\).svg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin-top: 20px;
+            margin-right: 20px;
+
+            @media screen and (min-width: 350px) {
+              position: inherit;
+            }
+
+            @media screen and (min-width: 1250px) {
+              position: inherit;
+            }
+          }
+        }
         a.btn-format-standard {
           display: block;
           padding: 15px;
@@ -534,27 +570,6 @@ div.container-dashboard-base {
           &:hover {
             background-color: #05497b;
             cursor: pointer;
-          }
-        }
-
-        input.delete-favorit-book {
-          background-image: url("../img/picto/trash-03\ \(1\).svg");
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-color: transparent;
-          border: none;
-          cursor: pointer;
-          width: 30px;
-          height: 30px;
-          margin-top: 20px;
-
-          @media screen and (min-width: 350px) {
-            position: inherit;
-          }
-
-          @media screen and (min-width: 1250px) {
-            position: inherit;
           }
         }
       }
