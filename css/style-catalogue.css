@@ -8,22 +8,23 @@ main {
     padding-top: 70px;
   }
 }
-main #Breadcrumb {
+main ul#Breadcrumb {
   display: flex;
+  margin-top: 10px;
 }
-main #Breadcrumb li {
+main ul#Breadcrumb li {
   margin-right: 10px;
 }
-main #Breadcrumb li a {
+main ul#Breadcrumb li a {
   font-size: 12px;
   color: #0868ae;
 }
 @media screen and (min-width: 950px) {
-  main #Breadcrumb li a {
+  main ul#Breadcrumb li a {
     font-size: 14px;
   }
 }
-main #Breadcrumb li a:hover {
+main ul#Breadcrumb li a:hover {
   color: #043a61;
 }
 main #section-catalog {

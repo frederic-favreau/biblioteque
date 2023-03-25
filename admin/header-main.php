@@ -44,7 +44,7 @@ if (!isset($_SESSION['id-user'])) {
                                 </li>
 
 
-                                <!-- SESSION USERS -->
+                                <!-- SESSION ADMIN -->
                             <?php
                             }
                             if ($_SESSION['role'] == 1) {

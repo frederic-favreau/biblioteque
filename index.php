@@ -23,12 +23,14 @@
 
   <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
 
+  <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
   <header id="main-header">
     <nav id="main-nav-bar">
       <div id="container-nav-bar" class="row-limit-size">
         <div id="container-group-logo">
           <a href="#section-main-hero" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
-            <span id="nav-logo-text">Biblook</span></a>
+            <span id="nav-logo-text">Biblook</span>
+          </a>
         </div>
         <div id="arrow-container">
           <button id="left-arrow"><img src="./img/picto/chevron-left.svg" alt="Flèche gauche"></button>
@@ -39,22 +41,32 @@
             <input type="submit" name="rechercher" value="" id="btn-search-nav-top">
           </form>
         </div>
+        
         <div id="btn-responsive-search">
           <button type="button" id="show-search-bar"><img src="./img/picto/search-lg.svg" alt="Loupe"></button>
         </div>
+
         <div id="container-group-btn-connexion">
-          <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
-          ?>
-            <div id="container-box-index-logout">
-              <a href="#" id="btn-index-session"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a>
-            <?php
-          } else { ?>
-              <a href="./front/connect.php" id="btn-sign-up"> <span id="mobile"><img src="./img/picto/log-in-01.svg" alt="login"></span><span id="desktop">Connexion / inscription</span>
-              <?php
-            }
-              ?>
-            </div>
-            </a>
+          <div id="container-box-index-logout">
+
+            <!-- SESSION USERS -->
+            <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true  && $_SESSION['role'] == 0) { ?>
+              <a href="#" id="btn-index-session"><img src="./img/picto/avatar-user.svg" alt="avatar"></a>
+              <script src="./js/logout-index.js"></script>
+
+              <!-- SESSION ADMIN -->
+            <?php } else if (isset($_SESSION['connect']) && $_SESSION['connect'] == true  && $_SESSION['role'] == 1) { ?>
+              <a href="#" id="btn-index-session-admin"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a>
+              <script src="./js/logout-index-admin.js"></script>
+
+              <!-- GO TO LOGIN -->
+            <?php } else { ?>
+              <a href="./front/connect.php" id="btn-sign-up">
+                <span id="mobile"><img src="./img/picto/log-in-01.svg" alt="login"></span>
+                <span id="desktop">Connexion / inscription</span>
+              </a>
+            <?php } ?>
+          </div>
         </div>
       </div>
     </nav>
@@ -564,7 +576,6 @@
   </footer>
 
   <script src="./main.js"></script>
-  <script src="./js/logout-index.js"></script>
   <button id="back-to-top" title="Retour en haut">
     <i class="fas fa-arrow-up"></i>
   </button>
