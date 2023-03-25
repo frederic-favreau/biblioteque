@@ -92,14 +92,14 @@
         <div id="item-section-news-right">
           <div id="item-news-right-top">
             <div class="flip" data-index="0">
-              <div class="front front-item-1" style="background-image: url(./img/news-3.png)">
+              <div class="front front-item-1" style="background-image: url(./img/lecteurs/elisa.jpg)">
               </div>
               <div class="back front-item-1">
                 <p><span>Elisa</span> accueil vos enfants pour des ateliers lecture tous les mercredis après-midi</p>
               </div>
             </div>
             <div class="flip" data-index="1">
-              <div class="front front-item-2" style="background-image: url(./img/news-2.png)">
+              <div class="front front-item-2" style="background-image: url(./img/lecteurs/najia.jpg)">
               </div>
               <div class="back front-item-2">
                 <p><span>Najia</span> vous fait découvrir les derniers coups de cœur</p>
@@ -108,10 +108,10 @@
           </div>
           <div id="item-news-right-bottom">
             <div class="flip" data-index="2">
-              <div class="front front-item-4" style="background-image: url(./img/news-1.png)">
+              <div class="front front-item-4" style="background-image: url(./img/lecteurs/fred.HEIC)">
               </div>
               <div class="back front-item-4">
-                <p><span>Frédéric</span> présente les derniers arrivages chaque semaine</p>
+                <p><span>Fred</span> présente les derniers arrivages chaque semaine</p>
               </div>
             </div>
             <div class="flip" data-index="3">
@@ -122,7 +122,7 @@
               </div>
             </div>
             <div class="flip" data-index="4">
-              <div class="front front-item-5" style="background-image: url(./img/news-1.png)">
+              <div class="front front-item-5" style="background-image: url(./img/lecteurs/alex.jpg)">
               </div>
               <div class="back front-item-5">
                 <p><span>Alex</span> est à votre service pour vos recherches de livres</p>
@@ -557,7 +557,7 @@
       <ul>
         <li><a href="#">Conditions</a></li>
         <li><a href="#">Copyright</a></li>
-        <li><a href="#">Cokkies</a></li>
+        <li><a href="#">Cookies</a></li>
       </ul>
       <p>©2023 <span id="font-logo">Biblook</span>. Tous droits réservés.</p>
     </div>
