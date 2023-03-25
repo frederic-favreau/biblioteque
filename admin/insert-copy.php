@@ -17,7 +17,7 @@
              <?php
              $LCCNLivre = $_GET['LCCN'];
 
-             $idWORKSql = $db->prepare('SELECT `id_work` FROM `work` WHERE `ISBN` = :LCCN');
+             $idWORKSql = $db->prepare('SELECT `id_work` FROM `work` WHERE `LCCN` = :LCCN');
              $idWORKSql->bindParam('LCCN', $LCCNLivre, PDO::PARAM_STR);
              $idWORKSql->execute();
              $idFetch = $idWORKSql->fetch(PDO::FETCH_ASSOC);
@@ -26,7 +26,7 @@
                     if (isset($_POST['submit'])) {
                         
                         $publishedDate = addslashes($_POST['publisher-date-add']);
-                        $LCCN = addslashes($_POST['work-ISBN-add']);
+                        $LCCN = addslashes($_POST['work-LCCN-add']);
                         $editor = addslashes($_POST['publisher-name-add']);
                         $Localisaton = addslashes($_POST['Localisaton']);
                         $EditorNumber = addslashes($_POST['NumeroEditor']);
@@ -106,8 +106,8 @@
                      <!-- ... autres champs existants ... -->
                      
                      <div class="add-form-template-label-input">
-                         <label for="work-ISBN-add" class="label-form-add-book">ISBN (ex: ISBN 13 :874-6-2457-6478-8)</label>
-                         <input type="text" name="work-ISBN-add" id="work-ISBN-add" class="input-form-add-book" value="hh" />
+                         <label for="work-LCCN-add" class="label-form-add-book">LCCN (ex: LCCN 2001098868)</label>
+                         <input type="text" name="work-LCCN-add" id="work-LCCN-add" class="input-form-add-book" value="hh" />
                      </div>
                      <div class="add-form-template-label-input">
                      </div>

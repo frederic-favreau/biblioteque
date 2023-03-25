@@ -33,12 +33,12 @@
 
                         $category = addslashes($_POST['work-category-add']);
                         $publishedDate = addslashes($_POST['work-publish-date-add']);
-                        $ISBN = addslashes($_POST['work-ISBN-add']);
+                        $LCCN = addslashes($_POST['work-LCCN-add']);
                         $extract = addslashes($_POST['work-extract-add']);
                         $workPict = addslashes($_POST['work-pict-add']);
 
                         // Requête pour insérer le livre
-                        $query = "INSERT INTO `work` (`title`, `published_at`, `ISBN`, `extract`, `pict`) VALUES ('$title', '$publishedDate', '$ISBN', '$extract', '$workPict');
+                        $query = "INSERT INTO `work` (`title`, `published_at`, `LCCN`, `extract`, `pict`) VALUES ('$title', '$publishedDate', '$LCCN', '$extract', '$workPict');
                         SET @work_id = LAST_INSERT_ID();";
                         $db->query($query);
                         $workId = $db->lastInsertId();
@@ -250,8 +250,8 @@
                          <input type="date" name="work-publish-date-add" id="work-publish-date-add" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
-                         <label for="work-ISBN-add" class="label-form-add-book">LCCN (exemple: 2001098868)</label>
-                         <input type="text" name="work-ISBN-add" id="work-ISBN-add" class="input-form-add-book" value="<?= $_GET['LCCN'] ?>" />
+                         <label for="work-LCCN-add" class="label-form-add-book">LCCN (exemple: 2001098868)</label>
+                         <input type="text" name="work-LCCN-add" id="work-LCCN-add" class="input-form-add-book" value="<?= $_GET['LCCN'] ?>" />
                      </div>
                      <div class="add-form-template-label-input">
                      </div>

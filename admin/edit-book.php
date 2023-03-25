@@ -14,23 +14,29 @@ include_once '../admin/header-main.php';
             <hr>
 
             <?php
-            try {
+            //try {
                 $id = $_GET['id'];
                 if (isset($_POST['submit'])) {
                     $title = ($_POST['work-title-edit']);
                     $authorFirstname = ($_POST['author-firstname-edit']);
+                    var_dump($authorFirstname);
                     $authorLastname = ($_POST['author-lastname-edit']);
+                    var_dump($authorLastname);
+                    $authorFirstname2 = ($_POST['author-firstname-2-edit']);
+                    $authorLastname2 = ($_POST['author-2-lastname-edit']);
+
                     $genre = ($_POST['work-genre-edit']);
+                    $genre2 = ($_POST['work-genre-2-edit']);
                     $publishedDate = ($_POST['work-publish-date-edit']);
-                    $ISBN = ($_POST['work-ISBN-edit']);
+                    $LCCN = ($_POST['work-LCCN-edit']);
                     $extract = ($_POST['work-extract-edit']);
                     $workPict = ($_POST['work-pict-edit']);
 
                     // Requête pour mettre à jour le livre
-                    $reqBookNewedit = $db->prepare("UPDATE `work` SET `title` = :title, `published_at` = :publishedDate, `ISBN` = :ISBN, `extract` = :extract, `pict` = :workPict WHERE `id_work`= :id");
+                    $reqBookNewedit = $db->prepare("UPDATE `work` SET `title` = :title, `published_at` = :publishedDate, `LCCN` = :LCCN, `extract` = :extract, `pict` = :workPict WHERE `id_work`= :id");
                     $reqBookNewedit->bindParam(':title', $title);
                     $reqBookNewedit->bindParam(':publishedDate', $publishedDate);
-                    $reqBookNewedit->bindParam(':ISBN', $ISBN);
+                    $reqBookNewedit->bindParam(':LCCN', $LCCN);
                     $reqBookNewedit->bindParam(':extract', $extract);
                     $reqBookNewedit->bindParam(':workPict', $workPict);
                     $reqBookNewedit->bindParam(':id', $id, PDO::PARAM_INT);
@@ -64,6 +70,71 @@ include_once '../admin/header-main.php';
                         $reqUpdateWorkAuthor->execute();
                     }
 
+
+
+
+
+
+                    if(isset($authorFirstname2, $authorLastname2)){
+
+                    // Vérifie si l'auteur 2 existe déjà
+                    $reqAuthor2Exists = $db->prepare("SELECT `id_author` FROM `author` WHERE `firstname` = :authorFirstname AND `lastname` = :authorLastname");
+                    $reqAuthor2Exists->bindParam(':authorFirstname', $authorFirstname2);
+                    $reqAuthor2Exists->bindParam(':authorLastname', $authorLastname2);
+                    $reqAuthor2Exists->execute();
+                    $author2Exists = $reqAuthor2Exists->fetch(PDO::FETCH_ASSOC);
+
+                    if ($author2Exists) {
+                        // L'auteur existe déjà, il suffit de mettre à jour la table work_author
+                        $authorId = $author2Exists['id_author'];
+                        $reqUpdateWorkAuthor = $db->prepare("UPDATE `work_author` wg
+                        JOIN (
+                          SELECT `id_work_author`
+                          FROM `work_author`
+                          WHERE `work_id` = :id
+                          ORDER BY `id_work_author` ASC
+                          LIMIT 1 OFFSET 1
+                        ) t ON wg.`id_work_author` = t.`id_work_author`
+                        SET wg.`author_id` = :authorId"
+                    
+                    );
+                        $reqUpdateWorkAuthor->bindParam(':authorId', $authorId);
+                        $reqUpdateWorkAuthor->bindParam(':id', $id, PDO::PARAM_INT);
+                        $reqUpdateWorkAuthor->execute();
+                    } else {
+                        // L'auteur n'existe pas, insérer le nouvel auteur et mettre à jour la table work_author
+                        $reqInsertAuthor = $db->prepare("INSERT INTO `author` (`firstname`, `lastname`) VALUES (:authorFirstname, :authorLastname)");
+                        $reqInsertAuthor->bindParam(':authorFirstname', $authorFirstname2);
+                        $reqInsertAuthor->bindParam(':authorLastname', $authorLastname2);
+                        $reqInsertAuthor->execute();
+                        $newAuthorId = $db->lastInsertId();
+
+                        $reqUpdateWorkAuthor = $db->prepare("UPDATE `work_author` wg
+JOIN (
+  SELECT `id_work_author`
+  FROM `work_author`
+  WHERE `work_id` = :id
+  ORDER BY `id_work_author` ASC
+  LIMIT 1 OFFSET 1
+) t ON wg.`id_work_author` = t.`id_work_author`
+SET wg.`author_id` = :newAuthorId
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                         ");
+                        $reqUpdateWorkAuthor->bindParam(':newAuthorId', $newAuthorId);
+                        $reqUpdateWorkAuthor->bindParam(':id', $id, PDO::PARAM_INT);
+                        $reqUpdateWorkAuthor->execute();
+                    }}
+
+
+
+
                         // Vérifier si le genre existe déjà
                         $reqGenreExists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = :genre");
                         $reqGenreExists->bindParam(':genre', $genre);
@@ -90,24 +161,105 @@ include_once '../admin/header-main.php';
                         $reqUpdateWorkGenre->execute();
                     }
 
-                    $_SESSION["modified"] = "Mise à jour réussie";
+
+
+
+
+
+
+
+
+
+                    if(isset($genre2)){
+                     // Vérifier si le genre2 existe déjà
+                     $reqGenre2Exists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = :genre");
+                     $reqGenre2Exists->bindParam(':genre', $genre2);
+                     $reqGenre2Exists->execute();
+                     $genre2Exists = $reqGenre2Exists->fetch(PDO::FETCH_ASSOC);
+
+                 if ($genre2Exists) {
+                     // Le genre existe déjà, il suffit de mettre à jour la table work_genre
+                     $genreId = $genre2Exists['id_genre'];
+                     $reqUpdateWorkGenre = $db->prepare("UPDATE `work_genre` wg
+JOIN (
+  SELECT `id_work_genre`
+  FROM `work_genre`
+  WHERE `work_id` = :id
+  ORDER BY `id_work_genre` ASC
+  LIMIT 1 OFFSET 1
+) t ON wg.`id_work_genre` = t.`id_work_genre`
+SET wg.`genre_id` = :genreId;
+                     
+                     
+                     
+                     ");
+                     $reqUpdateWorkGenre->bindParam(':genreId', $genreId);
+                     $reqUpdateWorkGenre->bindParam(':id', $id, PDO::PARAM_INT);
+                     $reqUpdateWorkGenre->execute();
+                 } else {
+                     // Le genre n'existe pas, insérer le nouveau genre et mettre à jour la table work_genre
+                     $reqInsertGenre = $db->prepare("INSERT INTO `genre` (`name`) VALUES (:genre)");
+                     $reqInsertGenre->bindParam(':genre', $genre2);
+                     $reqInsertGenre->execute();
+                     $newGenreId = $db->lastInsertId();
+
+                     $reqUpdateWorkGenre = $db->prepare("UPDATE `work_genre` wg
+                     JOIN (
+                       SELECT `id_work_genre`
+                       FROM `work_genre`
+                       WHERE `work_id` = :id
+                       ORDER BY `id_work_genre` ASC
+                       LIMIT 1 OFFSET 1
+                     ) t ON wg.`id_work_genre` = t.`id_work_genre`
+                     SET wg.`genre_id` = :genreId;");
+                     $reqUpdateWorkGenre->bindParam(':newGenreId', $newGenreId);
+                     $reqUpdateWorkGenre->bindParam(':id', $id, PDO::PARAM_INT);
+                     $reqUpdateWorkGenre->execute();
+                 }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  /*  $_SESSION["modified"] = "Mise à jour réussie";
                     header("Location: edit-book.php?id=" . $id);
                     exit();
                 }
             } catch (PDOException $e) {
                 $_SESSION["notModified"] = "Problème lors de la mise à jour";
                 header("Location: edit-book.php?id=" . $id);
-                exit();
+                exit();*/
             }
             ?>
 
 
             <?php
             $id = $_GET['id'];
-            $req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `ISBN`, `category`.`category`,
+            $req_book = $db->prepare("SELECT DISTINCT `id_work`,`title`,`pict`,`extract`, `published_at`, `LCCN`, `category`.`category`,
             GROUP_CONCAT(DISTINCT `author`.`lastname`) AS `lastname`,
             GROUP_CONCAT(DISTINCT `author`.`firstname`) AS `firstname`,
-            GROUP_CONCAT(DISTINCT `genre`.`name`) AS `genre`
+            GROUP_CONCAT(DISTINCT `genre`.`name` ORDER BY `id_work_genre`) AS `genre` 
                 FROM `work`
                 INNER JOIN `work_genre`
                 ON `work`.`id_work` = `work_genre`.`work_id`
@@ -132,6 +284,9 @@ include_once '../admin/header-main.php';
             
            
             $authorsLastName = explode(',',$book['lastname']);
+            var_dump($authorsLastName);
+            
+            
             $authorsFirstName = explode(',',$book['firstname']);
             $genres = explode(',',$book['genre']);
             
@@ -154,12 +309,14 @@ include_once '../admin/header-main.php';
                     </div>
                     <div class="add-form-template-label-input">
                          <label for="author-firstname-2-edit" class="label-form-add-book">Prénom de l'auteur (optionnel)</label>
-                         <input type="text" name="author-firstname-2-edit" id="author-firstname-2-edit" value="<?=$authorsFirstName[1]?>" class="input-form-add-book" />
+                         <input type="text" name="author-firstname-2-edit" id="author-firstname-2-edit" 
+                         <?php if(count($authorsFirstName)<1){?> value="<?=$authorsFirstName[1]?>" 
+                         <?php } ?>class="input-form-add-book" />
                      </div>
 
                      <div class="add-form-template-label-input">
                          <label for="author-2-lastname-edit" class="label-form-add-book">Nom de l'auteur (optionnel)</label>
-                         <input type="text" name="author-2-lastname-edit" id="author-2-lastname-edit" value="<?= $authorsLastName[1] ?>" class="input-form-add-book" />
+                         <input type="text" name="author-2-lastname-edit" <?php if(count($authorsLastName)<1){?> value="<?=$authorsLastName[1]?>" <?php } ?>id="author-2-lastname-edit" class="input-form-add-book" />
                      </div>
 
                     <div class="add-form-template-label-input">
@@ -168,7 +325,7 @@ include_once '../admin/header-main.php';
                     </div>
                     <div class="add-form-template-label-input">
                          <label for="work-genre-2-edit" class="label-form-add-book">Deuxième genre du livre (optionnel)</label>
-                         <input type="text" name="work-genre-2-edit" id="work-genre-2-edit" value="<?= $genres[1]?>" class="input-form-add-book" />
+                         <input type="text" name="work-genre-2-edit" id="work-genre-2-edit" <?php if(isset($genres[1])){?> value="<?=$genres[1]?>" <?php } ?> class="input-form-add-book" />
                      </div>
 
                     <!-- <div class="add-form-template-label-input">
@@ -197,8 +354,8 @@ include_once '../admin/header-main.php';
                         <input type="date" name="work-publish-date-edit" id="work-publish-date-edit" class="input-form-add-book" value="<?= $book['published_at'] ?>" />
                     </div>
                     <div class="add-form-template-label-input">
-                        <label for="work-ISBN-edit" class="label-form-add-book">ISBN (ex: ISBN 13 : 978-2-1234-5680-3)</label>
-                        <input type="text" name="work-ISBN-edit" id="work-ISBN-edit" class="input-form-add-book" value="<?= $book['ISBN'] ?>" />
+                        <label for="work-LCCN-edit" class="label-form-add-book">LCCN (ex: LCCN 2001098868)</label>
+                        <input type="text" name="work-LCCN-edit" id="work-LCCN-edit" class="input-form-add-book" value="<?= $book['LCCN'] ?>" />
                     </div>
                     <div class="add-form-template-label-input">
                     </div>
