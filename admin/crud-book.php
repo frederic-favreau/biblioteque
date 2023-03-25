@@ -21,7 +21,7 @@ include_once '../admin/header-main.php';
                             <p class="title-sticky-crud">Tous les livres de la bibliothèque</p>
                             <div class="group-search-standard">
                                 <input type="text" id="input-seach-book" class="input-search" name="text">
-                                <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value="R"></input>
+                                <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value=""></input>
                             </div>
                             <div class="group-tool-standard">
                                 <button type="button" id="btn-all-detail">Vue détails</button>
