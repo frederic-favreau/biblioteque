@@ -49,7 +49,7 @@
               <a href="#" id="btn-index-session"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a>
             <?php
           } else { ?>
-              <a href="./front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
+              <a href="./front/connect.php" id="btn-sign-up"> <span id="mobile"><img src="./img/picto/log-in-01.svg" alt="login"></span><span id="desktop">Connexion / inscription</span>
               <?php
             }
               ?>

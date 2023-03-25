@@ -520,6 +520,8 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info label.label-form-profil {
   display: block;
@@ -533,16 +535,16 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 10px;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname .input-fullname {
-  width: 400px;
+  width: 100%;
   height: 44px;
   font-size: 20px;
   border-radius: 8px;
   padding-left: 10px;
   border: 1px solid gray;
+  margin-right: 20px;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname .label-fullname {
   font-size: 14px;
@@ -556,18 +558,20 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #container-fullname #lastname {
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info div#email {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
+  width: 100%;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info div#email #label-email {
   font-size: 14px;
   color: #070606;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info div#email #input-mail {
-  width: 400px;
+  width: 100%;
   height: 44px;
   font-size: 20px;
   border-radius: 8px;
@@ -578,13 +582,14 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   display: flex;
   flex-direction: column;
   margin-bottom: 8px;
+  width: 100%;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #location #label-location {
   font-size: 14px;
   color: #070606;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #location input {
-  width: 840px;
+  width: 100%;
   height: 44px;
   font-size: 20px;
   border-radius: 8px;
@@ -595,13 +600,14 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
+  width: 100%;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #password #label-password {
   font-size: 14px;
   color: #070606;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #password #input-password {
-  width: 400px;
+  width: 100%;
   height: 44px;
   font-size: 20px;
   border-radius: 8px;
@@ -612,18 +618,19 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-reset {
   width: 160px;
   height: 40px;
   border-radius: 8px;
-  margin-right: 20px;
   border: 1px solid #0868ae;
   color: #0868ae;
   background-color: #fff;
   border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s ease;
+  margin: 10px;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-reset:hover {
   background-color: #0868ae;
@@ -639,6 +646,7 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
   color: #fff;
   border-radius: 8px;
   text-align: center;
+  margin: 10px;
   transition: background-color 0.3s ease;
 }
 section#dashboard-page-profil div#container-profil-tabs div#box-personal-info form#form-personal-info #group-btn-form button#btn-submit:hover {

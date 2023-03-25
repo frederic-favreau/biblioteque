@@ -417,7 +417,6 @@ header#side-bar-log {
   }
 }
 
-
 // ----------  CLASS COMMUNE - DASHBOARD ----------
 
 div.container-dashboard-base {
@@ -579,6 +578,8 @@ section#dashboard-page-profil {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
 
         label.label-form-profil {
           display: block;
@@ -593,15 +594,16 @@ section#dashboard-page-profil {
           flex-wrap: wrap;
           justify-content: flex-start;
           margin-bottom: 10px;
-          width: fit-content;
+          width: 100%;
 
           .input-fullname {
-            width: 400px;
+            width: 100%;
             height: 44px;
             font-size: 20px;
             border-radius: 8px;
             padding-left: 10px;
             border: 1px solid gray;
+            margin-right: 20px;
           }
 
           .label-fullname {
@@ -614,9 +616,11 @@ section#dashboard-page-profil {
             flex-direction: column;
             margin-right: 20px;
           }
+
           #lastname {
             display: flex;
             flex-direction: column;
+            margin-right: 20px;
           }
         }
 
@@ -624,6 +628,7 @@ section#dashboard-page-profil {
           display: flex;
           flex-direction: column;
           margin-bottom: 15px;
+          width: 100%;
 
           #label-email {
             font-size: 14px;
@@ -631,7 +636,7 @@ section#dashboard-page-profil {
           }
 
           #input-mail {
-            width: 400px;
+            width: 100%;
             height: 44px;
             font-size: 20px;
             border-radius: 8px;
@@ -644,13 +649,15 @@ section#dashboard-page-profil {
           display: flex;
           flex-direction: column;
           margin-bottom: 8px;
+          width: 100%;
+
           #label-location {
             font-size: 14px;
             color: $black;
           }
 
           input {
-            width: 840px;
+            width: 100%;
             height: 44px;
             font-size: 20px;
             border-radius: 8px;
@@ -663,6 +670,7 @@ section#dashboard-page-profil {
           display: flex;
           flex-direction: column;
           margin-bottom: 15px;
+          width: 100%;
 
           #label-password {
             font-size: 14px;
@@ -670,7 +678,7 @@ section#dashboard-page-profil {
           }
 
           #input-password {
-            width: 400px;
+            width: 100%;
             height: 44px;
             font-size: 20px;
             border-radius: 8px;
@@ -683,18 +691,19 @@ section#dashboard-page-profil {
         #group-btn-form {
           display: flex;
           flex-wrap: wrap;
+          justify-content: center;
 
           button#btn-reset {
             width: 160px;
             height: 40px;
             border-radius: 8px;
-            margin-right: 20px;
             border: 1px solid $main-blue;
             color: $main-blue;
             background-color: $white;
             border-radius: 8px;
             text-align: center;
             transition: background-color 0.3s ease;
+            margin: 10px;
 
             &:hover {
               background-color: $main-blue;
@@ -712,6 +721,7 @@ section#dashboard-page-profil {
             color: $white;
             border-radius: 8px;
             text-align: center;
+            margin: 10px;
             transition: background-color 0.3s ease;
 
             &:hover {
@@ -895,7 +905,6 @@ section#loan-register {
                 @media screen and (min-width: 1250px) {
                   width: 40%;
                 }
-                
 
                 ul.all-info-user {
                   li {
@@ -939,7 +948,6 @@ section#loan-register {
                 @media screen and (min-width: 1200px) {
                   width: 40%;
                 }
-
 
                 ul.all-info-book {
                   li {
@@ -1007,8 +1015,6 @@ section#loan-register {
         // width: 600px;
       }
     }
-
-
 
     div#form-loan-register-left {
       display: flex;
@@ -1185,7 +1191,6 @@ p.info-succes-notif > strong {
   line-height: 80px;
   color: $white;
 }
-
 
 section#dashboard-page-book-crud {
   padding: 30px 30px 0px;
@@ -1422,7 +1427,7 @@ div#confirmed-error {
               }
             }
           }
-          
+
           li.item-title-crud {
             position: relative;
             color: $main-blue;
@@ -1613,7 +1618,7 @@ div#confirmed-error {
                       height: fit-content;
                       font-size: 18px;
                       flex-direction: row;
-                      justify-content: space-between;                     
+                      justify-content: space-between;
                     }
 
                     span.bdd-var {
@@ -1670,16 +1675,13 @@ section#dashboard-page-book-add {
       align-items: center;
       width: 50%;
 
-
-      div.add-div{
-
+      div.add-div {
         border: solid $main-blue 3px;
         padding: 20px 20px 0 20px;
         border-radius: 10px;
         margin-bottom: 20px;
 
-
-        button.add-div-btn{
+        button.add-div-btn {
           margin-bottom: 20px;
           margin-left: 66%;
           padding: 0 10px;
@@ -1690,11 +1692,7 @@ section#dashboard-page-book-add {
           font-size: 1.2em;
           height: 40px;
           width: 200px;
-
-
-
         }
-
 
         div.add-form-template-label-input {
           .label-form-add-book {
@@ -1702,12 +1700,7 @@ section#dashboard-page-book-add {
             margin-right: 20px;
           }
         }
-
-
-
       }
-
-      
     }
 
     div#form-add-book-right {

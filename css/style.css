@@ -202,7 +202,7 @@ p.sub-title-section {
 }
 @media screen and (min-width: 950px) {
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top {
-    width: 600px;
+    width: 500px;
   }
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
@@ -224,17 +224,6 @@ p.sub-title-section {
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top:focus {
   outline: none;
-}
-@media screen and (min-width: 650px) {
-  #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
-    width: 300px;
-    padding-left: 30px;
-  }
-}
-@media screen and (min-width: 1100px) {
-  #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top #input-search-nav-top {
-    width: 600px;
-  }
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top input#btn-search-nav-top {
   display: block;
@@ -291,16 +280,25 @@ p.sub-title-section {
   position: relative;
   margin-left: auto;
 }
-#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span {
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span#mobile {
+  display: block;
+  margin-top: 8px;
+}
+@media screen and (min-width: 650px) {
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span#mobile {
+    display: none;
+  }
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span#desktop {
   display: none;
 }
 @media screen and (min-width: 950px) {
-  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span {
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span#desktop {
     display: block;
   }
 }
 @media screen and (min-width: 950px) and (min-width: 950px) {
-  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span {
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span#desktop {
     display: block;
     padding: 12px 24px;
     background-color: #ff5e38;
@@ -309,7 +307,7 @@ p.sub-title-section {
     text-align: center;
     transition: background-color 0.3s ease;
   }
-  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span:hover {
+  #main-header #main-nav-bar #container-nav-bar #container-group-btn-connexion #btn-sign-up span#desktop:hover {
     background-color: #b53928;
   }
 }
@@ -404,11 +402,6 @@ p.sub-title-section {
 #main-header #main-nav-bar #container-nav-bar #arrow-container {
   display: none;
   margin-right: 1rem;
-}
-@media screen and (min-width: 650px) {
-  #main-header #main-nav-bar #container-nav-bar #arrow-container {
-    display: none;
-  }
 }
 #main-header #main-nav-bar #container-nav-bar #arrow-container #left-arrow {
   background-color: transparent;

@@ -21,18 +21,15 @@ showFilters.forEach((filter) => {
 
 //
 //
-// SHOW AND HIDE SEARCH BARD MOBILE VIEW
+// SHOW AND HIDE SEARCH TOP BAR MOBILE VIEW
 document.addEventListener("DOMContentLoaded", function () {
   const showImgBzrBtn = document.getElementById("show-search-bar");
   const leftArrowBtn = document.getElementById("left-arrow");
   const arrowContainer = document.getElementById("arrow-container");
   const containerGroupLogo = document.getElementById("container-group-logo");
-  const containerGroupSearchNavTop = document.getElementById(
-    "container-group-search-nav-top"
-  );
-  const containerBoxindexLogout = document.getElementById(
-    "container-box-index-logout"
-  );
+  const containerGroupSearchNavTop = document.getElementById("container-group-search-nav-top");
+  const containerBoxindexLogout = document.getElementById("container-box-index-logout");
+  const containerBtnSignup = document.getElementById("btn-sign-up");
 
   showImgBzrBtn.addEventListener("click", function () {
     if (window.innerWidth <= 650) {
@@ -42,8 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       containerGroupSearchNavTop.style.display = "block";
       showImgBzrBtn.style.display = "none";
       containerBoxindexLogout.style.display = "none";
-      containerGroupSearchNavTop.style.transform = "scaleY(1)";
-      containerGroupSearchNavTop.style.opacity = "1";
+      containerBtnSignup.style.display = "none";
     }
   });
 
@@ -55,9 +51,22 @@ document.addEventListener("DOMContentLoaded", function () {
       containerGroupSearchNavTop.style.display = "none";
       showImgBzrBtn.style.display = "block";
       containerBoxindexLogout.style.display = "block";
+      containerBtnSignup.style.display = "block";
     }
   });
 });
+
+function resetStyles() {
+  if (window.innerWidth > 650) {
+    containerGroupLogo.style.display = "flex";
+    containerGroupSearchNavTop.style.width = "auto";
+    containerGroupSearchNavTop.style.display = "block";
+    containerBoxindexLogout.style.display = "block";
+    containerBtnSignup.style.display = "none";
+  }
+}
+
+window.addEventListener("resize", resetStyles);
 
 //
 //
@@ -306,3 +315,4 @@ faqItems.forEach((item) => {
     item.classList.toggle("active");
   });
 });
+

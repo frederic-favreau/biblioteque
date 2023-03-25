@@ -25,7 +25,7 @@ $grayForBlue: #fefeff;
 
 .row-limit-size-full {
   width: 100%;
-  // height: 100vh;
+
   margin: 0 auto;
 }
 
@@ -225,7 +225,7 @@ p.sub-title-section {
         }
 
         @media screen and (min-width: 950px) {
-          width: 600px;
+          width: 500px;
         }
 
         #input-search-nav-top {
@@ -245,15 +245,6 @@ p.sub-title-section {
 
           &:focus {
             outline: none;
-          }
-
-          @media screen and (min-width: 650px) {
-            width: 300px;
-            padding-left: 30px;
-          }
-
-          @media screen and (min-width: 1100px) {
-            width: 600px;
           }
         }
 
@@ -320,7 +311,15 @@ p.sub-title-section {
         // }
 
         #btn-sign-up {
-          span {
+          span#mobile {
+            display: block;
+            margin-top: 8px;
+
+            @media screen and (min-width: 650px) {
+              display: none;
+            }
+          }
+          span#desktop {
             display: none;
 
             @media screen and (min-width: 950px) {
@@ -444,10 +443,6 @@ p.sub-title-section {
       #arrow-container {
         display: none;
         margin-right: 1rem;
-
-        @media screen and (min-width: 650px) {
-          display: none;
-        }
 
         #left-arrow {
           background-color: transparent;
