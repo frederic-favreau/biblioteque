@@ -439,6 +439,7 @@ section#section-main-hero div#container-section-main-hero {
   margin: 0 auto;
 }
 section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left {
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -463,8 +464,8 @@ section#section-main-hero div#container-section-main-hero div#item-section-main-
 }
 @media screen and (min-width: 1400px) {
   section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left {
-    margin-right: -200px;
-    margin-left: 200px;
+    margin-right: -100px;
+    margin-left: 100px;
   }
 }
 section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left .animated-word {
@@ -556,10 +557,11 @@ section#section-main-hero div#container-section-main-hero div#item-section-main-
   color: #fff;
 }
 section#section-main-hero div#item-section-main-hero-right {
+  z-index: 1;
   display: none;
 }
 section#section-main-hero div#item-section-main-hero-right img.pict-reader-hero {
-  width: 300px;
+  width: 400px;
   height: auto;
 }
 @media screen and (min-width: 950px) {
