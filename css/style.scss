@@ -243,8 +243,14 @@ p.sub-title-section {
             color: $grayForBlue;
             margin: 0 auto;
 
+
             &::placeholder {
               color: $white;
+              background-color: transparent;
+            }
+
+            &::-webkit-input-placeholder {
+              background-color: transparent;
             }
 
             &:focus {
@@ -270,7 +276,7 @@ p.sub-title-section {
 
             @media screen and (min-width: 650px) {
               position: absolute;
-              right: 30px;
+              right: 50px;
               top: 5px;
             }
 

@@ -152,18 +152,6 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                                     } ?>
                                 </form>
 
-
-
-
-                    
-                   
-
-
-
-
-
-
-
                     <ul class="info-work-description">
                         <li>Auteur <span><?= str_replace(',', ', ', $book['authors']) ?></span></li>
                         <li>Genre <span><?= str_replace(',', ', ', $book['genres']) ?></span></li>
@@ -274,20 +262,6 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                                     } ?>
                                 </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            
                         </div>
                     </div>
                 <?php } ?>

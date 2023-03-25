@@ -21,6 +21,27 @@ showFilters.forEach((filter) => {
 
 //
 //
+// BTN BACK TO TOP
+$(document).ready(function () {
+  // Affiche ou masque le bouton en fonction du défilement
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > $(window).height()) {
+      $("#back-to-top").fadeIn();
+    } else {
+      $("#back-to-top").fadeOut();
+    }
+  });
+
+  // Animer le défilement vers le haut lors du clic sur le bouton
+  $("#back-to-top").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+    return false;
+  });
+});
+
+
+//
+//
 // SHOW AND HIDE SEARCH TOP BAR MOBILE VIEW
 document.addEventListener("DOMContentLoaded", function () {
   const showImgBzrBtn = document.getElementById("show-search-bar");

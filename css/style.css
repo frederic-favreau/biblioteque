@@ -222,9 +222,14 @@ p.sub-title-section {
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top form #input-search-nav-top::-moz-placeholder {
   color: #fff;
+  background-color: transparent;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top form #input-search-nav-top::placeholder {
   color: #fff;
+  background-color: transparent;
+}
+#main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top form #input-search-nav-top::-webkit-input-placeholder {
+  background-color: transparent;
 }
 #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top form #input-search-nav-top:focus {
   outline: none;
@@ -248,7 +253,7 @@ p.sub-title-section {
 @media screen and (min-width: 650px) {
   #main-header #main-nav-bar #container-nav-bar #container-group-search-nav-top form input#btn-search-nav-top {
     position: absolute;
-    right: 30px;
+    right: 50px;
     top: 5px;
   }
 }
