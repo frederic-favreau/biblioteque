@@ -47,8 +47,8 @@
 
           <?php
           } else { ?>
-            <a href="../front/connect.php" id="btn-sign-up"><span>Connexion / inscription</span>
-            <?php
+              <a href="../front/connect.php" id="btn-sign-up"> <span id="mobile"><img src="../img/picto/log-in-01.svg" alt="login"></span><span id="desktop">Connexion / inscription</span>
+              <?php
           } ?>
 
             <div id="menu-burger">

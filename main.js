@@ -21,52 +21,86 @@ showFilters.forEach((filter) => {
 
 //
 //
+// BTN BACK TO TOP
+$(document).ready(function () {
+  // Affiche ou masque le bouton en fonction du défilement
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > $(window).height()) {
+      $("#back-to-top").fadeIn();
+    } else {
+      $("#back-to-top").fadeOut();
+    }
+  });
+
+  // Animer le défilement vers le haut lors du clic sur le bouton
+  $("#back-to-top").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+    return false;
+  });
+});
+
+
+//
+//
 // SHOW AND HIDE SEARCH TOP BAR MOBILE VIEW
-// document.addEventListener("DOMContentLoaded", function () {
-//   const showImgBzrBtn = document.getElementById("show-search-bar");
-//   const leftArrowBtn = document.getElementById("left-arrow");
-//   const arrowContainer = document.getElementById("arrow-container");
-//   const containerGroupLogo = document.getElementById("container-group-logo");
-//   const containerGroupSearchNavTop = document.getElementById("container-group-search-nav-top");
-//   const containerBoxindexLogout = document.getElementById("container-box-index-logout");
-//   const containerBtnSignup = document.getElementById("btn-sign-up");
+document.addEventListener("DOMContentLoaded", function () {
+  const showImgBzrBtn = document.getElementById("show-search-bar");
+  const leftArrowBtn = document.getElementById("left-arrow");
+  const arrowContainer = document.getElementById("arrow-container");
+  const containerGroupLogo = document.getElementById("container-group-logo");
+  const containerGroupSearchNavTop = document.getElementById("container-group-search-nav-top");
+  const containerBoxindexLogout = document.getElementById("container-box-index-logout");
+  const containerBtnSignup = document.getElementById("btn-sign-up");
 
-//   showImgBzrBtn.addEventListener("click", function () {
-//     if (window.innerWidth <= 650) {
-//       arrowContainer.style.display = "block";
-//       containerGroupLogo.style.display = "none";
-//       containerGroupSearchNavTop.style.width = "95%";
-//       containerGroupSearchNavTop.style.display = "block";
-//       showImgBzrBtn.style.display = "none";
-//       containerBoxindexLogout.style.display = "none";
-//       containerBtnSignup.style.display = "none";
-//     }
-//   });
+  showImgBzrBtn.addEventListener("click", function () {
+    if (window.innerWidth <= 650) {
+      arrowContainer.style.display = "block";
+      containerGroupLogo.style.display = "none";
+      containerGroupSearchNavTop.style.width = "95%";
+      containerGroupSearchNavTop.style.display = "block";
+      showImgBzrBtn.style.display = "none";
+      containerBoxindexLogout.style.display = "none";
+      containerBtnSignup.style.display = "none";
+    }
+  });
 
-//   leftArrowBtn.addEventListener("click", function () {
-//     if (window.innerWidth <= 650) {
-//       arrowContainer.style.display = "none";
-//       containerGroupLogo.style.display = "flex";
-//       containerGroupSearchNavTop.style.width = "auto";
-//       containerGroupSearchNavTop.style.display = "none";
-//       showImgBzrBtn.style.display = "block";
-//       containerBoxindexLogout.style.display = "block";
-//       containerBtnSignup.style.display = "block";
-//     }
-//   });
-// });
+  leftArrowBtn.addEventListener("click", function () {
+    if (window.innerWidth <= 650) {
+      arrowContainer.style.display = "none";
+      containerGroupLogo.style.display = "flex";
+      containerGroupSearchNavTop.style.width = "auto";
+      containerGroupSearchNavTop.style.display = "none";
+      showImgBzrBtn.style.display = "block";
+      containerBoxindexLogout.style.display = "block";
+      containerBtnSignup.style.display = "block";
+    }
+  });
+});
 
-// function resetStyles() {
-//   if (window.innerWidth > 650) {
-//     containerGroupLogo.style.display = "flex";
-//     containerGroupSearchNavTop.style.width = "auto";
-//     containerGroupSearchNavTop.style.display = "block";
-//     containerBoxindexLogout.style.display = "block";
-//     containerBtnSignup.style.display = "none";
-//   }
-// }
+function resetStyles() {
+  console.log("resetStyles() called");
+  if (window.innerWidth > 650) {
+    console.log("resetStyles() - screen width > 650");
+    containerGroupLogo.style.display = "flex";
+    containerGroupSearchNavTop.style.width = "auto";
+    containerGroupSearchNavTop.style.display = "block";
+    containerBoxindexLogout.style.display = "block";
+    containerBtnSignup.style.display = "none";
+  } else {
+    console.log("resetStyles() - screen width <= 650");
+    containerGroupLogo.style.display = "none";
+    containerGroupSearchNavTop.style.width = "95%";
+    containerGroupSearchNavTop.style.display = "none";
+    arrowContainer.style.display = "none";
+    showImgBzrBtn.style.display = "block";
+    containerBoxindexLogout.style.display = "none";
+    containerBtnSignup.style.display = "none";
+  }
+}
 
-// window.addEventListener("resize", resetStyles);
+window.addEventListener("resize", resetStyles);
+
+
 
 //
 //

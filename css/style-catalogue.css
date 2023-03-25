@@ -1,26 +1,27 @@
 main {
   width: 90%;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 70px;
 }
 @media screen and (min-width: 950px) {
   main {
-    padding-top: 100px;
+    padding-top: 70px;
   }
 }
 main #Breadcrumb {
-  display: none;
-}
-@media screen and (min-width: 950px) {
-  main #Breadcrumb {
-    display: flex;
-  }
+  display: flex;
 }
 main #Breadcrumb li {
   margin-right: 10px;
 }
 main #Breadcrumb li a {
+  font-size: 12px;
   color: #0868ae;
+}
+@media screen and (min-width: 950px) {
+  main #Breadcrumb li a {
+    font-size: 14px;
+  }
 }
 main #Breadcrumb li a:hover {
   color: #043a61;
@@ -51,6 +52,7 @@ main #section-catalog #container-catalog #container-filter {
   background-color: #fff;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-right: 10px;
 }
 @media screen and (min-width: 950px) {
   main #section-catalog #container-catalog #container-filter {
@@ -135,7 +137,7 @@ main #section-catalog #container-cards {
 }
 @media screen and (min-width: 950px) {
   main #section-catalog #container-cards {
-    width: 79%;
+    width: 78%;
   }
 }
 main #section-catalog #container-cards .container-sort {
@@ -175,15 +177,26 @@ main #section-catalog #container-cards .container-sort input#ramdom {
   background-color: red;
   border: none;
   color: white;
+  font-weight: bold;
   border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s ease;
+  margin: 20px 0;
+}
+@media screen and (min-width: 950px) {
+  main #section-catalog #container-cards .container-sort input#ramdom {
+    margin: inherit;
+  }
+}
+main #section-catalog #container-cards .container-sort input#ramdom:hover {
+  background-color: #b53928;
+  cursor: pointer;
 }
 main #section-catalog .card {
   position: relative;
   max-width: 430px;
   width: 100%;
-  margin: 230px auto 20px auto;
+  margin: 230px 10px 20px 10px;
   height: -moz-fit-content;
   height: fit-content;
   padding: 30px 15px 60px 15px;
@@ -193,7 +206,7 @@ main #section-catalog .card {
 }
 @media screen and (min-width: 550px) {
   main #section-catalog .card {
-    margin: 60px auto 20px auto;
+    margin: 40px auto 20px auto;
     width: 33%;
     max-width: 530px;
     min-width: 530px;
