@@ -931,7 +931,7 @@ section#section-news .text-shadow {
 }
 @media screen and (min-width: 850px) {
   #section-heart ul.top li:nth-child(1) {
-    top: -40px;
+    top: -63px;
   }
 }
 @media screen and (min-width: 1400px) {
@@ -948,7 +948,7 @@ section#section-news .text-shadow {
 }
 @media screen and (min-width: 500px) {
   #section-heart ul.top li:nth-child(1) a {
-    left: -110px;
+    left: -60px;
   }
 }
 @media screen and (min-width: 950px) {
