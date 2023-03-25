@@ -19,10 +19,10 @@
                 <div class="form-container sign-up-container">
                     <form action="../admin/singup.php" method="POST">
                         <h1>S'enregistrer sur Biblook</h1>
-                        <input type="email" name="mail" placeholder="Email" />
-                        <input type="password" name="password" placeholder="Password" />
-                        <input type="firstname" name="firstname" placeholder="Your firstname" />
-                        <input type="lastname" name="lastname" placeholder="Your lastname" />
+                        <input type="email" name="mail" placeholder="Votre email" />
+                        <input type="password" name="password" placeholder="Votre mot de passe" />
+                        <input type="firstname" name="firstname" placeholder="Votre prénom" />
+                        <input type="lastname" name="lastname" placeholder="Votre nom" />
                         <br>
                         <button>s'enregistrer</button>
                     </form>
@@ -39,8 +39,8 @@
 
                     <form action="../admin/auth.php" method="POST">
                         <h1>Connexion à Biblook</h1>
-                        <input type="email" name="mail" id="mail" placeholder="Email" />
-                        <input type="password" name="password" placeholder="Password" />
+                        <input type="email" name="mail" id="mail" placeholder="Votre email" />
+                        <input type="password" name="password" placeholder="Votre mot de passe" />
                         <a href="#">Mot de passe oublié?</a>
                         <button type="submit">Se connecter</button>
                     </form>
@@ -63,6 +63,7 @@
                 </div>
             </div>
         </section>
+        <a href="../index.php" id="return-homapage">Retour à la page d'accueil</a>
     </main>
     <script src="../connect.js"></script>
 </body>
