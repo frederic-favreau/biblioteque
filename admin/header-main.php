@@ -93,8 +93,8 @@ if (!isset($_SESSION['id-user'])) {
     if ($_SESSION['role'] == 0) {
     ?>
         <a href="../index.php"><img src="../img/side-bar/picto-home.svg" alt="accueil" id="btn-home"></a>
-        <a href="./dashboard.php"><img src="../img/picto/presentation-chart-01.svg" alt="accueil" id="btn-home"></a>
-        <a href="../index.php#section-news"><img src="../img/picto/zap.svg" alt="nouveauté" id="btn-home"></a>
+        <a href="#box-whish-list"><img src="../img/picto/heart-rounded-sidebar.svg" alt="accueil" id="btn-home"></a>
+        <a href="#box-loan"><img src="../img/picto/book-open-02.svg" alt="nouveauté" id="btn-home"></a>
         <a href="../front/catalog.php"><img src="../img/picto/search-lg.svg" alt="utilisateur"></a>
     <?php
     }
