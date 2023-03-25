@@ -564,7 +564,6 @@
   </footer>
 
   <script src="./main.js"></script>
-  <script src="./ajax/like-index.js"></script>
   <script src="./js/logout-index.js"></script>
   <button id="back-to-top" title="Retour en haut">
     <i class="fas fa-arrow-up"></i>
