@@ -245,7 +245,7 @@
                  <div id="box-history" class="box-dashboard">
                      <h3 class="h3-dashboard">Historique de mes emprunts</h3>
                      <hr>
-                     <ul>
+                     <ul class="list-book-box">
 
                          <?php
                             $histoire = false;
@@ -276,8 +276,6 @@
 
                             $historiqueSql->execute();
 
-
-
                             while ($historique = $historiqueSql->fetch(PDO::FETCH_ASSOC)) {
                                 $histoire = true;
                             ?>
@@ -291,13 +289,7 @@
                                  </div>
                                  <div class="container-info-loan">
                                      <p class="info-disponibility"> <?= $historique['retour'] ?></p>
-
-
-
-
-
-
-                                     <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
+                                     <a href="../front/book-detail.php?id=<?= $workId ?>" class="btn-format-standard">Reprendre ce livre</a>
                                  </div>
                              </li>
                          <?php }

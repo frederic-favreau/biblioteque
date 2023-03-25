@@ -28,13 +28,23 @@ if (!isset($_SESSION['id-user'])) {
                     <div id="container-top-navigation">
                         <a href="../index.php" id="logo-sidebar"><img src="../img/logo-seul-biblook-noir.svg" alt="Bliblook" id="logo-big-sidebar" /><span id="dashbord-title">Tableau de bord</span></a>
                         <ul class="list-btn-side-bar">
-                            <?php
 
+                            <!-- SESSION USERS -->
+                            <?php
                             if ($_SESSION['role'] == 0) {
                             ?>
                                 <li>
-                                    <a href="./dashboard.php"><img src="../img/side-bar/picto-home.svg" alt="accueil" id="btn-home">Mon accueil</a>
+                                    <a href="../index.php"><img src="../img/side-bar/picto-home.svg" alt="accueil" id="btn-home">Retour au site</a>
                                 </li>
+                                <li>
+                                    <a href="./dashboard.php"><img src="../img/picto/presentation-chart-01.svg" alt="accueil" id="btn-home">Mon tableau de board</a>
+                                </li>
+                                <li>
+                                    <a href="../index.php#section-news"><img src="../img/picto/zap.svg" alt="nouveauté" id="btn-home">Nouveautés</a>
+                                </li>
+
+
+                                <!-- SESSION USERS -->
                             <?php
                             }
                             if ($_SESSION['role'] == 1) {
@@ -51,10 +61,11 @@ if (!isset($_SESSION['id-user'])) {
                             <?php
                             }
                             ?>
+
+                            <!-- SESSION COMMON -->
                             <li>
                                 <a href="../front/catalog.php"><img src="../img/picto/search-lg.svg" alt="utilisateur">Consulter le catalogue</a>
-                            </li>
-
+                            </li>                 
                         </ul>
                     </div>
                     <div id="container-group-profil">
@@ -72,12 +83,30 @@ if (!isset($_SESSION['id-user'])) {
             </div>
         </nav>
     </header>
-    <!-- BOTTOM BAR -->
-    <div id="bottom-bar">
-        <a href="./crud-book.php"><img src="../img/side-bar/picto-CRUD.svg" alt="crud"></a>
-        <a href="./register-book.php"><img src="../img/picto/bookmark.svg" alt="crud"></a>
-        <a href="./crud-user.php"><img src="../img/side-bar/picto-users.svg" alt="utilisateur"></a>
-        <a href="../front/catalog.php"><img src="../img/picto/search-lg.svg" alt="utilisateur"></a>
-    </div>
 
-    <main>
+
+
+<!-- BOTTOM BAR -->
+<div id="bottom-bar">
+    <!-- SESSION USERS -->
+    <?php
+    if ($_SESSION['role'] == 0) {
+    ?>
+        <a href="../index.php"><img src="../img/side-bar/picto-home.svg" alt="accueil" id="btn-home"></a>
+        <a href="./dashboard.php"><img src="../img/picto/presentation-chart-01.svg" alt="accueil" id="btn-home"></a>
+        <a href="../index.php#section-news"><img src="../img/picto/zap.svg" alt="nouveauté" id="btn-home"></a>
+        <a href="../front/catalog.php"><img src="../img/picto/search-lg.svg" alt="utilisateur"></a>
+    <?php
+    }
+    // SESSION ADMIN
+    if ($_SESSION['role'] == 1) {
+    ?>
+        <a href="./crud-book.php"><img src="../img/side-bar/picto-CRUD.svg" alt="Crud book"></a>
+        <a href="./register-book.php"><img src="../img/picto/bookmark.svg" alt="Registre des emprunts"></a>
+        <a href="./crud-user.php"><img src="../img/side-bar/picto-users.svg" alt="Crud des utilisateurs"></a>
+        <a href="../front/catalog.php"><img src="../img/picto/search-lg.svg" alt="Catalogue"></a>
+    <?php
+    }
+    ?>
+</div>
+<main>
