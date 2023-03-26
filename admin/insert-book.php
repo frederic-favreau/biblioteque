@@ -209,16 +209,16 @@
                      <!-- ... autres champs existants ... -->
                      <div class="add-form-template-label-input">
                          <label for="work-title-add" class="label-form-add-book">Titre du livre</label>
-                         <input type="text" name="work-title-add" id="work-title-add" class="input-form-add-book" value="hh" />
+                         <input type="text" name="work-title-add" id="work-title-add" class="input-form-add-book"  />
                      </div>
                      <div >
                          <div class="add-form-template-label-input">
                              <label for="author-firstname-add" class="label-form-add-book">Prénom de l'autheur</label>
-                             <input type="text" name="author-firstname-add" id="author-firstname-add" value="hh" class="input-form-add-book" />
+                             <input type="text" name="author-firstname-add" id="author-firstname-add" class="input-form-add-book" />
                          </div>
                          <div class="add-form-template-label-input">
                              <label for="author-lastname-add" class="label-form-add-book">Nom de l'autheur</label>
-                             <input type="text" name="author-lastname-add" id="author-lastname-add" value="hh" class="input-form-add-book" />
+                             <input type="text" name="author-lastname-add" id="author-lastname-add"  class="input-form-add-book" />
                          </div>
                          <!--<button class="add-div-btn"> Ajouter un auteur</button>-->
 
@@ -226,24 +226,24 @@
 
                      <div class="add-form-template-label-input">
                          <label for="author-firstname-2-add" class="label-form-add-book">Prénom de l'auteur (optionnel)</label>
-                         <input type="text" name="author-firstname-2-add" id="author-firstname-2-add" value="oo" class="input-form-add-book" />
+                         <input type="text" name="author-firstname-2-add" id="author-firstname-2-add" class="input-form-add-book" />
                      </div>
 
                      <div class="add-form-template-label-input">
                          <label for="author-2-lastname-add" class="label-form-add-book">Nom de l'auteur (optionnel)</label>
-                         <input type="text" name="author-2-lastname-add" id="author-2-lastname-add" value="oo" class="input-form-add-book" />
+                         <input type="text" name="author-2-lastname-add" id="author-2-lastname-add" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-genre-add" class="label-form-add-book">Genre du livre</label>
-                         <input type="text" name="work-genre-add" id="work-genre-add" class="input-form-add-book" value="aventure" />
+                         <input type="text" name="work-genre-add" id="work-genre-add" class="input-form-add-book"  />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-genre-2-add" class="label-form-add-book">Deuxième genre du livre (optionnel)</label>
-                         <input type="text" name="work-genre-2-add" id="work-genre-2-add" value="historique" class="input-form-add-book" />
+                         <input type="text" name="work-genre-2-add" id="work-genre-2-add" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-category-add" class="label-form-add-book">Categorie du livre</label>
-                         <input type="text" name="work-category-add" id="work-category-add" value="hh" class="input-form-add-book" />
+                         <input type="text" name="work-category-add" id="work-category-add" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="work-publish-date-add" class="label-form-add-book">Date de publication du livre</label>
@@ -261,10 +261,10 @@
                  <div id="form-add-book-right">
                      <!-- ... autres champs existants ... -->
                      <label for="work-extract-add" class="label-form-add-book">Extrait du livre</label>
-                     <textarea name="work-extract-add" id="work-extract-add" value="hh"></textarea>
+                     <textarea name="work-extract-add" id="work-extract-add" ></textarea>
 
                      <label for="work-pict" class="label-form-add-book">Nom de l'image de couverture (ajouter le format au nom)</label>
-                     <input type="text" name="work-pict-add" id="work-pict-add" class="input-form-add-book" value="encyclopedie_de_la_biere.jpg" />
+                     <input type="text" name="work-pict-add" id="work-pict-add" class="input-form-add-book" />
 
 
                  </div>

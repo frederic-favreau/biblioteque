@@ -258,11 +258,12 @@ include_once '../connexion.php';
                                 <form action="../admin/like-catalog.php?id=<?= $card['id_work'] ?>" method="POST">
 
                                     <?php
-                                    $idUser = $_SESSION['id-user'];
-                                    $idBook = $card['id_work'];
+                                    
 
 
                                     if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+                                        $idUser = $_SESSION['id-user'];
+                                    $idBook = $card['id_work'];
                                         $coeurSql = $db->prepare("SELECT `work_id`,`user_id` FROM `like` WHERE`user_id` = :user_id AND `work_id` = :work_id");
 
                                         $coeurSql->bindParam('user_id', $idUser, PDO::PARAM_INT);
