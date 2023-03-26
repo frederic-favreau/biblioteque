@@ -78,7 +78,7 @@
 
   <main>
     <section id="section-main-hero" class="row-limit-size-full">
-      <div id="container-section-main-hero" class="row-limit-size-full">
+      <div id="container-section-main-hero" class="row-limit-size">
         <div id="item-section-main-hero-left">
           <h1 id="title-hero">Biblook</h1>
           <p id="sub-title-hero">La bibliothèque qui propose <br> des livres pour <span class="animated-word smoke-effect" id="animated-word">Apprendre</span></p>

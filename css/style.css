@@ -448,6 +448,7 @@ section#section-main-hero div#container-section-main-hero {
   padding-top: 30px;
   padding-bottom: 50px;
   margin: 0 auto;
+  overflow: hidden;
 }
 section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left {
   z-index: 10;
@@ -464,7 +465,7 @@ section#section-main-hero div#container-section-main-hero div#item-section-main-
 }
 @media screen and (min-width: 950px) {
   section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left {
-    width: 55%;
+    width: 50%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -615,7 +616,7 @@ section#section-main-hero div#item-section-main-hero-right img.pict-reader-hero 
 @media screen and (min-width: 650px) {
   section#section-main-hero div#item-section-main-hero-right {
     display: block;
-    width: 45%;
+    width: 50%;
   }
 }
 
