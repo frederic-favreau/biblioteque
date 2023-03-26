@@ -83,9 +83,10 @@
           <h1 id="title-hero">Biblook</h1>
           <p id="sub-title-hero">La bibliothèque qui propose <br> des livres pour <span class="animated-word smoke-effect" id="animated-word">Apprendre</span></p>
           <div class="picto-choise-profil">
-            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-fille">
-            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-ado">
-            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-adulte">
+            <img src="./img/hero/logo/logo-biblook-enfant.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-fille">
+            <img src="./img/hero/logo/logo-biblook-ado.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-ado">
+            <img src="./img/hero/logo/logo-biblook-senior.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-adulte">
+            <img src="./img/hero/cursor-click-02.svg" alt="Curseur" id="pict-hero-cursor">
           </div>
           <a href="./front/catalog.php" id="discover-space">Découvrir le catalogue</a>
         </div>

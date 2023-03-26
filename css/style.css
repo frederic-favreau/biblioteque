@@ -464,7 +464,7 @@ section#section-main-hero div#container-section-main-hero div#item-section-main-
 }
 @media screen and (min-width: 950px) {
   section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left {
-    width: 50%;
+    width: 55%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -533,8 +533,19 @@ section#section-main-hero div#container-section-main-hero div#item-section-main-
     font-size: 40px;
   }
 }
+section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil {
+  position: relative;
+}
 section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil img.pict-hero-commun {
-  width: 80px;
+  width: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media screen and (min-width: 950px) {
+  section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil img.pict-hero-commun {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 @media screen and (min-width: 950px) {
   section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil img.pict-hero-commun {
@@ -543,16 +554,32 @@ section#section-main-hero div#container-section-main-hero div#item-section-main-
 }
 @media screen and (min-width: 950px) {
   section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil img.pict-hero-commun {
-    width: 140px;
+    width: 120px;
   }
 }
 @media screen and (min-width: 1280px) {
   section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil img.pict-hero-commun {
-    width: 180px;
+    width: 140px;
   }
 }
 section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil img.pict-hero-commun:hover {
   cursor: pointer;
+}
+section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil img#pict-hero-cursor {
+  z-index: 5;
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+  height: 20px;
+}
+@media screen and (min-width: 950px) {
+  section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left div.picto-choise-profil img#pict-hero-cursor {
+    z-index: 5;
+    position: absolute;
+    bottom: -40px;
+    left: 80px;
+    height: 80px;
+  }
 }
 section#section-main-hero div#container-section-main-hero div#item-section-main-hero-left a#discover-space {
   margin-top: 60px;
@@ -588,7 +615,7 @@ section#section-main-hero div#item-section-main-hero-right img.pict-reader-hero 
 @media screen and (min-width: 650px) {
   section#section-main-hero div#item-section-main-hero-right {
     display: block;
-    width: 50%;
+    width: 45%;
   }
 }
 

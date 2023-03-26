@@ -243,7 +243,6 @@ p.sub-title-section {
             color: $grayForBlue;
             margin: 0 auto;
 
-
             &::placeholder {
               color: $white;
               background-color: transparent;
@@ -510,7 +509,7 @@ section#section-main-hero {
       }
 
       @media screen and (min-width: 950px) {
-        width: 50%;
+        width: 55%;
       }
 
       @media screen and (min-width: 1200px) {
@@ -581,23 +580,47 @@ section#section-main-hero {
       }
 
       div.picto-choise-profil {
+        position: relative;
         img.pict-hero-commun {
-          width: 80px;
+          width: 60px;
+          margin-left: 10px;
+          margin-right: 10px;
+
+          @media screen and (min-width: 950px) {
+            margin-left: 15px;
+            margin-right: 15px;
+          }
 
           @media screen and (min-width: 950px) {
             width: 120px;
           }
 
           @media screen and (min-width: 950px) {
-            width: 140px;
+            width: 120px;
           }
 
           @media screen and (min-width: 1280px) {
-            width: 180px;
+            width: 140px;
           }
 
           &:hover {
             cursor: pointer;
+          }
+        }
+
+        img#pict-hero-cursor {
+          z-index: 5;
+          position: absolute;
+          bottom: 0px;
+          left: 50px;
+          height: 20px;
+
+          @media screen and (min-width: 950px) {
+            z-index: 5;
+            position: absolute;
+            bottom: -40px;
+            left: 80px;
+            height: 80px;
           }
         }
       }
@@ -638,7 +661,7 @@ section#section-main-hero {
 
     @media screen and (min-width: 650px) {
       display: block;
-      width: 50%;
+      width: 45%;
     }
   }
 }
