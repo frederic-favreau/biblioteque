@@ -12,20 +12,22 @@ include_once '../admin/header-main.php';
     <div class="container-dashboard-base">
         <h1 class="h1-dashboard">Bienvenue dans l'espace de registre d'emprunts</h1>
         <h2 class="h2-dashboard">Vous pouvez gérer les emprunts des lecteurs de la bibliothèque dans cet espace</h2>
-
         <div class="container-crud-book-tabs">
             <div id="box-crud-book" class="box-dashboard">
-
                 <div class="search-add-crud-book">
-                    <h3 class="h3-dashboard">Registres des emprunts des livres</h3>
                     <div class="search-crud-input">
                         <form action="" method="post">
-                            <input type="text" id="input-seach-loan" class="input-search" name="text">
-                            <input type="submit" id="btn-search-loan" class="btn-search" name='rechercher' value="Rechercher"></input>
-                            <button type="button" id="btn-all-detail">Vue détails</button>
+                            <p class="title-sticky-crud">Registres des emprunts des livres</p>
+                            <div class="group-search-standard">
+                                <input type="text" id="input-seach-loan" class="input-search" name="text">
+                                <input type="submit" id="btn-search-loan" class="btn-search" name='rechercher' value=" "></input>
+                            </div>
+                            <div class="group-tool-standard">
+                                <button type="button" id="btn-all-detail">Vue détails</button>
+                                <a href="#box-loan-register" type="button" id="btn-add-book" class="btn-add">+ Nouvel emprunt</a>
+                            </div>
                         </form>
                     </div>
-                    <a href="#box-loan-register" type="button" id="btn-add-book" class="btn-add">Nouvel emprunt</a>
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">
@@ -96,12 +98,6 @@ include_once '../admin/header-main.php';
                             while ($registre = $registreSql->fetch(PDO::FETCH_ASSOC)) {
                                 $workId = $registre['id_work'];
                         ?>
-
-
-
-
-
-
 
                                 <li class="item-book-crud">
                                     <ul class="detail-item-book-crud">
@@ -226,12 +222,6 @@ include_once '../admin/header-main.php';
                                 $workId = $registre['id_work'];
                             ?>
 
-
-
-
-
-
-
                                 <li class="item-book-crud">
                                     <ul class="detail-item-book-crud">
                                         <li class="item-pict-crud">
@@ -256,8 +246,6 @@ include_once '../admin/header-main.php';
                                             <?php
                                             }
                                             ?>
-
-
 
                                         </li>
                                         <li class="btn-option-crud" data-idWork="['id_work']" data-title="['title']" data-pict="['pict']"><img src="../img/picto/magic-wand-02.svg" alt="Crayon"></li>

@@ -18,9 +18,7 @@ $bgModal: rgba(6, 13, 30, 0.5);
 
 .row-limit-size-db {
   @media screen and (min-width: 950px) {
-    padding-top: 40px;
-    padding-left: 100px;
-    padding: 40px 100px;
+    padding: 0px 30px;
   }
 }
 
@@ -437,15 +435,15 @@ header#side-bar-log {
 
 div.container-dashboard-base {
   height: fit-content;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
 
   .box-dashboard {
     width: 100%;
     height: fit-content;
     background-color: #fff;
     border-radius: 8px;
-    padding: 0 20px 20px 20px;
-    margin-bottom: 30px;
+    padding: 10px 20px 20px 20px;
+    margin-bottom: 40px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
     hr {
@@ -839,7 +837,10 @@ section#dashboard-page-profil {
 // ----------  SECTION lOAN BOOK REGISTER ----------
 
 section#loan-register {
-  padding: 30px 30px 0;
+  padding: 0 30px;
+  height: fit-content;
+
+
   div#container-list-book-crud {
     ul.list-book-crud {
       li.item-book-crud {
@@ -896,8 +897,8 @@ section#loan-register {
             height: fit-content;
             border-radius: 8px;
 
-            @media screen and (min-width: 500px) {
-              right: -60px;
+            @media screen and (min-width: 950px) {
+              right: -50px;
             }
 
             &:hover {
@@ -1118,12 +1119,6 @@ section#loan-register {
     }
 
     div#form-loan-register-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
-
       div.add-form-template-label-input {
         .label-form-add-book {
           font-size: 18px;
@@ -1218,12 +1213,6 @@ section#loan-register {
     }
 
     div#form-in-loan-register-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
-
       div.add-form-template-label-input {
         .label-form-add-book {
           font-size: 18px;
@@ -1297,10 +1286,6 @@ section#dashboard-page-book-crud {
   padding: 0 30px 50px 30px;
   height: fit-content;
 
-  @media screen and (min-width: 950px) {
-    padding-top: 40px;
-  }
-
   div#confirmed-delete {
     width: 350px;
     height: 160px;
@@ -1366,6 +1351,7 @@ div#confirmed-error {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 
   div.search-add-crud-book {
     position: sticky;
@@ -1383,6 +1369,7 @@ div#confirmed-error {
         flex-direction: column;
         justify-content: center;
         align-items: baseline;
+        margin-top: -10px;
         padding: 5px;
 
         @media screen and (min-width: 1200px) {
@@ -1427,6 +1414,7 @@ div#confirmed-error {
             height: 40px;
             border-radius: 8px 0 0 8px;
             background-color: transparent;
+            padding-left: 10px;
 
             @media screen and (min-width: 1200px) {
               width: 50%;
@@ -1465,7 +1453,6 @@ div#confirmed-error {
           }
 
           a.btn-add {
-            border-radius: 8px;
             background-color: $white;
             color: $main-blue;
             font-weight: bold;
@@ -1643,10 +1630,19 @@ div#confirmed-error {
                   font-size: 14px;
                   padding: 3px;
                   width: 100%;
+
                   &:hover {
                     font-weight: bold;
                     cursor: pointer;
                   }
+                }
+
+                .container-complete-detail-info-book {
+                  display: none;
+                }
+
+                .container-complete-detail-info-book.active {
+                  display: block;
                 }
               }
             }
@@ -1968,10 +1964,18 @@ section#dashboard-page-book-add {
 section#dashboard-page-book-edit {
   form#form-book-edit {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
+
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
+    }
 
     .label-form-add-book {
       display: block;
@@ -1982,13 +1986,17 @@ section#dashboard-page-book-edit {
     }
 
     .input-form-add-book {
-      width: 600px;
+      width: 100%;
       height: 44px;
       font-size: 20px;
       border-radius: 8px;
       padding-left: 10px;
       border: 1px solid gray;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+
+      @media screen and (min-width: 1200px) {
+        width: 100%;
+      }
     }
 
     .select-form-add-book {
@@ -2009,8 +2017,11 @@ section#dashboard-page-book-edit {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      width: 50%;
+
+
+      @media screen and (min-width: 1200px) {
+        width: 48%;
+      }
 
       div.add-form-template-label-input {
         .label-form-add-book {
@@ -2023,11 +2034,13 @@ section#dashboard-page-book-edit {
     div#form-book-edit-right {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      width: 50%;
+
+      @media screen and (min-width: 1200px) {
+        width: 48%;
+      }
 
       textarea#work-extract-edit {
-        width: 690px;
+        width: 100%;
         height: 600px;
         font-size: 20px;
         text-align: start;
@@ -2035,6 +2048,10 @@ section#dashboard-page-book-edit {
         padding-left: 10px;
         border: 1px solid gray;
         margin-bottom: 30px;
+
+        @media screen and (min-width: 1200px) {
+          width: 100%;
+        }
       }
     }
 

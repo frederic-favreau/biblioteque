@@ -296,12 +296,8 @@ SET wg.`author_id` = :newAuthorId
             
             
             $book = $req_book->fetch(PDO::FETCH_ASSOC);
-            
-           
             $authorsLastName = explode(',',$book['lastname']);
-     
-            
-            
+
             $authorsFirstName = explode(',',$book['firstname']);
             $genres = explode(',',$book['genre']);
             

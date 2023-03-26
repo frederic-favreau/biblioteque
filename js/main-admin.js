@@ -74,23 +74,55 @@ for (const btnOptionCrud of btnOptionCruds) {
     editDetailBookCrud.setAttribute("id", "more-detail-book-crud");
     listOptionCrud.appendChild(editDetailBookCrud);
 
+    const detailLink = document.createElement("a");
+    detailLink.classList.add("detail-link");
+    detailLink.innerText = "Voir le détail";
+    editDetailBookCrud.appendChild(detailLink);
+
+    const detailBoxes = document.querySelectorAll(
+      ".container-complete-detail-info-book"
+    );
+
+    // VIEW DETAIL OF WORK
+    detailLink.addEventListener("click", function () {
+      // Find the parent element of the link element
+      const parentElement = this.closest(".detail-item-book-crud");
+      // Find the index of the parent element in the list
+      const index = Array.from(parentElement.parentNode.children).indexOf(
+        parentElement
+      );
+      // Find all detail boxes for this parent element
+      const detailBoxes = parentElement.querySelectorAll(
+        ".container-complete-detail-info-book"
+      );
+      // Show the corresponding detail
+      detailBoxes[index].classList.toggle("active");
+    });
+
+    const editBookCrud = document.createElement("li");
+    editBookCrud.setAttribute("id", "edit-book-crud");
+    listOptionCrud.appendChild(editBookCrud);
+
     const aEditDataCrud = document.createElement("a");
     aEditDataCrud.setAttribute("id", "btn-confirmed");
     aEditDataCrud.setAttribute("href", "./edit-book.php?id=" + idWork);
-    aEditDataCrud.innerHTML = "Editer les donnés d'ouvrage";
+    aEditDataCrud.innerHTML = "Editer l'ouvrage";
 
-    editDetailBookCrud.appendChild(aEditDataCrud);
+    editBookCrud.appendChild(aEditDataCrud);
 
-    const editDetailCopyCrud = document.createElement("li");
-    editDetailCopyCrud.setAttribute("id", "more-detail-book-crud");
-    listOptionCrud.appendChild(editDetailCopyCrud);
+    const editCopyCrud = document.createElement("li");
+    editCopyCrud.setAttribute("id", "edit-detail-copy-crud");
+    listOptionCrud.appendChild(editCopyCrud);
 
     const aEditDataExemplare = document.createElement("a");
     aEditDataExemplare.setAttribute("id", "btn-exemplaire");
-    aEditDataExemplare.setAttribute("href", "./edit-copy-book.php?id=" + idWork);
-    aEditDataExemplare.innerHTML = "Editer les d'un exemplaire";
+    aEditDataExemplare.setAttribute(
+      "href",
+      "./edit-copy-book.php?id=" + idWork
+    );
+    aEditDataExemplare.innerHTML = "Editer un exemplaire";
 
-    editDetailCopyCrud.appendChild(aEditDataExemplare)
+    editCopyCrud.appendChild(aEditDataExemplare);
 
     const deleteBookCrud = document.createElement("li");
     deleteBookCrud.setAttribute("id", "delete-book-crud");
@@ -103,6 +135,8 @@ for (const btnOptionCrud of btnOptionCruds) {
     aDeleteDataCrud.setAttribute("href", "#" + idWork);
     aDeleteDataCrud.innerHTML = "Supprimer un exemplaire";
 
+    //
+    //
     // SHOW BOX DELETE BOOK
     let body = document.querySelector("body");
     let main = document.querySelector("main");
@@ -115,17 +149,16 @@ for (const btnOptionCrud of btnOptionCruds) {
       modaleBg.classList.add("bloc-modale");
       body.append(modaleBg);
 
-
       const boxDeleteBook = document.createElement("div");
       boxDeleteBook.setAttribute("id", "box-delete-book");
       boxDeleteBook.classList.add("active-box-delete-book");
       main.append(boxDeleteBook);
 
-
       const confirmation = document.createElement("p");
       confirmation.setAttribute("id", "txt-box-delete-book");
       boxDeleteBook.appendChild(confirmation);
-      confirmation.innerText = "Voulez-vous supprimer un exemplaire du livre suivant ?";
+      confirmation.innerText =
+        "Voulez-vous supprimer un exemplaire du livre suivant ?";
 
       const titleBook = document.createElement("p");
       titleBook.setAttribute("id", "book-title-delete-box");
@@ -149,7 +182,7 @@ for (const btnOptionCrud of btnOptionCruds) {
       boxDeleteBook.appendChild(btnConfirmed);
       btnConfirmed.innerHTML = "Confirmer";
 
-      // CLOSE  BOX DELETE BOOK
+      // CLOSE BOX DELETE BOOK
       btnCancel.addEventListener("click", function () {
         boxDeleteBook.remove();
         modaleBg.remove();
@@ -195,4 +228,3 @@ function centrerImage(img) {
     document.body.style.overflow = "auto";
   };
 }
-
