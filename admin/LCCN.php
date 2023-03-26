@@ -12,7 +12,7 @@ include_once '../admin/header-main.php';
         <h1 class="h1-dashboard">Bienvenue dans l'espace d'ajout de livres</h1>
         <h2 class="h2-dashboard">Vous pouvez ajouter des livres dans la bibliothèque</h2>
         <div id="box-add-book-info" class="box-dashboard">
-            <h3 class="h3-dashboard">Tapez LCCN de la livre</h3>
+            <h3 class="h3-dashboard">Tapez le "LCCN" du livre</h3>
             <hr>
 
             <?php
@@ -62,7 +62,7 @@ include_once '../admin/header-main.php';
                     </div>
                     <div id="group-btn-form-add-commun">
                         <input type="reset" id="btn-reset-form-add-book" name="reset" value="Reset"></input>
-                        <input type="submit" id="btn-submit-form-add-book" name="submit" value="Suivent"></input>
+                        <input type="submit" id="btn-submit-form-add-book" name="submit" value="Suivant"></input>
                     </div>
 
 

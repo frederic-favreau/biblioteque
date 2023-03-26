@@ -10,8 +10,8 @@
       </div>
       <ul>
         <div id="list-left">
-          <li><a href="#main-header" class="slow-return">Découvrir</a></li>
-          <li><a href="#section-news" class="slow-return">Nouveautés</a></li>
+          <li><a href="../index.php#section-main-hero" class="slow-return">Découvrir</a></li>
+          <li><a href="../index.php#section-news" class="slow-return">Nouveautés</a></li>
           <li><a href="../index.php#section-heart">Coups de coeur</a></li>
           <li><a href="../index.php#section-soon-available">Bientôt disponible</a></li>
           <li><a href="../index.php#section-zoom">Zoom</a></li>
@@ -24,10 +24,10 @@
       </ul>
     </div>
     <div id="item-footer-right">
-    <form action="#" id="newsletter">
-          <input type="mail" name="mail" placeholder="Rejoinez la Newsletter">
-          <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
-        </form>
+      <form action="#" id="newsletter">
+        <input type="mail" name="mail" placeholder="Rejoinez la Newsletter">
+        <input type="submit" id="btn-submit-newsletter" value="Souscrire"></input>
+      </form>
     </div>
   </div>
   <hr>
