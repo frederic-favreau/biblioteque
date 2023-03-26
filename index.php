@@ -127,7 +127,7 @@
               </div>
             </div>
             <div class="flip" data-index="3">
-              <div class="front front-item-3" style="background-image: url(./img/news-1.png)">
+              <div class="front front-item-3" style="background-image: url(./img/lecteurs/IMG_0163.jpg)">
               </div>
               <div class="back front-item-3">
                 <p><span>Jirka</span> est à disposition pour l’agenda des évènements</p>

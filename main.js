@@ -77,30 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function resetStyles() {
-  console.log("resetStyles() called");
-  if (window.innerWidth > 650) {
-    console.log("resetStyles() - screen width > 650");
-    containerGroupLogo.style.display = "flex";
-    containerGroupSearchNavTop.style.width = "auto";
-    containerGroupSearchNavTop.style.display = "block";
-    containerBoxindexLogout.style.display = "block";
-    containerBtnSignup.style.display = "none";
-  } else {
-    console.log("resetStyles() - screen width <= 650");
-    containerGroupLogo.style.display = "none";
-    containerGroupSearchNavTop.style.width = "95%";
-    containerGroupSearchNavTop.style.display = "none";
-    arrowContainer.style.display = "none";
-    showImgBzrBtn.style.display = "block";
-    containerBoxindexLogout.style.display = "none";
-    containerBtnSignup.style.display = "none";
-  }
-}
-
-window.addEventListener("resize", resetStyles);
-
-
 
 //
 //

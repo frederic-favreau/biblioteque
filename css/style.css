@@ -263,7 +263,8 @@ p.sub-title-section {
 }
 #main-header #main-nav-bar #container-nav-bar div#btn-responsive-search {
   position: absolute;
-  right: 60px;
+  right: 50px;
+  bottom: 19px;
 }
 @media screen and (min-width: 500px) {
   #main-header #main-nav-bar #container-nav-bar div#btn-responsive-search {
@@ -277,6 +278,7 @@ p.sub-title-section {
   }
 }
 #main-header #main-nav-bar #container-nav-bar div#btn-responsive-search button#show-search-bar {
+  display: inherit;
   width: 30px;
   height: 30px;
   background-color: #0868ae;

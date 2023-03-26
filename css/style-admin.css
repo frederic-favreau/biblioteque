@@ -334,15 +334,25 @@ header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil
   margin-bottom: 5px;
   white-space: nowrap;
 }
-header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul a#profil {
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul li a#profil {
   color: #fff;
   margin-left: 55px;
   white-space: nowrap;
 }
-header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul a#profil img#profil-pict {
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul li a#profil img#profil-pict {
   position: absolute;
   top: 6px;
   left: 8px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul li a#profil span {
+  position: absolute;
+  top: 20px;
+  left: 80px;
+}
+header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil ul li a#btn-side-logout {
+  position: absolute;
+  top: -5px;
+  left: 200px;
 }
 
 /* BOTTOM BAR */
@@ -353,7 +363,7 @@ header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: 50px;
   background-color: #0868ae;
   z-index: 9999;
   align-items: center;
@@ -375,6 +385,11 @@ header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil
   height: 30px;
 }
 
+div.container-dashboard-base {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 80px;
+}
 div.container-dashboard-base .box-dashboard {
   width: 100%;
   height: -moz-fit-content;
@@ -427,6 +442,12 @@ div.container-dashboard-base .box-dashboard hr {
   height: 100px;
   width: auto;
   margin-right: 20px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 326px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book img.pict-book-standard {
+    margin-bottom: inherit;
+  }
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.format-pict-book ul.container-description li.list-title {
   width: 200px;
@@ -481,6 +502,9 @@ div.container-dashboard-base .box-dashboard hr {
   cursor: pointer;
 }
 .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+  position: absolute;
+  top: -24px;
+  left: 30px;
   background-image: url("../img/picto/trash-03 (1).svg");
   background-size: cover;
   background-position: center;
@@ -495,7 +519,79 @@ div.container-dashboard-base .box-dashboard hr {
 }
 @media screen and (min-width: 350px) {
   .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
-    position: inherit;
+    position: absolute;
+    top: -24px;
+    left: 30px;
+  }
+}
+@media screen and (min-width: 400px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: absolute;
+    top: -24px;
+    left: 80px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: absolute;
+    top: -24px;
+    left: 130px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: absolute;
+    top: -24px;
+    left: 160px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: absolute;
+    top: -24px;
+    left: 200px;
+  }
+}
+@media screen and (min-width: 700px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: absolute;
+    top: -24px;
+    left: 250px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: absolute;
+    top: -24px;
+    left: 300px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: absolute;
+    top: -24px;
+    left: 350px;
+  }
+}
+@media screen and (min-width: 950px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: absolute;
+    top: -24px;
+    left: 230px;
+  }
+}
+@media screen and (min-width: 1050px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: absolute;
+    top: -24px;
+    left: 280px;
+  }
+}
+@media screen and (min-width: 1150px) {
+  .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan div.container-btn-wishlist input.delete-favorit-book {
+    position: absolute;
+    top: -24px;
+    left: 320px;
   }
 }
 @media screen and (min-width: 1250px) {
@@ -506,7 +602,6 @@ div.container-dashboard-base .box-dashboard hr {
 .container-home-tabs ul.list-book-box li.item-list-book div.container-info-loan a.btn-format-standard {
   display: block;
   padding: 15px;
-  font-weight: bold;
   border: none;
   border-radius: 8px;
   background-color: #0868ae;
