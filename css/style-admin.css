@@ -396,7 +396,7 @@ div.container-dashboard-base .box-dashboard {
   height: fit-content;
   background-color: #fff;
   border-radius: 8px;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   margin-bottom: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -1151,7 +1151,9 @@ p.info-succes-notif > strong {
 }
 
 section#dashboard-page-book-crud {
-  padding: 30px 30px 0px;
+  padding: 0 30px 50px 30px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 @media screen and (min-width: 950px) {
   section#dashboard-page-book-crud {
@@ -1232,13 +1234,13 @@ div#confirmed-error:hover {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding-top: 5px;
+  align-items: baseline;
+  padding: 5px;
 }
 @media screen and (min-width: 1200px) {
   .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form {
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
   }
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form p.title-sticky-crud {
@@ -1247,10 +1249,14 @@ div#confirmed-error:hover {
   font-weight: bold;
   color: #ff5e38;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 @media screen and (min-width: 1200px) {
   .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form p.title-sticky-crud {
     width: 20%;
+    text-align: start;
+    font-size: 20px;
+    margin-bottom: inherit;
   }
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard {
@@ -1260,20 +1266,20 @@ div#confirmed-error:hover {
   align-items: center;
   width: 100%;
   max-width: 400px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 @media screen and (min-width: 1200px) {
   .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard {
     width: 60%;
     max-width: 600px;
+    margin-bottom: inherit;
   }
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard input.input-search {
   width: 80%;
   max-width: 500px;
   height: 40px;
-  border: none;
-  border-bottom: 1px solid #070606;
+  border-radius: 8px 0 0 8px;
   background-color: transparent;
 }
 @media screen and (min-width: 1200px) {
@@ -1282,12 +1288,15 @@ div#confirmed-error:hover {
   }
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard input.btn-search {
-  display: block;
-  padding: 12px;
+  height: 40px;
+  width: 40px;
   background-image: url(../img/picto/search-lg.svg);
   background-repeat: no-repeat;
-  border-radius: 8px;
-  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  border-radius: 0 8px 8px 0;
+  background-color: #0868ae;
+  margin-left: -5px;
   border: #0868ae;
   color: #fff;
   font-weight: bold;
@@ -1297,23 +1306,26 @@ div#confirmed-error:hover {
   background-color: #05497b;
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard {
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+@media screen and (min-width: 650px) {
+  .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard {
+    width: inherit;
+  }
+}
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard a.btn-add {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 15px;
   border-radius: 8px;
-  background-color: #0868ae;
-  border: #0868ae;
-  color: #fff;
+  background-color: #fff;
+  color: #0868ae;
+  font-weight: bold;
+  font-size: 14px;
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard a.btn-add:hover {
   cursor: pointer;
-  background-color: #05497b;
+  text-decoration: underline;
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard button#btn-all-detail {
   display: block;
@@ -1387,7 +1399,7 @@ div#confirmed-error:hover {
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
   position: absolute;
-  right: -40px;
+  right: -10px;
   top: -20px;
   font-size: 30px;
   padding: 2px 8px;

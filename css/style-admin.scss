@@ -438,12 +438,13 @@ header#side-bar-log {
 div.container-dashboard-base {
   height: fit-content;
   padding-bottom: 80px;
+
   .box-dashboard {
     width: 100%;
     height: fit-content;
     background-color: #fff;
     border-radius: 8px;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     margin-bottom: 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
@@ -456,6 +457,7 @@ div.container-dashboard-base {
 
 .container-home-tabs {
   height: fit-content;
+
   ul.list-book-box {
     li.item-list-book {
       display: flex;
@@ -574,7 +576,7 @@ div.container-dashboard-base {
               top: -24px;
               left: 30px;
             }
-            
+
             @media screen and (min-width: 400px) {
               position: absolute;
               top: -24px;
@@ -1292,7 +1294,8 @@ p.info-succes-notif > strong {
 }
 
 section#dashboard-page-book-crud {
-  padding: 30px 30px 0px;
+  padding: 0 30px 50px 30px;
+  height: fit-content;
 
   @media screen and (min-width: 950px) {
     padding-top: 40px;
@@ -1379,12 +1382,12 @@ div#confirmed-error {
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        padding-top: 5px;
+        align-items: baseline;
+        padding: 5px;
 
         @media screen and (min-width: 1200px) {
           flex-direction: row;
-          align-items: baseline;
+          align-items: center;
         }
 
         p.title-sticky-crud {
@@ -1393,9 +1396,13 @@ div#confirmed-error {
           font-weight: bold;
           color: $btn-red;
           margin-bottom: 10px;
+          font-size: 16px;
 
           @media screen and (min-width: 1200px) {
             width: 20%;
+            text-align: start;
+            font-size: 20px;
+            margin-bottom: inherit;
           }
         }
 
@@ -1406,19 +1413,19 @@ div#confirmed-error {
           align-items: center;
           width: 100%;
           max-width: 400px;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
 
           @media screen and (min-width: 1200px) {
             width: 60%;
             max-width: 600px;
+            margin-bottom: inherit;
           }
 
           input.input-search {
             width: 80%;
             max-width: 500px;
             height: 40px;
-            border: none;
-            border-bottom: 1px solid $black;
+            border-radius: 8px 0 0 8px;
             background-color: transparent;
 
             @media screen and (min-width: 1200px) {
@@ -1427,12 +1434,15 @@ div#confirmed-error {
           }
 
           input.btn-search {
-            display: block;
-            padding: 12px;
+            height: 40px;
+            width: 40px;
             background-image: url(../img/picto/search-lg.svg);
             background-repeat: no-repeat;
-            border-radius: 8px;
-            background-color: transparent;
+            background-position: center;
+            background-size: contain;
+            border-radius: 0 8px 8px 0;
+            background-color: $main-blue;
+            margin-left: -5px;
             border: $main-blue;
             color: $white;
             font-weight: bold;
@@ -1445,23 +1455,25 @@ div#confirmed-error {
         }
 
         div.group-tool-standard {
+          width: 100%;
           display: flex;
           justify-content: space-around;
           align-items: center;
 
+          @media screen and (min-width: 650px) {
+            width: inherit;
+          }
+
           a.btn-add {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px 15px;
             border-radius: 8px;
-            background-color: $main-blue;
-            border: $main-blue;
-            color: $white;
+            background-color: $white;
+            color: $main-blue;
+            font-weight: bold;
+            font-size: 14px;
 
             &:hover {
               cursor: pointer;
-              background-color: $btn-main-blue-over;
+              text-decoration: underline;
             }
           }
 
@@ -1551,7 +1563,7 @@ div#confirmed-error {
 
           li.btn-option-crud {
             position: absolute;
-            right: -40px;
+            right: -10px;
             top: -20px;
             font-size: 30px;
             padding: 2px 8px;
