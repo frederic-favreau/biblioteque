@@ -182,9 +182,7 @@ for (const btnOptionCrud of btnOptionCruds) {
       boxDeleteBook.appendChild(btnConfirmed);
       btnConfirmed.innerHTML = "Confirmer";
 
-      //
-      //
-      // CLOSE  BOX DELETE BOOK
+      // CLOSE BOX DELETE BOOK
       btnCancel.addEventListener("click", function () {
         boxDeleteBook.remove();
         modaleBg.remove();
@@ -197,16 +195,12 @@ for (const btnOptionCrud of btnOptionCruds) {
     newContainerBoxOptionCrud.appendChild(BoxOptionCrud);
     parentElement.appendChild(newContainerBoxOptionCrud);
 
-    //
-    //
     // add close button to the tool box
     let btnCloseOptionBox = document.createElement("button");
     btnCloseOptionBox.classList.add("btn-close-option-box");
     btnCloseOptionBox.innerHTML = "x";
     BoxOptionCrud.appendChild(btnCloseOptionBox);
 
-    //
-    //
     // add event listener to close button
     btnCloseOptionBox.addEventListener("click", function () {
       newContainerBoxOptionCrud.remove();
