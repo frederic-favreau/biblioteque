@@ -225,6 +225,7 @@ main {
 // ----------  HEADER DASHBOARD  ----------
 
 header#side-bar-log {
+  z-index: 9999;
   display: none;
   @media screen and (min-width: 950px) {
     display: block;
@@ -247,6 +248,7 @@ header#side-bar-log {
     }
 
     nav#main-sidebar {
+      z-index: 9999;
       width: 100%;
       height: 100%;
       background-color: $main-blue;
@@ -921,7 +923,7 @@ section#loan-register {
               background-color: $white;
               box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
               border-radius: 8px;
-              z-index: 999;
+              z-index: 99;
               margin-bottom: 50px;
               text-align: start;
               display: block;
@@ -1354,11 +1356,11 @@ div#confirmed-error {
   margin-bottom: 20px;
 
   div.search-add-crud-book {
+    z-index: 994;
     position: sticky;
     top: 0;
     width: 100%;
     background-color: $white; /* couleur de fond pour la div */
-    z-index: 3;
     border-bottom: 1px solid gray;
 
     div.search-crud-input {
@@ -1577,14 +1579,14 @@ div#confirmed-error {
             div.box-option-crud {
               position: absolute;
               right: 50px;
-              top: 0;
+              top: -20px;
               width: 220px;
               height: fit-content;
               padding: 16px;
               background-color: $white;
               box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
               border-radius: 8px;
-              z-index: 999;
+              z-index: 9;
               margin-bottom: 50px;
               text-align: start;
               display: block;
