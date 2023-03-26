@@ -44,7 +44,7 @@ if (!isset($_SESSION['id-user'])) {
                                 </li>
 
 
-                                <!-- SESSION USERS -->
+                                <!-- SESSION ADMIN -->
                             <?php
                             }
                             if ($_SESSION['role'] == 1) {
@@ -74,8 +74,8 @@ if (!isset($_SESSION['id-user'])) {
                                 <a href="#" id="settings"><img src="../img/side-bar/picto-settings.svg" alt="Options">Options</a>
                             </li>
                             <li>
-                                <a href="./profil.php" id="profil"><img src="../img/side-bar/Avatar.svg" alt="prenom" id="profil-pict">Mon profil</a>
-                                <a href="./logout.php"><img src="../img/side-bar/leave-session.svg" alt="Quitter"></a>
+                                <a href="./profil.php" id="profil"><img src="../img/side-bar/Avatar.svg" alt="prenom" id="profil-pict"><span>Mon profil</span></a>
+                                <a href="./logout.php" id="btn-side-logout"><img src="../img/side-bar/picto-leave.svg" alt="Quitter"></a>
                             </li>
                         </ul>
                     </div>

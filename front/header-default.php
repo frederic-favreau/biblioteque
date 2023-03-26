@@ -36,29 +36,33 @@
             <input type="submit" name="rechercher" value="" id="btn-search-nav-top">
           </form>
         </div>
+
         <div id="btn-responsive-search">
           <button type="button" id="show-search-bar"><img src="../img/picto/search-lg.svg" alt="Loupe"></button>
         </div>
+
         <div id="container-group-btn-connexion">
-          <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
-            // Afficher le contenu pour les utilisateurs connectés
-          ?>
-            <div id="container-box-index-logout"><a href="#" id="btn-index-session"><img src="../img/side-bar/Avatar.svg" alt="avatar"></a></div>
+          <div id="container-box-index-logout">
 
-          <?php
-          } else { ?>
-              <a href="../front/connect.php" id="btn-sign-up"> <span id="mobile"><img src="../img/picto/log-in-01.svg" alt="login"></span><span id="desktop">Connexion / inscription</span>
-              <?php
-          } ?>
+            <!-- SESSION USERS -->
+            <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true  && $_SESSION['role'] == 0) { ?>
+              <a href="#" id="btn-index-session"><img src="../img/picto/avatar-user.svg" alt="avatar"></a>
+              <script src="../js/logout-index.js"></script>
 
-            <div id="menu-burger">
-              <div class="menu-burger-pipe" id="menu-burger-pipe-top"></div>
-              <div class="menu-burger-pipe" id="menu-burger-pipe-middle"></div>
-              <div class="menu-burger-pipe" id="menu-burger-pipe-bottom"></div>
-            </div>
-            </a>
+              <!-- SESSION ADMIN -->
+            <?php } else if (isset($_SESSION['connect']) && $_SESSION['connect'] == true  && $_SESSION['role'] == 1) { ?>
+              <a href="#" id="btn-index-session-admin"><img src="../img/side-bar/Avatar.svg" alt="avatar"></a>
+              <script src="../js/logout-all-admin.js"></script>
+
+              <!-- GO TO LOGIN -->
+            <?php } else { ?>
+              <a href="../front/connect.php" id="btn-sign-up">
+                <span id="mobile"><img src="../img/picto/log-in-01.svg" alt="login"></span>
+                <span id="desktop">Connexion / inscription</span>
+              </a>
+            <?php } ?>
+          </div>
         </div>
       </div>
     </nav>
   </header>
-  ``

@@ -23,12 +23,14 @@
 
   <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
 
+  <!-- ---------- SECTION - HEADER - NAV - TOP ---------- -->
   <header id="main-header">
     <nav id="main-nav-bar">
       <div id="container-nav-bar" class="row-limit-size">
         <div id="container-group-logo">
           <a href="#section-main-hero" class="link-page-home slow-return"><img src="./img/logo-seul-biblook-noir.svg" alt="Biblook">
-            <span id="nav-logo-text">Biblook</span></a>
+            <span id="nav-logo-text">Biblook</span>
+          </a>
         </div>
         <div id="arrow-container">
           <button id="left-arrow"><img src="./img/picto/chevron-left.svg" alt="Flèche gauche"></button>
@@ -39,22 +41,32 @@
             <input type="submit" name="rechercher" value="" id="btn-search-nav-top">
           </form>
         </div>
+        
         <div id="btn-responsive-search">
           <button type="button" id="show-search-bar"><img src="./img/picto/search-lg.svg" alt="Loupe"></button>
         </div>
+
         <div id="container-group-btn-connexion">
-          <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
-          ?>
-            <div id="container-box-index-logout">
-              <a href="#" id="btn-index-session"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a>
-            <?php
-          } else { ?>
-              <a href="./front/connect.php" id="btn-sign-up"> <span id="mobile"><img src="./img/picto/log-in-01.svg" alt="login"></span><span id="desktop">Connexion / inscription</span>
-              <?php
-            }
-              ?>
-            </div>
-            </a>
+          <div id="container-box-index-logout">
+
+            <!-- SESSION USERS -->
+            <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true  && $_SESSION['role'] == 0) { ?>
+              <a href="#" id="btn-index-session"><img src="./img/picto/avatar-user.svg" alt="avatar"></a>
+              <script src="./js/logout-index.js"></script>
+
+              <!-- SESSION ADMIN -->
+            <?php } else if (isset($_SESSION['connect']) && $_SESSION['connect'] == true  && $_SESSION['role'] == 1) { ?>
+              <a href="#" id="btn-index-session-admin"><img src="./img/side-bar/Avatar.svg" alt="avatar"></a>
+              <script src="./js/logout-index-admin.js"></script>
+
+              <!-- GO TO LOGIN -->
+            <?php } else { ?>
+              <a href="./front/connect.php" id="btn-sign-up">
+                <span id="mobile"><img src="./img/picto/log-in-01.svg" alt="login"></span>
+                <span id="desktop">Connexion / inscription</span>
+              </a>
+            <?php } ?>
+          </div>
         </div>
       </div>
     </nav>
@@ -66,14 +78,15 @@
 
   <main>
     <section id="section-main-hero" class="row-limit-size-full">
-      <div id="container-section-main-hero" class="row-limit-size-full">
+      <div id="container-section-main-hero" class="row-limit-size">
         <div id="item-section-main-hero-left">
           <h1 id="title-hero">Biblook</h1>
           <p id="sub-title-hero">La bibliothèque qui propose <br> des livres pour <span class="animated-word smoke-effect" id="animated-word">Apprendre</span></p>
           <div class="picto-choise-profil">
-            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-fille">
-            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-ado">
-            <img src="./img/logo-seul-biblook-noir.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-adulte">
+            <img src="./img/hero/logo/logo-biblook-enfant.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-fille">
+            <img src="./img/hero/logo/logo-biblook-ado.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-ado">
+            <img src="./img/hero/logo/logo-biblook-senior.svg" alt="Biblook" class="pict-hero-commun" id="pict-hero-adulte">
+            <img src="./img/hero/cursor-click-02.svg" alt="Curseur" id="pict-hero-cursor">
           </div>
           <a href="./front/catalog.php" id="discover-space">Découvrir le catalogue</a>
         </div>
@@ -115,7 +128,7 @@
               </div>
             </div>
             <div class="flip" data-index="3">
-              <div class="front front-item-3" style="background-image: url(./img/news-1.png)">
+              <div class="front front-item-3" style="background-image: url(./img/lecteurs/IMG_0163.jpg)">
               </div>
               <div class="back front-item-3">
                 <p><span>Jirka</span> est à disposition pour l’agenda des évènements</p>
@@ -564,7 +577,6 @@
   </footer>
 
   <script src="./main.js"></script>
-  <script src="./js/logout-index.js"></script>
   <button id="back-to-top" title="Retour en haut">
     <i class="fas fa-arrow-up"></i>
   </button>
