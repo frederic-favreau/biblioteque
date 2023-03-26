@@ -14,7 +14,6 @@ include_once '../admin/header-main.php';
             <div id="box-crud-book" class="box-dashboard">
 
                 <div class="search-add-crud-book">
-                    <!-- <h6 class="h3-dashboard" id="h6-center">Les livres de la bibliothèque Biblook</h6> -->
                     <div class="search-crud-input">
 
                         <form action="" method="post">
