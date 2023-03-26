@@ -22,7 +22,6 @@ include_once '../admin/header-main.php';
                     $authorLastname = ($_POST['author-lastname-edit']);
                     $authorFirstname2 = ($_POST['author-firstname-2-edit']);
                     $authorLastname2 = ($_POST['author-2-lastname-edit']);
-
                     $genre = ($_POST['work-genre-edit']);
                     $genre2 = ($_POST['work-genre-2-edit']);
                     $publishedDate = ($_POST['work-publish-date-edit']);
@@ -169,53 +168,71 @@ SET wg.`author_id` = :newAuthorId
 
 
                     if(isset($genre2)){
-                     // Vérifier si le genre2 existe déjà
-                     $reqGenre2Exists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = :genre");
-                     $reqGenre2Exists->bindParam(':genre', $genre2);
-                     $reqGenre2Exists->execute();
-                     $genre2Exists = $reqGenre2Exists->fetch(PDO::FETCH_ASSOC);
-
-                 if ($genre2Exists) {
-                     // Le genre existe déjà, il suffit de mettre à jour la table work_genre
-                     $genreId = $genre2Exists['id_genre'];
-                     $reqUpdateWorkGenre = $db->prepare("UPDATE `work_genre` wg
-JOIN (
-  SELECT `id_work_genre`
-  FROM `work_genre`
-  WHERE `work_id` = :id
-  ORDER BY `id_work_genre` ASC
-  LIMIT 1 OFFSET 1
-) t ON wg.`id_work_genre` = t.`id_work_genre`
-SET wg.`genre_id` = :genreId;
-                     
-                     
-                     
-                     ");
-                     $reqUpdateWorkGenre->bindParam(':genreId', $genreId);
-                     $reqUpdateWorkGenre->bindParam(':id', $id, PDO::PARAM_INT);
-                     $reqUpdateWorkGenre->execute();
-                 } else {
-                     // Le genre n'existe pas, insérer le nouveau genre et mettre à jour la table work_genre
-                     $reqInsertGenre = $db->prepare("INSERT INTO `genre` (`name`) VALUES (:genre)");
-                     $reqInsertGenre->bindParam(':genre', $genre2);
-                     $reqInsertGenre->execute();
-                     $newGenreId = $db->lastInsertId();
-
-                     $reqUpdateWorkGenre = $db->prepare("UPDATE `work_genre` wg
-                     JOIN (
-                       SELECT `id_work_genre`
-                       FROM `work_genre`
-                       WHERE `work_id` = :id
-                       ORDER BY `id_work_genre` ASC
-                       LIMIT 1 OFFSET 1
-                     ) t ON wg.`id_work_genre` = t.`id_work_genre`
-                     SET wg.`genre_id` = :genreId;");
-                     $reqUpdateWorkGenre->bindParam(':newGenreId', $newGenreId);
-                     $reqUpdateWorkGenre->bindParam(':id', $id, PDO::PARAM_INT);
-                     $reqUpdateWorkGenre->execute();
-                 }}
-
-
+                        // Vérifier si le genre2 existe déjà
+                        $reqGenre2Exists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = :genre");
+                        $reqGenre2Exists->bindParam(':genre', $genre2);
+                        $reqGenre2Exists->execute();
+                        $genre2Exists = $reqGenre2Exists->fetch(PDO::FETCH_ASSOC);
+                    
+                        if ($genre2Exists) {
+                            // Le genre existe déjà, vérifier si la relation work_genre existe pour l'œuvre et le genre
+                            $genreId = $genre2Exists['id_genre'];
+                            $reqWorkGenreExists = $db->prepare("SELECT `id_work_genre` FROM `work_genre` WHERE `work_id` = :work_id AND `genre_id` = :genre_id");
+                            $reqWorkGenreExists->bindParam(':work_id', $id, PDO::PARAM_INT);
+                            $reqWorkGenreExists->bindParam(':genre_id', $genreId, PDO::PARAM_INT);
+                            $reqWorkGenreExists->execute();
+                            $workGenreExists = $reqWorkGenreExists->fetch(PDO::FETCH_ASSOC);
+                    
+                            if ($workGenreExists) {
+                                // La relation work_genre existe déjà, mettre à jour la ligne correspondante avec l'id_genre récupéré
+                                $reqUpdateWorkGenre = $db->prepare("UPDATE `work_genre` SET `genre_id` = :genre_id WHERE `id_work_genre` = :id_work_genre");
+                                $reqUpdateWorkGenre->bindParam(':genre_id', $genreId, PDO::PARAM_INT);
+                                $reqUpdateWorkGenre->bindParam(':id_work_genre', $workGenreExists['id_work_genre'], PDO::PARAM_INT);
+                                $reqUpdateWorkGenre->execute();
+                            } else {
+                                // La relation work_genre n'existe pas, insérer une nouvelle ligne dans la table work_genre avec l'œuvre et l'id_genre récupéré
+                                $newRelationSql = $db->prepare("INSERT INTO `work_genre`(`work_id`,`genre_id`) VALUES (:work_id, :genre_id)");
+                                $newRelationSql->bindParam(':work_id', $id, PDO::PARAM_INT);
+                                $newRelationSql->bindParam(':genre_id', $genreId, PDO::PARAM_INT);
+                                $newRelationSql->execute();
+                            }
+                        } else {
+                            // Le genre n'existe pas, insérer le nouveau genre et mettre à jour la table work_genre
+                            $reqInsertGenre = $db->prepare("INSERT INTO `genre` (`name`) VALUES (:genre)");
+                            $reqInsertGenre->bindParam(':genre', $genre2);
+                            $reqInsertGenre->execute();
+                            $newGenreId = $db->lastInsertId();
+                    
+                            // Vérifier si la deuxième relation existe déjà
+                            $reqGenre_WorkExists = $db->prepare("SELECT * FROM `work_genre` WHERE `work_id` = :id ORDER BY `id_work_genre` DESC LIMIT 1 OFFSET 1");
+                            $reqGenre_WorkExists->bindParam(':id', $id, PDO::PARAM_INT);
+                            $reqGenre_WorkExists->execute();
+                            $Genre_WorkExists = $reqGenre_WorkExists->fetch(PDO::FETCH_ASSOC);
+                    
+                            if($Genre_WorkExists){
+                                // La deuxième relation existe déjà, mettre à jour la table work_genre
+                                $genreId = $newGenreId;
+                                $reqUpdateWorkGenre = $db->prepare("UPDATE `work_genre` wg
+                                    JOIN (
+                                        SELECT `id_work_genre`
+                                        FROM `work_genre`
+                                        WHERE `work_id` = :id
+                                        ORDER BY `id_work_genre` ASC
+                                        LIMIT 1 OFFSET 1
+                                    ) t ON wg.`id_work_genre` = t.`id_work_genre`
+                                    SET wg.`genre_id` = :genreId;");
+                                $reqUpdateWorkGenre->bindParam(':genreId', $genreId);
+                                $reqUpdateWorkGenre->bindParam(':id', $id, PDO::PARAM_INT);
+                                $reqUpdateWorkGenre->execute();
+                            }else{
+                                // La deuxième relation n'existe pas, insérer la nouvelle relation
+                                $newRelationSql = $db->prepare("INSERT INTO `work_genre`(`work_id`,`genre_id`) VALUES (:work_id, :genre_id)");
+                                $newRelationSql->bindParam(':work_id', $id, PDO::PARAM_INT);
+                                $newRelationSql->bindParam(':genre_id', $newGenreId,  PDO::PARAM_INT);
+                                $newRelationSql->execute();
+                            }
+                        }
+                    }
 
 
 
@@ -280,6 +297,7 @@ SET wg.`genre_id` = :genreId;
             
             $book = $req_book->fetch(PDO::FETCH_ASSOC);
             $authorsLastName = explode(',',$book['lastname']);
+
             $authorsFirstName = explode(',',$book['firstname']);
             $genres = explode(',',$book['genre']);
             

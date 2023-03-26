@@ -20,12 +20,13 @@ include_once '../admin/header-main.php';
                             <p class="title-sticky-crud">Tous les livres de la bibliothèque</p>
                             <div class="group-search-standard">
                                 <input type="text" id="input-seach-book" class="input-search" name="text">
-                                <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value="">
+                                <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value=" "></input>
                             </div>
                             <div class="group-tool-standard">
                                 <button type="button" id="btn-all-detail">Vue détails</button>
-                                <a href="./LCCN.php" type="button" id="btn-add-book" class="btn-add">+ Ajouter un livre</a>
+                                <a href="./LCCN.php" type="button" id="btn-add-book" class="btn-add">Ajouter un livre</a>
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -49,7 +50,7 @@ include_once '../admin/header-main.php';
 
 
                             $reqAskCrud = 'SELECT `id_work`,`title`,`pict`,`extract`,`category`.`category`, `copy`.`location`,
-                            DATE_FORMAT(`published_at`, "%d/%m/%Y") AS `published`, `ISBN`,
+                            DATE_FORMAT(`published_at`, "%d/%m/%Y") AS `published`, `LCCN`,
                             GROUP_CONCAT(DISTINCT DATE_FORMAT(`editor`.`date`, "%d/%m/%Y" )ORDER BY `id_editor`) AS `edition_date`,
                             GROUP_CONCAT(DISTINCT `editor`.`editor_name` ORDER BY `id_editor`)  AS `editors`, 
                             GROUP_CONCAT(`copy`.`stock`) AS `stock`,
@@ -131,7 +132,7 @@ include_once '../admin/header-main.php';
                                                         <li>Date de l'édition<span class="bdd-var"><?= str_replace(',', ', ', $crud['edition_date']) ?></span></li>
                                                         <li>Nombre d'exemplaires<span class="bdd-var"><?= count($stocks[$workId]) ?></span></li>
                                                         <li>Nombre d'exemplaires empruntés<span class="bdd-var"><?= $i ?></span></li>
-                                                        <li>ISBN<span class="bdd-var"><?= $crud['ISBN'] ?></span></li>
+                                                        <li>LCCN<span class="bdd-var"><?= $crud['LCCN'] ?></span></li>
                                                     </ul>
                                                 </div>
                                                 <div class="item-complete-left">
