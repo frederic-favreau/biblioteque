@@ -1,76 +1,76 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const avatarProfil = document.getElementById("container-box-index-logout");
-    const btnIndexSession = document.getElementById("btn-index-session");
-    let body = document.querySelector("body");
+document.addEventListener("DOMContentLoaded", function () {
+  const avatarProfil = document.getElementById("container-box-index-logout");
+  const btnIndexSession = document.getElementById("btn-index-session");
+  let body = document.querySelector("body");
 
-    function removeBoxAndBgModal() {
-        const existingBox = document.getElementById("box-index-logout");
-        const modaleBg = document.querySelector(".bloc-modale");
+  function removeBoxAndBgModal() {
+    const existingBox = document.getElementById("box-index-logout");
+    const modaleBg = document.querySelector(".bloc-modale");
 
-        if (existingBox) {
-            avatarProfil.removeChild(existingBox);
-        }
-
-        if (modaleBg) {
-            modaleBg.remove();
-        }
-
-        document.body.style.overflow = "auto";
+    if (existingBox) {
+      avatarProfil.removeChild(existingBox);
     }
 
-    btnIndexSession.addEventListener('click', function (event) {
-        event.preventDefault();
+    if (modaleBg) {
+      modaleBg.remove();
+    }
 
-        const existingBox = document.getElementById("box-index-logout");
+    document.body.style.overflow = "auto";
+  }
 
-        if (existingBox) {
-            removeBoxAndBgModal();
-            return;
-        }
+  btnIndexSession.addEventListener("click", function (event) {
+    event.preventDefault();
 
-        document.body.style.overflow = "hidden";
+    const existingBox = document.getElementById("box-index-logout");
 
-        const modaleBg = document.createElement("div");
-        modaleBg.classList.add("bloc-modale");
-        body.append(modaleBg);
-        modaleBg.addEventListener('click', removeBoxAndBgModal);
+    if (existingBox) {
+      removeBoxAndBgModal();
+      return;
+    }
 
-        const boxIndexLogout = document.createElement("div");
-        boxIndexLogout.id = "box-index-logout";
+    document.body.style.overflow = "hidden";
 
-        const ulBoxIndexLogout = document.createElement("ul");
+    const modaleBg = document.createElement("div");
+    modaleBg.classList.add("bloc-modale");
+    body.append(modaleBg);
+    modaleBg.addEventListener("click", removeBoxAndBgModal);
 
-        const liDashboard = document.createElement("li");
-        const dashboardLink = document.createElement("a");
-        dashboardLink.href = `../admin/dashboard.php`;
-        dashboardLink.textContent = "Mon tableau de bord";
-        liDashboard.appendChild(dashboardLink);
-        ulBoxIndexLogout.appendChild(liDashboard);
+    const boxIndexLogout = document.createElement("div");
+    boxIndexLogout.id = "box-index-logout";
 
-        const liLoans = document.createElement("li");
-        const loansLink = document.createElement("a");
-        loansLink.href = `../admin/dashboard.php#box-loan`;
-        loansLink.textContent = "Mes emprunts";
-        liLoans.appendChild(loansLink);
-        ulBoxIndexLogout.appendChild(liLoans);
+    const ulBoxIndexLogout = document.createElement("ul");
 
-        const liWishlist = document.createElement("li");
-        const wishlistLink = document.createElement("a");
-        wishlistLink.href = `../admin/dashboard.php#box-whish-list`;
-        wishlistLink.textContent = "Ma liste d'envies";
-        liWishlist.appendChild(wishlistLink);
-        ulBoxIndexLogout.appendChild(liWishlist);
+    const liDashboard = document.createElement("li");
+    const dashboardLink = document.createElement("a");
+    dashboardLink.href = `../admin/dashboard.php`;
+    dashboardLink.textContent = "Mon tableau de bord";
+    liDashboard.appendChild(dashboardLink);
+    ulBoxIndexLogout.appendChild(liDashboard);
 
-        boxIndexLogout.appendChild(ulBoxIndexLogout);
+    const liLoans = document.createElement("li");
+    const loansLink = document.createElement("a");
+    loansLink.href = `../admin/dashboard.php#box-loan`;
+    loansLink.textContent = "Mes emprunts";
+    liLoans.appendChild(loansLink);
+    ulBoxIndexLogout.appendChild(liLoans);
 
-        const liLogout = document.createElement("li");
-        const logoutBtn = document.createElement("a");
-        logoutBtn.id = "btn-index-logout";
-        logoutBtn.href = `../admin/logout.php`;
-        logoutBtn.textContent = "Se déconnecter";
-        liLogout.appendChild(logoutBtn);
-        ulBoxIndexLogout.appendChild(liLogout);
+    const liWishlist = document.createElement("li");
+    const wishlistLink = document.createElement("a");
+    wishlistLink.href = `../admin/dashboard.php#box-whish-list`;
+    wishlistLink.textContent = "Ma liste d'envies";
+    liWishlist.appendChild(wishlistLink);
+    ulBoxIndexLogout.appendChild(liWishlist);
 
-        avatarProfil.appendChild(boxIndexLogout);
-    });
+    boxIndexLogout.appendChild(ulBoxIndexLogout);
+
+    const liLogout = document.createElement("li");
+    const logoutBtn = document.createElement("a");
+    logoutBtn.id = "btn-index-logout";
+    logoutBtn.href = `../admin/logout.php`;
+    logoutBtn.textContent = "Se déconnecter";
+    liLogout.appendChild(logoutBtn);
+    ulBoxIndexLogout.appendChild(liLogout);
+
+    avatarProfil.appendChild(boxIndexLogout);
+  });
 });

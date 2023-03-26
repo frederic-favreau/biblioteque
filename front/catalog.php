@@ -288,7 +288,6 @@ include_once '../connexion.php';
         </div>
     </section>
 </main>
-<script src="../js/logout-all.js"></script>
 <script src="../main.js"></script>
 <button id="back-to-top" title="Retour en haut">
     <i class="fas fa-arrow-up"></i>
