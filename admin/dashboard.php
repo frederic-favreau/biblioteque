@@ -235,7 +235,7 @@
                                  </div>
                                  <div class="container-info-loan">
                                      <p class="info-disponibility">Dispo/indispo</p>
-                                     <a href="#" class="btn-format-standard">Emprunter maintenant</a>
+                                     <a href="../front/book-detail.php" class="btn-format-standard">Emprunter maintenant</a>
                                  </div>
                              </li>
                          <?php } ?>

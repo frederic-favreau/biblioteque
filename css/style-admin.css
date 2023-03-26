@@ -9,9 +9,7 @@
 
 @media screen and (min-width: 950px) {
   .row-limit-size-db {
-    padding-top: 40px;
-    padding-left: 100px;
-    padding: 40px 100px;
+    padding: 0px 30px;
   }
 }
 
@@ -762,7 +760,9 @@ section#dashboard-page-profil div#container-profil-tabs div#box-personal-info fo
 }
 
 section#loan-register {
-  padding: 30px 30px 0;
+  padding: 0 30px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud {
   padding-top: 10px;
