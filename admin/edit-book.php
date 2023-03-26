@@ -19,9 +19,7 @@ include_once '../admin/header-main.php';
                 if (isset($_POST['submit'])) {
                     $title = ($_POST['work-title-edit']);
                     $authorFirstname = ($_POST['author-firstname-edit']);
-                    var_dump($authorFirstname);
                     $authorLastname = ($_POST['author-lastname-edit']);
-                    var_dump($authorLastname);
                     $authorFirstname2 = ($_POST['author-firstname-2-edit']);
                     $authorLastname2 = ($_POST['author-2-lastname-edit']);
 
@@ -281,12 +279,7 @@ SET wg.`genre_id` = :genreId;
             
             
             $book = $req_book->fetch(PDO::FETCH_ASSOC);
-            
-           
             $authorsLastName = explode(',',$book['lastname']);
-            var_dump($authorsLastName);
-            
-            
             $authorsFirstName = explode(',',$book['firstname']);
             $genres = explode(',',$book['genre']);
             

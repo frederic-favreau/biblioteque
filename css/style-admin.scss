@@ -1643,10 +1643,19 @@ div#confirmed-error {
                   font-size: 14px;
                   padding: 3px;
                   width: 100%;
+
                   &:hover {
                     font-weight: bold;
                     cursor: pointer;
                   }
+                }
+
+                .container-complete-detail-info-book {
+                  display: none;
+                }
+
+                .container-complete-detail-info-book.active {
+                  display: block;
                 }
               }
             }

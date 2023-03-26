@@ -1479,6 +1479,12 @@ div#confirmed-error:hover {
   font-weight: bold;
   cursor: pointer;
 }
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud ul.list-option-crud .container-complete-detail-info-book {
+  display: none;
+}
+.container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.container-box-option-crud div.box-option-crud ul.list-option-crud .container-complete-detail-info-book.active {
+  display: block;
+}
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud div.container-complete-detail-info-book {
   width: 100%;
   display: none;

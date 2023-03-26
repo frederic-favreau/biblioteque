@@ -79,24 +79,28 @@ for (const btnOptionCrud of btnOptionCruds) {
     detailLink.innerText = "Voir le détail";
     editDetailBookCrud.appendChild(detailLink);
 
-
     const detailBoxes = document.querySelectorAll(
       ".container-complete-detail-info-book"
     );
+
+    // VIEW DETAIL OF WORK
     detailLink.addEventListener("click", function () {
-      // Trouver l'élément parent de l'élément de lien
+      // Find the parent element of the link element
       const parentElement = this.closest(".detail-item-book-crud");
-      // Trouver l'index de l'élément parent dans la liste
+      // Find the index of the parent element in the list
       const index = Array.from(parentElement.parentNode.children).indexOf(
         parentElement
       );
-      // Afficher le détail correspondant
+      // Find all detail boxes for this parent element
+      const detailBoxes = parentElement.querySelectorAll(
+        ".container-complete-detail-info-book"
+      );
+      // Show the corresponding detail
       detailBoxes[index].classList.toggle("active");
     });
-    
 
     const editBookCrud = document.createElement("li");
-    editBookCrud.setAttribute("id", "more-detail-book-crud");
+    editBookCrud.setAttribute("id", "edit-book-crud");
     listOptionCrud.appendChild(editBookCrud);
 
     const aEditDataCrud = document.createElement("a");
