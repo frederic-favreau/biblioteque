@@ -21,14 +21,16 @@ include_once '../admin/header-main.php';
                             <p class="title-sticky-crud">Tous les livres de la bibliothèque</p>
                             <div class="group-search-standard">
                                 <input type="text" id="input-seach-book" class="input-search" name="text">
-                                <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value="">
+                                <input type="submit" id="btn-search-book" class="btn-search" name='rechercher' value="R"></input>
                             </div>
                             <div class="group-tool-standard">
                                 <button type="button" id="btn-all-detail">Vue détails</button>
-                                <a href="./LCCN.php" type="button" id="btn-add-book" class="btn-add">+ Ajouter un livre</a>
+                                <a href="./LCCN.php" type="button" id="btn-add-book" class="btn-add">+</a>
                             </div>
+
                         </form>
                     </div>
+                    <a href="./LCCN.php" type="button" id="btn-add-book" class="btn-add">Ajouter un livre</a>
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">
