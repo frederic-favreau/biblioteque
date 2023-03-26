@@ -75,7 +75,7 @@ main div#box-loan a#btn-confirmed:hover {
 }
 
 section#section-detail-book {
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 80px;
 }
 @media screen and (min-width: 950px) {

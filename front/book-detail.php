@@ -124,33 +124,33 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                 </div>
                 <div id="item-detail-book-right">
                     <h4 class="title-work-description"><?= $book['title'] ?></h4>
-                    
-
-                    <form action="../admin/like-book-detail.php?id=<?= $book['id_work'] ?>&id2=<?= $book['id_work']?>"" method="POST" class="like-main-pict" >
-
-                                    <?php
-                                    $idUser = $_SESSION['id-user'];
-                                    $idBook = $book['id_work'];
-                                    
 
 
-                                    if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
-                                        $coeurSql = $db->prepare("SELECT `work_id`,`user_id` FROM `like` WHERE`user_id` = :user_id AND `work_id` = :work_id");
+                    <form action="../admin/like-book-detail.php?id=<?= $book['id_work'] ?>&id2=<?= $book['id_work'] ?>"" method=" POST" class="like-main-pict">
 
-                                        $coeurSql->bindParam('user_id', $idUser, PDO::PARAM_INT);
-                                        $coeurSql->bindParam('work_id', $idBook, PDO::PARAM_INT);
-                                        $coeurSql->execute();
-                                        $coeur = $coeurSql->fetch(PDO::FETCH_ASSOC);
-                                        if ($coeur == true) {
-                                    ?>
+                        <?php
+                        $idUser = $_SESSION['id-user'];
+                        $idBook = $book['id_work'];
 
-                                            <input type="submit" value="" name="coeur" class="heart-wishlist input-heart input-heart-red">
 
-                                        <?php } else { ?>
-                                            <input type="submit" value="" name="coeur" class="heart-wishlist input-heart input-fill-blue">
-                                    <?php }
-                                    } ?>
-                                </form>
+
+                        if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+                            $coeurSql = $db->prepare("SELECT `work_id`,`user_id` FROM `like` WHERE`user_id` = :user_id AND `work_id` = :work_id");
+
+                            $coeurSql->bindParam('user_id', $idUser, PDO::PARAM_INT);
+                            $coeurSql->bindParam('work_id', $idBook, PDO::PARAM_INT);
+                            $coeurSql->execute();
+                            $coeur = $coeurSql->fetch(PDO::FETCH_ASSOC);
+                            if ($coeur == true) {
+                        ?>
+
+                                <input type="submit" value="" name="coeur" class="heart-wishlist input-heart input-heart-red">
+
+                            <?php } else { ?>
+                                <input type="submit" value="" name="coeur" class="heart-wishlist input-heart input-fill-blue">
+                        <?php }
+                        } ?>
+                    </form>
 
                     <ul class="info-work-description">
                         <li>Auteur <span><?= str_replace(',', ', ', $book['authors']) ?></span></li>
@@ -180,9 +180,9 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
 
                     <hr>
                     <ul class="list-advantage">
-                        <li>Réservez en ligne <br> & retirer sous 3h</li>
-                        <li>Demande gratuite <br> de nouveau livre</li>
-                        <li>Redonnez votre livre sous 30 jours</li>
+                        <li><img src="../img/picto/shopping-bag-01.svg" alt="Réserver"> <br> Réservez en ligne <br> & retirer sous 3h</li>
+                        <li><img src="../img/picto/annotation-question.svg" alt="Question"> <br> Demande gratuite <br> de nouveau livre</li>
+                        <li><img src="../img/picto/calendar-check-01.svg" alt="Calendrier"> <br> Redonnez votre livre sous 30 jours</li>
                     </ul>
                 </div>
             </div>
@@ -236,35 +236,36 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                             <h3 id="title-book-card"><?= $card['title'] ?></h3>
                             <h5><?= $card['authors'] ?></h5>
                             <a href="../front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
-                            <form action="../admin/like-book-detail.php?id=<?= $card['id_work'] ?>&id2=<?= $book['id_work'] ?>" method="POST" class="like-card-reco" >
+                            <form action="../admin/like-book-detail.php?id=<?= $card['id_work'] ?>&id2=<?= $book['id_work'] ?>" method="POST" class="like-card-reco">
 
-                                    <?php
-                                    $idUser = $_SESSION['id-user'];
-                                    $idBook2 = $card['id_work'];
-                                    
+                                <?php
+                                $idUser = $_SESSION['id-user'];
+                                $idBook2 = $card['id_work'];
 
 
-                                    if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
-                                        $coeurSql = $db->prepare("SELECT `work_id`,`user_id` FROM `like` WHERE`user_id` = :user_id AND `work_id` = :work_id");
 
-                                        $coeurSql->bindParam('user_id', $idUser, PDO::PARAM_INT);
-                                        $coeurSql->bindParam('work_id', $idBook2, PDO::PARAM_INT);
-                                        $coeurSql->execute();
-                                        $coeur = $coeurSql->fetch(PDO::FETCH_ASSOC);
-                                        if ($coeur == true) {
-                                    ?>
+                                if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+                                    $coeurSql = $db->prepare("SELECT `work_id`,`user_id` FROM `like` WHERE`user_id` = :user_id AND `work_id` = :work_id");
 
-                                            <input type="submit" value="" name="coeur" class="heart-wishlist input-heart input-heart-red">
+                                    $coeurSql->bindParam('user_id', $idUser, PDO::PARAM_INT);
+                                    $coeurSql->bindParam('work_id', $idBook2, PDO::PARAM_INT);
+                                    $coeurSql->execute();
+                                    $coeur = $coeurSql->fetch(PDO::FETCH_ASSOC);
+                                    if ($coeur == true) {
+                                ?>
 
-                                        <?php } else { ?>
-                                            <input type="submit" value="" name="coeur" class="heart-wishlist input-heart input-fill-blue">
-                                    <?php }
-                                    } ?>
-                                </form>
+                                        <input type="submit" value="" name="coeur" class="heart-wishlist input-heart input-heart-red">
+
+                                    <?php } else { ?>
+                                        <input type="submit" value="" name="coeur" class="heart-wishlist input-heart input-fill-blue">
+                                <?php }
+                                } ?>
+                            </form>
 
                         </div>
                     </div>
                 <?php } ?>
+            <?php } ?>
             </div>
         </section>
     </main>
@@ -272,7 +273,6 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
     <script src="../js/main-front.js"></script>
     <script src="../main.js"></script>
     </body>
-<?php include_once '../front/footer-default.php';
-}; ?>
 
-</html>
+    <?php include_once '../front/footer-default.php'; ?>
+    </html>

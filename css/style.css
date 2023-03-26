@@ -263,7 +263,7 @@ p.sub-title-section {
 }
 #main-header #main-nav-bar #container-nav-bar div#btn-responsive-search {
   position: absolute;
-  right: 50px;
+  right: 65px;
   bottom: 19px;
 }
 @media screen and (min-width: 500px) {

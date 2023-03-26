@@ -98,8 +98,9 @@ main {
 // ---------- SECTION - DETAIL BOOK ----------
 
 section#section-detail-book {
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 80px;
+
   div#container-detail-book {
     @media screen and (min-width: 950px) {
       display: flex;

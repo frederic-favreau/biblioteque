@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 26 mars 2023 à 12:19
+-- Généré le : ven. 24 mars 2023 à 15:19
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `author` (
   `lastname` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `firstname` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_author`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `author`
@@ -60,22 +60,7 @@ INSERT INTO `author` (`id_author`, `lastname`, `firstname`) VALUES
 (18, 'Ohba', 'Tsugumi'),
 (19, 'Ohba', 'Tsugumi'),
 (20, 'Ohba', 'Tsugumi'),
-(21, 'Boulle', 'Pierre'),
-(22, 'hh', 'hh'),
-(23, 'hh', 'hh'),
-(24, 'hh', 'hh'),
-(25, 'hh', 'hh'),
-(26, 'hh', 'hh'),
-(27, 'ijoh', 'ihji'),
-(28, '', ''),
-(29, 'hh', 'hh'),
-(30, 'hh', 'hh'),
-(31, 'hh', 'hh'),
-(32, 'Alexandre', 'Dumas'),
-(33, 'Boulle', 'KOKOT'),
-(34, 'Alexander', 'Dumas'),
-(35, 'Dumas', 'Pierre'),
-(36, 'Kokot', 'Pierre');
+(21, 'Boulle', 'Pierre');
 
 -- --------------------------------------------------------
 
@@ -88,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `id_category` int NOT NULL AUTO_INCREMENT,
   `category` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_category`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `category`
@@ -96,8 +81,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 
 INSERT INTO `category` (`id_category`, `category`) VALUES
 (1, 'roman'),
-(2, 'encyclopedie'),
-(3, 'hh');
+(2, 'encyclopedie');
 
 -- --------------------------------------------------------
 
@@ -115,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `copy` (
   PRIMARY KEY (`id_copy`) USING BTREE,
   KEY `WORK` (`work_id`),
   KEY `EDITOR` (`editor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `copy`
@@ -190,17 +174,7 @@ INSERT INTO `copy` (`id_copy`, `editor_id`, `location`, `work_id`, `stock`) VALU
 (67, 4, 'section sci-fi', 20, 1),
 (68, 4, 'section sci-fi', 20, 1),
 (69, 4, 'section sci-fi', 20, 1),
-(70, 4, 'section sci-fi', 20, 1),
-(71, 5, 'hh', 21, 1),
-(72, 5, 'hh', 21, 1),
-(73, 5, 'hh', 21, 1),
-(74, 5, 'hh', 21, 1),
-(75, 5, 'hh', 25, 1),
-(76, 5, 'hh', 25, 1),
-(77, 5, 'hh', 26, 1),
-(78, 5, 'hh', 26, 1),
-(79, 5, 'hh', 26, 1),
-(80, 5, 'hh', 26, 1);
+(70, 4, 'section sci-fi', 20, 1);
 
 -- --------------------------------------------------------
 
@@ -215,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `editor` (
   `number` int DEFAULT NULL,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`id_editor`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `editor`
@@ -225,8 +199,7 @@ INSERT INTO `editor` (`id_editor`, `editor_name`, `number`, `date`) VALUES
 (1, 'Fred', 5959, '2021-05-31'),
 (2, 'Jirka', 5498, '2012-08-08'),
 (3, 'Cocotte', 2687, '1987-11-03'),
-(4, 'Pocket', 978, '2017-08-17'),
-(5, 'hh', 45864, '0000-00-00');
+(4, 'Pocket', 978, '2017-08-17');
 
 -- --------------------------------------------------------
 
@@ -239,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `genre` (
   `id_genre` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_genre`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `genre`
@@ -261,23 +234,7 @@ INSERT INTO `genre` (`id_genre`, `name`) VALUES
 (13, 'Manga'),
 (14, 'Manga'),
 (15, 'Manga'),
-(16, 'Manga'),
-(17, 'histor'),
-(18, 'historoko'),
-(19, 'uohi'),
-(20, 'jpjoop'),
-(21, 'uhiuhu'),
-(22, 'uihuiuh'),
-(23, 'oijio'),
-(24, 'uhhiu'),
-(25, 'lll'),
-(26, 'avent'),
-(27, 'histori'),
-(28, 'historie'),
-(29, ''),
-(30, 'av'),
-(31, 'a'),
-(32, 'hi');
+(16, 'Manga');
 
 -- --------------------------------------------------------
 
@@ -371,7 +328,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `avatar` varchar(1) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `role` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `user`
@@ -388,8 +345,7 @@ INSERT INTO `user` (`id_user`, `firstname`, `lastname`, `mail`, `password`, `adr
 (22, 'KIng', 'Kong', 'Kong@gmail.com', '$2y$10$oUJ.0jlCzmlAHQ819Pck6O6WiCaAFWIUJG.OYVHxJOGqoCpMTbOfi', NULL, NULL, 1),
 (24, 'hhuuhiop', 'ouhio', 'ygyug@hjioh.fr', '$2y$10$EMbMFGWvyLoVKyZPrnwfJOFvnYWGnQDqa9dX74Gk4aouumItbTvyS', NULL, NULL, NULL),
 (25, 'admin', 'admin', 'admin@gmail.com', '$2y$10$kIGhoB1V9ubQReBQanHx0O7H8a/.sj6IJ.ReCTGqGKA4F.TvMiZ9G', NULL, NULL, NULL),
-(26, 'Sauron', 'Sauron', 'Sauron@gmail.com', '$2y$10$1eqLFTXLJSVWOr4N2X3LreVoiQcUeo4eisZsnBwlzgBBjCqTTyb4G', NULL, NULL, NULL),
-(27, 'jo', 'jo', 'jo@jo', '$2y$10$VP1eZbVGSHEvMNivgzCZiejj.FuK8lG9Qzq7W.s5gaMkduo.w7yTy', NULL, NULL, NULL);
+(26, 'Sauron', 'Sauron', 'Sauron@gmail.com', '$2y$10$1eqLFTXLJSVWOr4N2X3LreVoiQcUeo4eisZsnBwlzgBBjCqTTyb4G', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -406,7 +362,7 @@ CREATE TABLE IF NOT EXISTS `work` (
   `published_at` date DEFAULT NULL,
   `LCCN` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_work`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `work`
@@ -432,14 +388,7 @@ INSERT INTO `work` (`id_work`, `title`, `pict`, `extract`, `published_at`, `LCCN
 (17, 'Death Note - Tome 2', 'death-notet2.jpg', 'Light entend bien imposer au monde sa vision de la Justice ! De nombreux criminels sont morts après que leurs noms aient été inscrits dans le Death Note ! Alerté par ces morts étranges, le FBI enquête au Japon. Light fait partie des suspects mais, grâce au Death Note, il parvient à se débarrasser des soupçons qui pèsent sur lui. Malgré cela, L, continue à suivre le jeune homme !', '2007-02-01', 'ISBN-13 :978-2505000426'),
 (18, 'Death Note - Tome 3', 'death-notet3.jpg', 'La résidence de Light est placée sous surveillance vidéo. L et Light se livrent un duel silencieux relayé par les caméras cachées dans la maison du jeune homme. Grâce à un habile stratagème, Light parvient à établir la preuve de son innocence. Cela n\'empêche pas L d\'avoir des soupçons de plus en plus forts et de passer à l\'action. Parviendra-t-il à démasquer le mystérieux Kira ?!!', '2007-04-05', 'ISBN-13 :978-2505000792'),
 (19, 'Death Note - Tome 4', 'death-notet4.jpg', 'Un second Kira, dont les méthodes diffèrent de celles de Light, a fait son apparition. Au quartier général d\'enquête, L contacte Light afin de lui demander sa collaboration. Ce dernier découvre alors le sens caché du message envoyé par l\'autre Kira ! Light décide de préparer une rencontre... !!', '2023-03-01', 'ISBN-13 :978-2505001065'),
-(20, 'La planète des singes', 'La_planète_des_singes.jpg', 'Y a-t-il des êtres humains ailleurs que dans notre galaxie ? C\'est la question que se posent le professeur Antelle, Arthur Levain, son second, et le journaliste Ulysse Mérou, lorsque, de leur vaisseau spatial, ils observent le paysage d\'une planète proche de Bételgeuse : on aperçoit des villes, des routes curieusement semblables à celles de notre Terre. Après s\'y être posés, les trois hommes découvrent que la planète est habitée par des singes. Ceux-ci s\'emparent d\'Ulysse Mérou et se livrent sur lui à des expériences. Il faudra que le journaliste fasse, devant les singes, la preuve de son humanité.', '2017-12-07', '2001096544'),
-(21, 'hh', 'encyclopedie_de_la_biere.jpg', '', '0000-00-00', '20010994646'),
-(22, 'hh', 'encyclopedie_de_la_biere.jpg', '', '0000-00-00', '20010994646'),
-(23, 'hh', 'encyclopedie_de_la_biere.jpg', '', '0000-00-00', '20010994646'),
-(24, 'hh', 'encyclopedie_de_la_biere.jpg', '', '0000-00-00', '20010994646'),
-(25, 'hh', 'encyclopedie_de_la_biere.jpg', '', '0000-00-00', '2001098868'),
-(26, 'hh', 'encyclopedie_de_la_biere.jpg', '', '0000-00-00', '200109854948'),
-(27, 'hh', 'encyclopedie_de_la_biere.jpg', '', '0000-00-00', '200109854948');
+(20, 'La planète des singes', 'La_planète_des_singes.jpg', 'Y a-t-il des êtres humains ailleurs que dans notre galaxie ? C\'est la question que se posent le professeur Antelle, Arthur Levain, son second, et le journaliste Ulysse Mérou, lorsque, de leur vaisseau spatial, ils observent le paysage d\'une planète proche de Bételgeuse : on aperçoit des villes, des routes curieusement semblables à celles de notre Terre. Après s\'y être posés, les trois hommes découvrent que la planète est habitée par des singes. Ceux-ci s\'emparent d\'Ulysse Mérou et se livrent sur lui à des expériences. Il faudra que le journaliste fasse, devant les singes, la preuve de son humanité.', '2017-12-07', '2001096544');
 
 -- --------------------------------------------------------
 
@@ -451,53 +400,37 @@ DROP TABLE IF EXISTS `work_author`;
 CREATE TABLE IF NOT EXISTS `work_author` (
   `author_id` int DEFAULT NULL,
   `work_id` int DEFAULT NULL,
-  `id_work_author` int NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id_work_author`),
   KEY `id_author` (`author_id`),
   KEY `id_work` (`work_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `work_author`
 --
 
-INSERT INTO `work_author` (`author_id`, `work_id`, `id_work_author`) VALUES
-(3, 1, 1),
-(4, 2, 2),
-(1, 3, 3),
-(2, 4, 4),
-(6, 5, 5),
-(2, 6, 6),
-(7, 7, 7),
-(28, 4, 8),
-(2, 9, 9),
-(2, 8, 10),
-(9, 10, 11),
-(9, 11, 12),
-(10, 12, 13),
-(11, 12, 14),
-(13, 13, 15),
-(14, 14, 16),
-(15, 15, 17),
-(17, 16, 18),
-(18, 17, 19),
-(19, 18, 20),
-(20, 19, 21),
-(21, 20, 22),
-(28, 21, 23),
-(28, 21, 24),
-(22, 22, 25),
-(24, 22, 26),
-(22, 23, 27),
-(25, 23, 28),
-(22, 24, 29),
-(26, 24, 30),
-(28, 25, 31),
-(28, 25, 32),
-(28, 26, 33),
-(28, 26, 34),
-(22, 27, 35),
-(31, 27, 36);
+INSERT INTO `work_author` (`author_id`, `work_id`) VALUES
+(3, 1),
+(4, 2),
+(1, 3),
+(5, 4),
+(6, 5),
+(2, 6),
+(7, 7),
+(2, 4),
+(2, 9),
+(2, 8),
+(9, 10),
+(9, 11),
+(10, 12),
+(11, 12),
+(13, 13),
+(14, 14),
+(15, 15),
+(17, 16),
+(18, 17),
+(19, 18),
+(20, 19),
+(21, 20);
 
 -- --------------------------------------------------------
 
@@ -537,14 +470,7 @@ INSERT INTO `work_category` (`category_id`, `work_id`) VALUES
 (1, 17),
 (2, 18),
 (2, 19),
-(1, 20),
-(3, 21),
-(3, 22),
-(3, 23),
-(3, 24),
-(3, 25),
-(3, 26),
-(3, 27);
+(1, 20);
 
 -- --------------------------------------------------------
 
@@ -556,56 +482,40 @@ DROP TABLE IF EXISTS `work_genre`;
 CREATE TABLE IF NOT EXISTS `work_genre` (
   `genre_id` int DEFAULT NULL,
   `work_id` int DEFAULT NULL,
-  `id_work_genre` int NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id_work_genre`),
   KEY `id_genre` (`genre_id`),
   KEY `id_work` (`work_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `work_genre`
 --
 
-INSERT INTO `work_genre` (`genre_id`, `work_id`, `id_work_genre`) VALUES
-(6, 1, 1),
-(5, 2, 2),
-(3, 3, 3),
-(1, 3, 4),
-(3, 3, 5),
-(5, 4, 6),
-(4, 5, 7),
-(1, 6, 8),
-(9, 6, 9),
-(2, 7, 10),
-(1, 8, 11),
-(9, 8, 12),
-(9, 9, 13),
-(1, 9, 14),
-(8, 10, 15),
-(8, 11, 16),
-(6, 12, 17),
-(4, 13, 18),
-(11, 14, 19),
-(12, 15, 20),
-(13, 16, 21),
-(14, 17, 22),
-(15, 18, 23),
-(16, 19, 24),
-(5, 20, 25),
-(19, 21, 26),
-(19, 21, 27),
-(1, 22, 28),
-(3, 22, 29),
-(1, 23, 30),
-(3, 23, 31),
-(1, 24, 32),
-(3, 24, 33),
-(19, 25, 34),
-(25, 25, 35),
-(17, 26, 36),
-(26, 26, 37),
-(26, 27, 38),
-(27, 27, 39);
+INSERT INTO `work_genre` (`genre_id`, `work_id`) VALUES
+(6, 1),
+(4, 2),
+(3, 3),
+(3, 3),
+(3, 3),
+(5, 4),
+(4, 5),
+(1, 6),
+(9, 6),
+(2, 7),
+(1, 8),
+(9, 8),
+(9, 9),
+(1, 9),
+(8, 10),
+(8, 11),
+(6, 12),
+(4, 13),
+(11, 14),
+(12, 15),
+(13, 16),
+(14, 17),
+(15, 18),
+(16, 19),
+(5, 20);
 
 --
 -- Contraintes pour les tables déchargées
