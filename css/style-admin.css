@@ -1212,9 +1212,23 @@ div#confirmed-error:hover {
   background-color: #fff; /* couleur de fond pour la div */
   border-bottom: 1px solid gray;
 }
+.container-crud-book-tabs div.search-add-crud-book div.search-crud-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  .container-crud-book-tabs div.search-add-crud-book div.search-crud-input {
+    flex-wrap: wrap;
+    justify-content: inherit;
+    align-items: inherit;
+  }
+}
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form {
   position: relative;
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
@@ -1250,13 +1264,13 @@ div#confirmed-error:hover {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 400px;
   margin-bottom: 10px;
 }
 @media screen and (min-width: 1200px) {
   .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard {
+    flex-wrap: wrap;
     width: 60%;
-    max-width: 600px;
+    max-width: 800px;
     margin-bottom: inherit;
   }
 }
@@ -1293,11 +1307,11 @@ div#confirmed-error:hover {
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard {
   width: 100%;
+  max-width: 230px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  margin: 0 auto;
 }
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 1200px) {
   .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard {
     width: inherit;
   }
@@ -1352,6 +1366,7 @@ div#confirmed-error:hover {
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li {
   text-align: center;
   padding: 5px;
+  word-break: break-all;
 }
 .container-crud-book-tabs div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li img.pict-book-crud {
   height: 100px;
@@ -1943,6 +1958,9 @@ section#dashboard-page-book-edit #not-modified p.info-msg-bdd {
   line-height: 20px;
 }
 
+section#crud-user {
+  padding: 0 30px;
+}
 section#crud-user div#box-crud-user div.item-complete-center {
   width: 100%;
 }

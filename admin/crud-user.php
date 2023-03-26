@@ -114,7 +114,7 @@ include_once '../admin/header-main.php';
 
                                                     </ul>
 
-                                                    <h3>Histoire des emprunts du client</h3>
+                                                    <h3>Histoirique des emprunts du client</h3>
                                                     <ul class="all-info-history-loan">
 
 

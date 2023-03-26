@@ -16,7 +16,6 @@
             ?>
 
              <h2 class="h2-dashboard">Voici le suivi de vos activités</h2>
-
              <div class="container-home-tabs">
 
 
@@ -114,10 +113,7 @@
                      <!-- <form action="../admin/deleteAllLikes.php" method="POST">
                          <input type="submit" class="delete-favorit-book" value="Suprimer tout mes Likes">
                      </form> -->
-
                      <hr>
-
-
                      <ul class="list-book-box">
                          <?php
                             $mesLikes = false;
