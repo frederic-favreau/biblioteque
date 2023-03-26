@@ -24,7 +24,7 @@ include_once '../admin/header-main.php';
                             </div>
                             <div class="group-tool-standard">
                                 <button type="button" id="btn-all-detail">Vue détails</button>
-                                <a href="#box-loan-register" type="button" id="btn-add-book" class="btn-add">Nouvel emprunt</a>
+                                <a href="#box-loan-register" type="button" id="btn-add-book" class="btn-add">+ Nouvel emprunt</a>
                             </div>
                         </form>
                     </div>

@@ -388,7 +388,7 @@ header#side-bar-log #sidebar-wrapper nav#main-sidebar div#container-group-profil
 div.container-dashboard-base {
   height: -moz-fit-content;
   height: fit-content;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
 }
 div.container-dashboard-base .box-dashboard {
   width: 100%;
@@ -396,8 +396,8 @@ div.container-dashboard-base .box-dashboard {
   height: fit-content;
   background-color: #fff;
   border-radius: 8px;
-  padding: 0 20px 20px 20px;
-  margin-bottom: 30px;
+  padding: 10px 20px 20px 20px;
+  margin-bottom: 40px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 div.container-dashboard-base .box-dashboard hr {
@@ -814,9 +814,9 @@ section#loan-register div#container-list-book-crud ul.list-book-crud li.item-boo
   height: fit-content;
   border-radius: 8px;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 950px) {
   section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud {
-    right: -60px;
+    right: -50px;
   }
 }
 section#loan-register div#container-list-book-crud ul.list-book-crud li.item-book-crud ul.detail-item-book-crud li.btn-option-crud:hover {
@@ -1007,13 +1007,6 @@ section#loan-register form#form-loan-register .input-form-add-book {
   border: 1px solid gray;
   margin-bottom: 30px;
 }
-section#loan-register form#form-loan-register div#form-loan-register-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-}
 section#loan-register form#form-loan-register div#form-loan-register-left div.add-form-template-label-input .label-form-add-book {
   font-size: 18px;
   margin-right: 20px;
@@ -1085,13 +1078,6 @@ section#loan-register form#form-in-loan-register .input-form-add-book {
   padding-left: 10px;
   border: 1px solid gray;
   margin-bottom: 30px;
-}
-section#loan-register form#form-in-loan-register div#form-in-loan-register-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
 }
 section#loan-register form#form-in-loan-register div#form-in-loan-register-left div.add-form-template-label-input .label-form-add-book {
   font-size: 18px;
@@ -1219,6 +1205,7 @@ div#confirmed-error:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 .container-crud-book-tabs div.search-add-crud-book {
   position: sticky;
@@ -1235,6 +1222,7 @@ div#confirmed-error:hover {
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
+  margin-top: -10px;
   padding: 5px;
 }
 @media screen and (min-width: 1200px) {
@@ -1281,6 +1269,7 @@ div#confirmed-error:hover {
   height: 40px;
   border-radius: 8px 0 0 8px;
   background-color: transparent;
+  padding-left: 10px;
 }
 @media screen and (min-width: 1200px) {
   .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard input.input-search {
