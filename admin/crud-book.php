@@ -50,7 +50,7 @@ include_once '../admin/header-main.php';
 
 
                             $reqAskCrud = 'SELECT `id_work`,`title`,`pict`,`extract`,`category`.`category`, `copy`.`location`,
-                            DATE_FORMAT(`published_at`, "%d/%m/%Y") AS `published`, `ISBN`,
+                            DATE_FORMAT(`published_at`, "%d/%m/%Y") AS `published`, `LCCN`,
                             GROUP_CONCAT(DISTINCT DATE_FORMAT(`editor`.`date`, "%d/%m/%Y" )ORDER BY `id_editor`) AS `edition_date`,
                             GROUP_CONCAT(DISTINCT `editor`.`editor_name` ORDER BY `id_editor`)  AS `editors`, 
                             GROUP_CONCAT(`copy`.`stock`) AS `stock`,
@@ -132,7 +132,7 @@ include_once '../admin/header-main.php';
                                                         <li>Date de l'édition<span class="bdd-var"><?= str_replace(',', ', ', $crud['edition_date']) ?></span></li>
                                                         <li>Nombre d'exemplaires<span class="bdd-var"><?= count($stocks[$workId]) ?></span></li>
                                                         <li>Nombre d'exemplaires empruntés<span class="bdd-var"><?= $i ?></span></li>
-                                                        <li>ISBN<span class="bdd-var"><?= $crud['ISBN'] ?></span></li>
+                                                        <li>LCCN<span class="bdd-var"><?= $crud['LCCN'] ?></span></li>
                                                     </ul>
                                                 </div>
                                                 <div class="item-complete-left">
