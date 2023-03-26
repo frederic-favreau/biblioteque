@@ -1118,7 +1118,6 @@ section#loan-register {
     }
 
     div#form-loan-register-left {
-
       div.add-form-template-label-input {
         .label-form-add-book {
           font-size: 18px;
@@ -1213,7 +1212,6 @@ section#loan-register {
     }
 
     div#form-in-loan-register-left {
-
       div.add-form-template-label-input {
         .label-form-add-book {
           font-size: 18px;
@@ -1286,10 +1284,6 @@ p.info-succes-notif > strong {
 section#dashboard-page-book-crud {
   padding: 0 30px 50px 30px;
   height: fit-content;
-
-  @media screen and (min-width: 950px) {
-    padding-top: 40px;
-  }
 
   div#confirmed-delete {
     width: 350px;
@@ -1458,7 +1452,6 @@ div#confirmed-error {
           }
 
           a.btn-add {
-            border-radius: 8px;
             background-color: $white;
             color: $main-blue;
             font-weight: bold;
@@ -1970,10 +1963,18 @@ section#dashboard-page-book-add {
 section#dashboard-page-book-edit {
   form#form-book-edit {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
+
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
+    }
 
     .label-form-add-book {
       display: block;
@@ -1984,13 +1985,17 @@ section#dashboard-page-book-edit {
     }
 
     .input-form-add-book {
-      width: 600px;
+      width: 100%;
       height: 44px;
       font-size: 20px;
       border-radius: 8px;
       padding-left: 10px;
       border: 1px solid gray;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+
+      @media screen and (min-width: 1200px) {
+        width: 100%;
+      }
     }
 
     .select-form-add-book {
@@ -2011,8 +2016,11 @@ section#dashboard-page-book-edit {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      width: 50%;
+
+
+      @media screen and (min-width: 1200px) {
+        width: 48%;
+      }
 
       div.add-form-template-label-input {
         .label-form-add-book {
@@ -2025,11 +2033,13 @@ section#dashboard-page-book-edit {
     div#form-book-edit-right {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      width: 50%;
+
+      @media screen and (min-width: 1200px) {
+        width: 48%;
+      }
 
       textarea#work-extract-edit {
-        width: 690px;
+        width: 100%;
         height: 600px;
         font-size: 20px;
         text-align: start;
@@ -2037,6 +2047,10 @@ section#dashboard-page-book-edit {
         padding-left: 10px;
         border: 1px solid gray;
         margin-bottom: 30px;
+
+        @media screen and (min-width: 1200px) {
+          width: 100%;
+        }
       }
     }
 

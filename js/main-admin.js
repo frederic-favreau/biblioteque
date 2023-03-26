@@ -106,7 +106,7 @@ for (const btnOptionCrud of btnOptionCruds) {
     const aEditDataCrud = document.createElement("a");
     aEditDataCrud.setAttribute("id", "btn-confirmed");
     aEditDataCrud.setAttribute("href", "./edit-book.php?id=" + idWork);
-    aEditDataCrud.innerHTML = "Editer les donnés d'ouvrage";
+    aEditDataCrud.innerHTML = "Editer l'ouvrage";
 
     editBookCrud.appendChild(aEditDataCrud);
 
@@ -120,7 +120,7 @@ for (const btnOptionCrud of btnOptionCruds) {
       "href",
       "./edit-copy-book.php?id=" + idWork
     );
-    aEditDataExemplare.innerHTML = "Editer les d'un exemplaire";
+    aEditDataExemplare.innerHTML = "Editer un exemplaire";
 
     editCopyCrud.appendChild(aEditDataExemplare);
 

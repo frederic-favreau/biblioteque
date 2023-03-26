@@ -1141,11 +1141,6 @@ section#dashboard-page-book-crud {
   height: -moz-fit-content;
   height: fit-content;
 }
-@media screen and (min-width: 950px) {
-  section#dashboard-page-book-crud {
-    padding-top: 40px;
-  }
-}
 section#dashboard-page-book-crud div#confirmed-delete {
   width: 350px;
   height: 160px;
@@ -1306,7 +1301,6 @@ div#confirmed-error:hover {
   }
 }
 .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-tool-standard a.btn-add {
-  border-radius: 8px;
   background-color: #fff;
   color: #0868ae;
   font-weight: bold;
@@ -1749,10 +1743,19 @@ section#dashboard-page-book-add #not-added p.info-msg-bdd {
 
 section#dashboard-page-book-edit form#form-book-edit {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+@media screen and (min-width: 1200px) {
+  section#dashboard-page-book-edit form#form-book-edit {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+  }
 }
 section#dashboard-page-book-edit form#form-book-edit .label-form-add-book {
   display: block;
@@ -1762,13 +1765,18 @@ section#dashboard-page-book-edit form#form-book-edit .label-form-add-book {
   font-weight: bold;
 }
 section#dashboard-page-book-edit form#form-book-edit .input-form-add-book {
-  width: 600px;
+  width: 100%;
   height: 44px;
   font-size: 20px;
   border-radius: 8px;
   padding-left: 10px;
   border: 1px solid gray;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1200px) {
+  section#dashboard-page-book-edit form#form-book-edit .input-form-add-book {
+    width: 100%;
+  }
 }
 section#dashboard-page-book-edit form#form-book-edit .select-form-add-book {
   width: 600px;
@@ -1786,8 +1794,11 @@ section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 50%;
+}
+@media screen and (min-width: 1200px) {
+  section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-left {
+    width: 48%;
+  }
 }
 section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-left div.add-form-template-label-input .label-form-add-book {
   font-size: 18px;
@@ -1796,11 +1807,14 @@ section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-left div
 section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-right {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 50%;
+}
+@media screen and (min-width: 1200px) {
+  section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-right {
+    width: 48%;
+  }
 }
 section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-right textarea#work-extract-edit {
-  width: 690px;
+  width: 100%;
   height: 600px;
   font-size: 20px;
   text-align: start;
@@ -1808,6 +1822,11 @@ section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-right te
   padding-left: 10px;
   border: 1px solid gray;
   margin-bottom: 30px;
+}
+@media screen and (min-width: 1200px) {
+  section#dashboard-page-book-edit form#form-book-edit div#form-book-edit-right textarea#work-extract-edit {
+    width: 100%;
+  }
 }
 section#dashboard-page-book-edit form#form-book-edit div#group-btn-form-edit-commun {
   width: 100%;
