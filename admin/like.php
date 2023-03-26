@@ -35,22 +35,7 @@ $coeurSql = $db->prepare("SELECT `work_id`,`user_id` FROM `like` WHERE`user_id` 
                     $likeSql->execute();
                     header('Location: ../index.php');
 
-
-
-                    
-
-
-
-
-
-
                 }
-
-
-
-
-
-
 
               ?>
 
