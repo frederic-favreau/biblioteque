@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 27 mars 2023 à 08:30
+-- Généré le : dim. 26 mars 2023 à 21:53
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -338,7 +338,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `avatar` varchar(1) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `role` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `user`
@@ -358,9 +358,7 @@ INSERT INTO `user` (`id_user`, `firstname`, `lastname`, `mail`, `password`, `adr
 (26, 'Sauron', 'Sauron', 'Sauron@gmail.com', '$2y$10$1eqLFTXLJSVWOr4N2X3LreVoiQcUeo4eisZsnBwlzgBBjCqTTyb4G', NULL, NULL, NULL),
 (27, 'tata', 'titi', 'Koma@gmail.com', '$2y$10$7hCbrxv7StAi28Dx9lD.reoYdEgP3UA02Yq7Qe/c2pxKs0Y0QTV96', NULL, NULL, NULL),
 (28, 'tata', 'titi', 'Koma@gmail.com', '$2y$10$o22hGvkkDQX.RVA9BvvSYu4IrJXonvhE7KyL4qIDA5P1vZ82.7Ug2', NULL, NULL, NULL),
-(29, 'pat', 'mat', 'mat@gmail.com', '$2y$10$hvHraiTpZTjUPfh7nvbtLeGX37mQprTdLS1VClfOaoAe5deirlG1W', NULL, NULL, NULL),
-(30, 'poppo', 'toto', 'po@gmail.com', '$2y$10$HfMxn.ioI5Q6AgMeQ8rqXufgT..mizrHPCiyTzxcR8Zpd.Ym8Mnwu', NULL, NULL, NULL),
-(31, 'ha', 'sa', 'ha@gmail.com', '$2y$10$/12t0MC1itFdyDDjzr0uzegWhp.r4CSoNBbOCC9L.EVLU5JaqCI1C', NULL, NULL, NULL);
+(29, 'pat', 'mat', 'mat@gmail.com', '$2y$10$hvHraiTpZTjUPfh7nvbtLeGX37mQprTdLS1VClfOaoAe5deirlG1W', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
