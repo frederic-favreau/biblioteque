@@ -1233,7 +1233,6 @@ div#confirmed-error:hover {
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
-  margin-top: -10px;
   padding: 5px;
 }
 @media screen and (min-width: 1200px) {
@@ -1270,7 +1269,6 @@ div#confirmed-error:hover {
   .container-crud-book-tabs div.search-add-crud-book div.search-crud-input form div.group-search-standard {
     flex-wrap: wrap;
     width: 60%;
-    max-width: 800px;
     margin-bottom: inherit;
   }
 }
