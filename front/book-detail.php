@@ -126,7 +126,7 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <h4 class="title-work-description"><?= $book['title'] ?></h4>
 
 
-                    <form action="../admin/like-book-detail.php?id=<?= $book['id_work'] ?>&id2=<?= $book['id_work'] ?>"" method=" POST" class="like-main-pict">
+                    <form action="../admin/like-book-detail.php?id=<?=$book['id_work'] ?>&id2=<?= $book['id_work']?>"method="POST" class="like-main-pict">
 
                         <?php
                         
@@ -237,12 +237,12 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                             <h3 id="title-book-card"><?= $card['title'] ?></h3>
                             <h5><?= $card['authors'] ?></h5>
                             <a href="../front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
-                            <form action="../admin/like-book-detail.php?id=<?= $card['id_work'] ?>&id2=<?= $book['id_work'] ?>" method="POST" class="like-card-reco">
+                            <form action="../admin/like-book-detail.php?id=<?= $card['id_work']?>&id2=<?= $book['id_work']?>" method="POST" class="like-card-reco">
 
                                 <?php
                                 
 
-
+                     
 
                                 if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
                                     $idUser = $_SESSION['id-user'];
