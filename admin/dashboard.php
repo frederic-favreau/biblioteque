@@ -219,7 +219,7 @@
                         ORDER BY `id_work` DESC LIMIT 4";
                             $req_reco =  $db->query($sql_reco);
                             while ($reco = $req_reco->fetch(PDO::FETCH_ASSOC)) {
-
+                                $workId = $reco['id_work']
                             ?>
                              <li class="item-list-book">
                                  <div class="format-pict-book ">
@@ -231,7 +231,7 @@
                                  </div>
                                  <div class="container-info-loan">
                                      <p class="info-disponibility">Dispo/indispo</p>
-                                     <a href="../front/book-detail.php" class="btn-format-standard">Emprunter maintenant</a>
+                                     <a href="../front/book-detail.php?id=<?= $workId ?>" class="btn-format-standard">Emprunter maintenant</a>
                                  </div>
                              </li>
                          <?php } ?>

@@ -129,12 +129,13 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     <form action="../admin/like-book-detail.php?id=<?= $book['id_work'] ?>&id2=<?= $book['id_work'] ?>"" method=" POST" class="like-main-pict">
 
                         <?php
-                        $idUser = $_SESSION['id-user'];
-                        $idBook = $book['id_work'];
+                        
 
 
 
                         if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+                            $idUser = $_SESSION['id-user'];
+                        $idBook = $book['id_work'];
                             $coeurSql = $db->prepare("SELECT `work_id`,`user_id` FROM `like` WHERE`user_id` = :user_id AND `work_id` = :work_id");
 
                             $coeurSql->bindParam('user_id', $idUser, PDO::PARAM_INT);
@@ -239,12 +240,13 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                             <form action="../admin/like-book-detail.php?id=<?= $card['id_work'] ?>&id2=<?= $book['id_work'] ?>" method="POST" class="like-card-reco">
 
                                 <?php
-                                $idUser = $_SESSION['id-user'];
-                                $idBook2 = $card['id_work'];
+                                
 
 
 
                                 if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
+                                    $idUser = $_SESSION['id-user'];
+                                $idBook2 = $card['id_work'];
                                     $coeurSql = $db->prepare("SELECT `work_id`,`user_id` FROM `like` WHERE`user_id` = :user_id AND `work_id` = :work_id");
 
                                     $coeurSql->bindParam('user_id', $idUser, PDO::PARAM_INT);
