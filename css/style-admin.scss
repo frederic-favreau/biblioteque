@@ -34,7 +34,7 @@ body {
     right: 0;
     bottom: 0;
     background: $bgModal;
-    z-index: 99;
+    z-index: 997;
   }
 }
 
@@ -1769,6 +1769,7 @@ section#dashboard-page-book-add {
   form#form-add-book {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -1782,7 +1783,7 @@ section#dashboard-page-book-add {
     }
 
     .input-form-add-book {
-      width: 600px;
+      width: 100%;
       height: 44px;
       font-size: 20px;
       border-radius: 8px;
@@ -1794,9 +1795,13 @@ section#dashboard-page-book-add {
     div#form-add-book-left {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
+      // justify-content: center;
+      // align-items: center;
+      width: 100%;
+
+      @media screen and (min-width: 1200px) {
+        width: 48%;
+      }
 
       div.add-div {
         border: solid $main-blue 3px;
@@ -1829,11 +1834,14 @@ section#dashboard-page-book-add {
     div#form-add-book-right {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      width: 50%;
+      width: 100%;
+
+      @media screen and (min-width: 1200px) {
+        width: 48%;
+      }
 
       textarea#work-extract-add {
-        width: 690px;
+        width: 100%;
         height: 600px;
         font-size: 20px;
         text-align: start;
@@ -1849,7 +1857,6 @@ section#dashboard-page-book-add {
       display: flex;
       justify-content: center;
       margin-top: 40px;
-      margin-right: 111px;
 
       #btn-reset-form-add-book {
         width: 160px;
@@ -2075,9 +2082,8 @@ section#dashboard-page-book-edit {
       display: flex;
       justify-content: center;
       margin-top: 40px;
-      margin-right: 111px;
 
-      #btn-reset-form-add-book {
+      .btn-reset-form-add-book {
         width: 160px;
         height: 40px;
         font-weight: bold;
@@ -2095,7 +2101,7 @@ section#dashboard-page-book-edit {
         }
       }
 
-      #btn-submit-form-add-book {
+      .btn-submit-form-add-book {
         width: 160px;
         height: 40px;
         font-weight: bold;
