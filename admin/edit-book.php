@@ -68,7 +68,7 @@ include_once '../admin/header-main.php';
                     $reqUpdateWorkAuthor->execute();
                 }
 
-                if (isset($authorFirstname2, $authorLastname2)) {
+                if (isset($authorFirstname2, $authorLastname2) && !empty($authorFirstname2 && $authorLastname2)) {
 
                     // Vérifie si l'auteur 2 existe déjà
                     $reqAuthor2Exists = $db->prepare("SELECT `id_author` FROM `author` WHERE `firstname` = :authorFirstname2 AND `lastname` = :authorLastname2");
@@ -167,7 +167,7 @@ include_once '../admin/header-main.php';
                 }
 
 
-                if (isset($genre2)) {
+                if (isset($genre2) && !empty($genre2)) {
                     // Vérifier si le genre2 existe déjà
                     $reqGenre2Exists = $db->prepare("SELECT `id_genre` FROM `genre` WHERE `name` = :genre2");
                     $reqGenre2Exists->bindParam(':genre2', $genre2);

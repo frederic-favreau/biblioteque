@@ -226,16 +226,17 @@ while ($book = $req_book->fetch(PDO::FETCH_ASSOC)) {
                     GROUP BY `id_work` ORDER BY `id_work` DESC";
                 $req_catalog = $db->query($sql);
                 while ($card = $req_catalog->fetch(PDO::FETCH_ASSOC)) {
+                   
                 ?>
-
+                    
                     <div class="card">
                         <div class="top-item-card">
                             <img src="../img/books/<?= $card['pict'] ?>" alt="<?= $card['title'] ?>">
                         </div>
                         <div class="bottom-item-card">
-                            <h4><?= $card['genres'] ?></h4>
+                            <h4><?= str_replace(',', ', ', $card['genres'])?></h4>
                             <h3 id="title-book-card"><?= $card['title'] ?></h3>
-                            <h5><?= $card['authors'] ?></h5>
+                            <h5><?= str_replace(',', ', ', $card['authors']) ?></h5>
                             <a href="../front/book-detail.php?id=<?= $card['id_work'] ?>" class="link-page">En savoir plus 🡪</a>
                             <form action="../admin/like-book-detail.php?id=<?= $card['id_work']?>&id2=<?= $book['id_work']?>" method="POST" class="like-card-reco">
 
