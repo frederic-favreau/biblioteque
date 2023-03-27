@@ -107,7 +107,7 @@
                      
                      <div class="add-form-template-label-input">
                          <label for="work-LCCN-add" class="label-form-add-book">LCCN (ex: LCCN 2001098868)</label>
-                         <input type="text" name="work-LCCN-add" id="work-LCCN-add" class="input-form-add-book" value="hh" />
+                         <input type="text" name="work-LCCN-add" id="work-LCCN-add" class="input-form-add-book" value="<?= $_GET['LCCN'] ?>" />
                      </div>
                      <div class="add-form-template-label-input">
                      </div>
@@ -118,19 +118,19 @@
                      
                      <div class="add-form-template-label-input">
                          <label for="publisher-name-add" class="label-form-add-book">Localisaton</label>
-                         <input type="text" name="Localisaton" id="Localisaton" class="input-form-add-book" value="hh" />
+                         <input type="text" name="Localisaton" id="Localisaton" class="input-form-add-book"  />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="publisher-name-add" class="label-form-add-book">Nom de l'éditeur</label>
-                         <input type="text" name="publisher-name-add" id="publisher-name-add" class="input-form-add-book" value="hh" />
+                         <input type="text" name="publisher-name-add" id="publisher-name-add" class="input-form-add-book"  />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="publisher-name-add" class="label-form-add-book">Numero de l'éditeur</label>
-                         <input type="text" name="NumeroEditor" id="NumeroEditor" class="input-form-add-book" value="45864" />
+                         <input type="text" name="NumeroEditor" id="NumeroEditor" class="input-form-add-book" />
                      </div>
                      <div class="add-form-template-label-input">
                          <label for="publisher-date-add" class="label-form-add-book">Date d'édition</label>
-                         <input type="date" name="publisher-date-add" id="publisher-date-add" value="hh" class="input-form-add-book" />
+                         <input type="date" name="publisher-date-add" id="publisher-date-add" class="input-form-add-book" />
                      </div>
                  </div>
                  <div id="group-btn-form-add-commun">
