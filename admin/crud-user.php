@@ -48,7 +48,7 @@ include_once '../admin/header-main.php';
 
                                 <li class="item-book-crud">
                                     <ul class="detail-item-book-crud">
-                                        <li class="id-crud-user"> ID clien: <?= $user['id_user'] ?></li>
+                                        <li class="id-crud-user"> ID client: <?= $user['id_user'] ?></li>
                                         <li class="firstname-crud-user">Nom: <?= $user['lastname'] ?></li>
                                         <li class="lastname-crud-user">Prénom: <?= $user['firstname'] ?></li>
                                         <li class="mail-crud-user">E-mail: <?= $user['mail'] ?></li>
@@ -185,7 +185,7 @@ include_once '../admin/header-main.php';
 
                                 <li class="item-book-crud">
                                     <ul class="detail-item-book-crud">
-                                        <li class="id-crud-user"> ID clien: <?= $user['id_user'] ?></li>
+                                        <li class="id-crud-user"> ID client: <?= $user['id_user'] ?></li>
                                         <li class="firstname-crud-user">Nom: <?= $user['lastname'] ?></li>
                                         <li class="lastname-crud-user">Prénom: <?= $user['firstname'] ?></li>
                                         <li class="mail-crud-user">E-mail: <?= $user['mail'] ?></li>

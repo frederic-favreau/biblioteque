@@ -404,7 +404,7 @@
             <h4>Ethan Siou</h4>
             <h5>Etudiant en médecine, adhérent depuis deux ans</h5>
             <p><span>❝</span> “Avec des cours intensifs, je me ressource chez Biblook dans un lieu calme et apaisant.
-              J’approndis mes connaissance en médecine grâce aux livres que j’emprunte à la bibliothèque.
+              J’approndis mes connaissances en médecine grâce aux livres que j’emprunte à la bibliothèque.
               Les délais sont respectables, les étudiants sont valorisés avec la carte de fidélité.
               Une bibliothèque chaleureuse ou il fait bon d’étudier ”. <span>❞</span></p>
           </div>
