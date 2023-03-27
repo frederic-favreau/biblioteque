@@ -47,7 +47,7 @@
             <!-- SESSION USERS -->
             <?php if (isset($_SESSION['connect']) && $_SESSION['connect'] == true  && $_SESSION['role'] == 0) { ?>
               <a href="#" id="btn-index-session"><img src="../img/picto/avatar-user.svg" alt="avatar"></a>
-              <script src="../js/logout-index.js"></script>
+              <script src="../js/logout-all.js"></script>
 
               <!-- SESSION ADMIN -->
             <?php } else if (isset($_SESSION['connect']) && $_SESSION['connect'] == true  && $_SESSION['role'] == 1) { ?>

@@ -313,15 +313,6 @@ if ($Genre_Work2Exists) {
 
             $book = $req_book->fetch(PDO::FETCH_ASSOC);
 
-
-            $authorsLastName = explode(',', $book['lastname']);
-
-
-
-            $authorsFirstName = explode(',', $book['firstname']);
-            $genres = explode(',', $book['genre']);
-           
-
             ?>
 
 

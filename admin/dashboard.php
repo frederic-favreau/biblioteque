@@ -16,7 +16,6 @@
             ?>
 
              <h2 class="h2-dashboard">Voici le suivi de vos activités</h2>
-
              <div class="container-home-tabs">
 
 
@@ -30,7 +29,7 @@
                      <ul class="list-book-box">
                          <?php
 
-
+                            $myLoan = false;
                             $idUser = $_SESSION['id-user'];
                             $date = date('Y-m-d');
 
@@ -92,7 +91,13 @@
                                  <a href="#" class="btn-format-standard">Prolonger l'emprunt</a>
                                  </div>
                              </li>
-                         <?php } ?>
+                         <?php }
+                            if ($myLoan == false) { ?>
+
+                             <p>Vous n'avez pas de livre en cours d'emprunt</p>
+
+                         <?php }
+                            ?>
 
                      </ul>
                  </div>
@@ -108,10 +113,7 @@
                      <!-- <form action="../admin/deleteAllLikes.php" method="POST">
                          <input type="submit" class="delete-favorit-book" value="Suprimer tout mes Likes">
                      </form> -->
-
                      <hr>
-
-
                      <ul class="list-book-box">
                          <?php
                             $mesLikes = false;
@@ -190,10 +192,9 @@
                             }
                             if ($mesLikes == false) { ?>
 
-                             <p>Vous n'avez pas de livre en favorit</p>
+                             <p>Vous n'avez pas de livre en favoris</p>
 
                          <?php }
-
                             ?>
                      </ul>
                  </div>
@@ -230,7 +231,7 @@
                                  </div>
                                  <div class="container-info-loan">
                                      <p class="info-disponibility">Dispo/indispo</p>
-                                     <a href="#" class="btn-format-standard">Emprunter maintenant</a>
+                                     <a href="../front/book-detail.php" class="btn-format-standard">Emprunter maintenant</a>
                                  </div>
                              </li>
                          <?php } ?>

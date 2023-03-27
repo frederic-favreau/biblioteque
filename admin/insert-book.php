@@ -51,7 +51,6 @@
                         // Requête pour insérer l'auteur
 
 
-
                         //First author
 
                         $reqAuthorExists = $db->prepare("SELECT `id_author`, CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`) AS `authors` FROM `author` WHERE CONCAT(`author`.`lastname`, SPACE(1), `author`.`firstname`) = :authors");
@@ -72,8 +71,6 @@
                             $db->query($query);
                             $authorId = $db->lastInsertId();
                         }
-
-
 
 
 

@@ -17,15 +17,20 @@ include_once '../admin/header-main.php';
             <div id="box-crud-user" class="box-dashboard">
 
                 <div class="search-add-crud-book">
-                    <h3 class="h3-dashboard">Base de données des lecteurs</h3>
                     <div class="search-crud-input">
+
                         <form action="" method="post">
-                            <input type="text" id="input-seach-user" class="input-search" name="text">
-                            <input type="submit" id="btn-search-user" class="btn-search" name='rechercher' value="Rechercher"></input>
-                            <button type="button" id="btn-all-detail">Vue détails</button>
+                            <p class="title-sticky-crud">Base de données des lecteurs</p>
+                            <div class="group-search-standard">
+                                <input type="text" id="input-seach-user" class="input-search" name="text">
+                                <input type="submit" id="btn-search-user" class="btn-search" name='rechercher' value=" "></input>
+                            </div>
+                            <div class="group-tool-standard">
+                                <button type="button" id="btn-all-detail">Vue détails</button>
+                                <a href="#box-loan-register" type="button" id="btn-add-book" class="btn-add">+ Nouveau lecteur</a>
+                            </div>
                         </form>
                     </div>
-                    <a href="#box-loan-register" type="button" id="btn-add-book" class="btn-add">Nouveau lecteur</a>
                 </div>
                 <div id="container-list-book-crud">
                     <ul class="list-book-crud">
@@ -109,7 +114,7 @@ include_once '../admin/header-main.php';
 
                                                     </ul>
 
-                                                    <h3>Histoire des emprunts du client</h3>
+                                                    <h3>Histoirique des emprunts du client</h3>
                                                     <ul class="all-info-history-loan">
 
 
