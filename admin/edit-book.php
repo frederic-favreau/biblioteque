@@ -346,8 +346,8 @@ include_once '../admin/header-main.php';
                     <input type="text" name="work-pict-edit" id="work-pict-edit" class="input-form-add-book" value="<?= $book['pict'] ?>" />
                 </div>
                 <div id="group-btn-form-edit-commun">
-                    <input type="reset" id="btn-reset-form-add-book" name="reset" value="Reset" />
-                    <input type="submit" id="btn-submit-form-add-book" name="submit" value="Modifier" />
+                    <input type="reset" class="btn-reset-form-add-book" name="reset" value="Reset" />
+                    <input type="submit" class="btn-submit-form-add-book" name="submit" value="Modifier" />
                 </div>
             </form>
 
