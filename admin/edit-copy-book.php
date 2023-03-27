@@ -8,7 +8,7 @@ include_once '../admin/header-main.php';
 <section id="dashboard-page-book-edit" class="row-limit-size-db">
     <div class="container-dashboard-base">
         <h1 class="h1-dashboard">Bienvenue de modification d'exemplaires</h1>
-        <h2 class="h2-dashboard">Vous pouvez modifier les exemplaire de l'ouvrage"" dans la bibliothèque</h2>
+        <h2 class="h2-dashboard">Vous pouvez modifier les exemplaire de l'ouvrage dans la bibliothèque</h2>
         
 
         <?php
